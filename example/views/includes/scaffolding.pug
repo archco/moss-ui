@@ -1,0 +1,85 @@
+h2 Link
+a(href='#') link
+a(href='#' class='no-deco') no-decoration link
+h2 Blockquote
+blockquote
+  | This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can put Markdown into a blockquote.
+h2 Table
+table(class='table center bordered hover')
+  thead
+    tr
+      th name
+      th age
+      th gender
+      th link
+  tbody
+    tr
+      td Karl
+      td 18
+      td male
+      td
+        a(href='#') karl
+    tr
+      td Mia
+      td 22
+      td female
+      td
+        a(href='#' class='btn info') mia
+table(class='table striped responsive hover')
+  thead
+    tr
+      th name
+      th age
+      th gender
+      th link
+      - for (var i=0; i<10; i++)
+        th= 'head #' + (i+1)
+  tbody
+    tr
+      td Karl
+      td 18
+      td male
+      td
+        a(href='#') karl
+      - for (var i=0; i<10; i++)
+        td= 'body #' + (i+1)
+    tr
+      td Mia
+      td 22
+      td female
+      td
+        a(href='#') mia
+      - for (var i=0; i<10; i++)
+        td= 'body #' + (i+1)
+h2 Codes
+h3 Inline codes
+p
+  | It is inline <code>code</code>.<br>
+  | <code>html, css, javascript</code><br>
+  | <a href="#"><code>code</code> in link</a>
+h3 Block codes
+pre
+  code
+    |THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    |IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    |FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    |AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    |LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    |OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    |SOFTWARE.
+
+h2 Optional Classes
+h3 .pad
+article(class='pad color-primary') article with .pad
+div(class='pad bg-color-warning') div with .pad
+p(class='pad color-success') p with .pad
+section(class='pad bg-color-secondary')
+  p If case of section with pad, it's responsive.
+h3 .accent
+div(class='pad')
+  h1(class='accent color-danger') Heading with .accent
+  h2(class='accent color-danger') Heading with .accent
+  h3(class='accent color-danger') Heading with .accent
+  h4(class='accent color-danger') Heading with .accent
+  h5(class='accent color-danger') Heading with .accent
+  h6(class='accent color-danger') Heading with .accent

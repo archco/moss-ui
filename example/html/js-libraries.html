@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js libraries</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../dist/css/style.css">
+  </head>
+  <body>
+    <div id="app">
+      <header class="bg-color-primary pad flex-container-center" style="height:100px;">
+        <h1 id="project-name">cosmos-css</h1>
+      </header>
+      <nav class="navbar sticky-top use-activator shadow-near">
+        <div class="navbar-header"><a class="navbar-brand text" href="index.html">cosmos-css</a>
+          <button class="navbar-toggle" type="button">Toggle Navigation</button>
+        </div>
+        <div class="navbar-body justify-content-end">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="components.html?q=components">Components</a></li>
+            <li class="nav-item"><a class="nav-link" href="modules.html">Modules</a></li>
+            <li class="nav-item"><a class="nav-link" href="js-libraries.html">JS Libraries</a></li>
+            <li class="nav-item">
+              <dropdown toggle="toggle" align="center">
+                <button slot="button">dropdown</button><a href="#">link 1</a><a href="#">link 2</a><a href="#">link 3</a>
+              </dropdown>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="row">
+        <aside class="col-md-2 hide-only-mobile">
+          <ul class="list fixed">
+            <li><a href="#color">Color</a></li>
+            <li><a href="#element-util">ElementUtil</a></li>
+            <li><a href="#util">Util</a></li>
+          </ul>
+        </aside>
+        <section class="col-md-10">
+          <h1 id="color">Color</h1>
+          <hr>
+          <h2>Convert Color Value</h2>
+          <input class="inline" id="input-hex-color" type="text" value="#fff">
+          <button class="btn success" type="button" id="btn-hex-to-rgb">hexToRgb</button>
+          <button class="btn success" type="button" id="btn-rgb-to-hex">rgbToHex</button>
+          <input class="inline" id="input-rgb-color" type="text" value="255,255,255">
+          <h2>lightness</h2>
+          <input class="inline" id="input-lightness" type="text" value="#888">
+          <button class="btn info" type="button" id="btn-lightness">lightness</button>
+          <p class="pad bg-color-secondary" id="output-lightness"></p>
+          <h2>contrast</h2>
+          <input class="inline" id="input-contrast" type="text" value="#888">
+          <button class="btn info" type="button" id="btn-contrast">contrast</button>
+          <p class="pad" id="output-contrast"></p>
+          <script>
+            window.addEventListener('load', function () {
+              // convert color value.
+              var Color = Cosmos.lib.Color;
+              var inputHex = document.querySelector('#input-hex-color');
+              var inputRgb = document.querySelector('#input-rgb-color');
+            
+              document.querySelector('#btn-hex-to-rgb').addEventListener('click', function () {
+                var rgb = Color.hexToRgb(inputHex.value);
+                inputRgb.value = rgb.join(',');
+              });
+              document.querySelector('#btn-rgb-to-hex').addEventListener('click', function () {
+                var array = inputRgb.value.split(',').map(function (x) {
+                  return parseInt(x);
+                });
+                var hex = Color.rgbToHex(array[0], array[1], array[2], true);
+                inputHex.value = hex;
+              });
+            
+              // lightness
+              document.querySelector('#btn-lightness').addEventListener('click', function () {
+                var value = Color.lightness(document.querySelector('#input-lightness').value);
+                document.querySelector('#output-lightness').innerHTML = 'lightness value: ' + value;
+              });
+            
+              // contrast
+              document.querySelector('#btn-contrast').addEventListener('click', function () {
+                var inputValue = document.querySelector('#input-contrast').value;
+                var contrast = Color.contrast(inputValue);
+                var output = document.querySelector('#output-contrast');
+            
+                output.style.backgroundColor = inputValue;
+                output.style.color = contrast;
+                output.innerHTML = 'bg-color: ' + inputValue + ' contrast-color: ' + contrast;
+              });
+            });
+          </script>
+          <h1 id="element-util">ElementUtil</h1>
+          <hr>
+          <h2>Toggle Class</h2>
+          <button class="btn primary" id="btn-toggle-class">Toggle Class</button>
+          <p class="pad" id="toggle-class-target" style="transition:.6s;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <h2>Toggle Show</h2>
+          <button class="btn info" id="btn-toggle-show">Toggle Show</button>
+          <p class="pad bg-color-success" id="toggle-show-target">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <h2>Filter</h2>
+          <h3>Filter List</h3>
+          <input class="inline" id="input-filter-list" type="text" placeholder="search in list..">
+          <ul class="list" id="filter-list">
+            <li>Armenia</li>
+            <li>Aruba</li>
+            <li>Australia</li>
+            <li>Austria</li>
+            <li>Brazil</li>
+            <li>Brunei</li>
+            <li>Bulgaria</li>
+            <li>China</li>
+            <li>Denmark</li>
+            <li>Dominica</li>
+            <li>Mexico</li>
+            <li>Palau</li>
+            <li>Panama</li>
+            <li>Vietnam</li>
+          </ul>
+          <h2>Sort</h2>
+          <h3>Sort List</h3>
+          <button class="btn info" id="btn-sort-list" type="button">Sort</button>
+          <ul class="list-group" id="sort-list">
+            <li>Netherlands</li>
+            <li>Brunei</li>
+            <li>Palau</li>
+            <li>Colombia</li>
+            <li>Austria</li>
+            <li>Lithuania</li>
+            <li>Monaco</li>
+            <li>Ukraine</li>
+            <li>Barbados</li>
+            <li>Argentina</li>
+          </ul>
+          <h3>Sort Table</h3>
+          <table class="table striped bordered hover" id="sort-table-target">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th data-sort-type="number">Description</th>
+                <th>date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>test1</td>
+                <td data-sort-value="4">four</td>
+                <td>2015-04-01</td>
+              </tr>
+              <tr>
+                <td>test2</td>
+                <td data-sort-value="100">one-hundred</td>
+                <td>2015-06-01</td>
+              </tr>
+              <tr>
+                <td>test3</td>
+                <td data-sort-value="2000">two-thousands</td>
+                <td>2017-01-01</td>
+              </tr>
+              <tr>
+                <td>test4</td>
+                <td data-sort-value="1">one</td>
+                <td>1999-01-01</td>
+              </tr>
+              <tr>
+                <td>test5</td>
+                <td data-sort-value="3">three</td>
+                <td>1998-02-01</td>
+              </tr>
+            </tbody>
+          </table><script>window.addEventListener('load', function () {
+            var eu = Cosmos.lib.ElementUtil;
+            // toggle class
+            eu.getElement('#btn-toggle-class').addEventListener('click', function () {
+              eu.toggleClass('#toggle-class-target', 'bg-color-danger');
+            });
+            // toggle show
+            eu.getElement('#btn-toggle-show').addEventListener('click', function () {
+              eu.toggleShow('#toggle-show-target');
+            });
+            // filter list
+            eu.getElement('#input-filter-list').addEventListener('keyup', function (e) {
+              eu.filter('#filter-list li', e.currentTarget.value);
+            });
+            eu.getElement('#btn-sort-list').addEventListener('click', function () {
+              eu.sortElements('#sort-list', 'li');
+            });
+            // sort table
+            eu.sortTable('#sort-table-target');
+          });</script>
+          <h1 id="util">Util</h1>
+          <hr>
+          <p class="pad bg-color-info">comming soon..</p>
+        </section>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <h3>Footer content</h3>
+              <p>footer content here..</p>
+            </div>
+            <div class="col-6">
+              <h3>Links</h3>
+              <ul class="list-horizontal">
+                <li><a href="#">Link1</a></li>
+                <li><a href="#">Link2</a></li>
+                <li><a href="#">Link3</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">copyright &copy; 2016 cosmos all rights reserved.</div>
+      </footer>
+      <div class="scroll-to-container">
+        <button class="scroll-to-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+        <button class="scroll-to-bottom"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+      </div>
+    </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
+    <script src="../../dist/js/script.js"></script><script>var year = new Date().getFullYear();
+    document.querySelector('.footer-copyright').innerHTML = "copyright \&copy; " + year + " cosmos all rights reserved.";
+    document.querySelector('#project-name').innerHTML = "cosmos-css " + Cosmos.version;</script>
+    <script>//</script>
+  </body>
+</html>

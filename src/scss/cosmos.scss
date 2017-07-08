@@ -1,0 +1,47 @@
+/*!
+ * cosmos-css - The css framework for personal practice.
+ * @version v0.12.2
+ * @link https://github.com/archco/cosmos-css#readme
+ * @license MIT
+ */
+
+// library.
+@import 'node_modules/normalize.css/normalize';
+@import 'node_modules/scss-palette/src/palette';
+@import 'lib/decimal';
+@import 'lib/functions';
+@import 'lib/keyframes';
+
+// base.
+@import 'variables';
+@import 'mixins';
+
+// components.
+@import 'components/color-set';
+@import 'components/scaffolding';
+@import 'components/list';
+@import 'components/form';
+@import 'components/button';
+@import 'components/dropdown';
+@import 'components/badge';
+@import 'components/chip';
+@import 'components/image';
+@import 'components/nav';
+@import 'components/aside';
+@import 'components/grid';
+@import 'components/tab';
+@import 'components/message';
+@import 'components/modal';
+@import 'components/card';
+@import 'components/pagination';
+@import 'components/parallax';
+@import 'components/loader';
+@import 'components/scroll-to';
+@import 'components/tooltip';
+@import 'components/collapse';
+@import 'components/simple-crud';
+@import 'components/toast';
+@import 'components/hero-banner';
+
+// helper class should be last.
+@import 'helpers';

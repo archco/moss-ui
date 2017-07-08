@@ -1,0 +1,224 @@
+//======================================================================
+// Scaffolding - Tag Default
+//======================================================================
+
+html { box-sizing: border-box; }
+*,
+*::before,
+*::after { box-sizing: inherit; }
+
+body {
+  font-family: $font-base;
+  line-height: $body-line-height;
+  color: $text-color;
+  background-color: $background-color;
+}
+
+header {
+  z-index: $z-index-header;
+}
+
+footer {
+  z-index: $z-index-footer;
+}
+
+.footer {
+  color: $footer-color;
+  background-color: $footer-bg-color;
+
+  a {
+    @extend %link-no-deco;
+    @include set-link-state-color($footer-link-color, null, $footer-link-hover-color);
+    transition: color $transition-time;
+  }
+
+  .footer-copyright {
+    $_bg-color: rgba(#000, .1);
+    padding: .5rem 0;
+    color: rgba($footer-color, .8);
+    text-align: center;
+    background-color: $_bg-color;
+  }
+}
+
+address {
+  font-style: normal;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px solid $border-color;
+}
+
+// issue #1
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+// link
+a {
+  @include set-link-state-color($link-color, $link-color-visited, $link-color-hover);
+  text-decoration: $link-decoration;
+
+  &:hover,
+  &:focus {
+    text-decoration: $link-hover-decoration;
+  }
+
+  &.no-deco {
+    @include no-decoration;
+  }
+}
+
+%link-no-deco {
+  @include no-decoration;
+}
+
+// blockquote
+blockquote {
+  padding: 0 1em;
+  margin: 0;
+  margin-top: 0;
+  margin-bottom: 1em;
+  color: $blockquote-color;
+  border-left: .25em solid $blockquote-border-color;
+}
+
+//======================================================================
+// Table
+//======================================================================
+
+// default
+table {
+  border: $table-border-width solid $table-border-color;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: $table-cell-padding / 2;
+    border: $table-border-width solid $table-border-color;
+  }
+}
+
+.table {
+  width: 100%;
+  max-width: 800px;
+  font-size: .9em;
+  color: $table-text-color;
+  border: 0;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: $table-cell-padding;
+    border: 0;
+  }
+
+  th {
+    color: $table-head-text-color;
+    text-align: left;
+    background-color: $table-head-color;
+  }
+
+  &.center {
+    margin: 0 auto;
+    text-align: initial; // want to fix align center in helper class. #86
+  }
+
+  &.bordered {
+    border: $table-border-width solid $table-border-color;
+
+    th,
+    td {
+      border: $table-border-width solid $table-border-color;
+    }
+  }
+
+  &.striped {
+    tr:nth-child(even) { background-color: $table-row-even-bg; }
+  }
+
+  &.hover {
+    tr:hover {
+      background-color: $table-row-hover-bg;
+    }
+  }
+}
+
+.table-responsive-wrapper {
+  max-width: 100%;
+  overflow-x: auto;
+
+  table {
+    width: auto;
+    max-width: none;
+  }
+}
+
+//======================================================================
+// Code
+//======================================================================
+code,
+kbd,
+samp,
+pre {
+  font-family: $font-monospace;
+}
+// inline code
+code {
+  padding: $code-padding;
+  font-size: $code-font-size;
+  color: $code-color;
+  background-color: $code-bg-color;
+  border-radius: $code-border-radius;
+
+  // code inside link
+  a & {
+    padding: 0;
+    color: inherit;
+    background-color: inherit;
+  }
+}
+// block code
+pre code {
+  display: block;
+  padding: $code-block-padding;
+  overflow-x: auto;
+  line-height: $code-block-line-height;
+  color: $code-color;
+}
+
+//======================================================================
+// Scaffolding Optional Classes
+//======================================================================
+
+// .pad
+article,
+aside,
+div,
+p {
+  &.pad {
+    padding: 1em .5em;
+  }
+}
+
+// section
+@include media-tablet-up() {
+  section.pad {
+    padding: 2rem 5%;
+  }
+}
+
+@include media-only-mobile {
+  section.pad {
+    padding: 2rem .5rem;
+  }
+}
+
+// h1.accent
+@include headings {
+  &.accent {
+    font-family: $font-accent;
+  }
+}

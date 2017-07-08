@@ -1,0 +1,33 @@
+h3 Toggle Dropdown
+dropdown
+  button(class='btn' slot='button') TOGGLE
+  a(class='active' href='#') hello
+  a(href='#') drop
+  a(href='#') down
+
+h3 Hover Dropdown
+dropdown(toggle='hover')
+  button(class='btn info' slot='button') HOVER
+  a(href='#') hello
+  a(href='#') drop
+  a(href='#') down
+
+h3 Dropdown Content Alignment
+div(style='display:flex;width:100%;justify-content:space-between;')
+  dropdown(toggle='hover' align='left')
+    button(class='btn success' slot='button') LEFT
+    a(href='#') hello
+    a(href='#') drop
+    a(href='#') down
+
+  dropdown(toggle='hover' align='center')
+    button(class='btn secondary' slot='button') CENTER
+    a(href='#') hello
+    a(href='#') drop
+    a(href='#') down
+
+  dropdown(toggle='hover' align='right')
+    button(class='btn warning' slot='button') RIGHT
+    a(href='#') hello
+    a(href='#') drop
+    a(href='#') down

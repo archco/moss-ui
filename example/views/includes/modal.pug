@@ -1,0 +1,28 @@
+button(class='btn warning' data-trigger='modal' data-target='#modal1') Modal Trigger Button
+a(id='test' href='#modal2' class='btn-flat' data-trigger='modal') Link Modal
+br
+div(id='modal1' class='modal')
+  div(class='modal-content')
+    div(class='modal-header')
+      h3 Dialog Title
+    div(class='modal-body')
+      p=lorem
+    div(class='modal-footer')
+      button(class='btn default' data-trigger='modal-close') Cancel
+      button(class='btn success') OK
+
+div(id='modal2' class='modal')
+  div(class='modal-content')
+    div(class='modal-header bg-color-dark')
+      h3 Link Trigger Test
+    div(class='modal-body')
+      p=lorem
+
+input(type='text' id='modal-dialog-input' class='inline')
+button(type='button' id='modal-dialog-btn' class='btn success') Modal Dialog
+
+script.
+  document.querySelector('#modal-dialog-btn').addEventListener('click', function () {
+    var msg = document.querySelector('#modal-dialog-input').value || 'Empty';
+    Cosmos.Modal.dialog(msg, 'Title');
+  });

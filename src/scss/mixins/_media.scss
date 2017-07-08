@@ -1,0 +1,68 @@
+//======================================================================
+// Media queries
+//======================================================================
+
+// base mixins
+@mixin media-up($min-width) {
+  @media only screen and (min-width: $min-width) {
+    @content;
+  }
+}
+
+@mixin media-down($max-width) {
+  $max-width: $max-width - 1;
+
+  @media only screen and (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin media-between($min-width, $max-width) {
+  $max-width: $max-width - 1;
+
+  @media only screen and (min-width: $min-width) and (max-width: $max-width) {
+    @content;
+  }
+}
+
+// functions
+@mixin media-only-mobile {
+  $medium: map-get($grid-breakpoints, 'md');
+
+  @include media-down($medium) {
+    @content;
+  }
+}
+
+@mixin media-tablet-up {
+  $medium: map-get($grid-breakpoints, 'md');
+
+  @include media-up($medium) {
+    @content;
+  }
+}
+
+@mixin media-tablet-down {
+  $large: map-get($grid-breakpoints, 'lg');
+
+  @include media-down($large) {
+    @content;
+  }
+}
+
+@mixin media-only-tablet {
+  $medium: map-get($grid-breakpoints, 'md');
+  $large: map-get($grid-breakpoints, 'lg');
+
+  @include media-between($medium, $large) {
+    @content;
+  }
+}
+
+@mixin media-only-desktop {
+  $large: map-get($grid-breakpoints, 'lg');
+
+  @include media-up($large) {
+    @content;
+  }
+}

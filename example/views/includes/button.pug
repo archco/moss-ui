@@ -1,0 +1,85 @@
+h3 Default Buttons with Color-set
+button(class='btn') btn
+each color in colorSet
+  button(class='btn '+color)= color
+
+h3 Flat button
+button(class='btn-flat') btn-flat
+each color in colorSet
+  button(class='btn-flat '+color)= color
+
+h3 Other tag as button
+input(type='submit')
+a(href='#button' class='btn info') link button
+br
+a(href='#' class='btn-flat') link flat button
+
+h3 Icon Button
+button(class='btn-icon')
+  <i class="fa fa-calendar" aria-hidden="true"></i>
+button(class='btn-icon primary')
+  <i class="fa fa-home" aria-hidden="true"></i>
+button(class='btn-icon secondary')
+  <i class="fa fa-user" aria-hidden="true"></i>
+button(class='btn-icon info')
+  <i class="fa fa-comment" aria-hidden="true"></i>
+button(class='btn-icon success')
+  <i class="fa fa-code" aria-hidden="true"></i>
+button(class='btn-icon warning')
+  <i class="fa fa-exclamation" aria-hidden="true"></i>
+button(class='btn-icon danger')
+  <i class="fa fa-times" aria-hidden="true"></i>
+
+
+h3 Disabled
+button(class='btn' disabled) btn
+button(class='btn-flat' disabled) btn-flat
+button(class='btn-icon danger' disabled)
+  <i class="fa fa-times" aria-hidden="true"></i>
+
+h3 Close Button
+span test text<button class="btn-close hideable">✖</button>
+br
+span(class='badge') Badge<button class="btn-close removeable">✖</button>
+div(class='pad bg-color-secondary' style='position:relative;')
+  p=lorem
+  button(class='btn-close at-corner hideable') ✖
+
+h3 Button Group
+h4 Horizontal Button Group (default)
+div(class='btn-group')
+  button(class='btn') Left
+  button(class='btn info') Center
+  button(class='btn dark') Right
+h4 Group of Flat Buttons
+div(class='btn-group')
+  button(class='btn-flat') Left
+  button(class='btn-flat') Center
+  button(class='btn-flat') Right
+h4 Vertical Button Group
+div(class='btn-group-vertical')
+  button(class='btn') Top
+  button(class='btn') Middle
+  button(class='btn') Bottom
+h4 with Dropdown buttons
+div(class='btn-group')
+  button(class='btn success') Left
+  button(class='btn') Center
+  button(class='btn') Right
+  div(class='dropdown')
+    button(class='dropdown-btn btn') Dropdown
+    div(class='dropdown-content')
+      a(class='dropdown-item' href='#') Link 1
+      a(class='dropdown-item' href='#') Link 2
+      a(class='dropdown-item' href='#') Link 3
+br
+div(class='btn-group-vertical')
+  button(class='btn default') Top
+  button(class='btn shade') Middle
+  div(class='dropdown')
+    button(class='dropdown-toggle btn dark') Dropdown
+    div(class='dropdown-content')
+      a(class='dropdown-item' href='#') Link 1
+      a(class='dropdown-item' href='#') Link 2
+      a(class='dropdown-item' href='#') Link 3
+  button(class='btn success') Bottom

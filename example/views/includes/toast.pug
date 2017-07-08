@@ -1,0 +1,10 @@
+button(class='btn info' id='btn-toast') Toast
+
+script.
+  var toastCount = 0;
+  window.addEventListener('load', function () {
+    document.querySelector('#btn-toast').addEventListener('click', function () {
+      toastCount++;
+      cosmos.toast.setText('toast test ' + toastCount).show();
+    });
+  });

@@ -1,0 +1,88 @@
+//======================================================================
+// Image Container
+//======================================================================
+.image-container {
+  position: relative;
+
+  &:hover .overlay {
+    opacity: $image-overlay-base-opacity;
+
+    &.from-top {
+      bottom: 0;
+      height: 100%;
+    }
+
+    &.from-bottom {
+      top: 0;
+      height: 100%;
+    }
+
+    &.from-right {
+      left: 0;
+      width: 100%;
+    }
+
+    &.from-left {
+      right: 0;
+      width: 100%;
+    }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .overlay {
+    @include flex-container-align('center', 'center');
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: $image-overlay-bg-color;
+    opacity: 0;
+    transition: $image-overlay-transition ease;
+
+    .text {
+      font-size: 1em;
+      color: get-contrast($image-overlay-bg-color);
+    }
+
+    &[class*="from-"] {
+      overflow: hidden;
+      opacity: $image-overlay-base-opacity;
+    }
+
+    &.from-top {
+      bottom: 100%;
+      height: 0;
+    }
+
+    &.from-bottom {
+      top: 100%;
+      height: 0;
+    }
+
+    &.from-right {
+      left: 100%;
+      width: 0;
+    }
+
+    &.from-left {
+      right: 100%;
+      width: 0;
+    }
+  }
+}
+
+//======================================================================
+// Image Filter
+//======================================================================
+img.filter {
+  @include filter-set;
+}

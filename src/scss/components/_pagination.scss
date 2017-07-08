@@ -1,0 +1,54 @@
+@mixin _pagination-list {
+  display: inline-block;
+  margin: 0 .2rem;
+  color: $pagination-color;
+  background-color: $pagination-bg;
+  border-radius: $radius-small;
+
+  span,
+  a {
+    display: block;
+    padding: .25rem .5rem;
+    color: inherit;
+    background-color: inherit;
+  }
+
+  a {
+    @extend %link-no-deco;
+    transition: color $transition-time, background-color $transition-time;
+
+    &:hover {
+      color: $pagination-hover-color;
+      background-color: $pagination-hover-bg;
+    }
+  }
+
+  &.active {
+    color: $pagination-active-color;
+    background-color: $pagination-active-bg;
+
+    > a:hover {
+      color: $pagination-active-hover-color;
+      background-color: $pagination-active-hover-bg;
+    }
+  }
+
+  &.disabled {
+    color: $pagination-disabled-color;
+  }
+}
+
+//============================================================
+// Pagination
+//============================================================
+
+ul.pagination {
+  @include reset-list;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+
+  li {
+    @include _pagination-list;
+  }
+}

@@ -1,0 +1,75 @@
+//======================================================================
+// Modal
+//======================================================================
+
+// placeholder
+%modal-btn {
+  @extend %btn-common;
+  color: $modal-button-color;
+  background-color: transparent;
+  transition: color $transition-time;
+
+  &:hover {
+    color: $modal-button-hover-color;
+  }
+}
+
+// modal
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $z-index-modal;
+  display: none;
+  overflow: auto;
+  background-color: $modal-bg-color;
+
+  &.show { display: block; }
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 15% auto;
+  background-color: $modal-content-bg-color;
+  border: 1px solid $border-color;
+  animation: .4s from-top;
+
+  @include media-only-mobile {
+    width: 90%;
+    margin: 5% auto;
+  }
+}
+
+.modal-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: .8rem .5rem;
+
+  @include headings {
+    margin: 0;
+  }
+
+  .btn-close {
+    font-size: 1.5em;
+    color: $modal-close-button-color;
+    &:hover { color: $modal-close-button-hover-color; }
+  }
+}
+
+.modal-body {
+  flex-grow: 1;
+  padding: .8rem .5rem;
+}
+
+.modal-footer {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  padding: .8rem .5rem;
+}

@@ -1,0 +1,72 @@
+//============================================================
+// List
+//============================================================
+.list,
+.list-group,
+.list-horizontal,
+.breadcrumb {
+  @include reset-list;
+  margin-bottom: 1rem;
+}
+
+.list {
+  li {
+    padding: $list-padding-y $list-padding-x;
+  }
+}
+
+.list-group {
+  li {
+    padding: $list-group-padding-y $list-group-padding-x;
+    margin-bottom: -$list-border-width;
+    border: $list-border-width solid $list-border-color;
+    transition: background-color $transition-time;
+
+    &.active {
+      color: $list-group-active-color;
+      background-color: $list-group-active-bg-color;
+    }
+  }
+
+  li:first-child {
+    @include border-top-radius($list-group-border-radius);
+  }
+
+  li:last-child {
+    @include border-bottom-radius($list-group-border-radius);
+  }
+
+  &.hover {
+    li:hover:not(.active) {
+      background-color: $list-group-hover-bg;
+    }
+  }
+}
+
+.list-horizontal {
+  padding: $list-padding-y 0;
+
+  li {
+    display: inline-block;
+    padding: 0 $list-padding-x;
+    border-right: $list-border-width solid $list-border-color;
+  }
+
+  li:last-child {
+    border-right: 0;
+  }
+}
+
+.breadcrumb {
+  padding: $list-padding-y $list-padding-x;
+
+  li {
+    display: inline-block;
+
+    + li::before {
+      display: inline-block;
+      padding-right: $list-padding-x;
+      content: "#{$breadcrumb-separator}";
+    }
+  }
+}

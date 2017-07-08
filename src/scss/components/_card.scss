@@ -1,0 +1,156 @@
+// private mixins
+
+@mixin _card-image-size($direction:'vertical') {
+  @if ($direction == 'vertical') {
+    width: 105%;
+    height: auto;
+  } @else if ($direction == 'horizontal') {
+    width: auto;
+    height: 105%;
+  }
+}
+
+@mixin _card-size {
+  height: $card-size;
+  &.small { height: $card-size-small; }
+  &.large { height: $card-size-large; }
+}
+
+@mixin _card-horizontal-size {
+  height: $card-size * .75;
+  &.small { height: $card-size-small * .75; }
+  &.large { height: $card-size-large * .75; }
+}
+
+@mixin _card-inline-width {
+  $_rate: 1.25;
+  width: $card-size * $_rate;
+  &.small { width: $card-size-small * $_rate; }
+  &.large { width: $card-size-large * $_rate; }
+}
+
+//======================================================================
+// Card
+//======================================================================
+
+%card {
+  z-index: $z-index-card;
+  display: flex;
+  padding: 0;
+  margin-bottom: .75rem;
+  background-color: $card-bg-color;
+  border-radius: $card-radius;
+  box-shadow: $card-shadow;
+
+  &.bordered {
+    padding: .2em;
+    border: 1px solid $border-color;
+    box-shadow: none;
+  }
+
+  &.inline {
+    @include _card-inline-width;
+    display: inline-flex;
+    max-width: 100%;
+    vertical-align: text-top;
+
+    @include media-tablet-up {
+      margin: .5rem;
+    }
+  }
+
+  &.hoverable {
+    @include no-decoration;
+    transition: box-shadow $transition-time;
+
+    &:focus,
+    &:hover {
+      box-shadow: $card-hover-shadow;
+    }
+  }
+
+  .card-content {
+    padding: $card-content-padding-y $card-content-padding-x;
+  }
+}
+
+%card-image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  .card-title {
+    $_shadow-color: #000;
+    position: absolute;
+    bottom: .2em;
+    left: .5em;
+    z-index: $z-index-card-content;
+    margin: .3em 0;
+    color: $card-title-color;
+    text-shadow: 0 0 4px $_shadow-color;
+  }
+}
+
+// default - vertical
+.card {
+  @extend %card;
+  @include _card-size;
+  flex-direction: column;
+
+  .card-image {
+    @extend %card-image;
+    @include border-top-radius($card-radius);
+    flex-basis: 0;
+    flex-grow: 3;
+    flex-shrink: 1;
+
+    img {
+      @include _card-image-size('vertical');
+      max-width: none;
+    }
+  }
+
+  .card-content {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 3;
+  }
+}
+
+.card-horizontal {
+  @extend %card;
+  @include _card-horizontal-size;
+  flex-direction: row;
+
+  .card-image {
+    @extend %card-image;
+    @include border-left-radius($card-radius);
+    flex-basis: 0;
+    flex-grow: 2;
+    flex-shrink: 3;
+
+    img {
+      @include _card-image-size('horizontal');
+      max-width: none;
+    }
+  }
+
+  .card-content {
+    flex-basis: 0;
+    flex-grow: 3;
+    flex-shrink: 2;
+  }
+}
+
+// card list
+ul.card-list {
+  @include reset-list;
+
+  li:not(.card):not(.card-horizontal) {
+    display: inline-block;
+    max-width: 100%;
+    vertical-align: top;
+  }
+}

@@ -1,0 +1,337 @@
+//======================================================================
+// Core Variables
+//======================================================================
+
+// fonts
+$font-serif: Georgia, serif !default;
+$font-sans-serif: Geneva, sans-serif !default;
+$font-monospace: Consolas, Courier, monospace !default;
+$font-cursive: cursive !default;
+
+// font set
+$font-base: $font-sans-serif !default;
+$font-accent: $font-serif !default;
+
+// colors (scss-palette)
+// @links  https://archco.github.io/scss-palette/
+//===================================================
+$white: palette('white') !default;
+$black: palette('jet') !default;
+$gray: palette('gray') !default;
+$lightgray: palette('gainsboro') !default;
+$mediumgray: palette('mediumgray') !default;
+$darkgray: palette('dimgray') !default;
+$cadetgray: palette('cadetgray') !default;
+$teal: palette('teal') !default;
+$lightblue: palette('naturalblue') !default;
+$green: palette('pigmentgreen') !default;
+$red: palette('chilired') !default;
+$yellow: palette('naturalyellow') !default;
+$purple: palette('royalpurple') !default;
+
+
+// Theme
+// ==================================================
+
+// theme-colors
+$primary-color: $lightblue !default;
+$primary-color-accent: darken($primary-color, 16%) !default;
+$secondary-color: $cadetgray !default;
+
+// background colors.
+$background-color: $white !default;
+$background-color-invert: $black !default;
+$background-color-shade: rgba($background-color-invert, .1) !default;
+
+// text colors.
+$text-color: $black !default;
+$text-color-invert: $white !default;
+$text-color-weak: rgba-to-rgb(rgba($text-color, .67), $background-color) !default;
+$text-color-strong: $primary-color-accent !default;
+$text-color-light: if(lightness($text-color) > 50, $text-color, $text-color-invert) !default;
+$text-color-dark: if(lightness($text-color) > 50, $text-color-invert, $text-color) !default;
+$text-color-middle: mix($text-color-light, $text-color-dark) !default;
+
+// color-set.
+$default-color: mix($background-color, $background-color-invert) !default;
+$light-color: $text-color-light !default;
+$dark-color: $text-color-dark !default;
+$shade-color: rgba-to-rgb($background-color-shade, $background-color) !default;
+$info-color: $teal !default;
+$success-color: $green !default;
+$danger-color: $red !default;
+$error-color: $red !default;
+$warning-color: $yellow !default;
+
+// etc colors.
+$shadow-color: rgba(#000, .3) !default;
+$border-color: $mediumgray !default;
+$disabled-color: rgba($gray, .2) !default;
+
+// theme settings.
+$radius-normal: 4px !default;
+$radius-small: round($radius-normal / 2) !default;
+$radius-large: round($radius-normal * 2) !default;
+$radius-button: $radius-small !default;
+$shadow-near: 1px 1px 4px $shadow-color !default;
+$shadow-normal: 2px 2px 8px $shadow-color !default;
+$shadow-far: 4px 4px 16px $shadow-color !default;
+$shadow-inset-near: inset $shadow-near !default;
+$shadow-inset-normal: inset $shadow-normal !default;
+$shadow-inset-far: inset $shadow-far !default;
+$transition-time: .3s !default;
+$default-focus-outline: 2px solid $primary-color !default;
+$outline-color: $primary-color !default;
+$body-line-height: 1.5 !default;
+$position-default-offset: 5% !default;
+
+
+// Scaffolding
+// ==================================================
+
+// link colors
+$link-color: $lightblue !default;
+$link-color-hover: darken($link-color, 8%) !default;
+$link-color-visited: $link-color !default;
+$link-decoration: none !default;
+$link-hover-decoration: underline !default;
+
+// blockquote
+$blockquote-color: $text-color-weak !default;
+$blockquote-border-color: $background-color-shade !default;
+
+// table
+$table-cell-padding: .75em !default;
+$table-border-width: 1px !default;
+$table-border-color: $border-color !default;
+$table-head-color: $primary-color !default;
+$table-head-text-color: get-contrast($table-head-color) !default;
+$table-text-color: inherit !default;
+$table-row-even-bg: rgba($background-color-invert, .05) !default;
+$table-row-hover-bg: rgba($background-color-invert, .1) !default;
+
+// codes
+$code-padding: .15em .25em !default;
+$code-font-size: .85em !default;
+$code-bg-color: rgba($background-color-invert, .05) !default;
+$code-color: get-contrast(rgba-to-rgb($code-bg-color, $background-color)) !default;
+$code-border-radius: $radius-normal !default;
+$code-block-padding: 1em !default;
+$code-block-line-height: 1.45 !default;
+
+
+//======================================================================
+// Z-index Lists
+//======================================================================
+$z-index-hero-background:     1 !default;
+$z-index-hero-content:        2 !default;
+$z-index-message-box:         2 !default;
+$z-index-card:                2 !default;
+$z-index-card-content:        3 !default;
+$z-index-header:              10 !default;
+$z-index-footer:              10 !default;
+$z-index-nav:                 10 !default;
+$z-index-fixed:               12 !default;
+$z-index-sticky:              12 !default;
+$z-index-dropdown-content:    14 !default;
+$z-index-tooltip:             14 !default;
+$z-index-scroll-to-button:    16 !default;
+$z-index-modal:               18 !default;
+$z-index-toast:               20 !default;
+
+
+//======================================================================
+// Component's Variables
+//======================================================================
+
+// list
+$list-border-width: 1px !default;
+$list-border-color: $border-color !default;
+$list-padding-y: .6em !default;
+$list-padding-x: .3em !default;
+$list-group-padding-y: .4em !default;
+$list-group-padding-x: .8em !default;
+$list-group-padding: .4em .8em !default;
+$list-group-border-radius: $radius-normal !default;
+$list-group-hover-bg: rgba($background-color-invert, .1) !default;
+$list-group-active-bg-color: $primary-color !default;
+$list-group-active-color: get-contrast($list-group-active-bg-color) !default;
+$breadcrumb-separator: '/' !default;
+
+// badge
+$badge-font-size: .85em !default;
+$badge-border-radius: $radius-small !default;
+$badge-default-color: $default-color !default;
+
+// button
+$button-radius: $radius-small !default;
+$button-color: $white !default;
+$button-color-is-enable: false !default; // If this set false, button color will be background color based contrast color.
+$button-default-bg-color: $primary-color !default;
+$button-flat-default-bg-color: $link-color !default;
+$button-outline-color: $outline-color !default;
+$button-padding-y: .5em !default;
+$button-padding-x: 1em !default;
+$button-margin: .2em !default;
+
+// dropdown
+$dropdown-bg-color: $background-color !default;
+$dropdown-bg-hover-color: $background-color-shade !default;
+$dropdown-link-padding-y: .5em !default;
+$dropdown-link-padding-x: 1em !default;
+$dropdown-link-color: $text-color-weak !default;
+$dropdown-link-hover-color: $text-color !default;
+$dropdown-active-bg-color: $primary-color-accent !default;
+$dropdown-active-color: get-contrast($dropdown-active-bg-color) !default;
+$dropdown-min-width: 120px !default;
+$dropdown-shadow: $shadow-normal !default;
+
+// grid
+$grid-breakpoints: (
+  base: 0, // Applies all width size.
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+) !default;
+$grid-columns: 12 !default;
+$grid-gutter-width: 1.5rem !default;
+
+// card
+$card-size: 300px !default;
+$card-size-small: 200px !default;
+$card-size-large: 400px !default;
+$card-radius: $radius-small !default;
+$card-shadow: $shadow-normal !default;
+$card-hover-shadow: $shadow-far !default;
+$card-bg-color: $background-color !default;
+$card-title-color: $text-color-invert !default;
+$card-content-padding-y: .5em !default;
+$card-content-padding-x: .5em !default;
+
+// nav
+$nav-bg-color: $background-color !default;
+$nav-active-color: $primary-color !default;
+$nav-link-color: inherit !default;
+$nav-link-hover-color: $secondary-color !default;
+$nav-link-padding-y: .5em !default;
+$nav-link-padding-x: 1em !default;
+$nav-font: $font-accent !default;
+$nav-font-size: 1.25em !default;
+$nav-line-height: 1.25 !default;
+$navbar-toggle-width: 35px !default;
+
+// footer
+$footer-color: $text-color-invert !default;
+$footer-bg-color: $primary-color !default;
+$footer-link-color: $text-color-invert !default;
+$footer-link-hover-color: $secondary-color !default;
+
+// form
+$filedset-border: 2px solid $primary-color !default;
+$legend-color: $primary-color !default;
+$label-color: $text-color !default;
+$label-color-focused: $primary-color !default;
+$label-color-disabled: $disabled-color !default;
+
+$input-padding: .2em .5em !default;
+$input-margin: .5rem 0 !default;
+$input-border: 1px solid $border-color !default;
+$input-radius: $radius-small !default;
+$input-outline-color: $outline-color !default;
+$input-bg-disabled: $disabled-color !default;
+
+// pagination
+$pagination-color: $text-color !default;
+$pagination-bg: transparent !default;
+$pagination-hover-color: $text-color !default;
+$pagination-hover-bg: $background-color-shade !default;
+
+$pagination-active-color: $text-color-invert !default;
+$pagination-active-bg: $primary-color !default;
+$pagination-active-hover-color: $pagination-active-color !default;
+$pagination-active-hover-bg: $primary-color-accent !default;
+
+$pagination-disabled-color: $disabled-color !default;
+
+// scroll-to
+$scroll-to-color: $white !default;
+$scroll-to-bg-color: $primary-color-accent !default;
+
+// modal
+$modal-bg-color: rgba(0, 0, 0, .4) !default;
+$modal-content-bg-color: $background-color !default;
+$modal-button-color: rgba($text-color, .5) !default;
+$modal-button-hover-color: rgba($text-color, 1) !default;
+$modal-close-button-color: rgba($danger-color, .5) !default;
+$modal-close-button-hover-color: rgba($danger-color, 1) !default;
+
+// tab
+$tab-font: $font-base !default;
+$tab-font-size: 1em !default;
+$tab-color: $text-color-weak !default;
+$tab-bg-color: transparent !default;
+$tab-hover-color: darken($tab-color, 15%) !default;
+$tab-active-color: $text-color !default;
+$tab-active-bg-color: $background-color !default;
+$tab-active-border-accent-color: $primary-color !default;
+$tab-active-border-radius: $radius-normal !default;
+$tab-border-color: $border-color !default;
+$tab-border-width: 1px !default;
+
+// tooltip
+$tooltip-color: $text-color-invert !default;
+$tooltip-bg-color: rgba($background-color-invert, .8) !default;
+$tooltip-padding: .5em 1em !default;
+$tooltip-font-size: .9rem !default;
+$tooltip-border-radius: $radius-small !default;
+$tooltip-animation-duration: .3s !default;
+$tooltip-animation-delay: .3s !default;
+
+// collapse - accordion
+$accordion-border-width: 1px !default;
+$accordion-border-color: $border-color !default;
+$accordion-head-padding: .5em 1em !default;
+$accordion-head-active-bg-color: $primary-color !default;
+$accordion-head-active-color: get-contrast($accordion-head-active-bg-color) !default;
+$accordion-border-radius: $radius-normal !default;
+
+// chip
+$chip-font-size: .85em !default;
+$chip-height: 2em !default; // unit:em, This value is base of local variables of chip.
+$chip-bg-color: $background-color-shade !default;
+
+// image
+$image-overlay-base-opacity: .67 !default;
+$image-overlay-transition: $transition-time * 2 !default;
+$image-overlay-bg-color: $background-color-invert !default;
+
+// helper
+$caret-width: .25em !default;
+
+// toast
+$toast-font-size: 1em !default;
+$toast-min-width: 10em !default;
+$toast-padding-y: .8em;
+$toast-padding-x: .5em;
+$toast-text-color: $text-color-invert !default;
+$toast-bg-color: rgba($background-color-invert, .85) !default;
+$toast-border-radius: $radius-normal !default;
+$toast-container-position-offset: 5% !default;
+
+// message-box
+$message-box-default-bg-color: $default-color !default;
+$message-box-padding-y: 1rem !default;
+$message-box-padding-x: 1.5rem !default;
+$message-box-margin: 8px !default;
+
+// simple-crud
+$simple-crud-min-height: 3em !default;
+$simple-crud-padding-x: .5rem !default;
+$simple-crud-margin-bottom: .75rem !default;
+
+// hero-banner
+$hero-banner-min-height: 10em !default;
+$hero-banner-pad-small: 3em !default;
+$hero-banner-pad-medium: 6em !default;
+$hero-banner-pad-large: 9em !default;

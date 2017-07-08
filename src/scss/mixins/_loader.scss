@@ -1,0 +1,19 @@
+//======================================================================
+// Loader
+//======================================================================
+
+@mixin loader-one {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  border: .125em solid $text-color; // default color.
+  border-right-color: transparent;
+  border-top-color: transparent;
+  animation: .5s linear 0s infinite spin;
+}
+
+@mixin loader-one-color($color: $text-color) {
+  border-left-color: $color;
+  border-bottom-color: $color;
+}

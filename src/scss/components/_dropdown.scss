@@ -1,0 +1,78 @@
+//======================================================================
+// dropdown
+//======================================================================
+
+.dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &:hover {
+    .dropdown-hover + .dropdown-content { display: block; }
+  }
+}
+
+.dropdown-toggle,
+.dropdown-hover {
+  @extend %btn-common;
+
+  &::after {
+    @include caret('down');
+  }
+}
+
+.dropdown-content {
+  @include reset-list;
+  position: absolute;
+  top: 100%;
+  left: 0; // left-align is default. @see issue #63
+  z-index: $z-index-dropdown-content;
+  display: none;
+  min-width: $dropdown-min-width;
+  background-color: $dropdown-bg-color;
+  box-shadow: $dropdown-shadow;
+
+  &.show { display: block; }
+
+  // dropdown-content position
+  &[data-align='left'] {
+    right: auto;
+    left: 0;
+    // align-self: flex-start;
+  }
+
+  &[data-align='center'] {
+    right: auto;
+    left: auto;
+    align-self: center;
+  }
+
+  &[data-align='right'] {
+    right: 0;
+    left: auto;
+    // align-self: flex-end;
+  }
+}
+
+.dropdown-item {
+  @include no-decoration;
+  @include set-link-state-color($dropdown-link-color);
+  display: block;
+  padding: $dropdown-link-padding-y $dropdown-link-padding-x;
+  font-family: inherit;
+  font-size: inherit;
+  transition: color $transition-time, background-color $transition-time;
+
+  &.active {
+    color: $dropdown-active-color;
+    background-color: $dropdown-active-bg-color;
+  }
+
+  &:hover,
+  &:focus {
+    color: $dropdown-link-hover-color;
+    background-color: $dropdown-bg-hover-color;
+  }
+}

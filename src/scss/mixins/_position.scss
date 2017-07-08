@@ -1,0 +1,128 @@
+//======================================================================
+// Helper mixins for positioning of element.
+//======================================================================
+
+// Centering
+@mixin position-center-container {
+  position: relative;
+}
+
+@mixin position-center {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+//-------------------------------------------------------------------
+
+@mixin position-top-left($offset: 0) {
+  top: $offset;
+  left: $offset;
+  bottom: auto;
+  right: auto;
+  transform: translate(0, 0);
+}
+
+@mixin position-top-center($offset: 0) {
+  top: $offset;
+  left: 50%;
+  bottom: auto;
+  right: auto;
+  transform: translate(-50%, 0);
+}
+
+@mixin position-top-right($offset: 0) {
+  top: $offset;
+  right: $offset;
+  bottom: auto;
+  left: auto;
+  transform: translate(0, 0);
+}
+
+@mixin position-middle-left($offset: 0) {
+  top: 50%;
+  left: $offset;
+  bottom: auto;
+  right: auto;
+  transform: translate(0, -50%);
+}
+
+@mixin position-middle-center($offset: 0) {
+  // $offset does not care.
+  top: 50%;
+  left: 50%;
+  bottom: auto;
+  right: auto;
+  transform: translate(-50%, -50%);
+}
+
+@mixin position-middle-right($offset: 0) {
+  top: 50%;
+  right: $offset;
+  bottom: auto;
+  left: auto;
+  transform: translate(0, -50%);
+}
+
+@mixin position-bottom-left($offset: 0) {
+  bottom: $offset;
+  left: $offset;
+  top: auto;
+  right: auto;
+  transform: translate(0, 0);
+}
+
+@mixin position-bottom-center($offset: 0) {
+  bottom: $offset;
+  left: 50%;
+  top: auto;
+  right: auto;
+  transform: translate(-50%, 0);
+}
+
+@mixin position-bottom-right($offset: 0) {
+  bottom: $offset;
+  right: $offset;
+  top: auto;
+  left: auto;
+  transform: translate(0, 0);
+}
+
+// set positioning.
+// @param {String} $position  e.g. 'top-left', 'middle-center', 'bottom-right'..
+// @param {Number} $offset    offset value.
+@mixin positioning($position, $offset: $position-default-offset) {
+  @if $position == 'top-left' {
+    @include position-top-left($offset);
+  } @else if $position == 'top-center' {
+    @include position-top-center($offset);
+  } @else if $position == 'top-right' {
+    @include position-top-right($offset);
+  } @else if $position == 'middle-left' {
+    @include position-middle-left($offset);
+  } @else if $position == 'middle-center' {
+    @include position-middle-center($offset);
+  } @else if $position == 'middle-right' {
+    @include position-middle-right($offset);
+  } @else if $position == 'bottom-left' {
+    @include position-bottom-left($offset);
+  } @else if $position == 'bottom-center' {
+    @include position-bottom-center($offset);
+  } @else if $position == 'bottom-right' {
+    @include position-bottom-right($offset);
+  }
+}
+
+// add nine-positions optional class.
+// @param {Number} $offset
+@mixin nine-positions($offset: $position-default-offset) {
+  &.top-left { @include positioning('top-left', $offset); }
+  &.top-center { @include positioning('top-center', $offset); }
+  &.top-right { @include positioning('top-right', $offset); }
+  &.middle-left { @include positioning('middle-left', $offset); }
+  &.middle-center { @include positioning('middle-center', $offset); }
+  &.middle-right { @include positioning('middle-right', $offset); }
+  &.bottom-left { @include positioning('bottom-left', $offset); }
+  &.bottom-center { @include positioning('bottom-center', $offset); }
+  &.bottom-right { @include positioning('bottom-right', $offset); }
+}

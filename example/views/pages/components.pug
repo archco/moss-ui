@@ -1,0 +1,70 @@
+//- sass components page
+extends ../layout/layout.pug
+
+block title
+  title= 'sass components page'
+
+block append content
+  div(class='row')
+    aside(class='col-md-2 hide-only-mobile')
+      ul(class='list fixed')
+        li
+          a(href='#scaffolding') Scaffolding
+        li
+          a(href='#badge') Badge
+        li
+          a(href='#button') Button
+        li
+          a(href='#card') Card
+        li
+          a(href='#form') Form
+        li
+          a(href='#grid') Grid
+        li
+          a(href='#helper') Helper
+        li
+          a(href='#image') Image
+        li
+          a(href='#list') List
+        li
+          a(href='#loader') Loader
+        li
+          a(href='#pagination') Pagination
+        li
+          a(href='#tooltip') Tooltip
+    section(class='col-md-10')
+      h1(id='scaffolding') Scaffolding
+      hr
+      include ../includes/scaffolding.pug
+      h1(id='badge') Badge
+      include ../includes/badge.pug
+      h1(id='button') Button
+      hr
+      include ../includes/button.pug
+      h1(id='card') Card
+      hr
+      include ../includes/card.pug
+      h1(id='form') Form
+      hr
+      include ../includes/form.pug
+      h1(id='grid') Grid
+      hr
+      include ../includes/grid.pug
+      h1(id='helper') Helper
+      hr
+      include ../includes/helper.pug
+      h1(id='image') Image
+      hr
+      include ../includes/image.pug
+      h1(id='list') List
+      hr
+      include ../includes/list.pug
+      h1(id='loader') Loader
+      hr
+      include ../includes/loader.pug
+      h1(id='pagination') Pagination
+      hr
+      include ../includes/pagination.pug
+      h1(id='tooltip') Tooltip
+      hr
+      include ../includes/tooltip.pug

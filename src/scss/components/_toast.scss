@@ -1,0 +1,32 @@
+//============================================================
+// Toast
+//============================================================
+.toast-container {
+  @include positioning('bottom-center', $toast-container-position-offset); // default position.
+  @include nine-positions($toast-container-position-offset);
+  position: fixed;
+  z-index: $z-index-toast;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.toast {
+  $_margin-bottom: 1rem;
+  $_transition-duration: .6s;
+
+  min-width: $toast-min-width;
+  padding: $toast-padding-y $toast-padding-x;
+  margin-top: $_margin-bottom;
+  font-size: $toast-font-size;
+  color: $toast-text-color;
+  text-align: center;
+  background-color: $toast-bg-color;
+  border-radius: $toast-border-radius;
+  opacity: 0;
+  transition: opacity $_transition-duration;
+
+  &.show {
+    opacity: 1;
+  }
+}

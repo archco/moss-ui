@@ -1,0 +1,131 @@
+@import 'helpers/flex';
+
+//======================================================================
+// Helpers
+//======================================================================
+
+// toggling content
+.display-hide { display: none !important; }
+.display-show { display: block !important; }
+.display-invisible { visibility: hidden; }
+
+// responsive hiding
+%resopnsive-tablet-hide {
+  @include media-tablet-up() { display: none; }
+}
+
+%responsive-mobile-hide {
+  @include media-only-mobile() { display: none; }
+}
+
+.hide-only-mobile {
+  @extend %responsive-mobile-hide;
+}
+
+// font
+.font-cursive { font-family: $font-cursive; }
+.font-accent { font-family: $font-accent; }
+.font-sans-serif { font-family: $font-sans-serif; }
+
+// align
+.align-center { text-align: center; }
+.align-right { text-align: right; }
+.align-left { text-align: left; }
+
+// centering
+%position-center-container { @include position-center-container; }
+%position-center { @include position-center; }
+
+.vertical-center-container,
+.flex-container-vertical-center {
+  @include flex-container-align('flex-start', 'center');
+  display: flex;
+}
+
+.flex-center-container,
+.flex-container-center {
+  @include flex-container-align('center', 'center');
+  display: flex;
+}
+
+.center-position-container,
+.position-center-container {
+  @include position-center-container;
+
+  .center-position,
+  .position-center {
+    @include position-center;
+  }
+}
+
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// float
+.float-clear { @include clear-both; }
+.float-left { float: left !important; }
+.float-right { float: right !important; }
+
+// text
+.comment,
+.help {
+  font-size: .8em;
+  color: $text-color-weak;
+}
+
+// position
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: $z-index-fixed;
+}
+
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: $z-index-sticky;
+}
+
+// color-set helper
+@each $name, $color in $color-set {
+  .color-#{$name} {
+    color: $color;
+  }
+
+  .bg-color-#{$name} {
+    color: get-contrast($color);
+    background-color: $color;
+  }
+}
+
+// shadow
+.shadow { box-shadow: $shadow-normal; }
+.shadow-near { box-shadow: $shadow-near; }
+.shadow-far { box-shadow: $shadow-far; }
+.shadow-inset { box-shadow: $shadow-inset-normal; }
+.shadow-inset-near { box-shadow: $shadow-inset-near; }
+.shadow-inset-far { box-shadow: $shadow-inset-far; }
+
+// rounded
+.rounded { border-radius: $radius-normal; }
+.rounded-small { border-radius: $radius-small; }
+.rounded-large { border-radius: $radius-large; }
+.rounded-top { @include border-top-radius($radius-normal); }
+.rounded-right { @include border-right-radius($radius-normal); }
+.rounded-bottom { @include border-bottom-radius($radius-normal); }
+.rounded-left { @include border-left-radius($radius-normal); }
+
+// misc
+.box-line { border: 1px solid $secondary-color; }
+.no-margin { padding: 0; margin: 0;}
+.full-width { width: 100%; }
+.full-height { height: 100%; }
+.group { margin-bottom: 1rem; }
+.debug-line { @include debug; }
+.caret { @include caret('down'); }
+.arrow { @include arrow; }

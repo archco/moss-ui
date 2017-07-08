@@ -1,0 +1,72 @@
+@mixin _badge-color($bg-color) {
+  $color: get-contrast($bg-color);
+  background-color: $bg-color;
+  color: $color;
+
+  &[href] {
+    @include set-link-state-color($color);
+
+    &:hover,
+    &:focus {
+      background-color: lighten($bg-color, 4%);
+    }
+
+    &:active {
+      background-color: darken($bg-color, 4%);
+    }
+  }
+}
+
+//======================================================================
+// Badge
+//======================================================================
+
+.badge {
+  // local variables.
+  //=================
+  $badge-padding-base: $badge-font-size / 5;
+  $badge-margin-base: decimal-floor($badge-padding-base, 1);
+  $badge-padding-y: $badge-padding-base;
+  $badge-padding-x: $badge-padding-base * 2;
+  $badge-rounded-padding-x: $badge-padding-base * 4;
+  $badge-rounded-border-radius: $badge-font-size * 2;
+
+  @include _badge-color($badge-default-color); // default color
+
+  display: inline-block;
+  padding: $badge-padding-y $badge-padding-x;
+  margin-right: $badge-margin-base;
+  margin-left: $badge-margin-base;
+  font-size: $badge-font-size;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: $badge-border-radius;
+
+  // color-set
+  @each $name, $color in $color-set {
+    &.#{$name} {
+      @include _badge-color($color);
+    }
+  }
+
+  &.rounded {
+    padding-right: $badge-rounded-padding-x;
+    padding-left: $badge-rounded-padding-x;
+    border-radius: $badge-rounded-border-radius;
+  }
+
+  &.in-icon {
+    position: absolute;
+    top: 2%;
+    right: 0%;
+    font-size: .3em;
+  }
+
+  &:empty { display: none; }
+}
+
+a.badge {
+  @include no-decoration;
+}

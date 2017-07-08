@@ -1,0 +1,76 @@
+form
+  fieldset
+    legend Form
+    div(class='form-group')
+      label(for='name') Name
+      input(type='text' id='name' name='name' placeholder='name')
+    div(class='form-group')
+      label(for='password') Password
+      input(type='password' id='password' name='password')
+    div(class='form-group')
+      label(for='email') email
+      input(type='email' id='email' name='email' disabled placeholder='read only')
+      input(type='email' id='email' name='email' readonly placeholder='read only')
+    div(class='form-group')
+      label checkbox
+        input(type='checkbox')
+    div(class='form-group')
+      label
+        input(type='radio' name='gender' value='0' checked)
+        | male
+      br
+      label
+        input(type='radio' name='gender' value='1')
+        | female
+    div(class='form-group')
+      input(type='file')
+      input(type='range')
+      input(type='color')
+    div(class='form-group')
+      select(name='select')
+        option(value='0') one
+        option(value='1') two
+        option(value='2') three
+    div(class='form-group')
+      textarea
+        | hello, world!
+    div(class='form-group')
+      button(type='submit' class='btn') Submit
+form(class='form-inline')
+  fieldset
+    legend Form inline
+    label(for='name') Name
+    input(type='text' id='name' name='name' placeholder='name')
+    label(for='password') Password
+    input(type='password' id='password' name='password')
+    label(for='email') email
+    input(type='email' id='email' name='email' disabled placeholder='read only')
+    input(type='email' id='email' name='email' readonly placeholder='read only')
+    label checkbox
+    input(type='checkbox')
+    label
+      input(type='radio' name='gender' value='0' checked)
+      | male
+    label
+      input(type='radio' name='gender' value='1')
+      | female
+    input(type='file')
+    input(type='range')
+    input(type='color')
+    select(name='select')
+      option(value='0') one
+      option(value='1') two
+      option(value='2') three
+    textarea
+      | hello, world!
+    button(type='submit' class='btn') Submit
+hr
+form(class='form-inline')
+  fieldset
+    legend Select
+    select(name='select')
+      option(value='1') option1
+      option(value='2') option2
+      option(value='3') option3
+    input(type='text' placeholder='text')
+    input(type='date')

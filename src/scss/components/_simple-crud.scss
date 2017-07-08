@@ -1,0 +1,37 @@
+//======================================================================
+// Simple CRUD
+//======================================================================
+
+%simple-crud-view {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  min-height: $simple-crud-min-height;
+  padding-right: $simple-crud-padding-x;
+  padding-left: $simple-crud-padding-x;
+  background-color: $background-color-shade;
+
+  .content {
+    flex: 1 1 auto;
+  }
+
+  .actions {
+    flex: 0 1 auto;
+  }
+
+  &.show { display: flex; }
+}
+
+.simple-crud-list {
+  @include reset-list;
+}
+
+.simple-crud-item {
+  margin-bottom: $simple-crud-margin-bottom;
+}
+
+.simple-crud-view-read,
+.simple-crud-view-update,
+.simple-crud-view-delete {
+  @extend %simple-crud-view;
+}

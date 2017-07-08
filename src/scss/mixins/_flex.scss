@@ -1,0 +1,38 @@
+//============================================================
+// mixins for using flexbox.
+//============================================================
+
+@mixin flex-container-align($main-axis: 'flex-start', $cross-axis: 'stretch', $multi-line: false) {
+  justify-content: #{$main-axis}; // [flex-start] | flex-end | center | space-between | space-around
+  @if ($multi-line) {
+    align-content: #{$cross-axis}; // [stretch] | flex-start | flex-end | space-between | space-around
+    align-items: #{$cross-axis};
+  } @else {
+    align-items: #{$cross-axis}; // [stretch] | flex-start | flex-end | center | baseline
+  }
+}
+
+@mixin flex-container-flow($direction: 'row', $wrap: 'nowrap') {
+  flex-direction: #{$direction}; // [row] | row-reverse | column | column-reverse
+  flex-wrap: #{$wrap}; // [nowrap] | wrap | wrap-reverse
+}
+
+@mixin flex-item($grow: 0, $shrink: 1, $basis: 'auto') {
+  flex-grow: #{$grow}; // number
+  flex-shrink: #{$shrink}; // number
+  flex-basis: #{$basis}; // basis size of main-axis. ['auto'] | content | fill
+}
+
+@mixin flex-item-align($self: 'auto', $order: 0) {
+  align-self: #{$self}; // [auto] | flex-start | flex-end | center | baseline | stretch
+  order: #{$order}; // number
+}
+
+// flex container's positional alignment. - will deprecated..
+//
+// @param {String} $horizontal flex-start|flex-end|center|...
+// @param {String} $vertical stretch|flex-start|flex-end|center|...
+@mixin flex-container($horizontal:'flex-start', $vertical:'stretch') {
+  display: flex;
+  @include flex-container-align($horizontal, $vertical);
+}

@@ -1,0 +1,85 @@
+h3 Toggling content
+div(class='row')
+  div(class='col-sm')
+    div display-show
+    div(class='bg-color-info display-show') CONTENT
+  div(class='col-sm')
+    div display-hide
+    div(class='bg-color-info display-hide') CONTENT
+  div(class='col-sm')
+    div display-invisible
+    div(class='bg-color-info display-invisible') CONTENT
+
+h3 Fonts
+ul(class='list')
+  li(class='font-sans-serif') font-sans-serif
+  li(class='font-accent') font-accent
+  li(class='font-cursive') font-cursive
+
+h3 Alignments
+div(class='group')
+  p(class='align-center bg-color-shade') center align.
+  p(class='align-left bg-color-shade') left align.
+  p(class='align-right bg-color-shade') right align.
+div(class='flex-container-center bg-color-success' style='height:250px;')
+  div Centering vertically and horizontally.
+
+h3 Float
+div(class='float-clear')
+  div(class='float-right pad bg-color-warning') float-right
+  div(class='float-left pad bg-color-danger') float-left
+
+h3 Colors
+div(class='row')
+  each color in colorSet
+    div(class='col-sm-6 col-md-3')
+      div(class='pad color-'+color)= 'color-' + color
+      div(class='pad bg-color-'+color)= 'bg-color-' + color
+
+h3 Caret
+div(class='pad bg-color-warning')
+  | up <span class="caret up"></span>
+  | right <span class="caret right"></span>
+  | down <span class="caret down"></span>
+  | left <span class="caret left"></span>
+
+h3 Arrow
+div(class='pad bg-color-secondary')
+  | up <span class="arrow up"></span>
+  | right <span class="arrow right"></span>
+  | down <span class="arrow down"></span>
+  | left <span class="arrow left"></span>
+
+h3 Shadow
+div(class='row group')
+  div(class='col-sm')
+    div(class='pad bg-color-shade shadow-near') shadow-near
+  div(class='col-sm')
+    div(class='pad bg-color-shade shadow') shadow
+  div(class='col-sm')
+    div(class='pad bg-color-shade shadow-far') shadow-far
+div(class='row group')
+  div(class='col-sm')
+    div(class='pad bg-color-shade shadow-inset-near') shadow-inset-near
+  div(class='col-sm')
+    div(class='pad bg-color-shade shadow-inset') shadow-inset
+  div(class='col-sm')
+    div(class='pad bg-color-shade shadow-inset-far') shadow-inset-far
+
+h3 Rounded
+div(class='row group')
+  div(class='col')
+    div(class='pad bg-color-danger rounded-small') rounded-small
+  div(class='col')
+    div(class='pad bg-color-danger rounded') rounded
+  div(class='col')
+    div(class='pad bg-color-danger rounded-large') rounded-large
+div(class='row group')
+  div(class='col')
+    div(class='pad bg-color-success rounded-top') rounded-top
+  div(class='col')
+    div(class='pad bg-color-success rounded-right') rounded-right
+  div(class='col')
+    div(class='pad bg-color-success rounded-bottom') rounded-bottom
+  div(class='col')
+    div(class='pad bg-color-success rounded-left') rounded-left

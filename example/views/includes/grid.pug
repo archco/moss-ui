@@ -1,0 +1,113 @@
+h2 Container
+div(class='container bg-color-secondary')
+  p=lorem
+
+h2 Defualt Grid
+div(class='row')
+  div(class='col-1 box-line bg-color-primary') col-1
+  div(class='col-1 box-line bg-color-primary') col-1
+  div(class='col-1 box-line bg-color-primary') col-1
+  div(class='col-1 box-line bg-color-primary') col-1
+  div(class='col-1 box-line bg-color-primary') col-1
+  div(class='col-1 box-line bg-color-primary') col-1
+  div(class='col-1 box-line bg-color-primary') col-1
+  div(class='col-1 box-line bg-color-primary') col-1
+  div(class='col-1 box-line bg-color-primary') col-1
+  div(class='col-1 box-line bg-color-primary') col-1
+  div(class='col-1 box-line bg-color-primary') col-1
+  div(class='col-1 box-line bg-color-primary') col-1
+div(class='container')
+  div(class='row')
+    div(class='col-4 bg-color-primary')
+      p 4/12 columns
+    div(class='col-8 bg-color-secondary')
+      p 8/12 columns
+
+h2 Mobile Grid
+div(class='container')
+  div(class='row')
+    div(class='col-sm-6 bg-color-primary')
+      p col-sm-6
+    div(class='col-sm-6 bg-color-secondary')
+      p col-sm-6
+
+h2 Tablet Grid
+div(class='container')
+  div(class='row')
+    div(class='col-md-3 bg-color-secondary')
+      p col-md-6
+    div(class='col-md-5 bg-color-primary')
+      p col-md-6
+    div(class='col-md-4 bg-color-secondary')
+      p col-md-6
+
+h2 Desktop Grid
+div(class='container')
+  div(class='row')
+    div(class='col-lg-3 col-md-6 bg-color-secondary')
+      p col-lg-6
+    div(class='col-lg-3 col-md-6 bg-color-primary')
+      p col-lg-6
+    div(class='col-lg-3 col-md-6 bg-color-secondary')
+      p col-lg-6
+    div(class='col-lg-3 col-md-6 bg-color-primary')
+      p col-lg-6
+
+h3 Equal-width
+div(class='container')
+  div(class='row group')
+    div(class='col bg-color-success') 1 of 2
+    div(class='col bg-color-info') 1 of 2
+  div(class='row group')
+    div(class='col bg-color-success') 1 of 3
+    div(class='col bg-color-info') 1 of 3
+    div(class='col bg-color-success') 1 of 3
+
+h3 Setting one column width
+div(class='container')
+  div(class='row')
+    div(class='col bg-color-success') 1 of 3
+    div(class='col-6 bg-color-info') 2 of 3 (half of full width)
+    div(class='col bg-color-success') 3 of 3
+
+h3 Variable width by content
+div(class='container')
+  div(class='row')
+    div(class='col bg-color-success') 1 of 3
+    div(class='col-auto bg-color-info') Variable width by content.
+    div(class='col bg-color-success') 3 of 3
+
+h3 Equal-width multi-row
+div(class='container')
+  div(class='row')
+    div(class='col bg-color-success') col
+    div(class='col bg-color-info') col
+    div(class='full-width')
+    div(class='col bg-color-info') col
+    div(class='col bg-color-success') col
+
+h3 No gutters
+div(class='container debug-line')
+  div(class='row group')
+    div(class='col') gutters
+    div(class='col') gutters
+  div(class='row no-gutters group')
+    div(class='col') no-gutters
+    div(class='col') no-gutters
+
+h3 Column wrapping
+div(class='container')
+  div(class='row')
+    div(class='col-sm-8 bg-color-success') col-sm-8
+    div(class='col-sm-6 bg-color-info') col-sm-6
+    div(class='col-sm-4 bg-color-warning') col-sm-4
+
+h3 Offsetting columns
+div(class='row')
+  div(class='col-md-4 bg-color-primary') col-md-4
+  div(class='col-md-4 offset-md-4 bg-color-secondary') col-md-4 offset-md-4
+
+h3 Push and pull
+div(class='row')
+  div(class='col-md-8 push-md-4 bg-color-primary') first but pushed
+  div(class='col-md-4 pull-md-8 bg-color-secondary') second but pulled

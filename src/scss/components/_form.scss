@@ -1,0 +1,132 @@
+//======================================================================
+// Form Default
+//======================================================================
+
+fieldset {
+  padding: .5rem 1rem;
+  margin-bottom: 1rem;
+  border: $filedset-border;
+  border-radius: $radius-normal;
+}
+
+legend {
+  padding: .5em 1em;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: $legend-color;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: .25rem;
+  font-weight: bold;
+  color: $label-color;
+}
+
+// input common
+input,
+select,
+textarea {
+  color: inherit;
+  vertical-align: middle;
+  // default outline color
+  outline-color: $input-outline-color;
+}
+
+// input generalize
+input:not([type]),
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+input[type="time"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="tel"],
+input[type="number"],
+input[type="search"],
+select,
+textarea {
+  width: 100%;
+  min-height: 2rem;
+  padding: $input-padding;
+  line-height: 1.4;
+  background-color: transparent;
+  border: $input-border;
+  border-radius: $input-radius;
+
+  &[disabled],
+  &[readonly] {
+    background-color: $input-bg-disabled;
+  }
+}
+
+input[type="text"] {
+  &.password,
+  &.pw {
+    -webkit-text-security: disc;
+  }
+}
+
+textarea {
+  // default height.
+  height: 12em;
+
+  &.inline {
+    height: auto;
+  }
+}
+
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  @extend %btn;
+  @extend %btn-disabled;
+  @extend %btn-color-set;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: middle;
+}
+
+input[type="range"] {
+  width: 100%;
+}
+
+input[type="color"] {
+  width: 3em;
+  height: 2em;
+  padding: 0;
+}
+
+.form-inline {
+  display: inline;
+  padding: 0;
+  margin: 0;
+
+  @include form-inline-target {
+    @extend %form-inline;
+  }
+
+  textarea {
+    height: auto;
+  }
+}
+
+@include form-inline-target {
+  &.inline {
+    @extend %form-inline;
+  }
+}
+
+%form-inline {
+  width: auto;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}

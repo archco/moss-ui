@@ -1,0 +1,37 @@
+h2 Tag Chip
+div(class='chip')
+  | TagSample
+div(class='chip')
+  | TagSample
+  button(class='btn-close') ✖
+
+h2 Contact Chip
+div(class='chip')
+  img(src=imageAvt alt='person')
+  | John Doe
+div(class='chip')
+  img(src=imageAvt alt='person')
+  | John Doe
+  button(class='btn-close') ✖
+
+h2 Link Chip
+a(class='chip' href='#')
+  | TagSample
+  button(class='btn-close hideable') ✖
+a(class='chip' href='#')
+  img(src=imageAvt alt='person')
+  | John Doe
+  button(class='btn-close removeable') ✖
+
+h2 Chip with script
+div(id='chip-container')
+
+script.
+  window.addEventListener('load', function () {
+    var chip = new Cosmos.Chip({container: '#chip-container', tag: 'a'});
+    chip.add(
+      'hello',
+      'https://www.aikido-almere.nl/img/youtube-256.png',
+      {id:1, href:'#'}
+    );
+  });

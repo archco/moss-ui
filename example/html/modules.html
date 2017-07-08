@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js modules</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../dist/css/style.css">
+  </head>
+  <body>
+    <div id="app">
+      <header class="bg-color-primary pad flex-container-center" style="height:100px;">
+        <h1 id="project-name">cosmos-css</h1>
+      </header>
+      <nav class="navbar sticky-top use-activator shadow-near">
+        <div class="navbar-header"><a class="navbar-brand text" href="index.html">cosmos-css</a>
+          <button class="navbar-toggle" type="button">Toggle Navigation</button>
+        </div>
+        <div class="navbar-body justify-content-end">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="components.html?q=components">Components</a></li>
+            <li class="nav-item"><a class="nav-link" href="modules.html">Modules</a></li>
+            <li class="nav-item"><a class="nav-link" href="js-libraries.html">JS Libraries</a></li>
+            <li class="nav-item">
+              <dropdown toggle="toggle" align="center">
+                <button slot="button">dropdown</button><a href="#">link 1</a><a href="#">link 2</a><a href="#">link 3</a>
+              </dropdown>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="row">
+        <aside class="col-md-2 hide-only-mobile">
+          <ul class="list fixed">
+            <li><a href="#chip">Chip</a></li>
+            <li><a href="#collapse">Collapse</a></li>
+            <li><a href="#dropdown">Dropdown</a></li>
+            <li><a href="#message">Message</a></li>
+            <li><a href="#modal">Modal</a></li>
+            <li><a href="#nav">Nav</a></li>
+            <li><a href="#parallax">Parallax</a></li>
+            <li><a href="#simple-crud">Simple CRUD</a></li>
+            <li><a href="#tab">Tab</a></li>
+            <li><a href="#toast">Toast</a></li>
+          </ul>
+        </aside>
+        <section class="col-md-10">
+          <h1 id="chip">Chip</h1>
+          <h2>Tag Chip</h2>
+          <div class="chip">TagSample</div>
+          <div class="chip">TagSample
+            <button class="btn-close">✖</button>
+          </div>
+          <h2>Contact Chip</h2>
+          <div class="chip"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" alt="person">John Doe</div>
+          <div class="chip"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" alt="person">John Doe
+            <button class="btn-close">✖</button>
+          </div>
+          <h2>Link Chip</h2><a class="chip" href="#">TagSample
+            <button class="btn-close hideable">✖</button></a><a class="chip" href="#"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" alt="person">John Doe
+            <button class="btn-close removeable">✖</button></a>
+          <h2>Chip with script</h2>
+          <div id="chip-container"></div>
+          <script>
+            window.addEventListener('load', function () {
+              var chip = new Cosmos.Chip({container: '#chip-container', tag: 'a'});
+              chip.add(
+                'hello',
+                'https://www.aikido-almere.nl/img/youtube-256.png',
+                {id:1, href:'#'}
+              );
+            });
+          </script>
+          <h1 id="collapse">Collapse and Accordion</h1>
+          <hr>
+          <h2>Collapse</h2>
+          <div class="collapse-toggle pad bg-color-primary active" data-target="#panel1">Panel One</div>
+          <div class="collapse-panel" id="panel1">
+            <p class="pad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="collapse-toggle pad bg-color-secondary" data-target="#panel2">Panel Two</div>
+          <div class="collapse-panel" id="panel2">
+            <p class="pad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="collapse-toggle pad bg-color-warning active" data-target="#panel3">Panel Three</div>
+          <div class="collapse-panel" id="panel3">
+            <p class="pad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <h2>Accordion</h2>
+          <ul class="accordion">
+            <li>
+              <div class="accordion-head active">List item 1</div>
+              <div class="accordion-body">
+                <p class="pad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </li>
+            <li>
+              <div class="accordion-head">List item 2</div>
+              <div class="accordion-body">
+                <p class="pad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </li>
+            <li>
+              <div class="accordion-head">List item 3</div>
+              <div class="accordion-body">
+                <p class="pad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </li>
+          </ul>
+          <h2>with icon</h2>
+          <h3>Collapse /w icon</h3>
+          <div class="collapse-toggle with-plus pad bg-color-primary" data-target="#panel2-1">Panel One</div>
+          <div class="collapse-panel" id="panel2-1">
+            <p class="pad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="collapse-toggle with-caret pad bg-color-secondary" data-target="#panel2-2">Panel Two</div>
+          <div class="collapse-panel" id="panel2-2">
+            <p class="pad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="collapse-toggle with-arrow pad bg-color-warning" data-target="#panel2-3">Panel Three</div>
+          <div class="collapse-panel" id="panel2-3">
+            <p class="pad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <h3>Accordion /w icon</h3>
+          <ul class="accordion">
+            <li>
+              <div class="accordion-head with-plus">List item 1</div>
+              <div class="accordion-body">
+                <p class="pad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </li>
+            <li>
+              <div class="accordion-head with-caret">List item 2</div>
+              <div class="accordion-body">
+                <p class="pad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </li>
+            <li>
+              <div class="accordion-head with-arrow">List item 3</div>
+              <div class="accordion-body">
+                <p class="pad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </li>
+          </ul>
+          <h1 id="dropdown">Dropdown</h1>
+          <hr>
+          <h3>Toggle Dropdown</h3>
+          <dropdown>
+            <button class="btn" slot="button">TOGGLE</button><a class="active" href="#">hello</a><a href="#">drop</a><a href="#">down</a>
+          </dropdown>
+          <h3>Hover Dropdown</h3>
+          <dropdown toggle="hover">
+            <button class="btn info" slot="button">HOVER</button><a href="#">hello</a><a href="#">drop</a><a href="#">down</a>
+          </dropdown>
+          <h3>Dropdown Content Alignment</h3>
+          <div style="display:flex;width:100%;justify-content:space-between;">
+            <dropdown toggle="hover" align="left">
+              <button class="btn success" slot="button">LEFT</button><a href="#">hello</a><a href="#">drop</a><a href="#">down</a>
+            </dropdown>
+            <dropdown toggle="hover" align="center">
+              <button class="btn secondary" slot="button">CENTER</button><a href="#">hello</a><a href="#">drop</a><a href="#">down</a>
+            </dropdown>
+            <dropdown toggle="hover" align="right">
+              <button class="btn warning" slot="button">RIGHT</button><a href="#">hello</a><a href="#">drop</a><a href="#">down</a>
+            </dropdown>
+          </div>
+          <h1 id="message">Message</h1>
+          <hr>
+          <h3>Message box</h3>
+          <div class="message-box"><span>This is message box.</span>
+            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <div class="message-box default"><span>This is default message box.</span>
+            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <div class="message-box primary"><span>This is primary message box.</span>
+            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <div class="message-box secondary"><span>This is secondary message box.</span>
+            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <div class="message-box info"><span>This is info message box.</span>
+            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <div class="message-box success"><span>This is success message box.</span>
+            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <div class="message-box warning"><span>This is warning message box.</span>
+            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <div class="message-box danger"><span>This is danger message box.</span>
+            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <div class="message-box light"><span>This is light message box.</span>
+            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <div class="message-box dark"><span>This is dark message box.</span>
+            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <div class="message-box shade"><span>This is shade message box.</span>
+            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <div class="message-box link"><span>This is link message box.</span>
+            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <h2>showMessage()</h2>
+          <div id="message-container"></div>
+          <div>
+            <input class="inline" type="text" id="input-msg">
+            <button class="btn" type="button" id="btn-msg">show message</button>
+          </div><script>var b = document.querySelector('#btn-msg');
+          b.onclick = function () {
+            var i = document.querySelector('#input-msg');
+            showMessage(i.value);
+          };</script>
+          <h1 id="modal">Modal</h1>
+          <hr>
+          <button class="btn warning" data-trigger="modal" data-target="#modal1">Modal Trigger Button</button><a class="btn-flat" id="test" href="#modal2" data-trigger="modal">Link Modal</a><br>
+          <div class="modal" id="modal1">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3>Dialog Title</h3>
+              </div>
+              <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+              <div class="modal-footer">
+                <button class="btn default" data-trigger="modal-close">Cancel</button>
+                <button class="btn success">OK</button>
+              </div>
+            </div>
+          </div>
+          <div class="modal" id="modal2">
+            <div class="modal-content">
+              <div class="modal-header bg-color-dark">
+                <h3>Link Trigger Test</h3>
+              </div>
+              <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </div>
+          </div>
+          <input class="inline" type="text" id="modal-dialog-input">
+          <button class="btn success" type="button" id="modal-dialog-btn">Modal Dialog</button>
+          <script>
+            document.querySelector('#modal-dialog-btn').addEventListener('click', function () {
+              var msg = document.querySelector('#modal-dialog-input').value || 'Empty';
+              Cosmos.Modal.dialog(msg, 'Title');
+            });
+          </script>
+          <h1 id="nav">Nav</h1>
+          <hr>
+          <h3>navbar</h3>
+          <div class="group">
+            <nav class="navbar bg-color-dark">
+              <div class="navbar-header"><a class="navbar-brand text" href="#">Navbar</a>
+                <button class="navbar-toggle right" type="button">Toggle Navigation</button>
+              </div>
+              <div class="navbar-body justify-content-between">
+                <ul class="navbar-nav">
+                  <li class="nav-item"><a class="nav-link" href="#">link1</a></li>
+                  <li class="nav-item active"><a class="nav-link" href="#">link2</a></li>
+                  <li class="nav-item">
+                    <div class="dropdown">
+                      <button class="dropdown-toggle">dropdown</button>
+                      <div class="dropdown-content" data-align="center"><a class="dropdown-item" href="#">link 1</a><a class="dropdown-item" href="#">link 2</a><a class="dropdown-item" href="#">link 3</a></div>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="navbar-nav">
+                  <li class="nav-item"><a class="nav-link" href="#">right</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">logout</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+          <h1 id="parallax">Parallax</h1>
+          <hr>
+          <div class="parallax"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg"></div><div class="flex-center-container" style="background-color:gray;height:250px;">
+          <div>
+            <h2>Content</h2>
+            <p>content here...</p>
+          </div></div>
+          <div class="parallax" data-height="300"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg"></div><div class="flex-center-container" style="height:300px;">
+          <div>
+            <h2>Content</h2>
+            <p>content here...</p>
+          </div></div>
+          <div class="parallax" data-height="400"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg"></div>
+          <h1 id="simple-crud">Simple CRUD</h1>
+          <form class="form-inline" action="#" method="POST">
+            <input type="text" name="name" placeholder="Name">
+            <input type="number" name="age" placeholder="Age">
+            <button class="btn success" type="submit">Create</button>
+          </form>
+          <ul class="simple-crud-list">
+            <li class="simple-crud-item">
+              <div class="simple-crud-view-read show"><span class="content"><span>id: 1 name: James age: 35</span></span><span class="actions btn-group">
+                  <button class="simple-crud-update btn">Edit</button>
+                  <button class="simple-crud-delete btn danger">Delete</button></span></div>
+              <form class="form-inline simple-crud-view-update" action="#" method="POST"><span class="content"><span>id: 1</span>
+                  <input type="hidden" name="id" value="1">
+                  <label><span>Name:</span>
+                    <input type="text" name="name" value="James">
+                  </label>
+                  <label><span>Age:</span>
+                    <input type="number" name="age" value="35">
+                  </label></span><span class="actions btn-group">
+                  <button class="simple-crud-cancel btn" type="button">Cancel</button>
+                  <button class="btn success" type="submit">Edit</button></span></form>
+              <form class="form-inline simple-crud-view-delete" action="#" method="POST"><span class="content"><span class="color-danger"><b>Are you sure?</b> Remove this model?</span></span><span class="actions btn-group">
+                  <button class="btn danger" type="submit">Delete</button>
+                  <button class="simple-crud-cancel btn" type="button">Cancel</button></span></form>
+            </li>
+            <li class="simple-crud-item">
+              <div class="simple-crud-view-read show"><span class="content"><span>id: 2 name: Caren age: 24</span></span><span class="actions btn-group">
+                  <button class="simple-crud-update btn">Edit</button>
+                  <button class="simple-crud-delete btn danger">Delete</button></span></div>
+              <form class="form-inline simple-crud-view-update" action="#" method="POST"><span class="content"><span>id: 2</span>
+                  <input type="hidden" name="id" value="2">
+                  <label><span>Name:</span>
+                    <input type="text" name="name" value="Caren">
+                  </label>
+                  <label><span>Age:</span>
+                    <input type="number" name="age" value="24">
+                  </label></span><span class="actions btn-group">
+                  <button class="simple-crud-cancel btn" type="button">Cancel</button>
+                  <button class="btn success" type="submit">Edit</button></span></form>
+              <form class="form-inline simple-crud-view-delete" action="#" method="POST"><span class="content"><span class="color-danger"><b>Are you sure?</b> Remove this model?</span></span><span class="actions btn-group">
+                  <button class="btn danger" type="submit">Delete</button>
+                  <button class="simple-crud-cancel btn" type="button">Cancel</button></span></form>
+            </li>
+            <li class="simple-crud-item">
+              <div class="simple-crud-view-read show"><span class="content"><span>id: 3 name: Bob age: 30</span></span><span class="actions btn-group">
+                  <button class="simple-crud-update btn">Edit</button>
+                  <button class="simple-crud-delete btn danger">Delete</button></span></div>
+              <form class="form-inline simple-crud-view-update" action="#" method="POST"><span class="content"><span>id: 3</span>
+                  <input type="hidden" name="id" value="3">
+                  <label><span>Name:</span>
+                    <input type="text" name="name" value="Bob">
+                  </label>
+                  <label><span>Age:</span>
+                    <input type="number" name="age" value="30">
+                  </label></span><span class="actions btn-group">
+                  <button class="simple-crud-cancel btn" type="button">Cancel</button>
+                  <button class="btn success" type="submit">Edit</button></span></form>
+              <form class="form-inline simple-crud-view-delete" action="#" method="POST"><span class="content"><span class="color-danger"><b>Are you sure?</b> Remove this model?</span></span><span class="actions btn-group">
+                  <button class="btn danger" type="submit">Delete</button>
+                  <button class="simple-crud-cancel btn" type="button">Cancel</button></span></form>
+            </li>
+          </ul>
+          <h1 id="tab">Tab</h1>
+          <hr>
+          <h2>Default Tab</h2>
+          <ul class="tab">
+            <li><a class="tab-link active" href="#tab1">tab1</a></li>
+            <li><a class="tab-link" href="#tab2">tab2</a></li>
+            <li><a class="tab-link" href="#tab3">tab3</a></li>
+          </ul>
+          <div id="tab1">
+            <h3>Tab 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div id="tab2">
+            <h3>Tab 2</h3>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div id="tab3">
+            <h3>Tab 3</h3>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <h2>Tab with Fade Effect</h2>
+          <ul class="tab fade">
+            <li><a class="tab-link secondary" href="#tab2-1">tab 2-1</a></li>
+            <li><a class="tab-link success active" href="#tab2-2">tab 2-2</a></li>
+            <li><a class="tab-link warning" href="#tab2-3">tab 2-3</a></li>
+          </ul>
+          <div class="tab-content" id="tab2-1">
+            <h3>Tab 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="tab-content" id="tab2-2">
+            <h3>Tab 2</h3>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div class="tab-content" id="tab2-3">
+            <h3>Tab 3</h3>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <h2>Tab Tip based by Color-set</h2>
+          <ul class="tab">
+            <li><a class="tab-link default" href="#tab3-default">default</a></li>
+            <li><a class="tab-link primary" href="#tab3-primary">primary</a></li>
+            <li><a class="tab-link secondary" href="#tab3-secondary">secondary</a></li>
+            <li><a class="tab-link info" href="#tab3-info">info</a></li>
+            <li><a class="tab-link success" href="#tab3-success">success</a></li>
+            <li><a class="tab-link warning" href="#tab3-warning">warning</a></li>
+            <li><a class="tab-link danger" href="#tab3-danger">danger</a></li>
+            <li><a class="tab-link light" href="#tab3-light">light</a></li>
+            <li><a class="tab-link dark" href="#tab3-dark">dark</a></li>
+            <li><a class="tab-link shade" href="#tab3-shade">shade</a></li>
+            <li><a class="tab-link link" href="#tab3-link">link</a></li>
+          </ul>
+          <div class="tab-content" id="tab3-default">default
+          </div>
+          <div class="tab-content" id="tab3-primary">primary
+          </div>
+          <div class="tab-content" id="tab3-secondary">secondary
+          </div>
+          <div class="tab-content" id="tab3-info">info
+          </div>
+          <div class="tab-content" id="tab3-success">success
+          </div>
+          <div class="tab-content" id="tab3-warning">warning
+          </div>
+          <div class="tab-content" id="tab3-danger">danger
+          </div>
+          <div class="tab-content" id="tab3-light">light
+          </div>
+          <div class="tab-content" id="tab3-dark">dark
+          </div>
+          <div class="tab-content" id="tab3-shade">shade
+          </div>
+          <div class="tab-content" id="tab3-link">link
+          </div>
+          <h2>Vertical Tab</h2>
+          <div class="row">
+            <div class="col-sm-2">
+              <ul class="tab-vertical fade">
+                <li><a class="tab-link" href="#tab3-1">tab 3-1</a></li>
+                <li><a class="tab-link success active" href="#tab3-2">tab 3-2</a></li>
+                <li><a class="tab-link danger" href="#tab3-3">tab 3-3</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-10">
+              <div class="tab-content" id="tab3-1">
+                <h3>Tab 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+              <div class="tab-content" id="tab3-2">
+                <h3>Tab 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+              <div class="tab-content" id="tab3-3">
+                <h3>Tab 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </div>
+          </div>
+          <h1 id="toast">Toast</h1>
+          <hr>
+          <button class="btn info" id="btn-toast">Toast</button>
+          <script>
+            var toastCount = 0;
+            window.addEventListener('load', function () {
+              document.querySelector('#btn-toast').addEventListener('click', function () {
+                toastCount++;
+                cosmos.toast.setText('toast test ' + toastCount).show();
+              });
+            });
+          </script>
+        </section>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <h3>Footer content</h3>
+              <p>footer content here..</p>
+            </div>
+            <div class="col-6">
+              <h3>Links</h3>
+              <ul class="list-horizontal">
+                <li><a href="#">Link1</a></li>
+                <li><a href="#">Link2</a></li>
+                <li><a href="#">Link3</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">copyright &copy; 2016 cosmos all rights reserved.</div>
+      </footer>
+      <div class="scroll-to-container">
+        <button class="scroll-to-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+        <button class="scroll-to-bottom"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+      </div>
+    </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
+    <script src="../../dist/js/script.js"></script><script>var year = new Date().getFullYear();
+    document.querySelector('.footer-copyright').innerHTML = "copyright \&copy; " + year + " cosmos all rights reserved.";
+    document.querySelector('#project-name').innerHTML = "cosmos-css " + Cosmos.version;</script>
+    <script>//</script>
+  </body>
+</html>

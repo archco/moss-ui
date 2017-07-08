@@ -1,0 +1,64 @@
+//- js modules page
+extends ../layout/layout.pug
+
+block title
+  title= 'js modules'
+
+block append content
+  div(class='row')
+    aside(class='col-md-2 hide-only-mobile')
+      ul(class='list fixed')
+        li
+          a(href='#chip') Chip
+        li
+          a(href='#collapse') Collapse
+        li
+          a(href='#dropdown') Dropdown
+        li
+          a(href='#message') Message
+        li
+          a(href='#modal') Modal
+        li
+          a(href='#nav') Nav
+        li
+          a(href='#parallax') Parallax
+        li
+          a(href='#simple-crud') Simple CRUD
+        li
+          a(href='#tab') Tab
+        li
+          a(href='#toast') Toast
+
+    section(class='col-md-10')
+      h1(id='chip') Chip
+      include ../includes/chip.pug
+      h1(id='collapse') Collapse and Accordion
+      hr
+      include ../includes/collapse.pug
+      h1(id='dropdown') Dropdown
+      hr
+      include ../includes/dropdown.pug
+      h1(id='message') Message
+      hr
+      include ../includes/message.pug
+      h1(id='modal') Modal
+      hr
+      include ../includes/modal.pug
+      h1(id='nav') Nav
+      hr
+      include ../includes/nav.pug
+      h1(id='parallax') Parallax
+      hr
+      include ../includes/parallax.pug
+      h1(id='simple-crud') Simple CRUD
+      include ../includes/simple-crud.pug
+      h1(id='tab') Tab
+      hr
+      include ../includes/tab.pug
+      h1(id='toast') Toast
+      hr
+      include ../includes/toast.pug
+
+block append script
+  script.
+    //

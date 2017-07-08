@@ -1,0 +1,13 @@
+//======================================================================
+// Helper Functions
+//======================================================================
+
+// use getContrast() at scss-palette
+// @link https://github.com/archco/scss-palette/wiki/functions#getcontrastcolor-dark-000-light-fff
+@function get-contrast($color, $dark: $text-color-dark, $light: $text-color-light) {
+  @return get-contrast-color($color, $dark, $light);
+}
+
+@function percentage-round($number, $digits: 0) {
+  @return decimal-round(percentage($number), $digits);
+}

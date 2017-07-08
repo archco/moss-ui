@@ -1,0 +1,90 @@
+//============================================================
+// caret
+//============================================================
+@mixin caret($direction: 'down') {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: $caret-width;
+  vertical-align: middle;
+  border: $caret-width solid transparent;
+  content: '';
+  @include caret-direction($direction);
+
+  &:empty {
+    margin-left: 0;
+  }
+
+  &.up {
+    @include caret-direction('up');
+  }
+
+  &.right {
+    @include caret-direction('right');
+  }
+
+  &.down {
+    @include caret-direction('down');
+  }
+
+  &.left {
+    @include caret-direction('left');
+  }
+}
+
+@mixin caret-direction($direction) {
+  @if $direction == 'up' {
+    border-color: transparent;
+    border-bottom-color: initial;
+  } @else if $direction == 'right' {
+    border-color: transparent;
+    border-left-color: initial;
+  } @else if $direction == 'down' {
+    border-color: transparent;
+    border-top-color: initial;
+  } @else if $direction == 'left' {
+    border-color: transparent;
+    border-right-color: initial;
+  }
+}
+
+//============================================================
+// arrow
+//============================================================
+@mixin arrow($direction: 'down') {
+  display: inline-block;
+  vertical-align: middle;
+  padding: .19em;
+  border-style: solid;
+  border-width: 0 .19em .19em 0;
+  content: '';
+  @include arrow-direction($direction);
+
+  &.up {
+    @include arrow-direction('up');
+  }
+
+  &.right {
+    @include arrow-direction('right');
+  }
+
+  &.down {
+    @include arrow-direction('down');
+  }
+
+  &.left {
+    @include arrow-direction('left');
+  }
+}
+
+@mixin arrow-direction($direction) {
+  @if $direction == 'up' {
+    transform: rotate(-135deg);
+  } @else if $direction == 'right' {
+    transform: rotate(-45deg);
+  } @else if $direction == 'down' {
+    transform: rotate(45deg);
+  } @else if $direction == 'left' {
+    transform: rotate(135deg);
+  }
+}

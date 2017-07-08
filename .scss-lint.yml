@@ -1,0 +1,9 @@
+linters:
+  Comment:
+    enabled: false
+  QualifyingElement:
+    enabled: false
+  ImportantRule:
+    enabled: false
+  PropertySortOrder:
+    order: recess

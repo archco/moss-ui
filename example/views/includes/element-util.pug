@@ -1,0 +1,92 @@
+h2 Toggle Class
+button(id='btn-toggle-class' class='btn primary') Toggle Class
+p(id='toggle-class-target' class='pad' style='transition:.6s;')=lorem
+
+h2 Toggle Show
+button(id='btn-toggle-show' class='btn info') Toggle Show
+p(id='toggle-show-target' class='pad bg-color-success')=lorem
+
+h2 Filter
+h3 Filter List
+input(id='input-filter-list' type='text' class='inline' placeholder='search in list..')
+ul(id='filter-list' class='list')
+  li Armenia
+  li Aruba
+  li Australia
+  li Austria
+  li Brazil
+  li Brunei
+  li Bulgaria
+  li China
+  li Denmark
+  li Dominica
+  li Mexico
+  li Palau
+  li Panama
+  li Vietnam
+
+h2 Sort
+h3 Sort List
+button(id='btn-sort-list' type='button' class='btn info') Sort
+ul(id='sort-list' class='list-group')
+  li Netherlands
+  li Brunei
+  li Palau
+  li Colombia
+  li Austria
+  li Lithuania
+  li Monaco
+  li Ukraine
+  li Barbados
+  li Argentina
+
+h3 Sort Table
+table(id='sort-table-target' class='table striped bordered hover')
+  thead
+    tr
+      th Name
+      th(data-sort-type='number') Description
+      th date
+  tbody
+    tr
+      td test1
+      td(data-sort-value='4') four
+      td 2015-04-01
+    tr
+      td test2
+      td(data-sort-value='100') one-hundred
+      td 2015-06-01
+    tr
+      td test3
+      td(data-sort-value='2000') two-thousands
+      td 2017-01-01
+    tr
+      td test4
+      td(data-sort-value='1') one
+      td 1999-01-01
+    tr
+      td test5
+      td(data-sort-value='3') three
+      td 1998-02-01
+<script>
+| window.addEventListener('load', function () {
+|   var eu = Cosmos.lib.ElementUtil;
+|   // toggle class
+|   eu.getElement('#btn-toggle-class').addEventListener('click', function () {
+|     eu.toggleClass('#toggle-class-target', 'bg-color-danger');
+|   });
+|   // toggle show
+|   eu.getElement('#btn-toggle-show').addEventListener('click', function () {
+|     eu.toggleShow('#toggle-show-target');
+|   });
+|   // filter list
+|   eu.getElement('#input-filter-list').addEventListener('keyup', function (e) {
+|     eu.filter('#filter-list li', e.currentTarget.value);
+|   });
+|   eu.getElement('#btn-sort-list').addEventListener('click', function () {
+|     eu.sortElements('#sort-list', 'li');
+|   });
+|   // sort table
+|   eu.sortTable('#sort-table-target');
+| });
+</script>

@@ -1,0 +1,33 @@
+//======================================================================
+// Scroll-to
+//======================================================================
+%scroll-to-button {
+  @extend %btn-common;
+  display: none;
+  min-width: 1rem;
+  min-height: 1rem;
+  padding: 1rem;
+  margin-left: -.25rem;
+  color: $scroll-to-color;
+  background-color: rgba($scroll-to-bg-color, .5);
+  border-radius: 50%;
+  outline: none;
+  box-sizing: content-box;
+  transition: background-color $transition-time;
+
+  &:hover { background-color: $scroll-to-bg-color; }
+
+  &.show { display: inline-block; }
+}
+
+.scroll-to-container {
+  position: fixed;
+  right: 4%;
+  bottom: 4%;
+  z-index: $z-index-scroll-to-button;
+
+  .scroll-to-top,
+  .scroll-to-bottom {
+    @extend %scroll-to-button;
+  }
+}

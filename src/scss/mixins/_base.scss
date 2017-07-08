@@ -1,0 +1,56 @@
+//============================================================
+// Base Mixins
+//============================================================
+
+// used for %link-no-deco
+@mixin no-decoration {
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// set link state color
+@mixin set-link-state-color($link, $visited: null, $hover: null, $active: null) {
+  &,
+  &:link {
+    color: $link;
+  }
+
+  &:visited {
+    color: if($visited, $visited, $link);
+  }
+
+  &:hover,
+  &:focus {
+    color: if($hover, $hover, $link);
+  }
+
+  &:active {
+    color: if($active, $active, $link);
+  }
+}
+
+@mixin form-inline-target {
+  input:not([type="color"]),
+  select,
+  textarea {
+    @content;
+  }
+}
+
+// image filter-set.
+@mixin filter-set {
+  &.blur { filter: blur(4px); }
+  &.lighten { filter: brightness(1.25); }
+  &.darken { filter: brightness(.75); }
+  &.contrast { filter: contrast(150%); }
+  &.gray { filter: grayscale(100%); }
+  &.hue-rotate { filter: hue-rotate(90deg); }
+  &.invert { filter: invert(100%); }
+  &.opacity { filter: opacity(50%); }
+  &.saturate { filter: saturate(200%); }
+  &.sepia { filter: sepia(100%); }
+}

@@ -1,0 +1,121 @@
+h3 Vertical Card (default)
+div(class='row')
+  div(class='col-md-3')
+    div(class='card small')
+      div(class='card-image')
+        img(src=imageSrc[0])
+        h3(class='card-title') card title
+      div(class='card-content')
+        span card content
+        a(href='#') Link
+  div(class='col-md-4')
+    div(class='card')
+      div(class='card-image')
+        img(src=imageSrc[1] alt='image')
+      div(class='card-content')
+        span Card content
+  div(class='col-md-5')
+    div(class='card large')
+      div(class='card-image')
+        img(src=imageSrc[2] alt='image')
+      div(class='card-content')
+        span=lorem
+
+h3 Horizontal Card
+div(class='row')
+  div(class='col-md-4')
+    div(class='card-horizontal small')
+      div(class='card-image')
+        img(src=imageSrc[2] alt='image')
+      div(class='card-content')
+        span Card content
+div(class='row')
+  div(class='col-md-6')
+    div(class='card-horizontal')
+      div(class='card-image')
+        img(src=imageSrc[1] alt='image')
+        h3(class='card-title') card title
+      div(class='card-content')
+        span card description it is test. card description it is test. card description it is test. card description it is test.
+div(class='row')
+  div(class='col-md-8')
+    div(class='card-horizontal large')
+      div(class='card-image')
+        img(src=imageSrc[0] alt='image')
+      div(class='card-content')
+        span Card content
+
+h3 Card Inline
+ul(class='card-list')
+  li(class='card inline small')
+    div(class='card-image')
+      img(src=imageSrc[1] alt='image')
+    div(class='card-content')
+      span Card content
+  li(class='card inline')
+    div(class='card-image')
+      img(src=imageSrc[2] alt='image')
+    div(class='card-content')
+      span Card content
+  li(class='card inline large')
+    div(class='card-image')
+      img(src=imageSrc[0] alt='image')
+    div(class='card-content')
+      span Card content
+ul(class='card-list')
+  li(class='card-horizontal inline small')
+    div(class='card-image')
+      img(src=imageSrc[0] alt='image')
+    div(class='card-content')
+      span Card content
+  li(class='card-horizontal inline')
+    div(class='card-image')
+      img(src=imageSrc[1] alt='image')
+    div(class='card-content')
+      span Card content
+  li(class='card-horizontal inline large')
+    div(class='card-image')
+      img(src=imageSrc[2] alt='image')
+    div(class='card-content')
+      span Card content
+h3 Hoverable
+ul(class='card-list')
+  li
+    a(href='#' class='card-horizontal inline small hoverable')
+      div(class='card-image')
+        img(src=imageSrc[0] alt='image')
+      div(class='card-content')
+        span Card content
+  li
+    a(href='#' class='card-horizontal inline hoverable')
+      div(class='card-image')
+        img(src=imageSrc[1] alt='image')
+      div(class='card-content')
+        span Card content
+  li
+    a(href='#' class='card-horizontal inline large hoverable')
+      div(class='card-image')
+        img(src=imageSrc[2] alt='image')
+      div(class='card-content')
+        span Card content
+
+h3 Bordered
+div(class='row')
+  div(class='col-md-4')
+    div(class='card small bordered')
+      div(class='card-image')
+        img(src=imageSrc[0] alt='image')
+      div(class='card-content')
+        span Bordered Vertical
+  div(class='col-md-4')
+    div(class='card-horizontal small bordered')
+      div(class='card-image')
+        img(src=imageSrc[1] alt='image')
+      div(class='card-content')
+        span Bordered Horizontal
+  div(class='col-md-4')
+    div(class='card small bordered hoverable')
+      div(class='card-image')
+        img(src=imageSrc[2] alt='image')
+      div(class='card-content')
+        span Bordered Hoverable

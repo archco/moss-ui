@@ -1,0 +1,15 @@
+//======================================================================
+// Loader
+//======================================================================
+
+.loader-one {
+  @include loader-one();
+
+  &.light {
+    @include loader-one-color($text-color-light);
+  }
+
+  &.dark {
+    @include loader-one-color($text-color-dark);
+  }
+}

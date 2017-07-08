@@ -1,0 +1,51 @@
+h2 Collapse
+div(class='collapse-toggle pad bg-color-primary active' data-target='#panel1') Panel One
+div(class='collapse-panel' id="panel1")
+  p(class='pad')= lorem
+div(class='collapse-toggle pad bg-color-secondary' data-target='#panel2') Panel Two
+div(class='collapse-panel' id="panel2")
+  p(class='pad')= lorem
+div(class='collapse-toggle pad bg-color-warning active' data-target='#panel3') Panel Three
+div(class='collapse-panel' id="panel3")
+  p(class='pad')= lorem
+
+h2 Accordion
+ul(class='accordion')
+  li
+    div(class='accordion-head active') List item 1
+    div(class='accordion-body')
+      p(class='pad')= lorem
+  li
+    div(class='accordion-head') List item 2
+    div(class='accordion-body')
+      p(class='pad')= lorem
+  li
+    div(class='accordion-head') List item 3
+    div(class='accordion-body')
+      p(class='pad')= lorem
+
+h2 with icon
+h3 Collapse /w icon
+div(class='collapse-toggle with-plus pad bg-color-primary' data-target='#panel2-1') Panel One
+div(class='collapse-panel' id="panel2-1")
+  p(class='pad')= lorem
+div(class='collapse-toggle with-caret pad bg-color-secondary' data-target='#panel2-2') Panel Two
+div(class='collapse-panel' id="panel2-2")
+  p(class='pad')= lorem
+div(class='collapse-toggle with-arrow pad bg-color-warning' data-target='#panel2-3') Panel Three
+div(class='collapse-panel' id="panel2-3")
+  p(class='pad')= lorem
+h3 Accordion /w icon
+ul(class='accordion')
+  li
+    div(class='accordion-head with-plus') List item 1
+    div(class='accordion-body')
+      p(class='pad')= lorem
+  li
+    div(class='accordion-head with-caret') List item 2
+    div(class='accordion-body')
+      p(class='pad')= lorem
+  li
+    div(class='accordion-head with-arrow') List item 3
+    div(class='accordion-body')
+      p(class='pad')= lorem

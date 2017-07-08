@@ -1,0 +1,55 @@
+//======================================================================
+// Utilities
+//======================================================================
+
+// clear-both
+@mixin clear-both {
+  &::after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+}
+
+// debug outline
+@mixin debug {
+  * {
+    $_outline-color: rgba(#f00, .5);
+    outline: 1px solid $_outline-color;
+  }
+}
+
+// reset-text
+@mixin reset-text {
+  font-family: $font-base;
+  // We deliberately do NOT reset font-size or word-wrap.
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-break: auto;
+  line-height: $body-line-height;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  word-spacing: normal;
+}
+
+@mixin reset-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin headings {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @content;
+  }
+}
