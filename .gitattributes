@@ -12,6 +12,5 @@
 # Don't diff or textually merge source maps
 *.map   binary
 
-# style.css linguist-vendored=false
-# script.js linguist-vendored=false
-example/** linguist-vendored=false
+example/* linguist-vendored
+test/* linguist-vendored
