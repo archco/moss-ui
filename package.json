@@ -9,6 +9,7 @@
   },
   "scripts": {
     "test": "mocha test --require babel-register",
+    "prebuild": "node task/banner.js",
     "build": "npm run dev && npm run min",
     "dev": "npm run mix && npm run pug",
     "watch": "node node_modules/concurrently/src/main \"npm run mix:watch\" \"npm run pug:watch\"",
@@ -19,33 +20,29 @@
     "pug:watch": "npm run pug -- --watch"
   },
   "author": "archco",
+  "bugs": {
+    "url": "https://github.com/archco/cosmos-ui/issues"
+  },
+  "homepage": "https://github.com/archco/cosmos-ui",
   "license": "MIT",
   "dependencies": {
     "normalize.css": "^7.0.0",
     "scss-palette": "^0.3.3"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
     "babel-eslint": "^7.2.3",
-    "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.6.0",
     "babel-register": "^6.24.1",
     "chai": "^4.0.2",
     "concurrently": "^3.5.0",
     "cross-env": "^5.0.1",
-    "css-loader": "^0.28.4",
-    "extract-text-webpack-plugin": "^2.1.2",
     "fs-extra": "^3.0.1",
     "laravel-mix": "^1.1.1",
     "mocha": "^3.4.2",
-    "node-sass": "^4.5.3",
-    "postcss-loader": "^2.0.6",
     "pug": "^2.0.0-rc.2",
     "pug-cli": "^1.0.0-alpha6",
-    "sass-loader": "^6.0.6",
     "vue": "^2.3.4",
-    "vue-loader": "^13.0.0",
     "webpack": "^3.1.0"
   },
   "eslintConfig": {

@@ -1,3 +1,9 @@
+/*!
+ * cosmos-ui - The user interface framework for front-end.
+ * @version v0.0.0
+ * @link https://github.com/archco/cosmos-ui
+ * @license MIT
+ */
 import Color from './lib/color';
 import Util from './lib/util';
 import ElementUtil from './lib/element-util';
