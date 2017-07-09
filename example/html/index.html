@@ -59,6 +59,11 @@
             <button class="btn warning" slot="button">RIGHT</button><a href="#">hello</a><a href="#">drop</a><a href="#">down</a>
           </dropdown>
         </div>
+        <h1>CloseBtn</h1>
+        <h3>close-btn</h3><span>test text<close-btn>✖</close-btn></span><br><span class="badge">Badge<close-btn action="remove">✖</close-btn></span>
+        <div class="pad bg-color-secondary">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><close-btn position="top-right" parent-relatived>✖</close-btn>
+        </div>
       </section>
       <footer class="footer">
         <div class="container">
@@ -87,6 +92,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
     <script src="../../dist/js/script.js"></script><script>var year = new Date().getFullYear();
     document.querySelector('.footer-copyright').innerHTML = "copyright \&copy; " + year + " cosmos all rights reserved.";
-    document.querySelector('#project-name').innerHTML = "cosmos-css " + Cosmos.version;</script>
+    document.querySelector('#project-name').innerHTML = "cosmos-css " + vm.$cosmos.version;</script>
   </body>
 </html>

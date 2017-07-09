@@ -2,6 +2,6 @@ import Vue from 'vue';
 import Cosmos from './cosmos';
 
 Vue.use(Cosmos);
-new Vue({
+window.vm = new Vue({
   el: '#app'
 });
