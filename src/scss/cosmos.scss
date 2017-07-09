@@ -22,7 +22,6 @@
 @import 'components/list';
 @import 'components/form';
 @import 'components/button';
-@import 'components/dropdown';
 @import 'components/badge';
 @import 'components/chip';
 @import 'components/image';
@@ -42,6 +41,10 @@
 @import 'components/simple-crud';
 @import 'components/toast';
 @import 'components/hero-banner';
+
+// vue-components.
+@import 'components/dropdown';
+@import 'components/close-btn';
 
 // helper class should be last.
 @import 'helpers';

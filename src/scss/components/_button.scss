@@ -95,39 +95,6 @@
   margin: 0;
 }
 
-//======================================================================
-// Button Close
-//======================================================================
-
-.btn-close {
-  $_color: rgba(#000, .3);
-  @extend %btn-common;
-  padding: 0;
-  margin-left: .25em;
-  color: $_color;
-  vertical-align: baseline;
-  background-color: transparent;
-  box-sizing: content-box;
-  transition: color $transition-time;
-
-  &:hover {
-    color: inherit;
-  }
-
-  &.at-corner {
-    position: absolute;
-    top: .5em;
-    right: .5em;
-  }
-
-  &.at-right-middle {
-    position: absolute;
-    top: 50%;
-    right: 1em;
-    transform: translateY(-50%);
-  }
-}
-
 //============================================================
 // Button Group
 //============================================================
