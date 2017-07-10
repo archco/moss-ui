@@ -450,16 +450,8 @@
           </div>
           <h1 id="toast">Toast</h1>
           <hr>
-          <button class="btn info" id="btn-toast">Toast</button>
-          <script>
-            var toastCount = 0;
-            window.addEventListener('load', function () {
-              document.querySelector('#btn-toast').addEventListener('click', function () {
-                toastCount++;
-                cosmos.toast.setText('toast test ' + toastCount).show();
-              });
-            });
-          </script>
+          <button class="btn info" id="btn-toast" onclick="toastShow()">Toast</button>
+          <toasts></toasts>
         </section>
       </div>
       <footer class="footer">
@@ -487,7 +479,9 @@
       </div>
     </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
-    <script src="../../dist/js/script.js"></script><script>var year = new Date().getFullYear();
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js"></script>
+    <script src="../../dist/js/script.js"></script>
+    <script src="./example.js"></script><script>var year = new Date().getFullYear();
     document.querySelector('.footer-copyright').innerHTML = "copyright \&copy; " + year + " cosmos all rights reserved.";
     document.querySelector('#project-name').innerHTML = "cosmos-css " + vm.$cosmos.version;</script>
     <script>//</script>
