@@ -13,7 +13,6 @@
 
 .toast {
   $_margin-bottom: 1rem;
-  $_transition-duration: .6s;
 
   min-width: $toast-min-width;
   padding: $toast-padding-y $toast-padding-x;
@@ -23,10 +22,22 @@
   text-align: center;
   background-color: $toast-bg-color;
   border-radius: $toast-border-radius;
-  opacity: 0;
-  transition: opacity $_transition-duration;
+}
 
-  &.show {
-    opacity: 1;
-  }
+// effects.
+.toast-fade-enter-active,
+.toast-fade-leave-active {
+  $_transition-duration: .6s;
+
+  transition: opacity $_transition-duration;
+}
+
+.toast-fade-enter,
+.toast-fade-leave-to {
+  opacity: 0;
+}
+
+.toast-fade-leave,
+.toast-fade-enter-to {
+  opacity: 1;
 }

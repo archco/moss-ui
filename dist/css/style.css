@@ -5878,12 +5878,21 @@ ul.pagination li.disabled {
   text-align: center;
   background-color: rgba(52, 52, 52, 0.85);
   border-radius: 4px;
-  opacity: 0;
+}
+
+.toast-fade-enter-active,
+.toast-fade-leave-active {
   -webkit-transition: opacity 0.6s;
   transition: opacity 0.6s;
 }
 
-.toast.show {
+.toast-fade-enter,
+.toast-fade-leave-to {
+  opacity: 0;
+}
+
+.toast-fade-leave,
+.toast-fade-enter-to {
   opacity: 1;
 }
 

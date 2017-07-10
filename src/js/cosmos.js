@@ -10,19 +10,30 @@ import ElementUtil from './lib/element-util';
 import components from './components.js';
 import { version } from '../../package.json';
 
+const DefaultOptions = {
+  providerEnable: true,
+  insteadName: null,
+};
+
 export default {
   version: version,
   install(Vue, options = {}) {
     if (this.installed) return;
     this.installed = true;
 
+    options = Object.assign(DefaultOptions, options);
+
+    // Add components.
     components.forEach(component => {
-      Vue.component(component.name, component);
+      let name = (options.insteadName && options.insteadName[component.name])
+        ? options.insteadName[component.name]
+        : component.name;
+
+      Vue.component(name, component);
     });
 
-    console.log(options);
-
-    Vue.prototype.$cosmos = {
+    // Register methods from method providers.
+    const Cosmos = {
       version: version,
       lib: {
         Color,
@@ -30,7 +41,8 @@ export default {
         ElementUtil,
       },
     };
-  },
+    window.Cosmos = Vue.Cosmos = Vue.prototype.$cosmos = Cosmos;
+  }
 };
 
 export {
