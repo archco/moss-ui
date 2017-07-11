@@ -11,8 +11,7 @@ import components from './components.js';
 import { version } from '../../package.json';
 
 const DefaultOptions = {
-  providerEnable: true,
-  insteadName: null,
+  insteadName: {},
 };
 
 export default {
