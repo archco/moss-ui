@@ -19,51 +19,62 @@ export default {
     imgAlt: {
       type: String,
       default: '',
-    },
+    }
   },
   render(createElement) {
-    // element data object.
-    let data = {
-      'class': {
-        chip: true,
-      },
-      attrs: {
-        title: (this.title) ? this.title : false,
-      }
-    };
-    // children nodes.
-    let children = [];
-    if (this.imgSrc) {
-      children.push(createElement(
-        'img',
-        {
-          attrs: {
-            src: this.imgSrc,
-            alt: this.imgAlt,
-          }
-        }
-      ));
-    }
-    window.node = this.$slots.default[0];
-    children.push(this.$slots.default[0]);
-    if (this.closeable) {
-      children.push(createElement(
-        CloseButton,
-        {
-          props: {
-            action: 'remove'
-          }
-        },
-        ['✖']
-      ));
-    }
-    console.log(children);
-
     return createElement(
       this.tag,
-      data,
-      children
+      this.dataObject(),
+      this.childrenArray(createElement),
     );
+  },
+  methods: {
+    /**
+     * Return data object for chip component.
+     *
+     * @return {Object}
+     */
+    dataObject() {
+      return {
+        'class': {
+          chip: true,
+        }
+      };
+    },
+    /**
+     * Return array of child nodes.
+     *
+     * @param  {Function} createElement
+     * @return {Array}
+     */
+    childrenArray(createElement) {
+      let children = [];
+      if (this.imgSrc) {
+        children.push(createElement(
+          'img',
+          {
+            attrs: {
+              src: this.imgSrc,
+              alt: this.imgAlt,
+            }
+          }
+        ));
+      }
+      children = children.concat(this.$slots.default);
+      if (this.closeable) {
+        children.push(createElement(
+          CloseButton,
+          {
+            props: {
+              action: 'remove'
+            }
+          },
+          ['✖']
+        ));
+      }
+
+      return children;
+    },
   }
 }
 </script>
