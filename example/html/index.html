@@ -37,37 +37,15 @@
           <p>The css framework for personal practice.</p>
         </div>
       </div>
-      <section class="pad">
-        <h1>Dropdown</h1>
-        <h3>Toggle Dropdown</h3>
-        <dropdown>
-          <button class="btn" slot="button">TOGGLE</button><a class="active" href="#">hello</a><a href="#">drop</a><a href="#">down</a>
-        </dropdown>
-        <h3>Hover Dropdown</h3>
-        <dropdown toggle="hover">
-          <button class="btn info" slot="button">HOVER</button><a href="#">hello</a><a href="#">drop</a><a href="#">down</a>
-        </dropdown>
-        <h3>Dropdown Content Alignment</h3>
-        <div style="display:flex;width:100%;justify-content:space-between;">
-          <dropdown toggle="hover" align="left">
-            <button class="btn success" slot="button">LEFT</button><a href="#">hello</a><a href="#">drop</a><a href="#">down</a>
-          </dropdown>
-          <dropdown toggle="hover" align="center">
-            <button class="btn secondary" slot="button">CENTER</button><a href="#">hello</a><a href="#">drop</a><a href="#">down</a>
-          </dropdown>
-          <dropdown toggle="hover" align="right">
-            <button class="btn warning" slot="button">RIGHT</button><a href="#">hello</a><a href="#">drop</a><a href="#">down</a>
-          </dropdown>
-        </div>
-        <h1>CloseBtn</h1>
-        <h3>close-button</h3><span>test text<close-button>✖</close-button></span><span class="badge">Badge<close-button action="remove">✖</close-button></span>
-        <div class="pad bg-color-secondary">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><close-button position="top-right" parent-relatived>✖</close-button>
-        </div>
-        <h1>Toast</h1><anchored-heading :level="1">Close Btn</anchored-heading>
-        <button class="btn info" id="btn-toast" onclick="toastShow()">Toast</button>
-        <toast></toast><chip closeable>test</chip>
-<chip img-src="https://www.cloudschool.org/static/user_images/avatar-04.gif" closeable>avatar</chip>
+      <section class="pad"><anchored-heading :level="1">Chip</anchored-heading>
+        <h3>Tag Chip</h3><chip title="tag-sample">TagSample</chip>
+<chip closeable>TagSample</chip>
+        <h3>Contact Chip</h3>
+        <chip img-src="https://www.cloudschool.org/static/user_images/avatar-04.gif" img-alt="person">John Doe</chip>
+        <chip img-src="https://www.cloudschool.org/static/user_images/avatar-04.gif" img-alt="person" closeable>John Doe</chip>
+        <h3>Link Chip</h3>
+        <chip tag="a" href="#" closeable>TagSample</chip>
+        <chip tag="a" href="#" img-src="https://www.cloudschool.org/static/user_images/avatar-04.gif" img-alt="persion" closeable>John Doe</chip>
       </section>
       <footer class="footer">
         <div class="container">

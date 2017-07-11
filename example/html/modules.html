@@ -47,31 +47,14 @@
         </aside>
         <section class="col-md-10">
           <h1 id="chip">Chip</h1>
-          <h2>Tag Chip</h2>
-          <div class="chip">TagSample</div>
-          <div class="chip">TagSample
-            <button class="btn-close">✖</button>
-          </div>
-          <h2>Contact Chip</h2>
-          <div class="chip"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" alt="person">John Doe</div>
-          <div class="chip"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" alt="person">John Doe
-            <button class="btn-close">✖</button>
-          </div>
-          <h2>Link Chip</h2><a class="chip" href="#">TagSample
-            <button class="btn-close hideable">✖</button></a><a class="chip" href="#"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" alt="person">John Doe
-            <button class="btn-close removeable">✖</button></a>
-          <h2>Chip with script</h2>
-          <div id="chip-container"></div>
-          <script>
-            window.addEventListener('load', function () {
-              var chip = new Cosmos.Chip({container: '#chip-container', tag: 'a'});
-              chip.add(
-                'hello',
-                'https://www.aikido-almere.nl/img/youtube-256.png',
-                {id:1, href:'#'}
-              );
-            });
-          </script>
+          <h3>Tag Chip</h3><chip title="tag-sample">TagSample</chip>
+<chip closeable>TagSample</chip>
+          <h3>Contact Chip</h3>
+          <chip img-src="https://www.cloudschool.org/static/user_images/avatar-04.gif" img-alt="person">John Doe</chip>
+          <chip img-src="https://www.cloudschool.org/static/user_images/avatar-04.gif" img-alt="person" closeable>John Doe</chip>
+          <h3>Link Chip</h3>
+          <chip tag="a" href="#" closeable>TagSample</chip>
+          <chip tag="a" href="#" img-src="https://www.cloudschool.org/static/user_images/avatar-04.gif" img-alt="persion" closeable>John Doe</chip>
           <h1 id="collapse">Collapse and Accordion</h1>
           <hr>
           <h2>Collapse</h2>
