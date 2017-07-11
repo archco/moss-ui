@@ -1,5 +1,5 @@
 <script>
-import CloseBtn from './close-btn.vue';
+import CloseButton from './close-button.vue';
 
 export default {
   name: 'chip',
@@ -48,7 +48,7 @@ export default {
     children.push(this.$slots.default[0]);
     if (this.closeable) {
       children.push(createElement(
-        CloseBtn,
+        CloseButton,
         {
           props: {
             action: 'remove'

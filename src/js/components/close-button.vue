@@ -6,7 +6,7 @@
 import ElementUtil from '../lib/element-util';
 
 export default {
-  name: 'close-btn',
+  name: 'close-button',
   props: {
     position: {
       type: String,
