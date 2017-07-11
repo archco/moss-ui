@@ -1,4 +1,4 @@
-%tab {
+%tabs {
   @include reset-list;
   overflow: hidden;
   font-family: $tab-font;
@@ -42,8 +42,8 @@
 //======================================================================
 // Tab
 //======================================================================
-.tab {
-  @extend %tab;
+.tabs {
+  @extend %tabs;
 
   li {
     display: inline-block;
@@ -73,8 +73,8 @@
   }
 }
 
-.tab-vertical {
-  @extend %tab;
+.tabs-vertical {
+  @extend %tabs;
 
   .tab-link {
     @extend %tab-link;

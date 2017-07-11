@@ -3,6 +3,8 @@ import CloseButton from './components/close-button.vue';
 import Toast from './components/toast.vue';
 import Chip from './components/chip.vue';
 import AnchoredHeading from './components/anchored-heading.vue';
+import Tabs from './components/tabs.vue';
+import Tab from './components/tab.vue';
 
 export default [
   Dropdown,
@@ -10,4 +12,6 @@ export default [
   Toast,
   Chip,
   AnchoredHeading,
+  Tabs,
+  Tab,
 ];
