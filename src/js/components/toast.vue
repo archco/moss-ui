@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'toasts',
+  name: 'toast',
   props: {
     position: {
       type: String,
