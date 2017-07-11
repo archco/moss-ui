@@ -1,31 +1,35 @@
 <script>
 export default {
-  name: 'anchored-heading',
+  name: 'anchored-tag',
   props: {
-    level: {
-      type: Number,
+    tag: {
+      type: String,
       required: true,
+    },
+    owned: {
+      type: Boolean,
+      default: false,
     }
   },
   render(createElement) {
     // create kebabCase id
-    let headingId = this.getChildrenTextContent(this.$slots.default)
+    let tagId = this.getChildrenTextContent(this.$slots.default)
       .toLowerCase()
       .replace(/\W+/g, '-')
       .replace(/(^\-|\-$)/g, '');
 
     return createElement(
-      'h' + this.level,
+      this.tag,
       {
         attrs: {
-          id: headingId,
+          id: (this.owned) ? tagId : false,
         }
       },
       [
         createElement('a', {
           attrs: {
-            name: headingId,
-            href: '#' + headingId
+            name: tagId,
+            href: '#' + tagId
           }
         }, this.$slots.default)
       ]
