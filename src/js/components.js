@@ -6,6 +6,7 @@ import AnchoredTag from './components/anchored-tag.vue';
 import Tabs from './components/tabs.vue';
 import Tab from './components/tab.vue';
 import Parallax from './components/parallax.vue';
+import ScrollTo from './components/scroll-to.vue';
 
 export default [
   Dropdown,
@@ -16,4 +17,5 @@ export default [
   Tabs,
   Tab,
   Parallax,
+  ScrollTo,
 ];
