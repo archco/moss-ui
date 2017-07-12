@@ -1,65 +1,30 @@
-h2 Default Tab
-ul(class='tab')
-  li
-    a(href='#tab1' class='tab-link active') tab1
-  li
-    a(href='#tab2' class='tab-link') tab2
-  li
-    a(href='#tab3' class='tab-link') tab3
-div(id='tab1')
-  h3 Tab 1
-  p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-div(id='tab2')
-  h3 Tab 2
-  p Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-div(id='tab3')
-  h3 Tab 3
-  p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+h3 Default Tab
+tabs
+  tab(name='tab1' selected)
+    h4 Tab 1
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  tab(name='tab2')
+    h4 Tab 2
+    p Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  tab(name='tab3')
+    h4 Tab 3
+    p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-h2 Tab with Fade Effect
-ul(class='tab fade')
-  li
-    a(href='#tab2-1' class='tab-link secondary') tab 2-1
-  li
-    a(href='#tab2-2' class='tab-link success active') tab 2-2
-  li
-    a(href='#tab2-3' class='tab-link warning') tab 2-3
-div(id='tab2-1' class='tab-content')
-  h3 Tab 1
-  p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-div(id='tab2-2' class='tab-content')
-  h3 Tab 2
-  p Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-div(id='tab2-3' class='tab-content')
-  h3 Tab 3
-  p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+h3 Tab with Fade Effect
+tabs(effect='fade')
+  tab(name='tab1' selected)
+    h4 Tab 1
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  tab(name='tab2')
+    h4 Tab 2
+    p Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  tab(name='tab3')
+    h4 Tab 3
+    p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-h2 Tab Tip based by Color-set
-ul(class='tab')
+h3 Tab Tip based by Color-set
+tabs(effect='fade')
   each color in colorSet
-    li
-      a(class='tab-link '+color href='#tab3-'+color)= color
-each color in colorSet
-  div(class='tab-content' id='tab3-'+color)
-    = color
-
-h2 Vertical Tab
-div(class='row')
-  div(class='col-sm-2')
-    ul(class='tab-vertical fade')
-      li
-        a(href='#tab3-1' class='tab-link') tab 3-1
-      li
-        a(href='#tab3-2' class='tab-link success active') tab 3-2
-      li
-        a(href='#tab3-3' class='tab-link danger') tab 3-3
-  div(class='col-sm-10')
-    div(id='tab3-1' class='tab-content')
-      h3 Tab 1
-      p= lorem
-    div(id='tab3-2' class='tab-content')
-      h3 Tab 2
-      p= lorem
-    div(id='tab3-3' class='tab-content')
-      h3 Tab 3
-      p= lorem
+    tab(name=color tip-color=color selected=(color == 'success'))
+      h4(class='color-' + color)=color
+      p=lorem
