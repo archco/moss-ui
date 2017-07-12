@@ -496,8 +496,6 @@ template {
 
 /*! scss-palette v0.3.3 | 414 colors | https://github.com/archco/scss-palette#readme | MIT License */
 
-/* keyframes */
-
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -4531,8 +4529,7 @@ aside .fixed {
   }
 }
 
-.tab,
-.tab-vertical {
+.tabs {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -4541,178 +4538,125 @@ aside .fixed {
   font-size: 1em;
 }
 
-.tab .tab-link,
-.tab-vertical .tab-link {
-  text-decoration: none;
-  display: inline-block;
-  padding: .5em 1em;
-  color: #777777;
-  text-align: center;
-  background-color: transparent;
-  border-color: transparent;
-  border-style: solid;
-}
-
-.tab .tab-link:focus,
-.tab-vertical .tab-link:focus,
-.tab .tab-link:hover,
-.tab-vertical .tab-link:hover {
-  text-decoration: none;
-}
-
-.tab .tab-link:hover,
-.tab-vertical .tab-link:hover,
-.tab .tab-link:focus,
-.tab-vertical .tab-link:focus {
-  color: #515151;
-}
-
-.tab .tab-link.active,
-.tab-vertical .tab-link.active {
-  color: #343434;
-  cursor: default;
-  background-color: #fff;
-}
-
-.tab li {
+.tabs li {
   display: inline-block;
 }
 
-.tab .tab-link {
-  border-width: 3px 1px 1px;
-}
-
-.tab .tab-link.active {
-  border-top-color: #0087bd;
-  border-right-color: #bebebe;
-  border-bottom-color: #fff;
-  border-left-color: #bebebe;
-  border-radius: 4px 4px 0 0;
-}
-
-.tab .tab-link.active.default {
-  border-top-color: #9a9a9a;
-}
-
-.tab .tab-link.active.primary {
-  border-top-color: #0087bd;
-}
-
-.tab .tab-link.active.secondary {
-  border-top-color: #91a3b0;
-}
-
-.tab .tab-link.active.info {
-  border-top-color: #008080;
-}
-
-.tab .tab-link.active.success {
-  border-top-color: #00a550;
-}
-
-.tab .tab-link.active.warning {
-  border-top-color: #ffd300;
-}
-
-.tab .tab-link.active.danger {
-  border-top-color: #e23d28;
-}
-
-.tab .tab-link.active.error {
-  border-top-color: #e23d28;
-}
-
-.tab .tab-link.active.light {
-  border-top-color: #fff;
-}
-
-.tab .tab-link.active.dark {
-  border-top-color: #343434;
-}
-
-.tab .tab-link.active.shade {
-  border-top-color: #ebebeb;
-}
-
-.tab .tab-link.active.link {
-  border-top-color: #0087bd;
-}
-
-.tab::after {
+.tabs::after {
   display: block;
   margin-top: -2px;
   border-top: 1px solid #bebebe;
   content: '';
 }
 
-.tab-vertical .tab-link {
-  border-width: 1px;
-  border-bottom-width: 2px;
+.tab-link {
+  text-decoration: none;
+  display: inline-block;
+  padding: .5em 1em;
+  text-align: center;
+  background-color: transparent;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 3px 1px 1px;
 }
 
-.tab-vertical .tab-link.active {
-  border-bottom-color: #0087bd;
+.tab-link:focus,
+.tab-link:hover {
+  text-decoration: none;
 }
 
-.tab-vertical .tab-link.active.default {
-  border-bottom-color: #9a9a9a;
+.tab-link,
+.tab-link:link {
+  color: #777777;
 }
 
-.tab-vertical .tab-link.active.primary {
-  border-bottom-color: #0087bd;
+.tab-link:visited {
+  color: #777777;
 }
 
-.tab-vertical .tab-link.active.secondary {
-  border-bottom-color: #91a3b0;
+.tab-link:hover,
+.tab-link:focus {
+  color: #515151;
 }
 
-.tab-vertical .tab-link.active.info {
-  border-bottom-color: #008080;
+.tab-link:active {
+  color: #343434;
 }
 
-.tab-vertical .tab-link.active.success {
-  border-bottom-color: #00a550;
+.tab-link.active {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  cursor: default;
+  background-color: #fff;
+  border-color: #0087bd #bebebe #fff;
 }
 
-.tab-vertical .tab-link.active.warning {
-  border-bottom-color: #ffd300;
+.tab-link.active.default {
+  border-top-color: #9a9a9a;
 }
 
-.tab-vertical .tab-link.active.danger {
-  border-bottom-color: #e23d28;
+.tab-link.active.primary {
+  border-top-color: #0087bd;
 }
 
-.tab-vertical .tab-link.active.error {
-  border-bottom-color: #e23d28;
+.tab-link.active.secondary {
+  border-top-color: #91a3b0;
 }
 
-.tab-vertical .tab-link.active.light {
-  border-bottom-color: #fff;
+.tab-link.active.info {
+  border-top-color: #008080;
 }
 
-.tab-vertical .tab-link.active.dark {
-  border-bottom-color: #343434;
+.tab-link.active.success {
+  border-top-color: #00a550;
 }
 
-.tab-vertical .tab-link.active.shade {
-  border-bottom-color: #ebebeb;
+.tab-link.active.warning {
+  border-top-color: #ffd300;
 }
 
-.tab-vertical .tab-link.active.link {
-  border-bottom-color: #0087bd;
+.tab-link.active.danger {
+  border-top-color: #e23d28;
 }
 
-.tab-content {
-  display: none;
+.tab-link.active.error {
+  border-top-color: #e23d28;
 }
 
-.tab-content.show {
-  display: block;
+.tab-link.active.light {
+  border-top-color: #fff;
 }
 
-.tab-fade-effect {
-  -webkit-animation: 1s fade-in;
-          animation: 1s fade-in;
+.tab-link.active.dark {
+  border-top-color: #343434;
+}
+
+.tab-link.active.shade {
+  border-top-color: #ebebeb;
+}
+
+.tab-link.active.link {
+  border-top-color: #0087bd;
+}
+
+.tab-fade-enter-active {
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.tab-fade-leave-active {
+  -webkit-transition: opacity 0;
+  transition: opacity 0;
+}
+
+.tab-fade-enter,
+.tab-fade-leave-to {
+  opacity: 0;
+}
+
+.tab-fade-leave,
+.tab-fade-enter-to {
+  opacity: 1;
 }
 
 .message-box {
@@ -5880,10 +5824,14 @@ ul.pagination li.disabled {
   border-radius: 4px;
 }
 
-.toast-fade-enter-active,
+.toast-fade-enter-active {
+  -webkit-transition: opacity .6s;
+  transition: opacity .6s;
+}
+
 .toast-fade-leave-active {
-  -webkit-transition: opacity 0.6s;
-  transition: opacity 0.6s;
+  -webkit-transition: opacity .6s;
+  transition: opacity .6s;
 }
 
 .toast-fade-enter,

@@ -25,19 +25,4 @@
 }
 
 // effects.
-.toast-fade-enter-active,
-.toast-fade-leave-active {
-  $_transition-duration: .6s;
-
-  transition: opacity $_transition-duration;
-}
-
-.toast-fade-enter,
-.toast-fade-leave-to {
-  opacity: 0;
-}
-
-.toast-fade-leave,
-.toast-fade-enter-to {
-  opacity: 1;
-}
+@include vue-fade('toast-fade', '.6s', '.6s');

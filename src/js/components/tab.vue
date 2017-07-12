@@ -1,5 +1,7 @@
 <template>
-  <div v-show="isActive"><slot></slot></div>
+  <transition :name="effectName">
+    <div v-show="isActive"><slot></slot></div>
+  </transition>
 </template>
 
 <script>
@@ -13,11 +15,16 @@ export default {
     selected: {
       type: Boolean,
       default: false,
+    },
+    tipColor: {
+      type: String,
+      default: '',
     }
   },
   data() {
     return {
       isActive: this.selected,
+      effectName: '',
     };
   }
 }
