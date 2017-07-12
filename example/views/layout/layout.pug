@@ -62,9 +62,7 @@ html
                   a(href='#') Link3
         div(class='footer-copyright')
           |copyright &copy; 2016 cosmos all rights reserved.
-      div(class='scroll-to-container')
-        button(class='scroll-to-top') <i class="fa fa-chevron-up" aria-hidden="true"></i>
-        button(class='scroll-to-bottom') <i class="fa fa-chevron-down" aria-hidden="true"></i>
+      scroll-to(:duration='800' :offset='400' top-html='<i class="fa fa-chevron-up" aria-hidden="true">' bottom-html='<i class="fa fa-chevron-down" aria-hidden="true"></i>')
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js"></script>
