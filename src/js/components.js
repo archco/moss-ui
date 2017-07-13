@@ -7,6 +7,7 @@ import Tabs from './components/tabs.vue';
 import Tab from './components/tab.vue';
 import Parallax from './components/parallax.vue';
 import ScrollTo from './components/scroll-to.vue';
+import Modal from './components/modal.vue';
 
 export default [
   Dropdown,
@@ -18,4 +19,5 @@ export default [
   Tab,
   Parallax,
   ScrollTo,
+  Modal,
 ];

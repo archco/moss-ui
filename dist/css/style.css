@@ -4879,7 +4879,7 @@ aside .fixed {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.modal {
+.modal-mask {
   position: fixed;
   top: 0;
   right: 0;
@@ -4887,7 +4887,7 @@ aside .fixed {
   left: 0;
   z-index: 18;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
@@ -4923,6 +4923,7 @@ aside .fixed {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: .8rem .5rem;
+  background-color: #fff;
 }
 
 .modal-header h1,
@@ -4964,13 +4965,13 @@ aside .fixed {
 }
 
 .modal-from-top-enter-active {
-  -webkit-animation: .5s from-top;
-          animation: .5s from-top;
+  -webkit-animation: .4s from-top;
+          animation: .4s from-top;
 }
 
 .modal-from-top-leave-active {
-  -webkit-animation: .5s from-top reverse;
-          animation: .5s from-top reverse;
+  -webkit-animation: .4s from-top reverse;
+          animation: .4s from-top reverse;
 }
 
 .card,

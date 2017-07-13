@@ -259,10 +259,9 @@ $scroll-to-color: $white !default;
 $scroll-to-bg-color: $primary-color-accent !default;
 
 // modal
-$modal-bg-color: rgba(0, 0, 0, .4) !default;
+$modal-mask-color: rgba(0, 0, 0, .5) !default;
 $modal-content-bg-color: $background-color !default;
-$modal-button-color: rgba($text-color, .5) !default;
-$modal-button-hover-color: rgba($text-color, 1) !default;
+$modal-header-bg-color: $background-color !default;
 $modal-close-button-color: rgba($danger-color, .5) !default;
 $modal-close-button-hover-color: rgba($danger-color, 1) !default;
 
