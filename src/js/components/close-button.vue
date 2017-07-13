@@ -28,7 +28,7 @@ export default {
   data() {
     return {
       classObject: {
-        'close-btn': true,
+        'close-button': true,
         'at-corner': this.position == 'top-right',
         'at-right-middle': this.position == 'middle-right',
       }

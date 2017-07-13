@@ -1,13 +1,12 @@
 //======================================================================
-// close-btn
+// close-button
 //======================================================================
 
-.close-btn {
-  $_color: rgba(#000, .3);
+.close-button {
   @extend %btn-common;
   padding: 0;
   margin-left: .25em;
-  color: $_color;
+  color: $close-button-color;
   vertical-align: baseline;
   background-color: transparent;
   box-sizing: content-box;

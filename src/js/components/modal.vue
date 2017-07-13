@@ -4,7 +4,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h3>{{ title }}</h3>
-            <button class="close-btn" @click="$emit('close')" v-html="closeButtonHtml"></button>
+            <button class="close-button" @click="$emit('close')" v-html="closeButtonHtml"></button>
           </div>
           <div class="modal-body">
             <slot></slot>
