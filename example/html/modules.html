@@ -199,39 +199,34 @@
           };</script>
           <h1 id="modal">Modal</h1>
           <hr>
-          <button class="btn warning" data-trigger="modal" data-target="#modal1">Modal Trigger Button</button><a class="btn-flat" id="test" href="#modal2" data-trigger="modal">Link Modal</a><br>
-          <div class="modal" id="modal1">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h3>Dialog Title</h3>
-              </div>
-              <div class="modal-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-              <div class="modal-footer">
-                <button class="btn default" data-trigger="modal-close">Cancel</button>
-                <button class="btn success">OK</button>
-              </div>
+          <h3>Basic</h3>
+          <button class="btn warning" onclick="Cosmos.modal.toggle(&quot;test-modal&quot;)">Trigger</button>
+          <modal name="test-modal">
+            <h3>Test</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </modal>
+          <h3>Close when another clicked</h3>
+          <button class="btn success" onclick="Cosmos.modal.show(&quot;test-modal2&quot;)">Trigger</button>
+          <modal name="test-modal2" title="Close when another clicked" close-on>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </modal>
+          <h3>with Actions</h3>
+          <button class="btn" onclick="Cosmos.modal.toggle(&quot;test-modal3&quot;)">Trigger</button>
+          <modal name="test-modal3" title="with Actions">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div slot="actions">
+              <button class="btn default" onclick="Cosmos.modal.close(&quot;test-modal3&quot;)">CANCEL</button>
+              <button class="btn success">OK</button>
             </div>
-          </div>
-          <div class="modal" id="modal2">
-            <div class="modal-content">
-              <div class="modal-header bg-color-dark">
-                <h3>Link Trigger Test</h3>
-              </div>
-              <div class="modal-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
+          </modal>
+          <h3>Icon close button</h3>
+          <button class="btn info" onclick="Cosmos.modal.toggle(&quot;test-modal4&quot;)">Trigger</button>
+          <modal name="test-modal4" title="Icon close button" close-button-html="&lt;i class=&quot;fa fa-times&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;" close-on>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div slot="actions">
+              <button class="btn success" onclick="Cosmos.modal.close(&quot;test-modal4&quot;)">Okay</button>
             </div>
-          </div>
-          <input class="inline" type="text" id="modal-dialog-input">
-          <button class="btn success" type="button" id="modal-dialog-btn">Modal Dialog</button>
-          <script>
-            document.querySelector('#modal-dialog-btn').addEventListener('click', function () {
-              var msg = document.querySelector('#modal-dialog-input').value || 'Empty';
-              Cosmos.Modal.dialog(msg, 'Title');
-            });
-          </script>
+          </modal>
           <h1 id="nav">Nav</h1>
           <hr>
           <h3>navbar</h3>
@@ -440,7 +435,6 @@
       <scroll-to :duration="800" :offset="400" top-html="&lt;i class=&quot;fa fa-chevron-up&quot; aria-hidden=&quot;true&quot;&gt;" bottom-html="&lt;i class=&quot;fa fa-chevron-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;"></scroll-to>
     </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js"></script>
     <script src="../../dist/js/script.js"></script>
     <script src="./example.js"></script><script>var year = new Date().getFullYear();
     document.querySelector('.footer-copyright').innerHTML = "copyright \&copy; " + year + " cosmos all rights reserved.";

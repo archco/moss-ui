@@ -1,28 +1,25 @@
-button(class='btn warning' data-trigger='modal' data-target='#modal1') Modal Trigger Button
-a(id='test' href='#modal2' class='btn-flat' data-trigger='modal') Link Modal
-br
-div(id='modal1' class='modal')
-  div(class='modal-content')
-    div(class='modal-header')
-      h3 Dialog Title
-    div(class='modal-body')
-      p=lorem
-    div(class='modal-footer')
-      button(class='btn default' data-trigger='modal-close') Cancel
-      button(class='btn success') OK
+h3 Basic
+button(class='btn warning' onclick='Cosmos.modal.toggle("test-modal")') Trigger
+modal(name='test-modal')
+  h3 Test
+  p=lorem
 
-div(id='modal2' class='modal')
-  div(class='modal-content')
-    div(class='modal-header bg-color-dark')
-      h3 Link Trigger Test
-    div(class='modal-body')
-      p=lorem
+h3 Close when another clicked
+button(class='btn success' onclick='Cosmos.modal.show("test-modal2")') Trigger
+modal(name='test-modal2' title='Close when another clicked' close-on)
+  p=lorem
 
-input(type='text' id='modal-dialog-input' class='inline')
-button(type='button' id='modal-dialog-btn' class='btn success') Modal Dialog
+h3 with Actions
+button(class='btn' onclick='Cosmos.modal.toggle("test-modal3")') Trigger
+modal(name='test-modal3' title='with Actions')
+  p=lorem
+  div(slot='actions')
+    button(class='btn default' onclick='Cosmos.modal.close("test-modal3")') CANCEL
+    button(class='btn success') OK
 
-script.
-  document.querySelector('#modal-dialog-btn').addEventListener('click', function () {
-    var msg = document.querySelector('#modal-dialog-input').value || 'Empty';
-    Cosmos.Modal.dialog(msg, 'Title');
-  });
+h3 Icon close button
+button(class='btn info' onclick='Cosmos.modal.toggle("test-modal4")') Trigger
+modal(name='test-modal4' title='Icon close button' close-button-html='<i class="fa fa-times" aria-hidden="true"></i>' close-on)
+  p=lorem
+  div(slot='actions')
+    button(class='btn success' onclick='Cosmos.modal.close("test-modal4")') Okay

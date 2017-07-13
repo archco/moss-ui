@@ -3,6 +3,6 @@
 // toast.
 var toastCount = 0;
 function toastShow() {
-  window.Cosmos.toast.show('toast test ' + toastCount);
+  window.Cosmos.toast('toast test ' + toastCount);
   toastCount++;
 }
