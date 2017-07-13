@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import { EventBus } from '../lib/event-bus';
+
 export default {
   name: 'toast',
   props: {
@@ -55,11 +57,15 @@ export default {
       this.toasts.splice(index, 1);
     }
   },
-  mounted() {
+  beforeMount() {
+    EventBus.$on('toast-show', text => {
+      this.show(text);
+    });
+
     // Register helper function to global object.
     if (!window.Cosmos) window.Cosmos = {};
-    window.Cosmos.toast = {
-      show: this.show.bind(this),
+    window.Cosmos.toast = (text) => {
+      EventBus.$emit('toast-show', text);
     }
   }
 }

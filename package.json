@@ -27,7 +27,8 @@
   "license": "MIT",
   "dependencies": {
     "normalize.css": "^7.0.0",
-    "scss-palette": "^0.3.3"
+    "scss-palette": "^0.3.3",
+    "vue": "^2.3.4"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
@@ -42,7 +43,6 @@
     "mocha": "^3.4.2",
     "pug": "^2.0.0-rc.2",
     "pug-cli": "^1.0.0-alpha6",
-    "vue": "^2.3.4",
     "webpack": "^3.1.0"
   },
   "eslintConfig": {

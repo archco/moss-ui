@@ -7,6 +7,7 @@
 import Color from './lib/color';
 import Util from './lib/util';
 import ElementUtil from './lib/element-util';
+import { EventBus } from './lib/event-bus';
 import components from './components.js';
 import { version } from '../../package.json';
 
@@ -31,9 +32,10 @@ export default {
       Vue.component(name, component);
     });
 
-    // Register methods from method providers.
+    // Add object for convenience.
     const Cosmos = {
-      version: version,
+      version,
+      EventBus,
       lib: {
         Color,
         Util,
@@ -48,4 +50,5 @@ export {
   Color,
   Util,
   ElementUtil,
+  EventBus,
 };

@@ -4886,13 +4886,8 @@ aside .fixed {
   bottom: 0;
   left: 0;
   z-index: 18;
-  display: none;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal.show {
-  display: block;
 }
 
 .modal-content {
@@ -4908,8 +4903,6 @@ aside .fixed {
   margin: 15% auto;
   background-color: #fff;
   border: 1px solid #bebebe;
-  -webkit-animation: .4s from-top;
-          animation: .4s from-top;
 }
 
 @media only screen and (max-width: 767px) {
@@ -4941,12 +4934,12 @@ aside .fixed {
   margin: 0;
 }
 
-.modal-header .btn-close {
+.modal-header .close-btn {
   font-size: 1.5em;
   color: rgba(226, 61, 40, 0.5);
 }
 
-.modal-header .btn-close:hover {
+.modal-header .close-btn:hover {
   color: #e23d28;
 }
 
@@ -4968,6 +4961,16 @@ aside .fixed {
       -ms-flex-pack: end;
           justify-content: flex-end;
   padding: .8rem .5rem;
+}
+
+.modal-from-top-enter-active {
+  -webkit-animation: .5s from-top;
+          animation: .5s from-top;
+}
+
+.modal-from-top-leave-active {
+  -webkit-animation: .5s from-top reverse;
+          animation: .5s from-top reverse;
 }
 
 .card,
