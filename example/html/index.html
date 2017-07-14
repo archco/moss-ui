@@ -38,21 +38,6 @@
         </div>
       </div>
       <section class="pad">
-        <anchored-tag tag="h1" owned>Toast</anchored-tag>
-        <button class="btn info" id="btn-toast" onclick="toastShow()">Toast</button>
-        <toast></toast>
-        <anchored-tag tag="h1" owned>Parallax</anchored-tag>
-        <parallax src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg"></parallax><div class="flex-center-container bg-color-shade" style="height:250px;">
-        <div>
-          <h2>Content</h2>
-          <p>content here...</p>
-        </div></div>
-        <parallax src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg" height="300px"></parallax><div class="flex-center-container" style="height:300px;">
-        <div>
-          <h2>Content</h2>
-          <p>content here...</p>
-        </div></div>
-        <parallax src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" height="20em"></parallax>
         <anchored-tag tag="h1" owned>Modal</anchored-tag>
         <h3>Basic</h3>
         <button class="btn warning" onclick="Cosmos.modal.toggle(&quot;test-modal&quot;)">Trigger</button>
@@ -82,6 +67,34 @@
             <button class="btn success" onclick="Cosmos.modal.close(&quot;test-modal4&quot;)">Okay</button>
           </div>
         </modal>
+        <anchored-tag tag="h1" owned>Message</anchored-tag>
+        <h3>Basic</h3>
+        <message>hello</message>
+        <h3>With status color</h3>
+        <message status="default"><span>This is default message box.</span></message>
+        <message status="primary"><span>This is primary message box.</span></message>
+        <message status="secondary"><span>This is secondary message box.</span></message>
+        <message status="info"><span>This is info message box.</span></message>
+        <message status="success"><span>This is success message box.</span></message>
+        <message status="warning"><span>This is warning message box.</span></message>
+        <message status="danger"><span>This is danger message box.</span></message>
+        <message status="light"><span>This is light message box.</span></message>
+        <message status="dark"><span>This is dark message box.</span></message>
+        <message status="shade"><span>This is shade message box.</span></message>
+        <message status="link"><span>This is link message box.</span></message>
+        <h3>Message Box</h3>
+        <div>
+          <input class="inline" type="text" id="input-msg">
+          <select class="inline" id="select-msg">
+            <option value="default">default</option>
+            <option value="info">info</option>
+            <option value="success">success</option>
+            <option value="warning">warning</option>
+            <option value="danger">danger</option>
+          </select>
+          <button class="btn" type="button" onclick="showMessage()">show message</button>
+        </div>
+        <message-box close-html="&lt;i class=&quot;fa fa-times-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;"></message-box>
       </section>
       <footer class="footer">
         <div class="container">

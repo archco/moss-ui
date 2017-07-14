@@ -1,22 +1,19 @@
-h3 Message box
-div(class='message-box')
-  span This is message box.
-  button(class='btn-close at-right-middle')
-    i(class="fa fa-times" aria-hidden="true")
+h3 Basic
+message hello
+
+h3 With status color
 each color in colorSet
-  div(class='message-box '+color)
+  message(status=color)
     span= 'This is ' + color + ' message box.'
-    button(class='btn-close at-right-middle')
-      i(class="fa fa-times" aria-hidden="true")
-h2 showMessage()
-div(id='message-container')
+
+h3 Message Box
 div
   input(type='text' id='input-msg' class='inline')
-  button(type='button' id='btn-msg' class='btn') show message
-<script>
-| var b = document.querySelector('#btn-msg');
-| b.onclick = function () {
-|   var i = document.querySelector('#input-msg');
-|   showMessage(i.value);
-| };
-</script>
+  select(id='select-msg' class='inline')
+    option(value='default') default
+    option(value='info') info
+    option(value='success') success
+    option(value='warning') warning
+    option(value='danger') danger
+  button(type='button' class='btn' onclick="showMessage()") show message
+message-box(close-html='<i class="fa fa-times-circle" aria-hidden="true"></i>')

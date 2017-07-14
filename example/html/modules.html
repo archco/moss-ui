@@ -150,53 +150,33 @@
           </div>
           <h1 id="message">Message</h1>
           <hr>
-          <h3>Message box</h3>
-          <div class="message-box"><span>This is message box.</span>
-            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
-          </div>
-          <div class="message-box default"><span>This is default message box.</span>
-            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
-          </div>
-          <div class="message-box primary"><span>This is primary message box.</span>
-            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
-          </div>
-          <div class="message-box secondary"><span>This is secondary message box.</span>
-            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
-          </div>
-          <div class="message-box info"><span>This is info message box.</span>
-            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
-          </div>
-          <div class="message-box success"><span>This is success message box.</span>
-            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
-          </div>
-          <div class="message-box warning"><span>This is warning message box.</span>
-            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
-          </div>
-          <div class="message-box danger"><span>This is danger message box.</span>
-            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
-          </div>
-          <div class="message-box light"><span>This is light message box.</span>
-            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
-          </div>
-          <div class="message-box dark"><span>This is dark message box.</span>
-            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
-          </div>
-          <div class="message-box shade"><span>This is shade message box.</span>
-            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
-          </div>
-          <div class="message-box link"><span>This is link message box.</span>
-            <button class="btn-close at-right-middle"><i class="fa fa-times" aria-hidden="true"></i></button>
-          </div>
-          <h2>showMessage()</h2>
-          <div id="message-container"></div>
+          <h3>Basic</h3>
+          <message>hello</message>
+          <h3>With status color</h3>
+          <message status="default"><span>This is default message box.</span></message>
+          <message status="primary"><span>This is primary message box.</span></message>
+          <message status="secondary"><span>This is secondary message box.</span></message>
+          <message status="info"><span>This is info message box.</span></message>
+          <message status="success"><span>This is success message box.</span></message>
+          <message status="warning"><span>This is warning message box.</span></message>
+          <message status="danger"><span>This is danger message box.</span></message>
+          <message status="light"><span>This is light message box.</span></message>
+          <message status="dark"><span>This is dark message box.</span></message>
+          <message status="shade"><span>This is shade message box.</span></message>
+          <message status="link"><span>This is link message box.</span></message>
+          <h3>Message Box</h3>
           <div>
             <input class="inline" type="text" id="input-msg">
-            <button class="btn" type="button" id="btn-msg">show message</button>
-          </div><script>var b = document.querySelector('#btn-msg');
-          b.onclick = function () {
-            var i = document.querySelector('#input-msg');
-            showMessage(i.value);
-          };</script>
+            <select class="inline" id="select-msg">
+              <option value="default">default</option>
+              <option value="info">info</option>
+              <option value="success">success</option>
+              <option value="warning">warning</option>
+              <option value="danger">danger</option>
+            </select>
+            <button class="btn" type="button" onclick="showMessage()">show message</button>
+          </div>
+          <message-box close-html="&lt;i class=&quot;fa fa-times-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;"></message-box>
           <h1 id="modal">Modal</h1>
           <hr>
           <h3>Basic</h3>
