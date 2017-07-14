@@ -125,7 +125,7 @@ $code-block-line-height: 1.45 !default;
 //======================================================================
 $z-index-hero-background:     1 !default;
 $z-index-hero-content:        2 !default;
-$z-index-message-box:         2 !default;
+$z-index-message:             2 !default;
 $z-index-card:                2 !default;
 $z-index-card-content:        3 !default;
 $z-index-header:              10 !default;
@@ -321,11 +321,11 @@ $toast-bg-color: rgba($background-color-invert, .85) !default;
 $toast-border-radius: $radius-normal !default;
 $toast-container-position-offset: 5% !default;
 
-// message-box
-$message-box-default-bg-color: $default-color !default;
-$message-box-padding-y: 1rem !default;
-$message-box-padding-x: 1.5rem !default;
-$message-box-margin: 8px !default;
+// message
+$message-default-bg-color: $default-color !default;
+$message-padding-y: 1rem !default;
+$message-padding-x: 1.5rem !default;
+$message-margin: 8px !default;
 
 // simple-crud
 $simple-crud-min-height: 3em !default;

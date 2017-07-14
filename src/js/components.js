@@ -8,6 +8,8 @@ import Tab from './components/tab.vue';
 import Parallax from './components/parallax.vue';
 import ScrollTo from './components/scroll-to.vue';
 import Modal from './components/modal.vue';
+import Message from './components/message.vue';
+import MessageBox from './components/message-box.vue';
 
 export default [
   Dropdown,
@@ -20,4 +22,6 @@ export default [
   Parallax,
   ScrollTo,
   Modal,
+  Message,
+  MessageBox,
 ];

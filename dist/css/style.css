@@ -1068,7 +1068,7 @@ input[type="reset"],
 .scroll-to-container .scroll-to-bottom,
 .dropdown-toggle,
 .dropdown-hover,
-.close-btn {
+.close-button {
   text-decoration: none;
   line-height: 1.15;
   white-space: nowrap;
@@ -1096,7 +1096,7 @@ input[type="reset"]:focus,
 .scroll-to-container .scroll-to-bottom:focus,
 .dropdown-toggle:focus,
 .dropdown-hover:focus,
-.close-btn:focus,
+.close-button:focus,
 input[type="submit"]:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
@@ -1110,7 +1110,7 @@ input[type="reset"]:hover,
 .scroll-to-container .scroll-to-bottom:hover,
 .dropdown-toggle:hover,
 .dropdown-hover:hover,
-.close-btn:hover {
+.close-button:hover {
   text-decoration: none;
 }
 
@@ -4659,7 +4659,7 @@ aside .fixed {
   opacity: 1;
 }
 
-.message-box {
+.message {
   color: #fff;
   background-color: #9a9a9a;
   position: relative;
@@ -4668,215 +4668,90 @@ aside .fixed {
   margin: 8px;
   vertical-align: middle;
   border-radius: 4px;
-  -webkit-transition: opacity 0.6s;
-  transition: opacity 0.6s;
 }
 
-.message-box .btn-close-message {
-  color: #fff;
-  background-color: transparent;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-}
-
-.message-box .btn-close-message:hover {
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.message-box .btn-close {
+.message .close-button {
   font-size: 1.5rem;
 }
 
-.message-box.default {
+.message.default {
   color: #fff;
   background-color: #9a9a9a;
 }
 
-.message-box.default .btn-close-message {
-  color: #fff;
-  background-color: transparent;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-}
-
-.message-box.default .btn-close-message:hover {
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.message-box.primary {
+.message.primary {
   color: #fff;
   background-color: #0087bd;
 }
 
-.message-box.primary .btn-close-message {
-  color: #fff;
-  background-color: transparent;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-}
-
-.message-box.primary .btn-close-message:hover {
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.message-box.secondary {
+.message.secondary {
   color: #fff;
   background-color: #91a3b0;
 }
 
-.message-box.secondary .btn-close-message {
-  color: #fff;
-  background-color: transparent;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-}
-
-.message-box.secondary .btn-close-message:hover {
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.message-box.info {
+.message.info {
   color: #fff;
   background-color: #008080;
 }
 
-.message-box.info .btn-close-message {
-  color: #fff;
-  background-color: transparent;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-}
-
-.message-box.info .btn-close-message:hover {
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.message-box.success {
+.message.success {
   color: #fff;
   background-color: #00a550;
 }
 
-.message-box.success .btn-close-message {
-  color: #fff;
-  background-color: transparent;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-}
-
-.message-box.success .btn-close-message:hover {
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.message-box.warning {
+.message.warning {
   color: #343434;
   background-color: #ffd300;
 }
 
-.message-box.warning .btn-close-message {
-  color: #343434;
-  background-color: transparent;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-}
-
-.message-box.warning .btn-close-message:hover {
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.message-box.danger {
+.message.danger {
   color: #fff;
   background-color: #e23d28;
 }
 
-.message-box.danger .btn-close-message {
-  color: #fff;
-  background-color: transparent;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-}
-
-.message-box.danger .btn-close-message:hover {
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.message-box.error {
+.message.error {
   color: #fff;
   background-color: #e23d28;
 }
 
-.message-box.error .btn-close-message {
-  color: #fff;
-  background-color: transparent;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-}
-
-.message-box.error .btn-close-message:hover {
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.message-box.light {
+.message.light {
   color: #343434;
   background-color: #fff;
 }
 
-.message-box.light .btn-close-message {
-  color: #343434;
-  background-color: transparent;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-}
-
-.message-box.light .btn-close-message:hover {
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.message-box.dark {
+.message.dark {
   color: #fff;
   background-color: #343434;
 }
 
-.message-box.dark .btn-close-message {
-  color: #fff;
-  background-color: transparent;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-}
-
-.message-box.dark .btn-close-message:hover {
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.message-box.shade {
+.message.shade {
   color: #343434;
   background-color: #ebebeb;
 }
 
-.message-box.shade .btn-close-message {
-  color: #343434;
-  background-color: transparent;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-}
-
-.message-box.shade .btn-close-message:hover {
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.message-box.link {
+.message.link {
   color: #fff;
   background-color: #0087bd;
 }
 
-.message-box.link .btn-close-message {
-  color: #fff;
-  background-color: transparent;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
+.message-fade-enter-active {
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
 }
 
-.message-box.link .btn-close-message:hover {
-  color: rgba(0, 0, 0, 0.3);
+.message-fade-leave-active {
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+}
+
+.message-fade-enter,
+.message-fade-leave-to {
+  opacity: 0;
+}
+
+.message-fade-leave,
+.message-fade-enter-to {
+  opacity: 1;
 }
 
 .modal-mask {
@@ -4935,12 +4810,12 @@ aside .fixed {
   margin: 0;
 }
 
-.modal-header .close-btn {
+.modal-header .close-button {
   font-size: 1.5em;
   color: rgba(226, 61, 40, 0.5);
 }
 
-.modal-header .close-btn:hover {
+.modal-header .close-button:hover {
   color: #e23d28;
 }
 
@@ -6109,7 +5984,7 @@ ul.pagination li.disabled {
   background-color: rgba(52, 52, 52, 0.1);
 }
 
-.close-btn {
+.close-button {
   padding: 0;
   margin-left: .25em;
   color: rgba(0, 0, 0, 0.3);
@@ -6121,17 +5996,17 @@ ul.pagination li.disabled {
   transition: color 0.3s;
 }
 
-.close-btn:hover {
+.close-button:hover {
   color: inherit;
 }
 
-.close-btn.at-corner {
+.close-button.at-corner {
   position: absolute;
   top: .5em;
   right: .5em;
 }
 
-.close-btn.at-right-middle {
+.close-button.at-right-middle {
   position: absolute;
   top: 50%;
   right: 1em;

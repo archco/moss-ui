@@ -1,0 +1,34 @@
+//======================================================================
+// Message
+//======================================================================
+
+@mixin _message($bg-color) {
+  color: get-contrast($bg-color);
+  background-color: $bg-color;
+}
+
+.message {
+  // default color
+  @include _message($message-default-bg-color);
+  // common attributes.
+  position: relative;
+  z-index: $z-index-message;
+  padding: $message-padding-y $message-padding-x;
+  margin: $message-margin;
+  vertical-align: middle;
+  border-radius: $radius-normal;
+
+  .close-button {
+    font-size: 1.5rem;
+  }
+
+  // each color-set
+  @each $name, $color in $color-set {
+    &.#{$name} {
+      @include _message($color);
+    }
+  }
+}
+
+// effects.
+@include vue-fade('message-fade', '.5s', '.5s');
