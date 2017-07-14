@@ -8,7 +8,8 @@ import Color from './lib/color';
 import Util from './lib/util';
 import ElementUtil from './lib/element-util';
 import { EventBus } from './lib/event-bus';
-import components from './components.js';
+import components from './components';
+import directives from './directives';
 import { version } from '../../package.json';
 
 const DefaultOptions = {
@@ -30,6 +31,11 @@ export default {
         : component.name;
 
       Vue.component(name, component);
+    });
+
+    // Add directives.
+    directives.forEach(directive => {
+      Vue.directive(directive.name, directive);
     });
 
     // Add object for convenience.
