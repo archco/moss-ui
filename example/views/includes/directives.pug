@@ -1,0 +1,13 @@
+h3 v-focus
+input(type='text' placeholder='focused' v-focus)
+
+h3 v-trigger
+button(class='btn' v-trigger:toast-show="['toast-show is triggered.']") TRIGGER
+
+h3 v-modal
+button(class='btn' v-modal:v-modal-test) Trigger
+modal(name='v-modal-test' title='Directive Test')
+  p=lorem
+  div(slot='actions')
+    button(class='btn default' v-modal:v-modal-test.close) CANCEL
+    button(class='btn success' v-modal:v-modal-test v-trigger:toast-show="['Okay!']") OK

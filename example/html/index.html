@@ -95,6 +95,22 @@
           <button class="btn" type="button" onclick="showMessage()">show message</button>
         </div>
         <message-box close-html="&lt;i class=&quot;fa fa-times-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;"></message-box>
+        <anchored-tag tag="h1" owned>Toast</anchored-tag>
+        <button class="btn info" id="btn-toast" onclick="toastShow()">Toast</button>
+        <anchored-tag tag="h1" owned>Directives</anchored-tag>
+        <h3>v-focus</h3>
+        <input type="text" placeholder="focused" v-focus>
+        <h3>v-trigger</h3>
+        <button class="btn" v-trigger:toast-show="['toast-show is triggered.']">TRIGGER</button>
+        <h3>v-modal</h3>
+        <button class="btn" v-modal:v-modal-test>Trigger</button>
+        <modal name="v-modal-test" title="Directive Test">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div slot="actions">
+            <button class="btn default" v-modal:v-modal-test.close>CANCEL</button>
+            <button class="btn success" v-modal:v-modal-test v-trigger:toast-show="['Okay!']">OK</button>
+          </div>
+        </modal>
       </section>
       <footer class="footer">
         <div class="container">
@@ -116,6 +132,7 @@
         <div class="footer-copyright">copyright &copy; 2016 cosmos all rights reserved.</div>
       </footer>
       <scroll-to :duration="800" :offset="400" top-html="&lt;i class=&quot;fa fa-chevron-up&quot; aria-hidden=&quot;true&quot;&gt;" bottom-html="&lt;i class=&quot;fa fa-chevron-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;"></scroll-to>
+      <toast></toast>
     </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
     <script src="../../dist/js/script.js"></script>
