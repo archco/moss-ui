@@ -23,6 +23,10 @@ export default {
     expanded: {
       type: Boolean,
       default: false,
+    },
+    accordion: {
+      type: String,
+      default: '',
     }
   },
   data() {
@@ -48,7 +52,7 @@ export default {
     clearHeight(el) {
       el.style.maxHeight = null;
     },
-    toggleCollapse(id, action = 'toggle') {
+    toggleCollapse(id, action = 'toggle', cb = null) {
       if (id !== this.id) return;
       action = action.toLowerCase();
       if (action === 'show') {
@@ -58,10 +62,52 @@ export default {
       } else {
         this.show = !this.show;
       }
+
+      if (typeof cb === 'function') cb(this.show); // return to callback.
+    },
+    registerAccordion() {
+      // initialize accordion object.
+      if (typeof this.$root.$cosmos.accordion === 'undefined') {
+        this.$root.$cosmos.accordion = {};
+      }
+
+      // initialize accordion toggle method.
+      if (typeof this.$root.$cosmos.accordion.toggle === 'undefined') {
+        this.$root.$cosmos.accordion.toggle = this.toggleAccordion;
+      }
+
+      // Initialize accordion list.
+      if (typeof this.$root.$cosmos.accordion[this.accordion] === 'undefined') {
+        this.$root.$cosmos.accordion[this.accordion] = [];
+      }
+
+      // register.
+      this.$root.$cosmos.accordion[this.accordion].push(this);
+    },
+    toggleAccordion(accordionId, id, action = 'toggle') {
+      const list = this.$root.$cosmos.accordion[accordionId];
+      if (!list) return;
+      action = action.toLowerCase();
+
+      list.forEach(item => {
+        if (action == 'show') {
+          item.show = (item.id === id) ? true : false;
+        } else if (action == 'hide') {
+          if (item.id === id) item.show = false;
+        } else {
+          item.show = (item.id === id) ? !item.show : false;
+        }
+      });
     }
   },
   beforeMount() {
     EventBus.$on('collapse-toggle', this.toggleCollapse.bind(this));
+    EventBus.$on('collapse-item', (id, cb = null) => {
+      if (this.id !== id) return;
+      if (typeof cb === 'function') cb(this);
+    });
+
+    if (this.accordion) this.registerAccordion();
   }
 }
 </script>

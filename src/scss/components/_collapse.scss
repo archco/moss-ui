@@ -1,23 +1,3 @@
-@mixin _accordion-list {
-  li:first-child > .accordion-head {
-    @include border-top-radius($accordion-border-radius);
-  }
-
-  li:last-child > .accordion-head {
-    @include border-bottom-radius($accordion-border-radius);
-    margin-bottom: 0;
-
-    &.active {
-      border-radius: 0;
-
-      + .accordion-body {
-        @include border-bottom-radius($accordion-border-radius);
-        border-bottom: $accordion-border-width solid $accordion-border-color;
-      }
-    }
-  }
-}
-
 @mixin _collapse-toggle-with-icon {
   &::after {
     position: absolute;
@@ -30,7 +10,7 @@
     content: '\002B';
   }
 
-  &.with-plus.active::after {
+  &.with-plus[data-collapsed="false"]::after {
     content: '\2212';
   }
 
@@ -38,7 +18,7 @@
     @include caret('down');
   }
 
-  &.with-caret.active::after {
+  &.with-caret[data-collapsed="false"]::after {
     @include caret('up');
   }
 
@@ -47,56 +27,20 @@
     transform: translate(0, -50%) rotate(45deg);
   }
 
-  &.with-arrow.active::after {
+  &.with-arrow[data-collapsed="false"]::after {
     @include arrow('up');
     transform: translate(0, -50%) rotate(-135deg);
   }
 }
 
-%collapse-toggle {
-  @include btn-base;
-  @include _collapse-toggle-with-icon;
-  position: relative;
-}
-
-%collapse-panel {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .3s ease-out;
-}
-
 //======================================================================
 // Collapse
 //======================================================================
+
 .collapse-toggle {
-  @extend %collapse-toggle;
-}
-
-.collapse-panel {
-  @extend %collapse-panel;
-}
-
-.accordion {
-  @include reset-list;
-  @include _accordion-list;
-
-  .accordion-head {
-    @extend %collapse-toggle;
-    padding: $accordion-head-padding;
-    margin-bottom: -$accordion-border-width;
-    border: $accordion-border-width solid $accordion-border-color;
-
-    &.active {
-      color: $accordion-head-active-color;
-      background-color: $accordion-head-active-bg-color;
-    }
-  }
-
-  .accordion-body {
-    @extend %collapse-panel;
-    border-right: $accordion-border-width solid $accordion-border-color;
-    border-left: $accordion-border-width solid $accordion-border-color;
-  }
+  @include btn-base;
+  @include _collapse-toggle-with-icon;
+  position: relative;
 }
 
 // transition.

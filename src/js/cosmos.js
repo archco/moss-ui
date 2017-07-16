@@ -24,6 +24,9 @@ export default {
 
     options = Object.assign(DefaultOptions, options);
 
+    // Add object for convenience.
+    this.addCosmosObject(Vue);
+
     // Add components.
     components.forEach(component => {
       let name = (options.insteadName && options.insteadName[component.name])
@@ -37,8 +40,9 @@ export default {
     directives.forEach(directive => {
       Vue.directive(directive.name, directive);
     });
+  },
 
-    // Add object for convenience.
+  addCosmosObject(Vue) {
     const Cosmos = {
       version,
       EventBus,
@@ -49,7 +53,7 @@ export default {
       },
     };
     window.Cosmos = Vue.Cosmos = Vue.prototype.$cosmos = Cosmos;
-  }
+  },
 };
 
 export {
