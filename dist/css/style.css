@@ -5533,6 +5533,13 @@ ul.pagination li.disabled {
   border-left: 1px solid #bebebe;
 }
 
+.collapsing-enter-active,
+.collapsing-leave-active {
+  overflow: hidden;
+  -webkit-transition: max-height .3s ease-out;
+  transition: max-height .3s ease-out;
+}
+
 .simple-crud-view-read,
 .simple-crud-view-update,
 .simple-crud-view-delete {
