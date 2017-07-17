@@ -11,6 +11,10 @@ import Modal from './components/modal.vue';
 import Message from './components/message.vue';
 import MessageBox from './components/message-box.vue';
 import Collapse from './components/collapse.vue';
+import NavbarToggle from './components/navbar-toggle.vue';
+import Navbar from './components/navbar.vue';
+import NavbarNav from './components/navbar-nav.vue';
+import NavItem from './components/nav-item.vue';
 
 export default [
   Dropdown,
@@ -26,4 +30,8 @@ export default [
   Message,
   MessageBox,
   Collapse,
+  NavbarToggle,
+  Navbar,
+  NavbarNav,
+  NavItem,
 ];

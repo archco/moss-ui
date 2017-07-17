@@ -1,6 +1,9 @@
 <script>
+import NodeUtil from '../mixins/node-util';
+
 export default {
   name: 'anchored-tag',
+  mixins: [ NodeUtil ],
   props: {
     tag: {
       type: String,
@@ -34,21 +37,6 @@ export default {
         }, this.$slots.default)
       ]
     );
-  },
-  methods: {
-    /**
-     * get text content from children nodes.
-     *
-     * @param  {Array} children  An array of VNodes.
-     * @return {String}
-     */
-    getChildrenTextContent(children) {
-      return children.map(node => {
-        return node.children
-          ? this.getChildrenTextContent(node.children)
-          : node.text;
-      }).join('');
-    }
   }
 }
 </script>

@@ -3075,10 +3075,6 @@ img.filter.sepia {
   width: auto;
 }
 
-.navbar-toggle {
-  display: none;
-}
-
 .navbar-toggle .icon-bar1,
 .navbar-toggle .icon-bar2,
 .navbar-toggle .icon-bar3 {
@@ -6132,6 +6128,12 @@ ul.pagination li.disabled {
 
 .display-invisible {
   visibility: hidden;
+}
+
+@media only screen and (min-width: 768px) {
+  .hide-tablet-up {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 767px) {

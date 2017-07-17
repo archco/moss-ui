@@ -22,6 +22,10 @@
   @extend %responsive-mobile-hide;
 }
 
+.hide-tablet-up {
+  @extend %resopnsive-tablet-hide;
+}
+
 // font
 .font-cursive { font-family: $font-cursive; }
 .font-accent { font-family: $font-accent; }
