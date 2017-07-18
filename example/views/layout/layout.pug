@@ -25,8 +25,8 @@ html
         h1(id='project-name') cosmos-css
 
       navbar(class='sticky-top shadow-near' align='end')
-        navbar-brand(href='index.html' type='text' slot='brand') Cosmos
-        navbar-nav
+        navbar-brand(href='index.html' type='text' slot='brand' v-activator.this.self) Cosmos
+        navbar-nav(v-activator="'.nav-item > .nav-link'")
           nav-item(href='components.html?q=components') Components
           nav-item(href='modules.html') Modules
           nav-item(href='js-libraries.html') JS Libraries

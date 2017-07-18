@@ -14,8 +14,8 @@
         <h1 id="project-name">cosmos-css</h1>
       </header>
       <navbar class="sticky-top shadow-near" align="end">
-        <navbar-brand href="index.html" type="text" slot="brand">Cosmos</navbar-brand>
-        <navbar-nav>
+        <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Cosmos</navbar-brand>
+        <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
           <nav-item href="components.html?q=components">Components</nav-item>
           <nav-item href="modules.html">Modules</nav-item>
           <nav-item href="js-libraries.html">JS Libraries</nav-item>
