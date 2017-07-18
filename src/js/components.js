@@ -15,6 +15,7 @@ import NavbarToggle from './components/navbar-toggle.vue';
 import Navbar from './components/navbar.vue';
 import NavbarNav from './components/navbar-nav.vue';
 import NavItem from './components/nav-item.vue';
+import NavbarBrand from './components/navbar-brand.vue';
 
 export default [
   Dropdown,
@@ -34,4 +35,5 @@ export default [
   Navbar,
   NavbarNav,
   NavItem,
+  NavbarBrand,
 ];

@@ -31,8 +31,13 @@ export default {
   },
   data() {
     return {
-      show: this.expanded,
+      show: this.expanded
     };
+  },
+  watch: {
+    expanded(val) {
+      this.show = val;
+    }
   },
   methods: {
     enter(el) {

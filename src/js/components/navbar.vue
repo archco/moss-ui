@@ -1,39 +1,51 @@
 <template lang="html">
   <nav class="navbar">
-    <div class="navbar-header">
-      <a href="#" class="navbar-brand text">Navbar</a>
+    <div :class="headerClass">
+      <slot name="brand"></slot>
       <navbar-toggle
         class="hide-tablet-up"
         :color="toggleColor"
-        :opened="toggle"
+        :opened="toggleExpanded"
         @click.native="onToggleClick"
       />
     </div>
-    <div :class="bodyClass">
+    <collapse id="navbar-body" :class="bodyClass" :expanded="navShow">
       <slot></slot>
-    </div>
+    </collapse>
   </nav>
 </template>
 
 <script>
 import NavbarToggle from './navbar-toggle.vue';
+import Collapse from './collapse.vue';
+import Util from '../lib/util';
 
 export default {
   name: 'navbar',
-  components: { NavbarToggle },
+  components: { NavbarToggle, Collapse },
   props: {
     align: {
+      type: String,
+      default: '',
+    },
+    headerAlign: {
       type: String,
       default: '',
     }
   },
   data() {
     return {
-      toggle: false,
       toggleColor: '',
+      toggleExpanded: false,
+      navShow: true,
     };
   },
   computed: {
+    headerClass() {
+      let obj = {'navbar-header': true};
+      if (this.headerAlign) obj[`justify-content-${this.headerAlign}`] = true;
+      return obj;
+    },
     bodyClass() {
       let obj = {'navbar-body': true};
       if (this.align) obj[`justify-content-${this.align}`] = true;
@@ -42,12 +54,25 @@ export default {
   },
   methods: {
     onToggleClick() {
-      this.toggle = !this.toggle;
-      console.log(this.toggle);
+      this.toggleExpanded = !this.toggleExpanded;
+      this.navShow = this.toggleExpanded;
     },
+    responsiveBody() {
+      if (Util.isMobileSize(768)) {
+        this.toggleExpanded = this.navShow = false;
+      } else {
+        this.toggleExpanded = false;
+        this.navShow = true;
+      }
+    }
   },
   mounted() {
+    // Auto toggle color.
     this.toggleColor = window.getComputedStyle(this.$el).color;
+
+    // Add resize listener.
+    window.addEventListener('resize', this.responsiveBody.bind(this));
+    this.responsiveBody();
   }
 }
 </script>
