@@ -74,6 +74,10 @@
 
   &.text {
     @extend %nav-link;
+
+    &.active {
+      color: $nav-active-color;
+    }
   }
 }
 

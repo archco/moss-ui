@@ -3075,6 +3075,10 @@ img.filter.sepia {
   width: auto;
 }
 
+.navbar-brand.text.active {
+  color: #0087bd;
+}
+
 .navbar-toggle .icon-bar1,
 .navbar-toggle .icon-bar2,
 .navbar-toggle .icon-bar3 {
