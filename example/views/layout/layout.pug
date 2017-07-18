@@ -24,24 +24,18 @@ html
       header(class='bg-color-primary pad flex-container-center' style="height:100px;")
         h1(id='project-name') cosmos-css
 
-      nav(class='navbar sticky-top use-activator shadow-near')
-        div(class='navbar-header')
-          a(class='navbar-brand text' href='index.html') cosmos-css
-          button(class='navbar-toggle' type='button') Toggle Navigation
-        div(class='navbar-body justify-content-end')
-          ul(class='navbar-nav')
-            li(class='nav-item')
-              a(class='nav-link' href='components.html?q=components') Components
-            li(class='nav-item')
-              a(class='nav-link' href='modules.html') Modules
-            li(class='nav-item')
-              a(class='nav-link' href='js-libraries.html') JS Libraries
-            li(class='nav-item')
-              dropdown(toggle='toggle' align='center')
-                button(slot='button') dropdown
-                a(href='#') link 1
-                a(href='#') link 2
-                a(href='#') link 3
+      navbar(class='sticky-top shadow-near' align='end')
+        navbar-brand(href='index.html' type='text' slot='brand') Cosmos
+        navbar-nav
+          nav-item(href='components.html?q=components') Components
+          nav-item(href='modules.html') Modules
+          nav-item(href='js-libraries.html') JS Libraries
+          nav-item
+            dropdown(toggle='toggle' align='center')
+              button(slot='button') dropdown
+              a(href='#') link 1
+              a(href='#') link 2
+              a(href='#') link 3
 
       block content
 

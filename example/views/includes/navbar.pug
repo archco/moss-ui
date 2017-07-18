@@ -1,0 +1,30 @@
+h3 Basic
+navbar(class='bg-color-dark' align='start')
+  navbar-nav
+    nav-item(href='#' text='link1')
+    nav-item(href='#') link2
+    nav-item
+      dropdown
+        button(slot='button') Dropdown
+        a(href='#') link 1
+        a(href='#') link 2
+        a(href='#') link 3
+  navbar-nav
+    nav-item(href='#') about
+    nav-item(href='#') logout
+
+h3 Multiple Navs
+navbar(class='bg-color-warning rounded shadow-near' align='between' header-align='start')
+  navbar-brand(href="#" type="text" slot="brand") Brand
+  navbar-nav
+    nav-item(href='#' text='link1')
+    nav-item(href='#') link2
+    nav-item
+      dropdown
+        button(slot='button') Dropdown
+        a(href='#') link 1
+        a(href='#') link 2
+        a(href='#') link 3
+  navbar-nav
+    nav-item(href='#') about
+    nav-item(href='#') logout

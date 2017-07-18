@@ -13,23 +13,19 @@
       <header class="bg-color-primary pad flex-container-center" style="height:100px;">
         <h1 id="project-name">cosmos-css</h1>
       </header>
-      <nav class="navbar sticky-top use-activator shadow-near">
-        <div class="navbar-header"><a class="navbar-brand text" href="index.html">cosmos-css</a>
-          <button class="navbar-toggle" type="button">Toggle Navigation</button>
-        </div>
-        <div class="navbar-body justify-content-end">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="components.html?q=components">Components</a></li>
-            <li class="nav-item"><a class="nav-link" href="modules.html">Modules</a></li>
-            <li class="nav-item"><a class="nav-link" href="js-libraries.html">JS Libraries</a></li>
-            <li class="nav-item">
-              <dropdown toggle="toggle" align="center">
-                <button slot="button">dropdown</button><a href="#">link 1</a><a href="#">link 2</a><a href="#">link 3</a>
-              </dropdown>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <navbar class="sticky-top shadow-near" align="end">
+        <navbar-brand href="index.html" type="text" slot="brand">Cosmos</navbar-brand>
+        <navbar-nav>
+          <nav-item href="components.html?q=components">Components</nav-item>
+          <nav-item href="modules.html">Modules</nav-item>
+          <nav-item href="js-libraries.html">JS Libraries</nav-item>
+          <nav-item>
+            <dropdown toggle="toggle" align="center">
+              <button slot="button">dropdown</button><a href="#">link 1</a><a href="#">link 2</a><a href="#">link 3</a>
+            </dropdown>
+          </nav-item>
+        </navbar-nav>
+      </navbar>
       <div class="row">
         <aside class="col-md-2 hide-only-mobile">
           <ul class="list fixed">
@@ -210,30 +206,39 @@
           </modal>
           <h1 id="nav">Nav</h1>
           <hr>
-          <h3>navbar</h3>
-          <div class="group">
-            <nav class="navbar bg-color-dark">
-              <div class="navbar-header"><a class="navbar-brand text" href="#">Navbar</a>
-                <button class="navbar-toggle right" type="button">Toggle Navigation</button>
-              </div>
-              <div class="navbar-body justify-content-between">
-                <ul class="navbar-nav">
-                  <li class="nav-item"><a class="nav-link" href="#">link1</a></li>
-                  <li class="nav-item active"><a class="nav-link" href="#">link2</a></li>
-                  <li class="nav-item">
-                    <div class="dropdown">
-                      <button class="dropdown-toggle">dropdown</button>
-                      <div class="dropdown-content" data-align="center"><a class="dropdown-item" href="#">link 1</a><a class="dropdown-item" href="#">link 2</a><a class="dropdown-item" href="#">link 3</a></div>
-                    </div>
-                  </li>
-                </ul>
-                <ul class="navbar-nav">
-                  <li class="nav-item"><a class="nav-link" href="#">right</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">logout</a></li>
-                </ul>
-              </div>
-            </nav>
-          </div>
+          <h3>Basic</h3>
+          <navbar class="bg-color-dark" align="start">
+            <navbar-nav>
+              <nav-item href="#" text="link1"></nav-item>
+              <nav-item href="#">link2</nav-item>
+              <nav-item>
+                <dropdown>
+                  <button slot="button">Dropdown</button><a href="#">link 1</a><a href="#">link 2</a><a href="#">link 3</a>
+                </dropdown>
+              </nav-item>
+            </navbar-nav>
+            <navbar-nav>
+              <nav-item href="#">about</nav-item>
+              <nav-item href="#">logout</nav-item>
+            </navbar-nav>
+          </navbar>
+          <h3>Multiple Navs</h3>
+          <navbar class="bg-color-warning rounded shadow-near" align="between" header-align="start">
+            <navbar-brand href="#" type="text" slot="brand">Brand</navbar-brand>
+            <navbar-nav>
+              <nav-item href="#" text="link1"></nav-item>
+              <nav-item href="#">link2</nav-item>
+              <nav-item>
+                <dropdown>
+                  <button slot="button">Dropdown</button><a href="#">link 1</a><a href="#">link 2</a><a href="#">link 3</a>
+                </dropdown>
+              </nav-item>
+            </navbar-nav>
+            <navbar-nav>
+              <nav-item href="#">about</nav-item>
+              <nav-item href="#">logout</nav-item>
+            </navbar-nav>
+          </navbar>
           <h1 id="parallax">Parallax</h1>
           <hr>
           <parallax src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg"></parallax><div class="flex-center-container bg-color-shade" style="height:250px;">
