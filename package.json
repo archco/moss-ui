@@ -19,7 +19,7 @@
     "pug": "node node_modules/pug-cli --pretty example/views/pages/ --out ./example/html/",
     "pug:watch": "npm run pug -- --watch",
     "prebabel": "node task/prebabel.js",
-    "babel": "babel src/js --out-dir dist/module"
+    "babel": "babel src/js --out-dir dist/module --ignore script.js"
   },
   "author": "archco",
   "bugs": {
