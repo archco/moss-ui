@@ -16,6 +16,7 @@ import Navbar from './components/navbar.vue';
 import NavbarNav from './components/navbar-nav.vue';
 import NavItem from './components/nav-item.vue';
 import NavbarBrand from './components/navbar-brand.vue';
+import SimpleCRUD from './components/simple-crud.vue';
 
 export default [
   Dropdown,
@@ -36,4 +37,5 @@ export default [
   NavbarNav,
   NavItem,
   NavbarBrand,
+  SimpleCRUD,
 ];

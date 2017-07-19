@@ -3,7 +3,7 @@
 //======================================================================
 
 %simple-crud-view {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: $simple-crud-min-height;
@@ -18,8 +18,6 @@
   .actions {
     flex: 0 1 auto;
   }
-
-  &.show { display: flex; }
 }
 
 .simple-crud-list {
@@ -28,10 +26,10 @@
 
 .simple-crud-item {
   margin-bottom: $simple-crud-margin-bottom;
-}
 
-.simple-crud-view-read,
-.simple-crud-view-update,
-.simple-crud-view-delete {
-  @extend %simple-crud-view;
+  .read,
+  .update,
+  .delete {
+    @extend %simple-crud-view;
+  }
 }

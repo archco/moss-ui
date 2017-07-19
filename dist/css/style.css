@@ -5461,10 +5461,12 @@ ul.pagination li.disabled {
   transition: max-height .3s ease-out;
 }
 
-.simple-crud-view-read,
-.simple-crud-view-update,
-.simple-crud-view-delete {
-  display: none;
+.simple-crud-item .read,
+.simple-crud-item .update,
+.simple-crud-item .delete {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -5477,28 +5479,20 @@ ul.pagination li.disabled {
   background-color: rgba(52, 52, 52, 0.1);
 }
 
-.simple-crud-view-read .content,
-.simple-crud-view-update .content,
-.simple-crud-view-delete .content {
+.simple-crud-item .read .content,
+.simple-crud-item .update .content,
+.simple-crud-item .delete .content {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
 }
 
-.simple-crud-view-read .actions,
-.simple-crud-view-update .actions,
-.simple-crud-view-delete .actions {
+.simple-crud-item .read .actions,
+.simple-crud-item .update .actions,
+.simple-crud-item .delete .actions {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
-}
-
-.show.simple-crud-view-read,
-.show.simple-crud-view-update,
-.show.simple-crud-view-delete {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .simple-crud-list {
