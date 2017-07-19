@@ -1,52 +1,15 @@
 h2 Convert Color Value
 input(id='input-hex-color' class='inline' type='text' value='#fff')
-button(type='button' id='btn-hex-to-rgb' class='btn success') hexToRgb
-button(type='button' id='btn-rgb-to-hex' class='btn success') rgbToHex
+button(type='button' class='btn success' onclick='convertColor(true);') hexToRgb
+button(type='button' class='btn success' onclick='convertColor(false);') rgbToHex
 input(id='input-rgb-color' class='inline' type='text' value='255,255,255')
 
 h2 lightness
 input(id='input-lightness' class='inline' type='text' value='#888')
-button(type='button' id='btn-lightness' class='btn info') lightness
+button(type='button' class='btn info' onclick='getLightness();') lightness
 p(class='pad bg-color-secondary' id='output-lightness')
 
 h2 contrast
 input(id='input-contrast' class='inline' type='text' value='#888')
-button(type='button' id='btn-contrast' class='btn info') contrast
+button(type='button' class='btn info' onclick='getContrast();') contrast
 p(class='pad' id='output-contrast')
-
-script.
-  window.addEventListener('load', function () {
-    // convert color value.
-    var Color = Cosmos.lib.Color;
-    var inputHex = document.querySelector('#input-hex-color');
-    var inputRgb = document.querySelector('#input-rgb-color');
-
-    document.querySelector('#btn-hex-to-rgb').addEventListener('click', function () {
-      var rgb = Color.hexToRgb(inputHex.value);
-      inputRgb.value = rgb.join(',');
-    });
-    document.querySelector('#btn-rgb-to-hex').addEventListener('click', function () {
-      var array = inputRgb.value.split(',').map(function (x) {
-        return parseInt(x);
-      });
-      var hex = Color.rgbToHex(array[0], array[1], array[2], true);
-      inputHex.value = hex;
-    });
-
-    // lightness
-    document.querySelector('#btn-lightness').addEventListener('click', function () {
-      var value = Color.lightness(document.querySelector('#input-lightness').value);
-      document.querySelector('#output-lightness').innerHTML = 'lightness value: ' + value;
-    });
-
-    // contrast
-    document.querySelector('#btn-contrast').addEventListener('click', function () {
-      var inputValue = document.querySelector('#input-contrast').value;
-      var contrast = Color.contrast(inputValue);
-      var output = document.querySelector('#output-contrast');
-
-      output.style.backgroundColor = inputValue;
-      output.style.color = contrast;
-      output.innerHTML = 'bg-color: ' + inputValue + ' contrast-color: ' + contrast;
-    });
-  });

@@ -39,54 +39,17 @@
           <hr>
           <h2>Convert Color Value</h2>
           <input class="inline" id="input-hex-color" type="text" value="#fff">
-          <button class="btn success" type="button" id="btn-hex-to-rgb">hexToRgb</button>
-          <button class="btn success" type="button" id="btn-rgb-to-hex">rgbToHex</button>
+          <button class="btn success" type="button" onclick="convertColor(true);">hexToRgb</button>
+          <button class="btn success" type="button" onclick="convertColor(false);">rgbToHex</button>
           <input class="inline" id="input-rgb-color" type="text" value="255,255,255">
           <h2>lightness</h2>
           <input class="inline" id="input-lightness" type="text" value="#888">
-          <button class="btn info" type="button" id="btn-lightness">lightness</button>
+          <button class="btn info" type="button" onclick="getLightness();">lightness</button>
           <p class="pad bg-color-secondary" id="output-lightness"></p>
           <h2>contrast</h2>
           <input class="inline" id="input-contrast" type="text" value="#888">
-          <button class="btn info" type="button" id="btn-contrast">contrast</button>
+          <button class="btn info" type="button" onclick="getContrast();">contrast</button>
           <p class="pad" id="output-contrast"></p>
-          <script>
-            window.addEventListener('load', function () {
-              // convert color value.
-              var Color = Cosmos.lib.Color;
-              var inputHex = document.querySelector('#input-hex-color');
-              var inputRgb = document.querySelector('#input-rgb-color');
-            
-              document.querySelector('#btn-hex-to-rgb').addEventListener('click', function () {
-                var rgb = Color.hexToRgb(inputHex.value);
-                inputRgb.value = rgb.join(',');
-              });
-              document.querySelector('#btn-rgb-to-hex').addEventListener('click', function () {
-                var array = inputRgb.value.split(',').map(function (x) {
-                  return parseInt(x);
-                });
-                var hex = Color.rgbToHex(array[0], array[1], array[2], true);
-                inputHex.value = hex;
-              });
-            
-              // lightness
-              document.querySelector('#btn-lightness').addEventListener('click', function () {
-                var value = Color.lightness(document.querySelector('#input-lightness').value);
-                document.querySelector('#output-lightness').innerHTML = 'lightness value: ' + value;
-              });
-            
-              // contrast
-              document.querySelector('#btn-contrast').addEventListener('click', function () {
-                var inputValue = document.querySelector('#input-contrast').value;
-                var contrast = Color.contrast(inputValue);
-                var output = document.querySelector('#output-contrast');
-            
-                output.style.backgroundColor = inputValue;
-                output.style.color = contrast;
-                output.innerHTML = 'bg-color: ' + inputValue + ' contrast-color: ' + contrast;
-              });
-            });
-          </script>
           <h1 id="element-util">ElementUtil</h1>
           <hr>
           <h2>Toggle Class</h2>
@@ -165,26 +128,7 @@
                 <td>1998-02-01</td>
               </tr>
             </tbody>
-          </table><script>window.addEventListener('load', function () {
-            var eu = Cosmos.lib.ElementUtil;
-            // toggle class
-            eu.getElement('#btn-toggle-class').addEventListener('click', function () {
-              eu.toggleClass('#toggle-class-target', 'bg-color-danger');
-            });
-            // toggle show
-            eu.getElement('#btn-toggle-show').addEventListener('click', function () {
-              eu.toggleShow('#toggle-show-target');
-            });
-            // filter list
-            eu.getElement('#input-filter-list').addEventListener('keyup', function (e) {
-              eu.filter('#filter-list li', e.currentTarget.value);
-            });
-            eu.getElement('#btn-sort-list').addEventListener('click', function () {
-              eu.sortElements('#sort-list', 'li');
-            });
-            // sort table
-            eu.sortTable('#sort-table-target');
-          });</script>
+          </table>
           <h1 id="util">Util</h1>
           <hr>
           <p class="pad bg-color-info">comming soon..</p>

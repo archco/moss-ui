@@ -68,25 +68,3 @@ table(id='sort-table-target' class='table striped bordered hover')
       td test5
       td(data-sort-value='3') three
       td 1998-02-01
-<script>
-| window.addEventListener('load', function () {
-|   var eu = Cosmos.lib.ElementUtil;
-|   // toggle class
-|   eu.getElement('#btn-toggle-class').addEventListener('click', function () {
-|     eu.toggleClass('#toggle-class-target', 'bg-color-danger');
-|   });
-|   // toggle show
-|   eu.getElement('#btn-toggle-show').addEventListener('click', function () {
-|     eu.toggleShow('#toggle-show-target');
-|   });
-|   // filter list
-|   eu.getElement('#input-filter-list').addEventListener('keyup', function (e) {
-|     eu.filter('#filter-list li', e.currentTarget.value);
-|   });
-|   eu.getElement('#btn-sort-list').addEventListener('click', function () {
-|     eu.sortElements('#sort-list', 'li');
-|   });
-|   // sort table
-|   eu.sortTable('#sort-table-target');
-| });
-</script>
