@@ -259,59 +259,59 @@
             <button class="btn success" type="submit">Create</button>
           </form>
           <ul class="simple-crud-list">
-            <li class="simple-crud-item">
-              <div class="simple-crud-view-read show"><span class="content"><span>id: 1 name: James age: 35</span></span><span class="actions btn-group">
-                  <button class="simple-crud-update btn">Edit</button>
-                  <button class="simple-crud-delete btn danger">Delete</button></span></div>
-              <form class="form-inline simple-crud-view-update" action="#" method="POST"><span class="content"><span>id: 1</span>
+            <li is="simple-crud">
+              <div slot="read"><span class="content"><span>id: 1 name: James age: 35</span></span><span class="actions btn-group">
+                  <button class="btn" data-toggle="update">Edit</button>
+                  <button class="btn danger" data-toggle="delete">Delete</button></span></div>
+              <form slot="update" action="#" method="POST"><span class="content"><span>id: 1</span>
                   <input type="hidden" name="id" value="1">
                   <label><span>Name:</span>
-                    <input type="text" name="name" value="James">
+                    <input class="inline" type="text" name="name" value="James">
                   </label>
                   <label><span>Age:</span>
-                    <input type="number" name="age" value="35">
+                    <input class="inline" type="number" name="age" value="35">
                   </label></span><span class="actions btn-group">
-                  <button class="simple-crud-cancel btn" type="button">Cancel</button>
+                  <button class="btn default" type="button" data-toggle="cancel">Cancel</button>
                   <button class="btn success" type="submit">Edit</button></span></form>
-              <form class="form-inline simple-crud-view-delete" action="#" method="POST"><span class="content"><span class="color-danger"><b>Are you sure?</b> Remove this model?</span></span><span class="actions btn-group">
+              <form slot="delete" action="#" method="POST"><span class="content"><span class="color-danger"><b>Are you sure?</b> Remove this model?</span></span><span class="actions btn-group">
                   <button class="btn danger" type="submit">Delete</button>
-                  <button class="simple-crud-cancel btn" type="button">Cancel</button></span></form>
+                  <button class="btn default" type="button" data-toggle="cancel">Cancel</button></span></form>
             </li>
-            <li class="simple-crud-item">
-              <div class="simple-crud-view-read show"><span class="content"><span>id: 2 name: Caren age: 24</span></span><span class="actions btn-group">
-                  <button class="simple-crud-update btn">Edit</button>
-                  <button class="simple-crud-delete btn danger">Delete</button></span></div>
-              <form class="form-inline simple-crud-view-update" action="#" method="POST"><span class="content"><span>id: 2</span>
+            <li is="simple-crud">
+              <div slot="read"><span class="content"><span>id: 2 name: Caren age: 24</span></span><span class="actions btn-group">
+                  <button class="btn" data-toggle="update">Edit</button>
+                  <button class="btn danger" data-toggle="delete">Delete</button></span></div>
+              <form slot="update" action="#" method="POST"><span class="content"><span>id: 2</span>
                   <input type="hidden" name="id" value="2">
                   <label><span>Name:</span>
-                    <input type="text" name="name" value="Caren">
+                    <input class="inline" type="text" name="name" value="Caren">
                   </label>
                   <label><span>Age:</span>
-                    <input type="number" name="age" value="24">
+                    <input class="inline" type="number" name="age" value="24">
                   </label></span><span class="actions btn-group">
-                  <button class="simple-crud-cancel btn" type="button">Cancel</button>
+                  <button class="btn default" type="button" data-toggle="cancel">Cancel</button>
                   <button class="btn success" type="submit">Edit</button></span></form>
-              <form class="form-inline simple-crud-view-delete" action="#" method="POST"><span class="content"><span class="color-danger"><b>Are you sure?</b> Remove this model?</span></span><span class="actions btn-group">
+              <form slot="delete" action="#" method="POST"><span class="content"><span class="color-danger"><b>Are you sure?</b> Remove this model?</span></span><span class="actions btn-group">
                   <button class="btn danger" type="submit">Delete</button>
-                  <button class="simple-crud-cancel btn" type="button">Cancel</button></span></form>
+                  <button class="btn default" type="button" data-toggle="cancel">Cancel</button></span></form>
             </li>
-            <li class="simple-crud-item">
-              <div class="simple-crud-view-read show"><span class="content"><span>id: 3 name: Bob age: 30</span></span><span class="actions btn-group">
-                  <button class="simple-crud-update btn">Edit</button>
-                  <button class="simple-crud-delete btn danger">Delete</button></span></div>
-              <form class="form-inline simple-crud-view-update" action="#" method="POST"><span class="content"><span>id: 3</span>
+            <li is="simple-crud">
+              <div slot="read"><span class="content"><span>id: 3 name: Bob age: 30</span></span><span class="actions btn-group">
+                  <button class="btn" data-toggle="update">Edit</button>
+                  <button class="btn danger" data-toggle="delete">Delete</button></span></div>
+              <form slot="update" action="#" method="POST"><span class="content"><span>id: 3</span>
                   <input type="hidden" name="id" value="3">
                   <label><span>Name:</span>
-                    <input type="text" name="name" value="Bob">
+                    <input class="inline" type="text" name="name" value="Bob">
                   </label>
                   <label><span>Age:</span>
-                    <input type="number" name="age" value="30">
+                    <input class="inline" type="number" name="age" value="30">
                   </label></span><span class="actions btn-group">
-                  <button class="simple-crud-cancel btn" type="button">Cancel</button>
+                  <button class="btn default" type="button" data-toggle="cancel">Cancel</button>
                   <button class="btn success" type="submit">Edit</button></span></form>
-              <form class="form-inline simple-crud-view-delete" action="#" method="POST"><span class="content"><span class="color-danger"><b>Are you sure?</b> Remove this model?</span></span><span class="actions btn-group">
+              <form slot="delete" action="#" method="POST"><span class="content"><span class="color-danger"><b>Are you sure?</b> Remove this model?</span></span><span class="actions btn-group">
                   <button class="btn danger" type="submit">Delete</button>
-                  <button class="simple-crud-cancel btn" type="button">Cancel</button></span></form>
+                  <button class="btn default" type="button" data-toggle="cancel">Cancel</button></span></form>
             </li>
           </ul>
           <h1 id="tab">Tab</h1>
