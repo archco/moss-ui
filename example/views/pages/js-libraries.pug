@@ -8,26 +8,14 @@ block append content
   div(class='row')
     aside(class='col-md-2 hide-only-mobile')
       ul(class='list fixed')
-        li
-          a(href='#color') Color
-        li
-          a(href='#element-util') ElementUtil
-        li
-          a(href='#util') Util
+        li(is='anchored-tag' tag='li') Color
+        li(is='anchored-tag' tag='li') ElementUtil
+        li(is='anchored-tag' tag='li') Util
 
     section(class='col-md-10')
-      h1(id='color') Color
-      hr
+      anchored-tag(tag='h1' owned) Color
       include ../includes/color
-
-      h1(id='element-util') ElementUtil
-      hr
+      anchored-tag(tag='h1' owned) ElementUtil
       include ../includes/element-util
-
-      h1(id='util') Util
-      hr
+      anchored-tag(tag='h1' owned) Util
       include ../includes/util
-
-block append script
-  script.
-    //

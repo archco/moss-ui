@@ -8,57 +8,35 @@ block append content
   div(class='row')
     aside(class='col-md-2 hide-only-mobile')
       ul(class='list fixed')
-        li
-          a(href='#chip') Chip
-        li
-          a(href='#collapse') Collapse
-        li
-          a(href='#dropdown') Dropdown
-        li
-          a(href='#message') Message
-        li
-          a(href='#modal') Modal
-        li
-          a(href='#nav') Nav
-        li
-          a(href='#parallax') Parallax
-        li
-          a(href='#simple-crud') Simple CRUD
-        li
-          a(href='#tab') Tab
-        li
-          a(href='#toast') Toast
+        li(is='anchored-tag' tag='li') Chip
+        li(is='anchored-tag' tag='li') Collapse
+        li(is='anchored-tag' tag='li') Dropdown
+        li(is='anchored-tag' tag='li') Message
+        li(is='anchored-tag' tag='li') Modal
+        li(is='anchored-tag' tag='li') Nav
+        li(is='anchored-tag' tag='li') Parallax
+        li(is='anchored-tag' tag='li') Simple CRUD
+        li(is='anchored-tag' tag='li') Tab
+        li(is='anchored-tag' tag='li') Toast
 
     section(class='col-md-10')
-      h1(id='chip') Chip
+      anchored-tag(tag='h1' owned) Chip
       include ../includes/chip
-      h1(id='collapse') Collapse and Accordion
-      hr
+      anchored-tag(tag='h1' owned) Collapse
       include ../includes/collapse
-      h1(id='dropdown') Dropdown
-      hr
+      anchored-tag(tag='h1' owned) Dropdown
       include ../includes/dropdown
-      h1(id='message') Message
-      hr
+      anchored-tag(tag='h1' owned) Message
       include ../includes/message
-      h1(id='modal') Modal
-      hr
+      anchored-tag(tag='h1' owned) Modal
       include ../includes/modal
-      h1(id='nav') Nav
-      hr
+      anchored-tag(tag='h1' owned) Nav
       include ../includes/navbar
-      h1(id='parallax') Parallax
-      hr
+      anchored-tag(tag='h1' owned) Parallax
       include ../includes/parallax
-      h1(id='simple-crud') Simple CRUD
+      anchored-tag(tag='h1' owned) Simple CRUD
       include ../includes/simple-crud
-      h1(id='tab') Tab
-      hr
+      anchored-tag(tag='h1' owned) Tab
       include ../includes/tab
-      h1(id='toast') Toast
-      hr
+      anchored-tag(tag='h1' owned) Toast
       include ../includes/toast
-
-block append script
-  script.
-    //

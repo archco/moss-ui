@@ -8,63 +8,40 @@ block append content
   div(class='row')
     aside(class='col-md-2 hide-only-mobile')
       ul(class='list fixed')
-        li
-          a(href='#scaffolding') Scaffolding
-        li
-          a(href='#badge') Badge
-        li
-          a(href='#button') Button
-        li
-          a(href='#card') Card
-        li
-          a(href='#form') Form
-        li
-          a(href='#grid') Grid
-        li
-          a(href='#helper') Helper
-        li
-          a(href='#image') Image
-        li
-          a(href='#list') List
-        li
-          a(href='#loader') Loader
-        li
-          a(href='#pagination') Pagination
-        li
-          a(href='#tooltip') Tooltip
+        li(is='anchored-tag' tag='li') Scaffolding
+        li(is='anchored-tag' tag='li') Badge
+        li(is='anchored-tag' tag='li') Button
+        li(is='anchored-tag' tag='li') Card
+        li(is='anchored-tag' tag='li') Form
+        li(is='anchored-tag' tag='li') Grid
+        li(is='anchored-tag' tag='li') Helper
+        li(is='anchored-tag' tag='li') Image
+        li(is='anchored-tag' tag='li') List
+        li(is='anchored-tag' tag='li') Loader
+        li(is='anchored-tag' tag='li') Pagination
+        li(is='anchored-tag' tag='li') Tooltip
     section(class='col-md-10')
-      h1(id='scaffolding') Scaffolding
-      hr
+      anchored-tag(tag='h1' owned) Scaffolding
       include ../includes/scaffolding.pug
-      h1(id='badge') Badge
+      anchored-tag(tag='h1' owned) Badge
       include ../includes/badge.pug
-      h1(id='button') Button
-      hr
+      anchored-tag(tag='h1' owned) Button
       include ../includes/button.pug
-      h1(id='card') Card
-      hr
+      anchored-tag(tag='h1' owned) Card
       include ../includes/card.pug
-      h1(id='form') Form
-      hr
+      anchored-tag(tag='h1' owned) Form
       include ../includes/form.pug
-      h1(id='grid') Grid
-      hr
+      anchored-tag(tag='h1' owned) Grid
       include ../includes/grid.pug
-      h1(id='helper') Helper
-      hr
+      anchored-tag(tag='h1' owned) Helper
       include ../includes/helper.pug
-      h1(id='image') Image
-      hr
+      anchored-tag(tag='h1' owned) Image
       include ../includes/image.pug
-      h1(id='list') List
-      hr
+      anchored-tag(tag='h1' owned) List
       include ../includes/list.pug
-      h1(id='loader') Loader
-      hr
+      anchored-tag(tag='h1' owned) Loader
       include ../includes/loader.pug
-      h1(id='pagination') Pagination
-      hr
+      anchored-tag(tag='h1' owned) Pagination
       include ../includes/pagination.pug
-      h1(id='tooltip') Tooltip
-      hr
+      anchored-tag(tag='h1' owned) Tooltip
       include ../includes/tooltip.pug

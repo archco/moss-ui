@@ -20,23 +20,21 @@ export default {
       .toLowerCase()
       .replace(/\W+/g, '-')
       .replace(/(^\-|\-$)/g, '');
-
-    return createElement(
-      this.tag,
-      {
+    let data = {
+      attrs: {
+        id: (this.owned) ? tagId : false,
+      }
+    };
+    let children = [
+      createElement('a', {
         attrs: {
-          id: (this.owned) ? tagId : false,
+          name: tagId,
+          href: '#' + tagId
         }
-      },
-      [
-        createElement('a', {
-          attrs: {
-            name: tagId,
-            href: '#' + tagId
-          }
-        }, this.$slots.default)
-      ]
-    );
+      }, this.$slots.default)
+    ];
+
+    return createElement(this.tag, data, children);
   }
 }
 </script>

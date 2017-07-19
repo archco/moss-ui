@@ -29,14 +29,13 @@
       <div class="row">
         <aside class="col-md-2 hide-only-mobile">
           <ul class="list fixed">
-            <li><a href="#color">Color</a></li>
-            <li><a href="#element-util">ElementUtil</a></li>
-            <li><a href="#util">Util</a></li>
+            <li is="anchored-tag" tag="li">Color</li>
+            <li is="anchored-tag" tag="li">ElementUtil</li>
+            <li is="anchored-tag" tag="li">Util</li>
           </ul>
         </aside>
         <section class="col-md-10">
-          <h1 id="color">Color</h1>
-          <hr>
+          <anchored-tag tag="h1" owned>Color</anchored-tag>
           <h2>Convert Color Value</h2>
           <input class="inline" id="input-hex-color" type="text" value="#fff">
           <button class="btn success" type="button" onclick="convertColor(true);">hexToRgb</button>
@@ -50,8 +49,7 @@
           <input class="inline" id="input-contrast" type="text" value="#888">
           <button class="btn info" type="button" onclick="getContrast();">contrast</button>
           <p class="pad" id="output-contrast"></p>
-          <h1 id="element-util">ElementUtil</h1>
-          <hr>
+          <anchored-tag tag="h1" owned>ElementUtil</anchored-tag>
           <h2>Toggle Class</h2>
           <button class="btn primary" id="btn-toggle-class">Toggle Class</button>
           <p class="pad" id="toggle-class-target" style="transition:.6s;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -129,8 +127,7 @@
               </tr>
             </tbody>
           </table>
-          <h1 id="util">Util</h1>
-          <hr>
+          <anchored-tag tag="h1" owned>Util</anchored-tag>
           <p class="pad bg-color-info">comming soon..</p>
         </section>
       </div>
@@ -161,6 +158,5 @@
     <script src="./example.js"></script><script>var year = new Date().getFullYear();
     document.querySelector('.footer-copyright').innerHTML = "copyright \&copy; " + year + " cosmos all rights reserved.";
     document.querySelector('#project-name').innerHTML = "cosmos-css " + vm.$cosmos.version;</script>
-    <script>//</script>
   </body>
 </html>
