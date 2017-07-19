@@ -1,8 +1,8 @@
 {
   "name": "cosmos-ui",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "The user interface framework for front-end.",
-  "main": "index.js",
+  "main": "dist/module/cosmos.js",
   "directories": {
     "example": "example",
     "test": "test"
@@ -10,14 +10,16 @@
   "scripts": {
     "test": "mocha test --require babel-register",
     "prebuild": "node task/banner.js",
-    "build": "npm run dev && npm run min",
+    "build": "npm run dev && npm run min && npm run babel",
     "dev": "npm run mix && npm run pug",
     "watch": "node node_modules/concurrently/src/main \"npm run mix:watch\" \"npm run pug:watch\"",
     "min": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "mix": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "mix:watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "pug": "node node_modules/pug-cli --pretty example/views/pages/ --out ./example/html/",
-    "pug:watch": "npm run pug -- --watch"
+    "pug:watch": "npm run pug -- --watch",
+    "prebabel": "node task/prebabel.js",
+    "babel": "babel src/js --out-dir dist/module"
   },
   "author": "archco",
   "bugs": {
@@ -31,6 +33,7 @@
     "vue": "^2.3.4"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
     "babel-eslint": "^7.2.3",
     "babel-preset-env": "^1.6.0",
