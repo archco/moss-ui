@@ -27,11 +27,11 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [message](message.md)
 - [modal](modal.md)
 - [navbar](navbar.md)
-- [parallax](#)
-- [scroll-to](#)
-- [simple-crud](#)
-- [tabs](#)
-- [toast](#)
+- [parallax](parallax.md)
+- [scroll-to](scroll-to.md)
+- [simple-crud](simple-crud.md)
+- [tabs](tabs.md)
+- [toast](toast.md)
 
 #### JS Libraries
 - [Color](color.md)

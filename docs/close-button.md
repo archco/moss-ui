@@ -1,4 +1,4 @@
-# Chip
+# Close button
 > source: [js/components/close-button](../src/js/components/close-button.vue)
 
 ## Usage
