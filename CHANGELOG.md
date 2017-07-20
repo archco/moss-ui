@@ -7,5 +7,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 
-[Unreleased]: https://github.com/archco/cosmos-ui/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/archco/cosmos-ui/compare/v0.3.0...v1.0.0
+[Unreleased]: https://github.com/archco/cosmos-ui/compare/fec6b36...HEAD
+[0.1.0]: https://github.com/archco/cosmos-ui/compare/fec6b36...v0.1.0
