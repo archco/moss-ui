@@ -45,11 +45,10 @@ window.vm = new Vue({
 ```
 
 ## Usage
-### SCSS components and Vue components
--- not yet..
+Please see [Documents](./docs/README.md)
 
 ## Change Log
-[CHANGELOG.md](https://github.com/archco/cosmos-ui/blob/master/CHANGELOG.md)
+[CHANGELOG.md](CHANGELOG.md)
 
 ## License
-[MIT License](https://github.com/archco/cosmos-css/blob/master/LICENSE)
+[MIT License](LICENSE)

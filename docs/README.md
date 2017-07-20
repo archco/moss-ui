@@ -24,7 +24,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [close-button](close-button.md)
 - [collapse](collapse.md)
 - [dropdown](dropdown.md)
-- [message](#)
+- [message](message.md)
 - [modal](#)
 - [navbar](#)
 - [parallax](#)
