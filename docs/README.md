@@ -22,8 +22,8 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 #### Vue Components
 - [chip](chip.md)
 - [close-button](close-button.md)
-- [collapse](#)
-- [dropdown](#)
+- [collapse](collapse.md)
+- [dropdown](dropdown.md)
 - [message](#)
 - [modal](#)
 - [navbar](#)
