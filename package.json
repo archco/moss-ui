@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "The user interface framework for front-end.",
   "main": "dist/module/cosmos.js",
+  "scss": "src/scss/cosmos.scss",
   "directories": {
     "example": "example",
     "test": "test"
