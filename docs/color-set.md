@@ -1,5 +1,5 @@
 # Color-set
-> source: [scss/components/color-set](https://github.com/archco/cosmos-ui/blob/master/src/scss/components/_color-set.scss)
+> source: [scss/components/color-set](../src/scss/components/_color-set.scss)
 
 Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
 
@@ -21,7 +21,7 @@ $color-set: (
 ```
 
 ## Components of uses this color-set
-* [Badge](#)
+* [Badge](badge.md)
 * [Button](#)
 * [Helper](#) : color of text and background
 * [Message](#) : color of message box

@@ -1,5 +1,5 @@
 # Badge
-> source:  [scss/components/badge](https://github.com/archco/cosmos-ui/blob/master/src/scss/components/_badge.scss)
+> source:  [scss/components/badge](../src/scss/components/_badge.scss)
 
 ## Usage
 #### Default Badge
@@ -7,7 +7,7 @@
 <h1>Heading <span class="badge">New</span></h1>
 ```
 #### Badge with Color-set
-> based on [Color-set](#)
+> based on [Color-set](color-set.md)
 
 Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
 ```html

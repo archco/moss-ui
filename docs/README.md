@@ -1,13 +1,13 @@
 # COSMOS-UI Documents
 
-Please see also [README.md](https://github.com/archco/cosmos-ui/blob/master/README.md) and [CHANGELOG.md](https://github.com/archco/cosmos-ui/blob/master/CHANGELOG.md).
+Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 
 ## Index
 #### SCSS Components
-- [Badge](#)
+- [Badge](badge.md)
 - [Button](#)
 - [Card](#)
-- [Color-set](#)
+- [Color-set](color-set.md)
 - [Form](#)
 - [Grid](#)
 - [Hero Banner](#)
