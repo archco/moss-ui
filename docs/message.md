@@ -13,7 +13,7 @@
 <message>Hello</message>
 ```
 #### With status color
-> This based on [color-set](color-set)
+> This based on [color-set](color-set.md)
 
 Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
 
