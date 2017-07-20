@@ -1,5 +1,5 @@
 /*!
- * cosmos-ui - The user interface framework for front-end.
+ * cosmos_ui - The user interface framework for front-end.
  * @version v0.1.0
  * @link https://github.com/archco/cosmos-ui
  * @license MIT

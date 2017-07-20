@@ -7,7 +7,7 @@ The user interface framework for front-end.
 
 ## Installation
 ```sh
-$ npm install cosmos-ui
+$ npm install cosmos_ui
 ```
 
 ## Configuration
