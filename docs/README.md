@@ -34,6 +34,6 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [toast](#)
 
 #### JS Libraries
-- [Color](#)
-- [ElementUtil](#)
-- [Util](#)
+- [Color](color.md)
+- [ElementUtil](element-util.md)
+- [Util](util.md)
