@@ -20,8 +20,8 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [Tooltip](tooltip.md)
 
 #### Vue Components
-- [chip](#)
-- [close-button](#)
+- [chip](chip.md)
+- [close-button](close-button.md)
 - [collapse](#)
 - [dropdown](#)
 - [message](#)
