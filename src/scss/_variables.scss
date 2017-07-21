@@ -27,14 +27,14 @@ $lightblue: palette('naturalblue') !default;
 $green: palette('pigmentgreen') !default;
 $red: palette('chilired') !default;
 $yellow: palette('naturalyellow') !default;
-$purple: palette('royalpurple') !default;
+$purple: palette('pompandpower') !default;
 
 
 // Theme
 // ==================================================
 
 // theme-colors
-$primary-color: $lightblue !default;
+$primary-color: $purple !default;
 $primary-color-accent: darken($primary-color, 16%) !default;
 $secondary-color: $cadetgray !default;
 
