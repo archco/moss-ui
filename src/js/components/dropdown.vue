@@ -44,6 +44,7 @@ export default {
       this.content.dataset.align = this.align;
       // items.
       this.$slots.default.forEach(item => {
+        if (!item.tag) return;
         item.elm.classList.add('dropdown-item');
         this.items.push(item.elm);
       });

@@ -45,10 +45,10 @@ window.vm = new Vue({
 ```
 
 ## Usage
-Please see [Documents](./docs/README.md)
+Please see [Documents](https://github.com/archco/moss-ui/blob/master/docs/README.md)
 
 ## Change Log
-[CHANGELOG.md](CHANGELOG.md)
+[CHANGELOG.md](https://github.com/archco/moss-ui/blob/master/CHANGELOG.md)
 
 ## License
-[MIT License](LICENSE)
+[MIT License](https://github.com/archco/moss-ui/blob/master/LICENSE)
