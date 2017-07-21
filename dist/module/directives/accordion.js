@@ -15,9 +15,9 @@ exports.default = {
     registerToggles(el, binding); // register to toggle list.
 
     el.addEventListener('click', function () {
-      window.Cosmos.accordion.toggle(binding.value, binding.arg, action);
+      window.Moss.accordion.toggle(binding.value, binding.arg, action);
 
-      window.Cosmos.accordionToggles[binding.value].forEach(function (toggle) {
+      window.Moss.accordionToggles[binding.value].forEach(function (toggle) {
         _eventBus.EventBus.$emit('collapse-item', toggle.collapseId, function (item) {
           toggle.el.dataset.collapsed = !item.show;
         });
@@ -33,15 +33,15 @@ exports.default = {
 
 
 function registerToggles(el, binding) {
-  if (typeof window.Cosmos.accordionToggles === 'undefined') {
-    window.Cosmos.accordionToggles = {};
+  if (typeof window.Moss.accordionToggles === 'undefined') {
+    window.Moss.accordionToggles = {};
   }
 
-  if (typeof window.Cosmos.accordionToggles[binding.value] === 'undefined') {
-    window.Cosmos.accordionToggles[binding.value] = [];
+  if (typeof window.Moss.accordionToggles[binding.value] === 'undefined') {
+    window.Moss.accordionToggles[binding.value] = [];
   }
 
-  window.Cosmos.accordionToggles[binding.value].push({
+  window.Moss.accordionToggles[binding.value].push({
     el: el,
     accordionId: binding.value,
     collapseId: binding.arg

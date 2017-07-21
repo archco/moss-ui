@@ -63,8 +63,8 @@ export default {
     });
 
     // Register helper function to global object.
-    if (!window.Cosmos) window.Cosmos = {};
-    window.Cosmos.toast = (text) => {
+    if (!window.Moss) window.Moss = {};
+    window.Moss.toast = (text) => {
       EventBus.$emit('toast-show', text);
     }
   }

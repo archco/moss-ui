@@ -34,9 +34,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var DefaultOptions = {
   insteadName: {}
 }; /*!
-    * cosmos_ui - The user interface framework for front-end.
+    * moss-ui - The user interface framework for front-end.
     * @version v0.1.0
-    * @link https://github.com/archco/cosmos-ui
+    * @link https://github.com/archco/moss-ui
     * @license MIT
     */
 exports.default = {
@@ -50,7 +50,7 @@ exports.default = {
     options = Object.assign(DefaultOptions, options);
 
     // Add object for convenience.
-    this.addCosmosObject(Vue);
+    this.addMossObject(Vue);
 
     // Add components.
     _components2.default.forEach(function (component) {
@@ -64,8 +64,8 @@ exports.default = {
       Vue.directive(directive.name, directive);
     });
   },
-  addCosmosObject: function addCosmosObject(Vue) {
-    var Cosmos = {
+  addMossObject: function addMossObject(Vue) {
+    var Moss = {
       version: _package.version,
       EventBus: _eventBus.EventBus,
       lib: {
@@ -74,7 +74,7 @@ exports.default = {
         ElementUtil: _elementUtil2.default
       }
     };
-    window.Cosmos = Vue.Cosmos = Vue.prototype.$cosmos = Cosmos;
+    window.Moss = Vue.Moss = Vue.prototype.$moss = Moss;
   }
 };
 exports.Color = _color2.default;

@@ -14,12 +14,12 @@ const isDev = (process.env.NODE_ENV === 'production') ? false : true;
 
 if (isDev) {
   mix.js('src/js/script.js', 'dist/js/script.js')
-     .sass('src/scss/cosmos.scss', 'dist/css/style.css')
+     .sass('src/scss/moss.scss', 'dist/css/style.css')
      .setPublicPath('dist')
      .sourceMaps();
 } else {
   mix.js('src/js/script.js', 'dist/js/script.min.js')
-     .sass('src/scss/cosmos.scss', 'dist/css/style.min.css')
+     .sass('src/scss/moss.scss', 'dist/css/style.min.css')
      .setPublicPath('dist');
 }
 

@@ -11,7 +11,7 @@
 
 #### in script
 ```js
-window.Cosmos.toast('Toasted!');
+window.Moss.toast('Toasted!');
 ```
 
 ## Props

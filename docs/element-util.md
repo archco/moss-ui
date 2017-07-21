@@ -6,11 +6,11 @@ The utility library for DOM Elements.
 ### Usage
 ```javascript
 // Import member from package.
-import { ElementUtil } from 'cosmos-css';
+import { ElementUtil } from 'moss-css';
 ElementUtil.addClass('#target', 'success');
 
-// or use from global 'Cosmos' object.
-window.Cosmos.lib.ElementUtil.wrap('.my-list', 'list-wrapper');
+// or use from global 'Moss' object.
+window.Moss.lib.ElementUtil.wrap('.my-list', 'list-wrapper');
 ```
 
 ### Functions

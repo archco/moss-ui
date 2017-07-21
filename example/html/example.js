@@ -6,7 +6,7 @@
 
 var toastCount = 0;
 function toastShow() {
-  window.Cosmos.toast('toast test ' + toastCount);
+  window.Moss.toast('toast test ' + toastCount);
   toastCount++;
 }
 
@@ -17,7 +17,7 @@ function toastShow() {
 function showMessage() {
   var text = document.querySelector('#input-msg').value || 'empty';
   var status = document.querySelector('#select-msg').value;
-  window.Cosmos.messageBox.add(text, status);
+  window.Moss.messageBox.add(text, status);
 }
 
 /************************************************************
@@ -29,25 +29,25 @@ function convertColor(hexToRgb) {
   var inputRgb = document.querySelector('#input-rgb-color');
 
   if (hexToRgb) {
-    inputRgb.value = window.Cosmos.lib.Color.hexToRgb(inputHex.value).join(',');
+    inputRgb.value = window.Moss.lib.Color.hexToRgb(inputHex.value).join(',');
   } else {
     var array = inputRgb.value.split(',').map(function (x) {
       return parseInt(x);
     });
 
-    inputHex.value = window.Cosmos.lib.Color.rgbToHex(array[0], array[1], array[2], true);
+    inputHex.value = window.Moss.lib.Color.rgbToHex(array[0], array[1], array[2], true);
   }
 }
 
 function getLightness() {
-  var value = window.Cosmos.lib.Color
+  var value = window.Moss.lib.Color
     .lightness(document.querySelector('#input-lightness').value);
   document.querySelector('#output-lightness').innerHTML = 'lightness value: ' + value;
 }
 
 function getContrast() {
   var inputValue = document.querySelector('#input-contrast').value;
-  var contrast = window.Cosmos.lib.Color.contrast(inputValue);
+  var contrast = window.Moss.lib.Color.contrast(inputValue);
   var output = document.querySelector('#output-contrast');
 
   output.style.backgroundColor = inputValue;
@@ -60,7 +60,7 @@ function getContrast() {
 *************************************************************/
 
 (function () {
-  var eu = window.Cosmos.lib.ElementUtil;
+  var eu = window.Moss.lib.ElementUtil;
 
   // toggle class
   eu.addListener('#btn-toggle-class', 'click', function () {

@@ -1,9 +1,9 @@
 import Vue from 'vue';
-import Cosmos from './cosmos';
+import Moss from './moss';
 
 const options = {};
 
-Vue.use(Cosmos, options);
+Vue.use(Moss, options);
 window.vm = new Vue({
   el: '#app'
 });

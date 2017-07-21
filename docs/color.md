@@ -6,11 +6,11 @@ Javascript color utility library.
 ### Usage
 ```javascript
 // Import member from package.
-import { Color } from 'cosmos-ui';
+import { Color } from 'moss-ui';
 let value = Color.contrast('#28a745');
 
-// or use from global 'Cosmos' object.
-let lightness = window.Cosmos.lib.Color.lightness('#dde4e9');
+// or use from global 'Moss' object.
+let lightness = window.Moss.lib.Color.lightness('#dde4e9');
 ```
 
 ## Static Methods

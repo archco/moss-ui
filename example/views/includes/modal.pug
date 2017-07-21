@@ -1,25 +1,25 @@
 h3 Basic
-button(class='btn warning' onclick='Cosmos.modal.toggle("test-modal")') Trigger
+button(class='btn warning' onclick='Moss.modal.toggle("test-modal")') Trigger
 modal(name='test-modal')
   h3 Test
   p=lorem
 
 h3 Close when another clicked
-button(class='btn success' onclick='Cosmos.modal.show("test-modal2")') Trigger
+button(class='btn success' onclick='Moss.modal.show("test-modal2")') Trigger
 modal(name='test-modal2' title='Close when another clicked' close-on)
   p=lorem
 
 h3 with Actions
-button(class='btn' onclick='Cosmos.modal.toggle("test-modal3")') Trigger
+button(class='btn' onclick='Moss.modal.toggle("test-modal3")') Trigger
 modal(name='test-modal3' title='with Actions')
   p=lorem
   div(slot='actions')
-    button(class='btn default' onclick='Cosmos.modal.close("test-modal3")') CANCEL
+    button(class='btn default' onclick='Moss.modal.close("test-modal3")') CANCEL
     button(class='btn success') OK
 
 h3 Icon close button
-button(class='btn info' onclick='Cosmos.modal.toggle("test-modal4")') Trigger
+button(class='btn info' onclick='Moss.modal.toggle("test-modal4")') Trigger
 modal(name='test-modal4' title='Icon close button' close-button-html='<i class="fa fa-times" aria-hidden="true"></i>' close-on)
   p=lorem
   div(slot='actions')
-    button(class='btn success' onclick='Cosmos.modal.close("test-modal4")') Okay
+    button(class='btn success' onclick='Moss.modal.close("test-modal4")') Okay

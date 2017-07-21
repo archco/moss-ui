@@ -73,8 +73,8 @@ export default {
       EventBus.$emit('modal-toggle', this.name, 'close');
     });
 
-    if (typeof window.Cosmos.modal === 'undefined') {
-      window.Cosmos.modal = {
+    if (typeof window.Moss.modal === 'undefined') {
+      window.Moss.modal = {
         show(name) {
           EventBus.$emit('modal-toggle', name, 'show');
         },

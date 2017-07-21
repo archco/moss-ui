@@ -1,9 +1,9 @@
 {
-  "name": "cosmos_ui",
+  "name": "moss-ui",
   "version": "0.1.0",
   "description": "The user interface framework for front-end.",
-  "main": "dist/module/cosmos.js",
-  "scss": "src/scss/cosmos.scss",
+  "main": "dist/module/moss.js",
+  "scss": "src/scss/moss.scss",
   "directories": {
     "example": "example",
     "test": "test"
@@ -24,9 +24,9 @@
   },
   "author": "archco",
   "bugs": {
-    "url": "https://github.com/archco/cosmos-ui/issues"
+    "url": "https://github.com/archco/moss-ui/issues"
   },
-  "homepage": "https://github.com/archco/cosmos-ui",
+  "homepage": "https://github.com/archco/moss-ui",
   "license": "MIT",
   "dependencies": {
     "normalize.css": "^7.0.0",

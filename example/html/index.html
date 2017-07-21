@@ -11,10 +11,10 @@
   <body>
     <div id="app">
       <header class="bg-color-primary pad flex-container-center" style="height:100px;">
-        <h1 id="project-name">cosmos-css</h1>
+        <h1 id="project-name">MOSS-UI</h1>
       </header>
       <navbar class="sticky-top shadow-near" align="end">
-        <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Cosmos</navbar-brand>
+        <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
         <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
           <nav-item href="components.html?q=components">Components</nav-item>
           <nav-item href="modules.html">Modules</nav-item>
@@ -29,8 +29,8 @@
       <div class="hero-banner pad-large">
         <div class="hero-background filter gray" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg');"></div>
         <div class="hero-content font-accent align-center" style="font-size:1.4em;">
-          <h1 class="color-primary">COSMOS-CSS</h1>
-          <p>The css framework for personal practice.</p>
+          <h1 class="color-primary">MOSS-UI</h1>
+          <p>The user interface framework for front-end.</p>
         </div>
       </div>
       <section class="pad">
@@ -148,7 +148,7 @@
             </div>
           </div>
         </div>
-        <div class="footer-copyright">copyright &copy; 2016 cosmos all rights reserved.</div>
+        <div class="footer-copyright">copyright &copy; 2017 MOSS-UI all rights reserved.</div>
       </footer>
       <scroll-to :duration="800" :offset="400" top-html="&lt;i class=&quot;fa fa-chevron-up&quot; aria-hidden=&quot;true&quot;&gt;" bottom-html="&lt;i class=&quot;fa fa-chevron-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;"></scroll-to>
       <toast></toast>
@@ -156,7 +156,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
     <script src="../../dist/js/script.js"></script>
     <script src="./example.js"></script><script>var year = new Date().getFullYear();
-    document.querySelector('.footer-copyright').innerHTML = "copyright \&copy; " + year + " cosmos all rights reserved.";
-    document.querySelector('#project-name').innerHTML = "cosmos-css " + vm.$cosmos.version;</script>
+    document.querySelector('.footer-copyright').innerHTML = "copyright \&copy; " + year + " MOSS-UI all rights reserved.";
+    document.querySelector('#project-name').innerHTML = "MOSS-UI " + Moss.version;</script>
   </body>
 </html>

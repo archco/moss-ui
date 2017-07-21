@@ -1,4 +1,4 @@
-# COSMOS-UI
+# MOSS-UI
 
 The user interface framework for front-end.
 
@@ -7,7 +7,7 @@ The user interface framework for front-end.
 
 ## Installation
 ```sh
-$ npm install cosmos_ui
+$ npm install moss_ui
 ```
 
 ## Configuration
@@ -15,7 +15,7 @@ $ npm install cosmos_ui
 ```scss
 // In your app.scss file.
 @import 'app-variables'; // Customize variables for application.
-@import 'node_modules/cosmos-ui/src/scss/cosmos';
+@import 'node_modules/moss-ui/src/scss/moss';
 ...
 ```
 
@@ -23,9 +23,9 @@ $ npm install cosmos_ui
 ```js
 // In your app.js
 import Vue from 'vue';
-import Cosmos from 'cosmos-ui';
+import Moss from 'moss-ui';
 
-Vue.use(Cosmos);
+Vue.use(Moss);
 
 window.vm = new Vue({
   el: '#app',

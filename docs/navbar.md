@@ -10,7 +10,7 @@
 ### Basic
 ```html
 <navbar>
-  <navbar-brand href="/" type="text" slot="brand">COSMOS</navbar-brand>
+  <navbar-brand href="/" type="text" slot="brand">MOSS</navbar-brand>
   <navbar-nav>
     <nav-item href='#'>Link 1</nav-item>
     <nav-item href='#'>Link 2</nav-item>
@@ -29,7 +29,7 @@
 ### Multiple navigations
 ```html
 <navbar align="between">
-  <navbar-brand href="/" type="text" slot="brand">COSMOS</navbar-brand>
+  <navbar-brand href="/" type="text" slot="brand">MOSS</navbar-brand>
   <navbar-nav>
     <nav-item href='#'>Left 1</nav-item>
     <nav-item href='#'>Left 2</nav-item>

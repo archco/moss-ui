@@ -1,7 +1,7 @@
 /*!
- * cosmos_ui - The user interface framework for front-end.
+ * moss-ui - The user interface framework for front-end.
  * @version v0.1.0
- * @link https://github.com/archco/cosmos-ui
+ * @link https://github.com/archco/moss-ui
  * @license MIT
  */
 import Color from './lib/color';
@@ -25,7 +25,7 @@ export default {
     options = Object.assign(DefaultOptions, options);
 
     // Add object for convenience.
-    this.addCosmosObject(Vue);
+    this.addMossObject(Vue);
 
     // Add components.
     components.forEach(component => {
@@ -42,8 +42,8 @@ export default {
     });
   },
 
-  addCosmosObject(Vue) {
-    const Cosmos = {
+  addMossObject(Vue) {
+    const Moss = {
       version,
       EventBus,
       lib: {
@@ -52,7 +52,7 @@ export default {
         ElementUtil,
       },
     };
-    window.Cosmos = Vue.Cosmos = Vue.prototype.$cosmos = Cosmos;
+    window.Moss = Vue.Moss = Vue.prototype.$moss = Moss;
   },
 };
 

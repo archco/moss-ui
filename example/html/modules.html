@@ -11,10 +11,10 @@
   <body>
     <div id="app">
       <header class="bg-color-primary pad flex-container-center" style="height:100px;">
-        <h1 id="project-name">cosmos-css</h1>
+        <h1 id="project-name">MOSS-UI</h1>
       </header>
       <navbar class="sticky-top shadow-near" align="end">
-        <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Cosmos</navbar-brand>
+        <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
         <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
           <nav-item href="components.html?q=components">Components</nav-item>
           <nav-item href="modules.html">Modules</nav-item>
@@ -173,31 +173,31 @@
           <message-box close-html="&lt;i class=&quot;fa fa-times-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;"></message-box>
           <anchored-tag tag="h1" owned>Modal</anchored-tag>
           <h3>Basic</h3>
-          <button class="btn warning" onclick="Cosmos.modal.toggle(&quot;test-modal&quot;)">Trigger</button>
+          <button class="btn warning" onclick="Moss.modal.toggle(&quot;test-modal&quot;)">Trigger</button>
           <modal name="test-modal">
             <h3>Test</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </modal>
           <h3>Close when another clicked</h3>
-          <button class="btn success" onclick="Cosmos.modal.show(&quot;test-modal2&quot;)">Trigger</button>
+          <button class="btn success" onclick="Moss.modal.show(&quot;test-modal2&quot;)">Trigger</button>
           <modal name="test-modal2" title="Close when another clicked" close-on>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </modal>
           <h3>with Actions</h3>
-          <button class="btn" onclick="Cosmos.modal.toggle(&quot;test-modal3&quot;)">Trigger</button>
+          <button class="btn" onclick="Moss.modal.toggle(&quot;test-modal3&quot;)">Trigger</button>
           <modal name="test-modal3" title="with Actions">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <div slot="actions">
-              <button class="btn default" onclick="Cosmos.modal.close(&quot;test-modal3&quot;)">CANCEL</button>
+              <button class="btn default" onclick="Moss.modal.close(&quot;test-modal3&quot;)">CANCEL</button>
               <button class="btn success">OK</button>
             </div>
           </modal>
           <h3>Icon close button</h3>
-          <button class="btn info" onclick="Cosmos.modal.toggle(&quot;test-modal4&quot;)">Trigger</button>
+          <button class="btn info" onclick="Moss.modal.toggle(&quot;test-modal4&quot;)">Trigger</button>
           <modal name="test-modal4" title="Icon close button" close-button-html="&lt;i class=&quot;fa fa-times&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;" close-on>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <div slot="actions">
-              <button class="btn success" onclick="Cosmos.modal.close(&quot;test-modal4&quot;)">Okay</button>
+              <button class="btn success" onclick="Moss.modal.close(&quot;test-modal4&quot;)">Okay</button>
             </div>
           </modal>
           <anchored-tag tag="h1" owned>Nav</anchored-tag>
@@ -407,7 +407,7 @@
             </div>
           </div>
         </div>
-        <div class="footer-copyright">copyright &copy; 2016 cosmos all rights reserved.</div>
+        <div class="footer-copyright">copyright &copy; 2017 MOSS-UI all rights reserved.</div>
       </footer>
       <scroll-to :duration="800" :offset="400" top-html="&lt;i class=&quot;fa fa-chevron-up&quot; aria-hidden=&quot;true&quot;&gt;" bottom-html="&lt;i class=&quot;fa fa-chevron-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;"></scroll-to>
       <toast></toast>
@@ -415,7 +415,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
     <script src="../../dist/js/script.js"></script>
     <script src="./example.js"></script><script>var year = new Date().getFullYear();
-    document.querySelector('.footer-copyright').innerHTML = "copyright \&copy; " + year + " cosmos all rights reserved.";
-    document.querySelector('#project-name').innerHTML = "cosmos-css " + vm.$cosmos.version;</script>
+    document.querySelector('.footer-copyright').innerHTML = "copyright \&copy; " + year + " MOSS-UI all rights reserved.";
+    document.querySelector('#project-name').innerHTML = "MOSS-UI " + Moss.version;</script>
   </body>
 </html>

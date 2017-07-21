@@ -6,11 +6,11 @@ The utility library for javascript.
 ### Usage
 ```javascript
 // Import member from package.
-import { Util } from 'cosmos-ui';
+import { Util } from 'moss-ui';
 let obj = Util.locationSearchToObject();
 
-// or use from global 'Cosmos' object.
-let isMobile = window.Cosmos.lib.Util.isMobileSize();
+// or use from global 'Moss' object.
+let isMobile = window.Moss.lib.Util.isMobileSize();
 ```
 
 ## Functions

@@ -22,10 +22,10 @@ html
   body
     div(id='app')
       header(class='bg-color-primary pad flex-container-center' style="height:100px;")
-        h1(id='project-name') cosmos-css
+        h1(id='project-name') MOSS-UI
 
       navbar(class='sticky-top shadow-near' align='end')
-        navbar-brand(href='index.html' type='text' slot='brand' v-activator.this.self) Cosmos
+        navbar-brand(href='index.html' type='text' slot='brand' v-activator.this.self) Moss
         navbar-nav(v-activator="'.nav-item > .nav-link'")
           nav-item(href='components.html?q=components') Components
           nav-item(href='modules.html') Modules
@@ -55,7 +55,7 @@ html
                 li
                   a(href='#') Link3
         div(class='footer-copyright')
-          |copyright &copy; 2016 cosmos all rights reserved.
+          |copyright &copy; 2017 MOSS-UI all rights reserved.
       scroll-to(:duration='800' :offset='400' top-html='<i class="fa fa-chevron-up" aria-hidden="true">' bottom-html='<i class="fa fa-chevron-down" aria-hidden="true"></i>')
       toast
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
@@ -64,7 +64,7 @@ html
     script(src='./example.js')
     <script>
     | var year = new Date().getFullYear();
-    | document.querySelector('.footer-copyright').innerHTML = "copyright \&copy; " + year + " cosmos all rights reserved.";
-    | document.querySelector('#project-name').innerHTML = "cosmos-css " + vm.$cosmos.version;
+    | document.querySelector('.footer-copyright').innerHTML = "copyright \&copy; " + year + " MOSS-UI all rights reserved.";
+    | document.querySelector('#project-name').innerHTML = "MOSS-UI " + Moss.version;
     </script>
     block script

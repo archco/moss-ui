@@ -72,25 +72,25 @@ export default {
     },
     registerAccordion() {
       // initialize accordion object.
-      if (typeof this.$root.$cosmos.accordion === 'undefined') {
-        this.$root.$cosmos.accordion = {};
+      if (typeof this.$root.$moss.accordion === 'undefined') {
+        this.$root.$moss.accordion = {};
       }
 
       // initialize accordion toggle method.
-      if (typeof this.$root.$cosmos.accordion.toggle === 'undefined') {
-        this.$root.$cosmos.accordion.toggle = this.toggleAccordion;
+      if (typeof this.$root.$moss.accordion.toggle === 'undefined') {
+        this.$root.$moss.accordion.toggle = this.toggleAccordion;
       }
 
       // Initialize accordion list.
-      if (typeof this.$root.$cosmos.accordion[this.accordion] === 'undefined') {
-        this.$root.$cosmos.accordion[this.accordion] = [];
+      if (typeof this.$root.$moss.accordion[this.accordion] === 'undefined') {
+        this.$root.$moss.accordion[this.accordion] = [];
       }
 
       // register.
-      this.$root.$cosmos.accordion[this.accordion].push(this);
+      this.$root.$moss.accordion[this.accordion].push(this);
     },
     toggleAccordion(accordionId, id, action = 'toggle') {
-      const list = this.$root.$cosmos.accordion[accordionId];
+      const list = this.$root.$moss.accordion[accordionId];
       if (!list) return;
       action = action.toLowerCase();
 

@@ -39,7 +39,7 @@ in HTML
 ```
 in script
 ```js
-window.Cosmos.messageBox.add('Some message.', 'info');
+window.Moss.messageBox.add('Some message.', 'info');
 ```
 
 ### Props
@@ -53,7 +53,7 @@ window.Cosmos.messageBox.add('Some message.', 'info');
 Add a new message in message-box.
 - Syntax
 ```js
-window.Cosmos.messageBox.add(text, status = 'default');
+window.Moss.messageBox.add(text, status = 'default');
 ```
 - Param {String} text - message text.
 - Param {String} status - status keyword.
@@ -62,5 +62,5 @@ window.Cosmos.messageBox.add(text, status = 'default');
 Clear all messages in message-box.
 - Syntax
 ```js
-window.Cosmos.messageBox.clear();
+window.Moss.messageBox.clear();
 ```

@@ -55,7 +55,7 @@ export default {
   },
   beforeMount() {
     // message-box is unique component.
-    if (typeof window.Cosmos.messageBox === 'undefined') {
+    if (typeof window.Moss.messageBox === 'undefined') {
       EventBus.$on('message-box-add', (text, status) => {
         this.add(text, status);
       });
@@ -63,7 +63,7 @@ export default {
         this.clear();
       });
 
-      window.Cosmos.messageBox = {
+      window.Moss.messageBox = {
         add(text, status = 'default') {
           EventBus.$emit('message-box-add', text, status);
         },

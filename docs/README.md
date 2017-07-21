@@ -1,4 +1,4 @@
-# COSMOS-UI Documents
+# MOSS-UI Documents
 
 Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 
