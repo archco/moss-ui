@@ -7,7 +7,7 @@ The user interface framework for front-end.
 
 ## Installation
 ```sh
-$ npm install moss_ui
+$ npm install moss-ui
 ```
 
 ## Configuration
