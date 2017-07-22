@@ -19,13 +19,13 @@ var _elementUtil2 = _interopRequireDefault(_elementUtil);
 
 var _eventBus = require('./lib/event-bus');
 
-var _components = require('./components');
+var _index = require('./components/_index');
 
-var _components2 = _interopRequireDefault(_components);
+var _index2 = _interopRequireDefault(_index);
 
-var _directives = require('./directives');
+var _index3 = require('./directives/_index');
 
-var _directives2 = _interopRequireDefault(_directives);
+var _index4 = _interopRequireDefault(_index3);
 
 var _package = require('../../package.json');
 
@@ -53,14 +53,14 @@ exports.default = {
     this.addMossObject(Vue);
 
     // Add components.
-    _components2.default.forEach(function (component) {
+    _index2.default.forEach(function (component) {
       var name = options.insteadName && options.insteadName[component.name] ? options.insteadName[component.name] : component.name;
 
       Vue.component(name, component);
     });
 
     // Add directives.
-    _directives2.default.forEach(function (directive) {
+    _index4.default.forEach(function (directive) {
       Vue.directive(directive.name, directive);
     });
   },
