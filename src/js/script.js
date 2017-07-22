@@ -5,5 +5,10 @@ const options = {};
 
 Vue.use(Moss, options);
 window.vm = new Vue({
-  el: '#app'
+  el: '#app',
+  methods: {
+    test(arg) {
+      console.log(arg);
+    },
+  },
 });

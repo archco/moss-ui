@@ -14,7 +14,7 @@ export default {
     },
     action: {
       type: String,
-      default: 'hide', // hide | remove
+      default: 'hide', // hide | remove | '' (no-action)
     },
     target: {
       type: String,
@@ -41,6 +41,9 @@ export default {
   },
   methods: {
     onClick(event) {
+      this.$emit('close');
+      if (!this.action) return;
+
       let target = (this.target)
         ? ElementUtil.findAncestor(event.target, this.target)
         : event.target.parentNode;

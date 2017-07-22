@@ -68,68 +68,12 @@
             <nav-item href="#">logout</nav-item>
           </navbar-nav>
         </navbar>
-        <anchored-tag tag="h1" owned>Simple CRUD</anchored-tag>
-        <form class="form-inline" action="#" method="POST">
-          <input type="text" name="name" placeholder="Name">
-          <input type="number" name="age" placeholder="Age">
-          <button class="btn success" type="submit">Create</button>
-        </form>
-        <ul class="simple-crud-list">
-          <li is="simple-crud">
-            <div slot="read"><span class="content"><span>id: 1 name: James age: 35</span></span><span class="actions btn-group">
-                <button class="btn" data-toggle="update">Edit</button>
-                <button class="btn danger" data-toggle="delete">Delete</button></span></div>
-            <form slot="update" action="#" method="POST"><span class="content"><span>id: 1</span>
-                <input type="hidden" name="id" value="1">
-                <label><span>Name:</span>
-                  <input class="inline" type="text" name="name" value="James">
-                </label>
-                <label><span>Age:</span>
-                  <input class="inline" type="number" name="age" value="35">
-                </label></span><span class="actions btn-group">
-                <button class="btn default" type="button" data-toggle="cancel">Cancel</button>
-                <button class="btn success" type="submit">Edit</button></span></form>
-            <form slot="delete" action="#" method="POST"><span class="content"><span class="color-danger"><b>Are you sure?</b> Remove this model?</span></span><span class="actions btn-group">
-                <button class="btn danger" type="submit">Delete</button>
-                <button class="btn default" type="button" data-toggle="cancel">Cancel</button></span></form>
-          </li>
-          <li is="simple-crud">
-            <div slot="read"><span class="content"><span>id: 2 name: Caren age: 24</span></span><span class="actions btn-group">
-                <button class="btn" data-toggle="update">Edit</button>
-                <button class="btn danger" data-toggle="delete">Delete</button></span></div>
-            <form slot="update" action="#" method="POST"><span class="content"><span>id: 2</span>
-                <input type="hidden" name="id" value="2">
-                <label><span>Name:</span>
-                  <input class="inline" type="text" name="name" value="Caren">
-                </label>
-                <label><span>Age:</span>
-                  <input class="inline" type="number" name="age" value="24">
-                </label></span><span class="actions btn-group">
-                <button class="btn default" type="button" data-toggle="cancel">Cancel</button>
-                <button class="btn success" type="submit">Edit</button></span></form>
-            <form slot="delete" action="#" method="POST"><span class="content"><span class="color-danger"><b>Are you sure?</b> Remove this model?</span></span><span class="actions btn-group">
-                <button class="btn danger" type="submit">Delete</button>
-                <button class="btn default" type="button" data-toggle="cancel">Cancel</button></span></form>
-          </li>
-          <li is="simple-crud">
-            <div slot="read"><span class="content"><span>id: 3 name: Bob age: 30</span></span><span class="actions btn-group">
-                <button class="btn" data-toggle="update">Edit</button>
-                <button class="btn danger" data-toggle="delete">Delete</button></span></div>
-            <form slot="update" action="#" method="POST"><span class="content"><span>id: 3</span>
-                <input type="hidden" name="id" value="3">
-                <label><span>Name:</span>
-                  <input class="inline" type="text" name="name" value="Bob">
-                </label>
-                <label><span>Age:</span>
-                  <input class="inline" type="number" name="age" value="30">
-                </label></span><span class="actions btn-group">
-                <button class="btn default" type="button" data-toggle="cancel">Cancel</button>
-                <button class="btn success" type="submit">Edit</button></span></form>
-            <form slot="delete" action="#" method="POST"><span class="content"><span class="color-danger"><b>Are you sure?</b> Remove this model?</span></span><span class="actions btn-group">
-                <button class="btn danger" type="submit">Delete</button>
-                <button class="btn default" type="button" data-toggle="cancel">Cancel</button></span></form>
-          </li>
-        </ul>
+        <anchored-tag tag="h1" owned>Close Button</anchored-tag>
+        <h3>close-button</h3><span>test text<close-button>✖</close-button></span><span class="badge">Badge<close-button action="remove">✖</close-button></span>
+        <div class="pad bg-color-secondary">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><close-button position="top-right" parent-relatived>✖</close-button>
+        </div>
+        <h3>Hook on 'close' event</h3><span>test text <close-button action="" @close="test('hello')">✖</close-button></span>
       </section>
       <footer class="footer">
         <div class="container">

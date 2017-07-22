@@ -4,3 +4,5 @@ span(class='badge') Badge<close-button action="remove">✖</close-button>
 div(class='pad bg-color-secondary')
   p=lorem
   <close-button position="top-right" parent-relatived>✖</close-button>
+h3 Hook on 'close' event
+span test text <close-button action="" @close="test('hello')">✖</close-button>
