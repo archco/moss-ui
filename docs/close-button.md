@@ -30,10 +30,23 @@
 </div>
 ```
 
+#### Hook on close event
+```html
+<span>Custom close handle
+  <!-- This will call 'onClose()' custom method when close-button clicked.  -->
+  <close-button action="" @close="onClose()">✖</close-button>
+</span>
+```
+
 ## Props
 | name | type | description | default |
 | ---- | ---- | ----------- | ------- |
 | position | String | '' (no specified) or 'top-right' or 'middle-right' | '' |
-| action | String | hide or remove | 'hide' |
+| action | String | hide or remove or '' (no-action) | 'hide' |
 | target | String | '' (parentNode) or selector | '' |
 | parent-relatived | Boolean | If it true, parent node's style position is set 'relative'. | false |
+
+## Events
+| name | args | description |
+| ---- | ---- | ----------- |
+| close | - | Emit when close-button clicked. |
