@@ -233,18 +233,16 @@ SOFTWARE.</code></pre>
             <button class="btn success">Left</button>
             <button class="btn">Center</button>
             <button class="btn">Right</button>
-            <div class="dropdown">
-              <button class="dropdown-btn btn">Dropdown</button>
-              <div class="dropdown-content"><a class="dropdown-item" href="#">Link 1</a><a class="dropdown-item" href="#">Link 2</a><a class="dropdown-item" href="#">Link 3</a></div>
-            </div>
+            <dropdown>
+              <button class="btn" slot="button">Dropdown</button><a href="#">Link 1</a><a href="#">Link 2</a><a href="#">Link 3</a>
+            </dropdown>
           </div><br>
           <div class="btn-group-vertical">
             <button class="btn default">Top</button>
             <button class="btn shade">Middle</button>
-            <div class="dropdown">
-              <button class="dropdown-toggle btn dark">Dropdown</button>
-              <div class="dropdown-content"><a class="dropdown-item" href="#">Link 1</a><a class="dropdown-item" href="#">Link 2</a><a class="dropdown-item" href="#">Link 3</a></div>
-            </div>
+            <dropdown>
+              <button class="btn dark" slot="button">Dropdown</button><a href="#">Link 1</a><a href="#">Link 2</a><a href="#">Link 3</a>
+            </dropdown>
             <button class="btn success">Bottom</button>
           </div>
           <anchored-tag tag="h1" owned>Card</anchored-tag>
