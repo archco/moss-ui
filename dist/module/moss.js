@@ -35,7 +35,7 @@ var DefaultOptions = {
   insteadName: {}
 }; /*!
     * moss-ui - The user interface framework for front-end.
-    * @version v0.1.0
+    * @version v0.1.1
     * @link https://github.com/archco/moss-ui
     * @license MIT
     */
