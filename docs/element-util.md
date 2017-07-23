@@ -27,7 +27,7 @@ window.Moss.lib.ElementUtil.wrap('.my-list', 'list-wrapper');
 let element = ElementUtil.getElement(selector, base = document);
 ```
 - Param  {String|Element|NodeList} selector
-- Param  {Element} [ base = document ]
+- Param  {String|Element} [ base = document ]
 - Return {Element}
 
 #### getElements
@@ -36,8 +36,17 @@ let element = ElementUtil.getElement(selector, base = document);
 let nodes = ElementUtil.getElements(selector, base = document);
 ```
 - Param  {String|Element|NodeList} selector
-- Param  {Element} [ base = document ]
+- Param  {String|Element} [ base = document ]
 - Return {NodeList}
+
+#### removeElements
+- Syntax
+```javascript
+let number = ElementUtil.removeClass(selector, base = document);
+```
+- Param  {String|Element|NodeList} selector
+- Param  {String|Element} [ base = document ]
+- Return {Number} number of affected.
 
 #### addListener
 Add event listener on selector.

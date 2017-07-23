@@ -16,10 +16,14 @@ export default class ElementUtil {
    * getElement
    *
    * @param  {String|Element|NodeList} selector
-   * @param  {Element} [ base = document ]
+   * @param  {String|Element} [ base = document ]
    * @return {Element}
    */
   static getElement(selector, base = document) {
+    if (typeof base === 'string') {
+      base = document.querySelector(base);
+    }
+
     if (typeof selector === 'string') {
       return base.querySelector(selector);
     } else if (selector instanceof Element) {
@@ -35,10 +39,14 @@ export default class ElementUtil {
    * getElements
    *
    * @param  {String|Element|NodeList} selector
-   * @param  {Element} [ base = document ]
+   * @param  {String|Element} [ base = document ]
    * @return {NodeList}
    */
   static getElements(selector, base = document) {
+    if (typeof base === 'string') {
+      base = document.querySelector(base);
+    }
+
     if (typeof selector === 'string') {
       return base.querySelectorAll(selector);
     } else if (selector instanceof Element) {
@@ -48,6 +56,26 @@ export default class ElementUtil {
     } else {
       throw new TypeError('selector is must be String or NodeList');
     }
+  }
+
+  /**
+   * removeElements
+   *
+   * @param  {String|Element|NodeList} selector
+   * @param  {String|Element} [ base = document ]
+   * @return {Number} number of affected.
+   */
+  static removeElements(selector, base = document) {
+    if (typeof base === 'string') {
+      base = document.querySelector(base);
+    }
+
+    let elms = this.getElements(selector, base);
+    for (let elm of elms) {
+      elm.parentNode.removeChild(elm);
+    }
+
+    return elms.length;
   }
 
   /**
