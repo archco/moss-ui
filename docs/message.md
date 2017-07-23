@@ -34,7 +34,7 @@ Available color keywords: default, primary, secondary, info, success, warning, d
 in HTML
 ```html
 <message-box
-  close-html="<i class=\"fa fa-times-circle\" aria-hidden=\"true\"></i>">
+  close-html='<i class="fa fa-times" aria-hidden="true"></i>'>
 </message-box>
 ```
 in script
