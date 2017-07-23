@@ -7,8 +7,6 @@
 </template>
 
 <script>
-import { EventBus } from '../lib/event-bus';
-
 export default {
   name: 'toast',
   props: {
@@ -58,14 +56,14 @@ export default {
     }
   },
   beforeMount() {
-    EventBus.$on('toast-show', text => {
+    this.$root.$on('toast-show', text => {
       this.show(text);
     });
 
     // Register helper function to global object.
     if (!window.Moss) window.Moss = {};
     window.Moss.toast = (text) => {
-      EventBus.$emit('toast-show', text);
+      this.$root.$emit('toast-show', text);
     }
   }
 }

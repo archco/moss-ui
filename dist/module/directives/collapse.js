@@ -3,23 +3,20 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _eventBus = require('../lib/event-bus');
-
 exports.default = {
   name: 'collapse',
 
-  bind: function bind(el, binding) {
+  bind: function bind(el, binding, vnode) {
     var action = binding.modifiers.show ? 'show' : binding.modifiers.hide ? 'hide' : 'toggle';
 
     el.addEventListener('click', function () {
-      _eventBus.EventBus.$emit('collapse-toggle', binding.arg, action, function (show) {
+      vnode.context.$root.$emit('collapse-toggle', binding.arg, action, function (show) {
         el.dataset.collapsed = !show;
       });
     });
   },
-  inserted: function inserted(el, binding) {
-    _eventBus.EventBus.$emit('collapse-item', binding.arg, function (item) {
+  inserted: function inserted(el, binding, vnode) {
+    vnode.context.$root.$emit('collapse-item', binding.arg, function (item) {
       el.dataset.collapsed = !item.show;
     });
   }

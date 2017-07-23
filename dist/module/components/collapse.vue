@@ -11,8 +11,6 @@
 </template>
 
 <script>
-import { EventBus } from '../lib/event-bus';
-
 export default {
   name: 'collapse',
   props: {
@@ -106,8 +104,8 @@ export default {
     }
   },
   beforeMount() {
-    EventBus.$on('collapse-toggle', this.toggleCollapse.bind(this));
-    EventBus.$on('collapse-item', (id, cb = null) => {
+    this.$root.$on('collapse-toggle', this.toggleCollapse.bind(this));
+    this.$root.$on('collapse-item', (id, cb = null) => {
       if (this.id !== id) return;
       if (typeof cb === 'function') cb(this);
     });

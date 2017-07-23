@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.EventBus = exports.ElementUtil = exports.Util = exports.Color = undefined;
+exports.ElementUtil = exports.Util = exports.Color = undefined;
 
 var _color = require('./lib/color');
 
@@ -17,8 +17,6 @@ var _elementUtil = require('./lib/element-util');
 
 var _elementUtil2 = _interopRequireDefault(_elementUtil);
 
-var _eventBus = require('./lib/event-bus');
-
 var _index = require('./components/_index');
 
 var _index2 = _interopRequireDefault(_index);
@@ -31,14 +29,16 @@ var _package = require('../../package.json');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/*!
+ * moss-ui - The user interface framework for front-end.
+ * @version v0.1.2
+ * @link https://github.com/archco/moss-ui
+ * @license MIT
+ */
 var DefaultOptions = {
   insteadName: {}
-}; /*!
-    * moss-ui - The user interface framework for front-end.
-    * @version v0.1.1
-    * @link https://github.com/archco/moss-ui
-    * @license MIT
-    */
+};
+
 exports.default = {
   version: _package.version,
   install: function install(Vue) {
@@ -67,7 +67,6 @@ exports.default = {
   addMossObject: function addMossObject(Vue) {
     var Moss = {
       version: _package.version,
-      EventBus: _eventBus.EventBus,
       lib: {
         Color: _color2.default,
         Util: _util2.default,
@@ -80,4 +79,3 @@ exports.default = {
 exports.Color = _color2.default;
 exports.Util = _util2.default;
 exports.ElementUtil = _elementUtil2.default;
-exports.EventBus = _eventBus.EventBus;

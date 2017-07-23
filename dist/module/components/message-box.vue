@@ -14,8 +14,6 @@
 </template>
 
 <script>
-import { EventBus } from '../lib/event-bus';
-
 export default {
   name: 'message-box',
   props: {
@@ -56,19 +54,19 @@ export default {
   beforeMount() {
     // message-box is unique component.
     if (typeof window.Moss.messageBox === 'undefined') {
-      EventBus.$on('message-box-add', (text, status) => {
+      this.$root.$on('message-box-add', (text, status) => {
         this.add(text, status);
       });
-      EventBus.$on('message-box-clear', () => {
+      this.$root.$on('message-box-clear', () => {
         this.clear();
       });
 
       window.Moss.messageBox = {
         add(text, status = 'default') {
-          EventBus.$emit('message-box-add', text, status);
+          this.$root.$emit('message-box-add', text, status);
         },
         clear() {
-          EventBus.$emit('message-box-clear');
+          this.$root.$emit('message-box-clear');
         }
       };
     }
