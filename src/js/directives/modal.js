@@ -1,15 +1,13 @@
-import { EventBus } from '../lib/event-bus';
-
 export default {
   name: 'modal',
-  bind(el, binding) {
+  bind(el, binding, vnode) {
     el.addEventListener('click', event => {
       event.preventDefault();
       let action = binding.modifiers.show ? 'show'
         : binding.modifiers.close ? 'close'
         : 'toggle';
 
-      EventBus.$emit('modal-toggle', binding.arg, action);
+      vnode.context.$root.$emit('modal-toggle', binding.arg, action);
     });
   },
 };

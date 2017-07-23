@@ -1,11 +1,9 @@
-import { EventBus } from '../lib/event-bus';
-
 export default {
   name: 'trigger',
-  bind(el, binding) {
+  bind(el, binding, vnode) {
     el.addEventListener('click', event => {
       event.preventDefault();
-      EventBus.$emit(binding.arg, ...binding.value);
+      vnode.context.$root.$emit(binding.arg, ...binding.value);
     });
   },
 };

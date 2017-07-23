@@ -18,8 +18,6 @@
 </template>
 
 <script>
-import { EventBus } from '../lib/event-bus';
-
 export default {
   name: 'modal',
   props: {
@@ -68,21 +66,21 @@ export default {
     },
   },
   beforeMount() {
-    EventBus.$on('modal-toggle', this.toggleModal.bind(this));
+    this.$root.$on('modal-toggle', this.toggleModal.bind(this));
     this.$on('close', () => {
-      EventBus.$emit('modal-toggle', this.name, 'close');
+      this.$root.$emit('modal-toggle', this.name, 'close');
     });
 
     if (typeof window.Moss.modal === 'undefined') {
       window.Moss.modal = {
         show(name) {
-          EventBus.$emit('modal-toggle', name, 'show');
+          this.$root.$emit('modal-toggle', name, 'show');
         },
         close(name) {
-          EventBus.$emit('modal-toggle', name, 'close');
+          this.$root.$emit('modal-toggle', name, 'close');
         },
         toggle(name, action = 'toggle') {
-          EventBus.$emit('modal-toggle', name, action);
+          this.$root.$emit('modal-toggle', name, action);
         }
       };
     }
@@ -90,7 +88,7 @@ export default {
     if (this.closeOn) {
       window.addEventListener('click', event => {
         if (event.target.classList.contains('modal-mask')) {
-          EventBus.$emit('modal-toggle', this.name, 'close');
+          this.$root.$emit('modal-toggle', this.name, 'close');
         }
       });
     }
