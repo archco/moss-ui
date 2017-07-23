@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - Improve ElementUtil #15
+- Add a new directive "wrap". #16
 
 ### Removed
 - Remove EventBus #9 -> Instead using custom events of context root.

@@ -6140,6 +6140,16 @@ ul.pagination li.disabled {
   }
 }
 
+.responsive-wrapper {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.responsive-wrapper table {
+  width: auto;
+  max-width: none;
+}
+
 .font-cursive {
   font-family: cursive;
 }

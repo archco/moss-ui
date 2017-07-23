@@ -26,6 +26,17 @@
   @extend %resopnsive-tablet-hide;
 }
 
+// responsive wrapper. overflow-x auto.
+.responsive-wrapper {
+  max-width: 100%;
+  overflow-x: auto;
+
+  table {
+    width: auto;
+    max-width: none;
+  }
+}
+
 // font
 .font-cursive { font-family: $font-cursive; }
 .font-accent { font-family: $font-accent; }

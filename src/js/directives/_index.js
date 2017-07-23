@@ -5,6 +5,7 @@ import Confirm from './confirm';
 import Focus from './focus';
 import Modal from './modal';
 import Trigger from './trigger';
+import Wrap from './wrap';
 
 export default [
   Accordion,
@@ -14,4 +15,5 @@ export default [
   Focus,
   Modal,
   Trigger,
+  Wrap,
 ];

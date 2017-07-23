@@ -47,15 +47,15 @@ The default link causes an underline when hovering. Do one of the following to w
 ```
 
 ##### Responsive
-- triggered by classname
-```html
-<table class="table responsive">...</table>
-```
 - wrapper around
 ```html
 <div class="table-responsive-wrapper">
   <table>...</table>
 </div>
+```
+- Use "wrap" directive
+```html
+<table class="table" v-wrap:responsive>...</table>
 ```
 
 ## Optional Class
