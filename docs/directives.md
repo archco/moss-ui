@@ -22,6 +22,10 @@ Provide the function to confirm when "submission" is the case.
 - arg: event type.
 - value: {String} confirm message. default value is 'Are you confirm?'.
 
+##### Caveat
+- When confirm is canceled, `event.preventDefault()` is called, so if there is a default action such as submit, it will stop as expected, but it will have no effect on click.
+- It is the event listener of the capturing phase, but it is pushed to the priority when the event listener is given with attr such as `onsubmit`.
+
 ### Focus
 - Auto focus on element.
 
