@@ -33,6 +33,9 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [tabs](tabs.md)
 - [toast](toast.md)
 
+#### Vue Directives
+- [Directives](directives.md)
+
 #### JS Libraries
 - [Color](color.md)
 - [ElementUtil](element-util.md)
