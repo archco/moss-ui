@@ -27,11 +27,27 @@ Provide the function to confirm when "submission" is the case.
 - It is the event listener of the capturing phase, but it is pushed to the priority when the event listener is given with attr such as `onsubmit`.
 
 ### Focus
-- Auto focus on element.
+Auto focus on element.
 
 - Syntax
 ```html
 <input type="text" v-focus>
+```
+
+### Set Value
+Set value on a element.
+
+- Syntax
+```html
+<select v-set-value:{arg}="'{value}'">...</select>
+```
+- arg: Key of query string.
+- value: Set value directly.
+
+##### Example
+```html
+<!-- URL: index.html?category=3&year=2017 -->
+<select v-set-value:category>...</select>
 ```
 
 ### Trigger
