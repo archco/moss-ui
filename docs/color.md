@@ -12,29 +12,15 @@ let value = Color.contrast('#28a745');
 // or use from global 'Moss' object.
 let lightness = window.Moss.lib.Color.lightness('#dde4e9');
 ```
+#### Using Instance
+```javascript
+let color = new Color({ r: 255, g: 128, b: 0 });
+color.lightness(); // 151.381
+color.contrast(); // #fff
+color.toHex(); // #ff8000
+```
 
 ## Static Methods
-#### hexToRgb
-Hex color convert to RGB array.
-- Syntax
-```javascript
-let rgbArray = Color.hexToRgb(hex);
-```
-- Param {String} hex - hex value of color.
-- Return {Array} (e.g. [255, 255, 255])
-
-#### rgbToHex
-RGB values convert to hex color string.
-- Syntax
-```javascript
-let hexColor = Color.rgbToHex(r, g, b, toShort = false);
-```
-- Param {Number} r - red value (0~255)
-- Param {Number} g - green value (0~255)
-- Param {Number} b - blue value (0~255)
-- Param {Boolean} [ toShort = false ] if true, convert to shorthand.
-- Return {String} (e.g. "#ffffff" or "#fff")
-
 #### lightness
 get RGB color's lightness value.
 > Reference links  
@@ -61,3 +47,25 @@ let color = Color.contrast(color, dark = '#000', light = '#fff');
 - Param {String} [ dark = '#000' ]
 - Param {String} [ light = '#fff' ]
 - Return {String} - dark or light color.
+
+## Methods
+#### constructor
+Available color parameter type: String, Array, Object.
+```javascript
+// String.
+let color = new Color('#f80');
+// Array.
+let color = new Color([255, 136, 0]);
+// Object.
+let color = new Color({ r: 255, g: 136, b: 0 });
+```
+
+#### toHex
+Return color value by hex color format.
+
+- Syntax
+```javascript
+let hexColor = color.toHex(shorthand = false);
+```
+- Param {Boolean} shorthand - If this true, return it as a shorthand if possible.
+- Return {String}
