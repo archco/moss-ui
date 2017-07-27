@@ -77,6 +77,31 @@ export default class Color {
     return shorthand ? this._hexToShorthand(hex) : hex;
   }
 
+  /**
+   * Return color value by rgb format.
+   *
+   * @return {String}
+   */
+  toRgb() {
+    let c = this._color;
+    return `rgb(${c.r}, ${c.g}, ${c.b})`;
+  }
+
+  /**
+   * Return color to rgba format.
+   *
+   * @param  {Number|undefined} [alpha=undefined]
+   * @return {String}
+   */
+  toRgba(alpha = undefined) {
+    let c = this._color;
+    if (typeof c.a === 'undefined') {
+      c.a = (typeof alpha === 'undefined') ? 1 : alpha;
+    }
+
+    return `rgba(${c.r}, ${c.g}, ${c.b}, ${c.a})`;
+  }
+
   lightness() {
     // Color lightness formula.
     // @link https://www.w3.org/TR/AERT#color-contrast
@@ -92,17 +117,25 @@ export default class Color {
   _stringToColor(string) {
     if (string.substr(0, 1) === '#') {
       return this._hexToColor(string);
+    } else if (string.substr(0, 3) === 'rgb') {
+      return this._rgbToColor(string);
     } else {
       throw new Error('stringToColor parsing error.');
     }
   }
 
   _arrayToColor(array) {
-    return {
+    let obj = {
       r: array[0],
       g: array[1],
       b: array[2],
     };
+
+    if (array[3]) {
+      obj.a = array[3];
+    }
+
+    return obj;
   }
 
   /**
@@ -133,5 +166,19 @@ export default class Color {
     });
 
     return check ? '#' + rgb.map(x => x.substring(1)).join('') : hex;
+  }
+
+  _rgbToColor(str) {
+    let array = this._bracketsToArray(str);
+    return this._arrayToColor(array);
+  }
+
+  _bracketsToArray(str) {
+    let res = /\(([^)]+)\)/.exec(str);
+    if (res) {
+      return res[1].split(',').map(elm => parseFloat(elm));
+    } else {
+      throw new Error('String parsing error.');
+    }
   }
 }

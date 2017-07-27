@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.1.3] - 2017-07-25
 ### Added
-Add directive "set-value". #17
+- Add directive "set-value". #17
 
 ### Changed
 - Improve lib/color.js #18
