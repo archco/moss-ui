@@ -54,6 +54,8 @@ Available color parameter type: String, Array, Object.
 ```javascript
 // String.
 let color = new Color('#f80');
+let color = new Color('rgb(42, 128, 255)');
+let color = new Color('rgba(64, 255, 32, 0.3)');
 // Array.
 let color = new Color([255, 136, 0]);
 // Object.
@@ -69,3 +71,22 @@ let hexColor = color.toHex(shorthand = false);
 ```
 - Param {Boolean} shorthand - If this true, return it as a shorthand if possible.
 - Return {String}
+
+#### toRgb
+Return color to rgb format.
+
+- Syntax
+```javascript
+let rgbColor = color.toRgb();
+```
+- Return {String} e.g. `rgb(255, 64, 0)`
+
+#### toRgba
+Return color to rgba format.
+
+- Syntax
+```javascript
+let rgbaColor = color.toRgba(alpha = null);
+```
+- Param {Number} [alpha=null] - If this value is null, alpha value is color's alpha or 1.
+- Return {String} e.g. `rgba(0, 0, 0, 0.5)`

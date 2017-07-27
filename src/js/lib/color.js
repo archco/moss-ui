@@ -90,14 +90,12 @@ export default class Color {
   /**
    * Return color to rgba format.
    *
-   * @param  {Number|undefined} [alpha=undefined]
+   * @param  {Number|null} [alpha=null]
    * @return {String}
    */
-  toRgba(alpha = undefined) {
+  toRgba(alpha = null) {
     let c = this._color;
-    if (typeof c.a === 'undefined') {
-      c.a = (typeof alpha === 'undefined') ? 1 : alpha;
-    }
+    c.a = alpha || c.a || 1;
 
     return `rgba(${c.r}, ${c.g}, ${c.b}, ${c.a})`;
   }

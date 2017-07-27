@@ -84,6 +84,14 @@ describe('Color library', function () {
     it('expect return to be equal "rgba(64, 255, 128, 0.5)"', function () {
       expect(new Color('#40ff80').toRgba(0.5)).to.be.equal('rgba(64, 255, 128, 0.5)');
     });
+
+    it('expect return to be equal "rgba(32, 64, 128, 0.3)"', function () {
+      expect(new Color('rgba(32, 64, 128, 0.3)').toRgba()).to.be.equal('rgba(32, 64, 128, 0.3)');
+    });
+
+    it('expect return to be equal "rgba(51, 51, 51, 1)"', function () {
+      expect(new Color('#333').toRgba()).to.be.equal('rgba(51, 51, 51, 1)');
+    });
   });
 
   describe('#_bracketsToArray', function () {
