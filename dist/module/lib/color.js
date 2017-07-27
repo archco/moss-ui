@@ -85,6 +85,37 @@ var Color = function () {
 
       return shorthand ? this._hexToShorthand(hex) : hex;
     }
+
+    /**
+     * Return color value by rgb format.
+     *
+     * @return {String}
+     */
+
+  }, {
+    key: 'toRgb',
+    value: function toRgb() {
+      var c = this._color;
+      return 'rgb(' + c.r + ', ' + c.g + ', ' + c.b + ')';
+    }
+
+    /**
+     * Return color to rgba format.
+     *
+     * @param  {Number|null} [alpha=null]
+     * @return {String}
+     */
+
+  }, {
+    key: 'toRgba',
+    value: function toRgba() {
+      var alpha = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+      var c = this._color;
+      c.a = alpha || c.a || 1;
+
+      return 'rgba(' + c.r + ', ' + c.g + ', ' + c.b + ', ' + c.a + ')';
+    }
   }, {
     key: 'lightness',
     value: function lightness() {
@@ -108,6 +139,8 @@ var Color = function () {
     value: function _stringToColor(string) {
       if (string.substr(0, 1) === '#') {
         return this._hexToColor(string);
+      } else if (string.substr(0, 3) === 'rgb') {
+        return this._rgbToColor(string);
       } else {
         throw new Error('stringToColor parsing error.');
       }
@@ -115,11 +148,17 @@ var Color = function () {
   }, {
     key: '_arrayToColor',
     value: function _arrayToColor(array) {
-      return {
+      var obj = {
         r: array[0],
         g: array[1],
         b: array[2]
       };
+
+      if (array[3]) {
+        obj.a = array[3];
+      }
+
+      return obj;
     }
 
     /**
@@ -157,6 +196,24 @@ var Color = function () {
       return check ? '#' + rgb.map(function (x) {
         return x.substring(1);
       }).join('') : hex;
+    }
+  }, {
+    key: '_rgbToColor',
+    value: function _rgbToColor(str) {
+      var array = this._bracketsToArray(str);
+      return this._arrayToColor(array);
+    }
+  }, {
+    key: '_bracketsToArray',
+    value: function _bracketsToArray(str) {
+      var res = /\(([^)]+)\)/.exec(str);
+      if (res) {
+        return res[1].split(',').map(function (elm) {
+          return parseFloat(elm);
+        });
+      } else {
+        throw new Error('String parsing error.');
+      }
     }
   }], [{
     key: 'lightness',
