@@ -23,31 +23,29 @@ function showMessage() {
 /************************************************************
   Color Library
 *************************************************************/
+var Color = window.Moss.lib.Color;
 
 function convertColor(hexToRgb) {
   var inputHex = document.querySelector('#input-hex-color');
   var inputRgb = document.querySelector('#input-rgb-color');
 
   if (hexToRgb) {
-    inputRgb.value = window.Moss.lib.Color.hexToRgb(inputHex.value).join(',');
+    var color1 = new Color(inputHex.value);
+    inputRgb.value = color1.toRgb();
   } else {
-    var array = inputRgb.value.split(',').map(function (x) {
-      return parseInt(x);
-    });
-
-    inputHex.value = window.Moss.lib.Color.rgbToHex(array[0], array[1], array[2], true);
+    var color2 = new Color(inputRgb.value);
+    inputHex.value = color2.toHex(true);
   }
 }
 
 function getLightness() {
-  var value = window.Moss.lib.Color
-    .lightness(document.querySelector('#input-lightness').value);
+  var value = Color.lightness(document.querySelector('#input-lightness').value);
   document.querySelector('#output-lightness').innerHTML = 'lightness value: ' + value;
 }
 
 function getContrast() {
   var inputValue = document.querySelector('#input-contrast').value;
-  var contrast = window.Moss.lib.Color.contrast(inputValue);
+  var contrast = Color.contrast(inputValue);
   var output = document.querySelector('#output-contrast');
 
   output.style.backgroundColor = inputValue;
