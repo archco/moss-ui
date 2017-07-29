@@ -16,9 +16,9 @@
       <navbar class="sticky-top shadow-near" align="end">
         <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
         <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
-          <nav-item href="components.html?q=components">Components</nav-item>
-          <nav-item href="modules.html">Modules</nav-item>
-          <nav-item href="js-libraries.html">JS Libraries</nav-item>
+          <nav-item href="components.html?q=components" text="Components"></nav-item>
+          <nav-item href="modules.html" text="Modules"></nav-item>
+          <nav-item href="js-libraries.html" text="JS Libraries"></nav-item>
           <nav-item>
             <dropdown toggle="toggle" align="center">
               <button slot="button">dropdown</button><a href="#">link 1</a><a href="#">link 2</a><a href="#">link 3</a>
@@ -39,7 +39,7 @@
         <navbar class="bg-color-dark" align="start">
           <navbar-nav>
             <nav-item href="#" text="link1"></nav-item>
-            <nav-item href="#">link2</nav-item>
+            <nav-item href="#" text="link2"></nav-item>
             <nav-item>
               <dropdown>
                 <button slot="button">Dropdown</button><a href="#">link 1</a><a href="#">link 2</a><a href="#">link 3</a>
@@ -47,16 +47,16 @@
             </nav-item>
           </navbar-nav>
           <navbar-nav>
-            <nav-item href="#">about</nav-item>
-            <nav-item href="#">logout</nav-item>
+            <nav-item href="#" text="about"></nav-item>
+            <nav-item href="#" text="logout"></nav-item>
           </navbar-nav>
         </navbar>
         <h3>Multiple Navs</h3>
         <navbar class="bg-color-warning rounded shadow-near" align="between" header-align="start">
-          <navbar-brand href="#" type="text" slot="brand">Brand</navbar-brand>
+          <navbar-brand href="#" type="image" slot="brand"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" style="width:30px;height:30px;"></navbar-brand>
           <navbar-nav>
             <nav-item href="#" text="link1"></nav-item>
-            <nav-item href="#">link2</nav-item>
+            <nav-item href="#" text="link2"></nav-item>
             <nav-item>
               <dropdown>
                 <button slot="button">Dropdown</button><a href="#">link 1</a><a href="#">link 2</a><a href="#">link 3</a>
@@ -64,8 +64,8 @@
             </nav-item>
           </navbar-nav>
           <navbar-nav>
-            <nav-item href="#">about</nav-item>
-            <nav-item href="#">logout</nav-item>
+            <nav-item href="#" text="about"></nav-item>
+            <nav-item href="#" text="logout"></nav-item>
           </navbar-nav>
         </navbar>
         <anchored-tag tag="h1" owned>Close Button</anchored-tag>

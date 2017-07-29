@@ -27,9 +27,9 @@ html
       navbar(class='sticky-top shadow-near' align='end')
         navbar-brand(href='index.html' type='text' slot='brand' v-activator.this.self) Moss
         navbar-nav(v-activator="'.nav-item > .nav-link'")
-          nav-item(href='components.html?q=components') Components
-          nav-item(href='modules.html') Modules
-          nav-item(href='js-libraries.html') JS Libraries
+          nav-item(href='components.html?q=components' text='Components')
+          nav-item(href='modules.html' text='Modules')
+          nav-item(href='js-libraries.html' text='JS Libraries')
           nav-item
             dropdown(toggle='toggle' align='center')
               button(slot='button') dropdown
