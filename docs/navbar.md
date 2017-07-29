@@ -12,8 +12,8 @@
 <navbar>
   <navbar-brand href="/" type="text" slot="brand">MOSS</navbar-brand>
   <navbar-nav>
-    <nav-item href='#'>Link 1</nav-item>
-    <nav-item href='#'>Link 2</nav-item>
+    <nav-item href='#' text="Link 1"></nav-item>
+    <nav-item href='#' text="Link 2"></nav-item>
     <nav-item>
       <dropdown>
         <button slot="button">Dropdown</button>
@@ -29,14 +29,14 @@
 ### Multiple navigations
 ```html
 <navbar align="between">
-  <navbar-brand href="/" type="text" slot="brand">MOSS</navbar-brand>
+  <navbar-brand href="/" type="text" slot="brand">Brand</navbar-brand>
   <navbar-nav>
-    <nav-item href='#'>Left 1</nav-item>
-    <nav-item href='#'>Left 2</nav-item>
+    <nav-item href='#' text="Left 1"></nav-item>
+    <nav-item href='#' text="Left 2"></nav-item>
   </navbar-nav>
   <navbar-nav>
-    <nav-item href='#'>Right 1</nav-item>
-    <nav-item href='#'>Right 2</nav-item>
+    <nav-item href='#' text="Right 1"></nav-item>
+    <nav-item href='#' text="Right 2"></nav-item>
   </navbar-nav>
 </navbar>
 ```
@@ -54,7 +54,7 @@
 | name | type | description | default |
 | ---- | ---- | ----------- | ------- |
 | href | String | Link url. | '/' |
-| type | String | image or text | 'image' |
+| text | String | 'text' or 'image'. If set 'text', style of component is same as `nav-item`.  | 'text' |
 
 ### nav-item
 | name | type | description | default |

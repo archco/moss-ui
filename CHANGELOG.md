@@ -5,10 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Fixed
+- Fixed problem in rendering navbar. #20
 
 ## [0.1.4] - 2017-07-27
 ### Added
-Add some methods in lib/color.js #19
+- Add some methods in lib/color.js #19
 
 ## [0.1.3] - 2017-07-25
 ### Added

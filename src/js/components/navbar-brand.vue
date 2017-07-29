@@ -1,16 +1,10 @@
 <template lang="html">
-  <a :href="href" :class="classObject">
-    {{ text }}
-    <slot></slot>
-  </a>
+  <a :href="href" :class="classObject"><slot></slot></a>
 </template>
 
 <script>
-import NodeUtil from '../mixins/node-util';
-
 export default {
   name: 'navbar-brand',
-  mixins: [ NodeUtil ],
   props: {
     href: {
       type: String,
@@ -18,26 +12,20 @@ export default {
     },
     type: {
       type: String,
-      default: 'image', // image | text
-    }
+      default: 'text', // text | image
+    },
   },
   computed: {
     classObject() {
       let obj = { 'navbar-brand': true };
-      if (this.type.toLowerCase() == 'text') obj['text'] = true;
+      if (this.isText()) obj['text'] = true;
       return obj;
-    }
+    },
   },
-  data() {
-    return {
-      text: '',
-    };
+  methods: {
+    isText() {
+      return this.type.toLowerCase() === 'text';
+    },
   },
-  mounted() {
-    if (this.type.toLowerCase() == 'text') {
-      this.text = this.getChildrenTextContent(this.$slots.default);
-      this.clearChildren(this.$slots.default);
-    }
-  }
 }
 </script>
