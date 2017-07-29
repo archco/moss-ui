@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Fixed
 - Fixed problem in rendering navbar. #20
+- Fixed helper functions. #21
 
 ## [0.1.4] - 2017-07-27
 ### Added
