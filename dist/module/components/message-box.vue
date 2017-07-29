@@ -62,12 +62,12 @@ export default {
       });
 
       window.Moss.messageBox = {
-        add(text, status = 'default') {
+        add: (text, status = 'default') => {
           this.$root.$emit('message-box-add', text, status);
         },
-        clear() {
+        clear: () => {
           this.$root.$emit('message-box-clear');
-        }
+        },
       };
     }
   }

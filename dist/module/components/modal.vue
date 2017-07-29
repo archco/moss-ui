@@ -73,13 +73,13 @@ export default {
 
     if (typeof window.Moss.modal === 'undefined') {
       window.Moss.modal = {
-        show(name) {
+        show: (name) => {
           this.$root.$emit('modal-toggle', name, 'show');
         },
-        close(name) {
+        close: (name) => {
           this.$root.$emit('modal-toggle', name, 'close');
         },
-        toggle(name, action = 'toggle') {
+        toggle: (name, action = 'toggle') => {
           this.$root.$emit('modal-toggle', name, action);
         }
       };

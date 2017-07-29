@@ -1,6 +1,6 @@
 {
   "name": "moss-ui",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "The user interface framework for front-end.",
   "main": "dist/module/moss.js",
   "scss": "src/scss/moss.scss",
