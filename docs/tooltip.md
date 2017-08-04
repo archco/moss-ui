@@ -14,3 +14,8 @@
 <span class="tooltip tooltip-left" aria-label="tooltip-left style">Left</span>
 <span class="tooltip tooltip-right" aria-label="tooltip-right style">Right</span>
 ```
+
+#### [v-tooltip](./directives.md#tooltip)
+```html
+<span v-tooltip:right="'Representational State Transfer'">REST</span>
+```

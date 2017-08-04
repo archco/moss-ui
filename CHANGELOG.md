@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- Add a new vue directive "[tooltip](https://github.com/archco/moss-ui/blob/master/docs/directives.md#tooltip)". #4
+
+### Fixed
+- Reduce "mounted" process in dropdown. #22
 
 ## [0.1.5] - 2017-07-29
 ### Fixed

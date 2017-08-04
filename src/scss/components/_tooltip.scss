@@ -4,6 +4,7 @@
 
 .tooltip {
   position: relative;
+  cursor: help;
 
   // tooltip bubble
   &::after {

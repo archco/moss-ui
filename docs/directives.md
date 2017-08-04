@@ -50,6 +50,15 @@ Set value on a element.
 <select v-set-value:category>...</select>
 ```
 
+### Tooltip
+Helper for using [scss/tooltip](./tooltip.md).
+- Syntax
+```html
+<span v-tooltip:{arg}="'{value}'">text</span>
+```
+- arg: direction. top (default) | right | bottom | left
+- value: String, tooltip label.
+
 ### Trigger
 Emit event on context root.
 
