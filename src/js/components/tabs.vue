@@ -36,14 +36,6 @@ export default {
       tabs: [],
     };
   },
-  created() {
-    this.tabs = this.$children;
-  },
-  mounted() {
-    this.tabs.forEach(tab => {
-      tab.effectName = this.effectName;
-    });
-  },
   methods: {
     selectTab(selectedTab) {
       this.tabs.forEach(tab => {
@@ -59,6 +51,14 @@ export default {
       if (tab.tipColor) obj[tab.tipColor] = true;
       return obj;
     }
-  }
+  },
+  created() {
+    this.tabs = this.$children;
+  },
+  mounted() {
+    this.tabs.forEach(tab => {
+      tab.effectName = this.effectName;
+    });
+  },
 };
 </script>

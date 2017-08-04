@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="dropdown">
     <slot name="button"></slot>
-    <div class="dropdown-content">
+    <div :class="contentClass" :data-align="align">
       <slot></slot>
     </div>
   </div>
@@ -23,15 +23,15 @@ export default {
   data() {
     return {
       btn: null,
-      content: null,
-      items: [],
+      showContent: false,
     };
   },
-  mounted() {
-    this.initElements();
-    if (this.toggle === 'toggle') {
-      this.btn.addEventListener('click', this.toggleContent.bind(this));
-      window.addEventListener('click', this.onOtherClick.bind(this));
+  computed: {
+    contentClass() {
+      return {
+        'dropdown-content': true,
+        'show': this.showContent,
+      };
     }
   },
   methods: {
@@ -39,24 +39,28 @@ export default {
       // button.
       this.btn = this.$slots.button[0].elm;
       this.btn.classList.add(`dropdown-${this.toggle}`);
-      // content.
-      this.content = this.$el.querySelector('.dropdown-content');
-      this.content.dataset.align = this.align;
       // items.
       this.$slots.default.forEach(item => {
-        if (!item.tag) return;
-        item.elm.classList.add('dropdown-item');
-        this.items.push(item.elm);
+        if (item.tag === 'a') {
+          item.elm.classList.add('dropdown-item');
+        }
       });
     },
     toggleContent() {
-      this.content.classList.toggle('show');
+      this.showContent = !this.showContent;
     },
     onOtherClick(event) {
-      if (event.target !== this.btn && this.content.classList.contains('show')) {
-        this.content.classList.remove('show');
+      if (event.target !== this.btn && this.showContent === true) {
+        this.showContent = false;
       }
     },
+  },
+  mounted() {
+    this.initElements();
+    if (this.toggle === 'toggle') {
+      this.btn.addEventListener('click', this.toggleContent.bind(this));
+      window.addEventListener('click', this.onOtherClick.bind(this));
+    }
   },
 }
 </script>
