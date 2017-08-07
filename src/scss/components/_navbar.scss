@@ -54,10 +54,6 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
-
-  .nav-link {
-    @extend %nav-link;
-  }
 }
 
 .nav-item {
@@ -65,6 +61,10 @@
 
   &.active .nav-link {
     color: $nav-active-color;
+  }
+
+  .nav-link {
+    @extend %nav-link;
   }
 }
 
@@ -140,9 +140,9 @@
 
 // navbar dropdown
 // scss-lint:disable MergeableSelector
-.navbar .dropdown {
+.nav-item .dropdown {
   .dropdown-toggle,
-  .dropdown-btn {
+  .dropdown-hover {
     @extend %nav-button;
     @extend %nav-link;
     min-width: $dropdown-min-width;
@@ -151,7 +151,7 @@
 }
 
 @include media-only-mobile {
-  .navbar {
+  .nav-item {
     .dropdown,
     .dropdown-content {
       width: 100%;
