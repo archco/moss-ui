@@ -23,10 +23,14 @@
 | name | type | description | default |
 | ---- | ---- | ----------- | ------- |
 | effect | String | Transition effect name. 'fade' | '' (no effect) |
+| align | String | \*flex alignment of tab-link. | 'start' |
+| grow-enabled | Boolean | flex-item grow enable on tab-links | false |
+
+**Note**: \*flex alignment keywords - `start` `center` `end` `around` `between`
 
 #### tab
 | name | type | description | default |
 | ---- | ---- | ----------- | ------- |
 | name | String | Tab link's text. | is required |
 | selected | Boolean | Active this tab. | false |
-| tip-color | String | Tip color of Tab link. This colors based on [color-set](color-set.md). | '' (primary-color) |
+| active-color | String | Active color of Tab link. This colors based on [color-set](color-set.md). | '' (primary-color) |

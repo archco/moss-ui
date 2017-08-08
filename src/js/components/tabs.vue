@@ -61,7 +61,7 @@ export default {
         'tab-link': true,
         active: tab.isActive,
       };
-      if (tab.tipColor) obj[tab.tipColor] = true;
+      if (tab.activeColor) obj[tab.activeColor] = true;
       return obj;
     }
   },

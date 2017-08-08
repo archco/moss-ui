@@ -25,6 +25,6 @@ tabs(effect='fade' grow-enabled)
 h3 Tab Tip based by Color-set
 tabs(effect='fade')
   each color in colorSet
-    tab(name=color tip-color=color selected=(color == 'success'))
+    tab(name=color active-color=color selected=(color == 'success'))
       h4(class='color-' + color)=color
       p=lorem

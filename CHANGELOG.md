@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 - Change location of color-set to variables.scss #28
+- Change style of taps. #11
 
 ### Fixed
 - Reduce "mounted" process in dropdown. #22
