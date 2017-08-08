@@ -127,6 +127,27 @@ $sizes: (
   100: 100%
 ) !default;
 
+
+//============================================================
+// Color-set
+//============================================================
+
+$color-set: (
+  default: $default-color, // It's half value of background-color and background-color-invert.
+  primary: $primary-color,
+  secondary: $secondary-color,
+  info: $info-color,
+  success: $success-color,
+  warning: $warning-color,
+  danger: $danger-color,
+  error: $danger-color,
+  light: $light-color,
+  dark: $dark-color,
+  shade: $shade-color,
+  link: $link-color,
+) !default;
+
+
 //======================================================================
 // Z-index Lists
 //======================================================================

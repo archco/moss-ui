@@ -46,11 +46,13 @@
 **Note:** `.sticky-top` isn't supported in IE and Edge. it will be as static(initial value).
 
 #### Sizing
-Directions: width is `w` and height is `h`.
+Directions: width is `w` and height is `h`.  
 Percentages: 25, 50, 75, 100
 ```html
 <div class="w-25">Width 25%</div>
 <div class="h-75">Height 75%</div>
+<!-- max-width and max-height -->
+<div class="mw-100">Max-width 100%</div>
 ```
 
 #### Color
