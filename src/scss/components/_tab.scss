@@ -1,7 +1,8 @@
-@mixin _tab-tip-colors() {
+@mixin _tab-link-colors() {
   @each $name, $color in $color-set {
     &.#{$name} {
-      border-top-color: $color;
+      color: $color;
+      border-bottom-color: $color;
     }
   }
 }
@@ -11,39 +12,40 @@
 //======================================================================
 .tabs {
   @include reset-list;
-  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
   font-family: $tab-font;
   font-size: $tab-font-size;
+  border-bottom: $tab-border-width solid $tab-border-color;
 
   li {
-    display: inline-block;
-  }
-
-  &::after {
-    display: block;
-    margin-top: -$tab-border-width * 2;
-    border-top: $tab-border-width solid $tab-border-color;
-    content: '';
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 1;
   }
 }
 
 .tab-link {
   @include no-decoration;
   @include set-link-state-color($tab-color, null, $tab-hover-color, $tab-active-color);
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: .5em 1em;
-  text-align: center;
-  background-color: $tab-bg-color;
-  border-color: transparent;
-  border-style: solid;
-  border-width: $tab-border-width * 3  $tab-border-width $tab-border-width; // border-width: top right&left bottom
+  margin-bottom: -$tab-border-width;
+  border-bottom: $tab-border-width solid $tab-border-color;
+
+  &:hover {
+    border-bottom-color: $tab-hover-color;
+  }
 
   &.active {
-    @include _tab-tip-colors();
-    @include border-top-radius($tab-active-border-radius);
+    @include _tab-link-colors();
+    font-weight: $tab-active-font-weight;
+    color: $tab-active-color;
     cursor: default;
-    background-color: $tab-active-bg-color;
-    border-color: $tab-active-border-accent-color $tab-border-color $tab-active-bg-color;
+    border-bottom-color: $tab-active-color;
+    border-bottom-width: $tab-active-border-width;
   }
 }
 

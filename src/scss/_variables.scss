@@ -301,14 +301,12 @@ $modal-close-button-hover-color: rgba($danger-color, 1) !default;
 $tab-font: $font-base !default;
 $tab-font-size: 1em !default;
 $tab-color: $text-color-weak !default;
-$tab-bg-color: transparent !default;
 $tab-hover-color: darken($tab-color, 15%) !default;
-$tab-active-color: $text-color !default;
-$tab-active-bg-color: $background-color !default;
-$tab-active-border-accent-color: $primary-color !default;
-$tab-active-border-radius: $radius-normal !default;
 $tab-border-color: $border-color !default;
 $tab-border-width: 1px !default;
+$tab-active-color: $primary-color !default;
+$tab-active-border-width: $tab-border-width * 2 !default;
+$tab-active-font-weight: bold !default;
 
 // tooltip
 $tooltip-color: $text-color-invert !default;
