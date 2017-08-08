@@ -119,10 +119,18 @@ $code-border-radius: $radius-normal !default;
 $code-block-padding: 1em !default;
 $code-block-line-height: 1.45 !default;
 
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: (
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%
+) !default;
 
 //======================================================================
 // Z-index Lists
 //======================================================================
+
 $z-index-hero-background:     1 !default;
 $z-index-hero-content:        2 !default;
 $z-index-message:             2 !default;
