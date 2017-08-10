@@ -32,6 +32,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [simple-crud](simple-crud.md)
 - [tabs](tabs.md)
 - [toast](toast.md)
+- [tree-item](tree-item.md)
 
 #### Vue Directives
 - [Directives](directives.md)

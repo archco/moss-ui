@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Add a new vue directive "[tooltip](https://github.com/archco/moss-ui/blob/master/docs/directives.md#tooltip)". #4
 - Add scss helper class "sizing". #23
+- Add a new vue component "tree-item". #26
 
 ### Changed
 - Change location of color-set to variables.scss #28
