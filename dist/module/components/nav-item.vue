@@ -10,7 +10,7 @@ import NodeUtil from '../mixins/node-util';
 
 export default {
   name: 'nav-item',
-  mixins: [ NodeUtil ],
+  mixins: [NodeUtil],
   props: {
     href: {
       type: String,
@@ -42,6 +42,6 @@ export default {
   },
   mounted() {
     this.convertLinkText();
-  }
+  },
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <ul class="tabs">
-      <li v-for="tab in tabs">
+    <ul :class="tabsClass" v-wrap:responsive>
+      <li v-for="tab in tabs" :style="{ flexGrow: growEnabled ? 1 : null }">
         <a
           href="#"
           :class="tabClass(tab)"
@@ -23,26 +23,31 @@ export default {
   props: {
     effect: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
+    align: {
+      type: String,
+      default: 'start',
+    },
+    growEnabled: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     effectName() {
       return (this.effect) ? `tab-${this.effect}` : 'none';
-    }
+    },
+    tabsClass() {
+      let classObject = { tabs: true };
+      classObject[`justify-content-${this.align}`] = true;
+      return classObject;
+    },
   },
   data() {
     return {
       tabs: [],
     };
-  },
-  created() {
-    this.tabs = this.$children;
-  },
-  mounted() {
-    this.tabs.forEach(tab => {
-      tab.effectName = this.effectName;
-    });
   },
   methods: {
     selectTab(selectedTab) {
@@ -56,9 +61,17 @@ export default {
         'tab-link': true,
         active: tab.isActive,
       };
-      if (tab.tipColor) obj[tab.tipColor] = true;
+      if (tab.activeColor) obj[tab.activeColor] = true;
       return obj;
     }
-  }
+  },
+  created() {
+    this.tabs = this.$children;
+  },
+  mounted() {
+    this.tabs.forEach(tab => {
+      tab.effectName = this.effectName;
+    });
+  },
 };
 </script>

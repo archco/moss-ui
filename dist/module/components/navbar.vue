@@ -73,6 +73,6 @@ export default {
     // Add resize listener.
     window.addEventListener('resize', this.responsiveBody.bind(this));
     this.responsiveBody();
-  }
+  },
 }
 </script>
