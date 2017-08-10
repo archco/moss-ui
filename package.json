@@ -17,7 +17,7 @@
     "min": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "mix": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "mix:watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "pug": "node node_modules/pug-cli --pretty example/views/pages/ --out ./example/html/",
+    "pug": "node node_modules/pug-cli --pretty example/views/pages/ --out ./",
     "pug:watch": "npm run pug -- --watch",
     "prebabel": "node task/prebabel.js",
     "babel": "babel src/js --out-dir dist/module --ignore script.js"
