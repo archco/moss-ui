@@ -19,6 +19,6 @@ export default {
       if (this.align) obj[`justify-content-${this.align}`] = true;
       return obj;
     }
-  }
+  },
 }
 </script>

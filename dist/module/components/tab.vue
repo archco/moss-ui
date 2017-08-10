@@ -16,7 +16,7 @@ export default {
       type: Boolean,
       default: false,
     },
-    tipColor: {
+    activeColor: {
       type: String,
       default: '',
     }

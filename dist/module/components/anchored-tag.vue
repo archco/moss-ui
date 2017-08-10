@@ -3,7 +3,7 @@ import NodeUtil from '../mixins/node-util';
 
 export default {
   name: 'anchored-tag',
-  mixins: [ NodeUtil ],
+  mixins: [NodeUtil],
   props: {
     tag: {
       type: String,
@@ -12,7 +12,7 @@ export default {
     owned: {
       type: Boolean,
       default: false,
-    }
+    },
   },
   render(createElement) {
     // create kebabCase id
@@ -35,6 +35,6 @@ export default {
     ];
 
     return createElement(this.tag, data, children);
-  }
+  },
 }
 </script>
