@@ -17,6 +17,7 @@ import SimpleCRUD from './simple-crud.vue';
 import Tab from './tab.vue';
 import Tabs from './tabs.vue';
 import Toast from './toast.vue';
+import TreeItem from './tree-item.vue';
 
 export default [
   AnchoredTag,
@@ -38,4 +39,5 @@ export default [
   Tab,
   Tabs,
   Toast,
+  TreeItem,
 ];
