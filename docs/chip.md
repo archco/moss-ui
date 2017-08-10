@@ -27,10 +27,16 @@
 </chip>
 ```
 
+#### Colored chip
+```html
+<chip color="#69c">Colored</chip>
+```
+
 ## Props
 | name | type | description | default |
 | ---- | ---- | ----------- | ------- |
 | tag | String | tag name. | 'span' |
+| color | String | background-color of a chip. | '' |
 | closeable | Boolean | Enable close-button. | false |
 | img-src | String | image source. | '' |
 | img-alt | String | Alternate text. | '' |

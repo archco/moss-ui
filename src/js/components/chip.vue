@@ -1,5 +1,6 @@
 <script>
 import CloseButton from './close-button.vue';
+import Color from '../lib/color';
 
 export default {
   name: 'chip',
@@ -11,6 +12,10 @@ export default {
     closeable: {
       type: Boolean,
       default: false,
+    },
+    color: {
+      type: String,
+      default: '',
     },
     imgSrc: {
       type: String,
@@ -75,6 +80,16 @@ export default {
 
       return children;
     },
-  }
+    coloring() {
+      if (!this.color) return;
+
+      let color = new Color(this.color);
+      this.$el.style.backgroundColor = color.toHex(true);
+      this.$el.style.color = color.contrast('#333', '#fff');
+    },
+  },
+  mounted() {
+    this.coloring();
+  },
 }
 </script>
