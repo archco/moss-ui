@@ -305,7 +305,7 @@ $tab-hover-color: darken($tab-color, 15%) !default;
 $tab-border-color: $border-color !default;
 $tab-border-width: 1px !default;
 $tab-active-color: $primary-color !default;
-$tab-active-border-width: $tab-border-width * 2 !default;
+$tab-active-border-width: 3px !default;
 $tab-active-font-weight: bold !default;
 
 // tooltip
