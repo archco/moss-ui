@@ -44,6 +44,15 @@ let bool = Util.isContains(big, small);
 - Param {mixed} small
 - Return: {Boolean}
 
+#### isEmpty
+Determine whether value is empty.
+- Syntax
+```javascript
+let bool = Util.isEmpty(val);
+```
+- Param {mixed} val
+- Return: {Boolean}
+
 #### isMobileSize
 - Syntax
 ```javascript
