@@ -1,5 +1,5 @@
 # Scroll to
-> source: [js/components/scroll-to](../src/js/components/scroll-to.vue)
+> source: [js/components/scroll-to](../../src/js/components/scroll-to.vue)
 
 ## Usage
 #### Basic
@@ -22,7 +22,7 @@
 | disable-bottom | Boolean | Disable bottom button | false |
 
 #### Note
-> [scroll-it.js](../src/js/lib/utils/scroll-it.js)  
+> [scroll-it.js](../../src/js/lib/utils/scroll-it.js)  
 [easing types](https://docs111.mootools.net/Effects/Fx-Transitions)
 
 easing function names: `linear` `easeInQuad` `easeOutQuad` `easeInOutQuad` `easeInCubic` `easeOutCubic` `easeInOutCubic` `easeInQuart` `easeOutQuart` `easeInOutQuart` `easeInQuint` `easeOutQuint` `easeInOutQuint`

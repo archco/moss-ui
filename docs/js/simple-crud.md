@@ -1,5 +1,5 @@
 # Simple CRUD
-> source: [js/components/simple-crud](../src/js/components/simple-crud.vue)
+> source: [js/components/simple-crud](../../src/js/components/simple-crud.vue)
 
 ## Usage
 ```html

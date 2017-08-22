@@ -1,5 +1,5 @@
 # Loader
-> source: [scss/components/loader](../src/scss/components/_loader.scss)
+> source: [scss/components/loader](../../src/scss/components/_loader.scss)
 
 ### Usage
 #### Default use as icon

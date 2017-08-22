@@ -1,5 +1,5 @@
 # Button
-> source: [scss/components/button](../src/scss/components/_button.scss)
+> source: [scss/components/button](../../src/scss/components/_button.scss)
 
 #### Option Keywords
 - based on [Color-set](color-set.md)  
@@ -62,7 +62,7 @@ Available content buttons for button-group: `.btn`, `.btn-flat`, `dropdown`
 
 ## Notes
 #### Button text color
-> [variable.scss](../src/scss/_variable.scss#L169)
+> [variable.scss](../../src/scss/_variable.scss#L169)
 
 ```scss
 // If this set false, button color will be contrast color based by background color.

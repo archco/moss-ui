@@ -1,5 +1,5 @@
 # Tree Item
-> source: [js/components/tree-item](../src/js/components/tree-item.vue)
+> source: [js/components/tree-item](../../src/js/components/tree-item.vue)
 
 ## Usage
 #### Data Structure

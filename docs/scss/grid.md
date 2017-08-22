@@ -1,5 +1,5 @@
 # Grid
-> source: [scss/components/grid](../src/scss/components/_grid.scss)
+> source: [scss/components/grid](../../src/scss/components/_grid.scss)
 
 ```scss
 // variables of grid.

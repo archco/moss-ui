@@ -1,5 +1,5 @@
 # Color
-> source: [js/lib/color.js](../src/js/lib/color.js)
+> source: [js/lib/color.js](../../src/js/lib/color.js)
 
 Javascript color utility library.
 
@@ -37,7 +37,7 @@ let value = Color.lightness(color);
 #### contrast
 return contrast color
 > If use contrast method in scss, use function `getContrast($color, $dark, $light)`
-[source](../src/scss/lib/_functions.scss#L7)
+[source](../../src/scss/lib/_functions.scss#L7)
 
 - Syntax
 ```javascript

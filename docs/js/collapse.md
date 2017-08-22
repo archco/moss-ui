@@ -1,5 +1,5 @@
 # Collapse
-> source: [js/components/collapse](../src/js/components/collapse.vue)
+> source: [js/components/collapse](../../src/js/components/collapse.vue)
 
 ## Usage
 #### Basic

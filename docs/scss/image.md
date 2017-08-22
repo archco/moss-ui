@@ -1,5 +1,5 @@
 # Image
-> source: [scss/components/image](../src/scss/components/_image.scss)
+> source: [scss/components/image](../../src/scss/components/_image.scss)
 
 ## Image Container
 Adding overlay effects when image hover.

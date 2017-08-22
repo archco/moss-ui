@@ -1,5 +1,5 @@
 # Close button
-> source: [js/components/close-button](../src/js/components/close-button.vue)
+> source: [js/components/close-button](../../src/js/components/close-button.vue)
 
 ## Usage
 #### Basic

@@ -1,5 +1,5 @@
 # Util
-> source: [js/lib/util](../src/js/lib/util.js)
+> source: [js/lib/util](../../src/js/lib/util.js)
 
 The utility library for javascript.
 

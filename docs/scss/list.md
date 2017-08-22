@@ -1,5 +1,5 @@
 # List
-> source: [scss/components/list](../src/scss/components/_list.scss)
+> source: [scss/components/list](../../src/scss/components/_list.scss)
 
 ### Usage
 #### list

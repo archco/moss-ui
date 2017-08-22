@@ -1,5 +1,5 @@
 # Tooltip
-> source: [scss/components/tooltip](../src/scss/components/_tooltip.scss)
+> source: [scss/components/tooltip](../../src/scss/components/_tooltip.scss)
 
 ## Usage
 #### Available Directions

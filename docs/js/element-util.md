@@ -1,5 +1,5 @@
 # ElementUtil
-> source: [js/lib/element-util](../src/js/lib/element-util.js)
+> source: [js/lib/element-util](../../src/js/lib/element-util.js)
 
 The utility library for DOM Elements.
 

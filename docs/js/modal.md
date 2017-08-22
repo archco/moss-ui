@@ -1,5 +1,5 @@
 # Modal
-> source: [js/components/modal](../src/js/components/modal.vue)
+> source: [js/components/modal](../../src/js/components/modal.vue)
 
 ## Usage
 #### Basic

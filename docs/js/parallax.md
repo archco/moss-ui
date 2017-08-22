@@ -1,5 +1,5 @@
 # Parallax
-> source: [js/components/parallax](../src/js/components/parallax.vue)
+> source: [js/components/parallax](../../src/js/components/parallax.vue)
 
 ## Usage
 ```html

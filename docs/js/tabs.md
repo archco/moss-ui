@@ -1,7 +1,7 @@
 # Tabs
 > sources:  
-[js/components/tabs](../src/js/components/tabs.vue)  
-[js/components/tab](../src/js/components/tab.vue)
+[js/components/tabs](../../src/js/components/tabs.vue)  
+[js/components/tab](../../src/js/components/tab.vue)
 
 ## Usage
 ```html

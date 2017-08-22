@@ -1,5 +1,5 @@
 # Chip
-> source: [js/components/chip](../src/js/components/chip.vue)
+> source: [js/components/chip](../../src/js/components/chip.vue)
 
 ## Usage
 #### Tag chip

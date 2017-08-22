@@ -1,5 +1,5 @@
 # Toast
-> source: [js/components/toast](../src/js/components/toast.vue)
+> source: [js/components/toast](../../src/js/components/toast.vue)
 
 ## Usage
 #### in html

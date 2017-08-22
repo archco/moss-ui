@@ -1,5 +1,5 @@
 # Helper
-> source:  [scss/components/helper](../src/scss/components/_helper.scss)
+> source:  [scss/components/helper](../../src/scss/components/_helper.scss)
 
 ## Usage
 #### Toggling content

@@ -1,5 +1,5 @@
 # Pagination
-> source: [scss/components/pagination](../src/scss/components/_pagination.scss)
+> source: [scss/components/pagination](../../src/scss/components/_pagination.scss)
 
 ### Usage
 ```html

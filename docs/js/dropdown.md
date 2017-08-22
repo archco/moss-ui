@@ -1,5 +1,5 @@
 # Dropdown
-> source: [js/components/dropdown](../src/js/components/dropdown.vue)
+> source: [js/components/dropdown](../../src/js/components/dropdown.vue)
 
 ## Usage
 #### Toggle dropdown
