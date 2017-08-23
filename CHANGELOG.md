@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Add `isEmpty()` method into js/lib/util.js.
 
+### Changed
+- Change modal.vue: Kill the scroll on the body when modal is shown. #30
+- Change modal.vue: Close modal when if backspace, escape or delete key is pressed.
+
 ## [0.2.0] - 2017-08-10
 ### Added
 - Add a new vue directive "[tooltip](https://github.com/archco/moss-ui/blob/master/docs/directives.md#tooltip)". #4

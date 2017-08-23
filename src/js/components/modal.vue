@@ -50,7 +50,17 @@ export default {
   data() {
     return {
       show: false,
+      body: document.querySelector('body'),
     };
+  },
+  watch: {
+    show(shown) {
+      if (shown) {
+        this.body.classList.add('modal-shown');
+      } else {
+        this.body.classList.remove('modal-shown');
+      }
+    },
   },
   methods: {
     toggleModal(name, action = 'toggle') {
@@ -64,8 +74,16 @@ export default {
         this.show = !this.show;
       }
     },
+    onKeydown(event) {
+      let k = event.keyCode; // backspace: 8, escape: 27, delete: 46
+      if (this.show && (k == 8 || k == 27 || k == 46)) {
+        event.preventDefault();
+        this.show = false;
+      }
+    },
   },
   beforeMount() {
+    window.addEventListener('keydown', this.onKeydown.bind(this));
     this.$root.$on('modal-toggle', this.toggleModal.bind(this));
     this.$on('close', () => {
       this.$root.$emit('modal-toggle', this.name, 'close');

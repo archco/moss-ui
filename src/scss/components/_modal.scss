@@ -2,6 +2,11 @@
 // Modal
 //======================================================================
 
+// kill the scroll on the body.
+.modal-shown {
+  overflow: hidden;
+}
+
 .modal-mask {
   position: fixed;
   top: 0;
