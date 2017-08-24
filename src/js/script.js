@@ -47,4 +47,10 @@ window.vm = new Vue({
       console.log(arg);
     },
   },
+  beforeMount() {
+    this.$on('clipboard-success', event => {
+      let msg = event.action == 'copy' ? 'Copied' : 'Cutted';
+      window.Moss.toast(`${msg} on clipboard.`);
+    });
+  },
 });

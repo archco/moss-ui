@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - Add `isEmpty()` method into js/lib/util.js.
+- Add a new vue directive: clipboard #31
 
 ### Changed
 - Change modal.vue: Kill the scroll on the body when modal is shown. #30

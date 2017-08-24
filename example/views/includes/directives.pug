@@ -11,3 +11,15 @@ modal(name='v-modal-test' title='Directive Test')
   div(slot='actions')
     button(class='btn default' v-modal:v-modal-test.close) CANCEL
     button(class='btn success' v-modal:v-modal-test v-trigger:toast-show="['Okay!']") OK
+
+h3 v-clipboard
+h4 Copy text
+button(class='btn' v-clipboard="'Hello, World!'") Copy
+h4 Cut from input
+input(id='input-target' value='input text')
+button(class='btn' v-clipboard.cut="{ target: '#input-target' }") Cut
+h4 Copy from element
+div(id='element-target' class='pad bg-color-secondary')
+  h3 Title
+  p=lorem
+button(class='btn' v-clipboard="{ target: '#element-target' }") Copy
