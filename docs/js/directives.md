@@ -38,13 +38,13 @@ Provide convenience for copy to clipboard. It is based on [clipboard.js](https:/
 - arg: Event name, default is 'clipboard-success'. This event emit to `$root` vue model when copy to clipboard is successfully.
 - value: {String|Object}
   - If type is string, this value copy to clipboard as text.
-  - object value
+  - If type is object, see below.
 ```javascript
-// Object value.
+// Value set as object.
 const value = {
   text: '',     // String
   target: '',   // String|Element
-  callback: fn, // Function  callback when copy to clipboard is successfully.
+  callback: fn, // Function  callback when copy to clipboard is successfully. argument is event(https://github.com/zenorocha/clipboard.js#events).
 }
 ```
 
