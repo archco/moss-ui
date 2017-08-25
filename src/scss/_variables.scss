@@ -8,7 +8,13 @@ $font-sans-serif: Geneva, sans-serif !default;
 $font-monospace: Consolas, Courier, monospace !default;
 $font-cursive: cursive !default;
 
-// font set
+$font-small: .8em !default;
+$font-large: 1.2em !default;
+$font-weight-light: lighter !default;
+$font-weight-normal: normal !default;
+$font-weight-bold: bold !default;
+
+// Set theme fonts.
 $font-base: $font-sans-serif !default;
 $font-accent: $font-serif !default;
 

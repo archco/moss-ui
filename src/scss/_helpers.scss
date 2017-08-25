@@ -1,4 +1,5 @@
 @import 'helpers/flex';
+@import 'helpers/text';
 
 //======================================================================
 // Helpers
@@ -37,16 +38,6 @@
   }
 }
 
-// font
-.font-cursive { font-family: $font-cursive; }
-.font-accent { font-family: $font-accent; }
-.font-sans-serif { font-family: $font-sans-serif; }
-
-// align
-.align-center { text-align: center; }
-.align-right { text-align: right; }
-.align-left { text-align: left; }
-
 // centering
 %position-center-container { @include position-center-container; }
 %position-center { @include position-center; }
@@ -83,13 +74,6 @@
 .float-clear { @include clear-both; }
 .float-left { float: left !important; }
 .float-right { float: right !important; }
-
-// text
-.comment,
-.help {
-  font-size: .8em;
-  color: $text-color-weak;
-}
 
 // position
 .fixed-top {

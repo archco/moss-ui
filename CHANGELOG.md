@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- Add scss helper classes about text. #32
+
 ### Fixed
 - Fix bug: Add button type attribute in all buttons in vue components. #33
 - Fix bug in modal.vue: In modal show state, only "escape" key triggers modal.close (exclude "backspace" and "delete" key) #34
