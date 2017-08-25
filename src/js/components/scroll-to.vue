@@ -1,12 +1,14 @@
 <template lang="html">
   <div class="scroll-to-container">
     <button
+      type="button"
       class="scroll-to-top"
       v-if="!disableTop"
       v-show="showToTop"
       @click.prevent="toTop"
       v-html="topHtml"></button>
     <button
+      type="button"
       class="scroll-to-bottom"
       v-if="!disableBottom"
       v-show="showToBottom"
