@@ -75,8 +75,8 @@ export default {
       }
     },
     onKeydown(event) {
-      let k = event.keyCode; // backspace: 8, escape: 27, delete: 46
-      if (this.show && (k == 8 || k == 27 || k == 46)) {
+      // escape: 27
+      if (this.show && event.keyCode == 27) {
         event.preventDefault();
         this.show = false;
       }

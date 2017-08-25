@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Fixed
 - Fix bug: Add button type attribute in all buttons in vue components. #33
+- Fix bug in modal.vue: In modal show state, only "escape" key triggers modal.close (exclude "backspace" and "delete" key) #34
 
 ## [0.2.1] - 2017-08-24
 ### Added
