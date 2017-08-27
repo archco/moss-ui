@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Directives</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./dist/css/style.css">
+  </head>
+  <body>
+    <div id="app">
+      <header class="bg-color-primary pad flex-container-center" style="height:100px;">
+        <h1 id="project-name">MOSS-UI</h1>
+      </header>
+      <navbar class="sticky-top shadow-near" align="end">
+        <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
+        <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
+          <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
+          <nav-item href="vue.html" text="Vue"></nav-item>
+          <nav-item>
+            <dropdown toggle="toggle" align="right">
+              <button slot="button">Utilities</button><a href="scss-helpers.html">SCSS Helpers</a><a href="vue-directives.html">Vue Directieves</a><a href="js-libraries.html">JS Libraries</a>
+            </dropdown>
+          </nav-item>
+        </navbar-nav>
+      </navbar>
+      <div class="row">
+        <aside class="col-md-2 hide-only-mobile">
+          <ul class="list fixed">
+            <li is="anchored-tag" tag="li">v-focus</li>
+            <li is="anchored-tag" tag="li">v-trigger</li>
+            <li is="anchored-tag" tag="li">v-modal</li>
+            <li is="anchored-tag" tag="li">v-clipboard</li>
+          </ul>
+        </aside>
+        <section class="col-md-10">
+          <anchored-tag tag="h2" owned>v-focus</anchored-tag>
+          <input type="text" placeholder="focused" v-focus>
+          <anchored-tag tag="h2" owned>v-trigger</anchored-tag>
+          <button class="btn" v-trigger:toast-show="['toast-show is triggered.']">TRIGGER</button>
+          <anchored-tag tag="h2" owned>v-modal</anchored-tag>
+          <button class="btn" v-modal:v-modal-test>Trigger</button>
+          <modal name="v-modal-test" title="Directive Test">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div slot="actions">
+              <button class="btn default" v-modal:v-modal-test.close>CANCEL</button>
+              <button class="btn success" v-modal:v-modal-test v-trigger:toast-show="['Okay!']">OK</button>
+            </div>
+          </modal>
+          <anchored-tag tag="h2" owned>v-clipboard</anchored-tag>
+          <h4>Copy text</h4>
+          <button class="btn" v-clipboard="'Hello, World!'">Copy</button>
+          <h4>Cut from input</h4>
+          <input id="input-target" value="input text">
+          <button class="btn" v-clipboard.cut="{ target: '#input-target' }">Cut</button>
+          <h4>Copy from element</h4>
+          <div class="pad bg-color-secondary" id="element-target">
+            <h3>Title</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <button class="btn" v-clipboard="{ target: '#element-target' }">Copy</button>
+        </section>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <h3>Footer content</h3>
+              <p>footer content here..</p>
+            </div>
+            <div class="col-6">
+              <h3>Links</h3>
+              <ul class="list-horizontal">
+                <li><a href="#">Link1</a></li>
+                <li><a href="#">Link2</a></li>
+                <li><a href="#">Link3</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">copyright &copy; 2017 MOSS-UI all rights reserved.</div>
+      </footer>
+      <scroll-to :duration="800" :offset="400" top-html="&lt;i class=&quot;fa fa-chevron-up&quot; aria-hidden=&quot;true&quot;&gt;" bottom-html="&lt;i class=&quot;fa fa-chevron-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;"></scroll-to>
+      <toast></toast>
+    </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
+    <script src="./dist/js/script.js"></script>
+    <script src="./example.js"></script><script>var year = new Date().getFullYear();
+    document.querySelector('.footer-copyright').innerHTML = "copyright \&copy; " + year + " MOSS-UI all rights reserved.";
+    document.querySelector('#project-name').innerHTML = "MOSS-UI " + Moss.version;</script>
+  </body>
+</html>
