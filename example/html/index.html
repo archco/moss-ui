@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Page</title>
+    <title>Moss-UI</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../dist/css/style.css">
   </head>
@@ -18,10 +18,9 @@
         <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
           <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
           <nav-item href="vue.html" text="Vue"></nav-item>
-          <nav-item href="js-libraries.html" text="JS Libraries"></nav-item>
           <nav-item>
-            <dropdown toggle="toggle" align="center">
-              <button slot="button">dropdown</button><a href="#">link 1</a><a href="#">link 2</a><a href="#">link 3</a>
+            <dropdown toggle="toggle" align="right">
+              <button slot="button">Utilities</button><a href="scss-helpers.html">SCSS Helpers</a><a href="vue-directives.html">Vue Directieves</a><a href="js-libraries.html">JS Libraries</a>
             </dropdown>
           </nav-item>
         </navbar-nav>
@@ -63,32 +62,6 @@
             <button class="btn success" onclick="Moss.modal.close(&quot;test-modal4&quot;)">Okay</button>
           </div>
         </modal>
-        <anchored-tag tag="h1" owned>Directives</anchored-tag>
-        <h3>v-focus</h3>
-        <input type="text" placeholder="focused" v-focus>
-        <h3>v-trigger</h3>
-        <button class="btn" v-trigger:toast-show="['toast-show is triggered.']">TRIGGER</button>
-        <h3>v-modal</h3>
-        <button class="btn" v-modal:v-modal-test>Trigger</button>
-        <modal name="v-modal-test" title="Directive Test">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <div slot="actions">
-            <button class="btn default" v-modal:v-modal-test.close>CANCEL</button>
-            <button class="btn success" v-modal:v-modal-test v-trigger:toast-show="['Okay!']">OK</button>
-          </div>
-        </modal>
-        <h3>v-clipboard</h3>
-        <h4>Copy text</h4>
-        <button class="btn" v-clipboard="'Hello, World!'">Copy</button>
-        <h4>Cut from input</h4>
-        <input id="input-target" value="input text">
-        <button class="btn" v-clipboard.cut="{ target: '#input-target' }">Cut</button>
-        <h4>Copy from element</h4>
-        <div class="pad bg-color-secondary" id="element-target">
-          <h3>Title</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <button class="btn" v-clipboard="{ target: '#element-target' }">Copy</button>
       </section>
       <footer class="footer">
         <div class="container">
