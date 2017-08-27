@@ -2,7 +2,7 @@
   <transition :name="effectName">
     <div :class="classObject" v-if="show">
       <slot></slot>
-      <button class="close-button at-right-middle" @click="onClose" v-html="closeHtml"></button>
+      <button type="button" class="close-button at-right-middle" @click="onClose" v-html="closeHtml"></button>
     </div>
   </transition>
 </template>

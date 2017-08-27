@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sass components page</title>
+    <title>SCSS Components</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./dist/css/style.css">
   </head>
@@ -18,10 +18,9 @@
         <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
           <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
           <nav-item href="vue.html" text="Vue"></nav-item>
-          <nav-item href="js-libraries.html" text="JS Libraries"></nav-item>
           <nav-item>
-            <dropdown toggle="toggle" align="center">
-              <button slot="button">dropdown</button><a href="#">link 1</a><a href="#">link 2</a><a href="#">link 3</a>
+            <dropdown toggle="toggle" align="right">
+              <button slot="button">Utilities</button><a href="scss-helpers.html">SCSS Helpers</a><a href="vue-directives.html">Vue Directieves</a><a href="js-libraries.html">JS Libraries</a>
             </dropdown>
           </nav-item>
         </navbar-nav>
@@ -590,152 +589,7 @@ SOFTWARE.</code></pre>
             <div class="col-md-8 push-md-4 bg-color-primary">first but pushed</div>
             <div class="col-md-4 pull-md-8 bg-color-secondary">second but pulled</div>
           </div>
-          <anchored-tag tag="h1" owned>Helper</anchored-tag>
-          <h3>Toggling content</h3>
-          <div class="row">
-            <div class="col-sm">
-              <div>display-show</div>
-              <div class="bg-color-info display-show">CONTENT</div>
-            </div>
-            <div class="col-sm">
-              <div>display-hide</div>
-              <div class="bg-color-info display-hide">CONTENT</div>
-            </div>
-            <div class="col-sm">
-              <div>display-invisible</div>
-              <div class="bg-color-info display-invisible">CONTENT</div>
-            </div>
-          </div>
-          <h3>Fonts</h3>
-          <ul class="list">
-            <li class="font-sans-serif">font-sans-serif</li>
-            <li class="font-accent">font-accent</li>
-            <li class="font-cursive">font-cursive</li>
-          </ul>
-          <h3>Alignments</h3>
-          <div class="group">
-            <p class="align-center bg-color-shade">center align.</p>
-            <p class="align-left bg-color-shade">left align.</p>
-            <p class="align-right bg-color-shade">right align.</p>
-          </div>
-          <div class="flex-container-center bg-color-success" style="height:250px;">
-            <div>Centering vertically and horizontally.</div>
-          </div>
-          <h3>Float</h3>
-          <div class="float-clear">
-            <div class="float-right pad bg-color-warning">float-right</div>
-            <div class="float-left pad bg-color-danger">float-left</div>
-          </div>
-          <h3>Colors</h3>
-          <div class="row">
-            <div class="col-sm-6 col-md-3">
-              <div class="pad color-default">color-default</div>
-              <div class="pad bg-color-default">bg-color-default</div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <div class="pad color-primary">color-primary</div>
-              <div class="pad bg-color-primary">bg-color-primary</div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <div class="pad color-secondary">color-secondary</div>
-              <div class="pad bg-color-secondary">bg-color-secondary</div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <div class="pad color-info">color-info</div>
-              <div class="pad bg-color-info">bg-color-info</div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <div class="pad color-success">color-success</div>
-              <div class="pad bg-color-success">bg-color-success</div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <div class="pad color-warning">color-warning</div>
-              <div class="pad bg-color-warning">bg-color-warning</div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <div class="pad color-danger">color-danger</div>
-              <div class="pad bg-color-danger">bg-color-danger</div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <div class="pad color-light">color-light</div>
-              <div class="pad bg-color-light">bg-color-light</div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <div class="pad color-dark">color-dark</div>
-              <div class="pad bg-color-dark">bg-color-dark</div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <div class="pad color-shade">color-shade</div>
-              <div class="pad bg-color-shade">bg-color-shade</div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <div class="pad color-link">color-link</div>
-              <div class="pad bg-color-link">bg-color-link</div>
-            </div>
-          </div>
-          <h3>Caret</h3>
-          <div class="pad bg-color-warning">
-            up <span class="caret up"></span>
-            right <span class="caret right"></span>
-            down <span class="caret down"></span>
-            left <span class="caret left"></span>
-          </div>
-          <h3>Arrow</h3>
-          <div class="pad bg-color-secondary">
-            up <span class="arrow up"></span>
-            right <span class="arrow right"></span>
-            down <span class="arrow down"></span>
-            left <span class="arrow left"></span>
-          </div>
-          <h3>Shadow</h3>
-          <div class="row group">
-            <div class="col-sm">
-              <div class="pad bg-color-shade shadow-near">shadow-near</div>
-            </div>
-            <div class="col-sm">
-              <div class="pad bg-color-shade shadow">shadow</div>
-            </div>
-            <div class="col-sm">
-              <div class="pad bg-color-shade shadow-far">shadow-far</div>
-            </div>
-          </div>
-          <div class="row group">
-            <div class="col-sm">
-              <div class="pad bg-color-shade shadow-inset-near">shadow-inset-near</div>
-            </div>
-            <div class="col-sm">
-              <div class="pad bg-color-shade shadow-inset">shadow-inset</div>
-            </div>
-            <div class="col-sm">
-              <div class="pad bg-color-shade shadow-inset-far">shadow-inset-far</div>
-            </div>
-          </div>
-          <h3>Rounded</h3>
-          <div class="row group">
-            <div class="col">
-              <div class="pad bg-color-danger rounded-small">rounded-small</div>
-            </div>
-            <div class="col">
-              <div class="pad bg-color-danger rounded">rounded</div>
-            </div>
-            <div class="col">
-              <div class="pad bg-color-danger rounded-large">rounded-large</div>
-            </div>
-          </div>
-          <div class="row group">
-            <div class="col">
-              <div class="pad bg-color-success rounded-top">rounded-top</div>
-            </div>
-            <div class="col">
-              <div class="pad bg-color-success rounded-right">rounded-right</div>
-            </div>
-            <div class="col">
-              <div class="pad bg-color-success rounded-bottom">rounded-bottom</div>
-            </div>
-            <div class="col">
-              <div class="pad bg-color-success rounded-left">rounded-left</div>
-            </div>
-          </div>
+          <anchored-tag tag="h1" owned>Helper</anchored-tag><a href="scss-helpers.html">SCSS Helpers</a>
           <anchored-tag tag="h1" owned>Image</anchored-tag>
           <h2>Image Container</h2>
           <div class="image-container" style="display:inline-block;width:120px;"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" alt="avatar">

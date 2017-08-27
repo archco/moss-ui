@@ -16,6 +16,10 @@
 // form-inline-target() { @content }
 // filter-set()
 
+@import './mixins/text';
+// text-truncate()
+// text-hide()
+
 @import './mixins/border';
 // border-top-radius($radius)
 // border-right-radius($radius)

@@ -29,13 +29,12 @@ html
         navbar-nav(v-activator="'.nav-item > .nav-link'")
           nav-item(href='scss.html?q=components' text='SCSS')
           nav-item(href='vue.html' text='Vue')
-          nav-item(href='js-libraries.html' text='JS Libraries')
           nav-item
-            dropdown(toggle='toggle' align='center')
-              button(slot='button') dropdown
-              a(href='#') link 1
-              a(href='#') link 2
-              a(href='#') link 3
+            dropdown(toggle='toggle' align='right')
+              button(slot='button') Utilities
+              a(href='scss-helpers.html') SCSS Helpers
+              a(href='vue-directives.html') Vue Directieves
+              a(href='js-libraries.html') JS Libraries
 
       block content
 

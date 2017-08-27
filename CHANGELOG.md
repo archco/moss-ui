@@ -6,6 +6,27 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.2.2] - 2017-08-27
+### Added
+- Add scss helper classes about text. #32
+- Add scss helper classes about display. #35
+
+### Changed
+- Update scss/helpers/flex.scss
+
+### Fixed
+- Fix bug: Add button type attribute in all buttons in vue components. #33
+- Fix bug in modal.vue: In modal show state, only "escape" key triggers modal.close (exclude "backspace" and "delete" key) #34
+
+## [0.2.1] - 2017-08-24
+### Added
+- Add `isEmpty()` method into js/lib/util.js.
+- Add a new vue directive: clipboard #31
+
+### Changed
+- Change modal.vue: Kill the scroll on the body when modal is shown. #30
+- Change modal.vue: Close modal when if backspace, escape or delete key is pressed.
+
 ## [0.2.0] - 2017-08-10
 ### Added
 - Add a new vue directive "[tooltip](https://github.com/archco/moss-ui/blob/master/docs/directives.md#tooltip)". #4
@@ -58,7 +79,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - [README.md](README.md)
 - [docs/README.md](docs/README.md)
 
-[Unreleased]: https://github.com/archco/moss-ui/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/archco/moss-ui/compare/v0.2.2...HEAD
+[0.2.2]: https://github.com/archco/moss-ui/compare/v0.2.1...v0.2.2
+[0.2.1]: https://github.com/archco/moss-ui/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/archco/moss-ui/compare/v0.1.5...v0.2.0
 [0.1.5]: https://github.com/archco/moss-ui/compare/v0.1.4...v0.1.5
 [0.1.4]: https://github.com/archco/moss-ui/compare/v0.1.3...v0.1.4

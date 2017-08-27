@@ -4,7 +4,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h3>{{ title }}</h3>
-            <button class="close-button" @click="$emit('close')" v-html="closeButtonHtml"></button>
+            <button type="button" class="close-button" @click="$emit('close')" v-html="closeButtonHtml"></button>
           </div>
           <div class="modal-body">
             <slot></slot>
@@ -50,7 +50,17 @@ export default {
   data() {
     return {
       show: false,
+      body: document.querySelector('body'),
     };
+  },
+  watch: {
+    show(shown) {
+      if (shown) {
+        this.body.classList.add('modal-shown');
+      } else {
+        this.body.classList.remove('modal-shown');
+      }
+    },
   },
   methods: {
     toggleModal(name, action = 'toggle') {
@@ -64,8 +74,16 @@ export default {
         this.show = !this.show;
       }
     },
+    onKeydown(event) {
+      // escape: 27
+      if (this.show && event.keyCode == 27) {
+        event.preventDefault();
+        this.show = false;
+      }
+    },
   },
   beforeMount() {
+    window.addEventListener('keydown', this.onKeydown.bind(this));
     this.$root.$on('modal-toggle', this.toggleModal.bind(this));
     this.$on('close', () => {
       this.$root.$emit('modal-toggle', this.name, 'close');

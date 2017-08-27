@@ -63,6 +63,25 @@ class Util {
   }
 
   /**
+   * Determine whether value is empty.
+   * @link https://stackoverflow.com/questions/679915/how-do-i-test-for-an-empty-javascript-object
+   *
+   * @param  {Mixed}  val
+   * @return {Boolean}
+   */
+  static isEmpty(val) {
+    if (typeof val === 'undefined') return true;
+    if (val === null) return true;
+    if (typeof val === 'boolean') return !val;
+    if (typeof val === 'number') return val <= 0;
+    if (typeof val === 'string') return val.length === 0;
+    if (Array.isArray(val)) return val.length === 0;
+    if (typeof val === 'object') {
+      return Object.keys(val).length === 0 && val.constructor === Object;
+    }
+  }
+
+  /**
    * isMobileSize
    *
    * @param  {Number}  [ size = 800 ]

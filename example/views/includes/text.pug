@@ -1,0 +1,43 @@
+h3 Fonts
+div.group
+  div.font-cursive font-cursive
+  div.font-accent font-accent
+  div.font-sans-serif font-sans-serif
+div.group
+  div.font-small font-small
+  div.font-large font-large
+div.group
+  div.font-weight-light font-weight-light
+  div.font-weight-normal font-weight-normal
+  div.font-weight-bold font-weight-bold
+  div.font-italic font-italic
+
+h3 Alignment
+div.group
+  div.bg-color-shade.text-left text-left
+  div.text-center text-center
+  div.bg-color-shade.text-right text-right
+
+h3 Transformation
+- var text = 'hEllo, WoRlD!'
+p
+  span='Example: '
+  span=text
+div.group
+  div
+    span='text-lowercase: '
+    span.text-lowercase=text
+  div
+    span='text-uppercase: '
+    span.text-uppercase=text
+  div
+    span='text-capitalize: '
+    span.text-capitalize=text
+
+h3 Miscellaneous
+p
+  span='help: '
+  span.help This is help comments.
+p
+  span='text-truncate: '
+  span(class='text-truncate' style='display:inline-block;width:10em;')=lorem

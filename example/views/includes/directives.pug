@@ -1,13 +1,25 @@
-h3 v-focus
+anchored-tag(tag='h2' owned) v-focus
 input(type='text' placeholder='focused' v-focus)
 
-h3 v-trigger
+anchored-tag(tag='h2' owned) v-trigger
 button(class='btn' v-trigger:toast-show="['toast-show is triggered.']") TRIGGER
 
-h3 v-modal
+anchored-tag(tag='h2' owned) v-modal
 button(class='btn' v-modal:v-modal-test) Trigger
 modal(name='v-modal-test' title='Directive Test')
   p=lorem
   div(slot='actions')
     button(class='btn default' v-modal:v-modal-test.close) CANCEL
     button(class='btn success' v-modal:v-modal-test v-trigger:toast-show="['Okay!']") OK
+
+anchored-tag(tag='h2' owned) v-clipboard
+h4 Copy text
+button(class='btn' v-clipboard="'Hello, World!'") Copy
+h4 Cut from input
+input(id='input-target' value='input text')
+button(class='btn' v-clipboard.cut="{ target: '#input-target' }") Cut
+h4 Copy from element
+div(id='element-target' class='pad bg-color-secondary')
+  h3 Title
+  p=lorem
+button(class='btn' v-clipboard="{ target: '#element-target' }") Copy
