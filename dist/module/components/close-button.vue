@@ -1,5 +1,5 @@
 <template lang="html">
-  <button :class="classObject" @click.prevent="onClick"><slot></slot></button>
+  <button type="button" :class="classObject" @click="onClick"><slot></slot></button>
 </template>
 
 <script>

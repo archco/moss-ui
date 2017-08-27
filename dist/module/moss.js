@@ -31,7 +31,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /*!
  * moss-ui - The user interface framework for front-end.
- * @version v0.2.1
+ * @version v0.2.2
  * @link https://github.com/archco/moss-ui
  * @license MIT
  */
