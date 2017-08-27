@@ -1,34 +1,26 @@
 # Helper
 > source:  [scss/components/helper](../../src/scss/components/_helper.scss)
 
-## Usage
-#### Toggling content
+## More helper classes
+- [Display](display.md)
+- [Flex](flex.md)
+- [Text](text.md)
+
+### Toggling content
 ```html
 <p class="display-show">paragraph</p>
 <p class="display-hide">paragraph</p>
 <p class="display-invisible">paragraph</p>
 ```
 
-#### Fonts
+### Centering
 ```html
-<p class="font-sans-serif">Hello, World!</p>
-<p class="font-accent">Hello, World!</p>
-<p class="font-cursive">Hello, World!</p>
-```
-
-#### Align
-```html
-<p class="align-center">center align.</p>
-<p class="align-left">left align.</p>
-<p class="align-right">right align.</p>
 <div class="flex-center-container">
-  <div class="center-block">
-    <p>vertically centering.</p>
-  </div>
+    <div>vertically centering.</div>
 </div>
 ```
 
-#### Float
+### Float
 ```html
 <div class="float-clear">
   <div class="float-right box-line">this is right.</div>
@@ -36,7 +28,7 @@
 </div>
 ```
 
-#### Position
+### Position
 ```html
 <!-- fixed top -->
 <div class="fixed-top">It's fixed on top.</div>
@@ -45,7 +37,7 @@
 ```
 **Note:** `.sticky-top` isn't supported in IE and Edge. it will be as static(initial value).
 
-#### Sizing
+### Sizing
 Directions: width is `w` and height is `h`.  
 Percentages: 25, 50, 75, 100
 ```html
@@ -55,7 +47,7 @@ Percentages: 25, 50, 75, 100
 <div class="mw-100">Max-width 100%</div>
 ```
 
-#### Color
+### Color
 > based on [Color-set](color-set.md)
 
 Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
@@ -69,19 +61,19 @@ Available color keywords: default, primary, secondary, info, success, warning, d
 <div class="bg-color-success">...</div>
 ```
 
-#### Caret
+### Caret
 ```html
 <span class="caret"></span>
 <span class="caret up"></span>
 ```
 
-#### Arrow
+### Arrow
 ```html
 <span class="arrow"></span>
 <span class="arrow right"></span>
 ```
 
-#### Box shadow
+### Box shadow
 ```html
 <div class="shadow"></div>
 <div class="shadow-near"></div>
