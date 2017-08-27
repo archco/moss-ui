@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - Add scss helper classes about text. #32
+- Add scss helper classes about display. #35
+
+### Changed
+- Update scss/helpers/flex.scss
 
 ### Fixed
 - Fix bug: Add button type attribute in all buttons in vue components. #33
