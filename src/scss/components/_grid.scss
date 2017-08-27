@@ -29,7 +29,7 @@
   }
 
   @each $key in map-keys($breakpoints) {
-    $infix: if($key == 'base', '', ('-' + $key));
+    $infix: get-infix($key);
     $size: map-get($breakpoints, $key);
 
     // common-values.
