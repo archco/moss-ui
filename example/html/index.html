@@ -13,14 +13,17 @@
       <header class="bg-color-primary pad flex-container-center" style="height:100px;">
         <h1 id="project-name">MOSS-UI</h1>
       </header>
-      <navbar class="sticky-top shadow-near" align="end">
+      <navbar class="sticky-top shadow-near" align="end" v-cloak>
         <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
         <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
           <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
           <nav-item href="vue.html" text="Vue"></nav-item>
           <nav-item>
             <dropdown toggle="toggle" align="right">
-              <button slot="button">Utilities</button><a href="scss-helpers.html">SCSS Helpers</a><a href="vue-directives.html">Vue Directieves</a><a href="js-libraries.html">JS Libraries</a>
+              <button slot="button">Utilities</button>
+              <dropdown-item href="scss-helpers.html">SCSS Helpers</dropdown-item>
+              <dropdown-item href="vue-directives.html">Vue Directieves</dropdown-item>
+              <dropdown-item href="js-libraries.html">JS Libraries</dropdown-item>
             </dropdown>
           </nav-item>
         </navbar-nav>
@@ -33,35 +36,79 @@
         </div>
       </div>
       <section class="pad">
-        <anchored-tag tag="h1" owned>Modal</anchored-tag>
+        <anchored-tag tag="h1" owned>Dropdown</anchored-tag>
+        <h3>Toggle Dropdown</h3>
+        <div class="dropdown" is="dropdown">
+          <button class="btn" slot="button">TOGGLE</button><a class="dropdown-item active" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
+        </div>
+        <h3>Hover Dropdown</h3>
+        <dropdown toggle="hover">
+          <button class="btn info" slot="button">HOVER</button>
+          <dropdown-item href="#">hello</dropdown-item>
+          <dropdown-item href="#">drop</dropdown-item>
+          <dropdown-item href="#">down</dropdown-item>
+        </dropdown>
+        <h3>Dropdown Content Alignment</h3>
+        <div style="display:flex;width:100%;justify-content:space-between;">
+          <dropdown toggle="hover" align="left">
+            <button class="btn success" slot="button">LEFT</button>
+            <dropdown-item href="#">hello</dropdown-item>
+            <dropdown-item href="#">drop</dropdown-item>
+            <dropdown-item href="#">down</dropdown-item>
+          </dropdown>
+          <dropdown toggle="hover" align="center">
+            <button class="btn secondary" slot="button">CENTER</button>
+            <dropdown-item href="#">hello</dropdown-item>
+            <dropdown-item href="#">drop</dropdown-item>
+            <dropdown-item href="#">down</dropdown-item>
+          </dropdown>
+          <dropdown toggle="hover" align="right">
+            <button class="btn warning" slot="button">RIGHT</button>
+            <dropdown-item href="#">hello</dropdown-item>
+            <dropdown-item href="#">drop</dropdown-item>
+            <dropdown-item href="#">down</dropdown-item>
+          </dropdown>
+        </div>
+        <anchored-tag tag="h1" owned>Navbar</anchored-tag>
         <h3>Basic</h3>
-        <button class="btn warning" onclick="Moss.modal.toggle(&quot;test-modal&quot;)">Trigger</button>
-        <modal name="test-modal">
-          <h3>Test</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </modal>
-        <h3>Close when another clicked</h3>
-        <button class="btn success" onclick="Moss.modal.show(&quot;test-modal2&quot;)">Trigger</button>
-        <modal name="test-modal2" title="Close when another clicked" close-on>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </modal>
-        <h3>with Actions</h3>
-        <button class="btn" onclick="Moss.modal.toggle(&quot;test-modal3&quot;)">Trigger</button>
-        <modal name="test-modal3" title="with Actions">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <div slot="actions">
-            <button class="btn default" onclick="Moss.modal.close(&quot;test-modal3&quot;)">CANCEL</button>
-            <button class="btn success">OK</button>
-          </div>
-        </modal>
-        <h3>Icon close button</h3>
-        <button class="btn info" onclick="Moss.modal.toggle(&quot;test-modal4&quot;)">Trigger</button>
-        <modal name="test-modal4" title="Icon close button" close-button-html="&lt;i class=&quot;fa fa-times&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;" close-on>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <div slot="actions">
-            <button class="btn success" onclick="Moss.modal.close(&quot;test-modal4&quot;)">Okay</button>
-          </div>
-        </modal>
+        <navbar class="bg-color-dark" align="start">
+          <navbar-nav>
+            <nav-item href="#" text="link1"></nav-item>
+            <nav-item href="#" text="link2"></nav-item>
+            <nav-item>
+              <dropdown>
+                <button slot="button">Dropdown</button>
+                <dropdown-item href="#">link 1</dropdown-item>
+                <dropdown-item href="#">link 2</dropdown-item>
+                <dropdown-item href="#">link 3</dropdown-item>
+              </dropdown>
+            </nav-item>
+          </navbar-nav>
+          <navbar-nav>
+            <nav-item href="#" text="about"></nav-item>
+            <nav-item href="#" text="logout"></nav-item>
+          </navbar-nav>
+        </navbar>
+        <h3>Multiple Navs</h3>
+        <navbar class="bg-color-warning rounded shadow-near" align="between" header-align="start">
+          <navbar-brand href="#" type="image" slot="brand"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" style="width:30px;height:30px;"></navbar-brand>
+          <navbar-nav>
+            <nav-item href="#" text="link1"></nav-item>
+            <nav-item href="#" text="link2"></nav-item>
+            <nav-item>
+              <dropdown>
+                <button slot="button">Dropdown</button>
+                <dropdown-item href="#">link 1</dropdown-item>
+                <dropdown-item href="#">link 2</dropdown-item>
+                <dropdown-item href="#">link 3</dropdown-item>
+              </dropdown>
+            </nav-item>
+          </navbar-nav>
+          <navbar-nav>
+            <nav-item href="#" text="about"></nav-item>
+            <nav-item href="#" text="logout"></nav-item>
+          </navbar-nav>
+        </navbar>
       </section>
       <footer class="footer">
         <div class="container">

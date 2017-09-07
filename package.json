@@ -66,6 +66,15 @@
     },
     "rules": {
       "no-console": "off"
+    },
+    "plugins": [
+      "html"
+    ],
+    "settings": {
+      "html/html-extensions": [
+        ".html",
+        ".vue"
+      ]
     }
   },
   "babel": {
