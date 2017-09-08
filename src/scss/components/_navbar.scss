@@ -2,6 +2,10 @@
 // navbar
 //============================================================
 
+// Hide during loading.
+navbar,
+[is="navbar"] { display: none; }
+
 %nav-link {
   @extend %link-no-deco;
   display: inline-block;

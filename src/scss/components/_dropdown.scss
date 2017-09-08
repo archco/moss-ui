@@ -2,6 +2,10 @@
 // dropdown
 //======================================================================
 
+// Hide during loading.
+dropdown,
+[is="dropdown"] { display: none; }
+
 .dropdown {
   position: relative;
   display: inline-flex;

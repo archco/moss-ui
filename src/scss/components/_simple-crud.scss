@@ -2,6 +2,10 @@
 // Simple CRUD
 //======================================================================
 
+// Hide during loading.
+simple-crud,
+[is="simple-crud"] { display: none; }
+
 %simple-crud-view {
   display: flex;
   align-items: center;
@@ -11,13 +15,8 @@
   padding-left: $simple-crud-padding-x;
   background-color: $background-color-shade;
 
-  .content {
-    flex: 1 1 auto;
-  }
-
-  .actions {
-    flex: 0 1 auto;
-  }
+  .content { flex: 1 1 auto; }
+  .actions { flex: 0 1 auto; }
 }
 
 .simple-crud-list {
