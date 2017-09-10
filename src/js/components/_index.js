@@ -3,6 +3,7 @@ import Chip from './chip.vue';
 import CloseButton from './close-button.vue';
 import Collapse from './collapse.vue';
 import Dropdown from './dropdown.vue';
+import DropdownItem from './dropdown-item.vue';
 import Message from './message.vue';
 import MessageBox from './message-box.vue';
 import Modal from './modal.vue';
@@ -25,6 +26,7 @@ export default [
   CloseButton,
   Collapse,
   Dropdown,
+  DropdownItem,
   Message,
   MessageBox,
   Modal,

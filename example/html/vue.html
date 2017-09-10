@@ -20,7 +20,10 @@
           <nav-item href="vue.html" text="Vue"></nav-item>
           <nav-item>
             <dropdown toggle="toggle" align="right">
-              <button slot="button">Utilities</button><a href="scss-helpers.html">SCSS Helpers</a><a href="vue-directives.html">Vue Directieves</a><a href="js-libraries.html">JS Libraries</a>
+              <button slot="button">Utilities</button>
+              <dropdown-item href="scss-helpers.html">SCSS Helpers</dropdown-item>
+              <dropdown-item href="vue-directives.html">Vue Directieves</dropdown-item>
+              <dropdown-item href="js-libraries.html">JS Libraries</dropdown-item>
             </dropdown>
           </nav-item>
         </navbar-nav>
@@ -127,23 +130,35 @@
           </ul>
           <anchored-tag tag="h1" owned>Dropdown</anchored-tag>
           <h3>Toggle Dropdown</h3>
-          <dropdown>
-            <button class="btn" slot="button">TOGGLE</button><a class="active" href="#">hello</a><a href="#">drop</a><a href="#">down</a>
-          </dropdown>
+          <div class="dropdown" is="dropdown">
+            <button class="btn" slot="button">TOGGLE</button><a class="dropdown-item active" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
+          </div>
           <h3>Hover Dropdown</h3>
           <dropdown toggle="hover">
-            <button class="btn info" slot="button">HOVER</button><a href="#">hello</a><a href="#">drop</a><a href="#">down</a>
+            <button class="btn info" slot="button">HOVER</button>
+            <dropdown-item href="#">hello</dropdown-item>
+            <dropdown-item href="#">drop</dropdown-item>
+            <dropdown-item href="#">down</dropdown-item>
           </dropdown>
           <h3>Dropdown Content Alignment</h3>
           <div style="display:flex;width:100%;justify-content:space-between;">
             <dropdown toggle="hover" align="left">
-              <button class="btn success" slot="button">LEFT</button><a href="#">hello</a><a href="#">drop</a><a href="#">down</a>
+              <button class="btn success" slot="button">LEFT</button>
+              <dropdown-item href="#">hello</dropdown-item>
+              <dropdown-item href="#">drop</dropdown-item>
+              <dropdown-item href="#">down</dropdown-item>
             </dropdown>
             <dropdown toggle="hover" align="center">
-              <button class="btn secondary" slot="button">CENTER</button><a href="#">hello</a><a href="#">drop</a><a href="#">down</a>
+              <button class="btn secondary" slot="button">CENTER</button>
+              <dropdown-item href="#">hello</dropdown-item>
+              <dropdown-item href="#">drop</dropdown-item>
+              <dropdown-item href="#">down</dropdown-item>
             </dropdown>
             <dropdown toggle="hover" align="right">
-              <button class="btn warning" slot="button">RIGHT</button><a href="#">hello</a><a href="#">drop</a><a href="#">down</a>
+              <button class="btn warning" slot="button">RIGHT</button>
+              <dropdown-item href="#">hello</dropdown-item>
+              <dropdown-item href="#">drop</dropdown-item>
+              <dropdown-item href="#">down</dropdown-item>
             </dropdown>
           </div>
           <anchored-tag tag="h1" owned>Message</anchored-tag>
@@ -211,7 +226,10 @@
               <nav-item href="#" text="link2"></nav-item>
               <nav-item>
                 <dropdown>
-                  <button slot="button">Dropdown</button><a href="#">link 1</a><a href="#">link 2</a><a href="#">link 3</a>
+                  <button slot="button">Dropdown</button>
+                  <dropdown-item href="#">link 1</dropdown-item>
+                  <dropdown-item href="#">link 2</dropdown-item>
+                  <dropdown-item href="#">link 3</dropdown-item>
                 </dropdown>
               </nav-item>
             </navbar-nav>
@@ -228,7 +246,10 @@
               <nav-item href="#" text="link2"></nav-item>
               <nav-item>
                 <dropdown>
-                  <button slot="button">Dropdown</button><a href="#">link 1</a><a href="#">link 2</a><a href="#">link 3</a>
+                  <button slot="button">Dropdown</button>
+                  <dropdown-item href="#">link 1</dropdown-item>
+                  <dropdown-item href="#">link 2</dropdown-item>
+                  <dropdown-item href="#">link 3</dropdown-item>
                 </dropdown>
               </nav-item>
             </navbar-nav>
