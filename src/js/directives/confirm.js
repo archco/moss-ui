@@ -1,3 +1,9 @@
+/*
+  v-confirm:{arg}="'{value}'"
+
+  arg: event type.
+  value: {String} confirm message. default value is 'Are you confirm?'.
+ */
 export default {
   name: 'confirm',
   bind(el, binding) {

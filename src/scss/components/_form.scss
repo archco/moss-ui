@@ -1,6 +1,6 @@
-//======================================================================
-// Form Default
-//======================================================================
+//============================================================
+// Form tags
+//============================================================
 
 fieldset {
   padding: .5rem 1rem;
@@ -103,6 +103,14 @@ input[type="color"] {
   padding: 0;
 }
 
+//============================================================
+// Form helpers
+//============================================================
+
+%form-inline {
+  width: auto;
+}
+
 .form-inline {
   display: inline;
   padding: 0;
@@ -112,9 +120,7 @@ input[type="color"] {
     @extend %form-inline;
   }
 
-  textarea {
-    height: auto;
-  }
+  textarea { height: auto; }
 }
 
 @include form-inline-target {
@@ -123,16 +129,13 @@ input[type="color"] {
   }
 }
 
-%form-inline {
-  width: auto;
-}
-
 .form-group {
   margin-bottom: 1rem;
 }
 
-// input with icons
-//
+//============================================================
+// Input with icons
+//============================================================
 
 %input-icon {
   position: absolute;

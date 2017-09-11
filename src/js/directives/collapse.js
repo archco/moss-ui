@@ -1,3 +1,9 @@
+/*
+  v-collapse:{arg}.{modifiers}
+
+  modifiers: [none = toggle] | 'show' | 'hide'
+  arg: collapse id.
+ */
 export default {
   name: 'collapse',
 

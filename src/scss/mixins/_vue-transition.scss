@@ -1,7 +1,3 @@
-//============================================================
-// Vue Transitions
-//============================================================
-
 @mixin vue-fade($name, $entering: '.6s', $leaving: '.6s') {
   .#{$name}-enter-active {
     transition: opacity #{$entering};

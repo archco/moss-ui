@@ -58,11 +58,13 @@
 // btn-color($bg-color, $color: $button-color)
 // btn-flat-color($color)
 
-@import './mixins/caret-arrow';
-// caret($direction: 'down')
-// caret-direction($direction)
+@import './mixins/arrow';
 // arrow($direction: 'down')
 // arrow-direction($direction)
+
+@import './mixins/caret';
+// caret($direction: 'down')
+// caret-direction($direction)
 
 @import './mixins/vue-transition';
 // vue-fade($name, $entering: '.6s', $leaving: '.6s')

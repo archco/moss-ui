@@ -1,3 +1,9 @@
+/*
+  v-trigger:{arg}="[{value}]"
+
+  arg: event name.
+  value: {Array} Arguments for event listener.
+ */
 export default {
   name: 'trigger',
   bind(el, binding, vnode) {

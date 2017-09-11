@@ -1,3 +1,12 @@
+/*
+  v-modal:{arg}.{modifier}
+
+  arg: modal's name.
+  modifier:
+    [ none ]: toggling modal.
+    show: show modal.
+    close: close modal.
+ */
 export default {
   name: 'modal',
   bind(el, binding, vnode) {
