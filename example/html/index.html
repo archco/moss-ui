@@ -36,79 +36,130 @@
         </div>
       </div>
       <section class="pad">
-        <anchored-tag tag="h1" owned>Dropdown</anchored-tag>
-        <h3>Toggle Dropdown</h3>
-        <div class="dropdown" is="dropdown">
-          <button class="btn" slot="button">TOGGLE</button><a class="dropdown-item active" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
+        <anchored-tag tag="h1" owned>Form</anchored-tag>
+        <h3>Default Usage</h3>
+        <form>
+          <fieldset>
+            <legend>Form</legend>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="name">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password">
+            </div>
+            <div class="form-group">
+              <label for="email">email</label>
+              <input type="email" id="email" name="email" disabled placeholder="read only">
+              <input type="email" id="email" name="email" readonly placeholder="read only">
+            </div>
+            <div class="form-group">
+              <label>checkbox
+                <input type="checkbox">
+              </label>
+            </div>
+            <div class="form-group">
+              <label>
+                <input type="radio" name="gender" value="0" checked>male
+              </label><br>
+              <label>
+                <input type="radio" name="gender" value="1">female
+              </label>
+            </div>
+            <div class="form-group">
+              <input type="file">
+              <input type="range">
+              <input type="color">
+            </div>
+            <div class="form-group">
+              <select name="select">
+                <option value="0">one</option>
+                <option value="1">two</option>
+                <option value="2">three</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea>hello, world!</textarea>
+            </div>
+            <div class="form-group">
+              <button class="btn" type="submit">Submit</button>
+            </div>
+          </fieldset>
+        </form>
+        <h3>Form Inline</h3>
+        <form class="form-inline">
+          <fieldset>
+            <legend>Form inline</legend>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="name">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+            <label for="email">email</label>
+            <input type="email" id="email" name="email" disabled placeholder="read only">
+            <input type="email" id="email" name="email" readonly placeholder="read only">
+            <label>checkbox</label>
+            <input type="checkbox">
+            <label>
+              <input type="radio" name="gender" value="0" checked>male
+            </label>
+            <label>
+              <input type="radio" name="gender" value="1">female
+            </label>
+            <input type="file">
+            <input type="range">
+            <input type="color">
+            <select name="select">
+              <option value="0">one</option>
+              <option value="1">two</option>
+              <option value="2">three</option>
+            </select>
+            <textarea>hello, world!</textarea>
+            <button class="btn" type="submit">Submit</button>
+          </fieldset>
+        </form>
+        <h3>Vertical Alignment</h3>
+        <form class="form-inline">
+          <fieldset>
+            <legend>Select</legend>
+            <select name="select">
+              <option value="1">option1</option>
+              <option value="2">option2</option>
+              <option value="3">option3</option>
+            </select>
+            <input type="text" placeholder="text">
+            <input type="date">
+          </fieldset>
+        </form>
+        <h3>Input with Icons</h3>
+        <h4>Default</h4>
+        <div class="input with-icon">
+          <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
         </div>
-        <h3>Hover Dropdown</h3>
-        <dropdown toggle="hover">
-          <button class="btn info" slot="button">HOVER</button>
-          <dropdown-item href="#">hello</dropdown-item>
-          <dropdown-item href="#">drop</dropdown-item>
-          <dropdown-item href="#">down</dropdown-item>
-        </dropdown>
-        <h3>Dropdown Content Alignment</h3>
-        <div style="display:flex;width:100%;justify-content:space-between;">
-          <dropdown toggle="hover" align="left">
-            <button class="btn success" slot="button">LEFT</button>
-            <dropdown-item href="#">hello</dropdown-item>
-            <dropdown-item href="#">drop</dropdown-item>
-            <dropdown-item href="#">down</dropdown-item>
-          </dropdown>
-          <dropdown toggle="hover" align="center">
-            <button class="btn secondary" slot="button">CENTER</button>
-            <dropdown-item href="#">hello</dropdown-item>
-            <dropdown-item href="#">drop</dropdown-item>
-            <dropdown-item href="#">down</dropdown-item>
-          </dropdown>
-          <dropdown toggle="hover" align="right">
-            <button class="btn warning" slot="button">RIGHT</button>
-            <dropdown-item href="#">hello</dropdown-item>
-            <dropdown-item href="#">drop</dropdown-item>
-            <dropdown-item href="#">down</dropdown-item>
-          </dropdown>
+        <h4>Icon positioning left or right or both</h4>
+        <div class="input with-icon-right group">
+          <input type="text" placeholder="Text me.."><span class="icon-right"><i class="fa fa-commenting" aria-hidden="true"></i></span>
         </div>
-        <anchored-tag tag="h1" owned>Navbar</anchored-tag>
-        <h3>Basic</h3>
-        <navbar class="bg-color-dark" align="start">
-          <navbar-nav>
-            <nav-item href="#" text="link1"></nav-item>
-            <nav-item href="#" text="link2"></nav-item>
-            <nav-item>
-              <dropdown>
-                <button slot="button">Dropdown</button>
-                <dropdown-item href="#">link 1</dropdown-item>
-                <dropdown-item href="#">link 2</dropdown-item>
-                <dropdown-item href="#">link 3</dropdown-item>
-              </dropdown>
-            </nav-item>
-          </navbar-nav>
-          <navbar-nav>
-            <nav-item href="#" text="about"></nav-item>
-            <nav-item href="#" text="logout"></nav-item>
-          </navbar-nav>
-        </navbar>
-        <h3>Multiple Navs</h3>
-        <navbar class="bg-color-warning rounded shadow-near" align="between" header-align="start">
-          <navbar-brand href="#" type="image" slot="brand"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" style="width:30px;height:30px;"></navbar-brand>
-          <navbar-nav>
-            <nav-item href="#" text="link1"></nav-item>
-            <nav-item href="#" text="link2"></nav-item>
-            <nav-item>
-              <dropdown>
-                <button slot="button">Dropdown</button>
-                <dropdown-item href="#">link 1</dropdown-item>
-                <dropdown-item href="#">link 2</dropdown-item>
-                <dropdown-item href="#">link 3</dropdown-item>
-              </dropdown>
-            </nav-item>
-          </navbar-nav>
-          <navbar-nav>
-            <nav-item href="#" text="about"></nav-item>
-            <nav-item href="#" text="logout"></nav-item>
-          </navbar-nav>
-        </navbar>
+        <div class="input with-icon-left group">
+          <input type="search" placeholder="Search.."><span class="icon-left"><i class="fa fa-search" aria-hidden="true"></i></span>
+        </div>
+        <div class="input with-icon-left with-icon-right group">
+          <input type="text" placeholder="Email.."><span class="icon-left"><i class="fa fa-envelope" aria-hidden="true"></i></span><span class="icon-right"><i class="fa fa-check" aria-hidden="true"></i></span>
+        </div>
+        <h4>Inline input</h4>
+        <div class="input inline with-icon-left with-icon-right">
+          <input class="inline" type="text" placeholder="Email.."><span class="icon-left"><i class="fa fa-envelope" aria-hidden="true"></i></span><span class="icon-right color-success"><i class="fa fa-check" aria-hidden="true"></i></span>
+        </div>
+        <h4>Input sizes</h4>
+        <div class="input inline with-icon font-small">
+          <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+        </div>
+        <div class="input inline with-icon">
+          <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+        </div>
+        <div class="input inline with-icon font-large">
+          <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+        </div>
       </section>
       <footer class="footer">
         <div class="container">
