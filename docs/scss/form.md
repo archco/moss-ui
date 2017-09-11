@@ -41,6 +41,7 @@
     <i class="fa fa-commenting" aria-hidden="true"></i>
   </span>
 </div>
+
 <!-- inline -->
 <div class="input inline with-icon">
   <input type="text" placeholder="Text me..">
@@ -59,6 +60,7 @@
     <i class="fa fa-commenting" aria-hidden="true"></i>
   </span>
 </div>
+
 <!-- Left -->
 <div class="input with-icon-left">
   <input type="search" placeholder="Search..">
@@ -66,6 +68,7 @@
     <i class="fa fa-search" aria-hidden="true"></i>
   </span>
 </div>
+
 <!-- Both -->
 <div class="input with-icon-left with-icon-right">
   <input type="text" placeholder="Email..">
