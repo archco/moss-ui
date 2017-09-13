@@ -61,9 +61,9 @@ html
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
     script(src='../../dist/js/script.js')
     script(src='./example.js')
-    <script>
-    | var year = new Date().getFullYear();
-    | document.querySelector('.footer-copyright').innerHTML = "copyright \&copy; " + year + " MOSS-UI all rights reserved.";
-    | document.querySelector('#project-name').innerHTML = "MOSS-UI " + Moss.version;
-    </script>
+    script
+      |var year = new Date().getFullYear();
+      |document.querySelector('.footer-copyright').innerHTML = 'copyright \&copy; ' + year + ' MOSS-UI all rights reserved.';
+      |document.querySelector('#project-name').innerHTML = 'MOSS-UI ' + Moss.version;
+
     block script

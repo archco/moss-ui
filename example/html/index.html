@@ -35,7 +35,23 @@
           <p>The user interface framework for front-end.</p>
         </div>
       </div>
+      <section class="pad"><svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="Gradient">
+<stop offset="0" stop-color="white" stop-opacity="0" />
+<stop offset="1" stop-color="white" stop-opacity="1" />
+</linearGradient>
+<mask id="Mask">
+<rect x="0" y="0" width="200" height="200" fill="url(#Gradient)"  />
+</mask>
+</defs>
+<rect x="0" y="0" width="200" height="200" fill="green" />
+<rect x="0" y="0" width="200" height="200" fill="black" mask="url(#Mask)" />
+</svg>
+      </section>
       <section class="pad">
+        <input-check>Check! Check!</input-check><br>
+        <input-check style="font-size:3em;">Check! Check!</input-check>
         <anchored-tag tag="h1" owned>Form</anchored-tag>
         <h3>Default Usage</h3>
         <form>
@@ -185,8 +201,11 @@
     </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
     <script src="../../dist/js/script.js"></script>
-    <script src="./example.js"></script><script>var year = new Date().getFullYear();
-    document.querySelector('.footer-copyright').innerHTML = "copyright \&copy; " + year + " MOSS-UI all rights reserved.";
-    document.querySelector('#project-name').innerHTML = "MOSS-UI " + Moss.version;</script>
+    <script src="./example.js"></script>
+    <script>
+      var year = new Date().getFullYear();
+      document.querySelector('.footer-copyright').innerHTML = 'copyright \&copy; ' + year + ' MOSS-UI all rights reserved.';
+      document.querySelector('#project-name').innerHTML = 'MOSS-UI ' + Moss.version;
+    </script>
   </body>
 </html>
