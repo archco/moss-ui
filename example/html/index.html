@@ -50,8 +50,16 @@
 </svg>
       </section>
       <section class="pad">
-        <input-check>Check! Check!</input-check><br>
-        <input-check style="font-size:3em;">Check! Check!</input-check>
+        <div class="group">
+          <input-radio class="font-small" name="test" value="small">small</input-radio>
+          <input-radio name="test" value="medium">medium</input-radio>
+          <input-radio class="font-large" name="test" value="large">large</input-radio>
+        </div>
+        <div class="group">
+          <input-check class="font-small" name="is-small">small</input-check>
+          <input-check name="is-medium">normal</input-check>
+          <input-check class="font-large" name="is-large">large</input-check>
+        </div>
         <anchored-tag tag="h1" owned>Form</anchored-tag>
         <h3>Default Usage</h3>
         <form>

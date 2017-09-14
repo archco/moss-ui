@@ -20,6 +20,7 @@ import Tabs from './tabs.vue';
 import Toast from './toast.vue';
 import TreeItem from './tree-item.vue';
 import InputCheck from './input-check.vue';
+import InputRadio from './input-radio.vue';
 
 export default [
   AnchoredTag,
@@ -44,4 +45,5 @@ export default [
   Toast,
   TreeItem,
   InputCheck,
+  InputRadio,
 ];

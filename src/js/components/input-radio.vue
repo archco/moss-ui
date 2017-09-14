@@ -1,6 +1,6 @@
 <template lang="html">
-  <label :for="id" class="input-check">
-    <input type="checkbox"
+  <label class="input-radio" :for="id">
+    <input type="radio"
       :id="id"
       :name="name"
       :value="value"
@@ -10,9 +10,7 @@
       :checked="state">
     <slot name="input-box">
       <span class="input-box">
-        <svg class="input-box-tick" viewBox="0 0 16 16">
-          <path fill="none" d="M1.7,7.8l3.8,3.4l9-7.8"></path>
-        </svg>
+        <span class="input-box-circle"></span>
       </span>
     </slot>
     <slot></slot>
@@ -21,7 +19,7 @@
 
 <script>
 export default {
-  name: 'input-check',
+  name: 'input-radio',
   model: {
     prop: 'modelValue',
     event: 'input'
@@ -30,7 +28,7 @@ export default {
     id: {
       type: String,
       default: function () {
-        return 'checkbox-id-' + this._uid;
+        return 'radio-id-' + this._uid;
       },
     },
     name: {
@@ -39,10 +37,10 @@ export default {
     },
     value: {
       type: String,
-      default: null,
+      default: '',
     },
     modelValue: {
-      type: String | Array,
+      type: String,
       default: undefined,
     },
     className: {
@@ -64,10 +62,7 @@ export default {
       if (this.modelValue === undefined) {
         return this.checked;
       }
-      if (Array.isArray(this.modelValue)) {
-        return this.modelValue.indexOf(this.value) > -1;
-      }
-      return !!this.modelValue;
+      return this.modelValue === this.value;
     }
   },
   methods: {
@@ -75,18 +70,7 @@ export default {
       this.toggle();
     },
     toggle() {
-      let value;
-      if (Array.isArray(this.modelValue)) {
-        value = this.modelValue.slice(0);
-        if (this.state) {
-          value.splice(value.indexOf(this.value), 1);
-        } else {
-          value.push(this.value);
-        }
-      } else {
-        value = !this.state;
-      }
-      this.$emit('input', value);
+      this.$emit('input', this.state ? '' : this.value);
     }
   },
   watch: {
