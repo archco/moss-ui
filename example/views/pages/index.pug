@@ -33,9 +33,9 @@ block content
       input-radio(name='test' class='font-large' value='large') large
 
     div.group
-      input-check.font-small(name='is-small') small
-      input-check(name='is-medium') normal
-      input-check.font-large(name='is-large') large
+      input-check.font-small(name='input-check' value='is-small') small
+      input-check(name='input-check' value='is-medium' v-model='input') normal
+      input-check.font-large(name='input-check' value='is-large') large
 
     anchored-tag(tag='h1' owned) Form
     include ../includes/form

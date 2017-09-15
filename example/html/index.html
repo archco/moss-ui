@@ -56,9 +56,9 @@
           <input-radio class="font-large" name="test" value="large">large</input-radio>
         </div>
         <div class="group">
-          <input-check class="font-small" name="is-small">small</input-check>
-          <input-check name="is-medium">normal</input-check>
-          <input-check class="font-large" name="is-large">large</input-check>
+          <input-check class="font-small" name="input-check" value="is-small">small</input-check>
+          <input-check name="input-check" value="is-medium" v-model="input">normal</input-check>
+          <input-check class="font-large" name="input-check" value="is-large">large</input-check>
         </div>
         <anchored-tag tag="h1" owned>Form</anchored-tag>
         <h3>Default Usage</h3>

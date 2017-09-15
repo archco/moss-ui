@@ -6,8 +6,8 @@
       :value="value"
       :class="className"
       :required="required"
-      @change="onChange"
-      :checked="state">
+      :checked="state"
+      @change="onChange">
     <slot name="input-box">
       <span class="input-box">
         <svg class="input-box-tick" viewBox="0 0 16 16">
@@ -24,7 +24,7 @@ export default {
   name: 'input-check',
   model: {
     prop: 'modelValue',
-    event: 'input'
+    event: 'change'
   },
   props: {
     id: {
@@ -57,7 +57,6 @@ export default {
       type: Boolean,
       default: false,
     },
-    model: {}
   },
   computed: {
     state () {
@@ -67,7 +66,7 @@ export default {
       if (Array.isArray(this.modelValue)) {
         return this.modelValue.indexOf(this.value) > -1;
       }
-      return !!this.modelValue;
+      return this.modelValue;
     }
   },
   methods: {
@@ -76,8 +75,10 @@ export default {
     },
     toggle() {
       let value;
+
       if (Array.isArray(this.modelValue)) {
         value = this.modelValue.slice(0);
+
         if (this.state) {
           value.splice(value.indexOf(this.value), 1);
         } else {
@@ -86,7 +87,8 @@ export default {
       } else {
         value = !this.state;
       }
-      this.$emit('input', value);
+
+      this.$emit('change', value);
     }
   },
   watch: {

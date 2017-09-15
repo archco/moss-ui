@@ -6,8 +6,8 @@
       :value="value"
       :class="className"
       :required="required"
-      @change="onChange"
-      :checked="state">
+      :checked="state"
+      @change="onChange">
     <slot name="input-box">
       <span class="input-box">
         <span class="input-box-circle"></span>
@@ -22,7 +22,7 @@ export default {
   name: 'input-radio',
   model: {
     prop: 'modelValue',
-    event: 'input'
+    event: 'change'
   },
   props: {
     id: {
@@ -55,7 +55,6 @@ export default {
       type: Boolean,
       default: false,
     },
-    model: {}
   },
   computed: {
     state () {
@@ -70,7 +69,7 @@ export default {
       this.toggle();
     },
     toggle() {
-      this.$emit('input', this.state ? '' : this.value);
+      this.$emit('change', this.state ? '' : this.value);
     }
   },
   watch: {
