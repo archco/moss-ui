@@ -28,7 +28,7 @@ export default {
     id: {
       type: String,
       default: function () {
-        return 'radio-id-' + this._uid;
+        return 'input-radio-id-' + this._uid;
       },
     },
     name: {

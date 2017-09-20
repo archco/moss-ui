@@ -27,23 +27,5 @@ block content
     </svg>
 
   section.pad
-    div.group
-      input-check.font-small(name='is-small') small
-      input-check(name='is-normal') normal
-      input-check.font-large(name='is-large') large
-
-    div.group
-      input-radio(name='input-radio' class='font-small' value='small') small
-      input-radio(name='input-radio' value='medium') medium
-      input-radio(name='input-radio' class='font-large' value='large') large
-
-    div.group
-      input-check(name='use-toggle' class='toggle') Toggle
-      input-check(name='is-good' class='toggle') Good
-
-    div.group
-      input-radio(name='toggle-radio' class='toggle' value='male') Male
-      input-radio(name='toggle-radio' class='toggle' value='female') Female
-
-    anchored-tag(tag='h1' owned) Form
-    include ../includes/form
+    anchored-tag(tag='h1' owned) Switch
+    include ../includes/switch

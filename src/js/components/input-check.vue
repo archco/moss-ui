@@ -30,7 +30,7 @@ export default {
     id: {
       type: String,
       default: function () {
-        return 'checkbox-id-' + this._uid;
+        return 'input-check-id-' + this._uid;
       },
     },
     name: {
