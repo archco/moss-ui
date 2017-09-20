@@ -1,5 +1,5 @@
-# Helper
-> source:  [scss/components/helper](../../src/scss/components/_helper.scss)
+# Helpers
+> source:  [scss/helpers/index](../../src/scss/helpers/_index.scss)
 
 ## More helper classes
 - [Display](display.md)

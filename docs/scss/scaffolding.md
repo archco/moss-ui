@@ -1,5 +1,5 @@
 # Scaffolding
-> source: [scss/components/scaffolding](../../src/scss/components/_scaffolding.scss)
+> source: [scss/parts/scaffolding](../../src/scss/parts/_scaffolding.scss)
 
 - [Tag Defaults](#tag-defaults)
 - [Optional Class](#optional-class)

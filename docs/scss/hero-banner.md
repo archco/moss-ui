@@ -1,5 +1,5 @@
 # Hero Banner
-> source: [scss/components/hero-banner](../../src/scss/components/_hero-banner.scss)
+> source: [scss/parts/hero-banner](../../src/scss/parts/_hero-banner.scss)
 
 A hero banner is display large image with text, often placed at top of a web page.
 

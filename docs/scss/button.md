@@ -1,5 +1,5 @@
 # Button
-> source: [scss/components/button](../../src/scss/components/_button.scss)
+> source: [scss/parts/button](../../src/scss/parts/_button.scss)
 
 #### Option Keywords
 - based on [Color-set](color-set.md)  

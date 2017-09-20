@@ -1,5 +1,5 @@
 # Form
-> source: [scss/components/form](../../src/scss/components/_form.scss)
+> source: [scss/parts/form](../../src/scss/parts/_form.scss)
 
 ## Usage
 

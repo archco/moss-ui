@@ -1,5 +1,5 @@
 # Badge
-> source:  [scss/components/badge](../../src/scss/components/_badge.scss)
+> source:  [scss/parts/badge](../../src/scss/parts/_badge.scss)
 
 ## Usage
 #### Default Badge

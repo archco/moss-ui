@@ -1,5 +1,5 @@
 # List
-> source: [scss/components/list](../../src/scss/components/_list.scss)
+> source: [scss/parts/list](../../src/scss/parts/_list.scss)
 
 ### Usage
 #### list
@@ -35,7 +35,7 @@ default separator is "/".
 ```html
 <ul class="breadcrumb">
   <li><a href="#">scss</a></li>
-  <li><a href="#">components</a></li>
+  <li><a href="#">parts</a></li>
   <li>list</li>
 </ul>
 ```

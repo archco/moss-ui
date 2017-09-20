@@ -1,5 +1,5 @@
 # Color-set
-> source: [scss/components/color-set](../../src/scss/components/_color-set.scss)
+> source: [scss/parts/color-set](../../src/scss/parts/_color-set.scss)
 
 Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
 

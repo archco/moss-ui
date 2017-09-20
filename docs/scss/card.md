@@ -1,5 +1,5 @@
 # Card
-> source: [scss/components/card](../../src/scss/components/_card.scss)
+> source: [scss/parts/card](../../src/scss/parts/_card.scss)
 
 #### Option Keywords
 - size: `small` `large` (default: medium)

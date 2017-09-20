@@ -3,14 +3,14 @@
 Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 
 ## Index
-#### SCSS Components
+#### SCSS Parts
 - [Badge](scss/badge.md)
 - [Button](scss/button.md)
 - [Card](scss/card.md)
 - [Color-set](scss/color-set.md)
 - [Form](scss/form.md)
 - [Grid](scss/grid.md)
-- [Helper](scss/helper.md)
+- [Helpers](scss/helpers.md)
   - [Display](scss/display.md)
   - [Flex](scss/flex.md)
   - [Text](scss/text.md)
