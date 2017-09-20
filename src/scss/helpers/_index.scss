@@ -1,19 +1,19 @@
-@import 'helpers/display';
-@import 'helpers/text';
-@import 'helpers/flex';
+@import 'display';
+@import 'text';
+@import 'flex';
 
 // toggling content
 .display-hide { display: none !important; }
 .display-show { display: block !important; }
-.display-invisible { visibility: hidden; }
+.display-invisible { visibility: hidden !important; }
 
 // responsive hiding
 %resopnsive-tablet-hide {
-  @include media-tablet-up() { display: none; }
+  @include media-tablet-up() { display: none !important; }
 }
 
 %responsive-mobile-hide {
-  @include media-only-mobile() { display: none; }
+  @include media-only-mobile() { display: none !important; }
 }
 
 .hide-only-mobile {

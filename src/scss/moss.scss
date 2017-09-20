@@ -5,49 +5,22 @@
  * @license MIT
  */
 
-// library.
+// libraries.
 @import 'node_modules/normalize.css/normalize';
 @import 'node_modules/scss-palette/src/palette';
 @import 'lib/decimal';
 @import 'lib/functions';
 @import 'lib/keyframes';
 
-// base.
+// basements.
 @import 'variables';
 @import 'mixins';
 
-// components.
-@import 'components/scaffolding';
-@import 'components/list';
-@import 'components/form';
-@import 'components/button';
-@import 'components/button-group';
-@import 'components/badge';
-@import 'components/chip';
-@import 'components/image';
-@import 'components/navbar';
-@import 'components/aside';
-@import 'components/grid';
-@import 'components/tab';
-@import 'components/message';
-@import 'components/modal';
-@import 'components/card';
-@import 'components/pagination';
-@import 'components/parallax';
-@import 'components/loader';
-@import 'components/scroll-to';
-@import 'components/tooltip';
-@import 'components/collapse';
-@import 'components/simple-crud';
-@import 'components/toast';
-@import 'components/hero-banner';
-@import 'components/tree-item';
+// scss parts.
+@import 'parts/index';
 
-// vue-components.
-@import 'components/dropdown';
-@import 'components/close-button';
-@import 'components/input-check';
-@import 'components/input-radio';
+// vue components.
+@import 'components/index';
 
 // helper class should be last.
-@import 'helpers';
+@import 'helpers/index';
