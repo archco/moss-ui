@@ -41,7 +41,6 @@ window.vm = new Vue({
   data: {
     treeData,
     treeData2,
-    input: false,
   },
   methods: {
     test(arg) {

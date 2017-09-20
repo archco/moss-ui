@@ -371,3 +371,16 @@ $hero-banner-min-height: 10em !default;
 $hero-banner-pad-small: 3em !default;
 $hero-banner-pad-medium: 6em !default;
 $hero-banner-pad-large: 9em !default;
+
+// input-switch: input-check, input-radio
+// and toggle
+$input-switch-stroke-color: $text-color-light !default;
+$input-switch-fill-color: $primary-color !default;
+$input-switch-border-width: .0625em !default;
+$input-switch-border-color: $background-color !default;
+$input-switch-focus-color: $primary-color !default;
+$input-switch-base-size: 1em !default;
+$input-toggle-bg-color: $background-color !default;
+$input-toggle-border-color: $border-color !default;
+$input-toggle-active-color: $primary-color !default;
+$input-toggle-transition-time: $transition-time !default;

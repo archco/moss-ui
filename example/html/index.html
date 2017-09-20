@@ -51,14 +51,22 @@
       </section>
       <section class="pad">
         <div class="group">
-          <input-radio class="font-small" name="test" value="small">small</input-radio>
-          <input-radio name="test" value="medium">medium</input-radio>
-          <input-radio class="font-large" name="test" value="large">large</input-radio>
+          <input-check class="font-small" name="is-small">small</input-check>
+          <input-check name="is-normal">normal</input-check>
+          <input-check class="font-large" name="is-large">large</input-check>
         </div>
         <div class="group">
-          <input-check class="font-small" name="input-check" value="is-small">small</input-check>
-          <input-check name="input-check" value="is-medium" v-model="input">normal</input-check>
-          <input-check class="font-large" name="input-check" value="is-large">large</input-check>
+          <input-radio class="font-small" name="input-radio" value="small">small</input-radio>
+          <input-radio name="input-radio" value="medium">medium</input-radio>
+          <input-radio class="font-large" name="input-radio" value="large">large</input-radio>
+        </div>
+        <div class="group">
+          <input-check class="toggle" name="use-toggle">Toggle</input-check>
+          <input-check class="toggle" name="is-good">Good</input-check>
+        </div>
+        <div class="group">
+          <input-radio class="toggle" name="toggle-radio" value="male">Male</input-radio>
+          <input-radio class="toggle" name="toggle-radio" value="female">Female</input-radio>
         </div>
         <anchored-tag tag="h1" owned>Form</anchored-tag>
         <h3>Default Usage</h3>
