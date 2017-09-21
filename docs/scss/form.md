@@ -30,6 +30,20 @@
 </form>
 ```
 
+### Input with color-set
+> based on [Color-set](color-set.md)
+
+Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
+
+```html
+<input class="success" type="text">
+```
+**Related SCSS Variable**
+```scss
+// If this value set false, color inputs background-color set transparent.
+$input-color-set-bg-enable: true !default;
+```
+
 ### Input with icons
 
 #### Default

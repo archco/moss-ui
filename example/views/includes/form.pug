@@ -79,6 +79,26 @@ form(class='form-inline')
     input(type='text' placeholder='text')
     input(type='date')
 
+h3 Input with Color-set
+div.row
+  div.col-md.group
+    input(type='text' placeholder='default')
+  div.col-md.group
+    input.success(type='text' placeholder='success')
+  div.col-md.group
+    input.warning(type='text' placeholder='warning')
+  div.col-md.group
+    input.danger(type='text' placeholder='danger')
+
+div.input.inline.with-icon-right
+  input.danger(type='text' placeholder='wrong..')
+  span.icon-right.color-danger
+    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+div.input.inline.with-icon-right
+  input.danger(type='text' placeholder='Disabled' disabled)
+  span.icon-right.color-default
+    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+
 h3 Input with Icons
 h4 Default
 div.input.with-icon

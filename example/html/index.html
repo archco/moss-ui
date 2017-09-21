@@ -68,6 +68,151 @@
           <input-radio class="toggle" name="toggle-radio" value="male">Male</input-radio>
           <input-radio class="toggle" name="toggle-radio" value="female">Female</input-radio>
         </div>
+        <anchored-tag tag="h1" owned>Form</anchored-tag>
+        <h3>Default Usage</h3>
+        <form>
+          <fieldset>
+            <legend>Form</legend>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="name">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password">
+            </div>
+            <div class="form-group">
+              <label for="email">email</label>
+              <input type="email" id="email" name="email" disabled placeholder="read only">
+              <input type="email" id="email" name="email" readonly placeholder="read only">
+            </div>
+            <div class="form-group">
+              <label>checkbox
+                <input type="checkbox">
+              </label>
+            </div>
+            <div class="form-group">
+              <label>
+                <input type="radio" name="gender" value="0" checked>male
+              </label><br>
+              <label>
+                <input type="radio" name="gender" value="1">female
+              </label>
+            </div>
+            <div class="form-group">
+              <input type="file">
+              <input type="range">
+              <input type="color">
+            </div>
+            <div class="form-group">
+              <select name="select">
+                <option value="0">one</option>
+                <option value="1">two</option>
+                <option value="2">three</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea>hello, world!</textarea>
+            </div>
+            <div class="form-group">
+              <button class="btn" type="submit">Submit</button>
+            </div>
+          </fieldset>
+        </form>
+        <h3>Form Inline</h3>
+        <form class="form-inline">
+          <fieldset>
+            <legend>Form inline</legend>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="name">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+            <label for="email">email</label>
+            <input type="email" id="email" name="email" disabled placeholder="read only">
+            <input type="email" id="email" name="email" readonly placeholder="read only">
+            <label>checkbox</label>
+            <input type="checkbox">
+            <label>
+              <input type="radio" name="gender" value="0" checked>male
+            </label>
+            <label>
+              <input type="radio" name="gender" value="1">female
+            </label>
+            <input type="file">
+            <input type="range">
+            <input type="color">
+            <select name="select">
+              <option value="0">one</option>
+              <option value="1">two</option>
+              <option value="2">three</option>
+            </select>
+            <textarea>hello, world!</textarea>
+            <button class="btn" type="submit">Submit</button>
+          </fieldset>
+        </form>
+        <h3>Vertical Alignment</h3>
+        <form class="form-inline">
+          <fieldset>
+            <legend>Select</legend>
+            <select name="select">
+              <option value="1">option1</option>
+              <option value="2">option2</option>
+              <option value="3">option3</option>
+            </select>
+            <input type="text" placeholder="text">
+            <input type="date">
+          </fieldset>
+        </form>
+        <h3>Input with Color-set</h3>
+        <div class="row">
+          <div class="col-md group">
+            <input type="text" placeholder="default">
+          </div>
+          <div class="col-md group">
+            <input class="success" type="text" placeholder="success">
+          </div>
+          <div class="col-md group">
+            <input class="warning" type="text" placeholder="warning">
+          </div>
+          <div class="col-md group">
+            <input class="danger" type="text" placeholder="danger">
+          </div>
+        </div>
+        <div class="input inline with-icon-right">
+          <input class="danger" type="text" placeholder="wrong.."><span class="icon-right color-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span>
+        </div>
+        <div class="input inline with-icon-right">
+          <input class="danger" type="text" placeholder="Disabled" disabled><span class="icon-right color-default"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span>
+        </div>
+        <h3>Input with Icons</h3>
+        <h4>Default</h4>
+        <div class="input with-icon">
+          <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+        </div>
+        <h4>Icon positioning left or right or both</h4>
+        <div class="input with-icon-right group">
+          <input type="text" placeholder="Text me.."><span class="icon-right"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+        </div>
+        <div class="input with-icon-left group">
+          <input type="search" placeholder="Search.."><span class="icon-left"><i class="fa fa-search" aria-hidden="true"></i></span>
+        </div>
+        <div class="input with-icon-left with-icon-right group">
+          <input type="text" placeholder="Email.."><span class="icon-left"><i class="fa fa-envelope" aria-hidden="true"></i></span><span class="icon-right"><i class="fa fa-check" aria-hidden="true"></i></span>
+        </div>
+        <h4>Inline input</h4>
+        <div class="input inline with-icon-left with-icon-right">
+          <input class="inline" type="text" placeholder="Email.."><span class="icon-left"><i class="fa fa-envelope" aria-hidden="true"></i></span><span class="icon-right color-success"><i class="fa fa-check" aria-hidden="true"></i></span>
+        </div>
+        <h4>Input sizes</h4>
+        <div class="input inline with-icon font-small">
+          <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+        </div>
+        <div class="input inline with-icon">
+          <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+        </div>
+        <div class="input inline with-icon font-large">
+          <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+        </div>
       </section>
       <footer class="footer">
         <div class="container">
