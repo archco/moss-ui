@@ -56,9 +56,20 @@ textarea {
   border: $input-border;
   border-radius: $input-radius;
 
+  @each $name, $color in $color-set {
+    &.#{$name} {
+      @if $input-color-set-bg-enable {
+        background-color: rgba($color, .1);
+      }
+
+      border-color: $color;
+      outline-color: $color;
+    }
+  }
+
   &[disabled],
   &[readonly] {
-    background-color: $input-bg-disabled;
+    background-color: $input-disabled-bg-color;
   }
 }
 
@@ -70,12 +81,8 @@ input[type="text"] {
 }
 
 textarea {
-  // default height.
-  height: 12em;
-
-  &.inline {
-    height: auto;
-  }
+  height: 12em; // default height.
+  &.inline { height: auto; }
 }
 
 input[type="submit"],
