@@ -22,6 +22,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /*
   v-clipboard.{modifiers}:{arg}="value"
+
   modifiers: copy or cut.
   arg: event name when success.
   value: String | Object.

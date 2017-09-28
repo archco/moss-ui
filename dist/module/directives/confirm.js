@@ -3,6 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+/*
+  v-confirm:{arg}="'{value}'"
+
+  arg: event type.
+  value: {String} confirm message. default value is 'Are you confirm?'.
+ */
 exports.default = {
   name: 'confirm',
   bind: function bind(el, binding) {

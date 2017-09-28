@@ -10,6 +10,14 @@ var _util2 = _interopRequireDefault(_util);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/*
+  v-activator.{modifiers}="'{value}'"
+
+  modifiers:
+    self: If this given, active class into self element, not parentNode.
+    this: If this given, activator on own element, not childNodes.
+  value: {String} selector. default value is 'a'.
+ */
 exports.default = {
   name: 'activator',
   inserted: function inserted(el, binding) {

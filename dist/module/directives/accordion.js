@@ -3,6 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+/*
+  v-collapse:{arg}.{modifiers}="'{value}'"
+
+  modifiers: [none = toggle] | 'show' | 'hide'
+  arg: collapse id.
+  value: {String} accordion group name.
+ */
 exports.default = {
   name: 'accordion',
 
