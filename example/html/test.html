@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue Directives</title>
+    <title>Moss-UI</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../dist/css/style.css">
     <style>
@@ -40,43 +40,47 @@
           </nav-item>
         </navbar-nav>
       </navbar>
-      <div class="row">
-        <aside class="col-md-2 hide-only-mobile">
-          <ul class="list fixed">
-            <li is="anchored-tag" tag="li">v-focus</li>
-            <li is="anchored-tag" tag="li">v-trigger</li>
-            <li is="anchored-tag" tag="li">v-modal</li>
-            <li is="anchored-tag" tag="li">v-clipboard</li>
-          </ul>
-        </aside>
-        <section class="col-md-10">
-          <anchored-tag tag="h2" owned>v-focus</anchored-tag>
-          <input type="text" placeholder="focused" v-focus>
-          <anchored-tag tag="h2" owned>v-trigger</anchored-tag>
-          <button class="btn" v-trigger:toast-show="['toast-show is triggered.']">TRIGGER</button>
-          <anchored-tag tag="h2" owned>v-modal</anchored-tag>
-          <button class="btn" v-modal:v-modal-test>Trigger</button>
-          <modal name="v-modal-test" title="Directive Test">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <div slot="actions">
-              <button class="btn default" v-modal:v-modal-test.close>CANCEL</button>
-              <button class="btn success" v-modal:v-modal-test v-trigger:toast-show="['Okay!']">OK</button>
-            </div>
-          </modal>
-          <anchored-tag tag="h2" owned>v-clipboard</anchored-tag>
-          <h4>Copy text</h4>
-          <button class="btn" v-clipboard="'Hello, World!'">Copy</button>
-          <h4>Cut from input</h4>
-          <input id="input-target" value="input text">
-          <button class="btn" v-clipboard.cut="{ target: '#input-target' }">Cut</button>
-          <h4>Copy from element</h4>
-          <div class="pad bg-color-secondary" id="element-target">
-            <h3>Title</h3>
+      <section class="pad">
+        <anchored-tag tag="h1" owned>Scrollspy</anchored-tag>
+        <ul class="scrollspy-test list" id="scrollspy-test" v-scrollspy>
+          <li><a href="#scroll-example3">Example 3</a></li>
+          <li><a href="#scroll-example2">Example 2</a></li>
+          <li><a href="#scroll-example1">Example 1</a></li>
+          <li><a href="index.html">to index</a></li>
+        </ul>
+        <div class="pad bg-color-primary" style="height:450px;">
+          <h2 id="scroll-example1">Example 1</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="pad bg-color-secondary" style="height:450px;">
+          <h2 id="scroll-example2">Example 2</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="pad bg-color-dark" style="height:450px;">
+          <h2 id="scroll-example3">Example 3</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <ul class="scrollspy-test list-horizontal" v-scrollspy="{baseElement: '#scrollspy-test2'}">
+          <li><a href="#scroll-example4">Example 4</a></li>
+          <li><a href="#scroll-example5">Example 5</a></li>
+          <li><a href="#scroll-example6">Example 6</a></li>
+          <li><a href="index.html">to index</a></li>
+        </ul>
+        <div id="scrollspy-test2" style="position:relative;height:10em;overflow:auto;">
+          <div class="pad bg-color-primary" style="height:450px;">
+            <h2 id="scroll-example4">Example 4</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
-          <button class="btn" v-clipboard="{ target: '#element-target' }">Copy</button>
-        </section>
-      </div>
+          <div class="pad bg-color-secondary" style="height:450px;">
+            <h2 id="scroll-example5">Example 5</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="pad bg-color-dark" style="height:450px;">
+            <h2 id="scroll-example6">Example 6</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </div>
+      </section>
       <footer class="footer">
         <div class="container">
           <div class="row">

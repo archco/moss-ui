@@ -93,8 +93,8 @@ class Util {
    *
    * @return {Number}
    */
-  static getScrollTop() {
-    return window.scrollY || window.pageYOffset;
+  static getScrollTop(elm = null) {
+    return elm ? elm.scrollTop : window.pageYOffset;
   }
 
   /**
@@ -102,8 +102,27 @@ class Util {
    *
    * @return {Number}
    */
-  static getScrollBottom() {
-    return this.getDocumentBottom() - (this.getScrollTop() + window.innerHeight);
+  static getScrollBottom(elm = null) {
+    return this.getMaxScroll(elm) - this.getScrollTop(elm);
+  }
+
+  static getScrollHeight(elm = null) {
+    return elm
+      ? elm.scrollHeight
+      : Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight
+      );
+  }
+
+  static getViewHeight(elm = null) {
+    return elm
+      ? elm.getBoundingClientRect().height
+      : window.innerHeight;
+  }
+
+  static getMaxScroll(elm = null) {
+    return this.getScrollHeight(elm) - this.getViewHeight(elm);
   }
 
   /**
@@ -121,7 +140,7 @@ class Util {
    * @return {Number}
    */
   static getDocumentBottom() {
-    return document.documentElement.scrollHeight;
+    return this.getScrollHeight();
   }
 }
 
