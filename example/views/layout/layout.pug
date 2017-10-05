@@ -19,17 +19,6 @@ html
       title "Default title"
     link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
     link(rel="stylesheet" href="../../dist/css/style.css")
-    style.
-      #scrollspy-test {
-        position: fixed;
-        top: 120px;
-        right: 3em;
-        z-index: 12;
-        background-color: #fff;
-        border-radius: 4px;
-        padding: 4px;
-      }
-      .scrollspy-test li.active a { color: #00a550; }
   body
     div(id='app')
       header(class='bg-color-primary pad flex-container-center' style="height:100px;")
@@ -72,9 +61,9 @@ html
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
     script(src='../../dist/js/script.js')
     script(src='./example.js')
-    script
-      |var year = new Date().getFullYear();
-      |document.querySelector('.footer-copyright').innerHTML = 'copyright \&copy; ' + year + ' MOSS-UI all rights reserved.';
-      |document.querySelector('#project-name').innerHTML = 'MOSS-UI ' + Moss.version;
+    script.
+      var year = new Date().getFullYear();
+      document.querySelector('.footer-copyright').innerHTML = 'copyright \&copy; ' + year + ' MOSS-UI all rights reserved.';
+      document.querySelector('#project-name').innerHTML = 'MOSS-UI ' + Moss.version;
 
     block script
