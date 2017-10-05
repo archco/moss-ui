@@ -34,10 +34,11 @@ export default class Scrollspy {
   getDefaultOptions() {
     return {
       linkSelector: 'a',
-      scrollElement: 'body',
+      scrollElement: 'body', // 'body' | element | selector
+      activeTarget: 'parent', // 'parent' | 'self' | selector
       activeClass: 'active',
-      activeTarget: 'parent',
       offset: 24,
+      onActivate: null,
     };
   }
 
@@ -94,8 +95,6 @@ export default class Scrollspy {
     const scrollHeight = this._getScrollHeight();
     const maxScroll = this._getMaxScroll() + this.options.offset;
 
-    console.log(`t: ${scrollTop}, h: ${scrollHeight}, m: ${maxScroll}`);
-
     if (this._scrollHeight !== scrollHeight) this.refresh();
 
     // If scrolled max, then activate last items link.
@@ -122,7 +121,6 @@ export default class Scrollspy {
         && scrollTop >= item.offsetTop
         && (typeof nextItem === 'undefined' || scrollTop < nextItem.offsetTop)
       ) {
-        console.log('active: ', this);
         this._activate(item);
       }
     });
@@ -135,6 +133,9 @@ export default class Scrollspy {
     let activeTarget = this._getActiveTarget(item.link);
     this._currentActive = item;
     activeTarget.classList.add(this.options.activeClass);
+    if (typeof this.options.onActivate === 'function') {
+      this.options.onActivate(item);
+    }
   }
 
   _clear() {
@@ -160,7 +161,6 @@ export default class Scrollspy {
 
     do {
       val += elm[offset];
-      console.log(elm, val);
       elm = elm.offsetParent;
     } while (elm && elm !== this._scrollElement);
 

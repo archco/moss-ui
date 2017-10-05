@@ -4,20 +4,25 @@ import Scrollspy from '../lib/classes/scrollspy';
   v-scrollspy="{ value }"
 
   value: {
-    selector: 'a',
-    activeClass: 'active',
+    linkSelector: 'a',
+    scrollElement: 'body', // 'body' | element | selector
     activeTarget: 'parent', // 'parent' | 'self' | selector
+    activeClass: 'active',
     offset: 24,
-    baseElement: 'body', // 'body' | Element | Selector
+    onActivate: null,
   }
  */
 export default {
   name: 'scrollspy',
 
   inserted(el, binding, vnode) {
-    let scrollspy = new Scrollspy(el, binding.value);
-    console.log(scrollspy);
+    let onActivate = (item) => {
+      vnode.context.$root.$emit('scrollspy-activate', item);
+    };
 
-    // TODO: event register to vue. onChange, emitRefresh..
+    let options = Object.assign({}, { onActivate }, binding.value);
+    let scrollspy = new Scrollspy(el, options);
+
+    vnode.context.$root.$on('scrollspy-refresh', () => scrollspy.refresh());
   },
 };
