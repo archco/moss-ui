@@ -12,20 +12,6 @@ Activator is provide convenience for "active" class into child-node item. It's c
   - this: If this given, activator on own element, not childNodes.
 - value: {String} selector. default value is 'a'.
 
-## Confirm
-Provide the function to confirm when "submission" is the case.
-
-- Syntax
-```html
-<form action="#" v-confirm:{arg}="'{value}'"></form>
-```
-- arg: event type.
-- value: {String} confirm message. default value is 'Are you confirm?'.
-
-#### Caveat
-- When confirm is canceled, `event.preventDefault()` is called, so if there is a default action such as submit, it will stop as expected, but it will have no effect on click.
-- It is the event listener of the capturing phase, but it is pushed to the priority when the event listener is given with attr such as `onsubmit`.
-
 ## Clipboard
 Provide convenience for copy to clipboard. It is based on [clipboard.js](https://github.com/zenorocha/clipboard.js)
 
@@ -48,12 +34,62 @@ const value = {
 }
 ```
 
+## Confirm
+Provide the function to confirm when "submission" is the case.
+
+- Syntax
+```html
+<form action="#" v-confirm:{arg}="'{value}'"></form>
+```
+- arg: event type.
+- value: {String} confirm message. default value is 'Are you confirm?'.
+
+#### Caveat
+- When confirm is canceled, `event.preventDefault()` is called, so if there is a default action such as submit, it will stop as expected, but it will have no effect on click.
+- It is the event listener of the capturing phase, but it is pushed to the priority when the event listener is given with attr such as `onsubmit`.
+
 ## Focus
 Auto focus on element.
 
 - Syntax
 ```html
 <input type="text" v-focus>
+```
+
+## Scrollspy
+Automatically activate HTML anchor based on scroll position.
+- Syntax
+```html
+<nav v-scrollspy="{value}">...</nav>
+```
+- value: {Object} options.
+```javascript
+value: {
+  linkSelector: 'a',
+  scrollElement: 'body', // 'body' | element | selector
+  activeTarget: 'parent', // 'parent' | 'self' | selector
+  activeClass: 'active',
+  offset: 24,
+  onActivate: null, // a callback function. invoke when activate.
+}
+```
+
+#### Events
+- On activate: `scrollspy-activate`
+```javascript
+vm.$on('scrollspy-activate', item => {
+  /*
+    item = {
+      elm: {Element} target element.
+      link: {Element} link element.
+      offsetTop: {Number} the distance of the current element relative to the top.
+    }
+   */
+});
+```
+- Emit refresh: `scrollspy-refresh`
+```javascript
+vm.$emit('scrollspy-refresh');
 ```
 
 ## Set Value

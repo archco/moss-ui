@@ -42,6 +42,15 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 
 #### Vue Directives
 - [Directives](js/directives.md)
+  - [Activator](js/directives.md#activator)
+  - [Clipboard](js/directives.md#clipboard)
+  - [Confirm](js/directives.md#confirm)
+  - [Focus](js/directives.md#focus)
+  - [Scrollspy](js/directives.md#scrollspy)
+  - [Set value](js/directives.md#set-value)
+  - [Tooltip](js/directives.md#tooltip)
+  - [Trigger](js/directives.md#trigger)
+  - [Wrap](js/directives.md#wrap)
 
 #### JS Libraries
 - [Color](js/color.md)
