@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Implement input with icons. #37
 - Add a new components: "input-check" and "input-radio". #36
+- Add a new vue directive: Scrollspy #29
 
 ### Fixed
 - Fix vue components that need hide during loading. #38
