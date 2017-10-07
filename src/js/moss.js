@@ -4,9 +4,9 @@
  * @link https://github.com/archco/moss-ui
  * @license MIT
  */
+import ElementUtil from 'element-util';
 import Color from './lib/color';
 import Util from './lib/util';
-import ElementUtil from './lib/element-util';
 import components from './components/_index';
 import directives from './directives/_index';
 import { version } from '../../package.json';

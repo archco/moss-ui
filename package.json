@@ -30,6 +30,7 @@
   "license": "MIT",
   "dependencies": {
     "clipboard": "^1.7.1",
+    "element-util": "^1.0.1",
     "normalize.css": "^7.0.0",
     "scss-palette": "^0.3.3"
   },

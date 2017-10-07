@@ -76,11 +76,11 @@ function getContrast() {
   });
 
   eu.addListener('#btn-sort-list', 'click', function () {
-    eu.sortElements('#sort-list', 'li');
+    eu.sort('#sort-list', { items: 'li' });
   });
 
   // sort table
   if (eu.getElement('#sort-table-target')) {
-    eu.sortTable('#sort-table-target');
+    eu.sort('#sort-table-target');
   }
 })();
