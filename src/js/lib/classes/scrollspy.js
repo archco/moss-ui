@@ -1,5 +1,5 @@
 import Util from '../util';
-import ElementUtil from '../element-util';
+import ElementUtil from 'element-util';
 
 // TODO: add callback. onChange.
 export default class Scrollspy {

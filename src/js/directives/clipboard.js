@@ -3,7 +3,7 @@
   @link https://github.com/zenorocha/clipboard.js
  */
 import Clipboard from 'clipboard';
-import ElementUtil from '../lib/element-util';
+import ElementUtil from 'element-util';
 
 /*
   v-clipboard.{modifiers}:{arg}="value"

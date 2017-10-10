@@ -1,4 +1,4 @@
-import ElementUtil from '../lib/element-util';
+import ElementUtil from 'element-util';
 
 /*
   v-wrap:{arg}.{modifiers}="'{value}'"
