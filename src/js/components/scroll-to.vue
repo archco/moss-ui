@@ -19,6 +19,7 @@
 
 <script>
 import Util from '../lib/util';
+import ElementMeasurer from 'element-measurer';
 
 export default {
   name: 'scroll-to',
@@ -56,6 +57,7 @@ export default {
     return {
       showToTop: true,
       showToBottom: true,
+      docSize: new ElementMeasurer(document),
     };
   },
   methods: {
@@ -66,8 +68,9 @@ export default {
       Util.scrollIt(Util.getDocumentBottom(), this.duration, this.easing);
     },
     onScroll() {
-      this.showToTop = Util.getScrollTop() >= this.offset;
-      this.showToBottom = Util.getScrollBottom() >= this.offset;
+      this.showToTop = this.docSize.scrollTop >= this.offset;
+      this.showToBottom = (this.docSize.maxScrollTop - this.docSize.scrollTop)
+        >= this.offset;
     }
   },
   mounted() {

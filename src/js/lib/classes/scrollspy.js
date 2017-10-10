@@ -1,7 +1,6 @@
-import Util from '../util';
 import ElementUtil from 'element-util';
+import ElementMeasurer from 'element-measurer';
 
-// TODO: add callback. onChange.
 export default class Scrollspy {
   /**
    * constructor
@@ -15,9 +14,9 @@ export default class Scrollspy {
     this._items = [];
     this._currentActive = null;
     this._scrollHeight = 0;
-    this._scrollElement = this.options.scrollElement === 'body'
-      ? null
-      : ElementUtil.getElement(this.options.scrollElement);
+    this._scrollElement = ElementUtil.getElement(this.options.scrollElement);
+    this._scrollElmentSize = new ElementMeasurer(this._scrollElement);
+    this._isDocument = this._scrollElmentSize.isDocumentTarget();
 
     this.refresh();
     this.addListener();
@@ -48,7 +47,7 @@ export default class Scrollspy {
    * @return {void}
    */
   addListener() {
-    let base = this._scrollElement || window;
+    let base = this._isDocument ? window : this._scrollElement;
     base.addEventListener('scroll', this.process.bind(this));
 
     this._items.forEach(item => {
@@ -68,7 +67,7 @@ export default class Scrollspy {
       );
     let links = ElementUtil.nodeListToArray(linkNodes).filter(elm => elm.hash);
     this._items = [];
-    this._scrollHeight = this._getScrollHeight();
+    this._scrollHeight = this._scrollElmentSize.scrollHeight;
 
     links.forEach(link => {
       let elm = ElementUtil.getElement(link.hash);
@@ -91,9 +90,9 @@ export default class Scrollspy {
    * @return {void}
    */
   process() {
-    const scrollTop = this._getScrollTop() + this.options.offset;
-    const scrollHeight = this._getScrollHeight();
-    const maxScroll = this._getMaxScroll() + this.options.offset;
+    const scrollTop = this._scrollElmentSize.scrollTop + this.options.offset;
+    const scrollHeight = this._scrollElmentSize.scrollHeight;
+    const maxScroll = this._scrollElmentSize.maxScrollTop + this.options.offset;
 
     if (this._scrollHeight !== scrollHeight) this.refresh();
 
@@ -165,17 +164,5 @@ export default class Scrollspy {
     } while (elm && elm !== this._scrollElement);
 
     return val;
-  }
-
-  _getScrollTop() {
-    return Util.getScrollTop(this._scrollElement);
-  }
-
-  _getScrollHeight() {
-    return Util.getScrollHeight(this._scrollElement);
-  }
-
-  _getMaxScroll() {
-    return Util.getMaxScroll(this._scrollElement);
   }
 }
