@@ -65,7 +65,7 @@ export default {
       Util.scrollIt(0, this.duration, this.easing);
     },
     toBottom() {
-      Util.scrollIt(Util.getDocumentBottom(), this.duration, this.easing);
+      Util.scrollIt(this.docSize.maxScrollTop, this.duration, this.easing);
     },
     onScroll() {
       this.showToTop = this.docSize.scrollTop >= this.offset;

@@ -87,61 +87,6 @@ class Util {
   static isMobileSize(size = 800) {
     return window.innerWidth < size;
   }
-
-  /**
-   * getScrollTop
-   *
-   * @return {Number}
-   */
-  static getScrollTop(elm = null) {
-    return elm ? elm.scrollTop : window.pageYOffset;
-  }
-
-  /**
-   * getScrollBottom
-   *
-   * @return {Number}
-   */
-  static getScrollBottom(elm = null) {
-    return this.getMaxScroll(elm) - this.getScrollTop(elm);
-  }
-
-  static getScrollHeight(elm = null) {
-    return elm
-      ? elm.scrollHeight
-      : Math.max(
-        document.body.scrollHeight,
-        document.documentElement.scrollHeight
-      );
-  }
-
-  static getViewHeight(elm = null) {
-    return elm
-      ? elm.getBoundingClientRect().height
-      : window.innerHeight;
-  }
-
-  static getMaxScroll(elm = null) {
-    return this.getScrollHeight(elm) - this.getViewHeight(elm);
-  }
-
-  /**
-   * getDocumentTop
-   *
-   * @return {Number}
-   */
-  static getDocumentTop() {
-    return document.documentElement.offsetTop || 0;
-  }
-
-  /**
-   * getDocumentBottom
-   *
-   * @return {Number}
-   */
-  static getDocumentBottom() {
-    return this.getScrollHeight();
-  }
 }
 
 Object.assign(Util, {
