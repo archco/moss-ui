@@ -1,13 +1,16 @@
 # Navbar
-> sources:  
-[js/components/navbar](../../src/js/components/navbar.vue)  
-[js/components/navbar-brand](../../src/js/components/navbar-brand.vue)  
-[js/components/navbar-toggle](../../src/js/components/navbar-toggle.vue)  
-[js/components/navbar-nav](../../src/js/components/navbar-nav.vue)  
-[js/components/nav-item](../../src/js/components/nav-item.vue)
+
+> sources:
+> [js/components/navbar](../../src/js/components/navbar.vue)
+> [js/components/navbar-brand](../../src/js/components/navbar-brand.vue)
+> [js/components/navbar-toggle](../../src/js/components/navbar-toggle.vue)
+> [js/components/navbar-nav](../../src/js/components/navbar-nav.vue)
+> [js/components/nav-item](../../src/js/components/nav-item.vue)
 
 ## Usage
+
 ### Basic
+
 ```html
 <navbar>
   <navbar-brand href="/" type="text" slot="brand">MOSS</navbar-brand>
@@ -27,6 +30,7 @@
 ```
 
 ### Multiple navigations
+
 ```html
 <navbar align="between">
   <navbar-brand href="/" type="text" slot="brand">Brand</navbar-brand>
@@ -42,7 +46,9 @@
 ```
 
 ## Props
+
 ### navbar
+
 | name | type | description | default |
 | ---- | ---- | ----------- | ------- |
 | align | String | Alignment of nav-body(It is flex-items). | '' (flex-start) |
@@ -51,12 +57,14 @@
 **Note** Available alignment keywords: start, end, center, between and around.
 
 ### navbar-brand
+
 | name | type | description | default |
 | ---- | ---- | ----------- | ------- |
 | href | String | Link url. | '/' |
 | text | String | 'text' or 'image'. If set 'text', style of component is same as `nav-item`.  | 'text' |
 
 ### nav-item
+
 | name | type | description | default |
 | ---- | ---- | ----------- | ------- |
 | href | String | Link url. | '' |

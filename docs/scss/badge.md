@@ -1,30 +1,39 @@
 # Badge
+
 > source:  [scss/parts/badge](../../src/scss/parts/_badge.scss)
 
 ## Usage
-#### Default Badge
+
+### Default Badge
+
 ```html
 <h1>Heading <span class="badge">New</span></h1>
 ```
-#### Badge with Color-set
+
+### Badge with Color-set
+
 > based on [Color-set](color-set.md)
 
 Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
+
 ```html
 <p>text and badge <span class="badge primary">Primary</span></p>
 ```
 
-#### Use badge as link
+### Use badge as link
+
 ```html
 <p>text and badge <a class="badge success" href="#">Link</a></p>
 ```
 
-#### Rounded Badge
+### Rounded Badge
+
 ```html
 <a href="#">New Blog <span class="badge rounded success">4</span></a>
 ```
 
-#### Badge with Stacked Font Awesome Icon
+### Badge with Stacked Font Awesome Icon
+
 > Link: [http://fontawesome.io/examples/#stacked](http://fontawesome.io/examples/#stacked)
 
 ```html

@@ -3,7 +3,9 @@
 Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 
 ## Index
-#### SCSS Parts
+
+### SCSS Parts
+
 - [Badge](scss/badge.md)
 - [Button](scss/button.md)
 - [Card](scss/card.md)
@@ -22,7 +24,8 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [Scaffolding](scss/scaffolding.md)
 - [Tooltip](scss/tooltip.md)
 
-#### Vue Components
+### Vue Components
+
 - [chip](js/chip.md)
 - [close-button](js/close-button.md)
 - [collapse](js/collapse.md)
@@ -40,7 +43,8 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [toast](js/toast.md)
 - [tree-item](js/tree-item.md)
 
-#### Vue Directives
+### Vue Directives
+
 - [Directives](js/directives.md)
   - [Activator](js/directives.md#activator)
   - [Clipboard](js/directives.md#clipboard)
@@ -52,7 +56,9 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
   - [Trigger](js/directives.md#trigger)
   - [Wrap](js/directives.md#wrap)
 
-#### JS Libraries
+### JS Libraries
+
 - [Color](js/color.md)
-- [ElementUtil](js/element-util.md)
+- [ElementMeasurer](https://github.com/archco/element-measurer#api)
+- [ElementUtil](https://github.com/archco/element-util/tree/master/docs)
 - [Util](js/util.md)

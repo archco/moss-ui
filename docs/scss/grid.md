@@ -1,4 +1,5 @@
 # Grid
+
 > source: [scss/parts/grid](../../src/scss/parts/_grid.scss)
 
 ```scss
@@ -15,7 +16,9 @@ $grid-gutter-width: 1.5rem !default;
 ```
 
 ## Usage
-#### Responsive
+
+### Responsive
+
 ```html
 <div class="row">
   <div class="col">default: all devices.</div>
@@ -34,7 +37,8 @@ $grid-gutter-width: 1.5rem !default;
 </div>
 ```
 
-#### mixed
+### mixed
+
 ```html
 <div class="row">
   <div class="col-lg-2 col-md-4 col-sm-6">responsive</div>
@@ -42,7 +46,8 @@ $grid-gutter-width: 1.5rem !default;
 </div>
 ```
 
-#### Equal width
+### Equal width
+
 ```html
 <div class="container">
   <div class="row">
@@ -53,7 +58,8 @@ $grid-gutter-width: 1.5rem !default;
 </div>
 ```
 
-#### Setting one column width
+### Setting one column width
+
 ```html
 <div class="row">
   <div class="col-sm">1 of 3</div>
@@ -62,7 +68,8 @@ $grid-gutter-width: 1.5rem !default;
 </div>
 ```
 
-#### Variable width by content
+### Variable width by content
+
 ```html
 <div class="row">
   <div class="col-md">col</div>
@@ -71,7 +78,8 @@ $grid-gutter-width: 1.5rem !default;
 </div>
 ```
 
-#### No gutters
+### No gutters
+
 ```html
 <div class="row no-gutters">
   <div class="col">no-gutter column</div>
@@ -79,7 +87,8 @@ $grid-gutter-width: 1.5rem !default;
 </div>
 ```
 
-#### Offsetting columns
+### Offsetting columns
+
 ```html
 <div class="row">
   <div class="col-md-4">col-md-4</div>
@@ -87,7 +96,8 @@ $grid-gutter-width: 1.5rem !default;
 </div>
 ```
 
-#### Push and pull
+### Push and pull
+
 ```html
 <div class="row">
   <div class="col-8 push-4">first but pushed</div>

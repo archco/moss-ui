@@ -1,20 +1,25 @@
 # Chip
+
 > source: [js/components/chip](../../src/js/components/chip.vue)
 
 ## Usage
-#### Tag chip
+
+### Tag chip
+
 ```html
 <chip title="tag-sample">TagSample</chip>
 <chip closeable>TagSample</chip>
 ```
 
-#### Contact chip
+### Contact chip
+
 ```html
 <chip img-src="avatar.png" img-alt="avatar image">John Doe</chip>
 <chip img-src="avatar.png" img-alt="avatar image" closeable>John Doe</chip>
 ```
 
-#### Link chip
+### Link chip
+
 ```html
 <chip tag="a" href="#" closeable>Chip</chip>
 <chip
@@ -27,12 +32,14 @@
 </chip>
 ```
 
-#### Colored chip
+### Colored chip
+
 ```html
 <chip color="#69c">Colored</chip>
 ```
 
 ## Props
+
 | name | type | description | default |
 | ---- | ---- | ----------- | ------- |
 | tag | String | tag name. | 'span' |

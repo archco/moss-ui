@@ -1,8 +1,11 @@
 # Tree Item
+
 > source: [js/components/tree-item](../../src/js/components/tree-item.vue)
 
 ## Usage
-#### Data Structure
+
+### Data Structure
+
 ```javascript
 const treeData = {
   name: 'first-level',
@@ -20,7 +23,8 @@ const treeData = {
 };
 ```
 
-#### Basic
+### Basic
+
 ```html
 <ul class="tree-list">
   <li is="tree-item" :model="treeData"></li>
@@ -32,7 +36,8 @@ const treeData = {
 </ul>
 ```
 
-#### Model name as HTML
+### Model name as HTML
+
 ```javascript
 // Data Structure.
 const treeData2 = {
@@ -52,7 +57,8 @@ const treeData2 = {
 };
 ```
 
-#### Set Icon
+### Set Icon
+
 ```html
 <ul class="tree-list">
   <li is='tree-item' :model='treeData' opened-html='[-] ' closed-html='[+] '></li>

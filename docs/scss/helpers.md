@@ -1,12 +1,15 @@
 # Helpers
+
 > source:  [scss/helpers/index](../../src/scss/helpers/_index.scss)
 
 ## More helper classes
+
 - [Display](display.md)
 - [Flex](flex.md)
 - [Text](text.md)
 
 ### Toggling content
+
 ```html
 <p class="display-show">paragraph</p>
 <p class="display-hide">paragraph</p>
@@ -14,6 +17,7 @@
 ```
 
 ### Centering
+
 ```html
 <div class="flex-center-container">
     <div>vertically centering.</div>
@@ -21,6 +25,7 @@
 ```
 
 ### Float
+
 ```html
 <div class="float-clear">
   <div class="float-right box-line">this is right.</div>
@@ -29,17 +34,21 @@
 ```
 
 ### Position
+
 ```html
 <!-- fixed top -->
 <div class="fixed-top">It's fixed on top.</div>
 <!-- sticky top -->
 <div class="sticky-top">It'll be sticky on top.</div>
 ```
+
 **Note:** `.sticky-top` isn't supported in IE and Edge. it will be as static(initial value).
 
 ### Sizing
+
 Directions: width is `w` and height is `h`.  
 Percentages: 25, 50, 75, 100
+
 ```html
 <div class="w-25">Width 25%</div>
 <div class="h-75">Height 75%</div>
@@ -48,6 +57,7 @@ Percentages: 25, 50, 75, 100
 ```
 
 ### Color
+
 > based on [Color-set](color-set.md)
 
 Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
@@ -62,18 +72,21 @@ Available color keywords: default, primary, secondary, info, success, warning, d
 ```
 
 ### Caret
+
 ```html
 <span class="caret"></span>
 <span class="caret up"></span>
 ```
 
 ### Arrow
+
 ```html
 <span class="arrow"></span>
 <span class="arrow right"></span>
 ```
 
 ### Box shadow
+
 ```html
 <div class="shadow"></div>
 <div class="shadow-near"></div>

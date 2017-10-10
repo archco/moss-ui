@@ -1,7 +1,9 @@
 # Pagination
+
 > source: [scss/parts/pagination](../../src/scss/parts/_pagination.scss)
 
-### Usage
+## Usage
+
 ```html
 <ul class="pagination">
   <li class="disabled"><span>Prev</span></li>

@@ -1,20 +1,25 @@
 # Toast
+
 > source: [js/components/toast](../../src/js/components/toast.vue)
 
 ## Usage
-#### in html
+
+### in html
+
 ```html
 <toast
   :duration="5000">
 </toast>
 ```
 
-#### in script
+### in script
+
 ```js
 window.Moss.toast('Toasted!');
 ```
 
 ## Props
+
 | name | type | description | default |
 | ---- | ---- | ----------- | ------- |
 | position | String | Available nine position. e.g) top-left, middle-center, bottom-right | 'bottom-center' |

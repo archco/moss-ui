@@ -1,9 +1,11 @@
 # Form
+
 > source: [scss/parts/form](../../src/scss/parts/_form.scss)
 
 ## Usage
 
 ### default (block)
+
 ```html
 <form>
   <fieldset>
@@ -24,6 +26,7 @@
 ```
 
 ### form-inline
+
 ```html
 <form class="form-inline">
   <!-- form contents -->
@@ -31,6 +34,7 @@
 ```
 
 ### Input with color-set
+
 > based on [Color-set](color-set.md)
 
 Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
@@ -38,7 +42,9 @@ Available color keywords: default, primary, secondary, info, success, warning, d
 ```html
 <input class="success" type="text">
 ```
-**Related SCSS Variable**
+
+#### Related SCSS Variable
+
 ```scss
 // If this value set false, color inputs background-color set transparent.
 $input-color-set-bg-enable: true !default;
@@ -46,7 +52,8 @@ $input-color-set-bg-enable: true !default;
 
 ### Input with icons
 
-#### Default
+### Default
+
 ```html
 <!-- block  -->
 <div class="input with-icon">
@@ -65,7 +72,8 @@ $input-color-set-bg-enable: true !default;
 </div>
 ```
 
-#### Icon positioning
+### Icon positioning
+
 ```html
 <!-- Right -->
 <div class="input with-icon-right">

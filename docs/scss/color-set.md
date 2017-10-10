@@ -1,4 +1,5 @@
 # Color-set
+
 > source: [scss/parts/color-set](../../src/scss/parts/_color-set.scss)
 
 Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
@@ -21,6 +22,7 @@ $color-set: (
 ```
 
 ## Components of uses this color-set
+
 - [Badge](badge.md)
 - [Button](button.md)
 - [Form#input-with-color-set](form.md#input-with-color-set)

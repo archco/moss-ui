@@ -1,7 +1,9 @@
 # Simple CRUD
+
 > source: [js/components/simple-crud](../../src/js/components/simple-crud.vue)
 
 ## Usage
+
 ```html
 <ul class="simple-crud-list">
   <li is="simple-crud">
@@ -39,11 +41,13 @@
 ```
 
 ## Props
+
 | name | type | description | default |
 | ---- | ---- | ----------- | ------- |
 | view | String | Default view state. read or update or delete. | 'read' |
 
 ## View toggle with dataset
+
 ```html
 <!-- To read view -->
 <button data-toggle="read">Read</button>

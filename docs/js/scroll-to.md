@@ -1,8 +1,11 @@
 # Scroll to
+
 > source: [js/components/scroll-to](../../src/js/components/scroll-to.vue)
 
 ## Usage
-#### Basic
+
+### Basic
+
 ```html
 <scroll-to
   :duration="800"
@@ -11,6 +14,7 @@
 ```
 
 ## Props
+
 | name | type | description | default |
 | ---- | ---- | ----------- | ------- |
 | duration | Number | Duration time of scroll. (ms) | 600 |
@@ -21,8 +25,9 @@
 | disable-top | Boolean | Disable top button | false |
 | disable-bottom | Boolean | Disable bottom button | false |
 
-#### Note
-> [scroll-it.js](../../src/js/lib/utils/scroll-it.js)  
-[easing types](https://docs111.mootools.net/Effects/Fx-Transitions)
+### Note
+
+> [scroll-it.js](../../src/js/lib/utils/scroll-it.js)
+> [easing types](https://docs111.mootools.net/Effects/Fx-Transitions)
 
 easing function names: `linear` `easeInQuad` `easeOutQuad` `easeInOutQuad` `easeInCubic` `easeOutCubic` `easeInOutCubic` `easeInQuart` `easeOutQuart` `easeInOutQuart` `easeInQuint` `easeOutQuint` `easeInOutQuint`

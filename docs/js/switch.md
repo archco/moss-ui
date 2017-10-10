@@ -1,9 +1,11 @@
 # Switch
-> sources:  
-[js/components/input-check](../../src/js/components/input-check.vue)  
-[js/components/input-radio](../../src/js/components/input-radio.vue)
+
+> sources:
+> [js/components/input-check](../../src/js/components/input-check.vue)
+> [js/components/input-radio](../../src/js/components/input-radio.vue)
 
 ## Usage
+
 ```html
 <!-- input-check -->
 <input-check name="is-small" v-model="isSmall">small</input-check>
@@ -17,7 +19,9 @@
 ```
 
 ## Props
-#### input-check
+
+### input-check
+
 | name | type | description | default |
 | ---- | ---- | ----------- | ------- |
 | id | String | The id for `<input>`  | automatically (e.g. "input-check-id-1") |
@@ -27,7 +31,8 @@
 | checked | Boolean | checked attribute for `<input>` | false |
 | required | Boolean | required attribute for `<input>` | false |
 
-#### input-radio
+### input-radio
+
 | name | type | description | default |
 | ---- | ---- | ----------- | ------- |
 | id | String | The id for `<input>`  | automatically (e.g. "input-radio-id-1") |

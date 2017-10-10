@@ -1,47 +1,58 @@
 # Button
+
 > source: [scss/parts/button](../../src/scss/parts/_button.scss)
 
-#### Option Keywords
+### Option Keywords
+
 - based on [Color-set](color-set.md)  
   Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
 - style: `full-width`
 - disabled: `disabled`
 
 ## Usage
-#### btn
+
+### btn
+
 ```html
 <button class="btn danger">Danger</button>
 <a class="btn info" href="#">link button</a>
 ```
 
-#### btn-flat
+### btn-flat
+
 ```html
 <button class="btn-flat success">Success</button>
 <a class="btn-flat warning" href="#">link button</a>
 ```
 
-#### btn-icon
+### btn-icon
+
 ```html
 <button class="btn-icon warning">
   <i class="fa fa-exclamation" aria-hidden="true"></i>
 </button>
 ```
 
-#### disabled
+### disabled
+
 ```html
 <button class="btn" disabled>Button</button>
 ```
 
-#### Button is loading
+### Button is loading
+
 This uses [loader](loader.md)
+
 ```html
 <button class="btn is-loading">loading</button>
 ```
 
-#### Button Group
+### Button Group
+
 Available content buttons for button-group: `.btn`, `.btn-flat`, `dropdown`
 
-##### Horizontal button group (default)
+#### Horizontal button group (default)
+
 ```html
 <div class="btn-group">
   <button class="btn">Left</button>
@@ -50,7 +61,8 @@ Available content buttons for button-group: `.btn`, `.btn-flat`, `dropdown`
 </div>
 ```
 
-##### Vertical button group
+#### Vertical button group
+
 ```html
 <div class="btn-group-vertical">
   <button class="btn">Top</button>
@@ -59,9 +71,10 @@ Available content buttons for button-group: `.btn`, `.btn-flat`, `dropdown`
 </div>
 ```
 
-
 ## Notes
-#### Button text color
+
+### Button text color
+
 > [variable.scss](../../src/scss/_variable.scss#L169)
 
 ```scss
