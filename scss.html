@@ -11,16 +11,19 @@
   <body>
     <div id="app">
       <header class="bg-color-primary pad flex-container-center" style="height:100px;">
-        <h1 id="project-name">MOSS-UI</h1>
+        <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI</a></h1>
       </header>
-      <navbar class="sticky-top shadow-near" align="end">
+      <navbar class="shadow-near" align="end">
         <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
         <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
           <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
           <nav-item href="vue.html" text="Vue"></nav-item>
           <nav-item>
             <dropdown toggle="toggle" align="right">
-              <button slot="button">Utilities</button><a href="scss-helpers.html">SCSS Helpers</a><a href="vue-directives.html">Vue Directieves</a><a href="js-libraries.html">JS Libraries</a>
+              <button slot="button">Utilities</button>
+              <dropdown-item href="scss-helpers.html">SCSS Helpers</dropdown-item>
+              <dropdown-item href="vue-directives.html">Vue Directieves</dropdown-item>
+              <dropdown-item href="js-libraries.html">JS Libraries</dropdown-item>
             </dropdown>
           </nav-item>
         </navbar-nav>
@@ -264,7 +267,10 @@ SOFTWARE.</code></pre>
             <div class="col-md-5">
               <div class="card large">
                 <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" alt="image"></div>
-                <div class="card-content"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>
+                <div class="card-content">
+                  <div>Title</div>
+                  <div class="help">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                </div>
               </div>
             </div>
           </div>
@@ -283,7 +289,7 @@ SOFTWARE.</code></pre>
                 <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg" alt="image">
                   <h3 class="card-title">card title</h3>
                 </div>
-                <div class="card-content"><span>card description it is test. card description it is test. card description it is test. card description it is test.</span></div>
+                <div class="card-content"><span>Card content</span></div>
               </div>
             </div>
           </div>
@@ -291,7 +297,10 @@ SOFTWARE.</code></pre>
             <div class="col-md-8">
               <div class="card-horizontal large">
                 <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg" alt="image"></div>
-                <div class="card-content"><span>Card content</span></div>
+                <div class="card-content">
+                  <div>Title</div>
+                  <div class="help">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                </div>
               </div>
             </div>
           </div>
@@ -357,7 +366,23 @@ SOFTWARE.</code></pre>
               </div>
             </div>
           </div>
+          <h3>Other Examples</h3>
+          <div class="card shadow-near" style="display:inline-flex;width:120px;height:260px;">
+            <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg"></div>
+            <div class="card-content" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
+              <div>Title</div>
+              <div class="text-truncate help">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+            </div>
+          </div>
+          <div class="card-horizontal bg-color-dark hoverable shadow-near" style="display:inline-flex;width:240px;height:140px;">
+            <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg"></div>
+            <div class="card-content">
+              <div>Title</div>
+              <div class="help">Description..</div>
+            </div>
+          </div>
           <anchored-tag tag="h1" owned>Form</anchored-tag>
+          <h3>Default Usage</h3>
           <form>
             <fieldset>
               <legend>Form</legend>
@@ -407,6 +432,7 @@ SOFTWARE.</code></pre>
               </div>
             </fieldset>
           </form>
+          <h3>Form Inline</h3>
           <form class="form-inline">
             <fieldset>
               <legend>Form inline</legend>
@@ -437,7 +463,7 @@ SOFTWARE.</code></pre>
               <button class="btn" type="submit">Submit</button>
             </fieldset>
           </form>
-          <hr>
+          <h3>Vertical Alignment</h3>
           <form class="form-inline">
             <fieldset>
               <legend>Select</legend>
@@ -450,6 +476,56 @@ SOFTWARE.</code></pre>
               <input type="date">
             </fieldset>
           </form>
+          <h3>Input with Color-set</h3>
+          <div class="row">
+            <div class="col-md group">
+              <input type="text" placeholder="default">
+            </div>
+            <div class="col-md group">
+              <input class="success" type="text" placeholder="success">
+            </div>
+            <div class="col-md group">
+              <input class="warning" type="text" placeholder="warning">
+            </div>
+            <div class="col-md group">
+              <input class="danger" type="text" placeholder="danger">
+            </div>
+          </div>
+          <div class="input inline with-icon-right">
+            <input class="danger" type="text" placeholder="wrong.."><span class="icon-right color-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span>
+          </div>
+          <div class="input inline with-icon-right">
+            <input class="danger" type="text" placeholder="Disabled" disabled><span class="icon-right color-default"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span>
+          </div>
+          <h3>Input with Icons</h3>
+          <h4>Default</h4>
+          <div class="input with-icon">
+            <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+          </div>
+          <h4>Icon positioning left or right or both</h4>
+          <div class="input with-icon-right group">
+            <input type="text" placeholder="Text me.."><span class="icon-right"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+          </div>
+          <div class="input with-icon-left group">
+            <input type="search" placeholder="Search.."><span class="icon-left"><i class="fa fa-search" aria-hidden="true"></i></span>
+          </div>
+          <div class="input with-icon-left with-icon-right group">
+            <input type="text" placeholder="Email.."><span class="icon-left"><i class="fa fa-envelope" aria-hidden="true"></i></span><span class="icon-right"><i class="fa fa-check" aria-hidden="true"></i></span>
+          </div>
+          <h4>Inline input</h4>
+          <div class="input inline with-icon-left with-icon-right">
+            <input class="inline" type="text" placeholder="Email.."><span class="icon-left"><i class="fa fa-envelope" aria-hidden="true"></i></span><span class="icon-right color-success"><i class="fa fa-check" aria-hidden="true"></i></span>
+          </div>
+          <h4>Input sizes</h4>
+          <div class="input inline with-icon font-small">
+            <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+          </div>
+          <div class="input inline with-icon">
+            <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+          </div>
+          <div class="input inline with-icon font-large">
+            <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+          </div>
           <anchored-tag tag="h1" owned>Grid</anchored-tag>
           <h2>Container</h2>
           <div class="container bg-color-secondary">
@@ -729,8 +805,12 @@ SOFTWARE.</code></pre>
     </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
     <script src="./dist/js/script.js"></script>
-    <script src="./example.js"></script><script>var year = new Date().getFullYear();
-    document.querySelector('.footer-copyright').innerHTML = "copyright \&copy; " + year + " MOSS-UI all rights reserved.";
-    document.querySelector('#project-name').innerHTML = "MOSS-UI " + Moss.version;</script>
+    <script src="./example.js"></script>
+    <script>
+      var year = new Date().getFullYear();
+      document.querySelector('.footer-copyright').innerHTML = 'copyright \&copy; ' + year + ' MOSS-UI all rights reserved.';
+      document.querySelector('#project-name').innerHTML = 'MOSS-UI ' + Moss.version;
+      
+    </script>
   </body>
 </html>

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import ElementUtil from '../lib/element-util';
+import ElementUtil from 'element-util';
 
 export default {
   name: 'close-button',

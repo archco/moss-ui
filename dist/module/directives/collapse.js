@@ -3,6 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+/*
+  v-collapse:{arg}.{modifiers}
+
+  modifiers: [none = toggle] | 'show' | 'hide'
+  arg: collapse id.
+ */
 exports.default = {
   name: 'collapse',
 

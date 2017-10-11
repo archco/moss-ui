@@ -1,9 +1,11 @@
 # Util
+
 > source: [js/lib/util](../../src/js/lib/util.js)
 
 The utility library for javascript.
 
-### Usage
+## Usage
+
 ```javascript
 // Import member from package.
 import { Util } from 'moss-ui';
@@ -15,48 +17,56 @@ let isMobile = window.Moss.lib.Util.isMobileSize();
 
 ## Functions
 
-#### locationSearchToObject
+### locationSearchToObject
+
 location.search to Object.
+
 - Syntax
-```javascript
-let obj = Util.locationSearchToObject();
-```
+  ```javascript
+  let obj = Util.locationSearchToObject();
+  ```
 - Return {Object|null}
 
-#### searchToObject
-> [HTMLAnchorElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement)  
-Convert HTMLAnchorElement.search to object.
+### searchToObject
+
+> [HTMLAnchorElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement)
+> Convert HTMLAnchorElement.search to object.
 
 - Syntax
-```javascript
-let obj = Util.searchToObject(search);
-```
+  ```javascript
+  let obj = Util.searchToObject(search);
+  ```
 - Param {String} search - value of HTMLAnchorElement.search
 - Return {Object|null}
 
-#### isContains
+### isContains
+
 Returns true if "big object" contains "small object".
+
 - Syntax
-```javascript
-let bool = Util.isContains(big, small);
-```
+  ```javascript
+  let bool = Util.isContains(big, small);
+  ```
 - Param {mixed} big
 - Param {mixed} small
 - Return: {Boolean}
 
-#### isEmpty
+### isEmpty
+
 Determine whether value is empty.
+
 - Syntax
-```javascript
-let bool = Util.isEmpty(val);
-```
+  ```javascript
+  let bool = Util.isEmpty(val);
+  ```
 - Param {mixed} val
 - Return: {Boolean}
 
-#### isMobileSize
+### isMobileSize
+
 - Syntax
-```javascript
-let bool = Util.isMobileSize(size = 800);
-```
+  ```javascript
+  let bool = Util.isMobileSize(size = 800);
+  ```
 - Param {Number} [ size = 800 ] - width (px)
 - Return {Boolean}

@@ -27,22 +27,19 @@ $gray: palette('gray') !default;
 $lightgray: palette('gainsboro') !default;
 $mediumgray: palette('mediumgray') !default;
 $darkgray: palette('dimgray') !default;
-$cadetgray: palette('cadetgray') !default;
 $teal: palette('teal') !default;
 $lightblue: palette('naturalblue') !default;
 $green: palette('pigmentgreen') !default;
 $red: palette('chilired') !default;
 $yellow: palette('naturalyellow') !default;
-$purple: palette('pompandpower') !default;
-
 
 // Theme
 // ==================================================
 
 // theme-colors
-$primary-color: $purple !default;
+$primary-color: palette('huntergreen') !default;
 $primary-color-accent: darken($primary-color, 16%) !default;
-$secondary-color: $cadetgray !default;
+$secondary-color: palette('asparagus') !default;
 
 // background colors.
 $background-color: $white !default;
@@ -272,12 +269,14 @@ $label-color: $text-color !default;
 $label-color-focused: $primary-color !default;
 $label-color-disabled: $disabled-color !default;
 
+$input-height: 2em !default;
 $input-padding: .2em .5em !default;
 $input-margin: .5rem 0 !default;
 $input-border: 1px solid $border-color !default;
 $input-radius: $radius-small !default;
 $input-outline-color: $outline-color !default;
-$input-bg-disabled: $disabled-color !default;
+$input-disabled-bg-color: $disabled-color !default;
+$input-color-set-bg-enable: true !default;
 
 // pagination
 $pagination-color: $text-color !default;
@@ -370,3 +369,16 @@ $hero-banner-min-height: 10em !default;
 $hero-banner-pad-small: 3em !default;
 $hero-banner-pad-medium: 6em !default;
 $hero-banner-pad-large: 9em !default;
+
+// input-switch: input-check, input-radio
+// and toggle
+$input-switch-stroke-color: $text-color-light !default;
+$input-switch-fill-color: $primary-color !default;
+$input-switch-border-width: .0625em !default;
+$input-switch-border-color: $background-color !default;
+$input-switch-focus-color: $primary-color !default;
+$input-switch-base-size: 1em !default;
+$input-toggle-bg-color: $background-color !default;
+$input-toggle-border-color: $border-color !default;
+$input-toggle-active-color: $primary-color !default;
+$input-toggle-transition-time: $transition-time !default;

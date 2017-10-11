@@ -1,6 +1,3 @@
-//============================================================
-// Toast
-//============================================================
 .toast-container {
   @include positioning('bottom-center', $toast-container-position-offset); // default position.
   @include nine-positions($toast-container-position-offset);

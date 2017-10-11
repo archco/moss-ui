@@ -1,11 +1,15 @@
 # Image
-> source: [scss/components/image](../../src/scss/components/_image.scss)
+
+> source: [scss/parts/image](../../src/scss/parts/_image.scss)
 
 ## Image Container
+
 Adding overlay effects when image hover.
 
-#### Usage
-##### default, fade-in effect.
+### Usage
+
+#### default, fade-in effect
+
 ```html
 <div class="image-container">
   <img src="image.jpg">
@@ -15,7 +19,8 @@ Adding overlay effects when image hover.
 </div>
 ```
 
-##### slide in effect.
+#### slide in effect
+
 ```html
 <!-- slide-in from top -->
 <div class="overlay from-top">...</div>
@@ -28,14 +33,19 @@ Adding overlay effects when image hover.
 ```
 
 ## Image Filter
-The helper class for image [filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter).  
+
+The helper class for image [filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter).
+
 **Note**: CSS filter is not supported in IE. [compatibility](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Browser_compatibility)
 
-#### Usage
+### Usage
+
 ```html
 <img src="image.jpg" class="filter blur">
 ```
-#### Available Filters
+
+### Available Filters
+
 - blur
 - lighten
 - darken

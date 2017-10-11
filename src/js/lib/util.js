@@ -1,8 +1,5 @@
 import scrollIt from './utils/scroll-it.js';
 
-/************************************************************
-  util
-*************************************************************/
 class Util {
 
   /**
@@ -89,42 +86,6 @@ class Util {
    */
   static isMobileSize(size = 800) {
     return window.innerWidth < size;
-  }
-
-  /**
-   * getScrollTop
-   *
-   * @return {Number}
-   */
-  static getScrollTop() {
-    return window.scrollY || window.pageYOffset;
-  }
-
-  /**
-   * getScrollBottom
-   *
-   * @return {Number}
-   */
-  static getScrollBottom() {
-    return this.getDocumentBottom() - (this.getScrollTop() + window.innerHeight);
-  }
-
-  /**
-   * getDocumentTop
-   *
-   * @return {Number}
-   */
-  static getDocumentTop() {
-    return document.documentElement.offsetTop || 0;
-  }
-
-  /**
-   * getDocumentBottom
-   *
-   * @return {Number}
-   */
-  static getDocumentBottom() {
-    return document.documentElement.scrollHeight;
   }
 }
 

@@ -1,0 +1,101 @@
+%custom-label {
+  margin: 0;
+  font-weight: normal;
+  color: inherit;
+  vertical-align: middle;
+}
+
+%input-toggle {
+  $_size: $input-switch-base-size;
+
+  .input-box {
+    position: relative;
+    width: $_size * 1.6;
+    background-color: $input-toggle-bg-color;
+    border: 1px solid $input-toggle-border-color;
+    border-radius: $_size;
+    transition: background-color $input-toggle-transition-time ease-in;
+
+    &::before {
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      width: $_size;
+      height: $_size;
+      background-color: $input-toggle-bg-color;
+      border: 1px solid $input-toggle-border-color;
+      border-radius: 50%;
+      content: '';
+      transition: transform $input-toggle-transition-time ease-out;
+    }
+
+    .input-box-tick,
+    .input-box-circle {
+      display: none;
+    }
+  }
+
+  input:checked ~ .input-box {
+    background-color: $input-toggle-active-color;
+
+    &::before {
+      transform: translateX(.6em);
+    }
+  }
+}
+
+.input-check {
+  @extend %custom-label;
+
+  &.toggle {
+    @extend %input-toggle;
+  }
+
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+
+    // scss-lint:disable SelectorDepth
+    &:checked ~ .input-box > .input-box-tick > path {
+      opacity: 1;
+      stroke-dashoffset: 0;
+    }
+
+    &:focus ~ .input-box,
+    &:active ~ .input-box {
+      box-shadow: 0 0 0 $input-switch-border-width $input-switch-focus-color;
+    }
+  }
+
+  .input-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: $input-switch-base-size;
+    height: $input-switch-base-size;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    vertical-align: middle;
+    background: $input-switch-fill-color;
+    border: $input-switch-border-width solid $input-switch-border-color;
+    border-radius: percentage(1 / 8);
+    box-sizing: content-box;
+    user-select: none;
+
+    > .input-box-tick {
+      width: 100%;
+      height: 100%;
+
+      // scss-lint:disable SelectorDepth, NestingDepth
+      > path {
+        opacity: 0;
+        transition: stroke-dashoffset .15s ease-in;
+        stroke: $input-switch-stroke-color;
+        stroke-width: 2.3px;
+        stroke-dashoffset: 20;
+        stroke-dasharray: 20;
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@mixin caret($direction: 'down') {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: $caret-width;
+  vertical-align: middle;
+  border: $caret-width solid transparent;
+  content: '';
+  @include caret-direction($direction);
+
+  &:empty {
+    margin-left: 0;
+  }
+
+  &.up {
+    @include caret-direction('up');
+  }
+
+  &.right {
+    @include caret-direction('right');
+  }
+
+  &.down {
+    @include caret-direction('down');
+  }
+
+  &.left {
+    @include caret-direction('left');
+  }
+}
+
+@mixin caret-direction($direction) {
+  @if $direction == 'up' {
+    border-color: transparent;
+    border-bottom-color: initial;
+  } @else if $direction == 'right' {
+    border-color: transparent;
+    border-left-color: initial;
+  } @else if $direction == 'down' {
+    border-color: transparent;
+    border-top-color: initial;
+  } @else if $direction == 'left' {
+    border-color: transparent;
+    border-right-color: initial;
+  }
+}

@@ -1,0 +1,22 @@
+ul.scrollspy-test.list-horizontal(v-scrollspy="{scrollElement: '#scrollspy-box', activeClass: 'bg-color-shade', activeTarget: 'self', offset: 100}")
+  li
+    a(href='#scrollspy-example1') Example 1
+  li
+    a(href='#scrollspy-example2') Example 2
+  li
+    a(href='#scrollspy-example3') Example 3
+  li
+    a(href='index.html') to index
+
+div#scrollspy-box(style='position:relative;height:10em;overflow:auto;')
+  div.pad.bg-color-primary(style='height:450px;')
+    h2(id='scrollspy-example1') Example 1
+    p=lorem
+
+  div.pad.bg-color-secondary(style='height:450px;')
+    h2(id='scrollspy-example2') Example 2
+    p=lorem
+
+  div.pad.bg-color-dark(style='height:450px;')
+    h2(id='scrollspy-example3') Example 3
+    p=lorem

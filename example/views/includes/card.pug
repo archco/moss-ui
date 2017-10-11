@@ -19,7 +19,8 @@ div(class='row')
       div(class='card-image')
         img(src=imageSrc[2] alt='image')
       div(class='card-content')
-        span=lorem
+        div Title
+        div.help=lorem
 
 h3 Horizontal Card
 div(class='row')
@@ -36,14 +37,15 @@ div(class='row')
         img(src=imageSrc[1] alt='image')
         h3(class='card-title') card title
       div(class='card-content')
-        span card description it is test. card description it is test. card description it is test. card description it is test.
+        span Card content
 div(class='row')
   div(class='col-md-8')
     div(class='card-horizontal large')
       div(class='card-image')
         img(src=imageSrc[0] alt='image')
       div(class='card-content')
-        span Card content
+        div Title
+        div.help=lorem
 
 h3 Card Inline
 ul(class='card-list')
@@ -119,3 +121,18 @@ div(class='row')
         img(src=imageSrc[2] alt='image')
       div(class='card-content')
         span Bordered Hoverable
+
+h3 Other Examples
+
+div(class='card shadow-near' style="display:inline-flex;width:120px;height:260px;")
+  div(class='card-image')
+    img(src=imageSrc[2])
+  div(class='card-content' title=lorem)
+    div Title
+    div.text-truncate.help=lorem
+div(class='card-horizontal bg-color-dark hoverable shadow-near' style="display:inline-flex;width:240px;height:140px;")
+  div(class='card-image')
+    img(src=imageSrc[1])
+  div(class='card-content')
+    div Title
+    div.help Description..

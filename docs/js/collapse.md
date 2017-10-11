@@ -1,8 +1,11 @@
 # Collapse
+
 > source: [js/components/collapse](../../src/js/components/collapse.vue)
 
 ## Usage
-#### Basic
+
+### Basic
+
 ```html
 <button class="btn" v-collapse:collapse01>TOGGLE</button>
 <collapse id="collapse01">
@@ -11,7 +14,8 @@
 </collapse>
 ```
 
-#### Accordion
+### Accordion
+
 ```html
 <ul class="list-group">
   <li>
@@ -31,7 +35,8 @@
 </ul>
 ```
 
-#### Use collapse toggle
+### Use collapse toggle
+
 Available optional class: `with-plus` `with-caret` `with-arrow`
 
 ```html
@@ -43,6 +48,7 @@ Available optional class: `with-plus` `with-caret` `with-arrow`
 ```
 
 ## Props
+
 | name | type | description | default |
 | ---- | ---- | ----------- | ------- |
 | id | String | key of component. | is required. |
@@ -50,24 +56,30 @@ Available optional class: `with-plus` `with-caret` `with-arrow`
 | accordion | String | Accordion group name | '' |
 
 ## Directives
+
 ### v-collapse
+
 The directive for control of collapse component.
+
 ```html
 <button v-collapse:{id}.{modifier}>button</button>
 ```
+
 - id: collapse id.
 - modifier
-  - [ no modifier ]: toggling collapse.
+  - \[ no modifier \]: toggling collapse.
   - show: expand content.
   - hide: collapse content.
 
 ### v-accordion
+
 ```html
 <button v-accordion:{id}.{modifier}="'{value}'">button</button>
 ```
+
 - id: collapse id.
 - modifier
-  - [ no modifier ]: toggling collapse.
+  - \[ no modifier \]: toggling collapse.
   - show: expand content.
   - hide: collapse content.
 - value: accordion group name.

@@ -1,18 +1,24 @@
 # Message
-> source:  
-[js/components/message](../../src/js/components/message.vue)  
-[js/components/message-box](../../src/js/components/message-box.vue)
+
+> source:
+> [js/components/message](../../src/js/components/message.vue)
+> [js/components/message-box](../../src/js/components/message-box.vue)
 
 - [message](#message)
 - [message-box](#message-box)
 
 ## Message
+
 ### Usage
+
 #### Basic
+
 ```html
 <message>Hello</message>
 ```
+
 #### With status color
+
 > This based on [color-set](color-set.md)
 
 Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
@@ -22,6 +28,7 @@ Available color keywords: default, primary, secondary, info, success, warning, d
 ```
 
 ### Props
+
 | name | type | description | default |
 | ---- | ---- | ----------- | ------- |
 | status | String | Status color. | '' (default color) |
@@ -30,37 +37,48 @@ Available color keywords: default, primary, secondary, info, success, warning, d
 | close-html | String | close-button's innerHTML | '✖' |
 
 ## Message Box
+
 ### Usage
+
 in HTML
+
 ```html
 <message-box
   close-html='<i class="fa fa-times" aria-hidden="true"></i>'>
 </message-box>
 ```
+
 in script
+
 ```js
 window.Moss.messageBox.add('Some message.', 'info');
 ```
 
 ### Props
+
 | name | type | description | default |
 | ---- | ---- | ----------- | ------- |
 | effect | String | prop for message component. | 'fade' |
 | close-html | String | prop for message component. | '✖' |
 
 ### Methods
-##### add
+
+#### add
+
 Add a new message in message-box.
+
 - Syntax
-```js
-window.Moss.messageBox.add(text, status = 'default');
-```
+  ```js
+  window.Moss.messageBox.add(text, status = 'default');
+  ```
 - Param {String} text - message text.
 - Param {String} status - status keyword.
 
-##### clear
+#### clear
+
 Clear all messages in message-box.
+
 - Syntax
-```js
-window.Moss.messageBox.clear();
-```
+  ```js
+  window.Moss.messageBox.clear();
+  ```

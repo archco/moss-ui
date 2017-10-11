@@ -1,5 +1,13 @@
 import Util from '../lib/util';
 
+/*
+  v-activator.{modifiers}="'{value}'"
+
+  modifiers:
+    self: If this given, active class into self element, not parentNode.
+    this: If this given, activator on own element, not childNodes.
+  value: {String} selector. default value is 'a'.
+ */
 export default {
   name: 'activator',
   inserted(el, binding) {

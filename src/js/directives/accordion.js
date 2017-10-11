@@ -1,3 +1,10 @@
+/*
+  v-collapse:{arg}.{modifiers}="'{value}'"
+
+  modifiers: [none = toggle] | 'show' | 'hide'
+  arg: collapse id.
+  value: {String} accordion group name.
+ */
 export default {
   name: 'accordion',
 

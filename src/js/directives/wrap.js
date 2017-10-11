@@ -1,7 +1,13 @@
-import ElementUtil from '../lib/element-util';
+import ElementUtil from 'element-util';
 
-// v-wrap:{className}.{raw}="'{tagName}'"
+/*
+  v-wrap:{arg}.{modifiers}="'{value}'"
 
+  arg: class name. It is auto convert. e.g.) item -> item-wrapper
+  modifiers:
+    raw: If this given, it does not convert class name.
+  value: {String} Tag name of wrapper. default value is 'div'.
+ */
 export default {
   name: 'wrap',
   inserted(el, binding) {

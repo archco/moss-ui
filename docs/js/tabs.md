@@ -1,9 +1,11 @@
 # Tabs
-> sources:  
-[js/components/tabs](../../src/js/components/tabs.vue)  
-[js/components/tab](../../src/js/components/tab.vue)
+
+> sources:
+> [js/components/tabs](../../src/js/components/tabs.vue)
+> [js/components/tab](../../src/js/components/tab.vue)
 
 ## Usage
+
 ```html
 <tabs>
   <tab name="tab1" selected>
@@ -19,7 +21,9 @@
 ```
 
 ## Props
-#### tabs
+
+### tabs
+
 | name | type | description | default |
 | ---- | ---- | ----------- | ------- |
 | effect | String | Transition effect name. 'fade' | '' (no effect) |
@@ -28,7 +32,8 @@
 
 **Note**: \*flex alignment keywords - `start` `center` `end` `around` `between`
 
-#### tab
+### tab
+
 | name | type | description | default |
 | ---- | ---- | ----------- | ------- |
 | name | String | Tab link's text. | is required |

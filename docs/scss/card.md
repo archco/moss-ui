@@ -1,7 +1,9 @@
 # Card
-> source: [scss/components/card](../../src/scss/components/_card.scss)
 
-#### Option Keywords
+> source: [scss/parts/card](../../src/scss/parts/_card.scss)
+
+### Option Keywords
+
 - size: `small` `large` (default: medium)
 - direction: `horizontal` (default: vertical)
 - display: `inline` (default: block)
@@ -9,7 +11,9 @@
 - contents: `card-image` `card-title` `card-content`
 
 ## Usage
-#### Vertical Card (default)
+
+### Vertical Card (default)
+
 ```html
 <div class="card">
   <div class="card-image">
@@ -22,7 +26,8 @@
 </div>
 ```
 
-#### Horizontal Card
+### Horizontal Card
+
 ```html
 <div class="card-horizontal large">
   <div class="card-image">
@@ -34,7 +39,8 @@
 </div>
 ```
 
-#### Inline
+### Inline
+
 ```html
 <div class="card inline small">
   <div class="card-image">
@@ -46,7 +52,8 @@
 </div>
 ```
 
-#### Hoverable
+### Hoverable
+
 ```html
 <a href="#" class="card small hoverable">
   <div class="card-image">

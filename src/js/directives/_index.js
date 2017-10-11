@@ -5,6 +5,7 @@ import Collapse from './collapse';
 import Confirm from './confirm';
 import Focus from './focus';
 import Modal from './modal';
+import Scrollspy from './scrollspy';
 import SetValue from './set-value';
 import Tooltip from './tooltip';
 import Trigger from './trigger';
@@ -18,6 +19,7 @@ export default [
   Confirm,
   Focus,
   Modal,
+  Scrollspy,
   SetValue,
   Tooltip,
   Trigger,

@@ -3,15 +3,19 @@
 The user interface framework for front-end.
 
 ## Demo
-https://archco.github.io/moss-ui/
+
+[https://archco.github.io/moss-ui/](https://archco.github.io/moss-ui/)
 
 ## Installation
+
 ```sh
-$ npm install moss-ui
+npm install moss-ui
 ```
 
 ## Configuration
+
 ### SCSS
+
 ```scss
 // In your app.scss file.
 @import 'app-variables'; // Customize variables for application.
@@ -20,6 +24,7 @@ $ npm install moss-ui
 ```
 
 ### Vue Plugin
+
 ```js
 // In your app.js
 import Vue from 'vue';
@@ -33,6 +38,7 @@ window.vm = new Vue({
 ```
 
 ### In HTML
+
 ```html
 <!-- in <head> tag -->
 <link rel="stylesheet" href="/css/app.css">
@@ -45,10 +51,13 @@ window.vm = new Vue({
 ```
 
 ## Usage
+
 Please see [Documents](https://github.com/archco/moss-ui/blob/master/docs/README.md)
 
 ## Change Log
+
 [CHANGELOG.md](https://github.com/archco/moss-ui/blob/master/CHANGELOG.md)
 
 ## License
+
 [MIT License](https://github.com/archco/moss-ui/blob/master/LICENSE)

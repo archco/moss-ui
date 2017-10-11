@@ -1,6 +1,6 @@
-//======================================================================
-// Form Default
-//======================================================================
+//============================================================
+// Form tags
+//============================================================
 
 fieldset {
   padding: .5rem 1rem;
@@ -49,16 +49,27 @@ input[type="search"],
 select,
 textarea {
   width: 100%;
-  min-height: 2rem;
+  min-height: $input-height;
   padding: $input-padding;
   line-height: 1.4;
   background-color: transparent;
   border: $input-border;
   border-radius: $input-radius;
 
+  @each $name, $color in $color-set {
+    &.#{$name} {
+      @if $input-color-set-bg-enable {
+        background-color: rgba($color, .1);
+      }
+
+      border-color: $color;
+      outline-color: $color;
+    }
+  }
+
   &[disabled],
   &[readonly] {
-    background-color: $input-bg-disabled;
+    background-color: $input-disabled-bg-color;
   }
 }
 
@@ -70,12 +81,8 @@ input[type="text"] {
 }
 
 textarea {
-  // default height.
-  height: 12em;
-
-  &.inline {
-    height: auto;
-  }
+  height: 12em; // default height.
+  &.inline { height: auto; }
 }
 
 input[type="submit"],
@@ -88,8 +95,8 @@ input[type="reset"] {
 
 input[type="checkbox"],
 input[type="radio"] {
-  width: 1.2em;
-  height: 1.2em;
+  width: $input-height * .6;
+  height: $input-height * .6;
   vertical-align: middle;
 }
 
@@ -98,9 +105,17 @@ input[type="range"] {
 }
 
 input[type="color"] {
-  width: 3em;
-  height: 2em;
+  width: $input-height * 1.5;
+  height: $input-height;
   padding: 0;
+}
+
+//============================================================
+// Form helpers
+//============================================================
+
+%form-inline {
+  width: auto;
 }
 
 .form-inline {
@@ -112,9 +127,7 @@ input[type="color"] {
     @extend %form-inline;
   }
 
-  textarea {
-    height: auto;
-  }
+  textarea { height: auto; }
 }
 
 @include form-inline-target {
@@ -123,10 +136,48 @@ input[type="color"] {
   }
 }
 
-%form-inline {
-  width: auto;
-}
-
 .form-group {
   margin-bottom: 1rem;
+}
+
+//============================================================
+// Input with icons
+//============================================================
+
+%input-icon {
+  position: absolute;
+  top: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: $input-height;
+  height: $input-height;
+  pointer-events: none;
+}
+
+.input {
+  position: relative;
+  max-width: 100%;
+
+  &.inline { display: inline-block; }
+
+  &.with-icon,
+  &.with-icon-right {
+    input { padding-right: $input-height; }
+  }
+
+  &.with-icon-left {
+    input { padding-left: $input-height; }
+  }
+
+  .icon,
+  .icon-right {
+    @extend %input-icon;
+    right: 0;
+  }
+
+  .icon-left {
+    @extend %input-icon;
+    left: 0;
+  }
 }

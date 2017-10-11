@@ -16,9 +16,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-/************************************************************
-  util
-*************************************************************/
 var Util = function () {
   function Util() {
     _classCallCheck(this, Util);
@@ -126,54 +123,6 @@ var Util = function () {
       var size = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 800;
 
       return window.innerWidth < size;
-    }
-
-    /**
-     * getScrollTop
-     *
-     * @return {Number}
-     */
-
-  }, {
-    key: 'getScrollTop',
-    value: function getScrollTop() {
-      return window.scrollY || window.pageYOffset;
-    }
-
-    /**
-     * getScrollBottom
-     *
-     * @return {Number}
-     */
-
-  }, {
-    key: 'getScrollBottom',
-    value: function getScrollBottom() {
-      return this.getDocumentBottom() - (this.getScrollTop() + window.innerHeight);
-    }
-
-    /**
-     * getDocumentTop
-     *
-     * @return {Number}
-     */
-
-  }, {
-    key: 'getDocumentTop',
-    value: function getDocumentTop() {
-      return document.documentElement.offsetTop || 0;
-    }
-
-    /**
-     * getDocumentBottom
-     *
-     * @return {Number}
-     */
-
-  }, {
-    key: 'getDocumentBottom',
-    value: function getDocumentBottom() {
-      return document.documentElement.scrollHeight;
     }
   }]);
 

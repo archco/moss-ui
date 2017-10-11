@@ -1,7 +1,3 @@
-//======================================================================
-// Helper Functions
-//======================================================================
-
 // use getContrast() at scss-palette
 // @link https://github.com/archco/scss-palette/wiki/functions#getcontrastcolor-dark-000-light-fff
 @function get-contrast($color, $dark: $text-color-dark, $light: $text-color-light) {

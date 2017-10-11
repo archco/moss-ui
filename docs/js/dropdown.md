@@ -1,8 +1,11 @@
 # Dropdown
+
 > source: [js/components/dropdown](../../src/js/components/dropdown.vue)
 
 ## Usage
-#### Toggle dropdown
+
+### Toggle dropdown
+
 ```html
 <dropdown>
   <button class="btn" slot="button">TOGGLE</button>
@@ -12,7 +15,8 @@
 </dropdown>
 ```
 
-#### Hover dropdown
+### Hover dropdown
+
 ```html
 <dropdown toggle="hover">
   <button class="btn" slot="button">HOVER</button>
@@ -21,8 +25,10 @@
 </dropdown>
 ```
 
-#### Alignment of dropdown content
+### Alignment of dropdown content
+
 Available align keywords: `left` `center` `right`
+
 ```html
 <dropdown toggle="hover" align="center">
   <button class="btn" slot="button">HOVER</button>
@@ -32,6 +38,7 @@ Available align keywords: `left` `center` `right`
 ```
 
 ## Props
+
 | name | type | description | default |
 | ---- | ---- | ----------- | ------- |
 | toggle | String | toggle type: toggle or hover | 'toggle' |

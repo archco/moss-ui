@@ -1,0 +1,49 @@
+.input-radio {
+  @extend %custom-label;
+
+  &.toggle {
+    @extend %input-toggle;
+  }
+
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+
+    &:checked ~ .input-box > .input-box-circle {
+      width: 50%;
+      height: 50%;
+      opacity: 1;
+    }
+
+    &:focus ~ .input-box,
+    &:active ~ .input-box {
+      box-shadow: 0 0 0 $input-switch-border-width $input-switch-focus-color;
+    }
+  }
+
+  .input-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: $input-switch-base-size;
+    height: $input-switch-base-size;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    vertical-align: middle;
+    background: $input-switch-fill-color;
+    border: $input-switch-border-width solid $input-switch-border-color;
+    border-radius: 50%;
+    box-sizing: content-box;
+    user-select: none;
+
+    > .input-box-circle {
+      width: 0%;
+      height: 0%;
+      background: $input-switch-stroke-color;
+      border-radius: 50%;
+      opacity: 0;
+      transition: width .15s ease-in, height .15s ease-in;
+    }
+  }
+}

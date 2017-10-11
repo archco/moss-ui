@@ -1,5 +1,5 @@
 //======================================================================
-// Scaffolding - Tag Default
+// Base tags
 //======================================================================
 
 html { box-sizing: border-box; }
@@ -68,6 +68,10 @@ a {
 
   &.no-deco {
     @include no-decoration;
+  }
+
+  &.inherit {
+    @include set-link-state-color(inherit);
   }
 }
 

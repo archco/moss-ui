@@ -22,9 +22,10 @@ html
   body
     div(id='app')
       header(class='bg-color-primary pad flex-container-center' style="height:100px;")
-        h1(id='project-name') MOSS-UI
+        h1
+          a.no-deco.inherit(id='project-name' href='index.html') MOSS-UI
 
-      navbar(class='sticky-top shadow-near' align='end')
+      navbar(class='shadow-near' align='end')
         navbar-brand(href='index.html' type='text' slot='brand' v-activator.this.self) Moss
         navbar-nav(v-activator="'.nav-item > .nav-link'")
           nav-item(href='scss.html?q=components' text='SCSS')
@@ -61,9 +62,9 @@ html
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
     script(src='./dist/js/script.js')
     script(src='./example.js')
-    <script>
-    | var year = new Date().getFullYear();
-    | document.querySelector('.footer-copyright').innerHTML = "copyright \&copy; " + year + " MOSS-UI all rights reserved.";
-    | document.querySelector('#project-name').innerHTML = "MOSS-UI " + Moss.version;
-    </script>
+    script.
+      var year = new Date().getFullYear();
+      document.querySelector('.footer-copyright').innerHTML = 'copyright \&copy; ' + year + ' MOSS-UI all rights reserved.';
+      document.querySelector('#project-name').innerHTML = 'MOSS-UI ' + Moss.version;
+
     block script

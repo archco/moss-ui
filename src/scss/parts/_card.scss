@@ -1,4 +1,4 @@
-// private mixins
+// local mixins.
 
 @mixin _card-image-size($direction:'vertical') {
   @if ($direction == 'vertical') {
@@ -29,9 +29,7 @@
   &.large { width: $card-size-large * $_rate; }
 }
 
-//======================================================================
-// Card
-//======================================================================
+// card.
 
 %card {
   z-index: $z-index-card;

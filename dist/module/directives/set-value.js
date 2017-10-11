@@ -10,10 +10,12 @@ var _util2 = _interopRequireDefault(_util);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// v-set-value:{arg}="value"
-// arg: query string key name.
-// value: set value directly.
+/*
+  v-set-value:{arg}="'{value}'"
 
+  arg: Key of query string.
+  value: {String} Set value directly.
+ */
 exports.default = {
   name: 'set-value',
   bind: function bind(el, binding) {

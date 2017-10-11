@@ -14,7 +14,7 @@ var _clipboard = require('clipboard');
 
 var _clipboard2 = _interopRequireDefault(_clipboard);
 
-var _elementUtil = require('../lib/element-util');
+var _elementUtil = require('element-util');
 
 var _elementUtil2 = _interopRequireDefault(_elementUtil);
 
@@ -22,6 +22,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /*
   v-clipboard.{modifiers}:{arg}="value"
+
   modifiers: copy or cut.
   arg: event name when success.
   value: String | Object.

@@ -1,5 +1,6 @@
 # Color-set
-> source: [scss/components/color-set](../../src/scss/components/_color-set.scss)
+
+> source: [scss/parts/color-set](../../src/scss/parts/_color-set.scss)
 
 Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
 
@@ -21,8 +22,10 @@ $color-set: (
 ```
 
 ## Components of uses this color-set
-* [Badge](badge.md)
-* [Button](#)
-* [Helper](#) : color of text and background
-* [Message](#) : color of message box
-* [Tab](#) : tab tip color
+
+- [Badge](badge.md)
+- [Button](button.md)
+- [Form#input-with-color-set](form.md#input-with-color-set)
+- [Helpers#color](helpers.md#color) : color of text and background.
+- [Message](../js/message.md) : color of message box.
+- [Tabs](../js/tabs.md) : tabs active color.

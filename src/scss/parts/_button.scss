@@ -1,0 +1,91 @@
+%btn-common {
+  @include btn-base;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+
+%btn {
+  @extend %btn-common;
+  padding: $button-padding-y $button-padding-x;
+  margin: $button-margin;
+  border-radius: $button-radius;
+  outline-color: $button-outline-color;
+
+  &.full-width {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  &.is-loading:not([disabled]) {
+    position: relative;
+    color: transparent !important;
+
+    &::after {
+      @include loader-one();
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -.5em;
+      margin-left: -.5em;
+      content: '';
+    }
+  }
+}
+
+%btn-disabled {
+  &[disabled] {
+    cursor: default;
+    opacity: .7;
+    box-shadow: none;
+  }
+}
+
+%btn-color-set {
+  // default color
+  @include btn-color($button-default-bg-color);
+  // each color-set
+  @each $name, $color in $color-set {
+    &.#{$name} {
+      @include btn-color($color);
+
+      &.is-loading:not([disabled])::after {
+        @include loader-one-color(get-contrast($color));
+      }
+    }
+  }
+}
+
+%btn-flat-color-set {
+  // default color
+  @include btn-flat-color($button-flat-default-bg-color);
+  // each color-set
+  @each $name, $color in $color-set {
+    &.#{$name} {
+      @include btn-flat-color($color);
+    }
+  }
+}
+
+// buttons
+.btn {
+  @extend %btn;
+  @extend %btn-disabled;
+  @extend %btn-color-set;
+}
+
+.btn-icon {
+  @extend %btn-common;
+  @extend %btn-disabled;
+  @extend %btn-color-set;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+}
+
+.btn-flat {
+  @extend %btn;
+  @extend %btn-disabled;
+  @extend %btn-flat-color-set;
+  margin: 0;
+}

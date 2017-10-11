@@ -3,6 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+/*
+  v-modal:{arg}.{modifier}
+
+  arg: modal's name.
+  modifier:
+    [ none ]: toggling modal.
+    show: show modal.
+    close: close modal.
+ */
 exports.default = {
   name: 'modal',
   bind: function bind(el, binding, vnode) {

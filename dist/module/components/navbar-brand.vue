@@ -18,11 +18,9 @@ export default {
   computed: {
     classObject() {
       let obj = { 'navbar-brand': true };
-      if (this.isText()) obj['text'] = true;
+      if (this.isText) obj['text'] = true;
       return obj;
     },
-  },
-  methods: {
     isText() {
       return this.type.toLowerCase() === 'text';
     },

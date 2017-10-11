@@ -1,8 +1,11 @@
 # Tooltip
-> source: [scss/components/tooltip](../../src/scss/components/_tooltip.scss)
+
+> source: [scss/parts/tooltip](../../src/scss/parts/_tooltip.scss)
 
 ## Usage
-#### Available Directions
+
+### Available Directions
+
 - top (default): `tooltip-top`
 - bottom: `tooltip-bottom`
 - left: `tooltip-left`
@@ -15,7 +18,8 @@
 <span class="tooltip tooltip-right" aria-label="tooltip-right style">Right</span>
 ```
 
-#### [v-tooltip](./directives.md#tooltip)
+### [v-tooltip](../js/directives.md#tooltip)
+
 ```html
 <span v-tooltip:right="'Representational State Transfer'">REST</span>
 ```
