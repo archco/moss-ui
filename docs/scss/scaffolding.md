@@ -9,19 +9,33 @@
 
 ### Link
 
+#### Avoid underline decoration
+
 The default link causes an underline when hovering. Do one of the following to write `<a>` to avoid underlining.
 
 - Add class `.no-deco` e.g. `<a href="#" class="no-deco">`
-- In scss, use placeholder `%link-no-deco`
-  ```scss
-  .target {
-    @extend %link-no-deco;
-  }
+- In html
+  ```html
+  <a href="#" class="no-deco">LINK</a>
   ```
-- In scss, use mixin `no-decoration()`
+- In scss
   ```scss
   .target {
     @include no-decoration;
+  }
+  ```
+
+
+#### Set inherit color to links color.
+
+- In html
+  ```html
+  <a href="#" class="inherit">LINK</a>
+  ```
+- In scss
+  ```scss
+  .target {
+    @include set-link-state-color(inherit);
   }
   ```
 

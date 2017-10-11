@@ -27,22 +27,19 @@ $gray: palette('gray') !default;
 $lightgray: palette('gainsboro') !default;
 $mediumgray: palette('mediumgray') !default;
 $darkgray: palette('dimgray') !default;
-$cadetgray: palette('cadetgray') !default;
 $teal: palette('teal') !default;
 $lightblue: palette('naturalblue') !default;
 $green: palette('pigmentgreen') !default;
 $red: palette('chilired') !default;
 $yellow: palette('naturalyellow') !default;
-$purple: palette('pompandpower') !default;
-
 
 // Theme
 // ==================================================
 
 // theme-colors
-$primary-color: $purple !default;
+$primary-color: palette('huntergreen') !default;
 $primary-color-accent: darken($primary-color, 16%) !default;
-$secondary-color: $cadetgray !default;
+$secondary-color: palette('asparagus') !default;
 
 // background colors.
 $background-color: $white !default;
