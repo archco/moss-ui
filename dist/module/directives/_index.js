@@ -32,6 +32,10 @@ var _modal = require('./modal');
 
 var _modal2 = _interopRequireDefault(_modal);
 
+var _scrollspy = require('./scrollspy');
+
+var _scrollspy2 = _interopRequireDefault(_scrollspy);
+
 var _setValue = require('./set-value');
 
 var _setValue2 = _interopRequireDefault(_setValue);
@@ -50,4 +54,4 @@ var _wrap2 = _interopRequireDefault(_wrap);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = [_accordion2.default, _activator2.default, _clipboard2.default, _collapse2.default, _confirm2.default, _focus2.default, _modal2.default, _setValue2.default, _tooltip2.default, _trigger2.default, _wrap2.default];
+exports.default = [_accordion2.default, _activator2.default, _clipboard2.default, _collapse2.default, _confirm2.default, _focus2.default, _modal2.default, _scrollspy2.default, _setValue2.default, _tooltip2.default, _trigger2.default, _wrap2.default];

@@ -1,5 +1,5 @@
 const mix = require('laravel-mix');
-const isDev = (process.env.NODE_ENV === 'production') ? false : true;
+const isDev = process.env.NODE_ENV !== 'production';
 
 /*
  |--------------------------------------------------------------------------

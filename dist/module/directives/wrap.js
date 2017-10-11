@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _elementUtil = require('../lib/element-util');
+var _elementUtil = require('element-util');
 
 var _elementUtil2 = _interopRequireDefault(_elementUtil);
 

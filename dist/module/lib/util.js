@@ -124,54 +124,6 @@ var Util = function () {
 
       return window.innerWidth < size;
     }
-
-    /**
-     * getScrollTop
-     *
-     * @return {Number}
-     */
-
-  }, {
-    key: 'getScrollTop',
-    value: function getScrollTop() {
-      return window.scrollY || window.pageYOffset;
-    }
-
-    /**
-     * getScrollBottom
-     *
-     * @return {Number}
-     */
-
-  }, {
-    key: 'getScrollBottom',
-    value: function getScrollBottom() {
-      return this.getDocumentBottom() - (this.getScrollTop() + window.innerHeight);
-    }
-
-    /**
-     * getDocumentTop
-     *
-     * @return {Number}
-     */
-
-  }, {
-    key: 'getDocumentTop',
-    value: function getDocumentTop() {
-      return document.documentElement.offsetTop || 0;
-    }
-
-    /**
-     * getDocumentBottom
-     *
-     * @return {Number}
-     */
-
-  }, {
-    key: 'getDocumentBottom',
-    value: function getDocumentBottom() {
-      return document.documentElement.scrollHeight;
-    }
   }]);
 
   return Util;

@@ -3,7 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ElementUtil = exports.Util = exports.Color = undefined;
+exports.lib = undefined;
+
+var _elementUtil = require('element-util');
+
+var _elementUtil2 = _interopRequireDefault(_elementUtil);
+
+var _elementMeasurer = require('element-measurer');
+
+var _elementMeasurer2 = _interopRequireDefault(_elementMeasurer);
 
 var _color = require('./lib/color');
 
@@ -12,10 +20,6 @@ var _color2 = _interopRequireDefault(_color);
 var _util = require('./lib/util');
 
 var _util2 = _interopRequireDefault(_util);
-
-var _elementUtil = require('./lib/element-util');
-
-var _elementUtil2 = _interopRequireDefault(_elementUtil);
 
 var _index = require('./components/_index');
 
@@ -29,14 +33,19 @@ var _package = require('../../package.json');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/*!
- * moss-ui - The user interface framework for front-end.
- * @version v0.2.2
- * @link https://github.com/archco/moss-ui
- * @license MIT
- */
 var DefaultOptions = {
   insteadName: {}
+}; /*!
+    * moss-ui - The user interface framework for front-end.
+    * @version v0.2.2
+    * @link https://github.com/archco/moss-ui
+    * @license MIT
+    */
+var lib = exports.lib = {
+  Color: _color2.default,
+  Util: _util2.default,
+  ElementUtil: _elementUtil2.default,
+  ElementMeasurer: _elementMeasurer2.default
 };
 
 exports.default = {
@@ -67,15 +76,8 @@ exports.default = {
   addMossObject: function addMossObject(Vue) {
     var Moss = {
       version: _package.version,
-      lib: {
-        Color: _color2.default,
-        Util: _util2.default,
-        ElementUtil: _elementUtil2.default
-      }
+      lib: lib
     };
     window.Moss = Vue.Moss = Vue.prototype.$moss = Moss;
   }
 };
-exports.Color = _color2.default;
-exports.Util = _util2.default;
-exports.ElementUtil = _elementUtil2.default;
