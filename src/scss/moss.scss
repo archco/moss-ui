@@ -5,8 +5,15 @@
  * @license MIT
  */
 
+// libraries.
+@import 'node_modules/scss-palette/src/palette';
+@import 'lib/decimal';
+@import 'lib/functions';
+@import 'lib/keyframes';
+
 // basements.
-@import 'basement';
+@import 'variables';
+@import 'mixins';
 
 // normalize.
 @import 'node_modules/normalize.css/normalize';
