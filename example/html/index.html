@@ -11,9 +11,9 @@
   <body>
     <div id="app">
       <header class="bg-color-primary pad flex-container-center" style="height:100px;">
-        <h1 id="project-name">MOSS-UI</h1>
+        <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI</a></h1>
       </header>
-      <navbar class="sticky-top shadow-near" align="end">
+      <navbar class="shadow-near" align="end">
         <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
         <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
           <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
@@ -35,80 +35,155 @@
           <p>The user interface framework for front-end.</p>
         </div>
       </div>
+      <section class="pad"><svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="Gradient">
+<stop offset="0" stop-color="white" stop-opacity="0" />
+<stop offset="1" stop-color="white" stop-opacity="1" />
+</linearGradient>
+<mask id="Mask">
+<rect x="0" y="0" width="200" height="200" fill="url(#Gradient)"  />
+</mask>
+</defs>
+<rect x="0" y="0" width="200" height="200" fill="green" />
+<rect x="0" y="0" width="200" height="200" fill="black" mask="url(#Mask)" />
+</svg>
+      </section>
       <section class="pad">
-        <anchored-tag tag="h1" owned>Dropdown</anchored-tag>
-        <h3>Toggle Dropdown</h3>
-        <div class="dropdown" is="dropdown">
-          <button class="btn" slot="button">TOGGLE</button><a class="dropdown-item active" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
+        <anchored-tag tag="h1" owned>Card</anchored-tag>
+        <h3>Vertical Card (default)</h3>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card small">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg">
+                <h3 class="card-title">card title</h3>
+              </div>
+              <div class="card-content"><span>card content</span><a href="#">Link</a></div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg" alt="image"></div>
+              <div class="card-content"><span>Card content</span></div>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="card large">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" alt="image"></div>
+              <div class="card-content">
+                <div>Title</div>
+                <div class="help">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <h3>Hover Dropdown</h3>
-        <dropdown toggle="hover">
-          <button class="btn info" slot="button">HOVER</button>
-          <dropdown-item href="#">hello</dropdown-item>
-          <dropdown-item href="#">drop</dropdown-item>
-          <dropdown-item href="#">down</dropdown-item>
-        </dropdown>
-        <h3>Dropdown Content Alignment</h3>
-        <div style="display:flex;width:100%;justify-content:space-between;">
-          <dropdown toggle="hover" align="left">
-            <button class="btn success" slot="button">LEFT</button>
-            <dropdown-item href="#">hello</dropdown-item>
-            <dropdown-item href="#">drop</dropdown-item>
-            <dropdown-item href="#">down</dropdown-item>
-          </dropdown>
-          <dropdown toggle="hover" align="center">
-            <button class="btn secondary" slot="button">CENTER</button>
-            <dropdown-item href="#">hello</dropdown-item>
-            <dropdown-item href="#">drop</dropdown-item>
-            <dropdown-item href="#">down</dropdown-item>
-          </dropdown>
-          <dropdown toggle="hover" align="right">
-            <button class="btn warning" slot="button">RIGHT</button>
-            <dropdown-item href="#">hello</dropdown-item>
-            <dropdown-item href="#">drop</dropdown-item>
-            <dropdown-item href="#">down</dropdown-item>
-          </dropdown>
+        <h3>Horizontal Card</h3>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card-horizontal small">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" alt="image"></div>
+              <div class="card-content"><span>Card content</span></div>
+            </div>
+          </div>
         </div>
-        <anchored-tag tag="h1" owned>Navbar</anchored-tag>
-        <h3>Basic</h3>
-        <navbar class="bg-color-dark" align="start">
-          <navbar-nav>
-            <nav-item href="#" text="link1"></nav-item>
-            <nav-item href="#" text="link2"></nav-item>
-            <nav-item>
-              <dropdown>
-                <button slot="button">Dropdown</button>
-                <dropdown-item href="#">link 1</dropdown-item>
-                <dropdown-item href="#">link 2</dropdown-item>
-                <dropdown-item href="#">link 3</dropdown-item>
-              </dropdown>
-            </nav-item>
-          </navbar-nav>
-          <navbar-nav>
-            <nav-item href="#" text="about"></nav-item>
-            <nav-item href="#" text="logout"></nav-item>
-          </navbar-nav>
-        </navbar>
-        <h3>Multiple Navs</h3>
-        <navbar class="bg-color-warning rounded shadow-near" align="between" header-align="start">
-          <navbar-brand href="#" type="image" slot="brand"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" style="width:30px;height:30px;"></navbar-brand>
-          <navbar-nav>
-            <nav-item href="#" text="link1"></nav-item>
-            <nav-item href="#" text="link2"></nav-item>
-            <nav-item>
-              <dropdown>
-                <button slot="button">Dropdown</button>
-                <dropdown-item href="#">link 1</dropdown-item>
-                <dropdown-item href="#">link 2</dropdown-item>
-                <dropdown-item href="#">link 3</dropdown-item>
-              </dropdown>
-            </nav-item>
-          </navbar-nav>
-          <navbar-nav>
-            <nav-item href="#" text="about"></nav-item>
-            <nav-item href="#" text="logout"></nav-item>
-          </navbar-nav>
-        </navbar>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card-horizontal">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg" alt="image">
+                <h3 class="card-title">card title</h3>
+              </div>
+              <div class="card-content"><span>Card content</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card-horizontal large">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg" alt="image"></div>
+              <div class="card-content">
+                <div>Title</div>
+                <div class="help">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3>Card Inline</h3>
+        <ul class="card-list">
+          <li class="card inline small">
+            <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg" alt="image"></div>
+            <div class="card-content"><span>Card content</span></div>
+          </li>
+          <li class="card inline">
+            <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" alt="image"></div>
+            <div class="card-content"><span>Card content</span></div>
+          </li>
+          <li class="card inline large">
+            <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg" alt="image"></div>
+            <div class="card-content"><span>Card content</span></div>
+          </li>
+        </ul>
+        <ul class="card-list">
+          <li class="card-horizontal inline small">
+            <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg" alt="image"></div>
+            <div class="card-content"><span>Card content</span></div>
+          </li>
+          <li class="card-horizontal inline">
+            <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg" alt="image"></div>
+            <div class="card-content"><span>Card content</span></div>
+          </li>
+          <li class="card-horizontal inline large">
+            <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" alt="image"></div>
+            <div class="card-content"><span>Card content</span></div>
+          </li>
+        </ul>
+        <h3>Hoverable</h3>
+        <ul class="card-list">
+          <li><a class="card-horizontal inline small hoverable" href="#">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg" alt="image"></div>
+              <div class="card-content"><span>Card content</span></div></a></li>
+          <li><a class="card-horizontal inline hoverable" href="#">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg" alt="image"></div>
+              <div class="card-content"><span>Card content</span></div></a></li>
+          <li><a class="card-horizontal inline large hoverable" href="#">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" alt="image"></div>
+              <div class="card-content"><span>Card content</span></div></a></li>
+        </ul>
+        <h3>Bordered</h3>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card small bordered">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg" alt="image"></div>
+              <div class="card-content"><span>Bordered Vertical</span></div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-horizontal small bordered">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg" alt="image"></div>
+              <div class="card-content"><span>Bordered Horizontal</span></div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card small bordered hoverable">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" alt="image"></div>
+              <div class="card-content"><span>Bordered Hoverable</span></div>
+            </div>
+          </div>
+        </div>
+        <h3>Other Examples</h3>
+        <div class="card shadow-near" style="display:inline-flex;width:120px;height:260px;">
+          <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg"></div>
+          <div class="card-content" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
+            <div>Title</div>
+            <div class="text-truncate help">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+          </div>
+        </div>
+        <div class="card-horizontal bg-color-dark hoverable shadow-near" style="display:inline-flex;width:240px;height:140px;">
+          <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg"></div>
+          <div class="card-content">
+            <div>Title</div>
+            <div class="help">Description..</div>
+          </div>
+        </div>
       </section>
       <footer class="footer">
         <div class="container">
@@ -134,8 +209,12 @@
     </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
     <script src="./dist/js/script.js"></script>
-    <script src="./example.js"></script><script>var year = new Date().getFullYear();
-    document.querySelector('.footer-copyright').innerHTML = "copyright \&copy; " + year + " MOSS-UI all rights reserved.";
-    document.querySelector('#project-name').innerHTML = "MOSS-UI " + Moss.version;</script>
+    <script src="./example.js"></script>
+    <script>
+      var year = new Date().getFullYear();
+      document.querySelector('.footer-copyright').innerHTML = 'copyright \&copy; ' + year + ' MOSS-UI all rights reserved.';
+      document.querySelector('#project-name').innerHTML = 'MOSS-UI ' + Moss.version;
+      
+    </script>
   </body>
 </html>
