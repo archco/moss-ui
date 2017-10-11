@@ -13,6 +13,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Add a new components: "input-check" and "input-radio". #36
 - Add a new vue directive: Scrollspy #29
 
+### Changed
+
+- Separating javascript library to package.
+  - [ElementUtil](https://github.com/archco/element-util)
+  - [ElementMeasurer](https://github.com/archco/element-measurer)
+
 ### Fixed
 
 - Fix vue components that need hide during loading. #38
