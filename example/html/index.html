@@ -50,43 +50,138 @@
 </svg>
       </section>
       <section class="pad">
-        <anchored-tag tag="h1" owned>Switch</anchored-tag>
-        <h3>Input Check</h3>
-        <input-check class="font-small" name="is-small">small</input-check>
-        <input-check name="is-normal">normal</input-check>
-        <input-check class="font-large" name="is-large">large</input-check>
-        <h3>Input Radio</h3>
-        <input-radio class="font-small" name="input-radio" value="small">small</input-radio>
-        <input-radio name="input-radio" value="medium">medium</input-radio>
-        <input-radio class="font-large" name="input-radio" value="large">large</input-radio>
-        <h3>Toggle Style</h3>
-        <div class="group">
-          <input-check class="toggle" name="use-toggle">Toggle</input-check>
-          <input-check class="toggle" name="is-good">Good</input-check>
+        <anchored-tag tag="h1" owned>Card</anchored-tag>
+        <h3>Vertical Card (default)</h3>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card small">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg">
+                <h3 class="card-title">card title</h3>
+              </div>
+              <div class="card-content"><span>card content</span><a href="#">Link</a></div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg" alt="image"></div>
+              <div class="card-content"><span>Card content</span></div>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="card large">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" alt="image"></div>
+              <div class="card-content">
+                <div>Title</div>
+                <div class="help">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="group">
-          <input-radio class="toggle" name="toggle-radio" value="male">Male</input-radio>
-          <input-radio class="toggle" name="toggle-radio" value="female">Female</input-radio>
+        <h3>Horizontal Card</h3>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card-horizontal small">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" alt="image"></div>
+              <div class="card-content"><span>Card content</span></div>
+            </div>
+          </div>
         </div>
-        <anchored-tag tag="h1" owned>Scrollspy</anchored-tag>
-        <ul class="scrollspy-test list-horizontal" v-scrollspy="{scrollElement: '#scrollspy-box', activeClass: 'bg-color-shade', activeTarget: 'self', offset: 100}">
-          <li><a href="#scrollspy-example1">Example 1</a></li>
-          <li><a href="#scrollspy-example2">Example 2</a></li>
-          <li><a href="#scrollspy-example3">Example 3</a></li>
-          <li><a href="index.html">to index</a></li>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card-horizontal">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg" alt="image">
+                <h3 class="card-title">card title</h3>
+              </div>
+              <div class="card-content"><span>Card content</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card-horizontal large">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg" alt="image"></div>
+              <div class="card-content">
+                <div>Title</div>
+                <div class="help">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3>Card Inline</h3>
+        <ul class="card-list">
+          <li class="card inline small">
+            <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg" alt="image"></div>
+            <div class="card-content"><span>Card content</span></div>
+          </li>
+          <li class="card inline">
+            <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" alt="image"></div>
+            <div class="card-content"><span>Card content</span></div>
+          </li>
+          <li class="card inline large">
+            <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg" alt="image"></div>
+            <div class="card-content"><span>Card content</span></div>
+          </li>
         </ul>
-        <div id="scrollspy-box" style="position:relative;height:10em;overflow:auto;">
-          <div class="pad bg-color-primary" style="height:450px;">
-            <h2 id="scrollspy-example1">Example 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <ul class="card-list">
+          <li class="card-horizontal inline small">
+            <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg" alt="image"></div>
+            <div class="card-content"><span>Card content</span></div>
+          </li>
+          <li class="card-horizontal inline">
+            <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg" alt="image"></div>
+            <div class="card-content"><span>Card content</span></div>
+          </li>
+          <li class="card-horizontal inline large">
+            <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" alt="image"></div>
+            <div class="card-content"><span>Card content</span></div>
+          </li>
+        </ul>
+        <h3>Hoverable</h3>
+        <ul class="card-list">
+          <li><a class="card-horizontal inline small hoverable" href="#">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg" alt="image"></div>
+              <div class="card-content"><span>Card content</span></div></a></li>
+          <li><a class="card-horizontal inline hoverable" href="#">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg" alt="image"></div>
+              <div class="card-content"><span>Card content</span></div></a></li>
+          <li><a class="card-horizontal inline large hoverable" href="#">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" alt="image"></div>
+              <div class="card-content"><span>Card content</span></div></a></li>
+        </ul>
+        <h3>Bordered</h3>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card small bordered">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg" alt="image"></div>
+              <div class="card-content"><span>Bordered Vertical</span></div>
+            </div>
           </div>
-          <div class="pad bg-color-secondary" style="height:450px;">
-            <h2 id="scrollspy-example2">Example 2</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="col-md-4">
+            <div class="card-horizontal small bordered">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg" alt="image"></div>
+              <div class="card-content"><span>Bordered Horizontal</span></div>
+            </div>
           </div>
-          <div class="pad bg-color-dark" style="height:450px;">
-            <h2 id="scrollspy-example3">Example 3</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="col-md-4">
+            <div class="card small bordered hoverable">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" alt="image"></div>
+              <div class="card-content"><span>Bordered Hoverable</span></div>
+            </div>
+          </div>
+        </div>
+        <h3>Other Examples</h3>
+        <div class="card shadow-near" style="display:inline-flex;width:120px;height:260px;">
+          <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg"></div>
+          <div class="card-content" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
+            <div>Title</div>
+            <div class="text-truncate help">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+          </div>
+        </div>
+        <div class="card-horizontal bg-color-dark hoverable shadow-near" style="display:inline-flex;width:240px;height:140px;">
+          <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg"></div>
+          <div class="card-content">
+            <div>Title</div>
+            <div class="help">Description..</div>
           </div>
         </div>
       </section>
