@@ -16,13 +16,6 @@ const DefaultOptions = {
   insteadName: {},
 };
 
-export const lib = {
-  Color,
-  Util,
-  ElementUtil,
-  ElementMeasurer,
-};
-
 export default {
   version: version,
   install(Vue, options = {}) {
@@ -52,8 +45,20 @@ export default {
   addMossObject(Vue) {
     const Moss = {
       version,
-      lib,
+      lib: {
+        Color,
+        Util,
+        ElementUtil,
+        ElementMeasurer,
+      },
     };
     window.Moss = Vue.Moss = Vue.prototype.$moss = Moss;
   },
+};
+
+export {
+  Color,
+  Util,
+  ElementUtil,
+  ElementMeasurer,
 };

@@ -23,3 +23,16 @@ div(id='element-target' class='pad bg-color-secondary')
   h3 Title
   p=lorem
 button(class='btn' v-clipboard="{ target: '#element-target' }") Copy
+
+anchored-tag(tag='h2' owned) v-set-value
+ul.list-horizontal.group
+  li
+    a(href='vue-directives.html?q=1#v-set-value') query set 1
+  li
+    a(href='vue-directives.html?q=2#v-set-value') query set 2
+  li
+    a(href='vue-directives.html?q=3#v-set-value') query set 3
+select(class='inline group' name='set_value_test' v-set-value:q)
+  option(value="1") One
+  option(value="2") Two
+  option(value="3") Three

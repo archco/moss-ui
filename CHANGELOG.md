@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
-## [0.3.0][]
+## [0.3.0][] - 2017-10-11
 
 ### Added
 
@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- Separating javascript library to package.
+- Separating javascript library to package. #42
   - [ElementUtil](https://github.com/archco/element-util)
   - [ElementMeasurer](https://github.com/archco/element-measurer)
 
