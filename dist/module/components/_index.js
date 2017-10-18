@@ -84,6 +84,10 @@ var _toast = require('./toast.vue');
 
 var _toast2 = _interopRequireDefault(_toast);
 
+var _tree = require('./tree.vue');
+
+var _tree2 = _interopRequireDefault(_tree);
+
 var _treeItem = require('./tree-item.vue');
 
 var _treeItem2 = _interopRequireDefault(_treeItem);
@@ -98,4 +102,4 @@ var _inputRadio2 = _interopRequireDefault(_inputRadio);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = [_anchoredTag2.default, _chip2.default, _closeButton2.default, _collapse2.default, _dropdown2.default, _dropdownItem2.default, _message2.default, _messageBox2.default, _modal2.default, _navbar2.default, _navbarBrand2.default, _navbarNav2.default, _navbarToggle2.default, _navItem2.default, _parallax2.default, _scrollTo2.default, _simpleCrud2.default, _tab2.default, _tabs2.default, _toast2.default, _treeItem2.default, _inputCheck2.default, _inputRadio2.default];
+exports.default = [_anchoredTag2.default, _chip2.default, _closeButton2.default, _collapse2.default, _dropdown2.default, _dropdownItem2.default, _message2.default, _messageBox2.default, _modal2.default, _navbar2.default, _navbarBrand2.default, _navbarNav2.default, _navbarToggle2.default, _navItem2.default, _parallax2.default, _scrollTo2.default, _simpleCrud2.default, _tab2.default, _tabs2.default, _toast2.default, _tree2.default, _treeItem2.default, _inputCheck2.default, _inputRadio2.default];
