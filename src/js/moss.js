@@ -1,6 +1,6 @@
 /*!
  * moss-ui - The user interface framework for front-end.
- * @version v0.3.0
+ * @version v0.3.2
  * @link https://github.com/archco/moss-ui
  * @license MIT
  */
@@ -14,13 +14,6 @@ import { version } from '../../package.json';
 
 const DefaultOptions = {
   insteadName: {},
-};
-
-export const lib = {
-  Color,
-  Util,
-  ElementUtil,
-  ElementMeasurer,
 };
 
 export default {
@@ -52,8 +45,20 @@ export default {
   addMossObject(Vue) {
     const Moss = {
       version,
-      lib,
+      lib: {
+        Color,
+        Util,
+        ElementUtil,
+        ElementMeasurer,
+      },
     };
     window.Moss = Vue.Moss = Vue.prototype.$moss = Moss;
   },
+};
+
+export {
+  Color,
+  Util,
+  ElementUtil,
+  ElementMeasurer,
 };

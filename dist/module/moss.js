@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.lib = undefined;
+exports.ElementMeasurer = exports.ElementUtil = exports.Util = exports.Color = undefined;
 
 var _elementUtil = require('element-util');
 
@@ -37,17 +37,10 @@ var DefaultOptions = {
   insteadName: {}
 }; /*!
     * moss-ui - The user interface framework for front-end.
-    * @version v0.3.0
+    * @version v0.3.2
     * @link https://github.com/archco/moss-ui
     * @license MIT
     */
-var lib = exports.lib = {
-  Color: _color2.default,
-  Util: _util2.default,
-  ElementUtil: _elementUtil2.default,
-  ElementMeasurer: _elementMeasurer2.default
-};
-
 exports.default = {
   version: _package.version,
   install: function install(Vue) {
@@ -76,8 +69,17 @@ exports.default = {
   addMossObject: function addMossObject(Vue) {
     var Moss = {
       version: _package.version,
-      lib: lib
+      lib: {
+        Color: _color2.default,
+        Util: _util2.default,
+        ElementUtil: _elementUtil2.default,
+        ElementMeasurer: _elementMeasurer2.default
+      }
     };
     window.Moss = Vue.Moss = Vue.prototype.$moss = Moss;
   }
 };
+exports.Color = _color2.default;
+exports.Util = _util2.default;
+exports.ElementUtil = _elementUtil2.default;
+exports.ElementMeasurer = _elementMeasurer2.default;
