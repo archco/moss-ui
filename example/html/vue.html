@@ -41,7 +41,7 @@
             <li is="anchored-tag" tag="li">Simple CRUD</li>
             <li is="anchored-tag" tag="li">Tab</li>
             <li is="anchored-tag" tag="li">Toast</li>
-            <li is="anchored-tag" tag="li">Tree Item</li>
+            <li is="anchored-tag" tag="li">Tree</li>
           </ul>
         </aside>
         <section class="col-md-10">
@@ -412,19 +412,13 @@
           </tabs>
           <anchored-tag tag="h1" owned>Toast</anchored-tag>
           <button class="btn info" id="btn-toast" onclick="toastShow()">Toast</button>
-          <anchored-tag tag="h1" owned>Tree Item</anchored-tag>
+          <anchored-tag tag="h1" owned>Tree</anchored-tag>
           <h3>Basic</h3>
-          <ul class="tree-list no-pad">
-            <li is="tree-item" :model="treeData"></li>
-          </ul>
+          <ul is="tree" :items="treeData"></ul>
           <h3>Model name as html</h3>
-          <ul class="tree-list no-pad">
-            <li is="tree-item" :model="treeData2"></li>
-          </ul>
+          <ul class="no-pad" is="tree" :items="treeData2"></ul>
           <h3>Set icon</h3>
-          <ul class="tree-list no-pad">
-            <li is="tree-item" :model="treeData" opened-html="[-] " closed-html="[+] "></li>
-          </ul>
+          <ul class="no-pad" is="tree" :items="treeData" opened-html="[-] " closed-html="[+] "></ul>
         </section>
       </div>
       <footer class="footer">

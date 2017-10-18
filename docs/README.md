@@ -41,7 +41,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
   - [input-radio](js/switch.md)
 - [tabs](js/tabs.md)
 - [toast](js/toast.md)
-- [tree-item](js/tree-item.md)
+- [tree](js/tree.md)
 
 ### Vue Directives
 
