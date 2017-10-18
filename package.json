@@ -12,7 +12,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha test --require babel-register",
+    "test": "echo \"Please see test/test.html in browser.\" && exit 1",
     "prebuild": "node task/banner.js",
     "build": "npm run dev && npm run min && npm run babel",
     "dev": "npm run mix && npm run pug",

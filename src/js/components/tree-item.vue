@@ -23,7 +23,7 @@ import Tree from './tree.vue';
 
 export default {
   name: 'tree-item',
-  components: [Tree],
+  components: { Tree },
   props: {
     item: {
       type: Object,

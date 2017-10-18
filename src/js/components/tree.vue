@@ -15,7 +15,7 @@ import TreeItem from './tree-item.vue';
 
 export default {
   name: 'tree',
-  components: [TreeItem],
+  components: { TreeItem },
   props: {
     items: {
       type: Array,
