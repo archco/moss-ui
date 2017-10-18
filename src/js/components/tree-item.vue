@@ -2,27 +2,30 @@
   <li>
     <div :class="itemClass" @click="toggle">
       <span
-      v-if="isFolder"
-      v-html="open ? openedHtml : closedHtml">
-      </span><span v-html="model.name"></span>
+        v-if="hasItems"
+        v-html="open ? openedHtml : closedHtml">
+      </span>
+      <span v-html="item.name"></span>
     </div>
-    <ul class="tree-list" v-show="open" v-if="isFolder">
-      <tree-item
-      v-for="model in model.children"
-      :key="model.name"
-      :model="model"
+    <ul
+      is="tree"
+      v-show="open"
+      v-if="hasItems"
+      :items="item.items"
       :opened-html="openedHtml"
       :closed-html="closedHtml">
-      </tree-item>
     </ul>
   </li>
 </template>
 
 <script>
+import Tree from './tree.vue';
+
 export default {
   name: 'tree-item',
+  components: [Tree],
   props: {
-    model: {
+    item: {
       type: Object,
       required: true,
     },
@@ -41,19 +44,19 @@ export default {
     };
   },
   computed: {
-    isFolder() {
-      return this.model.children && this.model.children.length;
+    hasItems() {
+      return this.item.items && this.item.items.length;
     },
     itemClass() {
       return {
         'tree-item': true,
-        'is-folder': this.isFolder,
+        'has-items': this.hasItems,
       };
     },
   },
   methods: {
     toggle() {
-      if (this.isFolder) {
+      if (this.hasItems) {
         this.open = !this.open;
       }
     },
