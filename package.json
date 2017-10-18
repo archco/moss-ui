@@ -42,18 +42,18 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
-    "babel-preset-env": "^1.6.0",
+    "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "concurrently": "^3.5.0",
-    "cross-env": "^5.0.5",
+    "cross-env": "^5.1.0",
     "fs-extra": "^4.0.2",
-    "laravel-mix": "^1.5.0",
+    "laravel-mix": "^1.5.1",
     "mocha": "^4.0.1",
     "pug": "^2.0.0-rc.4",
     "pug-cli": "^1.0.0-alpha6",
-    "vue": "^2.4.4",
-    "webpack": "^3.6.0"
+    "vue": "^2.5.2",
+    "webpack": "^3.8.1"
   },
   "eslintConfig": {
     "env": {
@@ -87,7 +87,9 @@
         "env",
         {
           "targets": {
-            "browsers": ["> 1%"]
+            "browsers": [
+              "> 1%"
+            ]
           }
         }
       ]
