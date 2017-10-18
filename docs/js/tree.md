@@ -1,7 +1,7 @@
-# Tree Item
+# Tree
 
-> Sources:
-> [js/components/tree](../../src/js/components/tree.vue)
+> Sources:  
+> [js/components/tree](../../src/js/components/tree.vue)  
 > [js/components/tree-item](../../src/js/components/tree-item.vue)
 
 ## Usage
