@@ -35,6 +35,7 @@
             <li is="anchored-tag" tag="li">v-trigger</li>
             <li is="anchored-tag" tag="li">v-modal</li>
             <li is="anchored-tag" tag="li">v-clipboard</li>
+            <li is="anchored-tag" tag="li">v-set-value</li>
           </ul>
         </aside>
         <section class="col-md-10">
@@ -63,6 +64,17 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
           <button class="btn" v-clipboard="{ target: '#element-target' }">Copy</button>
+          <anchored-tag tag="h2" owned>v-set-value</anchored-tag>
+          <ul class="list-horizontal group">
+            <li><a href="vue-directives.html?q=1#v-set-value">query set 1</a></li>
+            <li><a href="vue-directives.html?q=2#v-set-value">query set 2</a></li>
+            <li><a href="vue-directives.html?q=3#v-set-value">query set 3</a></li>
+          </ul>
+          <select class="inline group" name="set_value_test" v-set-value:q>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
         </section>
       </div>
       <footer class="footer">
