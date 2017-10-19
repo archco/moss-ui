@@ -43,18 +43,17 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [toast](js/toast.md)
 - [tree](js/tree.md)
 
-### Vue Directives
+### [Vue Directives](js/directives.md)
 
-- [Directives](js/directives.md)
-  - [Activator](js/directives.md#activator)
-  - [Clipboard](js/directives.md#clipboard)
-  - [Confirm](js/directives.md#confirm)
-  - [Focus](js/directives.md#focus)
-  - [Scrollspy](js/directives.md#scrollspy)
-  - [Set value](js/directives.md#set-value)
-  - [Tooltip](js/directives.md#tooltip)
-  - [Trigger](js/directives.md#trigger)
-  - [Wrap](js/directives.md#wrap)
+- [Activator](js/directives.md#activator)
+- [Clipboard](js/directives.md#clipboard)
+- [Confirm](js/directives.md#confirm)
+- [Focus](js/directives.md#focus)
+- [Scrollspy](js/directives.md#scrollspy)
+- [Set value](js/directives.md#set-value)
+- [Tooltip](js/directives.md#tooltip)
+- [Trigger](js/directives.md#trigger)
+- [Wrap](js/directives.md#wrap)
 
 ### JS Libraries
 
