@@ -30,9 +30,11 @@ Provide convenience for copy to clipboard. It is based on [clipboard.js](https:/
   ```javascript
   // Value set as object.
   const value = {
-    text: '',     // String
-    target: '',   // String|Element
-    callback: fn, // Function  callback when copy to clipboard is successfully. argument is event(https://github.com/zenorocha/clipboard.js#events).
+    text: '',     // {String}
+    target: '',   // {Element|querySelector}
+    // Callback occur when copy to clipboard is successfully.
+    // @arg {event} See https://github.com/zenorocha/clipboard.js#events
+    callback: fn,
   }
   ```
 
