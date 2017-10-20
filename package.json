@@ -1,6 +1,6 @@
 {
   "name": "moss-ui",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "The user interface framework for front-end.",
   "main": "dist/js/script.js",
   "module": "dist/module/moss.js",
