@@ -19,11 +19,8 @@
 </template>
 
 <script>
-import Tree from './tree.vue';
-
 export default {
   name: 'tree-item',
-  components: { Tree },
   props: {
     item: {
       type: Object,
