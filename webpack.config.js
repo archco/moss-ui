@@ -2,6 +2,7 @@ const path = require('path');
 const merge = require('webpack-merge');
 const UglifyJSPugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const WebpackNotifierPlugin = require('webpack-notifier');
 const Rules = require('./task/webpack-module-rules');
 
 const common = {
@@ -26,6 +27,7 @@ const dist = merge(common, {
   },
   plugins: [
     new ExtractTextPlugin('moss.css'),
+    new WebpackNotifierPlugin({ alwaysNotify: true }),
   ],
   devtool: 'source-map',
 });
