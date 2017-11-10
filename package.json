@@ -92,16 +92,11 @@
         "env",
         {
           "targets": {
-            "browsers": [
-              "> 1%"
-            ]
+            "browsers": ["defaults"]
           }
         }
       ]
     ]
   },
-  "postcss": {
-    "plugins": {}
-  },
-  "browserslist": "> 1%"
+  "browserslist": "defaults"
 }
