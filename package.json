@@ -14,16 +14,12 @@
   "scripts": {
     "test": "echo \"Please see test/test.html in browser.\" && exit 1",
     "prebuild": "node task/banner.js",
-    "build": "npm run dev && npm run min && npm run babel",
-    "dev": "npm run mix && npm run pug",
-    "watch": "node node_modules/concurrently/src/main \"npm run mix:watch\" \"npm run pug:watch\"",
-    "min": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "mix": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "mix:watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "build": "npm run webpack && npm run pug",
+    "watch": "node node_modules/concurrently/src/main \"npm run webpack:watch\" \"npm run pug:watch\"",
     "pug": "node node_modules/pug-cli --pretty example/views/pages/ --out ./example/html/",
     "pug:watch": "npm run pug -- --watch",
-    "prebabel": "node task/prebabel.js",
-    "babel": "babel src/js --out-dir dist/module --ignore script.js"
+    "webpack": "node node_modules/webpack/bin/webpack --hide-modules",
+    "webpack:watch": "npm run webpack -- --watch"
   },
   "author": "archco",
   "bugs": {
@@ -42,18 +38,26 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.2",
+    "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "concurrently": "^3.5.0",
-    "cross-env": "^5.1.1",
-    "fs-extra": "^4.0.2",
-    "laravel-mix": "^1.6.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
     "mocha": "^4.0.1",
+    "node-sass": "^4.6.0",
+    "postcss-loader": "^2.0.8",
     "pug": "^2.0.0-rc.4",
     "pug-cli": "^1.0.0-alpha6",
+    "sass-loader": "^6.0.6",
+    "source-map-loader": "^0.2.3",
+    "style-loader": "^0.19.0",
     "vue": "^2.5.3",
-    "webpack": "^3.8.1"
+    "vue-loader": "^13.5.0",
+    "vue-template-compiler": "^2.5.3",
+    "webpack": "^3.8.1",
+    "webpack-merge": "^4.1.1"
   },
   "eslintConfig": {
     "env": {
