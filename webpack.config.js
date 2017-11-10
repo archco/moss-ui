@@ -25,7 +25,7 @@ const dist = merge(common, {
     filename: 'moss.js',
   },
   module: {
-    rules: [Rules.js, Rules.sourceMap, Rules.vue, Rules.scss()],
+    rules: [Rules.sourceMap, Rules.js, Rules.vue, Rules.scss()],
   },
   plugins: [
     new ExtractTextPlugin('moss.css'),
@@ -38,7 +38,7 @@ const min = merge(common, {
     filename: 'moss.min.js',
   },
   module: {
-    rules: [Rules.js, Rules.sourceMap, Rules.vue, Rules.scss(true)],
+    rules: [Rules.sourceMap, Rules.js, Rules.vue, Rules.scss(true)],
   },
   plugins: [
     new UglifyJSPugin(),
@@ -53,8 +53,9 @@ const mod = merge(common, {
     libraryTarget: 'umd',
   },
   module: {
-    rules: [Rules.js, Rules.sourceMap, Rules.vue],
+    rules: [Rules.sourceMap, Rules.js, Rules.vue],
   },
+  devtool: 'source-map',
 });
 
 module.exports = env => (env && env.task == 'dev')
