@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Changed
+
+- Change structure of `dist/` directory. #51
+  - `moss.js`: Distribution script file.
+  - `moss.min.js`: Minified distribution script file.
+  - `moss.mod.js`: ES module file.
+  - `moss.css`: Distribution style file.
+
 ## [0.3.2][] - 2017-10-18
 
 ### Changed
