@@ -5,6 +5,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const Rules = require('./task/webpack-module-rules');
 
+//
+// Configs.
+//
+
 const common = {
   entry: ['./src/js/script.js', './src/scss/moss.scss'],
   output: {
@@ -16,8 +20,6 @@ const common = {
     },
   },
 };
-
-// dist
 const dist = merge(common, {
   output: {
     filename: 'moss.js',
@@ -31,8 +33,6 @@ const dist = merge(common, {
   ],
   devtool: 'source-map',
 });
-
-// min
 const min = merge(common, {
   output: {
     filename: 'moss.min.js',
@@ -45,8 +45,6 @@ const min = merge(common, {
     new ExtractTextPlugin('moss.min.css'),
   ],
 });
-
-// mod
 const mod = merge(common, {
   entry: './src/js/moss.js',
   output: {
@@ -59,4 +57,6 @@ const mod = merge(common, {
   },
 });
 
-module.exports = [mod, dist, min];
+module.exports = env => (env && env.task == 'dev')
+  ? dist
+  : [mod, dist, min];

@@ -14,12 +14,12 @@
   "scripts": {
     "test": "echo \"Please see test/test.html in browser.\" && exit 1",
     "prebuild": "node task/banner.js",
-    "build": "npm run webpack && npm run pug",
-    "watch": "node node_modules/concurrently/src/main \"npm run webpack:watch\" \"npm run pug:watch\"",
+    "build": "npm run webpack:all && npm run pug",
+    "dev": "npm run webpack:dev && npm run pug",
+    "watch": "node node_modules/concurrently/src/main \"npm run webpack:dev -- --watch\" \"npm run pug -- --watch\"",
     "pug": "node node_modules/pug-cli --pretty example/views/pages/ --out ./example/html/",
-    "pug:watch": "npm run pug -- --watch",
-    "webpack": "node node_modules/webpack/bin/webpack --hide-modules",
-    "webpack:watch": "npm run webpack -- --watch"
+    "webpack:dev": "node node_modules/webpack/bin/webpack --env.task=dev --hide-modules",
+    "webpack:all": "node node_modules/webpack/bin/webpack --hide-modules"
   },
   "author": "archco",
   "bugs": {
