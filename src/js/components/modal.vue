@@ -75,8 +75,7 @@ export default {
       }
     },
     onKeydown(event) {
-      // escape: 27
-      if (this.show && event.keyCode == 27) {
+      if (this.show && event.key.match(/(^Escape|^Esc)/)) {
         event.preventDefault();
         this.show = false;
       }

@@ -14302,6 +14302,13 @@ exports.default = {
       if (event.target !== this.btn && this.showContent === true) {
         this.showContent = false;
       }
+    },
+    onKeydown: function onKeydown(event) {
+      if (!this.showContent) return;
+      // IE: escape key value is 'Esc' (others: 'Escape')
+      if (event.key.match(/(^Escape|^Esc)/)) {
+        this.showContent = false;
+      }
     }
   },
   mounted: function mounted() {
@@ -14309,6 +14316,7 @@ exports.default = {
     if (this.toggle === 'toggle') {
       this.btn.addEventListener('click', this.toggleContent.bind(this));
       window.addEventListener('click', this.onOtherClick.bind(this));
+      window.addEventListener('keydown', this.onKeydown.bind(this));
     }
   }
 };
@@ -14934,8 +14942,7 @@ exports.default = {
       }
     },
     onKeydown: function onKeydown(event) {
-      // escape: 27
-      if (this.show && event.keyCode == 27) {
+      if (this.show && event.key.match(/(^Escape|^Esc)/)) {
         event.preventDefault();
         this.show = false;
       }

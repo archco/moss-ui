@@ -54,12 +54,20 @@ export default {
         this.showContent = false;
       }
     },
+    onKeydown(event) {
+      if (!this.showContent) return;
+      // IE: escape key value is 'Esc' (others: 'Escape')
+      if (event.key.match(/(^Escape|^Esc)/)) {
+        this.showContent = false;
+      }
+    },
   },
   mounted() {
     this.initElements();
     if (this.toggle === 'toggle') {
       this.btn.addEventListener('click', this.toggleContent.bind(this));
       window.addEventListener('click', this.onOtherClick.bind(this));
+      window.addEventListener('keydown', this.onKeydown.bind(this));
     }
   },
 }
