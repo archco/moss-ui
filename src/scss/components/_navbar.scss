@@ -1,6 +1,6 @@
 // Hide during loading.
 navbar,
-[is="navbar"] { display: none; }
+[is="navbar"] { visibility: hidden; }
 
 %nav-link {
   @extend %link-no-deco;

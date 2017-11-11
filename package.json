@@ -7,7 +7,7 @@
   "scss": "src/scss/moss.scss",
   "directories": {
     "dist": "dist",
-    "docs": "docs",
+    "doc": "docs",
     "example": "example",
     "test": "test"
   },

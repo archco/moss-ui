@@ -3377,7 +3377,7 @@ a.chip {
 
 dropdown,
 [is="dropdown"] {
-  display: none; }
+  visibility: hidden; }
 
 .dropdown {
   position: relative;
@@ -3748,7 +3748,7 @@ dropdown,
 
 navbar,
 [is="navbar"] {
-  display: none; }
+  visibility: hidden; }
 
 .nav-item .nav-link, .navbar-brand.text, .nav-item .dropdown .dropdown-toggle,
 .nav-item .dropdown .dropdown-hover {
@@ -3928,7 +3928,7 @@ navbar,
 
 simple-crud,
 [is="simple-crud"] {
-  display: none; }
+  visibility: hidden; }
 
 .simple-crud-item .read,
 .simple-crud-item .update,

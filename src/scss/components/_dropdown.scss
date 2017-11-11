@@ -1,6 +1,6 @@
 // Hide during loading.
 dropdown,
-[is="dropdown"] { display: none; }
+[is="dropdown"] { visibility: hidden; }
 
 .dropdown {
   position: relative;

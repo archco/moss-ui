@@ -1,6 +1,6 @@
 // Hide during loading.
 simple-crud,
-[is="simple-crud"] { display: none; }
+[is="simple-crud"] { visibility: hidden; }
 
 %simple-crud-view {
   display: flex;
