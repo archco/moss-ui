@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   - `moss.min.js`: Minified distribution script file.
   - `moss.mod.js`: ES module file.
   - `moss.css`: Distribution style file.
+- Change browserslist setting "> 1%" to "defaults". #50
+- Change KeybordEvent.keyCode to KeboardEvent.key #53
 
 ## [0.3.2][] - 2017-10-18
 

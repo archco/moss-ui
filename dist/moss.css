@@ -3458,7 +3458,7 @@ dropdown,
 .dropdown-item {
   text-decoration: none;
   display: block;
-  padding: 0.5em 1em;
+  padding: 0.35em 0.7em;
   font-family: inherit;
   font-size: inherit;
   transition: color 0.3s, background-color 0.3s; }
@@ -3473,11 +3473,11 @@ dropdown,
   .dropdown-item:active {
     color: #777777; }
   .dropdown-item.active {
-    color: #fff;
-    background-color: #182a1a; }
+    color: #343434;
+    background-color: #ebebeb; }
   .dropdown-item:hover, .dropdown-item:focus {
     color: #343434;
-    background-color: rgba(52, 52, 52, 0.1); }
+    background-color: #ebebeb; }
 
 .input-check, .input-radio {
   margin: 0;

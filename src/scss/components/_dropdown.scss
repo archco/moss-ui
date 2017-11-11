@@ -27,7 +27,9 @@ dropdown,
   @include reset-list;
   position: absolute;
   top: 100%;
-  left: 0; // left-align is default. @see issue #63
+  // left-align is default.
+  // @see https://github.com/archco/cosmos-css/issues/63
+  left: 0;
   z-index: $z-index-dropdown-content;
   display: none;
   min-width: $dropdown-min-width;
