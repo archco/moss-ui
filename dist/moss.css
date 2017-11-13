@@ -5312,4 +5312,47 @@ simple-crud,
     -webkit-transform: rotate(135deg);
             transform: rotate(135deg); }
 
+.popper {
+  color: #fff;
+  background-color: #87a96b;
+  border-color: #87a96b;
+  border-radius: 4px; }
+  .popper[x-placement^="top"] [x-arrow], .popper[x-placement^="bottom"] [x-arrow], .popper[x-placement^="right"] [x-arrow], .popper[x-placement^="left"] [x-arrow] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent; }
+  .popper[x-placement^="top"] {
+    margin-bottom: 5px; }
+    .popper[x-placement^="top"] [x-arrow] {
+      bottom: -5px;
+      left: calc(50% - 5px);
+      margin: 0 5px;
+      border-top-color: inherit;
+      border-bottom-width: 0; }
+  .popper[x-placement^="bottom"] {
+    margin-top: 5px; }
+    .popper[x-placement^="bottom"] [x-arrow] {
+      top: -5px;
+      left: calc(50% - 5px);
+      margin: 0 5px;
+      border-bottom-color: inherit;
+      border-top-width: 0; }
+  .popper[x-placement^="right"] {
+    margin-left: 5px; }
+    .popper[x-placement^="right"] [x-arrow] {
+      top: calc(50% - 5px);
+      left: -5px;
+      margin: 5px 0;
+      border-right-color: inherit;
+      border-left-width: 0; }
+  .popper[x-placement^="left"] {
+    margin-right: 5px; }
+    .popper[x-placement^="left"] [x-arrow] {
+      top: calc(50% - 5px);
+      right: -5px;
+      margin: 5px 0;
+      border-left-color: inherit;
+      border-right-width: 0; }
+
 /*# sourceMappingURL=moss.css.map*/

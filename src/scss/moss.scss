@@ -26,3 +26,13 @@
 
 // helper class should be last.
 @import 'helpers/index';
+
+// TEMP: test for popper.js
+.popper {
+  $_color: $secondary-color;
+  @include popper-arrow();
+  color: get-contrast($_color);
+  background-color: $_color;
+  border-color: $_color;
+  border-radius: 4px;
+}

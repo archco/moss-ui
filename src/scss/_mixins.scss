@@ -68,3 +68,6 @@
 
 @import './mixins/vue-transition';
 // vue-fade($name, $entering: '.6s', $leaving: '.6s')
+
+@import './mixins/popper-arrow';
+// popper-arrow($size: 5px, $border-color: inherit)

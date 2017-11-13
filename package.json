@@ -32,7 +32,9 @@
     "element-measurer": "^1.0.1",
     "element-util": "^1.1.0",
     "normalize.css": "^7.0.0",
-    "scss-palette": "^0.4.0"
+    "popper.js": "^1.12.7",
+    "scss-palette": "^0.4.0",
+    "tooltip.js": "^1.1.7"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -92,7 +94,9 @@
         "env",
         {
           "targets": {
-            "browsers": ["defaults"]
+            "browsers": [
+              "defaults"
+            ]
           }
         }
       ]
