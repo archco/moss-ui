@@ -10,52 +10,27 @@ dropdown,
   justify-content: flex-start;
 
   &:hover {
-    .dropdown-hover + .dropdown-content { display: block; }
+    //.dropdown-hover + .dropdown-content { display: flex; }
   }
 }
 
 .dropdown-toggle,
 .dropdown-hover {
   @extend %btn-common;
-
-  &::after {
-    @include caret('down');
-  }
+  &::after { @include caret('down'); }
 }
 
 .dropdown-content {
-  @include reset-list;
-  position: absolute;
-  top: 100%;
-  // left-align is default.
-  // @see https://github.com/archco/cosmos-css/issues/63
-  left: 0;
+  @include popper-arrow();
   z-index: $z-index-dropdown-content;
   display: none;
+  flex-flow: column;
   min-width: $dropdown-min-width;
   background-color: $dropdown-bg-color;
+  border-color: $dropdown-bg-color;
   box-shadow: $dropdown-shadow;
 
-  &.show { display: block; }
-
-  // dropdown-content position
-  &[data-align='left'] {
-    right: auto;
-    left: 0;
-    // align-self: flex-start;
-  }
-
-  &[data-align='center'] {
-    right: auto;
-    left: auto;
-    align-self: center;
-  }
-
-  &[data-align='right'] {
-    right: 0;
-    left: auto;
-    // align-self: flex-end;
-  }
+  &.show { display: flex; }
 }
 
 .dropdown-item {

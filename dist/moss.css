@@ -3394,8 +3394,6 @@ dropdown,
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start; }
-  .dropdown:hover .dropdown-hover + .dropdown-content {
-    display: block; }
 
 .dropdown-toggle::after,
 .dropdown-hover::after {
@@ -3429,31 +3427,57 @@ dropdown,
     border-right-color: initial; }
 
 .dropdown-content {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 100%;
-  left: 0;
   z-index: 14;
   display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
   min-width: 120px;
   background-color: #fff;
+  border-color: #fff;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
+  .dropdown-content.with-arrow[x-placement^="top"] [x-arrow], .dropdown-content.with-arrow[x-placement^="bottom"] [x-arrow], .dropdown-content.with-arrow[x-placement^="right"] [x-arrow], .dropdown-content.with-arrow[x-placement^="left"] [x-arrow], .dropdown-content .popper.with-arrow[x-placement^="top"] [x-arrow], .popper.with-arrow[x-placement^="top"] .dropdown-content [x-arrow], .dropdown-content .popper.with-arrow[x-placement^="bottom"] [x-arrow], .popper.with-arrow[x-placement^="bottom"] .dropdown-content [x-arrow], .dropdown-content .popper.with-arrow[x-placement^="right"] [x-arrow], .popper.with-arrow[x-placement^="right"] .dropdown-content [x-arrow], .dropdown-content .popper.with-arrow[x-placement^="left"] [x-arrow], .popper.with-arrow[x-placement^="left"] .dropdown-content [x-arrow] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent; }
+  .dropdown-content.with-arrow[x-placement^="top"] {
+    margin-bottom: 5px; }
+    .dropdown-content.with-arrow[x-placement^="top"] [x-arrow] {
+      bottom: -5px;
+      left: calc(50% - 5px);
+      margin: 0 5px;
+      border-top-color: inherit;
+      border-bottom-width: 0; }
+  .dropdown-content.with-arrow[x-placement^="bottom"] {
+    margin-top: 5px; }
+    .dropdown-content.with-arrow[x-placement^="bottom"] [x-arrow] {
+      top: -5px;
+      left: calc(50% - 5px);
+      margin: 0 5px;
+      border-bottom-color: inherit;
+      border-top-width: 0; }
+  .dropdown-content.with-arrow[x-placement^="right"] {
+    margin-left: 5px; }
+    .dropdown-content.with-arrow[x-placement^="right"] [x-arrow] {
+      top: calc(50% - 5px);
+      left: -5px;
+      margin: 5px 0;
+      border-right-color: inherit;
+      border-left-width: 0; }
+  .dropdown-content.with-arrow[x-placement^="left"] {
+    margin-right: 5px; }
+    .dropdown-content.with-arrow[x-placement^="left"] [x-arrow] {
+      top: calc(50% - 5px);
+      right: -5px;
+      margin: 5px 0;
+      border-left-color: inherit;
+      border-right-width: 0; }
   .dropdown-content.show {
-    display: block; }
-  .dropdown-content[data-align='left'] {
-    right: auto;
-    left: 0; }
-  .dropdown-content[data-align='center'] {
-    right: auto;
-    left: auto;
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center; }
-  .dropdown-content[data-align='right'] {
-    right: 0;
-    left: auto; }
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
 
 .dropdown-item {
   text-decoration: none;
@@ -5317,38 +5341,38 @@ simple-crud,
   background-color: #87a96b;
   border-color: #87a96b;
   border-radius: 4px; }
-  .popper[x-placement^="top"] [x-arrow], .popper[x-placement^="bottom"] [x-arrow], .popper[x-placement^="right"] [x-arrow], .popper[x-placement^="left"] [x-arrow] {
+  .popper .dropdown-content.with-arrow[x-placement^="top"] [x-arrow], .dropdown-content.with-arrow[x-placement^="top"] .popper [x-arrow], .popper .dropdown-content.with-arrow[x-placement^="bottom"] [x-arrow], .dropdown-content.with-arrow[x-placement^="bottom"] .popper [x-arrow], .popper .dropdown-content.with-arrow[x-placement^="right"] [x-arrow], .dropdown-content.with-arrow[x-placement^="right"] .popper [x-arrow], .popper .dropdown-content.with-arrow[x-placement^="left"] [x-arrow], .dropdown-content.with-arrow[x-placement^="left"] .popper [x-arrow], .popper.with-arrow[x-placement^="top"] [x-arrow], .popper.with-arrow[x-placement^="bottom"] [x-arrow], .popper.with-arrow[x-placement^="right"] [x-arrow], .popper.with-arrow[x-placement^="left"] [x-arrow] {
     position: absolute;
     width: 0;
     height: 0;
     border: 5px solid transparent; }
-  .popper[x-placement^="top"] {
+  .popper.with-arrow[x-placement^="top"] {
     margin-bottom: 5px; }
-    .popper[x-placement^="top"] [x-arrow] {
+    .popper.with-arrow[x-placement^="top"] [x-arrow] {
       bottom: -5px;
       left: calc(50% - 5px);
       margin: 0 5px;
       border-top-color: inherit;
       border-bottom-width: 0; }
-  .popper[x-placement^="bottom"] {
+  .popper.with-arrow[x-placement^="bottom"] {
     margin-top: 5px; }
-    .popper[x-placement^="bottom"] [x-arrow] {
+    .popper.with-arrow[x-placement^="bottom"] [x-arrow] {
       top: -5px;
       left: calc(50% - 5px);
       margin: 0 5px;
       border-bottom-color: inherit;
       border-top-width: 0; }
-  .popper[x-placement^="right"] {
+  .popper.with-arrow[x-placement^="right"] {
     margin-left: 5px; }
-    .popper[x-placement^="right"] [x-arrow] {
+    .popper.with-arrow[x-placement^="right"] [x-arrow] {
       top: calc(50% - 5px);
       left: -5px;
       margin: 5px 0;
       border-right-color: inherit;
       border-left-width: 0; }
-  .popper[x-placement^="left"] {
+  .popper.with-arrow[x-placement^="left"] {
     margin-right: 5px; }
-    .popper[x-placement^="left"] [x-arrow] {
+    .popper.with-arrow[x-placement^="left"] [x-arrow] {
       top: calc(50% - 5px);
       right: -5px;
       margin: 5px 0;

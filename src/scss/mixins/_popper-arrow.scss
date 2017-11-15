@@ -9,7 +9,7 @@
     border: $size solid transparent;
   }
 
-  &[x-placement^="top"] {
+  &.with-arrow[x-placement^="top"] {
     margin-bottom: $size;
 
     [x-arrow] {
@@ -22,7 +22,7 @@
     }
   }
 
-  &[x-placement^="bottom"] {
+  &.with-arrow[x-placement^="bottom"] {
     margin-top: $size;
 
     [x-arrow] {
@@ -35,7 +35,7 @@
     }
   }
 
-  &[x-placement^="right"] {
+  &.with-arrow[x-placement^="right"] {
     margin-left: $size;
 
     [x-arrow] {
@@ -48,7 +48,7 @@
     }
   }
 
-  &[x-placement^="left"] {
+  &.with-arrow[x-placement^="left"] {
     margin-right: $size;
 
     [x-arrow] {
