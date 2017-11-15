@@ -152,9 +152,9 @@ navbar,
 
 @include media-only-mobile {
   .nav-item {
-    .dropdown,
-    .dropdown-content {
-      width: 100%;
-    }
+    .dropdown { width: 100%; }
+    // Content need padding that for popper.js's preventOverflow.
+    // Padding value is 5px, and it will on both sides.
+    .dropdown-content { width: calc(100% - 10px); }
   }
 }
