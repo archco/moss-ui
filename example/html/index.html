@@ -19,7 +19,7 @@
           <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
           <nav-item href="vue.html" text="Vue"></nav-item>
           <nav-item>
-            <dropdown toggle="toggle" align="right">
+            <dropdown toggle="toggle" placement="bottom-end">
               <button slot="button">Utilities</button>
               <dropdown-item href="scss-helpers.html">SCSS Helpers</dropdown-item>
               <dropdown-item href="vue-directives.html">Vue Directieves</dropdown-item>
@@ -33,12 +33,6 @@
         <div class="hero-content font-accent align-center" style="font-size:1.4em;">
           <h1 class="color-primary">MOSS-UI</h1>
           <p>The user interface framework for front-end.</p>
-        </div>
-      </div>
-      <div class="d-flex justify-content-center align-items-center" style="width:100%;height:500px;">
-        <button class="btn" id="btn" type="button">popper</button>
-        <div class="popper pad" id="popper">hello, world!
-          <div x-arrow></div>
         </div>
       </div>
       <section class="pad"><svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
@@ -58,7 +52,7 @@
       <section class="pad">
         <anchored-tag tag="h1" owned>Dropdown</anchored-tag>
         <h3>Toggle Dropdown</h3>
-        <div class="dropdown" is="dropdown" align="center">
+        <div class="dropdown" is="dropdown">
           <button class="btn" slot="button">TOGGLE</button><a class="dropdown-item active" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
         </div>
         <h3>Hover Dropdown</h3>
@@ -68,26 +62,77 @@
           <dropdown-item href="#">drop</dropdown-item>
           <dropdown-item href="#">down</dropdown-item>
         </dropdown>
-        <h3>Dropdown Content Alignment</h3>
-        <div style="display:flex;width:100%;justify-content:space-between;">
-          <dropdown toggle="hover" align="left">
-            <button class="btn success" slot="button">LEFT</button>
+        <h3>Content Placements</h3>
+        <div class="d-flex justify-content-between" style="width:100%;">
+          <dropdown toggle="hover" placement="top">
+            <button class="btn success" slot="button">top</button>
             <dropdown-item href="#">hello</dropdown-item>
             <dropdown-item href="#">drop</dropdown-item>
             <dropdown-item href="#">down</dropdown-item>
           </dropdown>
-          <dropdown toggle="hover" align="center">
-            <button class="btn secondary" slot="button">CENTER</button>
+          <dropdown toggle="hover" placement="right-start">
+            <button class="btn secondary" slot="button">right-start</button>
             <dropdown-item href="#">hello</dropdown-item>
             <dropdown-item href="#">drop</dropdown-item>
             <dropdown-item href="#">down</dropdown-item>
           </dropdown>
-          <dropdown toggle="hover" align="right">
-            <button class="btn warning" slot="button">RIGHT</button>
+          <dropdown toggle="hover" placement="bottom-end">
+            <button class="btn warning" slot="button">bottom-end</button>
             <dropdown-item href="#">hello</dropdown-item>
             <dropdown-item href="#">drop</dropdown-item>
             <dropdown-item href="#">down</dropdown-item>
           </dropdown>
+        </div>
+        <h3>Content Offset</h3>
+        <blockquote class="danger">If you set offset, it could not working expectically in hover type dropdown.</blockquote>
+        <div class="d-flex justify-content-around">
+          <dropdown toggle="toggle" offset="0, 10px">
+            <button class="btn dark" slot="button">0, 10px</button>
+            <dropdown-item href="#">hello</dropdown-item>
+            <dropdown-item href="#">drop</dropdown-item>
+            <dropdown-item href="#">down</dropdown-item>
+          </dropdown>
+          <dropdown toggle="toggle" placement="left-end" offset="0, 15%">
+            <button class="btn light" slot="button">0, 15%</button>
+            <dropdown-item href="#">hello</dropdown-item>
+            <dropdown-item href="#">drop</dropdown-item>
+            <dropdown-item href="#">down</dropdown-item>
+          </dropdown>
+        </div>
+        <h3>Flip and PreventOverflow mode</h3>
+        <div class="d-flex justify-content-center align-items-center" style="width:100%;">
+          <div class="pad bg-color-dark" style="width:300px;height:300px;overflow:auto;">
+            <div class="d-flex flex-column justify-content-center align-items-center" style="width:600px;height:600px;">
+              <div>
+                <dropdown toggle="toggle" flip="on" prevent-overflow="on">
+                  <button class="btn light" slot="button">Both on</button>
+                  <dropdown-item href="#">hello</dropdown-item>
+                  <dropdown-item href="#">drop</dropdown-item>
+                  <dropdown-item href="#">down</dropdown-item>
+                </dropdown>
+                <dropdown toggle="toggle" flip="off">
+                  <button class="btn warning" slot="button">Filp off</button>
+                  <dropdown-item href="#">hello</dropdown-item>
+                  <dropdown-item href="#">drop</dropdown-item>
+                  <dropdown-item href="#">down</dropdown-item>
+                </dropdown>
+              </div>
+              <div>
+                <dropdown toggle="toggle" prevent-overflow="off">
+                  <button class="btn secondary" slot="button">PO off</button>
+                  <dropdown-item href="#">hello</dropdown-item>
+                  <dropdown-item href="#">drop</dropdown-item>
+                  <dropdown-item href="#">down</dropdown-item>
+                </dropdown>
+                <dropdown toggle="toggle" flip="off" prevent-overflow="off">
+                  <button class="btn danger" slot="button">Both off</button>
+                  <dropdown-item href="#">hello</dropdown-item>
+                  <dropdown-item href="#">drop</dropdown-item>
+                  <dropdown-item href="#">down</dropdown-item>
+                </dropdown>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <footer class="footer">

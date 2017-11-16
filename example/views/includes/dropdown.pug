@@ -1,5 +1,5 @@
 h3 Toggle Dropdown
-div(is='dropdown' class='dropdown' align='center')
+div(is='dropdown' class='dropdown')
   button(class='btn' slot='button') TOGGLE
   a.dropdown-item.active(href='#') hello
   a.dropdown-item(href='#') drop
@@ -12,22 +12,66 @@ dropdown(toggle='hover')
   dropdown-item(href='#') drop
   dropdown-item(href='#') down
 
-h3 Dropdown Content Alignment
-div(style='display:flex;width:100%;justify-content:space-between;')
-  dropdown(toggle='hover' align='left')
-    button(class='btn success' slot='button') LEFT
+h3 Content Placements
+div.d-flex.justify-content-between(style='width:100%;')
+  dropdown(toggle='hover' placement='top')
+    button(class='btn success' slot='button') top
     dropdown-item(href='#') hello
     dropdown-item(href='#') drop
     dropdown-item(href='#') down
 
-  dropdown(toggle='hover' align='center')
-    button(class='btn secondary' slot='button') CENTER
+  dropdown(toggle='hover' placement='right-start')
+    button(class='btn secondary' slot='button') right-start
     dropdown-item(href='#') hello
     dropdown-item(href='#') drop
     dropdown-item(href='#') down
 
-  dropdown(toggle='hover' align='right')
-    button(class='btn warning' slot='button') RIGHT
+  dropdown(toggle='hover' placement='bottom-end')
+    button(class='btn warning' slot='button') bottom-end
     dropdown-item(href='#') hello
     dropdown-item(href='#') drop
     dropdown-item(href='#') down
+
+h3 Content Offset
+blockquote.danger If you set offset, it could not working expectically in hover type dropdown.
+div.d-flex.justify-content-around
+  dropdown(toggle='toggle' offset='0, 10px')
+    button(class='btn dark' slot='button') 0, 10px
+    dropdown-item(href='#') hello
+    dropdown-item(href='#') drop
+    dropdown-item(href='#') down
+
+  dropdown(toggle='toggle' placement='left-end' offset='0, 15%')
+    button(class='btn light' slot='button') 0, 15%
+    dropdown-item(href='#') hello
+    dropdown-item(href='#') drop
+    dropdown-item(href='#') down
+
+h3 Flip and PreventOverflow mode
+div.d-flex.justify-content-center.align-items-center(style='width:100%;')
+  div.pad.bg-color-dark(style='width:300px;height:300px;overflow:auto;')
+    div.d-flex.flex-column.justify-content-center.align-items-center(style='width:600px;height:600px;')
+      div
+        dropdown(toggle='toggle' flip='on' prevent-overflow='on')
+          button(class='btn light' slot='button') Both on
+          dropdown-item(href='#') hello
+          dropdown-item(href='#') drop
+          dropdown-item(href='#') down
+
+        dropdown(toggle='toggle' flip='off')
+          button(class='btn warning' slot='button') Filp off
+          dropdown-item(href='#') hello
+          dropdown-item(href='#') drop
+          dropdown-item(href='#') down
+      div
+        dropdown(toggle='toggle' prevent-overflow='off')
+          button(class='btn secondary' slot='button') PO off
+          dropdown-item(href='#') hello
+          dropdown-item(href='#') drop
+          dropdown-item(href='#') down
+
+        dropdown(toggle='toggle' flip='off' prevent-overflow='off')
+          button(class='btn danger' slot='button') Both off
+          dropdown-item(href='#') hello
+          dropdown-item(href='#') drop
+          dropdown-item(href='#') down

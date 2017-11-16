@@ -4863,10 +4863,6 @@ var _moss = __webpack_require__(18);
 
 var _moss2 = _interopRequireDefault(_moss);
 
-var _popper = __webpack_require__(10);
-
-var _popper2 = _interopRequireDefault(_popper);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var options = {};
@@ -4905,22 +4901,6 @@ window.vm = new _vue2.default({
       var msg = event.action == 'copy' ? 'Copied' : 'Cutted';
       window.Moss.toast(msg + ' on clipboard.');
     });
-  }
-});
-
-window.toggle = false;
-var btn = document.querySelector('#btn');
-var pop = document.querySelector('#popper');
-btn.addEventListener('click', function (e) {
-  e.preventDefault();
-  pop.style.display = window.toggle ? null : 'none';
-  window.toggle = !window.toggle;
-});
-window.popper = new _popper2.default(btn, pop, {
-  placement: 'right-end',
-  modifiers: {
-    offset: { offset: '2,2' },
-    arrow: { element: '[x-arrow]' }
   }
 });
 

@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Moss from './moss';
-import Popper from 'popper.js';
 
 const options = {};
 
@@ -58,21 +57,5 @@ window.vm = new Vue({
       let msg = event.action == 'copy' ? 'Copied' : 'Cutted';
       window.Moss.toast(`${msg} on clipboard.`);
     });
-  },
-});
-
-window.toggle = false;
-let btn = document.querySelector('#btn');
-let pop = document.querySelector('#popper');
-btn.addEventListener('click', e => {
-  e.preventDefault();
-  pop.style.display = window.toggle ? null : 'none';
-  window.toggle = !window.toggle;
-});
-window.popper = new Popper(btn, pop, {
-  placement: 'right-end',
-  modifiers: {
-    offset: { offset: '2,2' },
-    arrow: { element: '[x-arrow]' },
   },
 });
