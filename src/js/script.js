@@ -70,7 +70,7 @@ btn.addEventListener('click', e => {
   window.toggle = !window.toggle;
 });
 window.popper = new Popper(btn, pop, {
-  placement: 'bottom',
+  placement: 'right-end',
   modifiers: {
     offset: { offset: '2,2' },
     arrow: { element: '[x-arrow]' },

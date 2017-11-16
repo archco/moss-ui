@@ -3489,19 +3489,19 @@ dropdown,
   .dropdown-item:focus, .dropdown-item:hover {
     text-decoration: none; }
   .dropdown-item, .dropdown-item:link {
-    color: #777777; }
+    color: rgba(52, 52, 52, 0.8); }
   .dropdown-item:visited {
-    color: #777777; }
+    color: rgba(52, 52, 52, 0.8); }
   .dropdown-item:hover, .dropdown-item:focus {
-    color: #777777; }
+    color: rgba(52, 52, 52, 0.8); }
   .dropdown-item:active {
-    color: #777777; }
+    color: rgba(52, 52, 52, 0.8); }
   .dropdown-item.active {
     color: #343434;
-    background-color: #ebebeb; }
+    background-color: rgba(0, 0, 0, 0.15); }
   .dropdown-item:hover, .dropdown-item:focus {
     color: #343434;
-    background-color: #ebebeb; }
+    background-color: rgba(0, 0, 0, 0.15); }
 
 .input-check, .input-radio {
   margin: 0;

@@ -18,11 +18,30 @@ export default {
       type: String,
       default: 'toggle', // toggle|hover
     },
-    align: {
+    placement: {
       type: String,
-      default: 'left', // left|center|right
+      default: 'bottom', // auto|top|right|bottom|left (surfix: '-start'|'-end')
+    },
+    modifiers: {
+      type: Object,
+      default() {
+        return {};
+      },
+    },
+    offset: {
+      type: String,
+      default: '1, 1',
+    },
+    flip: {
+      type: String,
+      default: 'on', // on|off
+    },
+    preventOverflow: {
+      type: String,
+      default: 'on', // on|off
     },
     withArrow: {
+      // NOTE: This is experimental prop.
       type: Boolean,
       default: false,
     }
@@ -31,12 +50,12 @@ export default {
     return {
       btn: null,
       content: null,
-      showContent: false,
+      isShown: false,
       pop: undefined,
     };
   },
   watch: {
-    showContent(val) {
+    isShown(val) {
       if (val) this.updatePopper();
     },
   },
@@ -44,10 +63,10 @@ export default {
     contentClass() {
       return {
         'dropdown-content': true,
-        'show': this.showContent,
+        'show': this.isShown,
         'with-arrow': this.withArrow,
       };
-    }
+    },
   },
   methods: {
     initElements() {
@@ -61,36 +80,37 @@ export default {
         if (item.tag === 'a') item.elm.classList.add('dropdown-item');
       });
     },
-    onToggle() {
-      this.updatePopper();
-      this.showContent = !this.showContent;
+    show() {
+      this.isShown = true;
+    },
+    hide() {
+      this.isShown = false;
+    },
+    toggleShow() {
+      this.isShown ? this.hide() : this.show();
     },
     onOtherClick(event) {
-      if (event.target !== this.btn && this.showContent === true) {
-        this.showContent = false;
+      if (event.target !== this.btn && this.isShown === true) {
+        this.hide();
       }
     },
     onKeydown(event) {
-      if (!this.showContent) return;
+      if (!this.isShown) return;
       // IE: escape key value is 'Esc' (others: 'Escape')
       if (event.key.match(/(^Escape|^Esc)/)) {
-        this.showContent = false;
+        this.hide();
       }
     },
-    getPlacement() {
-      return this.align == 'left'
-        ? 'bottom-start'
-        : this.align == 'right'
-        ? 'bottom-end'
-        : 'bottom';
-    },
     createPopper() {
+      let modifiers = Object.assign(this.modifiers, {
+        offset: { offset: this.offset },
+        flip: { enabled: this.flip === 'on' },
+        preventOverflow: { enabled: this.preventOverflow === 'on' },
+        hide: { enabled: this.preventOverflow === 'on' },
+      });
       this.pop = new Popper(this.btn, this.content, {
-        placement: this.getPlacement(),
-        modifiers: {
-          offset: { offset: '1px, 1px' },
-          flip: { enabled: true },
-        },
+        placement: this.placement,
+        modifiers,
       });
     },
     updatePopper() {
@@ -101,23 +121,16 @@ export default {
         this.updatePopper();
       }
     },
-    onMouseover() {
-      this.updatePopper();
-      this.showContent = true;
-    },
-    onMouseout() {
-      this.showContent = false;
-    },
   },
   mounted() {
     this.initElements();
     if (this.toggle === 'toggle') {
-      this.btn.addEventListener('click', this.onToggle.bind(this));
+      this.btn.addEventListener('click', this.toggleShow.bind(this));
       window.addEventListener('click', this.onOtherClick.bind(this));
       window.addEventListener('keydown', this.onKeydown.bind(this));
     } else if (this.toggle === 'hover') {
-      this.$el.addEventListener('mouseover', this.onMouseover.bind(this));
-      this.$el.addEventListener('mouseout', this.onMouseout.bind(this));
+      this.$el.addEventListener('mouseover', this.show.bind(this));
+      this.$el.addEventListener('mouseout', this.hide.bind(this));
     }
   },
 }
