@@ -3,6 +3,7 @@
 > source: [js/components/dropdown](../../src/js/components/dropdown.vue)
 
 ## Usage
+> This component is powered by [Popper.js](https://github.com/FezVrasta/popper.js). If you want more information, please see [popper-documentation](https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/popper-documentation.md).
 
 ### Toggle dropdown
 
@@ -25,12 +26,30 @@
 </dropdown>
 ```
 
-### Alignment of dropdown content
+### Content placement
+> @see [Popper.placements][]
 
-Available align keywords: `left` `center` `right`
+- Placements: `auto` `top` `right` `bottom` `left`
+- Variation suffixes: `-start` `-end`
+- Default value: `bottom`
 
 ```html
-<dropdown toggle="hover" align="center">
+<dropdown toggle="hover" placement="right-start">
+  <button class="btn" slot="button">HOVER</button>
+  <a href="#">Item 01</a>
+  <a href="#">Item 02</a>
+</dropdown>
+```
+
+### Content Offset
+> @see [modifiers~offset][]
+
+If the placement is `top` or `bottom`, this value means `width, height`. In case of `left` or `right`, it means `height, width`.
+
+**Caveat**: If you set offset, it could not working as expected in hover type dropdown.
+
+```html
+<dropdown toggle="hover" offset="10%, 10">
   <button class="btn" slot="button">HOVER</button>
   <a href="#">Item 01</a>
   <a href="#">Item 02</a>
@@ -41,5 +60,15 @@ Available align keywords: `left` `center` `right`
 
 | name | type | description | default |
 | ---- | ---- | ----------- | ------- |
-| toggle | String | toggle type: toggle or hover | 'toggle' |
-| align | String | Alignment of dropdown content: left or center or right | 'left' |
+| toggle | String | toggle type: `toggle` or `hover` | 'toggle' |
+| placement | String | Placement of dropdown content. | 'bottom' |
+| offset | String | Offset value for dropdown content. see [modifiers~offset][] | '1px, 1px' |
+| flip | String | Turn on/off flip mode. see [modifiers~flip][]. | 'on' |
+| prevent-overflow | String | Turn on/off preventOverflow mode. see [modifiers~preventOverflow] | 'on' |
+| modifiers | Object | set [modifiers][] option for Popper.js | {} |
+
+[Popper.placements]: https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/popper-documentation.md#Popper.placements
+[modifiers~offset]: https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/popper-documentation.md#modifiersoffset
+[modifiers~flip]: https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/popper-documentation.md#modifiersflip
+[modifiers~preventOverflow]: https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/popper-documentation.md#modifierspreventoverflow
+[modifiers]: https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/popper-documentation.md#modifiers--object
