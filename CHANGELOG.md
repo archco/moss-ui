@@ -7,8 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
-### Changed
+### Added
+- Add a new dependency, [Popper.js](https://github.com/FezVrasta/popper.js). #54
 
+### Changed
+- Change dropdown vue-component to build on Popper.js #55
+- Change tooltip vue-directive to build on Tooltip.js #56
 - Change structure of `dist/` directory. #51
   - `moss.js`: Distribution script file.
   - `moss.min.js`: Minified distribution script file.
