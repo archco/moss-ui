@@ -1,3 +1,5 @@
+import Tooltip from 'tooltip.js';
+
 /*
   v-tooltip:{arg}="'{value}'"
 
@@ -6,13 +8,38 @@
  */
 export default {
   name: 'tooltip',
-  bind(el, binding) {
-    el.classList.add('tooltip');
-
-    if (binding.arg) {
-      el.classList.add(`tooltip-${binding.arg}`);
-    }
-
-    el.setAttribute('aria-label', binding.value);
+  inserted(el, binding) {
+    new Tooltip(el, parseOption(binding));
   },
 };
+
+function getDefaultOption() {
+  return {
+    placement: 'auto',
+    title: '',
+    template: `<div class="tooltip with-arrow" role="tooltip"><div class="tooltip-arrow" x-arrow></div><div class="tooltip-inner"></div></div>`, // jscs:ignore maximumLineLength
+    offset: '1px,1px',
+  };
+}
+
+function parseOption(binding) {
+  let option = {};
+
+  // arg: placement.
+  if (binding.arg) option.placement = binding.arg;
+
+  // modifiers: trigger - [hover]|focus|click|manual
+  let mods = Object.keys(binding.modifiers);
+  if (mods.length) {
+    option.trigger = mods.join(' ');
+  }
+
+  // value: (object) option or (string) title.
+  if (typeof binding.value === 'object') {
+    option = binding.value;
+  } else {
+    option.title = binding.value;
+  }
+
+  return Object.assign(getDefaultOption(), option);
+}

@@ -3,7 +3,7 @@
 > source: [js/components/dropdown](../../src/js/components/dropdown.vue)
 
 ## Usage
-> This component is powered by [Popper.js](https://github.com/FezVrasta/popper.js). If you want more information, please see [popper-documentation](https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/popper-documentation.md).
+> This component is built on [Popper.js](https://github.com/FezVrasta/popper.js). If you want more information, please see [popper-documentation](https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/popper-documentation.md).
 
 ### Toggle dropdown
 

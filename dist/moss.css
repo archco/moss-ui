@@ -3114,96 +3114,6 @@ ul.pagination {
     ul.pagination li.disabled {
       color: rgba(128, 128, 128, 0.2); }
 
-.tooltip {
-  position: relative;
-  cursor: help; }
-  .tooltip::after {
-    font-family: Geneva, sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    letter-spacing: normal;
-    line-break: auto;
-    line-height: 1.5;
-    text-align: start;
-    text-decoration: none;
-    text-shadow: none;
-    text-transform: none;
-    white-space: normal;
-    word-break: normal;
-    word-spacing: normal;
-    position: absolute;
-    z-index: 14;
-    display: none;
-    padding: 0.5em 1em;
-    font-size: 0.9rem;
-    color: #fff;
-    word-wrap: break-word;
-    white-space: pre;
-    background-color: rgba(52, 52, 52, 0.8);
-    border-radius: 2px;
-    content: attr(aria-label);
-    opacity: 0; }
-  .tooltip::before {
-    position: absolute;
-    z-index: 15;
-    display: none;
-    width: 0;
-    height: 0;
-    color: rgba(52, 52, 52, 0.8);
-    border: 5px solid transparent;
-    content: '';
-    opacity: 0; }
-  .tooltip:hover::before, .tooltip:hover::after, .tooltip:active::before, .tooltip:active::after, .tooltip:focus::before, .tooltip:focus::after {
-    display: inline-block;
-    text-decoration: none;
-    -webkit-animation: 0.3s ease-in 0.3s forwards fade-in;
-            animation: 0.3s ease-in 0.3s forwards fade-in; }
-  .tooltip:not(.tooltip-bottom):not(.tooltip-left):not(.tooltip-right)::after, .tooltip.tooltip-top::after {
-    right: 50%;
-    bottom: 100%;
-    margin-bottom: 5px;
-    -webkit-transform: translateX(50%);
-            transform: translateX(50%); }
-  .tooltip:not(.tooltip-bottom):not(.tooltip-left):not(.tooltip-right)::before, .tooltip.tooltip-top::before {
-    top: -5px;
-    right: 50%;
-    bottom: auto;
-    margin-right: -5px;
-    border-top-color: rgba(52, 52, 52, 0.8); }
-  .tooltip.tooltip-bottom::after {
-    top: 100%;
-    right: 50%;
-    margin-top: 5px;
-    -webkit-transform: translateX(50%);
-            transform: translateX(50%); }
-  .tooltip.tooltip-bottom::before {
-    top: auto;
-    right: 50%;
-    bottom: -5px;
-    border-bottom-color: rgba(52, 52, 52, 0.8); }
-  .tooltip.tooltip-left::after {
-    right: 100%;
-    bottom: 50%;
-    margin-right: 5px;
-    -webkit-transform: translateY(50%);
-            transform: translateY(50%); }
-  .tooltip.tooltip-left::before {
-    top: 50%;
-    left: -5px;
-    margin-top: -5px;
-    border-left-color: rgba(52, 52, 52, 0.8); }
-  .tooltip.tooltip-right::after {
-    bottom: 50%;
-    left: 100%;
-    margin-left: 5px;
-    -webkit-transform: translateY(50%);
-            transform: translateY(50%); }
-  .tooltip.tooltip-right::before {
-    top: 50%;
-    right: -5px;
-    margin-top: -5px;
-    border-right-color: rgba(52, 52, 52, 0.8); }
-
 .chip {
   display: inline-block;
   height: 2em;
@@ -3437,7 +3347,7 @@ dropdown,
   background-color: #fff;
   border-color: #fff;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-  .dropdown-content.with-arrow[x-placement^="top"] [x-arrow], .dropdown-content.with-arrow[x-placement^="bottom"] [x-arrow], .dropdown-content.with-arrow[x-placement^="right"] [x-arrow], .dropdown-content.with-arrow[x-placement^="left"] [x-arrow] {
+  .dropdown-content.with-arrow[x-placement^="top"] [x-arrow], .dropdown-content.with-arrow[x-placement^="bottom"] [x-arrow], .dropdown-content.with-arrow[x-placement^="right"] [x-arrow], .dropdown-content.with-arrow[x-placement^="left"] [x-arrow], .dropdown-content .tooltip.with-arrow[x-placement^="top"] [x-arrow], .tooltip.with-arrow[x-placement^="top"] .dropdown-content [x-arrow], .dropdown-content .tooltip.with-arrow[x-placement^="bottom"] [x-arrow], .tooltip.with-arrow[x-placement^="bottom"] .dropdown-content [x-arrow], .dropdown-content .tooltip.with-arrow[x-placement^="right"] [x-arrow], .tooltip.with-arrow[x-placement^="right"] .dropdown-content [x-arrow], .dropdown-content .tooltip.with-arrow[x-placement^="left"] [x-arrow], .tooltip.with-arrow[x-placement^="left"] .dropdown-content [x-arrow] {
     position: absolute;
     width: 0;
     height: 0;
@@ -4200,6 +4110,54 @@ simple-crud,
 .toast-fade-leave,
 .toast-fade-enter-to {
   opacity: 1; }
+
+.tooltip {
+  z-index: 14;
+  padding: 0.5em 1em;
+  font-size: 0.9rem;
+  color: #fff;
+  word-wrap: break-word;
+  white-space: pre;
+  background-color: rgba(52, 52, 52, 0.8);
+  border-color: rgba(52, 52, 52, 0.8);
+  border-radius: 2px; }
+  .tooltip .dropdown-content.with-arrow[x-placement^="top"] [x-arrow], .dropdown-content.with-arrow[x-placement^="top"] .tooltip [x-arrow], .tooltip .dropdown-content.with-arrow[x-placement^="bottom"] [x-arrow], .dropdown-content.with-arrow[x-placement^="bottom"] .tooltip [x-arrow], .tooltip .dropdown-content.with-arrow[x-placement^="right"] [x-arrow], .dropdown-content.with-arrow[x-placement^="right"] .tooltip [x-arrow], .tooltip .dropdown-content.with-arrow[x-placement^="left"] [x-arrow], .dropdown-content.with-arrow[x-placement^="left"] .tooltip [x-arrow], .tooltip.with-arrow[x-placement^="top"] [x-arrow], .tooltip.with-arrow[x-placement^="bottom"] [x-arrow], .tooltip.with-arrow[x-placement^="right"] [x-arrow], .tooltip.with-arrow[x-placement^="left"] [x-arrow] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent; }
+  .tooltip.with-arrow[x-placement^="top"] {
+    margin-bottom: 5px; }
+    .tooltip.with-arrow[x-placement^="top"] [x-arrow] {
+      bottom: -5px;
+      left: calc(50% - 5px);
+      margin: 0 5px;
+      border-top-color: inherit;
+      border-bottom-width: 0; }
+  .tooltip.with-arrow[x-placement^="bottom"] {
+    margin-top: 5px; }
+    .tooltip.with-arrow[x-placement^="bottom"] [x-arrow] {
+      top: -5px;
+      left: calc(50% - 5px);
+      margin: 0 5px;
+      border-bottom-color: inherit;
+      border-top-width: 0; }
+  .tooltip.with-arrow[x-placement^="right"] {
+    margin-left: 5px; }
+    .tooltip.with-arrow[x-placement^="right"] [x-arrow] {
+      top: calc(50% - 5px);
+      left: -5px;
+      margin: 5px 0;
+      border-right-color: inherit;
+      border-left-width: 0; }
+  .tooltip.with-arrow[x-placement^="left"] {
+    margin-right: 5px; }
+    .tooltip.with-arrow[x-placement^="left"] [x-arrow] {
+      top: calc(50% - 5px);
+      right: -5px;
+      margin: 5px 0;
+      border-left-color: inherit;
+      border-right-width: 0; }
 
 .tree-list {
   list-style: none;

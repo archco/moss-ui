@@ -316,11 +316,10 @@ $tab-active-font-weight: bold !default;
 // tooltip
 $tooltip-color: $text-color-invert !default;
 $tooltip-bg-color: rgba($background-color-invert, .8) !default;
-$tooltip-padding: .5em 1em !default;
+$tooltip-padding-y: .5em !default;
+$tooltip-padding-x: 1em !default;
 $tooltip-font-size: .9rem !default;
 $tooltip-border-radius: $radius-small !default;
-$tooltip-animation-duration: .3s !default;
-$tooltip-animation-delay: .3s !default;
 
 // collapse - accordion
 $accordion-border-width: 1px !default;
