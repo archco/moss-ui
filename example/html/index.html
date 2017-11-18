@@ -51,6 +51,7 @@
       </section>
       <section class="pad">
         <anchored-tag tag="h1" owned>Dropdown</anchored-tag>
+        <blockquote>This component is built on <a href="https://github.com/FezVrasta/popper.js">Popper.js</a></blockquote>
         <h3>Toggle Dropdown</h3>
         <div class="dropdown" is="dropdown">
           <button class="btn" slot="button">TOGGLE</button><a class="dropdown-item active" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
@@ -134,6 +135,14 @@
             </div>
           </div>
         </div>
+        <anchored-tag tag="h1" owned>Tooltip</anchored-tag>
+        <blockquote>This vue-directive is built on <a href="https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/tooltip-documentation.md">Tooltip.js</a></blockquote>
+        <h3>Default usage of v-tooltip directive</h3>
+        <div class="pad group"><span v-tooltip="'Javascript'">JS</span></div>
+        <h3>Set placement</h3>
+        <div class="pad group"><span v-tooltip:bottom-start="'Cascading Style Sheets'">CSS</span></div>
+        <h3>Set Trigger</h3>
+        <div class="pad group"><span v-tooltip.click="'Hyper Text Markup Language'">Click Me!</span></div>
       </section>
       <footer class="footer">
         <div class="container">

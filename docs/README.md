@@ -22,7 +22,6 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [Loader](scss/loader.md)
 - [Pagination](scss/pagination.md)
 - [Scaffolding](scss/scaffolding.md)
-- [Tooltip](scss/tooltip.md)
 
 ### Vue Components
 

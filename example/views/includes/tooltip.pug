@@ -1,13 +1,13 @@
-div(class='row')
-  div(class='col-3 pad')
-    span(class='tooltip' aria-label='tooltip-top (default)') Top
-  div(class='col-3 pad')
-    span(class='tooltip tooltip-bottom' aria-label='tooltip-bottom style') Bottom
-  div(class='col-3 pad')
-    span(class='tooltip tooltip-left' aria-label='tooltip-left style') Left
-  div(class='col-3 pad')
-    span(class='tooltip tooltip-right' aria-label='tooltip-right style') Right
+blockquote This vue-directive is built on <a href="https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/tooltip-documentation.md">Tooltip.js</a>
 
-h3 use v-tooltip directive
+h3 Default usage of v-tooltip directive
 div.pad.group
-  span(v-tooltip:bottom="'Javascript'") JS
+  span(v-tooltip="'Javascript'") JS
+
+h3 Set placement
+div.pad.group
+  span(v-tooltip:bottom-start="'Cascading Style Sheets'") CSS
+
+h3 Set Trigger
+div.pad.group
+  span(v-tooltip.click="'Hyper Text Markup Language'") Click Me!

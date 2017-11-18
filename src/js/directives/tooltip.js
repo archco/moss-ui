@@ -1,10 +1,12 @@
 import Tooltip from 'tooltip.js';
 
 /*
-  v-tooltip:{arg}="'{value}'"
+  v-tooltip:{arg}.{modifiers}="'{value}'"
 
-  arg: direction. top (default) | right | bottom | left
-  value: {String} tooltip label.
+  arg: placement. top (default) | right | bottom | left (and additional suffix: '-start' and '-end')
+  modifiers: trigger. hover (default) | focus | click | manual (no actions)
+  value: {String|Object} - If value type is `String`, then tooltip title set by this value.
+    If value type is `Object`, then option of Tooltip.js will set by this object value.
  */
 export default {
   name: 'tooltip',

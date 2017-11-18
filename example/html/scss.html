@@ -771,14 +771,13 @@ SOFTWARE.</code></pre>
             <li><a href="#">Next</a></li>
           </ul>
           <anchored-tag tag="h1" owned>Tooltip</anchored-tag>
-          <div class="row">
-            <div class="col-3 pad"><span class="tooltip" aria-label="tooltip-top (default)">Top</span></div>
-            <div class="col-3 pad"><span class="tooltip tooltip-bottom" aria-label="tooltip-bottom style">Bottom</span></div>
-            <div class="col-3 pad"><span class="tooltip tooltip-left" aria-label="tooltip-left style">Left</span></div>
-            <div class="col-3 pad"><span class="tooltip tooltip-right" aria-label="tooltip-right style">Right</span></div>
-          </div>
-          <h3>use v-tooltip directive</h3>
-          <div class="pad group"><span v-tooltip:bottom="'Javascript'">JS</span></div>
+          <blockquote>This vue-directive is built on <a href="https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/tooltip-documentation.md">Tooltip.js</a></blockquote>
+          <h3>Default usage of v-tooltip directive</h3>
+          <div class="pad group"><span v-tooltip="'Javascript'">JS</span></div>
+          <h3>Set placement</h3>
+          <div class="pad group"><span v-tooltip:bottom-start="'Cascading Style Sheets'">CSS</span></div>
+          <h3>Set Trigger</h3>
+          <div class="pad group"><span v-tooltip.click="'Hyper Text Markup Language'">Click Me!</span></div>
         </section>
       </div>
       <footer class="footer">

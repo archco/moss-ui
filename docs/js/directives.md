@@ -49,8 +49,7 @@ Provide the function to confirm when "submission" is the case.
 - arg: event type.
 - value: {String} confirm message. default value is 'Are you confirm?'.
 
-### Caveat
-
+**Caveat**
 - When confirm is canceled, `event.preventDefault()` is called, so if there is a default action such as submit, it will stop as expected, but it will have no effect on click.
 - It is the event listener of the capturing phase, but it is pushed to the priority when the event listener is given with attr such as `onsubmit`.
 
@@ -113,8 +112,7 @@ Set value on a element.
 - arg: Key of query string.
 - value: Set value directly.
 
-### Example
-
+**Example**
 ```html
 <!-- URL: index.html?category=3&year=2017 -->
 <select v-set-value:category>...</select>
@@ -122,14 +120,15 @@ Set value on a element.
 
 ## Tooltip
 
-Helper for using [scss/tooltip](./tooltip.md).
+> This directive is built on [Tooltip.js](https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/tooltip-documentation.md)
 
 - Syntax
   ```html
-  <span v-tooltip:{arg}="'{value}'">text</span>
+  <span v-tooltip:{arg}.{modifiers}="'{value}'">...</span>
   ```
-- arg: direction. top (default) | right | bottom | left
-- value: String, tooltip label.
+- arg: placement. top (default) | right | bottom | left (additional suffix: '-start' and '-end')
+- modifiers: trigger. hover (default) | focus | click | manual (no actions)
+- value: `String`|`Object` - If value type is `String`, then tooltip title is set by value. If value type is `Object`, then [option of Tooltip.js](https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/tooltip-documentation.md#new-tooltipreference-options) will set by this object value.
 
 ## Trigger
 
@@ -141,10 +140,11 @@ Emit event on context root.
   ```
 - arg: event name.
 - value: {Array} Arguments for event listener.
-- example
-  ```html
-  <span v-trigger:modal-toggle="['modal01', 'show']">click me</span>
-  ```
+
+**Example**
+```html
+<span v-trigger:modal-toggle="['modal01', 'show']">click me</span>
+```
 
 ## Wrap
 
