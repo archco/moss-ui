@@ -32,7 +32,7 @@ dropdown,
   @include no-decoration;
   @include set-link-state-color($dropdown-link-color);
   display: block;
-  padding: $dropdown-link-padding-y $dropdown-link-padding-x;
+  padding: $dropdown-padding-y $dropdown-padding-x;
   font-family: inherit;
   font-size: inherit;
   transition: color $transition-time, background-color $transition-time;
@@ -47,4 +47,19 @@ dropdown,
     color: $dropdown-link-hover-color;
     background-color: $dropdown-bg-hover-color;
   }
+}
+
+.dropdown-header {
+  display: block;
+  padding: $dropdown-padding-y $dropdown-padding-x;
+  margin: 0;
+  font-size: $dropdown-header-font-size;
+  color: $dropdown-header-color;
+}
+
+.dropdown-divider {
+  height: 0;
+  margin: $dropdown-divider-margin-y 0;
+  overflow: hidden;
+  border-top: 1px solid $dropdown-divider-color;
 }

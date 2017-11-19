@@ -10,6 +10,7 @@
 
 <script>
 import Popper from 'popper.js';
+import ElementUtil from 'element-util';
 
 export default {
   name: 'dropdown',
@@ -90,9 +91,11 @@ export default {
       this.isShown ? this.hide() : this.show();
     },
     onOtherClick(event) {
-      if (event.target !== this.btn && this.isShown === true) {
-        this.hide();
-      }
+      let isOwn = event.target == this.btn
+        || event.target == this.content
+        || ElementUtil.findAncestor(event.target, this.content) !== null;
+
+      if (!isOwn && this.isShown === true) this.hide();
     },
     onKeydown(event) {
       if (!this.isShown) return;

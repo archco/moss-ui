@@ -212,14 +212,18 @@ $close-button-color: rgba(#000, .3) !default;
 // dropdown
 $dropdown-bg-color: $background-color !default;
 $dropdown-bg-hover-color: rgba(#000, .15) !default;
-$dropdown-link-padding-y: .35em !default;
-$dropdown-link-padding-x: .7em !default;
+$dropdown-padding-y: .35em !default;
+$dropdown-padding-x: .7em !default;
 $dropdown-link-hover-color: get-contrast($dropdown-bg-color) !default;
 $dropdown-link-color: rgba($dropdown-link-hover-color, .8) !default;
 $dropdown-active-bg-color: rgba(#000, .15) !default;
 $dropdown-active-color: get-contrast($dropdown-bg-color) !default;
 $dropdown-min-width: 120px !default;
 $dropdown-shadow: $shadow-normal !default;
+$dropdown-header-color: $text-color-weak !default;
+$dropdown-header-font-size: 1em !default;
+$dropdown-divider-margin-y: .4rem !default;
+$dropdown-divider-color: $border-color !default;
 
 // grid
 $grid-breakpoints: (
