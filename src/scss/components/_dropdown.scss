@@ -37,15 +37,20 @@ dropdown,
   font-size: inherit;
   transition: color $transition-time, background-color $transition-time;
 
-  &.active {
+  &.active:not([disabled]) {
     color: $dropdown-active-color;
     background-color: $dropdown-active-bg-color;
   }
 
-  &:hover,
-  &:focus {
+  &:hover:not([disabled]),
+  &:focus:not([disabled]) {
     color: $dropdown-link-hover-color;
     background-color: $dropdown-bg-hover-color;
+  }
+
+  &[disabled] {
+    cursor: default;
+    opacity: .7;
   }
 }
 

@@ -16853,9 +16853,9 @@ exports.default = {
       this.isShown ? this.hide() : this.show();
     },
     onOtherClick: function onOtherClick(event) {
-      var isOwn = event.target == this.btn || event.target == this.content || _elementUtil2.default.findAncestor(event.target, this.content) !== null;
+      var isOwn = event.target == this.btn || event.target == this.content || _elementUtil2.default.findAncestor(event.target, this.content) != null;
 
-      if (!isOwn && this.isShown === true) this.hide();
+      if (!isOwn && this.isShown == true) this.hide();
     },
     onKeydown: function onKeydown(event) {
       if (!this.isShown) return;

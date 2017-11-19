@@ -89,9 +89,19 @@ div.d-flex.justify-content-center.align-items-center(style='width:100%;')
 
 h3 Header and Divider
 dropdown
-  button(class='btn info' slot='button') HEADER
+  button(class='btn info' slot='button') DROPDOWN
   h3.dropdown-header Header
   dropdown-item(href='#') hello
   dropdown-item(href='#') drop
   div.dropdown-divider
   dropdown-item(href='#') down
+
+h3 Disabled item
+dropdown(placement='right-start')
+  button(class='btn danger' slot='button') DROPDOWN
+  h3.dropdown-header Header
+  a.dropdown-item(href='#') hello
+  a.dropdown-item(href='#') drop
+  div.dropdown-divider
+  h3.dropdown-header Not allowed
+  span.dropdown-item(href='#' disabled) down

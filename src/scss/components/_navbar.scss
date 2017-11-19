@@ -141,8 +141,7 @@ navbar,
 // navbar dropdown
 // scss-lint:disable MergeableSelector
 .nav-item .dropdown {
-  .dropdown-toggle,
-  .dropdown-hover {
+  .dropdown-button {
     @extend %nav-button;
     @extend %nav-link;
     min-width: $dropdown-min-width;

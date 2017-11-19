@@ -93,9 +93,9 @@ export default {
     onOtherClick(event) {
       let isOwn = event.target == this.btn
         || event.target == this.content
-        || ElementUtil.findAncestor(event.target, this.content) !== null;
+        || ElementUtil.findAncestor(event.target, this.content) != null;
 
-      if (!isOwn && this.isShown === true) this.hide();
+      if (!isOwn && this.isShown == true) this.hide();
     },
     onKeydown(event) {
       if (!this.isShown) return;
