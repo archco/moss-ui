@@ -36,6 +36,7 @@
             <li is="anchored-tag" tag="li">v-modal</li>
             <li is="anchored-tag" tag="li">v-clipboard</li>
             <li is="anchored-tag" tag="li">v-set-value</li>
+            <li is="anchored-tag" tag="li">v-tooltip</li>
           </ul>
         </aside>
         <section class="col-md-10">
@@ -75,6 +76,16 @@
             <option value="2">Two</option>
             <option value="3">Three</option>
           </select>
+          <anchored-tag tag="h1" owned>v-tooltip</anchored-tag>
+          <blockquote>This vue-directive is built on <a href="https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/tooltip-documentation.md">Tooltip.js</a></blockquote>
+          <h3>Default usage of v-tooltip directive</h3>
+          <div class="pad group"><span v-tooltip="'Javascript'">JS</span></div>
+          <h3>Set placement</h3>
+          <div class="pad group"><span v-tooltip:bottom-start="'Cascading Style Sheets'">CSS</span></div>
+          <h3>Set Trigger</h3>
+          <div class="pad group">
+            <button class="btn-flat info" v-tooltip.click="'HTML: Hyper Text Markup Language'">Toggle Me!</button>
+          </div>
         </section>
       </div>
       <footer class="footer">

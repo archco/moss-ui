@@ -71,8 +71,14 @@
             <dropdown-item href="#">drop</dropdown-item>
             <dropdown-item href="#">down</dropdown-item>
           </dropdown>
-          <dropdown toggle="hover" placement="right-start">
-            <button class="btn secondary" slot="button">right-start</button>
+          <dropdown toggle="hover" placement="right">
+            <button class="btn link" slot="button">right</button>
+            <dropdown-item href="#">hello</dropdown-item>
+            <dropdown-item href="#">drop</dropdown-item>
+            <dropdown-item href="#">down</dropdown-item>
+          </dropdown>
+          <dropdown toggle="hover" placement="left-start">
+            <button class="btn info" slot="button">left-start</button>
             <dropdown-item href="#">hello</dropdown-item>
             <dropdown-item href="#">drop</dropdown-item>
             <dropdown-item href="#">down</dropdown-item>
@@ -159,14 +165,16 @@
           <div class="dropdown-divider"></div>
           <h3 class="dropdown-header">Not allowed</h3><span class="dropdown-item" href="#" disabled>down</span>
         </dropdown>
-        <anchored-tag tag="h1" owned>Tooltip</anchored-tag>
+        <anchored-tag tag="h1" owned>v-tooltip</anchored-tag>
         <blockquote>This vue-directive is built on <a href="https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/tooltip-documentation.md">Tooltip.js</a></blockquote>
         <h3>Default usage of v-tooltip directive</h3>
         <div class="pad group"><span v-tooltip="'Javascript'">JS</span></div>
         <h3>Set placement</h3>
         <div class="pad group"><span v-tooltip:bottom-start="'Cascading Style Sheets'">CSS</span></div>
         <h3>Set Trigger</h3>
-        <div class="pad group"><span v-tooltip.click="'Hyper Text Markup Language'">Click Me!</span></div>
+        <div class="pad group">
+          <button class="btn-flat info" v-tooltip.click="'HTML: Hyper Text Markup Language'">Toggle Me!</button>
+        </div>
       </section>
       <footer class="footer">
         <div class="container">

@@ -22,8 +22,14 @@ div.d-flex.justify-content-between(style='width:100%;')
     dropdown-item(href='#') drop
     dropdown-item(href='#') down
 
-  dropdown(toggle='hover' placement='right-start')
-    button(class='btn secondary' slot='button') right-start
+  dropdown(toggle='hover' placement='right')
+    button(class='btn link' slot='button') right
+    dropdown-item(href='#') hello
+    dropdown-item(href='#') drop
+    dropdown-item(href='#') down
+
+  dropdown(toggle='hover' placement='left-start')
+    button(class='btn info' slot='button') left-start
     dropdown-item(href='#') hello
     dropdown-item(href='#') drop
     dropdown-item(href='#') down
