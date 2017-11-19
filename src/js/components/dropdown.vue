@@ -72,7 +72,7 @@ export default {
     initElements() {
       // button.
       this.btn = this.$slots.button[0].elm;
-      this.btn.classList.add(`dropdown-${this.toggle}`);
+      this.btn.classList.add(`dropdown-button`);
       // content.
       this.content = this.$el.querySelector('.dropdown-content');
       // items.

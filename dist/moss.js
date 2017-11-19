@@ -15814,7 +15814,7 @@ var _index3 = __webpack_require__(87);
 
 var _index4 = _interopRequireDefault(_index3);
 
-var _package = __webpack_require__(109);
+var _package = __webpack_require__(110);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -16757,7 +16757,7 @@ exports.default = {
     initElements: function initElements() {
       // button.
       this.btn = this.$slots.button[0].elm;
-      this.btn.classList.add('dropdown-' + this.toggle);
+      this.btn.classList.add('dropdown-button');
       // content.
       this.content = this.$el.querySelector('.dropdown-content');
       // items.
@@ -19977,11 +19977,11 @@ var _tooltip = __webpack_require__(106);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
-var _trigger = __webpack_require__(107);
+var _trigger = __webpack_require__(108);
 
 var _trigger2 = _interopRequireDefault(_trigger);
 
-var _wrap = __webpack_require__(108);
+var _wrap = __webpack_require__(109);
 
 var _wrap2 = _interopRequireDefault(_wrap);
 
@@ -21496,7 +21496,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _tooltip = __webpack_require__(110);
+var _tooltip = __webpack_require__(107);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
@@ -21551,78 +21551,6 @@ function parseOption(binding) {
 
 /***/ }),
 /* 107 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-/*
-  v-trigger:{arg}="[{value}]"
-
-  arg: event name.
-  value: {Array} Arguments for event listener.
- */
-exports.default = {
-  name: 'trigger',
-  bind: function bind(el, binding, vnode) {
-    el.addEventListener('click', function (event) {
-      var _vnode$context$$root;
-
-      event.preventDefault();
-      (_vnode$context$$root = vnode.context.$root).$emit.apply(_vnode$context$$root, [binding.arg].concat(_toConsumableArray(binding.value)));
-    });
-  }
-};
-
-/***/ }),
-/* 108 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _elementUtil = __webpack_require__(1);
-
-var _elementUtil2 = _interopRequireDefault(_elementUtil);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/*
-  v-wrap:{arg}.{modifiers}="'{value}'"
-
-  arg: class name. It is auto convert. e.g.) item -> item-wrapper
-  modifiers:
-    raw: If this given, it does not convert class name.
-  value: {String} Tag name of wrapper. default value is 'div'.
- */
-exports.default = {
-  name: 'wrap',
-  inserted: function inserted(el, binding) {
-    var className = binding.modifiers.raw ? binding.arg : binding.arg + '-wrapper';
-    var tagName = binding.value || 'div';
-
-    _elementUtil2.default.wrap(el, className, tagName);
-  }
-};
-
-/***/ }),
-/* 109 */
-/***/ (function(module, exports) {
-
-module.exports = {"name":"moss-ui","version":"0.3.3","description":"The user interface framework for front-end.","main":"dist/moss.js","module":"dist/moss.mod.js","scss":"src/scss/moss.scss","directories":{"dist":"dist","doc":"docs","example":"example","test":"test"},"scripts":{"test":"echo \"Please see test/test.html in browser.\" && exit 1","prebuild":"node task/banner.js","build":"npm run webpack && npm run pug","dev":"npm run webpack:dev && npm run pug","watch":"node node_modules/concurrently/src/main \"npm run webpack:dev -- --watch\" \"npm run pug -- --watch\"","pug":"node node_modules/pug-cli --pretty example/views/pages/ --out ./example/html/","webpack":"node node_modules/webpack/bin/webpack --hide-modules","webpack:dev":"npm run webpack -- --env.task=dev"},"author":"archco","bugs":{"url":"https://github.com/archco/moss-ui/issues"},"homepage":"https://github.com/archco/moss-ui","license":"MIT","dependencies":{"clipboard":"^1.7.1","element-measurer":"^1.0.1","element-util":"^1.1.0","normalize.css":"^7.0.0","popper.js":"^1.12.7","scss-palette":"^0.4.0","tooltip.js":"^1.1.7"},"devDependencies":{"babel-cli":"^6.26.0","babel-core":"^6.26.0","babel-eslint":"^8.0.2","babel-loader":"^7.1.2","babel-preset-env":"^1.6.1","babel-register":"^6.26.0","chai":"^4.1.2","concurrently":"^3.5.0","css-loader":"^0.28.7","extract-text-webpack-plugin":"^3.0.2","mocha":"^4.0.1","node-sass":"^4.6.0","postcss-loader":"^2.0.8","pug":"^2.0.0-rc.4","pug-cli":"^1.0.0-alpha6","sass-loader":"^6.0.6","source-map-loader":"^0.2.3","style-loader":"^0.19.0","vue":"^2.5.3","vue-loader":"^13.5.0","vue-template-compiler":"^2.5.3","webpack":"^3.8.1","webpack-merge":"^4.1.1","webpack-notifier":"^1.5.0"},"eslintConfig":{"env":{"node":true,"browser":true,"commonjs":true,"es6":true,"mocha":true},"extends":"eslint:recommended","parser":"babel-eslint","parserOptions":{"sourceType":"module"},"rules":{"no-console":"off"},"plugins":["html"],"settings":{"html/html-extensions":[".html",".vue"]}},"babel":{"presets":[["env",{"targets":{"browsers":["defaults"]}}]]},"browserslist":"defaults"}
-
-/***/ }),
-/* 110 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22169,6 +22097,78 @@ var _initialiseProps = function _initialiseProps() {
 
 /* harmony default export */ __webpack_exports__["default"] = (Tooltip);
 
+
+/***/ }),
+/* 108 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+/*
+  v-trigger:{arg}="[{value}]"
+
+  arg: event name.
+  value: {Array} Arguments for event listener.
+ */
+exports.default = {
+  name: 'trigger',
+  bind: function bind(el, binding, vnode) {
+    el.addEventListener('click', function (event) {
+      var _vnode$context$$root;
+
+      event.preventDefault();
+      (_vnode$context$$root = vnode.context.$root).$emit.apply(_vnode$context$$root, [binding.arg].concat(_toConsumableArray(binding.value)));
+    });
+  }
+};
+
+/***/ }),
+/* 109 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _elementUtil = __webpack_require__(1);
+
+var _elementUtil2 = _interopRequireDefault(_elementUtil);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/*
+  v-wrap:{arg}.{modifiers}="'{value}'"
+
+  arg: class name. It is auto convert. e.g.) item -> item-wrapper
+  modifiers:
+    raw: If this given, it does not convert class name.
+  value: {String} Tag name of wrapper. default value is 'div'.
+ */
+exports.default = {
+  name: 'wrap',
+  inserted: function inserted(el, binding) {
+    var className = binding.modifiers.raw ? binding.arg : binding.arg + '-wrapper';
+    var tagName = binding.value || 'div';
+
+    _elementUtil2.default.wrap(el, className, tagName);
+  }
+};
+
+/***/ }),
+/* 110 */
+/***/ (function(module, exports) {
+
+module.exports = {"name":"moss-ui","version":"0.3.3","description":"The user interface framework for front-end.","main":"dist/moss.js","module":"dist/moss.mod.js","scss":"src/scss/moss.scss","directories":{"dist":"dist","doc":"docs","example":"example","test":"test"},"scripts":{"test":"echo \"Please see test/test.html in browser.\" && exit 1","prebuild":"node task/banner.js","build":"npm run webpack && npm run pug","dev":"npm run webpack:dev && npm run pug","watch":"node node_modules/concurrently/src/main \"npm run webpack:dev -- --watch\" \"npm run pug -- --watch\"","pug":"node node_modules/pug-cli --pretty example/views/pages/ --out ./example/html/","webpack":"node node_modules/webpack/bin/webpack --hide-modules","webpack:dev":"npm run webpack -- --env.task=dev"},"author":"archco","bugs":{"url":"https://github.com/archco/moss-ui/issues"},"homepage":"https://github.com/archco/moss-ui","license":"MIT","dependencies":{"clipboard":"^1.7.1","element-measurer":"^1.0.1","element-util":"^1.1.0","normalize.css":"^7.0.0","popper.js":"^1.12.7","scss-palette":"^0.4.0","tooltip.js":"^1.1.7"},"devDependencies":{"babel-cli":"^6.26.0","babel-core":"^6.26.0","babel-eslint":"^8.0.2","babel-loader":"^7.1.2","babel-preset-env":"^1.6.1","babel-register":"^6.26.0","chai":"^4.1.2","concurrently":"^3.5.0","css-loader":"^0.28.7","extract-text-webpack-plugin":"^3.0.2","mocha":"^4.0.1","node-sass":"^4.6.0","postcss-loader":"^2.0.8","pug":"^2.0.0-rc.4","pug-cli":"^1.0.0-alpha6","sass-loader":"^6.0.6","source-map-loader":"^0.2.3","style-loader":"^0.19.0","vue":"^2.5.3","vue-loader":"^13.5.0","vue-template-compiler":"^2.5.3","webpack":"^3.8.1","webpack-merge":"^4.1.1","webpack-notifier":"^1.5.0"},"eslintConfig":{"env":{"node":true,"browser":true,"commonjs":true,"es6":true,"mocha":true},"extends":"eslint:recommended","parser":"babel-eslint","parserOptions":{"sourceType":"module"},"rules":{"no-console":"off"},"plugins":["html"],"settings":{"html/html-extensions":[".html",".vue"]}},"babel":{"presets":[["env",{"targets":{"browsers":["defaults"]}}]]},"browserslist":"defaults"}
 
 /***/ }),
 /* 111 */

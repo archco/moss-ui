@@ -1,5 +1,5 @@
 .tooltip {
-  @include popper-arrow();
+  @extend %popper-arrow;
   z-index: $z-index-tooltip;
   padding: $tooltip-padding-y $tooltip-padding-x;
   font-size: $tooltip-font-size;

@@ -21,6 +21,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Change browserslist setting "> 1%" to "defaults". #50
 - Change KeybordEvent.keyCode to KeboardEvent.key #53
 
+### Removed
+- Remove tooltip.scss. instead use [v-tooltip](https://github.com/archco/moss-ui/blob/master/docs/js/directives.md#tooltip) vue-directive. #56
+
 ## [0.3.2][] - 2017-10-18
 
 ### Changed

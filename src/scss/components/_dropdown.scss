@@ -10,14 +10,13 @@ dropdown,
   justify-content: flex-start;
 }
 
-.dropdown-toggle,
-.dropdown-hover {
+.dropdown-button {
   @extend %btn-common;
   &::after { @include caret('down'); }
 }
 
 .dropdown-content {
-  @include popper-arrow();
+  @extend %popper-arrow;
   z-index: $z-index-dropdown-content;
   display: none;
   flex-flow: column;

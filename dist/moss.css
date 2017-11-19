@@ -60,6 +60,48 @@
     top: 0;
     opacity: 1; } }
 
+.with-arrow[x-placement^="top"].dropdown-content [x-arrow], .with-arrow[x-placement^="top"].tooltip [x-arrow], .with-arrow[x-placement^="bottom"].dropdown-content [x-arrow], .with-arrow[x-placement^="bottom"].tooltip [x-arrow], .with-arrow[x-placement^="right"].dropdown-content [x-arrow], .with-arrow[x-placement^="right"].tooltip [x-arrow], .with-arrow[x-placement^="left"].dropdown-content [x-arrow], .with-arrow[x-placement^="left"].tooltip [x-arrow] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent; }
+
+.with-arrow[x-placement^="top"].dropdown-content, .with-arrow[x-placement^="top"].tooltip {
+  margin-bottom: 5px; }
+  .with-arrow[x-placement^="top"].dropdown-content [x-arrow], .with-arrow[x-placement^="top"].tooltip [x-arrow] {
+    bottom: -5px;
+    left: calc(50% - 5px);
+    margin: 0 5px;
+    border-top-color: inherit;
+    border-bottom-width: 0; }
+
+.with-arrow[x-placement^="bottom"].dropdown-content, .with-arrow[x-placement^="bottom"].tooltip {
+  margin-top: 5px; }
+  .with-arrow[x-placement^="bottom"].dropdown-content [x-arrow], .with-arrow[x-placement^="bottom"].tooltip [x-arrow] {
+    top: -5px;
+    left: calc(50% - 5px);
+    margin: 0 5px;
+    border-bottom-color: inherit;
+    border-top-width: 0; }
+
+.with-arrow[x-placement^="right"].dropdown-content, .with-arrow[x-placement^="right"].tooltip {
+  margin-left: 5px; }
+  .with-arrow[x-placement^="right"].dropdown-content [x-arrow], .with-arrow[x-placement^="right"].tooltip [x-arrow] {
+    top: calc(50% - 5px);
+    left: -5px;
+    margin: 5px 0;
+    border-right-color: inherit;
+    border-left-width: 0; }
+
+.with-arrow[x-placement^="left"].dropdown-content, .with-arrow[x-placement^="left"].tooltip {
+  margin-right: 5px; }
+  .with-arrow[x-placement^="left"].dropdown-content [x-arrow], .with-arrow[x-placement^="left"].tooltip [x-arrow] {
+    top: calc(50% - 5px);
+    right: -5px;
+    margin: 5px 0;
+    border-left-color: inherit;
+    border-right-width: 0; }
+
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -1774,8 +1816,7 @@ aside {
 
 input[type="submit"],
 input[type="button"],
-input[type="reset"], .btn, .btn-flat, .btn-icon, .close-button, .dropdown-toggle,
-.dropdown-hover, .navbar-toggle, .nav-item .dropdown .dropdown-toggle,
+input[type="reset"], .btn, .btn-flat, .btn-icon, .close-button, .dropdown-button, .navbar-toggle, .nav-item .dropdown .dropdown-toggle,
 .nav-item .dropdown .dropdown-hover, .scroll-to-container .scroll-to-top,
 .scroll-to-container .scroll-to-bottom {
   text-decoration: none;
@@ -1792,13 +1833,11 @@ input[type="reset"], .btn, .btn-flat, .btn-icon, .close-button, .dropdown-toggle
   vertical-align: middle; }
   input[type="submit"]:focus,
   input[type="button"]:focus,
-  input[type="reset"]:focus, .btn:focus, .btn-flat:focus, .btn-icon:focus, .close-button:focus, .dropdown-toggle:focus,
-  .dropdown-hover:focus, .navbar-toggle:focus, .nav-item .dropdown .dropdown-toggle:focus,
+  input[type="reset"]:focus, .btn:focus, .btn-flat:focus, .btn-icon:focus, .close-button:focus, .dropdown-button:focus, .navbar-toggle:focus, .nav-item .dropdown .dropdown-toggle:focus,
   .nav-item .dropdown .dropdown-hover:focus, .scroll-to-container .scroll-to-top:focus,
   .scroll-to-container .scroll-to-bottom:focus, input[type="submit"]:hover,
   input[type="button"]:hover,
-  input[type="reset"]:hover, .btn:hover, .btn-flat:hover, .btn-icon:hover, .close-button:hover, .dropdown-toggle:hover,
-  .dropdown-hover:hover, .navbar-toggle:hover, .nav-item .dropdown .dropdown-toggle:hover,
+  input[type="reset"]:hover, .btn:hover, .btn-flat:hover, .btn-icon:hover, .close-button:hover, .dropdown-button:hover, .navbar-toggle:hover, .nav-item .dropdown .dropdown-toggle:hover,
   .nav-item .dropdown .dropdown-hover:hover, .scroll-to-container .scroll-to-top:hover,
   .scroll-to-container .scroll-to-bottom:hover {
     text-decoration: none; }
@@ -3305,8 +3344,7 @@ dropdown,
       -ms-flex-pack: start;
           justify-content: flex-start; }
 
-.dropdown-toggle::after,
-.dropdown-hover::after {
+.dropdown-button::after {
   display: inline-block;
   width: 0;
   height: 0;
@@ -3316,23 +3354,18 @@ dropdown,
   content: '';
   border-color: transparent;
   border-top-color: initial; }
-  .dropdown-toggle::after:empty,
-  .dropdown-hover::after:empty {
+  .dropdown-button::after:empty {
     margin-left: 0; }
-  .dropdown-toggle::after.up,
-  .dropdown-hover::after.up {
+  .dropdown-button::after.up {
     border-color: transparent;
     border-bottom-color: initial; }
-  .dropdown-toggle::after.right,
-  .dropdown-hover::after.right {
+  .dropdown-button::after.right {
     border-color: transparent;
     border-left-color: initial; }
-  .dropdown-toggle::after.down,
-  .dropdown-hover::after.down {
+  .dropdown-button::after.down {
     border-color: transparent;
     border-top-color: initial; }
-  .dropdown-toggle::after.left,
-  .dropdown-hover::after.left {
+  .dropdown-button::after.left {
     border-color: transparent;
     border-right-color: initial; }
 
@@ -3347,43 +3380,6 @@ dropdown,
   background-color: #fff;
   border-color: #fff;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-  .dropdown-content.with-arrow[x-placement^="top"] [x-arrow], .dropdown-content.with-arrow[x-placement^="bottom"] [x-arrow], .dropdown-content.with-arrow[x-placement^="right"] [x-arrow], .dropdown-content.with-arrow[x-placement^="left"] [x-arrow], .dropdown-content .tooltip.with-arrow[x-placement^="top"] [x-arrow], .tooltip.with-arrow[x-placement^="top"] .dropdown-content [x-arrow], .dropdown-content .tooltip.with-arrow[x-placement^="bottom"] [x-arrow], .tooltip.with-arrow[x-placement^="bottom"] .dropdown-content [x-arrow], .dropdown-content .tooltip.with-arrow[x-placement^="right"] [x-arrow], .tooltip.with-arrow[x-placement^="right"] .dropdown-content [x-arrow], .dropdown-content .tooltip.with-arrow[x-placement^="left"] [x-arrow], .tooltip.with-arrow[x-placement^="left"] .dropdown-content [x-arrow] {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border: 5px solid transparent; }
-  .dropdown-content.with-arrow[x-placement^="top"] {
-    margin-bottom: 5px; }
-    .dropdown-content.with-arrow[x-placement^="top"] [x-arrow] {
-      bottom: -5px;
-      left: calc(50% - 5px);
-      margin: 0 5px;
-      border-top-color: inherit;
-      border-bottom-width: 0; }
-  .dropdown-content.with-arrow[x-placement^="bottom"] {
-    margin-top: 5px; }
-    .dropdown-content.with-arrow[x-placement^="bottom"] [x-arrow] {
-      top: -5px;
-      left: calc(50% - 5px);
-      margin: 0 5px;
-      border-bottom-color: inherit;
-      border-top-width: 0; }
-  .dropdown-content.with-arrow[x-placement^="right"] {
-    margin-left: 5px; }
-    .dropdown-content.with-arrow[x-placement^="right"] [x-arrow] {
-      top: calc(50% - 5px);
-      left: -5px;
-      margin: 5px 0;
-      border-right-color: inherit;
-      border-left-width: 0; }
-  .dropdown-content.with-arrow[x-placement^="left"] {
-    margin-right: 5px; }
-    .dropdown-content.with-arrow[x-placement^="left"] [x-arrow] {
-      top: calc(50% - 5px);
-      right: -5px;
-      margin: 5px 0;
-      border-left-color: inherit;
-      border-right-width: 0; }
   .dropdown-content.show {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4121,43 +4117,6 @@ simple-crud,
   background-color: rgba(52, 52, 52, 0.8);
   border-color: rgba(52, 52, 52, 0.8);
   border-radius: 2px; }
-  .tooltip .dropdown-content.with-arrow[x-placement^="top"] [x-arrow], .dropdown-content.with-arrow[x-placement^="top"] .tooltip [x-arrow], .tooltip .dropdown-content.with-arrow[x-placement^="bottom"] [x-arrow], .dropdown-content.with-arrow[x-placement^="bottom"] .tooltip [x-arrow], .tooltip .dropdown-content.with-arrow[x-placement^="right"] [x-arrow], .dropdown-content.with-arrow[x-placement^="right"] .tooltip [x-arrow], .tooltip .dropdown-content.with-arrow[x-placement^="left"] [x-arrow], .dropdown-content.with-arrow[x-placement^="left"] .tooltip [x-arrow], .tooltip.with-arrow[x-placement^="top"] [x-arrow], .tooltip.with-arrow[x-placement^="bottom"] [x-arrow], .tooltip.with-arrow[x-placement^="right"] [x-arrow], .tooltip.with-arrow[x-placement^="left"] [x-arrow] {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border: 5px solid transparent; }
-  .tooltip.with-arrow[x-placement^="top"] {
-    margin-bottom: 5px; }
-    .tooltip.with-arrow[x-placement^="top"] [x-arrow] {
-      bottom: -5px;
-      left: calc(50% - 5px);
-      margin: 0 5px;
-      border-top-color: inherit;
-      border-bottom-width: 0; }
-  .tooltip.with-arrow[x-placement^="bottom"] {
-    margin-top: 5px; }
-    .tooltip.with-arrow[x-placement^="bottom"] [x-arrow] {
-      top: -5px;
-      left: calc(50% - 5px);
-      margin: 0 5px;
-      border-bottom-color: inherit;
-      border-top-width: 0; }
-  .tooltip.with-arrow[x-placement^="right"] {
-    margin-left: 5px; }
-    .tooltip.with-arrow[x-placement^="right"] [x-arrow] {
-      top: calc(50% - 5px);
-      left: -5px;
-      margin: 5px 0;
-      border-right-color: inherit;
-      border-left-width: 0; }
-  .tooltip.with-arrow[x-placement^="left"] {
-    margin-right: 5px; }
-    .tooltip.with-arrow[x-placement^="left"] [x-arrow] {
-      top: calc(50% - 5px);
-      right: -5px;
-      margin: 5px 0;
-      border-left-color: inherit;
-      border-right-width: 0; }
 
 .tree-list {
   list-style: none;
