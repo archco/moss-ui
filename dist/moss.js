@@ -17562,7 +17562,7 @@ exports.default = {
       }
     },
     onKeydown: function onKeydown(event) {
-      if (this.show && event.key.match(/(^Escape|^Esc)/)) {
+      if (this.show && event.key.match(/Escape|Esc/)) {
         event.preventDefault();
         this.show = false;
       }

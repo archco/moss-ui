@@ -10,9 +10,9 @@
 ```html
 <dropdown>
   <button class="btn" slot="button">TOGGLE</button>
-  <a href="#" class="active">Item 01</a>
-  <a href="#">Item 02</a>
-  <a href="#">Item 03</a>
+  <a href="#" class="dropdown-item active">Item 01</a>
+  <a href="#" class="dropdown-item">Item 02</a>
+  <a href="#" class="dropdown-item">Item 03</a>
 </dropdown>
 ```
 
@@ -21,8 +21,8 @@
 ```html
 <dropdown toggle="hover">
   <button class="btn" slot="button">HOVER</button>
-  <a href="#">Item 01</a>
-  <a href="#">Item 02</a>
+  <a href="#" class="dropdown-item">Item 01</a>
+  <a href="#" class="dropdown-item">Item 02</a>
 </dropdown>
 ```
 
@@ -36,8 +36,8 @@
 ```html
 <dropdown toggle="hover" placement="right-start">
   <button class="btn" slot="button">HOVER</button>
-  <a href="#">Item 01</a>
-  <a href="#">Item 02</a>
+  <a href="#" class="dropdown-item">Item 01</a>
+  <a href="#" class="dropdown-item">Item 02</a>
 </dropdown>
 ```
 
@@ -51,8 +51,24 @@ If the placement is `top` or `bottom`, this value means `width, height`. In case
 ```html
 <dropdown toggle="hover" offset="10%, 10">
   <button class="btn" slot="button">HOVER</button>
-  <a href="#">Item 01</a>
-  <a href="#">Item 02</a>
+  <a href="#" class="dropdown-item">Item 01</a>
+  <a href="#" class="dropdown-item">Item 02</a>
+</dropdown>
+```
+
+### Content decorators
+- classes: `.dropdown-item`, `.dropdown-header` and `.dropdown-divider`.
+- disabled-item attribute: `[disabled]`
+
+```html
+<dropdown>
+  <button class="btn" slot="button">DROPDOWN</button>
+  <h3 class="dropdown-header">Header</h3>
+  <a href="#" class="dropdown-item">Item 01</a>
+  <a href="#" class="dropdown-item">Item 02</a>
+  <div class="dropdown-divider"></div>
+  <a href="#" class="dropdown-item" disabled>Item 03</a>
+  <a href="#" class="dropdown-item">Item 04</a>
 </dropdown>
 ```
 
