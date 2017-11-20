@@ -51,6 +51,7 @@ export default {
     return {
       btn: null,
       content: null,
+      items: [],
       isShown: false,
       pop: undefined,
     };
@@ -70,17 +71,6 @@ export default {
     },
   },
   methods: {
-    initElements() {
-      // button.
-      this.btn = this.$slots.button[0].elm;
-      this.btn.classList.add(`dropdown-button`);
-      // content.
-      this.content = this.$el.querySelector('.dropdown-content');
-      // items.
-      this.$slots.default.forEach(item => {
-        if (item.tag === 'a') item.elm.classList.add('dropdown-item');
-      });
-    },
     show() {
       this.isShown = true;
     },
@@ -97,11 +87,39 @@ export default {
 
       if (!isOwn && this.isShown == true) this.hide();
     },
-    onKeydown(event) {
-      if (!this.isShown) return;
-      // IE: escape key value is 'Esc' (others: 'Escape')
-      if (event.key.match(/(^Escape|^Esc)/)) {
+    onBtnKeydown(event) {
+      if (event.key.match(/Escape|Esc/)) {
         this.hide();
+        this.btn.focus();
+      }
+      if (event.key.match(/ArrowUp|ArrowDown|Up|Down/)) {
+        event.preventDefault();
+        if (!this.isShown) this.show();
+        if (event.key.match(/ArrowUp|Up/)) {
+          this.items[this.items.length - 1].focus();
+        }
+        if (event.key.match(/ArrowDown|Down/)) {
+          this.items[0].focus();
+        }
+      }
+    },
+    onItemKeydown(event) {
+      if (event.key.match(/Escape|Esc/)) {
+        this.hide();
+        this.btn.focus();
+      }
+      if (event.key.match(/ArrowUp|ArrowDown|Up|Down/)) {
+        event.preventDefault();
+        let index = this.items.findIndex(item => item == event.currentTarget);
+        if (index === -1) return;
+        if (event.key.match(/ArrowUp|Up/)) {
+          index = index == 0 ? this.items.length - 1 : index - 1;
+          this.items[index].focus();
+        }
+        if (event.key.match(/ArrowDown|Down/)) {
+          index = index == this.items.length - 1 ? 0 : index + 1;
+          this.items[index].focus();
+        }
       }
     },
     createPopper() {
@@ -124,17 +142,37 @@ export default {
         this.updatePopper();
       }
     },
+    initElements() {
+      // button.
+      this.btn = this.$slots.button[0].elm;
+      this.btn.classList.add(`dropdown-button`);
+      // content.
+      this.content = this.$el.querySelector('.dropdown-content');
+      // items.
+      let items = this.content.querySelectorAll('.dropdown-item:not([disabled])');
+      this.items = ElementUtil.nodeListToArray(items);
+    },
+    addListeners() {
+      if (this.toggle === 'toggle') {
+        this.btn.addEventListener('click', this.toggleShow.bind(this));
+        window.addEventListener('click', this.onOtherClick.bind(this));
+      } else if (this.toggle === 'hover') {
+        this.$el.addEventListener('mouseover', this.show.bind(this));
+        this.$el.addEventListener('mouseout', this.hide.bind(this));
+      }
+      // Navigation by key.
+      this.btn.addEventListener('keydown', this.onBtnKeydown.bind(this));
+      this.items.forEach(
+        item => item.addEventListener(
+          'keydown',
+          this.onItemKeydown.bind(this)
+        )
+      );
+    }
   },
   mounted() {
     this.initElements();
-    if (this.toggle === 'toggle') {
-      this.btn.addEventListener('click', this.toggleShow.bind(this));
-      window.addEventListener('click', this.onOtherClick.bind(this));
-      window.addEventListener('keydown', this.onKeydown.bind(this));
-    } else if (this.toggle === 'hover') {
-      this.$el.addEventListener('mouseover', this.show.bind(this));
-      this.$el.addEventListener('mouseout', this.hide.bind(this));
-    }
+    this.addListeners();
   },
 }
 </script>

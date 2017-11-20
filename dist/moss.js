@@ -16812,6 +16812,7 @@ exports.default = {
     return {
       btn: null,
       content: null,
+      items: [],
       isShown: false,
       pop: undefined
     };
@@ -16832,17 +16833,6 @@ exports.default = {
     }
   },
   methods: {
-    initElements: function initElements() {
-      // button.
-      this.btn = this.$slots.button[0].elm;
-      this.btn.classList.add('dropdown-button');
-      // content.
-      this.content = this.$el.querySelector('.dropdown-content');
-      // items.
-      this.$slots.default.forEach(function (item) {
-        if (item.tag === 'a') item.elm.classList.add('dropdown-item');
-      });
-    },
     show: function show() {
       this.isShown = true;
     },
@@ -16857,11 +16847,41 @@ exports.default = {
 
       if (!isOwn && this.isShown == true) this.hide();
     },
-    onKeydown: function onKeydown(event) {
-      if (!this.isShown) return;
-      // IE: escape key value is 'Esc' (others: 'Escape')
-      if (event.key.match(/(^Escape|^Esc)/)) {
+    onBtnKeydown: function onBtnKeydown(event) {
+      if (event.key.match(/Escape|Esc/)) {
         this.hide();
+        this.btn.focus();
+      }
+      if (event.key.match(/ArrowUp|ArrowDown|Up|Down/)) {
+        event.preventDefault();
+        if (!this.isShown) this.show();
+        if (event.key.match(/ArrowUp|Up/)) {
+          this.items[this.items.length - 1].focus();
+        }
+        if (event.key.match(/ArrowDown|Down/)) {
+          this.items[0].focus();
+        }
+      }
+    },
+    onItemKeydown: function onItemKeydown(event) {
+      if (event.key.match(/Escape|Esc/)) {
+        this.hide();
+        this.btn.focus();
+      }
+      if (event.key.match(/ArrowUp|ArrowDown|Up|Down/)) {
+        event.preventDefault();
+        var index = this.items.findIndex(function (item) {
+          return item == event.currentTarget;
+        });
+        if (index === -1) return;
+        if (event.key.match(/ArrowUp|Up/)) {
+          index = index == 0 ? this.items.length - 1 : index - 1;
+          this.items[index].focus();
+        }
+        if (event.key.match(/ArrowDown|Down/)) {
+          index = index == this.items.length - 1 ? 0 : index + 1;
+          this.items[index].focus();
+        }
       }
     },
     createPopper: function createPopper() {
@@ -16883,18 +16903,37 @@ exports.default = {
         this.createPopper();
         this.updatePopper();
       }
+    },
+    initElements: function initElements() {
+      // button.
+      this.btn = this.$slots.button[0].elm;
+      this.btn.classList.add('dropdown-button');
+      // content.
+      this.content = this.$el.querySelector('.dropdown-content');
+      // items.
+      var items = this.content.querySelectorAll('.dropdown-item:not([disabled])');
+      this.items = _elementUtil2.default.nodeListToArray(items);
+    },
+    addListeners: function addListeners() {
+      var _this = this;
+
+      if (this.toggle === 'toggle') {
+        this.btn.addEventListener('click', this.toggleShow.bind(this));
+        window.addEventListener('click', this.onOtherClick.bind(this));
+      } else if (this.toggle === 'hover') {
+        this.$el.addEventListener('mouseover', this.show.bind(this));
+        this.$el.addEventListener('mouseout', this.hide.bind(this));
+      }
+      // Navigation by key.
+      this.btn.addEventListener('keydown', this.onBtnKeydown.bind(this));
+      this.items.forEach(function (item) {
+        return item.addEventListener('keydown', _this.onItemKeydown.bind(_this));
+      });
     }
   },
   mounted: function mounted() {
     this.initElements();
-    if (this.toggle === 'toggle') {
-      this.btn.addEventListener('click', this.toggleShow.bind(this));
-      window.addEventListener('click', this.onOtherClick.bind(this));
-      window.addEventListener('keydown', this.onKeydown.bind(this));
-    } else if (this.toggle === 'hover') {
-      this.$el.addEventListener('mouseover', this.show.bind(this));
-      this.$el.addEventListener('mouseout', this.hide.bind(this));
-    }
+    this.addListeners();
   }
 };
 
