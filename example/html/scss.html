@@ -20,10 +20,7 @@
           <nav-item href="vue.html" text="Vue"></nav-item>
           <nav-item>
             <dropdown toggle="toggle" placement="bottom-end">
-              <button slot="button">Utilities</button>
-              <dropdown-item href="scss-helpers.html">SCSS Helpers</dropdown-item>
-              <dropdown-item href="vue-directives.html">Vue Directieves</dropdown-item>
-              <dropdown-item href="js-libraries.html">JS Libraries</dropdown-item>
+              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directieves</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
             </dropdown>
           </nav-item>
         </navbar-nav>
@@ -235,14 +232,14 @@ SOFTWARE.</code></pre>
             <button class="btn">Center</button>
             <button class="btn">Right</button>
             <dropdown>
-              <button class="btn" slot="button">Dropdown</button><a href="#">Link 1</a><a href="#">Link 2</a><a href="#">Link 3</a>
+              <button class="btn" slot="button">Dropdown</button><a class="dropdown-item" href="#">Link 1</a><a class="dropdown-item" href="#">Link 2</a><a class="dropdown-item" href="#">Link 3</a>
             </dropdown>
           </div><br>
           <div class="btn-group-vertical">
             <button class="btn default">Top</button>
             <button class="btn shade">Middle</button>
-            <dropdown>
-              <button class="btn dark" slot="button">Dropdown</button><a href="#">Link 1</a><a href="#">Link 2</a><a href="#">Link 3</a>
+            <dropdown placement="right-start">
+              <button class="btn dark" slot="button">Dropdown</button><a class="dropdown-item" href="#">Link 1</a><a class="dropdown-item" href="#">Link 2</a><a class="dropdown-item" href="#">Link 3</a>
             </dropdown>
             <button class="btn success">Bottom</button>
           </div>

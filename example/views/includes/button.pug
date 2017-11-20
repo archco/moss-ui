@@ -59,16 +59,16 @@ div(class='btn-group')
   button(class='btn') Right
   dropdown
     button(class='btn' slot='button') Dropdown
-    a(href='#') Link 1
-    a(href='#') Link 2
-    a(href='#') Link 3
+    a.dropdown-item(href='#') Link 1
+    a.dropdown-item(href='#') Link 2
+    a.dropdown-item(href='#') Link 3
 br
 div(class='btn-group-vertical')
   button(class='btn default') Top
   button(class='btn shade') Middle
-  dropdown
+  dropdown(placement='right-start')
     button(class='btn dark' slot='button') Dropdown
-    a(href='#') Link 1
-    a(href='#') Link 2
-    a(href='#') Link 3
+    a.dropdown-item(href='#') Link 1
+    a.dropdown-item(href='#') Link 2
+    a.dropdown-item(href='#') Link 3
   button(class='btn success') Bottom

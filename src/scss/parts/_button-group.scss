@@ -5,8 +5,7 @@
 
   > .btn,
   > .btn-flat,
-  > .dropdown > .dropdown-btn,
-  > .dropdown > .dropdown-toggle {
+  > .dropdown > .dropdown-button {
     flex: 0 1 auto;
     margin: 0;
   }
@@ -19,8 +18,7 @@
   }
 
   > .dropdown:not(:first-child):not(:last-child) {
-    > .dropdown-btn,
-    > .dropdown-toggle {
+    > .dropdown-button {
       border-radius: 0;
     }
   }
@@ -41,15 +39,13 @@
   }
 
   > .dropdown:first-child {
-    > .dropdown-btn,
-    > .dropdown-toggle {
+    > .dropdown-button {
       @include border-right-radius(0);
     }
   }
 
   > .dropdown:last-child {
-    > .dropdown-btn,
-    > .dropdown-toggle {
+    > .dropdown-button {
       @include border-left-radius(0);
     }
   }
@@ -71,15 +67,13 @@
   }
 
   > .dropdown:first-child {
-    > .dropdown-btn,
-    > .dropdown-toggle {
+    > .dropdown-button {
       @include border-bottom-radius(0);
     }
   }
 
   > .dropdown:last-child {
-    > .dropdown-btn,
-    > .dropdown-toggle {
+    > .dropdown-button {
       @include border-top-radius(0);
     }
   }
