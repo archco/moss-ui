@@ -1,5 +1,5 @@
-const expect = window.chai.expect;
-const Color = window.Moss.lib.Color;
+var expect = window.chai.expect;
+var Color = window.Moss.lib.Color;
 
 describe('Color library', function () {
 

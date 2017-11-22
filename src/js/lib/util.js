@@ -1,15 +1,15 @@
 import scrollIt from './utils/scroll-it.js';
 
-class Util {
+export default {
 
   /**
    * location.search to Object.
    *
    * @return {Object|null}
    */
-  static locationSearchToObject() {
+  locationSearchToObject() {
     return this.searchToObject(window.location.search);
-  }
+  },
 
   /**
    * searchToObject
@@ -17,7 +17,7 @@ class Util {
    * @param  {String} search HTMLAnchorElement.search
    * @return {Object|null}
    */
-  static searchToObject(search) {
+  searchToObject(search) {
     if (search === '') return null;
 
     let queries = search.substring(1).split('&');
@@ -30,7 +30,7 @@ class Util {
     });
 
     return obj;
-  }
+  },
 
   /**
    * returns true if 'big' contains 'small'.
@@ -39,7 +39,7 @@ class Util {
    * @param  {mixed}  small
    * @return {Boolean}
    */
-  static isContains(big, small) {
+  isContains(big, small) {
     if (typeof big !== typeof small) return false;
 
     if (Array.isArray(big) && Array.isArray(small)) {
@@ -57,7 +57,7 @@ class Util {
     } else {
       return big === small;
     }
-  }
+  },
 
   /**
    * Determine whether value is empty.
@@ -66,7 +66,7 @@ class Util {
    * @param  {Mixed}  val
    * @return {Boolean}
    */
-  static isEmpty(val) {
+  isEmpty(val) {
     if (typeof val === 'undefined') return true;
     if (val === null) return true;
     if (typeof val === 'boolean') return !val;
@@ -76,7 +76,7 @@ class Util {
     if (typeof val === 'object') {
       return Object.keys(val).length === 0 && val.constructor === Object;
     }
-  }
+  },
 
   /**
    * isMobileSize
@@ -84,13 +84,9 @@ class Util {
    * @param  {Number}  [ size = 800 ]
    * @return {Boolean}
    */
-  static isMobileSize(size = 800) {
+  isMobileSize(size = 800) {
     return window.innerWidth < size;
-  }
-}
+  },
 
-Object.assign(Util, {
   scrollIt,
-});
-
-export default Util;
+};
