@@ -1806,11 +1806,6 @@ textarea.inline {
   .input .icon-left {
     left: 0; }
 
-aside {
-  position: relative; }
-  aside .fixed {
-    position: fixed; }
-
 input[type="submit"],
 input[type="button"],
 input[type="reset"], .btn, .btn-flat, .btn-icon, .close-button, .dropdown-button, .navbar-toggle, .nav-item .dropdown .dropdown-button, .scroll-to-container .scroll-to-top,
