@@ -16232,7 +16232,6 @@ exports.default = {
     };
     var children = [createElement('a', {
       attrs: {
-        name: tagId,
         href: '#' + tagId
       }
     }, this.$slots.default)];

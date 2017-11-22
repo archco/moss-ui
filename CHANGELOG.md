@@ -24,6 +24,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Change browserslist setting "> 1%" to "defaults". #50
 - Change KeybordEvent.keyCode to KeboardEvent.key #53
 
+### Fixed
+- Fix attribute problem in anchored-tag.vue.
+
 ### Removed
 - Remove tooltip.scss. instead use [v-tooltip](https://github.com/archco/moss-ui/blob/master/docs/js/directives.md#tooltip) vue-directive. #56
 
