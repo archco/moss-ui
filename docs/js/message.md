@@ -1,7 +1,7 @@
 # Message
 
-> source:
-> [js/components/message](../../src/js/components/message.vue)
+> source:  
+> [js/components/message](../../src/js/components/message.vue)  
 > [js/components/message-box](../../src/js/components/message-box.vue)
 
 - [message](#message)

@@ -1,7 +1,7 @@
 # Switch
 
-> sources:
-> [js/components/input-check](../../src/js/components/input-check.vue)
+> sources:  
+> [js/components/input-check](../../src/js/components/input-check.vue)  
 > [js/components/input-radio](../../src/js/components/input-radio.vue)
 
 ## Usage
