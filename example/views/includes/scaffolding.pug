@@ -5,8 +5,16 @@ div.group
   a(href='#' class='no-deco') no-decoration link
 
 h2 Blockquote
+h3 Default blockquote
 blockquote
   | This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can put Markdown into a blockquote.
+h3 Blockquote with color-set
+div.pad
+  blockquote.link=lorem.substring(0, 140)
+  blockquote.danger=lorem
+div.bg-color-dark.pad
+  blockquote.success=lorem.substring(0, 140)
+  blockquote.shade=lorem
 
 h2 Table
 div.group

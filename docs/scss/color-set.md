@@ -28,4 +28,5 @@ $color-set: (
 - [Form#input-with-color-set](form.md#input-with-color-set)
 - [Helpers#color](helpers.md#color) : color of text and background.
 - [Message](../js/message.md) : color of message box.
+- [Scaffolding#blockquote](scaffolding.md#blockquote)
 - [Tabs](../js/tabs.md) : tabs active color.
