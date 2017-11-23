@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 - Add a new dependency, [Popper.js](https://github.com/FezVrasta/popper.js). #54
+- Add color-set to blockquote. #57
 
 ### Changed
 - Improve Dropdown #46

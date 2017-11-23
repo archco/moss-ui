@@ -1,29 +1,37 @@
 //======================================================================
-// Core Variables
+// Theme
 //======================================================================
 
-// fonts
+// Fonts
+//==============================
+
+// font-families
 $font-serif: Georgia, serif !default;
 $font-sans-serif: Geneva, sans-serif !default;
 $font-monospace: Consolas, Courier, monospace !default;
 $font-cursive: cursive !default;
 
-$font-small: .8em !default;
-$font-large: 1.2em !default;
+// Theme font-family
+$font-base: $font-sans-serif !default;
+$font-accent: $font-serif !default;
+
+// font-size
+$font-size: 1em !default;
+$font-size-small: .8em !default;
+$font-size-large: 1.2em !default;
+
+// font-weight
 $font-weight-light: lighter !default;
 $font-weight-normal: normal !default;
 $font-weight-bold: bold !default;
 
-// Set theme fonts.
-$font-base: $font-sans-serif !default;
-$font-accent: $font-serif !default;
+// Colors
+//==============================
 
-// colors (scss-palette)
+// colors from scss-palette
 // @links  https://archco.github.io/scss-palette/
-//===================================================
 $white: palette('white') !default;
 $black: palette('jet') !default;
-$gray: palette('gray') !default;
 $lightgray: palette('gainsboro') !default;
 $mediumgray: palette('mediumgray') !default;
 $darkgray: palette('dimgray') !default;
@@ -33,20 +41,17 @@ $green: palette('pigmentgreen') !default;
 $red: palette('chilired') !default;
 $yellow: palette('naturalyellow') !default;
 
-// Theme
-// ==================================================
-
 // theme-colors
 $primary-color: palette('huntergreen') !default;
 $primary-color-accent: darken($primary-color, 16%) !default;
 $secondary-color: palette('asparagus') !default;
 
-// background colors.
+// background colors
 $background-color: $white !default;
 $background-color-invert: $black !default;
 $background-color-shade: rgba($background-color-invert, .1) !default;
 
-// text colors.
+// text colors
 $text-color: $black !default;
 $text-color-invert: $white !default;
 $text-color-weak: rgba-to-rgb(rgba($text-color, .67), $background-color) !default;
@@ -55,7 +60,7 @@ $text-color-light: if(lightness($text-color) > 50, $text-color, $text-color-inve
 $text-color-dark: if(lightness($text-color) > 50, $text-color-invert, $text-color) !default;
 $text-color-middle: mix($text-color-light, $text-color-dark) !default;
 
-// color-set.
+// color variables
 $default-color: mix($background-color, $background-color-invert) !default;
 $light-color: $text-color-light !default;
 $dark-color: $text-color-dark !default;
@@ -65,35 +70,76 @@ $success-color: $green !default;
 $danger-color: $red !default;
 $error-color: $red !default;
 $warning-color: $yellow !default;
-
-// etc colors.
+$link-color: $lightblue !default;
 $shadow-color: rgba(#000, .3) !default;
 $border-color: $mediumgray !default;
-$disabled-color: rgba($gray, .2) !default;
+$disabled-color: rgba($mediumgray, .33) !default;
 
-// theme settings.
-$radius-normal: 4px !default;
-$radius-small: round($radius-normal / 2) !default;
-$radius-large: round($radius-normal * 2) !default;
-$radius-button: $radius-small !default;
-$shadow-near: 1px 1px 4px $shadow-color !default;
-$shadow-normal: 2px 2px 8px $shadow-color !default;
-$shadow-far: 4px 4px 16px $shadow-color !default;
-$shadow-inset-near: inset $shadow-near !default;
-$shadow-inset-normal: inset $shadow-normal !default;
-$shadow-inset-far: inset $shadow-far !default;
+// color-set
+$color-set: (
+  // Default color is half value of between background-color and background-color-invert.
+  default: $default-color,
+  primary: $primary-color,
+  secondary: $secondary-color,
+  info: $info-color,
+  success: $success-color,
+  warning: $warning-color,
+  danger: $danger-color,
+  error: $danger-color,
+  light: $light-color,
+  dark: $dark-color,
+  shade: $shade-color,
+  link: $link-color,
+) !default;
+
+// Misc
+//==============================
+
 $transition-time: .3s !default;
 $default-focus-outline: 2px solid $primary-color !default;
 $outline-color: $primary-color !default;
 $body-line-height: 1.5 !default;
 $position-default-offset: 5% !default;
 
+// radius
+$radius-normal: 4px !default;
+$radius-small: round($radius-normal / 2) !default;
+$radius-large: round($radius-normal * 2) !default;
+$radius-button: $radius-small !default;
 
+// shadow
+$shadow-near: 1px 1px 4px $shadow-color !default;
+$shadow-normal: 2px 2px 8px $shadow-color !default;
+$shadow-far: 4px 4px 16px $shadow-color !default;
+$shadow-inset-near: inset $shadow-near !default;
+$shadow-inset-normal: inset $shadow-normal !default;
+$shadow-inset-far: inset $shadow-far !default;
+
+//======================================================================
+// Z-index Lists
+//======================================================================
+
+$z-index-hero-background:     1 !default;
+$z-index-hero-content:        2 !default;
+$z-index-message:             2 !default;
+$z-index-card:                2 !default;
+$z-index-card-content:        3 !default;
+$z-index-header:              10 !default;
+$z-index-footer:              10 !default;
+$z-index-nav:                 10 !default;
+$z-index-fixed:               12 !default;
+$z-index-sticky:              12 !default;
+$z-index-dropdown-content:    14 !default;
+$z-index-tooltip:             14 !default;
+$z-index-scroll-to-button:    16 !default;
+$z-index-modal:               18 !default;
+$z-index-toast:               20 !default;
+
+//============================================================
 // Scaffolding
-// ==================================================
+//============================================================
 
 // link colors
-$link-color: $lightblue !default;
 $link-color-hover: darken($link-color, 8%) !default;
 $link-color-visited: $link-color !default;
 $link-decoration: none !default;
@@ -130,50 +176,8 @@ $sizes: (
   100: 100%
 ) !default;
 
-
-//============================================================
-// Color-set
-//============================================================
-
-$color-set: (
-  default: $default-color, // It's half value of background-color and background-color-invert.
-  primary: $primary-color,
-  secondary: $secondary-color,
-  info: $info-color,
-  success: $success-color,
-  warning: $warning-color,
-  danger: $danger-color,
-  error: $danger-color,
-  light: $light-color,
-  dark: $dark-color,
-  shade: $shade-color,
-  link: $link-color,
-) !default;
-
-
 //======================================================================
-// Z-index Lists
-//======================================================================
-
-$z-index-hero-background:     1 !default;
-$z-index-hero-content:        2 !default;
-$z-index-message:             2 !default;
-$z-index-card:                2 !default;
-$z-index-card-content:        3 !default;
-$z-index-header:              10 !default;
-$z-index-footer:              10 !default;
-$z-index-nav:                 10 !default;
-$z-index-fixed:               12 !default;
-$z-index-sticky:              12 !default;
-$z-index-dropdown-content:    14 !default;
-$z-index-tooltip:             14 !default;
-$z-index-scroll-to-button:    16 !default;
-$z-index-modal:               18 !default;
-$z-index-toast:               20 !default;
-
-
-//======================================================================
-// Component's Variables
+// Components Variables
 //======================================================================
 
 // list
@@ -197,7 +201,7 @@ $badge-default-color: $default-color !default;
 
 // button
 $button-radius: $radius-small !default;
-$button-color: $white !default;
+$button-color: $text-color-light !default;
 $button-color-is-enable: false !default; // If this set false, button color will be background color based contrast color.
 $button-default-bg-color: $primary-color !default;
 $button-flat-default-bg-color: $link-color !default;
@@ -293,11 +297,11 @@ $pagination-active-bg: $primary-color !default;
 $pagination-active-hover-color: $pagination-active-color !default;
 $pagination-active-hover-bg: $primary-color-accent !default;
 
-$pagination-disabled-color: $disabled-color !default;
+$pagination-disabled-color: $text-color-weak !default;
 
 // scroll-to
-$scroll-to-color: $white !default;
 $scroll-to-bg-color: $primary-color-accent !default;
+$scroll-to-color: get-contrast($scroll-to-bg-color) !default;
 
 // modal
 $modal-mask-color: rgba(0, 0, 0, .5) !default;
@@ -373,8 +377,7 @@ $hero-banner-pad-small: 3em !default;
 $hero-banner-pad-medium: 6em !default;
 $hero-banner-pad-large: 9em !default;
 
-// input-switch: input-check, input-radio
-// and toggle
+// input-switch (input-check or input-radio) and input-toggle
 $input-switch-stroke-color: $text-color-light !default;
 $input-switch-fill-color: $primary-color !default;
 $input-switch-border-width: .0625em !default;

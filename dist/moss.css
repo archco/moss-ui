@@ -503,6 +503,7 @@ html {
 
 body {
   font-family: Geneva, sans-serif;
+  font-size: 1em;
   line-height: 1.5;
   color: #343434;
   background-color: #fff; }
@@ -1782,7 +1783,7 @@ textarea {
   select[readonly],
   textarea[disabled],
   textarea[readonly] {
-    background-color: rgba(128, 128, 128, 0.2); }
+    background-color: rgba(190, 190, 190, 0.33); }
 
 input[type="text"].password, input[type="text"].pw {
   -webkit-text-security: disc; }
@@ -3185,7 +3186,7 @@ ul.pagination {
         color: #fff;
         background-color: #182a1a; }
     ul.pagination li.disabled {
-      color: rgba(128, 128, 128, 0.2); }
+      color: #777777; }
 
 .chip {
   display: inline-block;
