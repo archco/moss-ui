@@ -580,6 +580,54 @@ blockquote {
   margin-bottom: 1em;
   color: #777777;
   border-left: 0.25em solid rgba(52, 52, 52, 0.1); }
+  blockquote.default {
+    color: #9a9a9a;
+    background-color: rgba(154, 154, 154, 0.2);
+    border-color: #9a9a9a; }
+  blockquote.primary {
+    color: #355e3b;
+    background-color: rgba(53, 94, 59, 0.2);
+    border-color: #355e3b; }
+  blockquote.secondary {
+    color: #87a96b;
+    background-color: rgba(135, 169, 107, 0.2);
+    border-color: #87a96b; }
+  blockquote.info {
+    color: #008080;
+    background-color: rgba(0, 128, 128, 0.2);
+    border-color: #008080; }
+  blockquote.success {
+    color: #00a550;
+    background-color: rgba(0, 165, 80, 0.2);
+    border-color: #00a550; }
+  blockquote.warning {
+    color: #ffd300;
+    background-color: rgba(255, 211, 0, 0.2);
+    border-color: #ffd300; }
+  blockquote.danger {
+    color: #e23d28;
+    background-color: rgba(226, 61, 40, 0.2);
+    border-color: #e23d28; }
+  blockquote.error {
+    color: #e23d28;
+    background-color: rgba(226, 61, 40, 0.2);
+    border-color: #e23d28; }
+  blockquote.light {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #fff; }
+  blockquote.dark {
+    color: #343434;
+    background-color: rgba(52, 52, 52, 0.2);
+    border-color: #343434; }
+  blockquote.shade {
+    color: #ebebeb;
+    background-color: rgba(235, 235, 235, 0.2);
+    border-color: #ebebeb; }
+  blockquote.link {
+    color: #0087bd;
+    background-color: rgba(0, 135, 189, 0.2);
+    border-color: #0087bd; }
 
 table {
   border: 1px solid #bebebe;
@@ -651,7 +699,8 @@ pre code {
 article.pad,
 aside.pad,
 div.pad,
-p.pad {
+p.pad,
+blockquote.pad {
   padding: 1em .5em; }
 
 @media only screen and (min-width: 768px) {
