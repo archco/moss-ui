@@ -3188,6 +3188,65 @@ ul.pagination {
     ul.pagination li.disabled {
       color: #777777; }
 
+.agile__dots {
+  bottom: 5%;
+  left: 50%;
+  top: auto;
+  right: auto;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  position: absolute; }
+
+.agile__dot {
+  margin: 0 .5rem; }
+  .agile__dot > button {
+    text-decoration: none;
+    line-height: 1.15;
+    white-space: nowrap;
+    border: 0;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    width: 20px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.5); }
+    .agile__dot > button:focus, .agile__dot > button:hover {
+      text-decoration: none; }
+
+.agile__dot--current > button {
+  background-color: #fff; }
+
+.agile__arrow {
+  text-decoration: none;
+  line-height: 1.15;
+  white-space: nowrap;
+  border: 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: absolute;
+  top: 0;
+  width: 7.5%;
+  height: 100%;
+  background-color: transparent; }
+  .agile__arrow:focus, .agile__arrow:hover {
+    text-decoration: none; }
+  .agile__arrow > svg {
+    width: 50%;
+    fill: rgba(255, 255, 255, 0.5); }
+  .agile__arrow:hover > svg {
+    fill: #fff; }
+
+.agile__arrow--prev {
+  left: 0; }
+
+.agile__arrow--next {
+  right: 0; }
+
 .chip {
   display: inline-block;
   height: 2em;

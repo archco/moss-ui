@@ -21,6 +21,10 @@ import Tree from './tree.vue';
 import TreeItem from './tree-item.vue';
 import InputCheck from './input-check.vue';
 import InputRadio from './input-radio.vue';
+import VueAgile from '../../../node_modules/vue-agile/dist/Agile.vue';
+
+// Rename agile to carousel.
+VueAgile.name = 'carousel';
 
 export default [
   AnchoredTag,
@@ -46,4 +50,5 @@ export default [
   TreeItem,
   InputCheck,
   InputRadio,
+  VueAgile,
 ];
