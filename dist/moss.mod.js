@@ -4650,18 +4650,18 @@ var _index = __webpack_require__(13);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _index3 = __webpack_require__(78);
+var _index3 = __webpack_require__(86);
 
 var _index4 = _interopRequireDefault(_index3);
 
-var _package = __webpack_require__(101);
+var _package = __webpack_require__(109);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var DefaultOptions = {
   insteadName: {}
 }; /*!
-    * moss-ui - The user interface framework for front-end.
+    * moss-ui - The front-end UI framework with Vue.js and SCSS.
     * @version v0.3.3
     * @link https://github.com/archco/moss-ui
     * @license MIT
@@ -4913,9 +4913,16 @@ var _inputRadio = __webpack_require__(75);
 
 var _inputRadio2 = _interopRequireDefault(_inputRadio);
 
+var _Agile = __webpack_require__(78);
+
+var _Agile2 = _interopRequireDefault(_Agile);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = [_anchoredTag2.default, _chip2.default, _closeButton2.default, _collapse2.default, _dropdown2.default, _message2.default, _messageBox2.default, _modal2.default, _navbar2.default, _navbarBrand2.default, _navbarNav2.default, _navbarToggle2.default, _navItem2.default, _parallax2.default, _scrollTo2.default, _simpleCrud2.default, _tab2.default, _tabs2.default, _toast2.default, _tree2.default, _treeItem2.default, _inputCheck2.default, _inputRadio2.default];
+// Rename agile to carousel.
+_Agile2.default.name = 'carousel';
+
+exports.default = [_anchoredTag2.default, _chip2.default, _closeButton2.default, _collapse2.default, _dropdown2.default, _message2.default, _messageBox2.default, _modal2.default, _navbar2.default, _navbarBrand2.default, _navbarNav2.default, _navbarToggle2.default, _navItem2.default, _parallax2.default, _scrollTo2.default, _simpleCrud2.default, _tab2.default, _tabs2.default, _toast2.default, _tree2.default, _treeItem2.default, _inputCheck2.default, _inputRadio2.default, _Agile2.default];
 
 /***/ }),
 /* 14 */
@@ -8741,6 +8748,1125 @@ if (false) {
 
 /***/ }),
 /* 78 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_vue_loader_lib_selector_type_script_index_0_bustCache_Agile_vue__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_vue_loader_lib_selector_type_script_index_0_bustCache_Agile_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_vue_loader_lib_selector_type_script_index_0_bustCache_Agile_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vue_loader_lib_template_compiler_index_id_data_v_1f410ea1_hasScoped_false_buble_transforms_vue_loader_lib_selector_type_template_index_0_bustCache_Agile_vue__ = __webpack_require__(85);
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(79)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_vue_loader_lib_selector_type_script_index_0_bustCache_Agile_vue___default.a,
+  __WEBPACK_IMPORTED_MODULE_1__vue_loader_lib_template_compiler_index_id_data_v_1f410ea1_hasScoped_false_buble_transforms_vue_loader_lib_selector_type_template_index_0_bustCache_Agile_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "node_modules\\vue-agile\\dist\\Agile.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-1f410ea1", Component.options)
+  } else {
+    hotAPI.reload("data-v-1f410ea1", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
+
+
+/***/ }),
+/* 79 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(80);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(82)("79ca71c6", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../css-loader/index.js?sourceMap!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1f410ea1\",\"scoped\":false,\"hasInlineConfig\":false}!../../sass-loader/lib/loader.js!../../vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Agile.vue", function() {
+     var newContent = require("!!../../css-loader/index.js?sourceMap!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1f410ea1\",\"scoped\":false,\"hasInlineConfig\":false}!../../sass-loader/lib/loader.js!../../vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Agile.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(81)(true);
+// imports
+
+
+// module
+exports.push([module.i, "\n.agile {\n  position: relative;\n}\n.agile:focus, .agile:active, .agile *:focus, .agile *:active {\n    outline: none;\n}\n.agile__list {\n    display: block;\n    overflow: hidden;\n    position: relative;\n    width: 100%;\n}\n.agile__track {\n    align-items: center;\n    display: flex;\n    justify-content: flex-start;\n}\n.agile--disabled .agile__track {\n      display: block;\n}\n.agile__slide {\n    display: block;\n}\n.agile--fade .agile__slide {\n      opacity: 0;\n      position: relative;\n      z-index: 0;\n}\n.agile--fade .agile__slide--active {\n        opacity: 1;\n        z-index: 2;\n}\n.agile--fade .agile__slide--expiring {\n        opacity: 1;\n        transition-duration: 0s;\n        z-index: 1;\n}\n.agile__arrow[disabled] {\n    cursor: default;\n}\n.agile__dots {\n    align-items: center;\n    display: flex;\n    list-style: none;\n    margin: 0;\n    padding: 0;\n    white-space: nowrap;\n}\n.agile__dot button {\n    cursor: pointer;\n    display: block;\n    font-size: 0;\n    line-height: 0;\n}\n", "", {"version":3,"sources":["J:/Devdoc/_package/moss-ui/node_modules/vue-agile/dist/Agile.vue"],"names":[],"mappings":";AAAA;EACE,mBAAmB;CAAE;AACrB;IACE,cAAc;CAAE;AAClB;IACE,eAAe;IACf,iBAAiB;IACjB,mBAAmB;IACnB,YAAY;CAAE;AAChB;IACE,oBAAoB;IACpB,cAAc;IACd,4BAA4B;CAAE;AAC9B;MACE,eAAe;CAAE;AACrB;IACE,eAAe;CAAE;AACjB;MACE,WAAW;MACX,mBAAmB;MACnB,WAAW;CAAE;AACb;QACE,WAAW;QACX,WAAW;CAAE;AACf;QACE,WAAW;QACX,wBAAwB;QACxB,WAAW;CAAE;AACnB;IACE,gBAAgB;CAAE;AACpB;IACE,oBAAoB;IACpB,cAAc;IACd,iBAAiB;IACjB,UAAU;IACV,WAAW;IACX,oBAAoB;CAAE;AACxB;IACE,gBAAgB;IAChB,eAAe;IACf,aAAa;IACb,eAAe;CAAE","file":"Agile.vue","sourcesContent":[".agile {\n  position: relative; }\n  .agile:focus, .agile:active, .agile *:focus, .agile *:active {\n    outline: none; }\n  .agile__list {\n    display: block;\n    overflow: hidden;\n    position: relative;\n    width: 100%; }\n  .agile__track {\n    align-items: center;\n    display: flex;\n    justify-content: flex-start; }\n    .agile--disabled .agile__track {\n      display: block; }\n  .agile__slide {\n    display: block; }\n    .agile--fade .agile__slide {\n      opacity: 0;\n      position: relative;\n      z-index: 0; }\n      .agile--fade .agile__slide--active {\n        opacity: 1;\n        z-index: 2; }\n      .agile--fade .agile__slide--expiring {\n        opacity: 1;\n        transition-duration: 0s;\n        z-index: 1; }\n  .agile__arrow[disabled] {\n    cursor: default; }\n  .agile__dots {\n    align-items: center;\n    display: flex;\n    list-style: none;\n    margin: 0;\n    padding: 0;\n    white-space: nowrap; }\n  .agile__dot button {\n    cursor: pointer;\n    display: block;\n    font-size: 0;\n    line-height: 0; }\n"],"sourceRoot":""}]);
+
+// exports
+
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+  Modified by Evan You @yyx990803
+*/
+
+var hasDocument = typeof document !== 'undefined'
+
+if (typeof DEBUG !== 'undefined' && DEBUG) {
+  if (!hasDocument) {
+    throw new Error(
+    'vue-style-loader cannot be used in a non-browser environment. ' +
+    "Use { target: 'node' } in your Webpack config to indicate a server-rendering environment."
+  ) }
+}
+
+var listToStyles = __webpack_require__(83)
+
+/*
+type StyleObject = {
+  id: number;
+  parts: Array<StyleObjectPart>
+}
+
+type StyleObjectPart = {
+  css: string;
+  media: string;
+  sourceMap: ?string
+}
+*/
+
+var stylesInDom = {/*
+  [id: number]: {
+    id: number,
+    refs: number,
+    parts: Array<(obj?: StyleObjectPart) => void>
+  }
+*/}
+
+var head = hasDocument && (document.head || document.getElementsByTagName('head')[0])
+var singletonElement = null
+var singletonCounter = 0
+var isProduction = false
+var noop = function () {}
+
+// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+// tags it will allow on a page
+var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\b/.test(navigator.userAgent.toLowerCase())
+
+module.exports = function (parentId, list, _isProduction) {
+  isProduction = _isProduction
+
+  var styles = listToStyles(parentId, list)
+  addStylesToDom(styles)
+
+  return function update (newList) {
+    var mayRemove = []
+    for (var i = 0; i < styles.length; i++) {
+      var item = styles[i]
+      var domStyle = stylesInDom[item.id]
+      domStyle.refs--
+      mayRemove.push(domStyle)
+    }
+    if (newList) {
+      styles = listToStyles(parentId, newList)
+      addStylesToDom(styles)
+    } else {
+      styles = []
+    }
+    for (var i = 0; i < mayRemove.length; i++) {
+      var domStyle = mayRemove[i]
+      if (domStyle.refs === 0) {
+        for (var j = 0; j < domStyle.parts.length; j++) {
+          domStyle.parts[j]()
+        }
+        delete stylesInDom[domStyle.id]
+      }
+    }
+  }
+}
+
+function addStylesToDom (styles /* Array<StyleObject> */) {
+  for (var i = 0; i < styles.length; i++) {
+    var item = styles[i]
+    var domStyle = stylesInDom[item.id]
+    if (domStyle) {
+      domStyle.refs++
+      for (var j = 0; j < domStyle.parts.length; j++) {
+        domStyle.parts[j](item.parts[j])
+      }
+      for (; j < item.parts.length; j++) {
+        domStyle.parts.push(addStyle(item.parts[j]))
+      }
+      if (domStyle.parts.length > item.parts.length) {
+        domStyle.parts.length = item.parts.length
+      }
+    } else {
+      var parts = []
+      for (var j = 0; j < item.parts.length; j++) {
+        parts.push(addStyle(item.parts[j]))
+      }
+      stylesInDom[item.id] = { id: item.id, refs: 1, parts: parts }
+    }
+  }
+}
+
+function createStyleElement () {
+  var styleElement = document.createElement('style')
+  styleElement.type = 'text/css'
+  head.appendChild(styleElement)
+  return styleElement
+}
+
+function addStyle (obj /* StyleObjectPart */) {
+  var update, remove
+  var styleElement = document.querySelector('style[data-vue-ssr-id~="' + obj.id + '"]')
+
+  if (styleElement) {
+    if (isProduction) {
+      // has SSR styles and in production mode.
+      // simply do nothing.
+      return noop
+    } else {
+      // has SSR styles but in dev mode.
+      // for some reason Chrome can't handle source map in server-rendered
+      // style tags - source maps in <style> only works if the style tag is
+      // created and inserted dynamically. So we remove the server rendered
+      // styles and inject new ones.
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  if (isOldIE) {
+    // use singleton mode for IE9.
+    var styleIndex = singletonCounter++
+    styleElement = singletonElement || (singletonElement = createStyleElement())
+    update = applyToSingletonTag.bind(null, styleElement, styleIndex, false)
+    remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true)
+  } else {
+    // use multi-style-tag mode in all other cases
+    styleElement = createStyleElement()
+    update = applyToTag.bind(null, styleElement)
+    remove = function () {
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  update(obj)
+
+  return function updateStyle (newObj /* StyleObjectPart */) {
+    if (newObj) {
+      if (newObj.css === obj.css &&
+          newObj.media === obj.media &&
+          newObj.sourceMap === obj.sourceMap) {
+        return
+      }
+      update(obj = newObj)
+    } else {
+      remove()
+    }
+  }
+}
+
+var replaceText = (function () {
+  var textStore = []
+
+  return function (index, replacement) {
+    textStore[index] = replacement
+    return textStore.filter(Boolean).join('\n')
+  }
+})()
+
+function applyToSingletonTag (styleElement, index, remove, obj) {
+  var css = remove ? '' : obj.css
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = replaceText(index, css)
+  } else {
+    var cssNode = document.createTextNode(css)
+    var childNodes = styleElement.childNodes
+    if (childNodes[index]) styleElement.removeChild(childNodes[index])
+    if (childNodes.length) {
+      styleElement.insertBefore(cssNode, childNodes[index])
+    } else {
+      styleElement.appendChild(cssNode)
+    }
+  }
+}
+
+function applyToTag (styleElement, obj) {
+  var css = obj.css
+  var media = obj.media
+  var sourceMap = obj.sourceMap
+
+  if (media) {
+    styleElement.setAttribute('media', media)
+  }
+
+  if (sourceMap) {
+    // https://developer.chrome.com/devtools/docs/javascript-debugging
+    // this makes source maps inside style tags work properly in Chrome
+    css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */'
+    // http://stackoverflow.com/a/26603875
+    css += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + ' */'
+  }
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild)
+    }
+    styleElement.appendChild(document.createTextNode(css))
+  }
+}
+
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports) {
+
+/**
+ * Translates the list format produced by css-loader into something
+ * easier to manipulate.
+ */
+module.exports = function listToStyles (parentId, list) {
+  var styles = []
+  var newStyles = {}
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i]
+    var id = item[0]
+    var css = item[1]
+    var media = item[2]
+    var sourceMap = item[3]
+    var part = {
+      id: parentId + ':' + i,
+      css: css,
+      media: media,
+      sourceMap: sourceMap
+    }
+    if (!newStyles[id]) {
+      styles.push(newStyles[id] = { id: id, parts: [part] })
+    } else {
+      newStyles[id].parts.push(part)
+    }
+  }
+  return styles
+}
+
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+    name: 'agile',
+
+    props: {
+        arrows: {
+            type: Boolean,
+            default: true
+        },
+
+        autoplay: {
+            type: Boolean,
+            default: false
+        },
+
+        autoplaySpeed: {
+            type: Number,
+            default: 3000
+        },
+
+        dots: {
+            type: Boolean,
+            default: true
+        },
+
+        fade: {
+            type: Boolean,
+            default: false
+        },
+
+        infinite: {
+            type: Boolean,
+            default: true
+        },
+
+        mobileFirst: {
+            type: Boolean,
+            default: true
+        },
+
+        nextArrow: {
+            type: String,
+            default: '<svg x="0px" y="0px" viewBox="0 0 24 24"><path d="M7.8,21c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l7.4-7.3L7,4.7c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l8.8,8.7l-8.8,8.7C8.3,20.9,8,21,7.8,21z"/></svg>'
+        },
+
+        options: {
+            type: Object,
+            default: function _default() {
+                return null;
+            }
+        },
+
+        pauseOnDotsHover: {
+            type: Boolean,
+            default: false
+        },
+
+        pauseOnHover: {
+            type: Boolean,
+            default: true
+        },
+
+        prevArrow: {
+            type: String,
+            default: '<svg x="0px" y="0px" viewBox="0 0 24 24"><path d="M16.2,21c0.3,0,0.5-0.1,0.7-0.3c0.4-0.4,0.4-1,0-1.4L9.6,12L17,4.7c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0L6.8,12l8.8,8.7C15.7,20.9,16,21,16.2,21z"/></svg>'
+        },
+
+        responsive: {
+            type: Object,
+            default: function _default() {
+                return null;
+            }
+        },
+
+        show: {
+            type: Boolean,
+            default: true
+        },
+
+        speed: {
+            type: Number,
+            default: 300
+        },
+
+        timing: {
+            type: String,
+            default: 'ease' // linear, ease-in, ease-out, ease-in-out
+        },
+
+        unagile: {
+            type: Boolean,
+            default: false
+        }
+    },
+
+    data: function data() {
+        return {
+            slides: null,
+            slidesCount: 0,
+            autoplayStatus: false,
+            autoplayTimeout: null,
+            allSlidesCount: 0,
+            currentSlide: 0,
+            mouseDown: false,
+            dragStartX: 0,
+            dragStaryY: 0,
+            dragDistance: 0,
+            swipeDistance: 50,
+            transform: 0,
+            transitionDelay: 0,
+            width: {
+                document: 0,
+                container: 0,
+                slide: 0,
+                track: 0
+            },
+            slidesToShow: 1,
+            defaultSettings: {
+                prevArrow: this.prevArrow,
+                nextArrow: this.nextArrow,
+                arrows: this.arrows,
+                autoplay: this.autoplay,
+                autoplaySpeed: this.autoplaySpeed,
+                dots: this.dots,
+                fade: this.fade,
+                infinite: this.infinite,
+                mobileFirst: this.mobileFirst,
+                pauseOnDotsHover: this.pauseOnDotsHover,
+                pauseOnHover: this.pauseOnHover,
+                responsive: this.responsive,
+                speed: this.speed,
+                timing: this.timing,
+                unagile: this.unagile
+            },
+            settings: {}
+        };
+    },
+    created: function created() {
+        // Read settings from options object
+        if (this.options) {
+            for (var key in this.options) {
+                this.defaultSettings[key] = this.options[key];
+            }
+        }
+
+        // Sort breakpoints
+        if (this.defaultSettings.responsive) {
+            this.defaultSettings.responsive.sort(this.compare);
+        }
+
+        // Set first load settings
+        Object.assign(this.settings, this.defaultSettings);
+    },
+    mounted: function mounted() {
+        // Prepare slides
+        this.slides = this.$refs.track.children;
+        this.slidesCount = this.slides.length;
+
+        for (var i = 0; i < this.slidesCount; ++i) {
+            this.slides[i].classList.add('agile__slide');
+
+            // Prepare slides for fade mode
+            if (this.settings.fade) {
+                this.slides[i].style.transition = 'opacity ' + this.timing + ' ' + this.speed + 'ms';
+            }
+        }
+
+        // Windows resize listener
+        window.addEventListener('resize', this.getWidth);
+
+        // Mouse and touch events
+        if ('ontouchstart' in window) {
+            this.$refs.track.addEventListener('touchstart', this.handleMouseDown);
+            this.$refs.track.addEventListener('touchend', this.handleMouseUp);
+            this.$refs.track.addEventListener('touchmove', this.handleMouseMove);
+        } else {
+            this.$refs.track.addEventListener('mousedown', this.handleMouseDown);
+            this.$refs.track.addEventListener('mouseup', this.handleMouseUp);
+            this.$refs.track.addEventListener('mousemove', this.handleMouseMove);
+        }
+
+        // Get width on start
+        this.getWidth();
+    },
+    beforeDestroy: function beforeDestroy() {
+        window.removeEventListener('resize', this.getWidth);
+
+        if ('ontouchstart' in window) {
+            this.$refs.track.removeEventListener('touchstart', this.handleMouseDown);
+            this.$refs.track.removeEventListener('touchend', this.handleMouseUp);
+            this.$refs.track.removeEventListener('touchmove', this.handleMouseMove);
+        } else {
+            this.$refs.track.removeEventListener('mousedown', this.handleMouseDown);
+            this.$refs.track.removeEventListener('mouseup', this.handleMouseUp);
+            this.$refs.track.removeEventListener('mousemove', this.handleMouseMove);
+        }
+
+        this.disableAutoplayMode();
+    },
+
+
+    methods: {
+        getWidth: function getWidth() {
+            this.width = {
+                document: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+                container: this.$refs.list.clientWidth,
+                slide: !this.settings.unagile ? this.$refs.list.clientWidth / this.slidesToShow : 'auto'
+            };
+        },
+        compare: function compare(a, b) {
+            if (a.breakpoint < b.breakpoint) {
+                return this.defaultSettings.mobileFirst ? -1 : 1;
+            } else if (a.breakpoint > b.breakpoint) {
+                return this.defaultSettings.mobileFirst ? 1 : -1;
+            } else {
+                return 0;
+            }
+        },
+        handleMouseDown: function handleMouseDown(e) {
+            if (!e.touches) {
+                e.preventDefault();
+            }
+
+            this.mouseDown = true;
+            this.dragStartX = 'ontouchstart' in window ? e.touches[0].clientX : e.clientX;
+            this.dragStartY = 'ontouchstart' in window ? e.touches[0].clientY : e.clientY;
+        },
+        handleMouseMove: function handleMouseMove(e) {
+            var positionX = 'ontouchstart' in window ? e.touches[0].clientX : e.clientX;
+            var positionY = 'ontouchstart' in window ? e.touches[0].clientY : e.clientY;
+
+            var dragDistanceX = Math.abs(positionX - this.dragStartX);
+            var dragDistanceY = Math.abs(positionY - this.dragStartY);
+
+            if (dragDistanceX > 3 * dragDistanceY) {
+                this.dragDistance = positionX - this.dragStartX;
+                this.disableScroll();
+            }
+        },
+        handleMouseUp: function handleMouseUp() {
+            this.mouseDown = false;
+            this.enableScroll();
+        },
+        handleMouseOver: function handleMouseOver(element) {
+            if (this.settings.autoplay) {
+                if (element === 'dot' && this.settings.pauseOnDotsHover || element === 'track' && this.settings.pauseOnHover) {
+                    this.disableAutoplayMode();
+                }
+            }
+        },
+        handleMouseOut: function handleMouseOut(element) {
+            if (this.settings.autoplay) {
+                if (element === 'dot' && this.settings.pauseOnDotsHover || element === 'track' && this.settings.pauseOnHover) {
+                    this.enableAutoplayMode();
+                }
+            }
+        },
+        enableInfiniteMode: function enableInfiniteMode() {
+            if (!this.settings.fade && !this.$refs.list.getElementsByClassName('agile__slide--cloned')[0]) {
+                var firstSlide = this.$refs.track.firstChild.cloneNode(true);
+                var lastSlide = this.$refs.track.lastChild.cloneNode(true);
+
+                firstSlide.classList.add('agile__slide--cloned');
+                lastSlide.classList.add('agile__slide--cloned');
+
+                this.$refs.track.insertBefore(lastSlide, this.slides[0]);
+                this.$refs.track.insertBefore(firstSlide, this.slides[this.slidesCount].nextSibling);
+            }
+
+            this.countSlides();
+        },
+        disableInfiniteMode: function disableInfiniteMode() {
+            var clonedSlides = this.$refs.list.getElementsByClassName('agile__slide--cloned');
+
+            while (clonedSlides[0]) {
+                clonedSlides[0].parentNode.removeChild(clonedSlides[0]);
+            }
+
+            this.countSlides();
+        },
+        enableAutoplayMode: function enableAutoplayMode() {
+            // Protection against contradictory settings
+            if (!this.settings.infinite) {
+                this.settings.infinite = true;
+                this.enableInfiniteMode();
+            }
+
+            this.stopAutoplay();
+            this.startAutoplay();
+            this.autoplayStatus = true;
+        },
+        disableAutoplayMode: function disableAutoplayMode() {
+            this.autoplayStatus = false;
+            this.stopAutoplay();
+        },
+        countSlides: function countSlides() {
+            if (this.settings.infinite && !this.settings.fade && !this.settings.unagile) {
+                this.allSlidesCount = this.slidesCount + 2;
+            } else {
+                this.allSlidesCount = this.slidesCount;
+            }
+        },
+        disableScroll: function disableScroll() {
+            document.ontouchmove = function (e) {
+                e.preventDefault();
+            };
+        },
+        enableScroll: function enableScroll() {
+            document.ontouchmove = function (e) {
+                return true;
+            };
+        },
+        addActiveClass: function addActiveClass(i) {
+            this.slides[i].classList.add('agile__slide--active');
+        },
+        startAutoplay: function startAutoplay() {
+            var _this = this;
+
+            this.autoplayTimeout = setTimeout(function () {
+                if (!_this.settings.autoplay) {
+                    _this.stopAutoplay();
+                    _this.disableAutoplayMode();
+                    return false;
+                }
+
+                _this.nextSlide();
+            }, this.autoplaySpeed);
+        },
+        stopAutoplay: function stopAutoplay() {
+            clearTimeout(this.autoplayTimeout);
+        },
+        setSlide: function setSlide(n) {
+            var _this2 = this;
+
+            var transition = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+            var autoplayTimeout = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+
+            if (this.settings.unagile) {
+                return false;
+            }
+
+            // Reset autoplay timeout and set new
+            if (this.settings.autoplay && autoplayTimeout) {
+                this.stopAutoplay();
+                this.startAutoplay();
+            }
+
+            if (this.settings.fade) {
+                // Disable transition for initial slide
+                if (transition === false) {
+                    this.slides[n].style.transition = '0ms';
+
+                    setTimeout(function () {
+                        _this2.slides[n].style.transition = 'opacity ' + _this2.timing + ' ' + _this2.speed + 'ms';
+                    }, 10);
+                }
+
+                for (var i = 0; i < this.allSlidesCount; ++i) {
+                    this.slides[i].classList.remove('agile__slide--expiring');
+                }
+
+                if (this.settings.infinite && n < 0) {
+                    n = this.slidesCount - 1;
+                } else if (n >= this.slidesCount) {
+                    n = 0;
+                }
+
+                // Set current slide as expiring
+                var e = this.currentSlide;
+                this.slides[e].classList.add('agile__slide--expiring');
+
+                setTimeout(function () {
+                    _this2.slides[e].classList.remove('agile__slide--expiring');
+                }, this.settings.speed);
+
+                this.transform = 0;
+            } else {
+                this.transform = n * this.width.slide;
+            }
+
+            for (var _i = 0; _i < this.allSlidesCount; ++_i) {
+                this.slides[_i].classList.remove('agile__slide--active');
+            }
+
+            if (this.settings.infinite && !this.settings.fade) {
+                this.transform += this.width.slide;
+                this.addActiveClass(n + 1);
+            } else {
+                this.addActiveClass(n);
+            }
+
+            if (!transition) {
+                this.transitionDelay = 0;
+            } else {
+                this.transitionDelay = this.speed;
+            }
+
+            if (this.settings.infinite && n < 0) {
+                this.currentSlide = this.slidesCount - 1;
+
+                setTimeout(function () {
+                    _this2.setSlide(_this2.slidesCount - 1, false);
+                }, this.speed);
+            } else if (this.settings.infinite && n >= this.slidesCount) {
+                this.currentSlide = 0;
+
+                setTimeout(function () {
+                    _this2.setSlide(0, false);
+                }, this.settings.speed);
+            } else {
+                this.currentSlide = n;
+            }
+        },
+        nextSlide: function nextSlide() {
+            this.setSlide(this.currentSlide + 1);
+        },
+        prevSlide: function prevSlide() {
+            this.setSlide(this.currentSlide - 1);
+        },
+        reload: function reload() {
+            var _this3 = this;
+
+            // Responsive
+            if (this.defaultSettings.responsive) {
+                var responsiveSettings = {};
+                Object.assign(responsiveSettings, this.defaultSettings);
+
+                responsiveSettings.responsive.forEach(function (responsive) {
+                    if (_this3.defaultSettings.mobileFirst) {
+                        if (responsive.breakpoint < _this3.width.document) {
+                            for (var key in responsive.settings) {
+                                responsiveSettings[key] = responsive.settings[key];
+                            }
+                        }
+                    } else {
+                        if (responsive.breakpoint > _this3.width.document) {
+                            for (var _key in responsive.settings) {
+                                responsiveSettings[_key] = responsive.settings[_key];
+                            }
+                        }
+                    }
+                });
+
+                Object.assign(this.settings, responsiveSettings);
+            }
+
+            // Check infinity mode status and enable/disable
+            if (this.settings.infinite && !this.settings.fade && !this.settings.unagile) {
+                this.enableInfiniteMode();
+            } else {
+                this.disableInfiniteMode();
+            }
+
+            // Check autoplay mode status and enable/disable
+            if (this.settings.autoplay && !this.autoplayStatus) {
+                this.enableAutoplayMode();
+            }
+
+            if (!this.settings.autoplay && this.autoplayStatus || this.settings.unagile) {
+                this.disableAutoplayMode();
+            }
+
+            // Actions on document resize
+            for (var i = 0; i < this.allSlidesCount; ++i) {
+                this.slides[i].style.width = this.width.container + 'px';
+
+                // Prepare slides for fade mode
+                if (this.settings.fade && !this.settings.unagile) {
+                    this.slides[i].style.transform = 'translate(-' + i * this.width.slide + 'px)';
+                } else {
+                    this.slides[i].style.transform = 'translate(0)';
+                }
+            }
+
+            // Prepare track
+            if (this.settings.unagile) {
+                this.width.track = this.width.container;
+                this.transform = 0;
+            } else {
+                this.width.track = this.width.container * this.allSlidesCount;
+                this.setSlide(this.currentSlide, false, false);
+            }
+        }
+    },
+
+    computed: {
+        documentWidth: function documentWidth() {
+            return this.width.document;
+        }
+    },
+
+    watch: {
+        show: function show() {
+            this.getWidth();
+            this.reload();
+        },
+        documentWidth: function documentWidth() {
+            this.reload();
+        },
+        dragDistance: function dragDistance() {
+            if (this.mouseDown) {
+                if (this.dragDistance > this.swipeDistance) {
+                    if (!this.settings.infinite && this.currentSlide === 0) {
+                        return;
+                    }
+
+                    this.prevSlide();
+                    this.handleMouseUp();
+                }
+
+                if (this.dragDistance < -1 * this.swipeDistance) {
+                    if (!this.settings.infinite && this.currentSlide === this.slidesCount - 1) {
+                        return;
+                    }
+
+                    this.nextSlide();
+                    this.handleMouseUp();
+                }
+            }
+        }
+    }
+};
+
+/***/ }),
+/* 85 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass: "agile",
+      class: {
+        "agile--fade": _vm.settings.fade && !_vm.settings.unagile,
+        "agile--disabled": _vm.settings.unagile
+      }
+    },
+    [
+      _c("div", { ref: "list", staticClass: "agile__list" }, [
+        _c(
+          "div",
+          {
+            ref: "track",
+            staticClass: "agile__track",
+            style: {
+              width: _vm.width.track + "px",
+              transform: "translate(-" + _vm.transform + "px)",
+              transition:
+                "transform " +
+                _vm.settings.timing +
+                " " +
+                _vm.transitionDelay +
+                "ms"
+            },
+            on: {
+              mouseover: function($event) {
+                _vm.handleMouseOver("track")
+              },
+              mouseout: function($event) {
+                _vm.handleMouseOut("track")
+              }
+            }
+          },
+          [_vm._t("default")],
+          2
+        )
+      ]),
+      _vm._v(" "),
+      _vm.settings.dots && !_vm.settings.unagile
+        ? _c(
+            "ul",
+            { ref: "dots", staticClass: "agile__dots" },
+            _vm._l(_vm.slidesCount, function(n) {
+              return _c(
+                "li",
+                {
+                  staticClass: "agile__dot",
+                  class: { "agile__dot--current": n - 1 === _vm.currentSlide },
+                  on: {
+                    mouseover: function($event) {
+                      _vm.handleMouseOver("dot")
+                    },
+                    mouseout: function($event) {
+                      _vm.handleMouseOut("dot")
+                    }
+                  }
+                },
+                [
+                  _c(
+                    "button",
+                    {
+                      on: {
+                        click: function($event) {
+                          _vm.setSlide(n - 1)
+                        }
+                      }
+                    },
+                    [_vm._v(_vm._s(n))]
+                  )
+                ]
+              )
+            })
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.settings.arrows && !_vm.settings.unagile
+        ? _c("button", {
+            staticClass: "agile__arrow agile__arrow--prev",
+            attrs: {
+              disabled: _vm.currentSlide === 0 && !_vm.settings.infinite
+            },
+            domProps: { innerHTML: _vm._s(_vm.settings.prevArrow) },
+            on: { click: _vm.prevSlide }
+          })
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.settings.arrows && !_vm.settings.unagile
+        ? _c("button", {
+            staticClass: "agile__arrow agile__arrow--next",
+            attrs: {
+              disabled:
+                _vm.currentSlide === _vm.slidesCount - 1 &&
+                !_vm.settings.infinite
+            },
+            domProps: { innerHTML: _vm._s(_vm.settings.nextArrow) },
+            on: { click: _vm.nextSlide }
+          })
+        : _vm._e()
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-1f410ea1", esExports)
+  }
+}
+
+/***/ }),
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8750,51 +9876,51 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _accordion = __webpack_require__(79);
+var _accordion = __webpack_require__(87);
 
 var _accordion2 = _interopRequireDefault(_accordion);
 
-var _activator = __webpack_require__(80);
+var _activator = __webpack_require__(88);
 
 var _activator2 = _interopRequireDefault(_activator);
 
-var _clipboard = __webpack_require__(81);
+var _clipboard = __webpack_require__(89);
 
 var _clipboard2 = _interopRequireDefault(_clipboard);
 
-var _collapse = __webpack_require__(90);
+var _collapse = __webpack_require__(98);
 
 var _collapse2 = _interopRequireDefault(_collapse);
 
-var _confirm = __webpack_require__(91);
+var _confirm = __webpack_require__(99);
 
 var _confirm2 = _interopRequireDefault(_confirm);
 
-var _focus = __webpack_require__(92);
+var _focus = __webpack_require__(100);
 
 var _focus2 = _interopRequireDefault(_focus);
 
-var _modal = __webpack_require__(93);
+var _modal = __webpack_require__(101);
 
 var _modal2 = _interopRequireDefault(_modal);
 
-var _scrollspy = __webpack_require__(94);
+var _scrollspy = __webpack_require__(102);
 
 var _scrollspy2 = _interopRequireDefault(_scrollspy);
 
-var _setValue = __webpack_require__(96);
+var _setValue = __webpack_require__(104);
 
 var _setValue2 = _interopRequireDefault(_setValue);
 
-var _tooltip = __webpack_require__(97);
+var _tooltip = __webpack_require__(105);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
-var _trigger = __webpack_require__(99);
+var _trigger = __webpack_require__(107);
 
 var _trigger2 = _interopRequireDefault(_trigger);
 
-var _wrap = __webpack_require__(100);
+var _wrap = __webpack_require__(108);
 
 var _wrap2 = _interopRequireDefault(_wrap);
 
@@ -8803,7 +9929,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = [_accordion2.default, _activator2.default, _clipboard2.default, _collapse2.default, _confirm2.default, _focus2.default, _modal2.default, _scrollspy2.default, _setValue2.default, _tooltip2.default, _trigger2.default, _wrap2.default];
 
 /***/ }),
-/* 79 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8865,7 +9991,7 @@ function registerToggles(el, binding, vnode) {
 }
 
 /***/ }),
-/* 80 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8959,7 +10085,7 @@ function lastTerm(string) {
 }
 
 /***/ }),
-/* 81 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8975,7 +10101,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                                                                                                                                                                                                                                                                                */
 
 
-var _clipboard = __webpack_require__(82);
+var _clipboard = __webpack_require__(90);
 
 var _clipboard2 = _interopRequireDefault(_clipboard);
 
@@ -9043,12 +10169,12 @@ function resolveOptionsOfClipboard(binding) {
 }
 
 /***/ }),
-/* 82 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(83), __webpack_require__(85), __webpack_require__(86)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(91), __webpack_require__(93), __webpack_require__(94)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -9258,12 +10384,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 });
 
 /***/ }),
-/* 83 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(84)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(92)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -9495,7 +10621,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 });
 
 /***/ }),
-/* 84 */
+/* 92 */
 /***/ (function(module, exports) {
 
 function select(element) {
@@ -9544,7 +10670,7 @@ module.exports = select;
 
 
 /***/ }),
-/* 85 */
+/* 93 */
 /***/ (function(module, exports) {
 
 function E () {
@@ -9616,11 +10742,11 @@ module.exports = E;
 
 
 /***/ }),
-/* 86 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var is = __webpack_require__(87);
-var delegate = __webpack_require__(88);
+var is = __webpack_require__(95);
+var delegate = __webpack_require__(96);
 
 /**
  * Validates all params and calls the right
@@ -9717,7 +10843,7 @@ module.exports = listen;
 
 
 /***/ }),
-/* 87 */
+/* 95 */
 /***/ (function(module, exports) {
 
 /**
@@ -9772,10 +10898,10 @@ exports.fn = function(value) {
 
 
 /***/ }),
-/* 88 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var closest = __webpack_require__(89);
+var closest = __webpack_require__(97);
 
 /**
  * Delegates event to a selector.
@@ -9822,7 +10948,7 @@ module.exports = delegate;
 
 
 /***/ }),
-/* 89 */
+/* 97 */
 /***/ (function(module, exports) {
 
 var DOCUMENT_NODE_TYPE = 9;
@@ -9861,7 +10987,7 @@ module.exports = closest;
 
 
 /***/ }),
-/* 90 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9896,7 +11022,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 91 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9922,7 +11048,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 92 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9942,7 +11068,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 93 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9973,7 +11099,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 94 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9983,7 +11109,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _scrollspy = __webpack_require__(95);
+var _scrollspy = __webpack_require__(103);
 
 var _scrollspy2 = _interopRequireDefault(_scrollspy);
 
@@ -10022,7 +11148,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 95 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10259,7 +11385,7 @@ var Scrollspy = function () {
 exports.default = Scrollspy;
 
 /***/ }),
-/* 96 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10297,7 +11423,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 97 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10309,7 +11435,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _tooltip = __webpack_require__(98);
+var _tooltip = __webpack_require__(106);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
@@ -10363,7 +11489,7 @@ function parseOption(binding) {
 }
 
 /***/ }),
-/* 98 */
+/* 106 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10912,7 +12038,7 @@ var _initialiseProps = function _initialiseProps() {
 
 
 /***/ }),
-/* 99 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10943,7 +12069,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 100 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10978,10 +12104,10 @@ exports.default = {
 };
 
 /***/ }),
-/* 101 */
+/* 109 */
 /***/ (function(module, exports) {
 
-module.exports = {"name":"moss-ui","version":"0.3.3","description":"The user interface framework for front-end.","main":"dist/moss.js","module":"dist/moss.mod.js","scss":"src/scss/moss.scss","directories":{"dist":"dist","doc":"docs","example":"example","test":"test"},"scripts":{"test":"echo \"Please see test/test.html in browser.\" && exit 1","prebuild":"node task/banner.js","build":"npm run webpack && npm run pug","dev":"npm run webpack:dev && npm run pug","watch":"node node_modules/concurrently/src/main \"npm run webpack:dev -- --watch\" \"npm run pug -- --watch\"","pug":"node node_modules/pug-cli --pretty example/views/pages/ --out ./example/html/","webpack":"node node_modules/webpack/bin/webpack --hide-modules","webpack:dev":"npm run webpack -- --env.task=dev"},"author":"archco","bugs":{"url":"https://github.com/archco/moss-ui/issues"},"homepage":"https://github.com/archco/moss-ui","license":"MIT","dependencies":{"clipboard":"^1.7.1","element-measurer":"^1.0.1","element-util":"^1.1.1","normalize.css":"^7.0.0","popper.js":"^1.13.0","scss-palette":"^0.4.0","tooltip.js":"^1.1.7"},"devDependencies":{"babel-cli":"^6.26.0","babel-core":"^6.26.0","babel-eslint":"^8.0.2","babel-loader":"^7.1.2","babel-preset-env":"^1.6.1","babel-register":"^6.26.0","chai":"^4.1.2","concurrently":"^3.5.0","css-loader":"^0.28.7","extract-text-webpack-plugin":"^3.0.2","mocha":"^4.0.1","node-sass":"^4.7.1","postcss-loader":"^2.0.8","pug":"^2.0.0-rc.4","pug-cli":"^1.0.0-alpha6","sass-loader":"^6.0.6","source-map-loader":"^0.2.3","style-loader":"^0.19.0","vue":"^2.5.6","vue-loader":"^13.5.0","vue-template-compiler":"^2.5.6","webpack":"^3.8.1","webpack-merge":"^4.1.1","webpack-notifier":"^1.5.0"},"eslintConfig":{"env":{"node":true,"browser":true,"commonjs":true,"es6":true,"mocha":true},"extends":"eslint:recommended","parser":"babel-eslint","parserOptions":{"sourceType":"module"},"rules":{"no-console":"off"},"plugins":["html"],"settings":{"html/html-extensions":[".html",".vue"]}},"babel":{"presets":[["env",{"targets":{"browsers":["defaults"]}}]]},"browserslist":"defaults"}
+module.exports = {"name":"moss-ui","version":"0.3.3","description":"The front-end UI framework with Vue.js and SCSS.","main":"dist/moss.js","module":"dist/moss.mod.js","scss":"src/scss/moss.scss","directories":{"dist":"dist","doc":"docs","example":"example","test":"test"},"scripts":{"test":"echo \"Please see test/test.html in browser.\" && exit 1","prebuild":"node task/banner.js","build":"npm run webpack && npm run pug","dev":"npm run webpack:dev && npm run pug","watch":"node node_modules/concurrently/src/main \"npm run webpack:dev -- --watch\" \"npm run pug -- --watch\"","pug":"node node_modules/pug-cli --pretty example/views/pages/ --out ./example/html/","webpack":"node node_modules/webpack/bin/webpack --hide-modules","webpack:dev":"npm run webpack -- --env.task=dev"},"author":"archco","bugs":{"url":"https://github.com/archco/moss-ui/issues"},"homepage":"https://github.com/archco/moss-ui","license":"MIT","dependencies":{"clipboard":"^1.7.1","element-measurer":"^1.0.1","element-util":"^1.1.1","normalize.css":"^7.0.0","popper.js":"^1.13.0","scss-palette":"^0.4.0","tooltip.js":"^1.1.7","vue-agile":"^0.3.6"},"devDependencies":{"babel-cli":"^6.26.0","babel-core":"^6.26.0","babel-eslint":"^8.0.2","babel-loader":"^7.1.2","babel-preset-env":"^1.6.1","babel-register":"^6.26.0","chai":"^4.1.2","concurrently":"^3.5.0","css-loader":"^0.28.7","extract-text-webpack-plugin":"^3.0.2","mocha":"^4.0.1","node-sass":"^4.7.1","postcss-loader":"^2.0.8","pug":"^2.0.0-rc.4","pug-cli":"^1.0.0-alpha6","sass-loader":"^6.0.6","source-map-loader":"^0.2.3","style-loader":"^0.19.0","vue":"^2.5.6","vue-loader":"^13.5.0","vue-template-compiler":"^2.5.6","webpack":"^3.8.1","webpack-merge":"^4.1.1","webpack-notifier":"^1.5.0"},"eslintConfig":{"env":{"node":true,"browser":true,"commonjs":true,"es6":true,"mocha":true},"extends":"eslint:recommended","parser":"babel-eslint","parserOptions":{"sourceType":"module"},"rules":{"no-console":"off"},"plugins":["html"],"settings":{"html/html-extensions":[".html",".vue"]}},"babel":{"presets":[["env",{"targets":{"browsers":["defaults"]}}]]},"browserslist":"defaults"}
 
 /***/ })
 /******/ ]);
