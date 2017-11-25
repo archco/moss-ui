@@ -27,6 +27,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 
 ### Vue Components
 
+- [carousel](js/carousel.md)
 - [chip](js/chip.md)
 - [close-button](js/close-button.md)
 - [collapse](js/collapse.md)
