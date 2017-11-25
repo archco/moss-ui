@@ -32,6 +32,7 @@
       <div class="row">
         <aside class="col-md-2 hide-only-mobile">
           <ul class="menu list fixed">
+            <li is="anchored-tag" tag="li">Carousel</li>
             <li is="anchored-tag" tag="li">Chip</li>
             <li is="anchored-tag" tag="li">Collapse</li>
             <li is="anchored-tag" tag="li">Dropdown</li>
@@ -46,6 +47,20 @@
           </ul>
         </aside>
         <section class="col-md-10">
+          <anchored-tag tag="h1" owned>Carousel</anchored-tag>
+          <blockquote class="pad info">This component uses <a href="https://github.com/lukaszflorczak/vue-agile">vue-agile</a>.</blockquote>
+          <h2>Basic usage</h2>
+          <carousel autoplay :autoplay-speed="5000">
+            <div class="slide d-flex justify-content-center align-items-center bg-color-warning" style="height:300px;">
+              <h3>SLIDE1</h3>
+            </div>
+            <div class="slide d-flex justify-content-center align-items-center bg-color-primary" style="height:300px;">
+              <h3>SLIDE2</h3>
+            </div>
+            <div class="slide d-flex justify-content-center align-items-center bg-color-dark" style="height:300px;">
+              <h3>SLIDE3</h3>
+            </div>
+          </carousel>
           <anchored-tag tag="h1" owned>Chip</anchored-tag>
           <h3>Tag Chip</h3><chip title="tag-sample">TagSample</chip>
 <chip closeable>TagSample</chip>
@@ -130,7 +145,7 @@
             </li>
           </ul>
           <anchored-tag tag="h1" owned>Dropdown</anchored-tag>
-          <blockquote>This component is built on <a href="https://github.com/FezVrasta/popper.js">Popper.js</a></blockquote>
+          <blockquote class="pad info">This component is built on <a href="https://github.com/FezVrasta/popper.js">Popper.js</a></blockquote>
           <h3>Toggle Dropdown</h3>
           <div class="dropdown" is="dropdown">
             <button class="btn" slot="button">TOGGLE</button><a class="dropdown-item active" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
