@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 - Remove tooltip.scss. instead use [v-tooltip](https://github.com/archco/moss-ui/blob/master/docs/js/directives.md#tooltip) vue-directive. #56
 - Remove unnecessary part "aside.scss". #60
+- Remove deprecated scss mixin, `flex-container()`. instead use `flex-container-align`. #52
 
 ## [0.3.2][] - 2017-10-18
 

@@ -390,7 +390,7 @@ $input-toggle-active-color: $primary-color !default;
 $input-toggle-transition-time: $transition-time !default;
 
 // carousel
-$carousel-dot-color: rgba(#fff, .5) !default;
-$carousel-dot-active-color: #fff !default;
-$carousel-arrow-color: rgba(#fff, .5) !default;
-$carousel-arrow-hover-color: #fff !default;
+$carousel-dot-color: rgba($text-color-light, .5) !default;
+$carousel-dot-active-color: $text-color-light !default;
+$carousel-arrow-color: rgba($text-color-light, .5) !default;
+$carousel-arrow-hover-color: $text-color-light !default;
