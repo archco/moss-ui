@@ -7,35 +7,37 @@
     <title>Vue Directives</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./dist/moss.css">
+    <style>
+      aside { position: relative; }
+      aside .menu { overflow: auto; }
+    </style>
   </head>
   <body>
     <div id="app">
       <header class="bg-color-primary pad flex-container-center" style="height:100px;">
         <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI</a></h1>
       </header>
-      <navbar class="shadow-near" align="end">
+      <navbar class="sticky-top shadow-near" align="end">
         <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
         <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
           <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
           <nav-item href="vue.html" text="Vue"></nav-item>
           <nav-item>
-            <dropdown toggle="toggle" align="right">
-              <button slot="button">Utilities</button>
-              <dropdown-item href="scss-helpers.html">SCSS Helpers</dropdown-item>
-              <dropdown-item href="vue-directives.html">Vue Directieves</dropdown-item>
-              <dropdown-item href="js-libraries.html">JS Libraries</dropdown-item>
+            <dropdown toggle="toggle" placement="bottom-end">
+              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directieves</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
             </dropdown>
           </nav-item>
         </navbar-nav>
       </navbar>
       <div class="row">
         <aside class="col-md-2 hide-only-mobile">
-          <ul class="list fixed">
+          <ul class="menu list fixed">
             <li is="anchored-tag" tag="li">v-focus</li>
             <li is="anchored-tag" tag="li">v-trigger</li>
             <li is="anchored-tag" tag="li">v-modal</li>
             <li is="anchored-tag" tag="li">v-clipboard</li>
             <li is="anchored-tag" tag="li">v-set-value</li>
+            <li is="anchored-tag" tag="li">v-tooltip</li>
           </ul>
         </aside>
         <section class="col-md-10">
@@ -75,6 +77,16 @@
             <option value="2">Two</option>
             <option value="3">Three</option>
           </select>
+          <anchored-tag tag="h1" owned>v-tooltip</anchored-tag>
+          <blockquote class="pad info">This vue-directive is built on <a href="https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/tooltip-documentation.md">Tooltip.js</a></blockquote>
+          <h3>Default usage of v-tooltip directive</h3>
+          <div class="pad group"><span v-tooltip="'Javascript'">JS</span></div>
+          <h3>Set placement</h3>
+          <div class="pad group"><span v-tooltip:bottom-start="'Cascading Style Sheets'">CSS</span></div>
+          <h3>Set Trigger</h3>
+          <div class="pad group">
+            <button class="btn-flat info" v-tooltip.click="'HTML: Hyper Text Markup Language'">Toggle Me!</button>
+          </div>
         </section>
       </div>
       <footer class="footer">

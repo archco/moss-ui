@@ -7,30 +7,31 @@
     <title>SCSS Components</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./dist/moss.css">
+    <style>
+      aside { position: relative; }
+      aside .menu { overflow: auto; }
+    </style>
   </head>
   <body>
     <div id="app">
       <header class="bg-color-primary pad flex-container-center" style="height:100px;">
         <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI</a></h1>
       </header>
-      <navbar class="shadow-near" align="end">
+      <navbar class="sticky-top shadow-near" align="end">
         <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
         <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
           <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
           <nav-item href="vue.html" text="Vue"></nav-item>
           <nav-item>
-            <dropdown toggle="toggle" align="right">
-              <button slot="button">Utilities</button>
-              <dropdown-item href="scss-helpers.html">SCSS Helpers</dropdown-item>
-              <dropdown-item href="vue-directives.html">Vue Directieves</dropdown-item>
-              <dropdown-item href="js-libraries.html">JS Libraries</dropdown-item>
+            <dropdown toggle="toggle" placement="bottom-end">
+              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directieves</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
             </dropdown>
           </nav-item>
         </navbar-nav>
       </navbar>
       <div class="row">
         <aside class="col-md-2 hide-only-mobile">
-          <ul class="list fixed">
+          <ul class="menu list">
             <li is="anchored-tag" tag="li">Scaffolding</li>
             <li is="anchored-tag" tag="li">Badge</li>
             <li is="anchored-tag" tag="li">Button</li>
@@ -42,93 +43,107 @@
             <li is="anchored-tag" tag="li">List</li>
             <li is="anchored-tag" tag="li">Loader</li>
             <li is="anchored-tag" tag="li">Pagination</li>
-            <li is="anchored-tag" tag="li">Tooltip</li>
           </ul>
         </aside>
         <section class="col-md-10">
           <anchored-tag tag="h1" owned>Scaffolding</anchored-tag>
-          <h2>Link</h2><a href="#">link</a><a class="no-deco" href="#">no-decoration link</a>
+          <h2>Link</h2>
+          <div class="group"><a href="#">link</a><br><a class="no-deco" href="#">no-decoration link</a></div>
           <h2>Blockquote</h2>
+          <h3>Default blockquote</h3>
           <blockquote>This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can put Markdown into a blockquote.</blockquote>
+          <h3>Blockquote with color-set</h3>
+          <div class="pad">
+            <blockquote class="link">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini</blockquote>
+            <blockquote class="danger">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
+          </div>
+          <div class="bg-color-dark pad">
+            <blockquote class="success">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini</blockquote>
+            <blockquote class="shade">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
+          </div>
           <h2>Table</h2>
-          <table class="table center bordered hover">
-            <thead>
-              <tr>
-                <th>name</th>
-                <th>age</th>
-                <th>gender</th>
-                <th>link</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Karl</td>
-                <td>18</td>
-                <td>male</td>
-                <td><a href="#">karl</a></td>
-              </tr>
-              <tr>
-                <td>Mia</td>
-                <td>22</td>
-                <td>female</td>
-                <td><a class="btn info" href="#">mia</a></td>
-              </tr>
-            </tbody>
-          </table>
-          <table class="table striped hover" v-wrap:responsive>
-            <thead>
-              <tr>
-                <th>name</th>
-                <th>age</th>
-                <th>gender</th>
-                <th>link</th>
-                <th>head #1</th>
-                <th>head #2</th>
-                <th>head #3</th>
-                <th>head #4</th>
-                <th>head #5</th>
-                <th>head #6</th>
-                <th>head #7</th>
-                <th>head #8</th>
-                <th>head #9</th>
-                <th>head #10</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Karl</td>
-                <td>18</td>
-                <td>male</td>
-                <td><a href="#">karl</a></td>
-                <td>body #1</td>
-                <td>body #2</td>
-                <td>body #3</td>
-                <td>body #4</td>
-                <td>body #5</td>
-                <td>body #6</td>
-                <td>body #7</td>
-                <td>body #8</td>
-                <td>body #9</td>
-                <td>body #10</td>
-              </tr>
-              <tr>
-                <td>Mia</td>
-                <td>22</td>
-                <td>female</td>
-                <td><a href="#">mia</a></td>
-                <td>body #1</td>
-                <td>body #2</td>
-                <td>body #3</td>
-                <td>body #4</td>
-                <td>body #5</td>
-                <td>body #6</td>
-                <td>body #7</td>
-                <td>body #8</td>
-                <td>body #9</td>
-                <td>body #10</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="group">
+            <table class="table center bordered hover">
+              <thead>
+                <tr>
+                  <th>name</th>
+                  <th>age</th>
+                  <th>gender</th>
+                  <th>link</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Karl</td>
+                  <td>18</td>
+                  <td>male</td>
+                  <td><a href="#">karl</a></td>
+                </tr>
+                <tr>
+                  <td>Mia</td>
+                  <td>22</td>
+                  <td>female</td>
+                  <td><a class="btn info" href="#">mia</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="group">
+            <table class="table striped hover" v-wrap:responsive>
+              <thead>
+                <tr>
+                  <th>name</th>
+                  <th>age</th>
+                  <th>gender</th>
+                  <th>link</th>
+                  <th>head #1</th>
+                  <th>head #2</th>
+                  <th>head #3</th>
+                  <th>head #4</th>
+                  <th>head #5</th>
+                  <th>head #6</th>
+                  <th>head #7</th>
+                  <th>head #8</th>
+                  <th>head #9</th>
+                  <th>head #10</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Karl</td>
+                  <td>18</td>
+                  <td>male</td>
+                  <td><a href="#">karl</a></td>
+                  <td>body #1</td>
+                  <td>body #2</td>
+                  <td>body #3</td>
+                  <td>body #4</td>
+                  <td>body #5</td>
+                  <td>body #6</td>
+                  <td>body #7</td>
+                  <td>body #8</td>
+                  <td>body #9</td>
+                  <td>body #10</td>
+                </tr>
+                <tr>
+                  <td>Mia</td>
+                  <td>22</td>
+                  <td>female</td>
+                  <td><a href="#">mia</a></td>
+                  <td>body #1</td>
+                  <td>body #2</td>
+                  <td>body #3</td>
+                  <td>body #4</td>
+                  <td>body #5</td>
+                  <td>body #6</td>
+                  <td>body #7</td>
+                  <td>body #8</td>
+                  <td>body #9</td>
+                  <td>body #10</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           <h2>Codes</h2>
           <h3>Inline codes</h3>
           <p>
@@ -236,14 +251,14 @@ SOFTWARE.</code></pre>
             <button class="btn">Center</button>
             <button class="btn">Right</button>
             <dropdown>
-              <button class="btn" slot="button">Dropdown</button><a href="#">Link 1</a><a href="#">Link 2</a><a href="#">Link 3</a>
+              <button class="btn" slot="button">Dropdown</button><a class="dropdown-item" href="#">Link 1</a><a class="dropdown-item" href="#">Link 2</a><a class="dropdown-item" href="#">Link 3</a>
             </dropdown>
           </div><br>
           <div class="btn-group-vertical">
             <button class="btn default">Top</button>
             <button class="btn shade">Middle</button>
-            <dropdown>
-              <button class="btn dark" slot="button">Dropdown</button><a href="#">Link 1</a><a href="#">Link 2</a><a href="#">Link 3</a>
+            <dropdown placement="right-start">
+              <button class="btn dark" slot="button">Dropdown</button><a class="dropdown-item" href="#">Link 1</a><a class="dropdown-item" href="#">Link 2</a><a class="dropdown-item" href="#">Link 3</a>
             </dropdown>
             <button class="btn success">Bottom</button>
           </div>
@@ -770,15 +785,6 @@ SOFTWARE.</code></pre>
             <li><a href="#">5</a></li>
             <li><a href="#">Next</a></li>
           </ul>
-          <anchored-tag tag="h1" owned>Tooltip</anchored-tag>
-          <div class="row">
-            <div class="col-3 pad"><span class="tooltip" aria-label="tooltip-top (default)">Top</span></div>
-            <div class="col-3 pad"><span class="tooltip tooltip-bottom" aria-label="tooltip-bottom style">Bottom</span></div>
-            <div class="col-3 pad"><span class="tooltip tooltip-left" aria-label="tooltip-left style">Left</span></div>
-            <div class="col-3 pad"><span class="tooltip tooltip-right" aria-label="tooltip-right style">Right</span></div>
-          </div>
-          <h3>use v-tooltip directive</h3>
-          <div class="pad group"><span v-tooltip:bottom="'Javascript'">JS</span></div>
         </section>
       </div>
       <footer class="footer">
