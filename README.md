@@ -1,6 +1,6 @@
 # MOSS-UI
 
-The user interface framework for front-end.
+The front-end UI framework with Vue.js and SCSS.
 
 ## Demo
 

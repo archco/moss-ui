@@ -23,12 +23,3 @@
   align-self: #{$self}; // [auto] | flex-start | flex-end | center | baseline | stretch
   order: #{$order}; // number
 }
-
-// flex container's positional alignment. - will deprecated..
-//
-// @param {String} $horizontal flex-start|flex-end|center|...
-// @param {String} $vertical stretch|flex-start|flex-end|center|...
-@mixin flex-container($horizontal:'flex-start', $vertical:'stretch') {
-  display: flex;
-  @include flex-container-align($horizontal, $vertical);
-}

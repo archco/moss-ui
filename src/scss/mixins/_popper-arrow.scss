@@ -1,0 +1,65 @@
+//============================================================
+// Arrow|triangle style for Popper.js
+//============================================================
+@mixin popper-arrow($size: 5px, $border-color: inherit) {
+  %x-arrow-common {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: $size solid transparent;
+  }
+
+  &.with-arrow[x-placement^="top"] {
+    margin-bottom: $size;
+
+    [x-arrow] {
+      @extend %x-arrow-common;
+      bottom: -$size;
+      left: calc(50% - #{$size});
+      margin: 0 $size;
+      border-top-color: $border-color;
+      border-bottom-width: 0;
+    }
+  }
+
+  &.with-arrow[x-placement^="bottom"] {
+    margin-top: $size;
+
+    [x-arrow] {
+      @extend %x-arrow-common;
+      top: -$size;
+      left: calc(50% - #{$size});
+      margin: 0 $size;
+      border-bottom-color: $border-color;
+      border-top-width: 0;
+    }
+  }
+
+  &.with-arrow[x-placement^="right"] {
+    margin-left: $size;
+
+    [x-arrow] {
+      @extend %x-arrow-common;
+      top: calc(50% - #{$size});
+      left: -$size;
+      margin: $size 0;
+      border-right-color: $border-color;
+      border-left-width: 0;
+    }
+  }
+
+  &.with-arrow[x-placement^="left"] {
+    margin-right: $size;
+
+    [x-arrow] {
+      @extend %x-arrow-common;
+      top: calc(50% - #{$size});
+      right: -$size;
+      margin: $size 0;
+      border-left-color: $border-color;
+      border-right-width: 0;
+    }
+  }
+}
+
+%popper-arrow { @include popper-arrow(); }

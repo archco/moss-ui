@@ -3,7 +3,6 @@ import Chip from './chip.vue';
 import CloseButton from './close-button.vue';
 import Collapse from './collapse.vue';
 import Dropdown from './dropdown.vue';
-import DropdownItem from './dropdown-item.vue';
 import Message from './message.vue';
 import MessageBox from './message-box.vue';
 import Modal from './modal.vue';
@@ -22,6 +21,10 @@ import Tree from './tree.vue';
 import TreeItem from './tree-item.vue';
 import InputCheck from './input-check.vue';
 import InputRadio from './input-radio.vue';
+import VueAgile from '../../../node_modules/vue-agile/dist/Agile.vue';
+
+// Rename agile to carousel.
+VueAgile.name = 'carousel';
 
 export default [
   AnchoredTag,
@@ -29,7 +32,6 @@ export default [
   CloseButton,
   Collapse,
   Dropdown,
-  DropdownItem,
   Message,
   MessageBox,
   Modal,
@@ -48,4 +50,5 @@ export default [
   TreeItem,
   InputCheck,
   InputRadio,
+  VueAgile,
 ];

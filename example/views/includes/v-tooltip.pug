@@ -1,0 +1,15 @@
+//- v-tooltip
+
+blockquote.pad.info This vue-directive is built on <a href="https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/tooltip-documentation.md">Tooltip.js</a>
+
+h3 Default usage of v-tooltip directive
+div.pad.group
+  span(v-tooltip="'Javascript'") JS
+
+h3 Set placement
+div.pad.group
+  span(v-tooltip:bottom-start="'Cascading Style Sheets'") CSS
+
+h3 Set Trigger
+div.pad.group
+  button.btn-flat.info(v-tooltip.click="'HTML: Hyper Text Markup Language'") Toggle Me!

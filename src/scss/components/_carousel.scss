@@ -1,0 +1,48 @@
+// carousel uses "vue-agile"
+// @link https://github.com/lukaszflorczak/vue-agile
+// @license MIT
+// scss-lint:disable SelectorFormat
+
+.agile__dots {
+  @include position-bottom-center(5%);
+  position: absolute;
+}
+
+.agile__dot {
+  margin: 0 .5rem;
+
+  > button {
+    @include btn-base();
+    width: 20px;
+    height: 4px;
+    background-color: $carousel-dot-color;
+  }
+}
+
+.agile__dot--current > button {
+  background-color: $carousel-dot-active-color;
+}
+
+.agile__arrow {
+  @include btn-base();
+  position: absolute;
+  top: 0;
+  width: 7.5%;
+  height: 100%;
+  background-color: transparent;
+
+  > svg {
+    width: 50%;
+    fill: $carousel-arrow-color;
+  }
+
+  &:hover > svg { fill: $carousel-arrow-hover-color; }
+}
+
+.agile__arrow--prev {
+  left: 0;
+}
+
+.agile__arrow--next {
+  right: 0;
+}

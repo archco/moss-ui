@@ -7,7 +7,7 @@ block title
 block append content
   div(class='row')
     aside(class='col-md-2 hide-only-mobile')
-      ul(class='list fixed')
+      ul(class='menu list')
         li(is='anchored-tag' tag='li') Scaffolding
         li(is='anchored-tag' tag='li') Badge
         li(is='anchored-tag' tag='li') Button
@@ -19,7 +19,6 @@ block append content
         li(is='anchored-tag' tag='li') List
         li(is='anchored-tag' tag='li') Loader
         li(is='anchored-tag' tag='li') Pagination
-        li(is='anchored-tag' tag='li') Tooltip
     section(class='col-md-10')
       anchored-tag(tag='h1' owned) Scaffolding
       include ../includes/scaffolding.pug
@@ -43,5 +42,3 @@ block append content
       include ../includes/loader.pug
       anchored-tag(tag='h1' owned) Pagination
       include ../includes/pagination.pug
-      anchored-tag(tag='h1' owned) Tooltip
-      include ../includes/tooltip.pug

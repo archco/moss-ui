@@ -1,9 +1,3 @@
-const Default = {
-  lightnessPoint: 166, // 65%
-  darkDefault: '#000',
-  lightDefault: '#fff',
-};
-
 export default class Color {
   /**
    * constructor
@@ -13,7 +7,7 @@ export default class Color {
    * @return {Color}
    */
   constructor(color, options = {}) {
-    this.option = Object.assign(Default, options);
+    this.option = Object.assign(this.getDefaultOption(), options);
     return this.setColor(color);
   }
 
@@ -33,15 +27,23 @@ export default class Color {
    * Return contrast color of given color.
    *
    * @param  {String|Array|Object} color
-   * @param  {String} [ dark = Default.darkDefault ]
-   * @param  {String} [ light = Default.lightDefault ]
+   * @param  {String} [ dark = '#000' ]
+   * @param  {String} [ light = '#fff' ]
    * @return {String} dark or light
    */
-  static contrast(color, dark = Default.darkDefault, light = Default.lightDefault) {
+  static contrast(color, dark = '#000', light = '#fff') {
     return new this(color).contrast(dark, light);
   }
 
   // public
+
+  getDefaultOption() {
+    return {
+      lightnessPoint: 166, // 65%
+      darkDefault: '#000',
+      lightDefault: '#fff',
+    };
+  }
 
   setColor(color) {
     if (typeof color === 'string') {

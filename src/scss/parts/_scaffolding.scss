@@ -9,6 +9,7 @@ html { box-sizing: border-box; }
 
 body {
   font-family: $font-base;
+  font-size: $font-size;
   line-height: $body-line-height;
   color: $text-color;
   background-color: $background-color;
@@ -87,6 +88,14 @@ blockquote {
   margin-bottom: 1em;
   color: $blockquote-color;
   border-left: .25em solid $blockquote-border-color;
+
+  @each $name, $color in $color-set {
+    &.#{$name} {
+      color: $color;
+      background-color: rgba($color, .2);
+      border-color: $color;
+    }
+  }
 }
 
 //======================================================================
@@ -201,7 +210,8 @@ pre code {
 article,
 aside,
 div,
-p {
+p,
+blockquote {
   &.pad {
     padding: 1em .5em;
   }

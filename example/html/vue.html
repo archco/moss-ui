@@ -6,31 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Components</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./dist/css/style.css">
+    <link rel="stylesheet" href="../../dist/moss.css">
+    <style>
+      aside { position: relative; }
+      aside .menu { overflow: auto; }
+    </style>
   </head>
   <body>
     <div id="app">
       <header class="bg-color-primary pad flex-container-center" style="height:100px;">
         <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI</a></h1>
       </header>
-      <navbar class="shadow-near" align="end">
+      <navbar class="sticky-top shadow-near" align="end">
         <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
         <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
           <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
           <nav-item href="vue.html" text="Vue"></nav-item>
           <nav-item>
-            <dropdown toggle="toggle" align="right">
-              <button slot="button">Utilities</button>
-              <dropdown-item href="scss-helpers.html">SCSS Helpers</dropdown-item>
-              <dropdown-item href="vue-directives.html">Vue Directieves</dropdown-item>
-              <dropdown-item href="js-libraries.html">JS Libraries</dropdown-item>
+            <dropdown toggle="toggle" placement="bottom-end">
+              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directieves</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
             </dropdown>
           </nav-item>
         </navbar-nav>
       </navbar>
       <div class="row">
         <aside class="col-md-2 hide-only-mobile">
-          <ul class="list fixed">
+          <ul class="menu list fixed">
+            <li is="anchored-tag" tag="li">Carousel</li>
             <li is="anchored-tag" tag="li">Chip</li>
             <li is="anchored-tag" tag="li">Collapse</li>
             <li is="anchored-tag" tag="li">Dropdown</li>
@@ -45,6 +47,20 @@
           </ul>
         </aside>
         <section class="col-md-10">
+          <anchored-tag tag="h1" owned>Carousel</anchored-tag>
+          <blockquote class="pad info">This component uses <a href="https://github.com/lukaszflorczak/vue-agile">vue-agile</a>.</blockquote>
+          <h2>Basic usage</h2>
+          <carousel autoplay :autoplay-speed="5000">
+            <div class="slide d-flex justify-content-center align-items-center bg-color-warning" style="height:300px;">
+              <h3>SLIDE1</h3>
+            </div>
+            <div class="slide d-flex justify-content-center align-items-center bg-color-primary" style="height:300px;">
+              <h3>SLIDE2</h3>
+            </div>
+            <div class="slide d-flex justify-content-center align-items-center bg-color-dark" style="height:300px;">
+              <h3>SLIDE3</h3>
+            </div>
+          </carousel>
           <anchored-tag tag="h1" owned>Chip</anchored-tag>
           <h3>Tag Chip</h3><chip title="tag-sample">TagSample</chip>
 <chip closeable>TagSample</chip>
@@ -129,38 +145,83 @@
             </li>
           </ul>
           <anchored-tag tag="h1" owned>Dropdown</anchored-tag>
+          <blockquote class="pad info">This component is built on <a href="https://github.com/FezVrasta/popper.js">Popper.js</a></blockquote>
           <h3>Toggle Dropdown</h3>
           <div class="dropdown" is="dropdown">
             <button class="btn" slot="button">TOGGLE</button><a class="dropdown-item active" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
           </div>
           <h3>Hover Dropdown</h3>
           <dropdown toggle="hover">
-            <button class="btn info" slot="button">HOVER</button>
-            <dropdown-item href="#">hello</dropdown-item>
-            <dropdown-item href="#">drop</dropdown-item>
-            <dropdown-item href="#">down</dropdown-item>
+            <button class="btn info" slot="button">HOVER</button><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
           </dropdown>
-          <h3>Dropdown Content Alignment</h3>
-          <div style="display:flex;width:100%;justify-content:space-between;">
-            <dropdown toggle="hover" align="left">
-              <button class="btn success" slot="button">LEFT</button>
-              <dropdown-item href="#">hello</dropdown-item>
-              <dropdown-item href="#">drop</dropdown-item>
-              <dropdown-item href="#">down</dropdown-item>
+          <h3>Content Placements</h3>
+          <div class="d-flex justify-content-between" style="width:100%;">
+            <dropdown toggle="hover" placement="top">
+              <button class="btn success" slot="button">top</button><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
             </dropdown>
-            <dropdown toggle="hover" align="center">
-              <button class="btn secondary" slot="button">CENTER</button>
-              <dropdown-item href="#">hello</dropdown-item>
-              <dropdown-item href="#">drop</dropdown-item>
-              <dropdown-item href="#">down</dropdown-item>
+            <dropdown toggle="hover" placement="right">
+              <button class="btn link" slot="button">right</button><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
             </dropdown>
-            <dropdown toggle="hover" align="right">
-              <button class="btn warning" slot="button">RIGHT</button>
-              <dropdown-item href="#">hello</dropdown-item>
-              <dropdown-item href="#">drop</dropdown-item>
-              <dropdown-item href="#">down</dropdown-item>
+            <dropdown toggle="hover" placement="left-start">
+              <button class="btn info" slot="button">left-start</button><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
+            </dropdown>
+            <dropdown toggle="hover" placement="bottom-end">
+              <button class="btn warning" slot="button">bottom-end</button><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
             </dropdown>
           </div>
+          <h3>Content Offset</h3>
+          <div class="bg-color-info">
+            <blockquote class="warning pad"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> If you set offset, it could not working as expected in hover type dropdown.</blockquote>
+          </div>
+          <div class="d-flex justify-content-around">
+            <dropdown toggle="toggle" offset="0, 10px">
+              <button class="btn dark" slot="button">0, 10px</button><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
+            </dropdown>
+            <dropdown toggle="toggle" placement="left-end" offset="0, 15%">
+              <button class="btn light" slot="button">0, 15%</button><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
+            </dropdown>
+          </div>
+          <h3>With arrow</h3>
+          <blockquote class="link pad"><i class="fa fa-flask" aria-hidden="true"></i> It is experimental feature yet.</blockquote>
+          <dropdown placement="right-start" with-arrow>
+            <button class="btn" slot="button">with-arrow</button><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
+          </dropdown>
+          <h3>Flip and PreventOverflow mode</h3>
+          <div class="d-flex justify-content-center align-items-center" style="width:100%;">
+            <div class="pad bg-color-dark" style="width:300px;height:300px;overflow:auto;">
+              <div class="d-flex flex-column justify-content-center align-items-center" style="width:600px;height:600px;">
+                <div>
+                  <dropdown toggle="toggle" flip="on" prevent-overflow="on">
+                    <button class="btn light" slot="button">Both on</button><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
+                  </dropdown>
+                  <dropdown toggle="toggle" flip="off">
+                    <button class="btn warning" slot="button">Filp off</button><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
+                  </dropdown>
+                </div>
+                <div>
+                  <dropdown toggle="toggle" prevent-overflow="off">
+                    <button class="btn secondary" slot="button">PO off</button><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
+                  </dropdown>
+                  <dropdown toggle="toggle" flip="off" prevent-overflow="off">
+                    <button class="btn danger" slot="button">Both off</button><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
+                  </dropdown>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3>Header and Divider</h3>
+          <dropdown>
+            <button class="btn info" slot="button">DROPDOWN</button>
+            <h3 class="dropdown-header">Header</h3><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a>
+            <div class="dropdown-divider"></div><a class="dropdown-item" href="#">down</a>
+          </dropdown>
+          <h3>Disabled item</h3>
+          <dropdown placement="right-start">
+            <button class="btn danger" slot="button">DROPDOWN</button>
+            <h3 class="dropdown-header">Header</h3><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a>
+            <div class="dropdown-divider"></div>
+            <h3 class="dropdown-header">Not allowed</h3><span class="dropdown-item" href="#" disabled>down</span>
+          </dropdown>
           <anchored-tag tag="h1" owned>Message</anchored-tag>
           <h3>Basic</h3>
           <message>hello</message>
@@ -226,10 +287,7 @@
               <nav-item href="#" text="link2"></nav-item>
               <nav-item>
                 <dropdown>
-                  <button slot="button">Dropdown</button>
-                  <dropdown-item href="#">link 1</dropdown-item>
-                  <dropdown-item href="#">link 2</dropdown-item>
-                  <dropdown-item href="#">link 3</dropdown-item>
+                  <button slot="button">Dropdown</button><a class="dropdown-item" href="#">link 1</a><a class="dropdown-item" href="#">link 2</a><a class="dropdown-item" href="#">link 3</a>
                 </dropdown>
               </nav-item>
             </navbar-nav>
@@ -246,10 +304,7 @@
               <nav-item href="#" text="link2"></nav-item>
               <nav-item>
                 <dropdown>
-                  <button slot="button">Dropdown</button>
-                  <dropdown-item href="#">link 1</dropdown-item>
-                  <dropdown-item href="#">link 2</dropdown-item>
-                  <dropdown-item href="#">link 3</dropdown-item>
+                  <button slot="button">Dropdown</button><a class="dropdown-item" href="#">link 1</a><a class="dropdown-item" href="#">link 2</a><a class="dropdown-item" href="#">link 3</a>
                 </dropdown>
               </nav-item>
             </navbar-nav>
@@ -444,17 +499,13 @@
       <toast></toast>
     </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
-<<<<<<< HEAD
-    <script src="./dist/js/script.js"></script>
-=======
     <script src="../../dist/moss.js"></script>
->>>>>>> master
     <script src="./example.js"></script>
     <script>
       var year = new Date().getFullYear();
       document.querySelector('.footer-copyright').innerHTML = 'copyright \&copy; ' + year + ' MOSS-UI all rights reserved.';
       document.querySelector('#project-name').innerHTML = 'MOSS-UI ' + Moss.version;
-
+      
     </script>
   </body>
 </html>

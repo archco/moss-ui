@@ -7,13 +7,34 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
-### Changed
+## [0.4.0][] - 2017-11-26
 
+### Added
+- Add a new dependency, [Popper.js](https://github.com/FezVrasta/popper.js). #54
+- Add color-set to blockquote. #57
+- Add a new component [Carousel](https://github.com/archco/moss-ui/blob/master/docs/js/carousel.md): It uses [vue-agile](https://github.com/lukaszflorczak/vue-agile). #25
+
+### Changed
+- Improve Dropdown #46
+  - Change dropdown vue-component to build on Popper.js #55
+  - Add content decorators. See [dropdown.md](https://github.com/archco/moss-ui/blob/master/docs/js/dropdown.md#content-decorators)
+  - Add "navigation by keys". #59
+- Change tooltip vue-directive to build on Tooltip.js #56
 - Change structure of `dist/` directory. #51
   - `moss.js`: Distribution script file.
   - `moss.min.js`: Minified distribution script file.
   - `moss.mod.js`: ES module file.
   - `moss.css`: Distribution style file.
+- Change browserslist setting "> 1%" to "defaults". #50
+- Change KeybordEvent.keyCode to KeboardEvent.key #53
+
+### Fixed
+- Fix attribute problem in anchored-tag.vue.
+
+### Removed
+- Remove tooltip.scss. instead use [v-tooltip](https://github.com/archco/moss-ui/blob/master/docs/js/directives.md#tooltip) vue-directive. #56
+- Remove unnecessary part "aside.scss". #60
+- Remove deprecated scss mixin, `flex-container()`. instead use `flex-container-align`. #52
 
 ## [0.3.2][] - 2017-10-18
 
@@ -138,7 +159,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - [README.md](README.md)
 - [docs/README.md](docs/README.md)
 
-[Unreleased]: https://github.com/archco/moss-ui/compare/v0.3.2...HEAD
+[Unreleased]: https://github.com/archco/moss-ui/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/archco/moss-ui/compare/v0.3.2...v0.4.0
 [0.3.2]: https://github.com/archco/moss-ui/compare/v0.3.0...v0.3.2
 [0.3.0]: https://github.com/archco/moss-ui/compare/v0.2.2...v0.3.0
 [0.2.2]: https://github.com/archco/moss-ui/compare/v0.2.1...v0.2.2

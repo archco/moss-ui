@@ -9,7 +9,7 @@
 
 ### Link
 
-#### Avoid underline decoration
+**Avoid underline decoration**
 
 The default link causes an underline when hovering. Do one of the following to write `<a>` to avoid underlining.
 
@@ -26,7 +26,7 @@ The default link causes an underline when hovering. Do one of the following to w
   ```
 
 
-#### Set inherit color to links color.
+**Set inherit color to links color**
 
 - In html
   ```html
@@ -41,8 +41,7 @@ The default link causes an underline when hovering. Do one of the following to w
 
 ### Table
 
-#### Basic and Center position
-
+**Basic and Center position**
 ```html
 <table class="table center">
   <thead>...</thead>
@@ -50,26 +49,22 @@ The default link causes an underline when hovering. Do one of the following to w
 </table>
 ```
 
-#### Bordered
-
+**Bordered**
 ```html
 <table class="table bordered">...</table>
 ```
 
-#### Striped
-
+**Striped**
 ```html
 <table class="table striped">...</table>
 ```
 
-#### Hover
-
+**Hover**
 ```html
 <table class="table hover">...</table>
 ```
 
-#### Responsive
-
+**Responsive**
 - wrapper around
   ```html
   <div class="table-responsive-wrapper">
@@ -81,22 +76,31 @@ The default link causes an underline when hovering. Do one of the following to w
   <table class="table" v-wrap:responsive>...</table>
   ```
 
-## Optional Class
+### Blockquote
+> based on [Color-set](color-set.md)
+
+Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
+
+```html
+<blockquote class="success">...</blockquote>
+```
+
+
+## Optional Classes
 
 ### pad
 
-- article with `.pad`
-  ```html
-  <article class="pad">...</article>
-  ```
-- section with `.pad`
-  ```html
-  <section class="pad">...</section>
-  ```
+Available Tags: `<article>`, `<aside>`, `<div>`, `<p>` and `<blockquote>`
+
+**article with `.pad`**
+```html
+<article class="pad">...</article>
+```
 
 ### accent
 
-- heading with `.accent`
-  ```html
-  <h1 class="accent">...</h1>
-  ```
+Useful class for apply `$font-accent` to heading tags.
+
+```html
+<h1 class="accent">...</h1>
+```  

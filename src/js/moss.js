@@ -1,6 +1,6 @@
 /*!
- * moss-ui - The user interface framework for front-end.
- * @version v0.3.3
+ * moss-ui - The front-end UI framework with Vue.js and SCSS.
+ * @version v0.4.0
  * @link https://github.com/archco/moss-ui
  * @license MIT
  */

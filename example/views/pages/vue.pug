@@ -7,7 +7,8 @@ block title
 block append content
   div(class='row')
     aside(class='col-md-2 hide-only-mobile')
-      ul(class='list fixed')
+      ul(class='menu list fixed')
+        li(is='anchored-tag' tag='li') Carousel
         li(is='anchored-tag' tag='li') Chip
         li(is='anchored-tag' tag='li') Collapse
         li(is='anchored-tag' tag='li') Dropdown
@@ -21,6 +22,8 @@ block append content
         li(is='anchored-tag' tag='li') Tree
 
     section(class='col-md-10')
+      anchored-tag(tag='h1' owned) Carousel
+      include ../includes/carousel
       anchored-tag(tag='h1' owned) Chip
       include ../includes/chip
       anchored-tag(tag='h1' owned) Collapse

@@ -1,6 +1,26 @@
 /* eslint-disable no-unused-vars */
 
 /************************************************************
+  Aside Menu
+*************************************************************/
+
+var docSize = new window.Moss.lib.ElementMeasurer();
+var asideMenu = document.querySelector('aside .menu');
+if (asideMenu) {
+  window.addEventListener('scroll', onScroll);
+}
+
+function onScroll() {
+  if (docSize.scrollTop > asideMenu.offsetTop) {
+    asideMenu.style.position = 'fixed';
+    asideMenu.style.top = '45px';
+  } else {
+    asideMenu.style.position = null;
+    asideMenu.style.top = null;
+  }
+}
+
+/************************************************************
   Toast
 *************************************************************/
 

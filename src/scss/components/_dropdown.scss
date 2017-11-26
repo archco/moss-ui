@@ -1,6 +1,6 @@
 // Hide during loading.
 dropdown,
-[is="dropdown"] { display: none; }
+[is="dropdown"] { visibility: hidden; }
 
 .dropdown {
   position: relative;
@@ -8,71 +8,63 @@ dropdown,
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
-
-  &:hover {
-    .dropdown-hover + .dropdown-content { display: block; }
-  }
 }
 
-.dropdown-toggle,
-.dropdown-hover {
+.dropdown-button {
   @extend %btn-common;
-
-  &::after {
-    @include caret('down');
-  }
+  &::after { @include caret('down'); }
 }
 
 .dropdown-content {
-  @include reset-list;
-  position: absolute;
-  top: 100%;
-  left: 0; // left-align is default. @see issue #63
+  @extend %popper-arrow;
   z-index: $z-index-dropdown-content;
   display: none;
+  flex-flow: column;
   min-width: $dropdown-min-width;
   background-color: $dropdown-bg-color;
+  border-color: $dropdown-bg-color;
   box-shadow: $dropdown-shadow;
 
-  &.show { display: block; }
-
-  // dropdown-content position
-  &[data-align='left'] {
-    right: auto;
-    left: 0;
-    // align-self: flex-start;
-  }
-
-  &[data-align='center'] {
-    right: auto;
-    left: auto;
-    align-self: center;
-  }
-
-  &[data-align='right'] {
-    right: 0;
-    left: auto;
-    // align-self: flex-end;
-  }
+  &.show { display: flex; }
 }
 
 .dropdown-item {
   @include no-decoration;
   @include set-link-state-color($dropdown-link-color);
   display: block;
-  padding: $dropdown-link-padding-y $dropdown-link-padding-x;
+  padding: $dropdown-padding-y $dropdown-padding-x;
   font-family: inherit;
   font-size: inherit;
   transition: color $transition-time, background-color $transition-time;
 
-  &.active {
+  &.active:not([disabled]) {
     color: $dropdown-active-color;
     background-color: $dropdown-active-bg-color;
   }
 
-  &:hover,
-  &:focus {
+  &:hover:not([disabled]),
+  &:focus:not([disabled]) {
     color: $dropdown-link-hover-color;
     background-color: $dropdown-bg-hover-color;
   }
+
+  &[disabled] {
+    cursor: default;
+    opacity: .7;
+  }
+}
+
+.dropdown-header {
+  display: block;
+  padding: $dropdown-padding-y $dropdown-padding-x;
+  margin: 0;
+  font-size: $dropdown-header-font-size;
+  color: $dropdown-header-color;
+}
+
+.dropdown-divider {
+  height: 0;
+  margin: $dropdown-divider-margin-y 0;
+  overflow: hidden;
+  border-top: 1px solid $dropdown-divider-color;
 }

@@ -1,56 +1,72 @@
 h2 Link
-a(href='#') link
-a(href='#' class='no-deco') no-decoration link
+div.group
+  a(href='#') link
+  br
+  a(href='#' class='no-deco') no-decoration link
+
 h2 Blockquote
+h3 Default blockquote
 blockquote
   | This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can put Markdown into a blockquote.
+h3 Blockquote with color-set
+div.pad
+  blockquote.link=lorem.substring(0, 140)
+  blockquote.danger=lorem
+div.bg-color-dark.pad
+  blockquote.success=lorem.substring(0, 140)
+  blockquote.shade=lorem
+
 h2 Table
-table(class='table center bordered hover')
-  thead
-    tr
-      th name
-      th age
-      th gender
-      th link
-  tbody
-    tr
-      td Karl
-      td 18
-      td male
-      td
-        a(href='#') karl
-    tr
-      td Mia
-      td 22
-      td female
-      td
-        a(href='#' class='btn info') mia
-table(class='table striped hover' v-wrap:responsive)
-  thead
-    tr
-      th name
-      th age
-      th gender
-      th link
-      - for (var i=0; i<10; i++)
-        th= 'head #' + (i+1)
-  tbody
-    tr
-      td Karl
-      td 18
-      td male
-      td
-        a(href='#') karl
-      - for (var i=0; i<10; i++)
-        td= 'body #' + (i+1)
-    tr
-      td Mia
-      td 22
-      td female
-      td
-        a(href='#') mia
-      - for (var i=0; i<10; i++)
-        td= 'body #' + (i+1)
+div.group
+  table(class='table center bordered hover')
+    thead
+      tr
+        th name
+        th age
+        th gender
+        th link
+    tbody
+      tr
+        td Karl
+        td 18
+        td male
+        td
+          a(href='#') karl
+      tr
+        td Mia
+        td 22
+        td female
+        td
+          a(href='#' class='btn info') mia
+
+div.group
+  table(class='table striped hover' v-wrap:responsive)
+    thead
+      tr
+        th name
+        th age
+        th gender
+        th link
+        - for (var i=0; i<10; i++)
+          th= 'head #' + (i+1)
+    tbody
+      tr
+        td Karl
+        td 18
+        td male
+        td
+          a(href='#') karl
+        - for (var i=0; i<10; i++)
+          td= 'body #' + (i+1)
+      tr
+        td Mia
+        td 22
+        td female
+        td
+          a(href='#') mia
+        - for (var i=0; i<10; i++)
+          td= 'body #' + (i+1)
+
 h2 Codes
 h3 Inline codes
 p

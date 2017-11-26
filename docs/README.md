@@ -22,10 +22,12 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [Loader](scss/loader.md)
 - [Pagination](scss/pagination.md)
 - [Scaffolding](scss/scaffolding.md)
-- [Tooltip](scss/tooltip.md)
+- [Theme](scss/theme.md): Guide for writing custom-theme variables file.
+- ~~Tooltip~~ Removed at v0.4.0. instead use [v-tooltip](js/directives.md#tooltip)
 
 ### Vue Components
 
+- [carousel](js/carousel.md)
 - [chip](js/chip.md)
 - [close-button](js/close-button.md)
 - [collapse](js/collapse.md)

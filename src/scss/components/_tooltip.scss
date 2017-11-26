@@ -1,0 +1,12 @@
+.tooltip {
+  @extend %popper-arrow;
+  z-index: $z-index-tooltip;
+  padding: $tooltip-padding-y $tooltip-padding-x;
+  font-size: $tooltip-font-size;
+  color: $tooltip-color;
+  word-wrap: break-word;
+  white-space: pre;
+  background-color: $tooltip-bg-color;
+  border-color: $tooltip-bg-color;
+  border-radius: $tooltip-border-radius;
+}

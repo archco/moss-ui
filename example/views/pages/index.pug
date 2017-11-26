@@ -9,23 +9,8 @@ block content
     div(class='hero-background filter gray' style=`background-image:url('${imageSrc[0]}');`)
     div(class='hero-content font-accent align-center' style='font-size:1.4em;')
       h1(class='color-primary') MOSS-UI
-      p The user interface framework for front-end.
+      p The front-end UI framework with Vue.js and SCSS.
 
   section.pad
-    <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="Gradient">
-          <stop offset="0" stop-color="white" stop-opacity="0" />
-          <stop offset="1" stop-color="white" stop-opacity="1" />
-        </linearGradient>
-        <mask id="Mask">
-          <rect x="0" y="0" width="200" height="200" fill="url(#Gradient)"  />
-        </mask>
-      </defs>
-      <rect x="0" y="0" width="200" height="200" fill="green" />
-      <rect x="0" y="0" width="200" height="200" fill="black" mask="url(#Mask)" />
-    </svg>
-
-  section.pad
-    anchored-tag(tag='h1' owned) Card
-    include ../includes/card
+    anchored-tag(tag='h1' owned) Carousel
+    include ../includes/carousel

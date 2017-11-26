@@ -1,10 +1,10 @@
 # Navbar
 
-> sources:
-> [js/components/navbar](../../src/js/components/navbar.vue)
-> [js/components/navbar-brand](../../src/js/components/navbar-brand.vue)
-> [js/components/navbar-toggle](../../src/js/components/navbar-toggle.vue)
-> [js/components/navbar-nav](../../src/js/components/navbar-nav.vue)
+> sources:  
+> [js/components/navbar](../../src/js/components/navbar.vue)  
+> [js/components/navbar-brand](../../src/js/components/navbar-brand.vue)  
+> [js/components/navbar-toggle](../../src/js/components/navbar-toggle.vue)  
+> [js/components/navbar-nav](../../src/js/components/navbar-nav.vue)  
 > [js/components/nav-item](../../src/js/components/nav-item.vue)
 
 ## Usage

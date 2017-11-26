@@ -18,24 +18,27 @@ html
     block title
       title "Default title"
     link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
-    link(rel="stylesheet" href="./dist/moss.css")
+    link(rel="stylesheet" href="../../dist/moss.css")
+    style
+      |aside { position: relative; }
+      |aside .menu { overflow: auto; }
   body
     div(id='app')
       header(class='bg-color-primary pad flex-container-center' style="height:100px;")
         h1
           a.no-deco.inherit(id='project-name' href='index.html') MOSS-UI
 
-      navbar(class='shadow-near' align='end')
+      navbar(class='sticky-top shadow-near' align='end')
         navbar-brand(href='index.html' type='text' slot='brand' v-activator.this.self) Moss
         navbar-nav(v-activator="'.nav-item > .nav-link'")
           nav-item(href='scss.html?q=components' text='SCSS')
           nav-item(href='vue.html' text='Vue')
           nav-item
-            dropdown(toggle='toggle' align='right')
+            dropdown(toggle='toggle' placement='bottom-end')
               button(slot='button') Utilities
-              dropdown-item(href='scss-helpers.html') SCSS Helpers
-              dropdown-item(href='vue-directives.html') Vue Directieves
-              dropdown-item(href='js-libraries.html') JS Libraries
+              a.dropdown-item(href='scss-helpers.html') SCSS Helpers
+              a.dropdown-item(href='vue-directives.html') Vue Directieves
+              a.dropdown-item(href='js-libraries.html') JS Libraries
 
       block content
 
@@ -60,7 +63,7 @@ html
       toast
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
-    script(src='./dist/moss.js')
+    script(src='../../dist/moss.js')
     script(src='./example.js')
     script.
       var year = new Date().getFullYear();

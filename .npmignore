@@ -1,0 +1,11 @@
+# tests
+example/
+test/
+
+# build tools
+task/
+webpack.config.js
+
+# editor settings
+.editorconfig
+.scss-lint.yml

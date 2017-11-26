@@ -75,8 +75,7 @@ export default {
       }
     },
     onKeydown(event) {
-      // escape: 27
-      if (this.show && event.keyCode == 27) {
+      if (this.show && event.key.match(/Escape|Esc/)) {
         event.preventDefault();
         this.show = false;
       }
@@ -91,10 +90,10 @@ export default {
 
     if (typeof window.Moss.modal === 'undefined') {
       window.Moss.modal = {
-        show: (name) => {
+        show: name => {
           this.$root.$emit('modal-toggle', name, 'show');
         },
-        close: (name) => {
+        close: name => {
           this.$root.$emit('modal-toggle', name, 'close');
         },
         toggle: (name, action = 'toggle') => {
