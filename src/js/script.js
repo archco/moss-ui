@@ -24,6 +24,7 @@ const treeData = [
 const treeData2 = [
   {
     name: '<a href="./index.html">MOSS-UI</a>',
+    opened: true,
     items: [
       { name: '<a href="./scss.html">SCSS</a>' },
       { name: '<a href="./vue.html">Vue</a>' },
