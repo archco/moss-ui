@@ -10,13 +10,17 @@
 
 ```javascript
 const treeData = [
+  // list-item.
   { name: 'item1' },
+  // list-item that has children items.
   {
     name: 'item2',
     items: [
       { name: 'item2-1' },
       {
         name: 'item2-2',
+        // If 'opened' property is true, then this item will open when loaded. default is false.
+        opened: true,
         items: [
           { name: 'item2-2-1' },
         ],
@@ -64,8 +68,9 @@ const treeData2 = {
 
 ## Props
 
-| name | type | description | default |
-| ---- | ---- | ----------- | ------- |
-| items | Array | Item array. | \[\] |
-| opened-html | String | Icon of tree-item, It will show if opened. | `'<i class="fa fa-angle-down fa-fw" aria-hidden="true"></i>'` (font-awesome icon) |
-| closed-html | String | Icon of tree-item, It will show if closed. | `'<i class="fa fa-angle-right fa-fw" aria-hidden="true"></i>'` (font-awesome icon) |
+| name | type | default | description |
+| ---- | ---- | ------- | ----------- |
+| items | `Array` | `[]` | Item array. |
+| opened | `Boolean` | `false` | Whether all children item is open or not. |
+| opened-html | `String` | `'<i class="fa fa-angle-down fa-fw" aria-hidden="true"></i>'` (font-awesome icon) | Icon of tree-item, It will show if opened. |
+| closed-html | `String` | `'<i class="fa fa-angle-right fa-fw" aria-hidden="true"></i>'` (font-awesome icon) | Icon of tree-item, It will show if closed. |

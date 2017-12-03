@@ -8134,6 +8134,10 @@ exports.default = {
         return [];
       }
     },
+    opened: {
+      type: Boolean,
+      default: false
+    },
     openedHtml: {
       type: String,
       default: '<i class="fa fa-angle-down fa-fw" aria-hidden="true"></i>'
@@ -8141,6 +8145,23 @@ exports.default = {
     closedHtml: {
       type: String,
       default: '<i class="fa fa-angle-right fa-fw" aria-hidden="true"></i>'
+    }
+  },
+  mounted: function mounted() {
+    if (this.opened) this.openTreeItems(this.$children);
+  },
+
+  methods: {
+    openTreeItems: function openTreeItems(children) {
+      var _this = this;
+
+      children.forEach(function (component) {
+        var tag = component.$vnode.componentOptions.tag;
+        if (tag == 'tree' || tag == 'tree-item') {
+          _this.openTreeItems(component.$children);
+          if (tag == 'tree-item') component.open = true;
+        }
+      });
     }
   }
 }; //
@@ -8205,7 +8226,7 @@ exports.default = {
   },
   data: function data() {
     return {
-      open: false
+      open: this.item.opened ? true : false
     };
   },
 
@@ -8222,9 +8243,7 @@ exports.default = {
   },
   methods: {
     toggle: function toggle() {
-      if (this.hasItems) {
-        this.open = !this.open;
-      }
+      if (this.hasItems) this.open = !this.open;
     }
   }
 };

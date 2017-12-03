@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Added
+- Add prop "opened" into tree.vue (0ded96924e4203b839e3d95dc30a419587fca398)
+
 ## [0.4.0][] - 2017-11-26
 
 ### Added
