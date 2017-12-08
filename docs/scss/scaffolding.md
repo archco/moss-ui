@@ -154,3 +154,14 @@ Useful class for apply `$font-accent` to heading tags.
 | $code-block-padding-y | `number` | `1em` | Code block's padding (Y axis) |
 | $code-block-padding-x | `number` | `1em` | Code block's padding (X axis) |
 | $code-block-line-height | `number` | `1.45` | Code block's `line-height` |
+
+**Footer**
+
+| Name | Type | Default | Description |
+| ---- |:----:| ------- | ----------- |
+| $footer-bg-color | `color` | `$primary-color` | Footer background color. |
+| $footer-link-hover-color | `color` | `get-contrast($footer-bg-color)` | Footer link text color that hovered. |
+| $footer-color | `color` | `rgba($footer-link-hover-color, .85)` | Footer text color. |
+| $footer-link-color | `color` | `$footer-color` | Footer link text color. |
+| $footer-copyright-color | `color` | `$footer-color` | `.footer-copyright` text color. |
+| $footer-copyright-bg-color | `color` | `rgba(#000, .1)` | `.footer-copyright` background color. |

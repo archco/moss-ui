@@ -28,17 +28,15 @@ footer {
   background-color: $footer-bg-color;
 
   a {
-    @extend %link-no-deco;
     @include set-link-state-color($footer-link-color, null, $footer-link-hover-color);
     transition: color $transition-time;
   }
 
   .footer-copyright {
-    $_bg-color: rgba(#000, .1);
     padding: .5rem 0;
-    color: rgba($footer-color, .8);
+    color: $footer-copyright-color;
     text-align: center;
-    background-color: $_bg-color;
+    background-color: $footer-copyright-bg-color;
   }
 }
 
