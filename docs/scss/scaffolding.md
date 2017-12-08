@@ -2,10 +2,15 @@
 
 > source: [scss/parts/scaffolding](../../src/scss/parts/_scaffolding.scss)
 
-- [Tag Defaults](#tag-defaults)
-- [Optional Class](#optional-class)
+### Table of contents
+- [Default Tags](#default-tags)
+  - [Link](#link)
+  - [Table](#table)
+  - [Blockquote](#blockquote)
+- [Optional Class](#optional-classes)
+- [SCSS variables](#scss-variables)
 
-## Tag Defaults
+## Default Tags
 
 ### Link
 
@@ -103,4 +108,49 @@ Useful class for apply `$font-accent` to heading tags.
 
 ```html
 <h1 class="accent">...</h1>
-```  
+```
+
+## SCSS Variables
+
+**Link**
+
+| Name | Type | Default | Description |
+| ---- |:----:| ------- | ----------- |
+| $link-color | `color` | `#0087bd` (naturalblue) | A color of link text. |
+| $link-color-hover | `color` | `darken($link-color, 8%)` | A color of link text when hovered. |
+| $link-decoration | `text-decoration` | `none` | Text decoration value for link. |
+| $link-hover-decoration | `text-decoration` | `underline` | Text decoration value for link when hovered. |
+
+**Table**
+
+| Name | Type | Default | Description |
+| ---- |:----:| ------- | ----------- |
+| $table-cell-padding | `number` | `.75em` | Padding value for table cell. |
+| $table-border-width | `number` | `1px` | table's border width. |
+| $table-border-color | `color` | `#bebebe` (mediumgray) | table's border color. |
+| $table-head-bg-color | `color` | `$primary-color` | Background color of `<th>`. |
+| $table-head-text-color | `color` | `get-contrast($table-head-bg-color)` | Text color of `<th>`.
+| $table-text-color | `color` | `inherit` | Text color of `<td>` |
+| $table-row-even-bg | `color` | `rgba($background-color-invert, .05)` | Even row's background color. |
+| $table-row-hover-bg | `color` | `rgba($background-color-invert, .1)` | Background color of `<tr>` when hovered.
+
+**Blockquote**
+
+| Name | Type | Default | Description |
+| ---- |:----:| ------- | ----------- |
+| $blockquote-color | `color` | `$text-color-weak` | Blockquote's text color. |
+| $blockquote-border-color | `color` | `$background-color-shade` | Blockquote's border color. |
+
+**Codes**
+
+| Name | Type | Default | Description |
+| ---- |:----:| ------- | ----------- |
+| $code-padding-y | `number` | `.15em` | Code padding (Y axis) |
+| $code-padding-x | `number` | `.25em` | Code padding (X axis) |
+| $code-font-size | `number` | `.85em` | Code's font-size. |
+| $code-bg-color | `color` | `rgba($background-color-invert, .05)` | Code's background color. |
+| $code-color | `color` | `get-contrast(rgba-to-rgb($code-bg-color, $background-color))` | Code's text color. |
+| $code-border-radius | `number` | `$radius-normal` | Code's border radius. |
+| $code-block-padding-y | `number` | `1em` | Code block's padding (Y axis) |
+| $code-block-padding-x | `number` | `1em` | Code block's padding (X axis) |
+| $code-block-line-height | `number` | `1.45` | Code block's `line-height` |

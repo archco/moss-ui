@@ -131,7 +131,7 @@ table {
   th {
     color: $table-head-text-color;
     text-align: left;
-    background-color: $table-head-color;
+    background-color: $table-head-bg-color;
   }
 
   &.center {
@@ -180,7 +180,7 @@ pre {
 }
 // inline code
 code {
-  padding: $code-padding;
+  padding: $code-padding-y $code-padding-x;
   font-size: $code-font-size;
   color: $code-color;
   background-color: $code-bg-color;
@@ -196,7 +196,7 @@ code {
 // block code
 pre code {
   display: block;
-  padding: $code-block-padding;
+  padding: $code-block-padding-y $code-block-padding-x;
   overflow-x: auto;
   line-height: $code-block-line-height;
   color: $code-color;

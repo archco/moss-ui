@@ -153,19 +153,21 @@ $blockquote-border-color: $background-color-shade !default;
 $table-cell-padding: .75em !default;
 $table-border-width: 1px !default;
 $table-border-color: $border-color !default;
-$table-head-color: $primary-color !default;
-$table-head-text-color: get-contrast($table-head-color) !default;
+$table-head-bg-color: $primary-color !default;
+$table-head-text-color: get-contrast($table-head-bg-color) !default;
 $table-text-color: inherit !default;
 $table-row-even-bg: rgba($background-color-invert, .05) !default;
 $table-row-hover-bg: rgba($background-color-invert, .1) !default;
 
 // codes
-$code-padding: .15em .25em !default;
+$code-padding-y: .15em !default;
+$code-padding-x: .25em !default;
 $code-font-size: .85em !default;
 $code-bg-color: rgba($background-color-invert, .05) !default;
 $code-color: get-contrast(rgba-to-rgb($code-bg-color, $background-color)) !default;
 $code-border-radius: $radius-normal !default;
-$code-block-padding: 1em !default;
+$code-block-padding-y: 1em !default;
+$code-block-padding-x: 1em !default;
 $code-block-line-height: 1.45 !default;
 
 // This variable affects the `.h-*` and `.w-*` classes.

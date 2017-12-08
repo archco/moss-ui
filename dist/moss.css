@@ -692,7 +692,7 @@ code {
 
 pre code {
   display: block;
-  padding: 1em;
+  padding: 1em 1em;
   overflow-x: auto;
   line-height: 1.45;
   color: #343434; }
