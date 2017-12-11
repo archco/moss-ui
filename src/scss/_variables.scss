@@ -1,6 +1,6 @@
-//======================================================================
+//============================================================
 // Theme
-//======================================================================
+//============================================================
 
 // Fonts
 //==============================
@@ -115,9 +115,9 @@ $shadow-inset-near: inset $shadow-near !default;
 $shadow-inset-normal: inset $shadow-normal !default;
 $shadow-inset-far: inset $shadow-far !default;
 
-//======================================================================
+//============================================================
 // Z-index Lists
-//======================================================================
+//============================================================
 
 $z-index-hero-background:     1 !default;
 $z-index-hero-content:        2 !default;
@@ -186,9 +186,36 @@ $sizes: (
   100: 100%
 ) !default;
 
-//======================================================================
-// Components Variables
-//======================================================================
+//============================================================
+// SCSS Parts
+//============================================================
+
+// grid
+$grid-breakpoints: (
+  base: 0, // Applies all width size.
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+) !default;
+$grid-columns: 12 !default;
+$grid-gutter-width: 1.5rem !default;
+
+// form
+$filedset-border: 2px solid $primary-color !default;
+$legend-color: $primary-color !default;
+$label-color: $text-color !default;
+$label-color-focused: $primary-color !default;
+$label-color-disabled: $disabled-color !default;
+
+$input-height: 2em !default;
+$input-padding: .2em .5em !default;
+$input-margin: .5rem 0 !default;
+$input-border: 1px solid $border-color !default;
+$input-radius: $radius-small !default;
+$input-outline-color: $outline-color !default;
+$input-disabled-bg-color: $disabled-color !default;
+$input-color-set-bg-enable: true !default;
 
 // list
 $list-border-width: 1px !default;
@@ -220,6 +247,49 @@ $button-padding-y: .5em !default;
 $button-padding-x: 1em !default;
 $button-margin: .2em !default;
 
+// card
+$card-size: 300px !default;
+$card-size-small: 200px !default;
+$card-size-large: 400px !default;
+$card-radius: $radius-small !default;
+$card-shadow: $shadow-normal !default;
+$card-hover-shadow: $shadow-far !default;
+$card-bg-color: $background-color !default;
+$card-title-color: $text-color-invert !default;
+$card-content-padding-y: .5em !default;
+$card-content-padding-x: .5em !default;
+
+// pagination
+$pagination-color: $text-color !default;
+$pagination-bg: transparent !default;
+$pagination-hover-color: $text-color !default;
+$pagination-hover-bg: $background-color-shade !default;
+
+$pagination-active-color: $text-color-invert !default;
+$pagination-active-bg: $primary-color !default;
+$pagination-active-hover-color: $pagination-active-color !default;
+$pagination-active-hover-bg: $primary-color-accent !default;
+
+$pagination-disabled-color: $text-color-weak !default;
+
+// image
+$image-overlay-base-opacity: .67 !default;
+$image-overlay-transition: $transition-time * 2 !default;
+$image-overlay-bg-color: $background-color-invert !default;
+
+// helper
+$caret-width: .25em !default;
+
+// hero-banner
+$hero-banner-min-height: 10em !default;
+$hero-banner-pad-small: 3em !default;
+$hero-banner-pad-medium: 6em !default;
+$hero-banner-pad-large: 9em !default;
+
+//============================================================
+// Vue Components
+//============================================================
+
 // close-button
 $close-button-color: rgba(#000, .3) !default;
 
@@ -239,30 +309,7 @@ $dropdown-header-font-size: 1em !default;
 $dropdown-divider-margin-y: .4rem !default;
 $dropdown-divider-color: $border-color !default;
 
-// grid
-$grid-breakpoints: (
-  base: 0, // Applies all width size.
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-) !default;
-$grid-columns: 12 !default;
-$grid-gutter-width: 1.5rem !default;
-
-// card
-$card-size: 300px !default;
-$card-size-small: 200px !default;
-$card-size-large: 400px !default;
-$card-radius: $radius-small !default;
-$card-shadow: $shadow-normal !default;
-$card-hover-shadow: $shadow-far !default;
-$card-bg-color: $background-color !default;
-$card-title-color: $text-color-invert !default;
-$card-content-padding-y: .5em !default;
-$card-content-padding-x: .5em !default;
-
-// nav
+// navbar
 $nav-bg-color: $background-color !default;
 $nav-active-color: $primary-color !default;
 $nav-link-color: inherit !default;
@@ -273,35 +320,6 @@ $nav-font: $font-accent !default;
 $nav-font-size: 1.25em !default;
 $nav-line-height: 1.25 !default;
 $navbar-toggle-width: 35px !default;
-
-// form
-$filedset-border: 2px solid $primary-color !default;
-$legend-color: $primary-color !default;
-$label-color: $text-color !default;
-$label-color-focused: $primary-color !default;
-$label-color-disabled: $disabled-color !default;
-
-$input-height: 2em !default;
-$input-padding: .2em .5em !default;
-$input-margin: .5rem 0 !default;
-$input-border: 1px solid $border-color !default;
-$input-radius: $radius-small !default;
-$input-outline-color: $outline-color !default;
-$input-disabled-bg-color: $disabled-color !default;
-$input-color-set-bg-enable: true !default;
-
-// pagination
-$pagination-color: $text-color !default;
-$pagination-bg: transparent !default;
-$pagination-hover-color: $text-color !default;
-$pagination-hover-bg: $background-color-shade !default;
-
-$pagination-active-color: $text-color-invert !default;
-$pagination-active-bg: $primary-color !default;
-$pagination-active-hover-color: $pagination-active-color !default;
-$pagination-active-hover-bg: $primary-color-accent !default;
-
-$pagination-disabled-color: $text-color-weak !default;
 
 // scroll-to
 $scroll-to-bg-color: $primary-color-accent !default;
@@ -346,14 +364,6 @@ $chip-font-size: .85em !default;
 $chip-height: 2em !default; // unit:em, This value is base of local variables of chip.
 $chip-bg-color: $background-color-shade !default;
 
-// image
-$image-overlay-base-opacity: .67 !default;
-$image-overlay-transition: $transition-time * 2 !default;
-$image-overlay-bg-color: $background-color-invert !default;
-
-// helper
-$caret-width: .25em !default;
-
 // toast
 $toast-font-size: 1em !default;
 $toast-min-width: 10em !default;
@@ -374,12 +384,6 @@ $message-margin: 8px !default;
 $simple-crud-min-height: 3em !default;
 $simple-crud-padding-x: .5rem !default;
 $simple-crud-margin-bottom: .75rem !default;
-
-// hero-banner
-$hero-banner-min-height: 10em !default;
-$hero-banner-pad-small: 3em !default;
-$hero-banner-pad-medium: 6em !default;
-$hero-banner-pad-large: 9em !default;
 
 // input-switch (input-check or input-radio) and input-toggle
 $input-switch-stroke-color: $text-color-light !default;
