@@ -8,7 +8,7 @@
 }
 
 @mixin btn-color($bg-color, $color: $button-color) {
-  @if not $button-color-is-enable {
+  @if $auto-button-color-enable {
     $color: get-contrast($bg-color);
   }
 

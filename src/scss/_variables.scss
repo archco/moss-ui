@@ -239,7 +239,9 @@ $badge-default-color: $default-color !default;
 // button
 $button-radius: $radius-small !default;
 $button-color: $text-color-light !default;
-$button-color-is-enable: false !default; // If this set false, button color will be background color based contrast color.
+// If $auto-button-color-enable set true,
+// button-color in color-set set automatically that based by contrast of background-color.
+$auto-button-color-enable: true !default;
 $button-default-bg-color: $primary-color !default;
 $button-flat-default-bg-color: $link-color !default;
 $button-outline-color: $outline-color !default;
