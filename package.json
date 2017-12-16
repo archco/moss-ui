@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/archco/moss-ui",
   "license": "MIT",
+  "repository": "github:archco/moss-ui",
   "dependencies": {
     "clipboard": "^1.7.1",
     "element-measurer": "^1.0.1",
