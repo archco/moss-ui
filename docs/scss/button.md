@@ -97,7 +97,7 @@ Available content buttons for button-group: `.btn`, `.btn-flat`, `dropdown`
 
 ### Auto button color
 
-> See in [variable.scss](../../src/scss/_variable.scss)
+> See in [variables.scss](../../src/scss/_variables.scss)
 
 ``` scss
 // If $auto-button-color-enable set true,
