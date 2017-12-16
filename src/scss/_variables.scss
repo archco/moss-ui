@@ -209,13 +209,17 @@ $label-color-focused: $primary-color !default;
 $label-color-disabled: $disabled-color !default;
 
 $input-height: 2em !default;
-$input-padding: .2em .5em !default;
+$input-padding-y: .2em !default;
+$input-padding-x: .5em !default;
 $input-margin: .5rem 0 !default;
 $input-border: 1px solid $border-color !default;
 $input-radius: $radius-small !default;
 $input-outline-color: $outline-color !default;
 $input-disabled-bg-color: $disabled-color !default;
-$input-color-set-bg-enable: true !default;
+// If $auto-input-bg-color-enable is true,
+// background-color of color-set input set automatically.
+// If value is false, background-color set transparent.
+$auto-input-bg-color-enable: true !default;
 
 // list
 $list-border-width: 1px !default;
