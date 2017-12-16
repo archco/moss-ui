@@ -2,6 +2,8 @@
 
 > source: [scss/parts/grid](../../src/scss/parts/_grid.scss)
 
+## SCSS variables
+
 ```scss
 // variables of grid.
 $grid-breakpoints: (

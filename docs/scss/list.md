@@ -16,7 +16,7 @@ Simply none-list-style list.
 </ul>
 ```
 
-#### list-group
+### list-group
 
 ```html
 <ul class="list-group">
@@ -26,7 +26,7 @@ Simply none-list-style list.
 </ul>
 ```
 
-#### list-horizontal
+### list-horizontal
 
 ```html
 <ul class="list-horizontal">
@@ -36,7 +36,7 @@ Simply none-list-style list.
 </ul>
 ```
 
-#### breadcrumb
+### breadcrumb
 
 default separator is "/".
 
@@ -46,4 +46,21 @@ default separator is "/".
   <li><a href="#">parts</a></li>
   <li>list</li>
 </ul>
+```
+
+## SCSS variables
+
+``` scss
+$list-border-width: 1px !default;
+$list-border-color: $border-color !default;
+$list-padding-y: .6em !default;
+$list-padding-x: .3em !default;
+$list-group-padding-y: .4em !default;
+$list-group-padding-x: .8em !default;
+$list-group-padding: .4em .8em !default;
+$list-group-border-radius: $radius-normal !default;
+$list-group-hover-bg: rgba($background-color-invert, .1) !default;
+$list-group-active-bg-color: $primary-color !default;
+$list-group-active-color: get-contrast($list-group-active-bg-color) !default;
+$breadcrumb-separator: '/' !default;
 ```
