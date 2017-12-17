@@ -1,9 +1,22 @@
 # Dropdown
 
-> source: [js/components/dropdown](../../src/js/components/dropdown.vue)
+> sources:  
+[js/components/dropdown](../../src/js/components/dropdown.vue)  
+[scss/components/dropdown](../../src/scss/components/_dropdown.scss)
+
+> This component is built on [Popper.js](https://github.com/FezVrasta/popper.js). If you want more information, please see [popper-documentation](https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/popper-documentation.md).
+
+### Table of contents
+- [Usage](#usage)
+  - [Toggle dropdown](#toggle-dropdown)
+  - [Hover dropdown](#hover-dropdown)
+  - [Content placement](#content-placement)
+  - [Content offset](#content-offset)
+  - [Content decorators](#content-decorators)
+- [Props](#props)
+- [SCSS variables](#scss-variables)
 
 ## Usage
-> This component is built on [Popper.js](https://github.com/FezVrasta/popper.js). If you want more information, please see [popper-documentation](https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/popper-documentation.md).
 
 ### Toggle dropdown
 
@@ -74,14 +87,33 @@ If the placement is `top` or `bottom`, this value means `width, height`. In case
 
 ## Props
 
-| name | type | description | default |
-| ---- | ---- | ----------- | ------- |
-| toggle | String | toggle type: `toggle` or `hover` | 'toggle' |
-| placement | String | Placement of dropdown content. | 'bottom' |
-| offset | String | Offset value for dropdown content. see [modifiers~offset][] | '1px, 1px' |
-| flip | String | Turn on/off flip mode. see [modifiers~flip][]. | 'on' |
-| prevent-overflow | String | Turn on/off preventOverflow mode. see [modifiers~preventOverflow] | 'on' |
-| modifiers | Object | set [modifiers][] option for Popper.js | {} |
+| Name | Type | Default | Description |
+| ---- |:----:| ------- | ----------- |
+| toggle | `String` | `'toggle'` | content toggle type. 'toggle' or 'hover' |
+| placement | `String` | `'bottom'` | Placement of dropdown content. |
+| offset | `String` | `'1px, 1px'` | Offset value for dropdown content. see [modifiers~offset][] |
+| flip | `String` | `'on'` | Turn on/off flip mode. see [modifiers~flip][]. |
+| prevent-overflow | `String` | `'on'` | Turn on/off preventOverflow mode. see [modifiers~preventOverflow] |
+| modifiers | `Object` | `{}` | set [modifiers][] option for Popper.js |
+
+## SCSS variables
+
+``` scss
+$dropdown-bg-color: $background-color !default;
+$dropdown-bg-hover-color: rgba(#000, .15) !default;
+$dropdown-padding-y: .35em !default;
+$dropdown-padding-x: .7em !default;
+$dropdown-link-hover-color: get-contrast($dropdown-bg-color) !default;
+$dropdown-link-color: rgba($dropdown-link-hover-color, .8) !default;
+$dropdown-active-bg-color: rgba(#000, .15) !default;
+$dropdown-active-color: get-contrast($dropdown-bg-color) !default;
+$dropdown-min-width: 120px !default;
+$dropdown-shadow: $shadow-normal !default;
+$dropdown-header-color: $text-color-weak !default;
+$dropdown-header-font-size: 1em !default;
+$dropdown-divider-margin-y: .4rem !default;
+$dropdown-divider-color: $border-color !default;
+```
 
 [Popper.placements]: https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/popper-documentation.md#Popper.placements
 [modifiers~offset]: https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/popper-documentation.md#modifiersoffset
