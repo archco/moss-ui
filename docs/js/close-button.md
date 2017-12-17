@@ -1,6 +1,7 @@
 # Close button
 
-> sources: [js/components/close-button](../../src/js/components/close-button.vue)  
+> sources:  
+[js/components/close-button](../../src/js/components/close-button.vue)  
 [scss/components/close-button](../../src/scss/components/_close-button.scss)
 
 ### Table of contents
