@@ -59,7 +59,7 @@ $list-group-padding-y: .4em !default;
 $list-group-padding-x: .8em !default;
 $list-group-padding: .4em .8em !default;
 $list-group-border-radius: $radius-normal !default;
-$list-group-hover-bg: rgba($background-color-invert, .1) !default;
+$list-group-hover-bg-color: rgba($background-color-invert, .1) !default;
 $list-group-active-bg-color: $primary-color !default;
 $list-group-active-color: get-contrast($list-group-active-bg-color) !default;
 $breadcrumb-separator: '/' !default;

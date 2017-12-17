@@ -15,3 +15,17 @@
   <li><a href="#">Next</a></li>
 </ul>
 ```
+
+## SCSS Variables
+
+``` scss
+$pagination-color: $text-color !default;
+$pagination-bg-color: transparent !default;
+$pagination-hover-color: $text-color !default;
+$pagination-hover-bg-color: $background-color-shade !default;
+$pagination-active-color: $text-color-invert !default;
+$pagination-active-bg-color: $primary-color !default;
+$pagination-active-hover-color: $pagination-active-color !default;
+$pagination-active-hover-bg-color: $primary-color-accent !default;
+$pagination-disabled-color: $text-color-weak !default;
+```

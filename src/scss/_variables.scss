@@ -230,7 +230,7 @@ $list-group-padding-y: .4em !default;
 $list-group-padding-x: .8em !default;
 $list-group-padding: .4em .8em !default;
 $list-group-border-radius: $radius-normal !default;
-$list-group-hover-bg: rgba($background-color-invert, .1) !default;
+$list-group-hover-bg-color: rgba($background-color-invert, .1) !default;
 $list-group-active-bg-color: $primary-color !default;
 $list-group-active-color: get-contrast($list-group-active-bg-color) !default;
 $breadcrumb-separator: '/' !default;
@@ -267,15 +267,13 @@ $card-content-padding-x: .5em !default;
 
 // pagination
 $pagination-color: $text-color !default;
-$pagination-bg: transparent !default;
+$pagination-bg-color: transparent !default;
 $pagination-hover-color: $text-color !default;
-$pagination-hover-bg: $background-color-shade !default;
-
+$pagination-hover-bg-color: $background-color-shade !default;
 $pagination-active-color: $text-color-invert !default;
-$pagination-active-bg: $primary-color !default;
+$pagination-active-bg-color: $primary-color !default;
 $pagination-active-hover-color: $pagination-active-color !default;
-$pagination-active-hover-bg: $primary-color-accent !default;
-
+$pagination-active-hover-bg-color: $primary-color-accent !default;
 $pagination-disabled-color: $text-color-weak !default;
 
 // image

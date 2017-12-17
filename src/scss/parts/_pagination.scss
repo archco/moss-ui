@@ -2,7 +2,7 @@
   display: inline-block;
   margin: 0 .2rem;
   color: $pagination-color;
-  background-color: $pagination-bg;
+  background-color: $pagination-bg-color;
   border-radius: $radius-small;
 
   span,
@@ -19,17 +19,17 @@
 
     &:hover {
       color: $pagination-hover-color;
-      background-color: $pagination-hover-bg;
+      background-color: $pagination-hover-bg-color;
     }
   }
 
   &.active {
     color: $pagination-active-color;
-    background-color: $pagination-active-bg;
+    background-color: $pagination-active-bg-color;
 
     > a:hover {
       color: $pagination-active-hover-color;
-      background-color: $pagination-active-hover-bg;
+      background-color: $pagination-active-hover-bg-color;
     }
   }
 
