@@ -2,13 +2,21 @@
 
 > source: [scss/parts/image](../../src/scss/parts/_image.scss)
 
+### Table of contents
+- [Image Container](#image-container)
+  - [with fade-in effect](#with-fade-in-effect)
+  - [with slide-in effect](#with-slide-in-effect)
+- [Image Filter](#image-filter)
+  - [Available Filter classes](#available-filter-classes)
+- [SCSS Variables](#scss-variables)
+
 ## Image Container
 
 Adding overlay effects when image hover.
 
-### Usage
+### with fade-in effect
 
-#### default, fade-in effect
+`fade-in` is default effect.
 
 ```html
 <div class="image-container">
@@ -19,7 +27,7 @@ Adding overlay effects when image hover.
 </div>
 ```
 
-#### slide in effect
+### with slide-in effect
 
 ```html
 <!-- slide-in from top -->
@@ -38,21 +46,27 @@ The helper class for image [filter](https://developer.mozilla.org/en-US/docs/Web
 
 **Note**: CSS filter is not supported in IE. [compatibility](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Browser_compatibility)
 
-### Usage
-
 ```html
 <img src="image.jpg" class="filter blur">
 ```
 
-### Available Filters
+### Available Filter classes
 
-- blur
-- lighten
-- darken
-- contrast
-- gray
-- hue-rotate
-- invert
-- opacity
-- saturate
-- sepia
+- `.blur`
+- `.lighten`
+- `.darken`
+- `.contrast`
+- `.gray`
+- `.hue-rotate`
+- `.invert`
+- `.opacity`
+- `.saturate`
+- `.sepia`
+
+## SCSS Variables
+
+``` scss
+$image-overlay-base-opacity: .67 !default;
+$image-overlay-transition: $transition-time * 2 !default;
+$image-overlay-bg-color: $background-color-invert !default;
+```
