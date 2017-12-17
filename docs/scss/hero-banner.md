@@ -25,7 +25,6 @@ A hero banner is display large image with text, often placed at top of a web pag
 ```
 
 **`hero-background` with filter option**
-
 It is same as [image filter](image.md#image-filter).
 
 ``` html

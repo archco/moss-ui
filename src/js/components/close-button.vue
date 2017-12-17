@@ -20,7 +20,7 @@ export default {
       type: String,
       default: '', // '' (parentNode) | selector
     },
-    parentRelatived: {
+    parentToRelative: {
       type: Boolean,
       default: false, // If it true, parent node's style position is set 'relative'.
     }
@@ -35,7 +35,7 @@ export default {
     };
   },
   mounted() {
-    if (this.parentRelatived) {
+    if (this.parentToRelative) {
       this.$el.parentNode.style.position = 'relative';
     }
   },
