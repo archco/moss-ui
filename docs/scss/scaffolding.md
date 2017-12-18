@@ -112,56 +112,51 @@ Useful class for apply `$font-accent` to heading tags.
 
 ## SCSS Variables
 
-**Link**
+``` scss
+// link colors
+$link-color-hover: darken($link-color, 8%) !default;
+$link-color-visited: $link-color !default;
+$link-decoration: none !default;
+$link-hover-decoration: underline !default;
 
-| Name | Type | Default | Description |
-| ---- |:----:| ------- | ----------- |
-| $link-color | `color` | `#0087bd` (naturalblue) | A color of link text. |
-| $link-color-hover | `color` | `darken($link-color, 8%)` | A color of link text when hovered. |
-| $link-decoration | `text-decoration` | `none` | Text decoration value for link. |
-| $link-hover-decoration | `text-decoration` | `underline` | Text decoration value for link when hovered. |
+// table
+$table-cell-padding: .75em !default;
+$table-border-width: 1px !default;
+$table-border-color: $border-color !default;
+$table-head-bg-color: $primary-color !default;
+$table-head-text-color: get-contrast($table-head-bg-color) !default;
+$table-text-color: inherit !default;
+$table-row-even-bg: rgba($background-color-invert, .05) !default;
+$table-row-hover-bg: rgba($background-color-invert, .1) !default;
 
-**Table**
+// blockquote
+$blockquote-color: $text-color-weak !default;
+$blockquote-border-color: $background-color-shade !default;
 
-| Name | Type | Default | Description |
-| ---- |:----:| ------- | ----------- |
-| $table-cell-padding | `number` | `.75em` | Padding value for table cell. |
-| $table-border-width | `number` | `1px` | table's border width. |
-| $table-border-color | `color` | `#bebebe` (mediumgray) | table's border color. |
-| $table-head-bg-color | `color` | `$primary-color` | Background color of `<th>`. |
-| $table-head-text-color | `color` | `get-contrast($table-head-bg-color)` | Text color of `<th>`.
-| $table-text-color | `color` | `inherit` | Text color of `<td>` |
-| $table-row-even-bg | `color` | `rgba($background-color-invert, .05)` | Even row's background color. |
-| $table-row-hover-bg | `color` | `rgba($background-color-invert, .1)` | Background color of `<tr>` when hovered.
+// codes
+$code-padding-y: .15em !default;
+$code-padding-x: .25em !default;
+$code-font-size: .85em !default;
+$code-bg-color: rgba($background-color-invert, .05) !default;
+$code-color: get-contrast(rgba-to-rgb($code-bg-color, $background-color)) !default;
+$code-border-radius: $radius-normal !default;
+$code-block-padding-y: 1em !default;
+$code-block-padding-x: 1em !default;
+$code-block-line-height: 1.45 !default;
 
-**Blockquote**
+// footer
+$footer-bg-color: $primary-color !default;
+$footer-link-hover-color: get-contrast($footer-bg-color) !default;
+$footer-color: rgba($footer-link-hover-color, .85) !default;
+$footer-link-color: $footer-color !default;
+$footer-copyright-color: $footer-color !default;
+$footer-copyright-bg-color: rgba(#000, .1) !default;
 
-| Name | Type | Default | Description |
-| ---- |:----:| ------- | ----------- |
-| $blockquote-color | `color` | `$text-color-weak` | Blockquote's text color. |
-| $blockquote-border-color | `color` | `$background-color-shade` | Blockquote's border color. |
-
-**Codes**
-
-| Name | Type | Default | Description |
-| ---- |:----:| ------- | ----------- |
-| $code-padding-y | `number` | `.15em` | Code padding (Y axis) |
-| $code-padding-x | `number` | `.25em` | Code padding (X axis) |
-| $code-font-size | `number` | `.85em` | Code's font-size. |
-| $code-bg-color | `color` | `rgba($background-color-invert, .05)` | Code's background color. |
-| $code-color | `color` | `get-contrast(rgba-to-rgb($code-bg-color, $background-color))` | Code's text color. |
-| $code-border-radius | `number` | `$radius-normal` | Code's border radius. |
-| $code-block-padding-y | `number` | `1em` | Code block's padding (Y axis) |
-| $code-block-padding-x | `number` | `1em` | Code block's padding (X axis) |
-| $code-block-line-height | `number` | `1.45` | Code block's `line-height` |
-
-**Footer**
-
-| Name | Type | Default | Description |
-| ---- |:----:| ------- | ----------- |
-| $footer-bg-color | `color` | `$primary-color` | Footer background color. |
-| $footer-link-hover-color | `color` | `get-contrast($footer-bg-color)` | Footer link text color that hovered. |
-| $footer-color | `color` | `rgba($footer-link-hover-color, .85)` | Footer text color. |
-| $footer-link-color | `color` | `$footer-color` | Footer link text color. |
-| $footer-copyright-color | `color` | `$footer-color` | `.footer-copyright` text color. |
-| $footer-copyright-bg-color | `color` | `rgba(#000, .1)` | `.footer-copyright` background color. |
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: (
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%
+) !default;
+```
