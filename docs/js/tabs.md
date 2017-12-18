@@ -1,12 +1,18 @@
 # Tabs
 
 > sources:  
-> [js/components/tabs](../../src/js/components/tabs.vue)  
-> [js/components/tab](../../src/js/components/tab.vue)
+[js/components/tabs](../../src/js/components/tabs.vue)  
+[js/components/tab](../../src/js/components/tab.vue)  
+[scss/components/tab](../../src/scss/components/_tab.scss)
+
+### Table of contents
+- [Usage](#usage)
+- [Props](#props)
+- [SCSS variables](#scss-variables)
 
 ## Usage
 
-```html
+``` html
 <tabs>
   <tab name="tab1" selected>
     <p>Tab contents..</p>
@@ -24,18 +30,32 @@
 
 ### tabs
 
-| name | type | description | default |
-| ---- | ---- | ----------- | ------- |
-| effect | String | Transition effect name. 'fade' | '' (no effect) |
-| align | String | \*flex alignment of tab-link. | 'start' |
-| grow-enabled | Boolean | flex-item grow enable on tab-links | false |
+| Name | Type | Default | Description |
+| ---- |:----:| ------- | ----------- |
+| effect | `String` | `''` | Transition effect name. `''`(no effect) or `'fade'` |
+| align | `String` | `'start'` | \*flex alignment of tab-link. |
+| grow-enabled | `Boolean` | `false` | flex-item grow enable on tab-links. |
 
 **Note**: \*flex alignment keywords - `start` `center` `end` `around` `between`
 
 ### tab
 
-| name | type | description | default |
-| ---- | ---- | ----------- | ------- |
-| name | String | Tab link's text. | is required |
-| selected | Boolean | Active this tab. | false |
-| active-color | String | Active color of Tab link. This colors based on [color-set](color-set.md). | '' (primary-color) |
+| Name | Type | Default | Description |
+| ---- |:----:| ------- | ----------- |
+| name | `String` | required | `textContent` of tab-link. |
+| selected | `Boolean` | `false` | If true, this tab is activate. |
+| active-color | `String` | `'primary'` | Specifies active tab color. These colors based on [color-set](color-set.md). |
+
+## SCSS variables
+
+``` scss
+$tab-font: $font-base !default;
+$tab-font-size: 1em !default;
+$tab-color: $text-color-weak !default;
+$tab-hover-color: darken($tab-color, 15%) !default;
+$tab-border-color: $border-color !default;
+$tab-border-width: 1px !default;
+$tab-active-color: $primary-color !default;
+$tab-active-border-width: 3px !default;
+$tab-active-font-weight: bold !default;
+```

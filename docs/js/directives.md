@@ -5,7 +5,7 @@
 Activator is provide convenience for "active" class into child-node item. It's compare between link and current location.
 
 - Syntax
-  ```html
+  ``` html
   <navbar-nav v-activator.{modifiers}="'{value}'"></navbar-nav>
   ```
 - modifiers
@@ -18,7 +18,7 @@ Activator is provide convenience for "active" class into child-node item. It's c
 Provide convenience for copy to clipboard. It is based on [clipboard.js](https://github.com/zenorocha/clipboard.js)
 
 - Syntax
-  ```html
+  ``` html
   <button v-clipboard.{modifiers}:{arg}="value">Copy</button>
   ```
 - modifiers
@@ -43,7 +43,7 @@ Provide convenience for copy to clipboard. It is based on [clipboard.js](https:/
 Provide the function to confirm when "submission" is the case.
 
 - Syntax
-  ```html
+  ``` html
   <form action="#" v-confirm:{arg}="'{value}'"></form>
   ```
 - arg: event type.
@@ -58,7 +58,7 @@ Provide the function to confirm when "submission" is the case.
 Auto focus on element.
 
 - Syntax
-  ```html
+  ``` html
   <input type="text" v-focus>
   ```
 
@@ -67,7 +67,7 @@ Auto focus on element.
 Automatically activate HTML anchor based on scroll position.
 
 - Syntax
-  ```html
+  ``` html
   <nav v-scrollspy="{value}">...</nav>
   ```
 - value: {Object} options.
@@ -106,14 +106,14 @@ Automatically activate HTML anchor based on scroll position.
 Set value on a element.
 
 - Syntax
-  ```html
+  ``` html
   <select v-set-value:{arg}="'{value}'">...</select>
   ```
 - arg: Key of query string.
 - value: Set value directly.
 
 **Example**
-```html
+``` html
 <!-- URL: index.html?category=3&year=2017 -->
 <select v-set-value:category>...</select>
 ```
@@ -123,26 +123,36 @@ Set value on a element.
 > This directive is built on [Tooltip.js](https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/tooltip-documentation.md)
 
 - Syntax
-  ```html
+  ``` html
   <span v-tooltip:{arg}.{modifiers}="'{value}'">...</span>
   ```
 - arg: placement. top (default) | right | bottom | left (additional suffix: '-start' and '-end')
 - modifiers: trigger. hover (default) | focus | click | manual (no actions)
 - value: `String`|`Object` - If value type is `String`, then tooltip title is set by value. If value type is `Object`, then [option of Tooltip.js](https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/tooltip-documentation.md#new-tooltipreference-options) will set by this object value.
 
+**SCSS variables**
+``` scss
+$tooltip-color: $text-color-invert !default;
+$tooltip-bg-color: rgba($background-color-invert, .8) !default;
+$tooltip-padding-y: .5em !default;
+$tooltip-padding-x: 1em !default;
+$tooltip-font-size: .9rem !default;
+$tooltip-border-radius: $radius-small !default;
+```
+
 ## Trigger
 
 Emit event on context root.
 
 - Syntax
-  ```html
+  ``` html
   <button type="button" v-trigger:{arg}="[{value}]">Trigger</button>
   ```
 - arg: event name.
 - value: {Array} Arguments for event listener.
 
 **Example**
-```html
+``` html
 <span v-trigger:modal-toggle="['modal01', 'show']">click me</span>
 ```
 
@@ -151,7 +161,7 @@ Emit event on context root.
 Wrap the element in a wrapper.
 
 - Syntax
-  ```html
+  ``` html
   <div v-wrap:{arg}.{modifiers}="'{value}'"></div>
   ```
 - arg: class name. It is auto convert. e.g.) `item` -> `item-wrapper`
