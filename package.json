@@ -85,8 +85,7 @@
     ],
     "settings": {
       "html/html-extensions": [
-        ".html",
-        ".vue"
+        ".html"
       ]
     }
   },
