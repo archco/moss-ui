@@ -1,7 +1,9 @@
 <template>
   <div>
     <ul :class="tabsClass" v-wrap:responsive>
-      <li v-for="tab in tabs" :style="{ flexGrow: growEnabled ? 1 : null }">
+      <li v-for="tab in tabs"
+        :key="tab.name"
+        :style="{ flexGrow: growEnabled ? 1 : null }">
         <a
           href="#"
           :class="tabClass(tab)"
