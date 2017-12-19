@@ -3188,6 +3188,10 @@ ul.pagination {
     ul.pagination li.disabled {
       color: #777777; }
 
+carousel,
+[is="carousel"] {
+  visibility: hidden; }
+
 .agile__dots {
   bottom: 5%;
   left: 50%;

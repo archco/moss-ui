@@ -3,6 +3,10 @@
 // @license MIT
 // scss-lint:disable SelectorFormat
 
+// Hide during loading.
+carousel,
+[is="carousel"] { visibility: hidden; }
+
 .agile__dots {
   @include position-bottom-center(5%);
   position: absolute;

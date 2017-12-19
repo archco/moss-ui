@@ -40,6 +40,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - Fix position bug in toast.vue #69
 - Fix bug in navbar.scss #66
+- Fix carousel to hides during loading.
 
 ## [0.4.0][] - 2017-11-26
 
