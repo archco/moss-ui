@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Add prop "opened" into tree.vue (0ded96924e4203b839e3d95dc30a419587fca398)
 
 ### Changed
+- Modify minor things in dropdown. #70
+  - Available set to dropdown button without caret.
+  - Available use to 'button' tag as dropdown-item.
 - Change scss-variable names. #67
   - Scaffolding
     - `$table-head-color` -> `$table-head-bg-color`
@@ -28,6 +31,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
     - `$pagination-hover-bg` -> `$pagination-hover-bg-color`
     - `$pagination-active-bg` -> `$pagination-active-bg-color`
     - `$pagination-active-hover-bg` -> `$pagination-active-hover-bg-color`
+  - Dropdown #70
+    - Add `$dropdown-line-height`
+    - `$dropdown-link-hover-color` -> `$dropdown-item-hover-color`
+    - `$dropdown-link-color` -> `$dropdown-item-color`
 - Change prop name in close-button.vue: `parent-relatived` -> `parent-to-relative`. #67
 
 ### Fixed

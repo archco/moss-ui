@@ -12,7 +12,7 @@ dropdown,
 
 .dropdown-button {
   @extend %btn-common;
-  &::after { @include caret('down'); }
+  &.with-caret::after { @include caret('down'); }
 }
 
 .dropdown-content {
@@ -30,11 +30,13 @@ dropdown,
 
 .dropdown-item {
   @include no-decoration;
-  @include set-link-state-color($dropdown-link-color);
+  @include reset-btn;
+  @include set-link-state-color($dropdown-item-color);
   display: block;
   padding: $dropdown-padding-y $dropdown-padding-x;
   font-family: inherit;
   font-size: inherit;
+  line-height: $dropdown-line-height;
   transition: color $transition-time, background-color $transition-time;
 
   &.active:not([disabled]) {
@@ -44,7 +46,7 @@ dropdown,
 
   &:hover:not([disabled]),
   &:focus:not([disabled]) {
-    color: $dropdown-link-hover-color;
+    color: $dropdown-item-hover-color;
     background-color: $dropdown-bg-hover-color;
   }
 
