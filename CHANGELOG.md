@@ -30,6 +30,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
     - `$pagination-active-hover-bg` -> `$pagination-active-hover-bg-color`
 - Change prop name in close-button.vue: `parent-relatived` -> `parent-to-relative`. #67
 
+### Fixed
+- Fix position bug in toast.vue #69 
+
 ## [0.4.0][] - 2017-11-26
 
 ### Added

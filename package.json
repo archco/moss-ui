@@ -81,7 +81,8 @@
       "no-console": "off"
     },
     "plugins": [
-      "html"
+      "html",
+      "vue"
     ],
     "settings": {
       "html/html-extensions": [
