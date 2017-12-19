@@ -9,9 +9,9 @@ Activator is provide convenience for "active" class into child-node item. It's c
   <navbar-nav v-activator.{modifiers}="'{value}'"></navbar-nav>
   ```
 - modifiers
-  - self: If this given, `active` class into self element, not parentNode.
-  - this: If this given, activator on own element, not childNodes.
-- value: {String} selector. default value is 'a'.
+  - `self`: If this given, `active` class into self element, not `parentNode`.
+  - `this`: If this given, activator on own element, not `childNodes`.
+- value: `String` selector. default value is 'a'.
 
 ## Clipboard
 
@@ -22,12 +22,12 @@ Provide convenience for copy to clipboard. It is based on [clipboard.js](https:/
   <button v-clipboard.{modifiers}:{arg}="value">Copy</button>
   ```
 - modifiers
-  - cut: If this given, set action to 'cut'. (default value is 'copy')
+  - `cut`: If this given, set action to 'cut'. (default value is 'copy')
 - arg: Event name, default is 'clipboard-success'. This event emit to `$root` vue model when copy to clipboard is successfully.
-- value: {String|Object}
+- value: `String`|`Object`
   - If type is string, this value copy to clipboard as text.
   - If type is object, see below.
-  ```javascript
+  ``` js
   // Value set as object.
   const value = {
     text: '',     // {String}
@@ -47,7 +47,7 @@ Provide the function to confirm when "submission" is the case.
   <form action="#" v-confirm:{arg}="'{value}'"></form>
   ```
 - arg: event type.
-- value: {String} confirm message. default value is 'Are you confirm?'.
+- value: `String` confirm message. default value is 'Are you confirm?'.
 
 **Caveat**
 - When confirm is canceled, `event.preventDefault()` is called, so if there is a default action such as submit, it will stop as expected, but it will have no effect on click.
@@ -70,8 +70,8 @@ Automatically activate HTML anchor based on scroll position.
   ``` html
   <nav v-scrollspy="{value}">...</nav>
   ```
-- value: {Object} options.
-  ```javascript
+- value: `Object` options.
+  ``` js
   value: {
     linkSelector: 'a',
     scrollElement: 'body', // 'body' | element | selector
@@ -85,7 +85,7 @@ Automatically activate HTML anchor based on scroll position.
 ### Events
 
 - On activate: `scrollspy-activate`
-  ```javascript
+  ``` js
   vm.$on('scrollspy-activate', item => {
     /*
       item = {
@@ -97,7 +97,7 @@ Automatically activate HTML anchor based on scroll position.
   });
   ```
 - Emit refresh: `scrollspy-refresh`
-  ```javascript
+  ``` js
   vm.$emit('scrollspy-refresh');
   ```
 
@@ -149,7 +149,7 @@ Emit event on context root.
   <button type="button" v-trigger:{arg}="[{value}]">Trigger</button>
   ```
 - arg: event name.
-- value: {Array} Arguments for event listener.
+- value: `Array` Arguments for event listener.
 
 **Example**
 ``` html
@@ -167,4 +167,4 @@ Wrap the element in a wrapper.
 - arg: class name. It is auto convert. e.g.) `item` -> `item-wrapper`
 - modifiers
   - raw: If this given, it does not convert class name.
-- value: {String} Tag name of wrapper. default value is 'div'.
+- value: `String` Tag name of wrapper. default value is 'div'.
