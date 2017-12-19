@@ -85,6 +85,12 @@ If the placement is `top` or `bottom`, this value means `width, height`. In case
 </dropdown>
 ```
 
+### Button without caret
+
+``` html
+<dropdown :button-with-caret="false">...</dropdown>
+```
+
 ## Props
 
 | Name | Type | Default | Description |
@@ -95,6 +101,7 @@ If the placement is `top` or `bottom`, this value means `width, height`. In case
 | flip | `String` | `'on'` | Turn on/off flip mode. see [modifiers~flip][]. |
 | prevent-overflow | `String` | `'on'` | Turn on/off preventOverflow mode. see [modifiers~preventOverflow] |
 | modifiers | `Object` | `{}` | set [modifiers][] option for Popper.js |
+| button-with-caret | `Boolean` | `true` | Whether append caret or not on dropdown-button. |
 
 ## SCSS variables
 
@@ -103,8 +110,9 @@ $dropdown-bg-color: $background-color !default;
 $dropdown-bg-hover-color: rgba(#000, .15) !default;
 $dropdown-padding-y: .35em !default;
 $dropdown-padding-x: .7em !default;
-$dropdown-link-hover-color: get-contrast($dropdown-bg-color) !default;
-$dropdown-link-color: rgba($dropdown-link-hover-color, .8) !default;
+$dropdown-line-height: $body-line-height !default;
+$dropdown-item-hover-color: get-contrast($dropdown-bg-color) !default;
+$dropdown-item-color: rgba($dropdown-item-hover-color, .8) !default;
 $dropdown-active-bg-color: rgba(#000, .15) !default;
 $dropdown-active-color: get-contrast($dropdown-bg-color) !default;
 $dropdown-min-width: 120px !default;
