@@ -3918,6 +3918,8 @@ navbar,
   .nav-item {
     width: 100%;
     text-align: center; }
+    .nav-item .nav-link {
+      width: 100%; }
   .navbar-header {
     -ms-flex-item-align: start;
         align-self: flex-start;
@@ -3932,6 +3934,8 @@ navbar,
 @media only screen and (max-width: 767px) {
   .nav-item .dropdown {
     width: 100%; }
+    .nav-item .dropdown .dropdown-button {
+      width: 100%; }
   .nav-item .dropdown-content {
     width: calc(100% - 10px); } }
 

@@ -31,7 +31,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Change prop name in close-button.vue: `parent-relatived` -> `parent-to-relative`. #67
 
 ### Fixed
-- Fix position bug in toast.vue #69 
+- Fix position bug in toast.vue #69
+- Fix bug in navbar.scss #66
 
 ## [0.4.0][] - 2017-11-26
 
