@@ -10,6 +10,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Add prop "opened" into tree.vue (0ded96924e4203b839e3d95dc30a419587fca398)
 
+### Changed
+- Change scss-variable names. #67
+  - Scaffolding
+    - `$table-head-color` -> `$table-head-bg-color`
+    - `$code-padding` -> `$code-padding-y` and `$code-padding-x`
+    - `$code-block-padding` ->`$code-block-padding-y` and `$code-block-padding-x`
+  - Button
+    - `$button-color-is-enable` changes to `$auto-button-color-enable`
+  - Form
+    - `$input-padding` -> `$input-padding-y` and `$input-padding-x`
+    - `$input-color-set-bg-enable` -> `$auto-input-bg-color-enable`
+  - List
+    - `$list-group-hover-bg` -> `$list-group-hover-bg-color`
+  - Pagination
+    - `$pagination-bg` -> `$pagination-bg-color`
+    - `$pagination-hover-bg` -> `$pagination-hover-bg-color`
+    - `$pagination-active-bg` -> `$pagination-active-bg-color`
+    - `$pagination-active-hover-bg` -> `$pagination-active-hover-bg-color`
+- Change prop name in close-button.vue: `parent-relatived` -> `parent-to-relative`. #67
+
 ## [0.4.0][] - 2017-11-26
 
 ### Added
