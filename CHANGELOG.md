@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Modify minor things in dropdown. #70
   - Available set to dropdown button without caret.
   - Available use to 'button' tag as dropdown-item.
+- Modify style of pagination. #61
 - Change scss-variable names. #67
   - Scaffolding
     - `$table-head-color` -> `$table-head-bg-color`
@@ -26,11 +27,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
     - `$input-color-set-bg-enable` -> `$auto-input-bg-color-enable`
   - List
     - `$list-group-hover-bg` -> `$list-group-hover-bg-color`
-  - Pagination
+  - Pagination #61
+    - add `$pagination-margin`
+    - add `$pagination-item-margin`
+    - add `$pagination-item-padding-y`
+    - add `$pagination-item-padding-x`
+    - add `$pagination-item-border-radius`
     - `$pagination-bg` -> `$pagination-bg-color`
     - `$pagination-hover-bg` -> `$pagination-hover-bg-color`
     - `$pagination-active-bg` -> `$pagination-active-bg-color`
-    - `$pagination-active-hover-bg` -> `$pagination-active-hover-bg-color`
+    - remove `$pagination-active-hover-color`
+    - remove `$pagination-active-hover-bg`
   - Dropdown #70
     - Add `$dropdown-line-height`
     - `$dropdown-link-hover-color` -> `$dropdown-item-hover-color`
