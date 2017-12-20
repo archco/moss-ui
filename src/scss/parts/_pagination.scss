@@ -1,16 +1,14 @@
-@mixin _pagination-list {
+@mixin _pagination-item {
   display: inline-block;
-  margin: 0 .2rem;
-  color: $pagination-color;
-  background-color: $pagination-bg-color;
-  border-radius: $radius-small;
+  margin: $pagination-item-margin;
 
   span,
   a {
     display: block;
-    padding: .25rem .5rem;
+    padding: $pagination-item-padding-y $pagination-item-padding-x;
     color: inherit;
     background-color: inherit;
+    border-radius: $pagination-item-border-radius;
   }
 
   a {
@@ -24,27 +22,29 @@
   }
 
   &.active {
-    color: $pagination-active-color;
-    background-color: $pagination-active-bg-color;
-
-    > a:hover {
-      color: $pagination-active-hover-color;
-      background-color: $pagination-active-hover-bg-color;
+    > a,
+    > span {
+      @include set-link-state-color($pagination-active-color);
+      background-color: $pagination-active-bg-color;
     }
   }
 
   &.disabled {
     color: $pagination-disabled-color;
+    cursor: default;
   }
 }
 
-ul.pagination {
+.pagination {
   @include reset-list;
   display: flex;
   justify-content: center;
-  margin: 1rem 0;
+  margin: $pagination-margin;
+  color: $pagination-color;
+  background-color: $pagination-bg-color;
+  user-select: none;
 
   li {
-    @include _pagination-list;
+    @include _pagination-item;
   }
 }

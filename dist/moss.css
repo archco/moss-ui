@@ -569,9 +569,9 @@ a {
   a.inherit:active {
     color: inherit; }
 
-ul.pagination li a, .nav-item .nav-link, .navbar-brand.text, .nav-item .dropdown .dropdown-button {
+.pagination li a, .nav-item .nav-link, .navbar-brand.text, .nav-item .dropdown .dropdown-button {
   text-decoration: none; }
-  ul.pagination li a:focus, .nav-item .nav-link:focus, .navbar-brand.text:focus, .nav-item .dropdown .dropdown-button:focus, ul.pagination li a:hover, .nav-item .nav-link:hover, .navbar-brand.text:hover, .nav-item .dropdown .dropdown-button:hover {
+  .pagination li a:focus, .nav-item .nav-link:focus, .navbar-brand.text:focus, .nav-item .dropdown .dropdown-button:focus, .pagination li a:hover, .nav-item .nav-link:hover, .navbar-brand.text:hover, .nav-item .dropdown .dropdown-button:hover {
     text-decoration: none; }
 
 blockquote {
@@ -3151,7 +3151,7 @@ img.filter.sepia {
     border-left-color: #343434;
     border-bottom-color: #343434; }
 
-ul.pagination {
+.pagination {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -3161,32 +3161,48 @@ ul.pagination {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 1rem 0; }
-  ul.pagination li {
+  margin: 1rem 0;
+  color: #343434;
+  background-color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+  .pagination li {
     display: inline-block;
-    margin: 0 .2rem;
-    color: #343434;
-    background-color: transparent;
-    border-radius: 2px; }
-    ul.pagination li span,
-    ul.pagination li a {
+    margin: 0 0.2rem; }
+    .pagination li span,
+    .pagination li a {
       display: block;
-      padding: .25rem .5rem;
+      padding: 0.2em 0.67em;
       color: inherit;
-      background-color: inherit; }
-    ul.pagination li a {
+      background-color: inherit;
+      border-radius: 2px; }
+    .pagination li a {
       transition: color 0.3s, background-color 0.3s; }
-      ul.pagination li a:hover {
+      .pagination li a:hover {
         color: #343434;
         background-color: rgba(52, 52, 52, 0.1); }
-    ul.pagination li.active {
-      color: #fff;
+    .pagination li.active > a,
+    .pagination li.active > span {
       background-color: #355e3b; }
-      ul.pagination li.active > a:hover {
-        color: #fff;
-        background-color: #182a1a; }
-    ul.pagination li.disabled {
-      color: #777777; }
+      .pagination li.active > a, .pagination li.active > a:link,
+      .pagination li.active > span,
+      .pagination li.active > span:link {
+        color: #fff; }
+      .pagination li.active > a:visited,
+      .pagination li.active > span:visited {
+        color: #fff; }
+      .pagination li.active > a:hover, .pagination li.active > a:focus,
+      .pagination li.active > span:hover,
+      .pagination li.active > span:focus {
+        color: #fff; }
+      .pagination li.active > a:active,
+      .pagination li.active > span:active {
+        color: #fff; }
+    .pagination li.disabled {
+      color: #777777;
+      cursor: default; }
 
 carousel,
 [is="carousel"] {
