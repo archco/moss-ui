@@ -60,6 +60,26 @@
     top: 0;
     opacity: 1; } }
 
+@-webkit-keyframes ripple {
+  from {
+    opacity: .4;
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(100);
+            transform: scale(100); } }
+
+@keyframes ripple {
+  from {
+    opacity: .4;
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(100);
+            transform: scale(100); } }
+
 .with-arrow[x-placement^="top"].dropdown-content [x-arrow], .with-arrow[x-placement^="top"].tooltip [x-arrow], .with-arrow[x-placement^="bottom"].dropdown-content [x-arrow], .with-arrow[x-placement^="bottom"].tooltip [x-arrow], .with-arrow[x-placement^="right"].dropdown-content [x-arrow], .with-arrow[x-placement^="right"].tooltip [x-arrow], .with-arrow[x-placement^="left"].dropdown-content [x-arrow], .with-arrow[x-placement^="left"].tooltip [x-arrow] {
   position: absolute;
   width: 0;
@@ -3973,6 +3993,23 @@ navbar,
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
+
+.ripple {
+  position: relative;
+  overflow: hidden; }
+
+.ripple-effect {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 0;
+  border-radius: 50%;
+  outline: 0;
+  -webkit-animation: ripple 2s;
+          animation: ripple 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
 
 .scroll-to-container .scroll-to-top,
 .scroll-to-container .scroll-to-bottom {

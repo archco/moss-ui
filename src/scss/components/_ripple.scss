@@ -1,0 +1,19 @@
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-effect {
+  $_ripple-bg-color: rgba(#fff, .5);
+
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: $_ripple-bg-color;
+  border: 0;
+  border-radius: 50%;
+  outline: 0;
+
+  animation: ripple 2s;
+  animation-fill-mode: forwards;
+}

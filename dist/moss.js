@@ -21244,6 +21244,10 @@ var _modal = __webpack_require__(107);
 
 var _modal2 = _interopRequireDefault(_modal);
 
+var _ripple = __webpack_require__(117);
+
+var _ripple2 = _interopRequireDefault(_ripple);
+
 var _scrollspy = __webpack_require__(108);
 
 var _scrollspy2 = _interopRequireDefault(_scrollspy);
@@ -21266,7 +21270,7 @@ var _wrap2 = _interopRequireDefault(_wrap);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = [_accordion2.default, _activator2.default, _clipboard2.default, _collapse2.default, _confirm2.default, _focus2.default, _modal2.default, _scrollspy2.default, _setValue2.default, _tooltip2.default, _trigger2.default, _wrap2.default];
+exports.default = [_accordion2.default, _activator2.default, _clipboard2.default, _collapse2.default, _confirm2.default, _focus2.default, _modal2.default, _ripple2.default, _scrollspy2.default, _setValue2.default, _tooltip2.default, _trigger2.default, _wrap2.default];
 
 /***/ }),
 /* 93 */
@@ -23454,6 +23458,47 @@ module.exports = {"name":"moss-ui","version":"0.4.0","description":"The front-en
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 117 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  name: 'ripple',
+
+  inserted: function inserted(el) {
+    el.addEventListener('click', function (e) {
+      var xPos = e.pageX - el.offsetLeft;
+      var yPos = e.pageY - el.offsetTop;
+      var div = document.createElement('div');
+      var size = getShortLength(el);
+
+      el.classList.add('ripple');
+      div.classList.add('ripple-effect');
+      el.appendChild(div);
+      div.style.width = size + 'px';
+      div.style.height = size + 'px';
+      div.style.top = yPos - size / 2 + 'px';
+      div.style.left = xPos - size / 2 + 'px';
+      window.setTimeout(function () {
+        return div.remove();
+      }, 2000);
+    });
+  }
+};
+
+
+function getShortLength(elm) {
+  var width = elm.getBoundingClientRect().width;
+  var height = elm.getBoundingClientRect().height;
+  return width < height ? width : height;
+}
 
 /***/ })
 /******/ ]);

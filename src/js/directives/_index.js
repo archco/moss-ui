@@ -5,6 +5,7 @@ import Collapse from './collapse';
 import Confirm from './confirm';
 import Focus from './focus';
 import Modal from './modal';
+import Ripple from './ripple';
 import Scrollspy from './scrollspy';
 import SetValue from './set-value';
 import Tooltip from './tooltip';
@@ -19,6 +20,7 @@ export default [
   Confirm,
   Focus,
   Modal,
+  Ripple,
   Scrollspy,
   SetValue,
   Tooltip,
