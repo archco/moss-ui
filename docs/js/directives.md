@@ -67,19 +67,19 @@ Auto focus on element.
 Apply ripple effect on element. It triggered on click.
 
 - Syntax
-``` html
-<button class="btn" v-ripple.{modifiers}="{value}">BUTTON</button>
-```
+  ``` html
+  <button class="btn" v-ripple.{modifiers}="{value}">BUTTON</button>
+  ```
 - modifiers - Option for set ripple color.
   - default: Auto, Set ripple color to contrast of element's background-color.
   - `light`: Set ripple color to `#fff`.
   - `dark`: Set ripple color to `#000`.
 - value: `Object` Option object.
-``` js
-value: {
-  color: '#fff', // ripple color.
-};
-```
+  ``` js
+  value: {
+    color: '#fff', // ripple color.
+  };
+  ```
 
 ## Scrollspy
 

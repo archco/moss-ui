@@ -1466,6 +1466,7 @@ var ElementMeasurer = function () {
       }
 
       this._checkTarget();
+      return this;
     }
 
     /**
@@ -1475,11 +1476,33 @@ var ElementMeasurer = function () {
      */
 
   }, {
-    key: '_checkTarget',
+    key: 'getOffset',
 
+
+    /**
+     * Returns top and left values that indicates offset distance to html document.
+     * @see https://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element#answer-442474
+     *
+     * @return {Object}
+     */
+    value: function getOffset() {
+      var elm = this.target;
+      var top = 0;
+      var left = 0;
+
+      while (elm && !isNaN(elm.offsetLeft) && !isNaN(elm.offsetTop)) {
+        left += elm.offsetLeft - elm.scrollLeft;
+        top += elm.offsetTop - elm.scrollTop;
+        elm = elm.offsetParent;
+      }
+
+      return { top: top, left: left };
+    }
 
     // private
 
+  }, {
+    key: '_checkTarget',
     value: function _checkTarget() {
       this._isDocument = this.target === document.documentElement || this.target === document.body;
     }
@@ -2497,6 +2520,10 @@ exports.default = {
       // NOTE: This is experimental prop.
       type: Boolean,
       default: false
+    },
+    buttonWithCaret: {
+      type: Boolean,
+      default: true
     }
   },
   data: function data() {
@@ -2534,7 +2561,7 @@ exports.default = {
       this.isShown ? this.hide() : this.show();
     },
     onOtherClick: function onOtherClick(event) {
-      var isOwn = event.target == this.btn || event.target == this.content || _elementUtil2.default.findAncestor(event.target, this.content) != null;
+      var isOwn = _elementUtil2.default.findAncestor(event.target, this.$el) != null;
 
       if (!isOwn && this.isShown == true) this.hide();
     },
@@ -2599,6 +2626,9 @@ exports.default = {
       // button.
       this.btn = this.$slots.button[0].elm;
       this.btn.classList.add('dropdown-button');
+      if (this.buttonWithCaret) {
+        this.btn.classList.add('with-caret');
+      }
       // content.
       this.content = this.$el.querySelector('.dropdown-content');
       // items.
@@ -5977,6 +6007,8 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
 
 exports.default = {
   name: 'tabs',
@@ -6080,6 +6112,13 @@ exports.default = {
     };
   },
 
+  computed: {
+    containerClass: function containerClass() {
+      var obj = { 'toast-container': true };
+      obj[this.position] = true;
+      return obj;
+    }
+  },
   methods: {
     show: function show(text) {
       var _this = this;
@@ -6112,13 +6151,13 @@ exports.default = {
     var _this2 = this;
 
     this.$root.$on('toast-show', function (text) {
-      _this2.show(text);
+      return _this2.show(text);
     });
 
     // Register helper function to global object.
     if (!window.Moss) window.Moss = {};
     window.Moss.toast = function (text) {
-      _this2.$root.$emit('toast-show', text);
+      return _this2.$root.$emit('toast-show', text);
     };
   }
 };
@@ -7132,7 +7171,7 @@ var _index3 = __webpack_require__(86);
 
 var _index4 = _interopRequireDefault(_index3);
 
-var _package = __webpack_require__(109);
+var _package = __webpack_require__(110);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -7140,7 +7179,7 @@ var DefaultOptions = {
   insteadName: {}
 }; /*!
     * moss-ui - The front-end UI framework with Vue.js and SCSS.
-    * @version v0.4.0
+    * @version v0.4.1
     * @link https://github.com/archco/moss-ui
     * @license MIT
     */
@@ -8872,22 +8911,26 @@ var render = function() {
         class: _vm.tabsClass
       },
       _vm._l(_vm.tabs, function(tab) {
-        return _c("li", { style: { flexGrow: _vm.growEnabled ? 1 : null } }, [
-          _c(
-            "a",
-            {
-              class: _vm.tabClass(tab),
-              attrs: { href: "#" },
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.selectTab(tab)
+        return _c(
+          "li",
+          { key: tab.name, style: { flexGrow: _vm.growEnabled ? 1 : null } },
+          [
+            _c(
+              "a",
+              {
+                class: _vm.tabClass(tab),
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.selectTab(tab)
+                  }
                 }
-              }
-            },
-            [_vm._v("\n        " + _vm._s(tab.name) + "\n      ")]
-          )
-        ])
+              },
+              [_vm._v("\n        " + _vm._s(tab.name) + "\n      ")]
+            )
+          ]
+        )
       })
     ),
     _vm._v(" "),
@@ -8970,7 +9013,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "toast-container" },
+    { class: _vm.containerClass },
     [
       _c(
         "transition-group",
@@ -9952,29 +9995,33 @@ var _modal = __webpack_require__(101);
 
 var _modal2 = _interopRequireDefault(_modal);
 
-var _scrollspy = __webpack_require__(102);
+var _ripple = __webpack_require__(102);
+
+var _ripple2 = _interopRequireDefault(_ripple);
+
+var _scrollspy = __webpack_require__(103);
 
 var _scrollspy2 = _interopRequireDefault(_scrollspy);
 
-var _setValue = __webpack_require__(104);
+var _setValue = __webpack_require__(105);
 
 var _setValue2 = _interopRequireDefault(_setValue);
 
-var _tooltip = __webpack_require__(105);
+var _tooltip = __webpack_require__(106);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
-var _trigger = __webpack_require__(107);
+var _trigger = __webpack_require__(108);
 
 var _trigger2 = _interopRequireDefault(_trigger);
 
-var _wrap = __webpack_require__(108);
+var _wrap = __webpack_require__(109);
 
 var _wrap2 = _interopRequireDefault(_wrap);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = [_accordion2.default, _activator2.default, _clipboard2.default, _collapse2.default, _confirm2.default, _focus2.default, _modal2.default, _scrollspy2.default, _setValue2.default, _tooltip2.default, _trigger2.default, _wrap2.default];
+exports.default = [_accordion2.default, _activator2.default, _clipboard2.default, _collapse2.default, _confirm2.default, _focus2.default, _modal2.default, _ripple2.default, _scrollspy2.default, _setValue2.default, _tooltip2.default, _trigger2.default, _wrap2.default];
 
 /***/ }),
 /* 87 */
@@ -11157,7 +11204,76 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _scrollspy = __webpack_require__(103);
+var _color = __webpack_require__(4);
+
+var _color2 = _interopRequireDefault(_color);
+
+var _elementMeasurer = __webpack_require__(3);
+
+var _elementMeasurer2 = _interopRequireDefault(_elementMeasurer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  name: 'ripple',
+
+  bind: function bind(el, binding) {
+    el.classList.add('ripple');
+
+    el.addEventListener('click', function (e) {
+      var elSize = new _elementMeasurer2.default(el);
+      var xPos = e.pageX - elSize.getOffset().left;
+      var yPos = e.pageY - elSize.getOffset().top;
+      var div = document.createElement('div');
+      var size = getShortLength(el);
+
+      div.classList.add('ripple-effect');
+      div.style.width = size + 'px';
+      div.style.height = size + 'px';
+      div.style.top = yPos - size / 2 + 'px';
+      div.style.left = xPos - size / 2 + 'px';
+
+      div.style.backgroundColor = getRippleColor(el, binding);
+
+      el.appendChild(div);
+      window.setTimeout(function () {
+        return div.remove();
+      }, 1500);
+    });
+  }
+};
+
+
+function getShortLength(elm) {
+  var width = elm.getBoundingClientRect().width;
+  var height = elm.getBoundingClientRect().height;
+  return width < height ? width : height;
+}
+
+function getRippleColor(el, binding) {
+  var opt = binding.value || {};
+  var mod = binding.modifiers;
+  var getContrastColor = function getContrastColor(elm) {
+    var style = window.getComputedStyle(elm);
+    var color = new _color2.default(style.backgroundColor);
+    return color.contrast();
+  };
+
+  return opt.color ? opt.color : mod.light ? '#fff' : mod.dark ? '#000' : getContrastColor(el);
+}
+
+/***/ }),
+/* 103 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _scrollspy = __webpack_require__(104);
 
 var _scrollspy2 = _interopRequireDefault(_scrollspy);
 
@@ -11196,7 +11312,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11433,7 +11549,7 @@ var Scrollspy = function () {
 exports.default = Scrollspy;
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11471,7 +11587,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11483,7 +11599,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _tooltip = __webpack_require__(106);
+var _tooltip = __webpack_require__(107);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
@@ -11537,7 +11653,7 @@ function parseOption(binding) {
 }
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12086,7 +12202,7 @@ var _initialiseProps = function _initialiseProps() {
 
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12117,7 +12233,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12152,10 +12268,10 @@ exports.default = {
 };
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports) {
 
-module.exports = {"name":"moss-ui","version":"0.4.0","description":"The front-end UI framework with Vue.js and SCSS.","main":"dist/moss.js","module":"dist/moss.mod.js","scss":"src/scss/moss.scss","directories":{"dist":"dist","doc":"docs","example":"example","test":"test"},"scripts":{"test":"echo \"Please see test/test.html in browser.\" && exit 1","prebuild":"node task/banner.js","build":"npm run webpack && npm run pug","dev":"npm run webpack:dev && npm run pug","watch":"node node_modules/concurrently/src/main \"npm run webpack:dev -- --watch\" \"npm run pug -- --watch\"","pug":"node node_modules/pug-cli --pretty example/views/pages/ --out ./example/html/","webpack":"node node_modules/webpack/bin/webpack --hide-modules","webpack:dev":"npm run webpack -- --env.task=dev"},"author":"archco","bugs":{"url":"https://github.com/archco/moss-ui/issues"},"homepage":"https://github.com/archco/moss-ui","license":"MIT","repository":"github:archco/moss-ui","dependencies":{"clipboard":"^1.7.1","element-measurer":"^1.0.2","element-util":"^1.1.3","normalize.css":"^7.0.0","popper.js":"^1.13.0","scss-palette":"^0.4.1","tooltip.js":"^1.1.7","vue-agile":"^0.3.6"},"devDependencies":{"babel-cli":"^6.26.0","babel-core":"^6.26.0","babel-eslint":"^8.0.3","babel-loader":"^7.1.2","babel-preset-env":"^1.6.1","babel-register":"^6.26.0","chai":"^4.1.2","concurrently":"^3.5.1","css-loader":"^0.28.7","extract-text-webpack-plugin":"^3.0.2","mocha":"^4.0.1","node-sass":"^4.7.2","postcss-loader":"^2.0.9","pug":"^2.0.0-rc.4","pug-cli":"^1.0.0-alpha6","sass-loader":"^6.0.6","source-map-loader":"^0.2.3","style-loader":"^0.19.1","vue":"^2.5.11","vue-loader":"^13.6.0","vue-template-compiler":"^2.5.11","webpack":"^3.10.0","webpack-merge":"^4.1.1","webpack-notifier":"^1.5.0"},"eslintConfig":{"env":{"node":true,"browser":true,"commonjs":true,"es6":true,"mocha":true},"extends":"eslint:recommended","parser":"babel-eslint","parserOptions":{"sourceType":"module"},"rules":{"no-console":"off"},"plugins":["html"],"settings":{"html/html-extensions":[".html",".vue"]}},"babel":{"presets":[["env",{"targets":{"browsers":["defaults"]}}]]},"browserslist":"defaults"}
+module.exports = {"name":"moss-ui","version":"0.4.1","description":"The front-end UI framework with Vue.js and SCSS.","main":"dist/moss.js","module":"dist/moss.mod.js","scss":"src/scss/moss.scss","directories":{"dist":"dist","doc":"docs","example":"example","test":"test"},"scripts":{"test":"echo \"Please see test/test.html in browser.\" && exit 1","prebuild":"node task/banner.js","build":"npm run webpack && npm run pug","dev":"npm run webpack:dev && npm run pug","watch":"node node_modules/concurrently/src/main \"npm run webpack:dev -- --watch\" \"npm run pug -- --watch\"","pug":"node node_modules/pug-cli --pretty example/views/pages/ --out ./example/html/","webpack":"node node_modules/webpack/bin/webpack --hide-modules","webpack:dev":"npm run webpack -- --env.task=dev"},"author":"archco","bugs":{"url":"https://github.com/archco/moss-ui/issues"},"homepage":"https://github.com/archco/moss-ui","license":"MIT","repository":"github:archco/moss-ui","dependencies":{"clipboard":"^1.7.1","element-measurer":"^1.1.0","element-util":"^1.1.3","normalize.css":"^7.0.0","popper.js":"^1.13.0","scss-palette":"^0.4.1","tooltip.js":"^1.1.7","vue-agile":"^0.3.6"},"devDependencies":{"babel-cli":"^6.26.0","babel-core":"^6.26.0","babel-eslint":"^8.0.3","babel-loader":"^7.1.2","babel-preset-env":"^1.6.1","babel-register":"^6.26.0","chai":"^4.1.2","concurrently":"^3.5.1","css-loader":"^0.28.7","extract-text-webpack-plugin":"^3.0.2","mocha":"^4.0.1","node-sass":"^4.7.2","postcss-loader":"^2.0.9","pug":"^2.0.0-rc.4","pug-cli":"^1.0.0-alpha6","sass-loader":"^6.0.6","source-map-loader":"^0.2.3","style-loader":"^0.19.1","vue":"^2.5.13","vue-loader":"^13.6.0","vue-template-compiler":"^2.5.13","webpack":"^3.10.0","webpack-merge":"^4.1.1","webpack-notifier":"^1.5.0"},"eslintConfig":{"env":{"node":true,"browser":true,"commonjs":true,"es6":true,"mocha":true},"extends":"eslint:recommended","parser":"babel-eslint","parserOptions":{"sourceType":"module"},"rules":{"no-console":"off"},"plugins":["html","vue"],"settings":{"html/html-extensions":[".html"]}},"babel":{"presets":[["env",{"targets":{"browsers":["defaults"]}}]]},"browserslist":"defaults"}
 
 /***/ })
 /******/ ]);

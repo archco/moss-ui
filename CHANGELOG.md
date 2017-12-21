@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+## [0.4.1] - 2017-12-21
+
 ### Added
 - Add prop "opened" into tree.vue (0ded96924e4203b839e3d95dc30a419587fca398)
 - Add the new vue-directive "v-ripple". #62
@@ -202,7 +204,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - [README.md](README.md)
 - [docs/README.md](docs/README.md)
 
-[Unreleased]: https://github.com/archco/moss-ui/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/archco/moss-ui/compare/v0.4.1...HEAD
+[0.4.1]: https://github.com/archco/moss-ui/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/archco/moss-ui/compare/v0.3.2...v0.4.0
 [0.3.2]: https://github.com/archco/moss-ui/compare/v0.3.0...v0.3.2
 [0.3.0]: https://github.com/archco/moss-ui/compare/v0.2.2...v0.3.0
