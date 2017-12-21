@@ -27,13 +27,13 @@
 }
 
 @keyframes ripple {
-  from {
-    opacity: .4;
+  0% {
+    opacity: .2;
     transform: scale(1);
   }
 
-  to {
+  100% {
     opacity: 0;
-    transform: scale(100);
+    transform: scale(50);
   }
 }

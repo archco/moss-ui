@@ -4,16 +4,16 @@
 }
 
 .ripple-effect {
-  $_ripple-bg-color: rgba(#fff, .5);
+  $_ripple-color: #fff;
 
   position: absolute;
   width: 50px;
   height: 50px;
-  background-color: $_ripple-bg-color;
+  background-color: $_ripple-color;
   border: 0;
   border-radius: 50%;
   outline: 0;
 
-  animation: ripple 2s;
+  animation: ripple 1.5s ease-in;
   animation-fill-mode: forwards;
 }

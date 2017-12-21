@@ -1636,196 +1636,6 @@ exports.default = ElementMeasurer;
 
 /***/ }),
 /* 5 */
-/***/ (function(module, exports) {
-
-// shim for using process in browser
-var process = module.exports = {};
-
-// cached from whatever global is present so that test runners that stub it
-// don't break things.  But we need to wrap it in a try catch in case it is
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-// function because try/catches deoptimize in certain engines.
-
-var cachedSetTimeout;
-var cachedClearTimeout;
-
-function defaultSetTimout() {
-    throw new Error('setTimeout has not been defined');
-}
-function defaultClearTimeout () {
-    throw new Error('clearTimeout has not been defined');
-}
-(function () {
-    try {
-        if (typeof setTimeout === 'function') {
-            cachedSetTimeout = setTimeout;
-        } else {
-            cachedSetTimeout = defaultSetTimout;
-        }
-    } catch (e) {
-        cachedSetTimeout = defaultSetTimout;
-    }
-    try {
-        if (typeof clearTimeout === 'function') {
-            cachedClearTimeout = clearTimeout;
-        } else {
-            cachedClearTimeout = defaultClearTimeout;
-        }
-    } catch (e) {
-        cachedClearTimeout = defaultClearTimeout;
-    }
-} ())
-function runTimeout(fun) {
-    if (cachedSetTimeout === setTimeout) {
-        //normal enviroments in sane situations
-        return setTimeout(fun, 0);
-    }
-    // if setTimeout wasn't available but was latter defined
-    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-        cachedSetTimeout = setTimeout;
-        return setTimeout(fun, 0);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedSetTimeout(fun, 0);
-    } catch(e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-            return cachedSetTimeout.call(null, fun, 0);
-        } catch(e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-            return cachedSetTimeout.call(this, fun, 0);
-        }
-    }
-
-
-}
-function runClearTimeout(marker) {
-    if (cachedClearTimeout === clearTimeout) {
-        //normal enviroments in sane situations
-        return clearTimeout(marker);
-    }
-    // if clearTimeout wasn't available but was latter defined
-    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-        cachedClearTimeout = clearTimeout;
-        return clearTimeout(marker);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedClearTimeout(marker);
-    } catch (e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-            return cachedClearTimeout.call(null, marker);
-        } catch (e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-            return cachedClearTimeout.call(this, marker);
-        }
-    }
-
-
-
-}
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-
-function cleanUpNextTick() {
-    if (!draining || !currentQueue) {
-        return;
-    }
-    draining = false;
-    if (currentQueue.length) {
-        queue = currentQueue.concat(queue);
-    } else {
-        queueIndex = -1;
-    }
-    if (queue.length) {
-        drainQueue();
-    }
-}
-
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    var timeout = runTimeout(cleanUpNextTick);
-    draining = true;
-
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        while (++queueIndex < len) {
-            if (currentQueue) {
-                currentQueue[queueIndex].run();
-            }
-        }
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    runClearTimeout(timeout);
-}
-
-process.nextTick = function (fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) {
-        for (var i = 1; i < arguments.length; i++) {
-            args[i - 1] = arguments[i];
-        }
-    }
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) {
-        runTimeout(drainQueue);
-    }
-};
-
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
-
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-
-process.listeners = function (name) { return [] }
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-};
-
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() { return 0; };
-
-
-/***/ }),
-/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2077,6 +1887,196 @@ var Color = function () {
 exports.default = Color;
 
 /***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+
+/***/ }),
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2236,7 +2236,7 @@ var _closeButton = __webpack_require__(10);
 
 var _closeButton2 = _interopRequireDefault(_closeButton);
 
-var _color = __webpack_require__(6);
+var _color = __webpack_require__(5);
 
 var _color2 = _interopRequireDefault(_color);
 
@@ -7324,7 +7324,7 @@ exports.default = {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(38);
-module.exports = __webpack_require__(116);
+module.exports = __webpack_require__(117);
 
 
 /***/ }),
@@ -18157,7 +18157,7 @@ Vue$3.compile = compileToFunctions;
 
 /* harmony default export */ __webpack_exports__["default"] = (Vue$3);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(5), __webpack_require__(3), __webpack_require__(40).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(6), __webpack_require__(3), __webpack_require__(40).setImmediate))
 
 /***/ }),
 /* 40 */
@@ -18409,7 +18409,7 @@ exports.clearImmediate = clearImmediate;
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(5)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(6)))
 
 /***/ }),
 /* 42 */
@@ -18431,7 +18431,7 @@ var _elementMeasurer = __webpack_require__(4);
 
 var _elementMeasurer2 = _interopRequireDefault(_elementMeasurer);
 
-var _color = __webpack_require__(6);
+var _color = __webpack_require__(5);
 
 var _color2 = _interopRequireDefault(_color);
 
@@ -18447,7 +18447,7 @@ var _index3 = __webpack_require__(92);
 
 var _index4 = _interopRequireDefault(_index3);
 
-var _package = __webpack_require__(115);
+var _package = __webpack_require__(116);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21244,27 +21244,27 @@ var _modal = __webpack_require__(107);
 
 var _modal2 = _interopRequireDefault(_modal);
 
-var _ripple = __webpack_require__(117);
+var _ripple = __webpack_require__(108);
 
 var _ripple2 = _interopRequireDefault(_ripple);
 
-var _scrollspy = __webpack_require__(108);
+var _scrollspy = __webpack_require__(109);
 
 var _scrollspy2 = _interopRequireDefault(_scrollspy);
 
-var _setValue = __webpack_require__(110);
+var _setValue = __webpack_require__(111);
 
 var _setValue2 = _interopRequireDefault(_setValue);
 
-var _tooltip = __webpack_require__(111);
+var _tooltip = __webpack_require__(112);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
-var _trigger = __webpack_require__(113);
+var _trigger = __webpack_require__(114);
 
 var _trigger2 = _interopRequireDefault(_trigger);
 
-var _wrap = __webpack_require__(114);
+var _wrap = __webpack_require__(115);
 
 var _wrap2 = _interopRequireDefault(_wrap);
 
@@ -22453,7 +22453,75 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _scrollspy = __webpack_require__(109);
+var _color = __webpack_require__(5);
+
+var _color2 = _interopRequireDefault(_color);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  name: 'ripple',
+
+  bind: function bind(el, binding) {
+    el.classList.add('ripple');
+
+    el.addEventListener('click', function (e) {
+      // FIXME: el.offsetLeft가 아닌 전체 document와의 offset 수치가 필요함.
+      var xPos = e.pageX - el.offsetLeft;
+      var yPos = e.pageY - el.offsetTop;
+      var div = document.createElement('div');
+      var size = getShortLength(el);
+
+      div.classList.add('ripple-effect');
+      div.style.width = size + 'px';
+      div.style.height = size + 'px';
+      div.style.top = yPos - size / 2 + 'px';
+      div.style.left = xPos - size / 2 + 'px';
+
+      // set ripple color.
+      // TODO: rgba색일 경우의 처리를 고려해보자.
+      div.style.backgroundColor = getRippleColor(el, binding);
+
+      el.appendChild(div);
+      window.setTimeout(function () {
+        return div.remove();
+      }, 1500);
+    });
+  }
+};
+
+
+function getShortLength(elm) {
+  var width = elm.scrollWidth;
+  var height = elm.scrollHeight;
+  return width < height ? width : height;
+}
+
+function getContrastColor(elm) {
+  var style = window.getComputedStyle(elm);
+  var color = new _color2.default(style.backgroundColor);
+  return color.contrast();
+}
+
+function getRippleColor(el, binding) {
+  var opt = binding.value || {};
+  var mod = binding.modifiers;
+
+  return opt.color ? opt.color : mod.light ? '#fff' : mod.dark ? '#000' : getContrastColor(el);
+}
+
+/***/ }),
+/* 109 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _scrollspy = __webpack_require__(110);
 
 var _scrollspy2 = _interopRequireDefault(_scrollspy);
 
@@ -22492,7 +22560,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22729,7 +22797,7 @@ var Scrollspy = function () {
 exports.default = Scrollspy;
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22767,7 +22835,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22779,7 +22847,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _tooltip = __webpack_require__(112);
+var _tooltip = __webpack_require__(113);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
@@ -22833,7 +22901,7 @@ function parseOption(binding) {
 }
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23382,7 +23450,7 @@ var _initialiseProps = function _initialiseProps() {
 
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23413,7 +23481,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23448,57 +23516,16 @@ exports.default = {
 };
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports) {
 
 module.exports = {"name":"moss-ui","version":"0.4.0","description":"The front-end UI framework with Vue.js and SCSS.","main":"dist/moss.js","module":"dist/moss.mod.js","scss":"src/scss/moss.scss","directories":{"dist":"dist","doc":"docs","example":"example","test":"test"},"scripts":{"test":"echo \"Please see test/test.html in browser.\" && exit 1","prebuild":"node task/banner.js","build":"npm run webpack && npm run pug","dev":"npm run webpack:dev && npm run pug","watch":"node node_modules/concurrently/src/main \"npm run webpack:dev -- --watch\" \"npm run pug -- --watch\"","pug":"node node_modules/pug-cli --pretty example/views/pages/ --out ./example/html/","webpack":"node node_modules/webpack/bin/webpack --hide-modules","webpack:dev":"npm run webpack -- --env.task=dev"},"author":"archco","bugs":{"url":"https://github.com/archco/moss-ui/issues"},"homepage":"https://github.com/archco/moss-ui","license":"MIT","repository":"github:archco/moss-ui","dependencies":{"clipboard":"^1.7.1","element-measurer":"^1.0.2","element-util":"^1.1.3","normalize.css":"^7.0.0","popper.js":"^1.13.0","scss-palette":"^0.4.1","tooltip.js":"^1.1.7","vue-agile":"^0.3.6"},"devDependencies":{"babel-cli":"^6.26.0","babel-core":"^6.26.0","babel-eslint":"^8.0.3","babel-loader":"^7.1.2","babel-preset-env":"^1.6.1","babel-register":"^6.26.0","chai":"^4.1.2","concurrently":"^3.5.1","css-loader":"^0.28.7","extract-text-webpack-plugin":"^3.0.2","mocha":"^4.0.1","node-sass":"^4.7.2","postcss-loader":"^2.0.9","pug":"^2.0.0-rc.4","pug-cli":"^1.0.0-alpha6","sass-loader":"^6.0.6","source-map-loader":"^0.2.3","style-loader":"^0.19.1","vue":"^2.5.11","vue-loader":"^13.6.0","vue-template-compiler":"^2.5.11","webpack":"^3.10.0","webpack-merge":"^4.1.1","webpack-notifier":"^1.5.0"},"eslintConfig":{"env":{"node":true,"browser":true,"commonjs":true,"es6":true,"mocha":true},"extends":"eslint:recommended","parser":"babel-eslint","parserOptions":{"sourceType":"module"},"rules":{"no-console":"off"},"plugins":["html","vue"],"settings":{"html/html-extensions":[".html"]}},"babel":{"presets":[["env",{"targets":{"browsers":["defaults"]}}]]},"browserslist":"defaults"}
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 117 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = {
-  name: 'ripple',
-
-  inserted: function inserted(el) {
-    el.addEventListener('click', function (e) {
-      var xPos = e.pageX - el.offsetLeft;
-      var yPos = e.pageY - el.offsetTop;
-      var div = document.createElement('div');
-      var size = getShortLength(el);
-
-      el.classList.add('ripple');
-      div.classList.add('ripple-effect');
-      el.appendChild(div);
-      div.style.width = size + 'px';
-      div.style.height = size + 'px';
-      div.style.top = yPos - size / 2 + 'px';
-      div.style.left = xPos - size / 2 + 'px';
-      window.setTimeout(function () {
-        return div.remove();
-      }, 2000);
-    });
-  }
-};
-
-
-function getShortLength(elm) {
-  var width = elm.getBoundingClientRect().width;
-  var height = elm.getBoundingClientRect().height;
-  return width < height ? width : height;
-}
 
 /***/ })
 /******/ ]);

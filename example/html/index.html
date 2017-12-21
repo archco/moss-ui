@@ -37,6 +37,26 @@
         </div>
       </div>
       <section class="pad">
+        <anchored-tag tag="h1" owned>v-ripple</anchored-tag>
+        <h3>Default</h3>
+        <button class="btn primary" v-ripple>RIPPLE TEST</button>
+        <button class="btn light" v-ripple>Auto Contrast</button>
+        <button class="btn-flat" v-ripple>Flat Button</button>
+        <dropdown>
+          <div class="pad d-inline-block bg-color-light" id="target" slot="button" v-ripple>HELLO</div>
+          <button class="dropdown-item" v-ripple>It's</button>
+          <button class="dropdown-item" v-ripple>Ripple</button>
+          <button class="dropdown-item" v-ripple>Test</button>
+        </dropdown>
+        <h3>light or dark modifiers</h3>
+        <button class="btn success" v-ripple.light>LIGHT</button>
+        <button class="btn success" v-ripple.dark>DARK</button>
+        <h3>Set ripple color</h3>
+        <div class="row">
+          <div class="col-md pad bg-color-dark" v-ripple="{color: '#fff'}">#fff ripple color</div>
+          <div class="col-md pad bg-color-warning" v-ripple="{color: '#f00'}">#f00 ripple color</div>
+          <div class="col md pad bg-color-shade" v-ripple="{color: '#0ff'}">#0ff ripple color</div>
+        </div>
         <anchored-tag tag="h1" owned>Dropdown</anchored-tag>
         <blockquote class="pad info">This component is built on <a href="https://github.com/FezVrasta/popper.js">Popper.js</a></blockquote>
         <h3>Toggle Dropdown</h3>
