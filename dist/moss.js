@@ -22536,9 +22536,9 @@ exports.default = {
     el.classList.add('ripple');
 
     el.addEventListener('click', function (e) {
-      var elSize = new _elementMeasurer2.default(el);
-      var xPos = e.pageX - elSize.getOffset().left;
-      var yPos = e.pageY - elSize.getOffset().top;
+      var offset = new _elementMeasurer2.default(el).getOffset();
+      var xPos = e.pageX - offset.left;
+      var yPos = e.pageY - offset.top;
       var div = document.createElement('div');
       var size = getShortLength(el);
 
