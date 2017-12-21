@@ -1,26 +1,37 @@
 # Chip
 
-> source: [js/components/chip](../../src/js/components/chip.vue)
+> sources:  
+[js/components/chip](../../src/js/components/chip.vue)  
+[scss/components/chip](../../src/scss/components/_chip.scss)
+
+### Table of contents
+- [Usage](#usage)
+  - [Tag chip](#tag-chip)
+  - [Contact chip](#contact-chip)
+  - [Link chip](#link-chip)
+  - [with color](#with-color)
+- [Props](#props)
+- [SCSS variables](#scss-variables)
 
 ## Usage
 
 ### Tag chip
 
-```html
+``` html
 <chip title="tag-sample">TagSample</chip>
 <chip closeable>TagSample</chip>
 ```
 
 ### Contact chip
 
-```html
+``` html
 <chip img-src="avatar.png" img-alt="avatar image">John Doe</chip>
 <chip img-src="avatar.png" img-alt="avatar image" closeable>John Doe</chip>
 ```
 
 ### Link chip
 
-```html
+``` html
 <chip tag="a" href="#" closeable>Chip</chip>
 <chip
   tag="a"
@@ -32,10 +43,10 @@
 </chip>
 ```
 
-### Colored chip
+### with color
 
-```html
-<chip color="#69c">Colored</chip>
+``` html
+<chip color="#69c">Color Chip</chip>
 ```
 
 ## Props
@@ -47,3 +58,19 @@
 | closeable | Boolean | Enable close-button. | false |
 | img-src | String | image source. | '' |
 | img-alt | String | Alternate text. | '' |
+
+| Name | Type | Default | Description |
+| ---- |:----:| ------- | ----------- |
+| tag | `String` | `'span'` | A tag name. e.g. `'a'`, `'span'` |
+| color | `String` | `''` | `background-color` of a chip. |
+| closeable | `Boolean` | `false` | Enable close-button. |
+| img-src | `String` | `''` | Image source. |
+| img-alt | `String` | `''` | Alternate text. |
+
+## SCSS variables
+
+``` scss
+$chip-font-size: .85em !default;
+$chip-height: 2em !default; // unit:em, This value is base of local variables of chip.
+$chip-bg-color: $background-color-shade !default;
+```

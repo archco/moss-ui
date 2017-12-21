@@ -43,3 +43,11 @@ Available color keywords: default, primary, secondary, info, success, warning, d
   <span class="badge in-icon danger">8,888</span>
 </span>
 ```
+
+## SCSS variables
+
+``` scss
+$badge-font-size: .85em !default;
+$badge-border-radius: $radius-small !default;
+$badge-default-color: $default-color !default;
+```

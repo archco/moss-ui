@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="toast-container">
+  <div :class="containerClass">
     <transition-group name="toast-fade" tag="div">
       <div class="toast" v-for="toast in toasts" :key="toast.id" v-text="toast.text"></div>
     </transition-group>
@@ -29,6 +29,13 @@ export default {
       increasement: 0,
     };
   },
+  computed: {
+    containerClass() {
+      let obj = { 'toast-container': true };
+      obj[this.position] = true;
+      return obj;
+    },
+  },
   methods: {
     show(text) {
       let toast = this.add(text);
@@ -49,22 +56,16 @@ export default {
       return toast;
     },
     remove(id) {
-      let index = this.toasts.findIndex(item => {
-        return item.id === id;
-      });
+      let index = this.toasts.findIndex(item => item.id === id);
       this.toasts.splice(index, 1);
     }
   },
   beforeMount() {
-    this.$root.$on('toast-show', text => {
-      this.show(text);
-    });
+    this.$root.$on('toast-show', text => this.show(text));
 
     // Register helper function to global object.
     if (!window.Moss) window.Moss = {};
-    window.Moss.toast = (text) => {
-      this.$root.$emit('toast-show', text);
-    }
+    window.Moss.toast = (text) => this.$root.$emit('toast-show', text);
   }
 }
 </script>

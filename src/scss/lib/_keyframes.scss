@@ -25,3 +25,15 @@
     opacity: 1;
   }
 }
+
+@keyframes ripple {
+  0% {
+    opacity: .2;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(50);
+  }
+}

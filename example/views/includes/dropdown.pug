@@ -115,3 +115,20 @@ dropdown(placement='right-start')
   div.dropdown-divider
   h3.dropdown-header Not allowed
   span.dropdown-item(href='#' disabled) down
+
+h3 Dropdown button without caret
+dropdown(placement='right' offset='5px, 5px' :button-with-caret='false')
+  button(class='btn info' slot='button') DROPDOWN
+  h3.dropdown-header Header
+  a.dropdown-item(href='#') hello
+  a.dropdown-item(href='#') drop
+  div.dropdown-divider
+  h3.dropdown-header Not allowed
+  span.dropdown-item(href='#' disabled) down
+
+h3 Button tag as dropdown-item
+dropdown(toggle='toggle')
+  button(class='btn dark' slot='button') Button
+  button.dropdown-item Btn
+  button.dropdown-item.active Active
+  a.dropdown-item(href='#') Link

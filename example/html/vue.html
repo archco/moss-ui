@@ -222,6 +222,19 @@
             <div class="dropdown-divider"></div>
             <h3 class="dropdown-header">Not allowed</h3><span class="dropdown-item" href="#" disabled>down</span>
           </dropdown>
+          <h3>Dropdown button without caret</h3>
+          <dropdown placement="right" offset="5px, 5px" :button-with-caret="false">
+            <button class="btn info" slot="button">DROPDOWN</button>
+            <h3 class="dropdown-header">Header</h3><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a>
+            <div class="dropdown-divider"></div>
+            <h3 class="dropdown-header">Not allowed</h3><span class="dropdown-item" href="#" disabled>down</span>
+          </dropdown>
+          <h3>Button tag as dropdown-item</h3>
+          <dropdown toggle="toggle">
+            <button class="btn dark" slot="button">Button</button>
+            <button class="dropdown-item">Btn</button>
+            <button class="dropdown-item active">Active</button><a class="dropdown-item" href="#">Link</a>
+          </dropdown>
           <anchored-tag tag="h1" owned>Message</anchored-tag>
           <h3>Basic</h3>
           <message>hello</message>
@@ -469,7 +482,7 @@
           <button class="btn info" id="btn-toast" onclick="toastShow()">Toast</button>
           <anchored-tag tag="h1" owned>Tree</anchored-tag>
           <h3>Basic</h3>
-          <ul is="tree" :items="treeData"></ul>
+          <ul is="tree" :items="treeData" opened></ul>
           <h3>Model name as html</h3>
           <ul class="no-pad" is="tree" :items="treeData2"></ul>
           <h3>Set icon</h3>

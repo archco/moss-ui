@@ -7,6 +7,51 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+## [0.4.1] - 2017-12-21
+
+### Added
+- Add prop "opened" into tree.vue (0ded96924e4203b839e3d95dc30a419587fca398)
+- Add the new vue-directive "v-ripple". #62
+
+### Changed
+- Modify minor things in dropdown. #70
+  - Available set to dropdown button without caret.
+  - Available use to 'button' tag as dropdown-item.
+- Modify style of pagination. #61
+- Change scss-variable names. #67
+  - Scaffolding
+    - `$table-head-color` -> `$table-head-bg-color`
+    - `$code-padding` -> `$code-padding-y` and `$code-padding-x`
+    - `$code-block-padding` ->`$code-block-padding-y` and `$code-block-padding-x`
+  - Button
+    - `$button-color-is-enable` changes to `$auto-button-color-enable`
+  - Form
+    - `$input-padding` -> `$input-padding-y` and `$input-padding-x`
+    - `$input-color-set-bg-enable` -> `$auto-input-bg-color-enable`
+  - List
+    - `$list-group-hover-bg` -> `$list-group-hover-bg-color`
+  - Pagination #61
+    - add `$pagination-margin`
+    - add `$pagination-item-margin`
+    - add `$pagination-item-padding-y`
+    - add `$pagination-item-padding-x`
+    - add `$pagination-item-border-radius`
+    - `$pagination-bg` -> `$pagination-bg-color`
+    - `$pagination-hover-bg` -> `$pagination-hover-bg-color`
+    - `$pagination-active-bg` -> `$pagination-active-bg-color`
+    - remove `$pagination-active-hover-color`
+    - remove `$pagination-active-hover-bg`
+  - Dropdown #70
+    - Add `$dropdown-line-height`
+    - `$dropdown-link-hover-color` -> `$dropdown-item-hover-color`
+    - `$dropdown-link-color` -> `$dropdown-item-color`
+- Change prop name in close-button.vue: `parent-relatived` -> `parent-to-relative`. #67
+
+### Fixed
+- Fix position bug in toast.vue #69
+- Fix bug in navbar.scss #66
+- Fix carousel to hides during loading.
+
 ## [0.4.0][] - 2017-11-26
 
 ### Added
@@ -159,7 +204,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - [README.md](README.md)
 - [docs/README.md](docs/README.md)
 
-[Unreleased]: https://github.com/archco/moss-ui/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/archco/moss-ui/compare/v0.4.1...HEAD
+[0.4.1]: https://github.com/archco/moss-ui/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/archco/moss-ui/compare/v0.3.2...v0.4.0
 [0.3.2]: https://github.com/archco/moss-ui/compare/v0.3.0...v0.3.2
 [0.3.0]: https://github.com/archco/moss-ui/compare/v0.2.2...v0.3.0

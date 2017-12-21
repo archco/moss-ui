@@ -1,0 +1,22 @@
+h3 Default
+button.btn.primary(v-ripple) RIPPLE TEST
+button.btn.light(v-ripple) Auto Contrast
+button.btn-flat(v-ripple) Flat Button
+dropdown
+  div#target.pad.d-inline-block.bg-color-light(slot='button' v-ripple) HELLO
+  button.dropdown-item(v-ripple) It's
+  button.dropdown-item(v-ripple) Ripple
+  button.dropdown-item(v-ripple) Test
+
+h3 light or dark modifiers
+button.btn.success(v-ripple.light) LIGHT
+button.btn.success(v-ripple.dark) DARK
+
+h3 Set ripple color
+div.row
+  div.col-md.pad.bg-color-dark(v-ripple="{color: '#fff'}")
+    | #fff ripple color
+  div.col-md.pad.bg-color-warning(v-ripple="{color: '#f00'}")
+    | #f00 ripple color
+  div.col.md.pad.bg-color-shade(v-ripple="{color: '#0ff'}")
+    | #0ff ripple color

@@ -1,6 +1,6 @@
-//======================================================================
+//============================================================
 // Theme
-//======================================================================
+//============================================================
 
 // Fonts
 //==============================
@@ -115,9 +115,9 @@ $shadow-inset-near: inset $shadow-near !default;
 $shadow-inset-normal: inset $shadow-normal !default;
 $shadow-inset-far: inset $shadow-far !default;
 
-//======================================================================
+//============================================================
 // Z-index Lists
-//======================================================================
+//============================================================
 
 $z-index-hero-background:     1 !default;
 $z-index-hero-content:        2 !default;
@@ -145,28 +145,38 @@ $link-color-visited: $link-color !default;
 $link-decoration: none !default;
 $link-hover-decoration: underline !default;
 
-// blockquote
-$blockquote-color: $text-color-weak !default;
-$blockquote-border-color: $background-color-shade !default;
-
 // table
 $table-cell-padding: .75em !default;
 $table-border-width: 1px !default;
 $table-border-color: $border-color !default;
-$table-head-color: $primary-color !default;
-$table-head-text-color: get-contrast($table-head-color) !default;
+$table-head-bg-color: $primary-color !default;
+$table-head-text-color: get-contrast($table-head-bg-color) !default;
 $table-text-color: inherit !default;
 $table-row-even-bg: rgba($background-color-invert, .05) !default;
 $table-row-hover-bg: rgba($background-color-invert, .1) !default;
 
+// blockquote
+$blockquote-color: $text-color-weak !default;
+$blockquote-border-color: $background-color-shade !default;
+
 // codes
-$code-padding: .15em .25em !default;
+$code-padding-y: .15em !default;
+$code-padding-x: .25em !default;
 $code-font-size: .85em !default;
 $code-bg-color: rgba($background-color-invert, .05) !default;
 $code-color: get-contrast(rgba-to-rgb($code-bg-color, $background-color)) !default;
 $code-border-radius: $radius-normal !default;
-$code-block-padding: 1em !default;
+$code-block-padding-y: 1em !default;
+$code-block-padding-x: 1em !default;
 $code-block-line-height: 1.45 !default;
+
+// footer
+$footer-bg-color: $primary-color !default;
+$footer-link-hover-color: get-contrast($footer-bg-color) !default;
+$footer-color: rgba($footer-link-hover-color, .85) !default;
+$footer-link-color: $footer-color !default;
+$footer-copyright-color: $footer-color !default;
+$footer-copyright-bg-color: rgba(#000, .1) !default;
 
 // This variable affects the `.h-*` and `.w-*` classes.
 $sizes: (
@@ -176,9 +186,40 @@ $sizes: (
   100: 100%
 ) !default;
 
-//======================================================================
-// Components Variables
-//======================================================================
+//============================================================
+// SCSS Parts
+//============================================================
+
+// grid
+$grid-breakpoints: (
+  base: 0, // Applies all width size.
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+) !default;
+$grid-columns: 12 !default;
+$grid-gutter-width: 1.5rem !default;
+
+// form
+$filedset-border: 2px solid $primary-color !default;
+$legend-color: $primary-color !default;
+$label-color: $text-color !default;
+$label-color-focused: $primary-color !default;
+$label-color-disabled: $disabled-color !default;
+
+$input-height: 2em !default;
+$input-padding-y: .2em !default;
+$input-padding-x: .5em !default;
+$input-margin: .5rem 0 !default;
+$input-border: 1px solid $border-color !default;
+$input-radius: $radius-small !default;
+$input-outline-color: $outline-color !default;
+$input-disabled-bg-color: $disabled-color !default;
+// If $auto-input-bg-color-enable is true,
+// background-color of color-set input set automatically.
+// If value is false, background-color set transparent.
+$auto-input-bg-color-enable: true !default;
 
 // list
 $list-border-width: 1px !default;
@@ -189,7 +230,7 @@ $list-group-padding-y: .4em !default;
 $list-group-padding-x: .8em !default;
 $list-group-padding: .4em .8em !default;
 $list-group-border-radius: $radius-normal !default;
-$list-group-hover-bg: rgba($background-color-invert, .1) !default;
+$list-group-hover-bg-color: rgba($background-color-invert, .1) !default;
 $list-group-active-bg-color: $primary-color !default;
 $list-group-active-color: get-contrast($list-group-active-bg-color) !default;
 $breadcrumb-separator: '/' !default;
@@ -202,43 +243,15 @@ $badge-default-color: $default-color !default;
 // button
 $button-radius: $radius-small !default;
 $button-color: $text-color-light !default;
-$button-color-is-enable: false !default; // If this set false, button color will be background color based contrast color.
+// If $auto-button-color-enable set true,
+// button-color in color-set set automatically that based by contrast of background-color.
+$auto-button-color-enable: true !default;
 $button-default-bg-color: $primary-color !default;
 $button-flat-default-bg-color: $link-color !default;
 $button-outline-color: $outline-color !default;
 $button-padding-y: .5em !default;
 $button-padding-x: 1em !default;
 $button-margin: .2em !default;
-
-// close-button
-$close-button-color: rgba(#000, .3) !default;
-
-// dropdown
-$dropdown-bg-color: $background-color !default;
-$dropdown-bg-hover-color: rgba(#000, .15) !default;
-$dropdown-padding-y: .35em !default;
-$dropdown-padding-x: .7em !default;
-$dropdown-link-hover-color: get-contrast($dropdown-bg-color) !default;
-$dropdown-link-color: rgba($dropdown-link-hover-color, .8) !default;
-$dropdown-active-bg-color: rgba(#000, .15) !default;
-$dropdown-active-color: get-contrast($dropdown-bg-color) !default;
-$dropdown-min-width: 120px !default;
-$dropdown-shadow: $shadow-normal !default;
-$dropdown-header-color: $text-color-weak !default;
-$dropdown-header-font-size: 1em !default;
-$dropdown-divider-margin-y: .4rem !default;
-$dropdown-divider-color: $border-color !default;
-
-// grid
-$grid-breakpoints: (
-  base: 0, // Applies all width size.
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-) !default;
-$grid-columns: 12 !default;
-$grid-gutter-width: 1.5rem !default;
 
 // card
 $card-size: 300px !default;
@@ -252,7 +265,59 @@ $card-title-color: $text-color-invert !default;
 $card-content-padding-y: .5em !default;
 $card-content-padding-x: .5em !default;
 
-// nav
+// pagination
+$pagination-margin: 1rem 0 !default;
+$pagination-color: $text-color !default;
+$pagination-bg-color: transparent !default;
+$pagination-hover-color: $text-color !default;
+$pagination-hover-bg-color: $background-color-shade !default;
+$pagination-active-bg-color: $primary-color !default;
+$pagination-active-color: get-contrast($pagination-active-bg-color) !default;
+$pagination-disabled-color: $text-color-weak !default;
+$pagination-item-margin: 0 .2rem !default;
+$pagination-item-padding-y: .2em !default;
+$pagination-item-padding-x: .67em !default;
+$pagination-item-border-radius: $radius-small !default;
+
+// image
+$image-overlay-base-opacity: .67 !default;
+$image-overlay-transition: $transition-time * 2 !default;
+$image-overlay-bg-color: $background-color-invert !default;
+
+// helper
+$caret-width: .25em !default;
+
+// hero-banner
+$hero-banner-min-height: 10em !default;
+$hero-banner-pad-small: 3em !default;
+$hero-banner-pad-medium: 6em !default;
+$hero-banner-pad-large: 9em !default;
+
+//============================================================
+// Vue Components
+//============================================================
+
+// close-button
+$close-button-color: rgba(#000, .3) !default;
+
+// dropdown
+$dropdown-bg-color: $background-color !default;
+$dropdown-bg-hover-color: rgba(#000, .15) !default;
+$dropdown-padding-y: .35em !default;
+$dropdown-padding-x: .7em !default;
+$dropdown-line-height: $body-line-height !default;
+$dropdown-item-hover-color: get-contrast($dropdown-bg-color) !default;
+$dropdown-item-color: rgba($dropdown-item-hover-color, .8) !default;
+$dropdown-active-bg-color: rgba(#000, .15) !default;
+$dropdown-active-color: get-contrast($dropdown-bg-color) !default;
+$dropdown-min-width: 120px !default;
+$dropdown-shadow: $shadow-normal !default;
+$dropdown-header-color: $text-color-weak !default;
+$dropdown-header-font-size: 1em !default;
+$dropdown-divider-margin-y: .4rem !default;
+$dropdown-divider-color: $border-color !default;
+
+// navbar
 $nav-bg-color: $background-color !default;
 $nav-active-color: $primary-color !default;
 $nav-link-color: inherit !default;
@@ -263,41 +328,6 @@ $nav-font: $font-accent !default;
 $nav-font-size: 1.25em !default;
 $nav-line-height: 1.25 !default;
 $navbar-toggle-width: 35px !default;
-
-// footer
-$footer-color: $text-color-invert !default;
-$footer-bg-color: $primary-color !default;
-$footer-link-color: $text-color-invert !default;
-$footer-link-hover-color: $secondary-color !default;
-
-// form
-$filedset-border: 2px solid $primary-color !default;
-$legend-color: $primary-color !default;
-$label-color: $text-color !default;
-$label-color-focused: $primary-color !default;
-$label-color-disabled: $disabled-color !default;
-
-$input-height: 2em !default;
-$input-padding: .2em .5em !default;
-$input-margin: .5rem 0 !default;
-$input-border: 1px solid $border-color !default;
-$input-radius: $radius-small !default;
-$input-outline-color: $outline-color !default;
-$input-disabled-bg-color: $disabled-color !default;
-$input-color-set-bg-enable: true !default;
-
-// pagination
-$pagination-color: $text-color !default;
-$pagination-bg: transparent !default;
-$pagination-hover-color: $text-color !default;
-$pagination-hover-bg: $background-color-shade !default;
-
-$pagination-active-color: $text-color-invert !default;
-$pagination-active-bg: $primary-color !default;
-$pagination-active-hover-color: $pagination-active-color !default;
-$pagination-active-hover-bg: $primary-color-accent !default;
-
-$pagination-disabled-color: $text-color-weak !default;
 
 // scroll-to
 $scroll-to-bg-color: $primary-color-accent !default;
@@ -321,7 +351,7 @@ $tab-active-color: $primary-color !default;
 $tab-active-border-width: 3px !default;
 $tab-active-font-weight: bold !default;
 
-// tooltip
+// v-tooltip
 $tooltip-color: $text-color-invert !default;
 $tooltip-bg-color: rgba($background-color-invert, .8) !default;
 $tooltip-padding-y: .5em !default;
@@ -341,14 +371,6 @@ $accordion-border-radius: $radius-normal !default;
 $chip-font-size: .85em !default;
 $chip-height: 2em !default; // unit:em, This value is base of local variables of chip.
 $chip-bg-color: $background-color-shade !default;
-
-// image
-$image-overlay-base-opacity: .67 !default;
-$image-overlay-transition: $transition-time * 2 !default;
-$image-overlay-bg-color: $background-color-invert !default;
-
-// helper
-$caret-width: .25em !default;
 
 // toast
 $toast-font-size: 1em !default;
@@ -370,12 +392,6 @@ $message-margin: 8px !default;
 $simple-crud-min-height: 3em !default;
 $simple-crud-padding-x: .5rem !default;
 $simple-crud-margin-bottom: .75rem !default;
-
-// hero-banner
-$hero-banner-min-height: 10em !default;
-$hero-banner-pad-small: 3em !default;
-$hero-banner-pad-medium: 6em !default;
-$hero-banner-pad-large: 9em !default;
 
 // input-switch (input-check or input-radio) and input-toggle
 $input-switch-stroke-color: $text-color-light !default;

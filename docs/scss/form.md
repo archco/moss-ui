@@ -2,11 +2,21 @@
 
 > source: [scss/parts/form](../../src/scss/parts/_form.scss)
 
+### Table of contents
+- [Usage](#usage)
+  - [default](#default)
+  - [form-inline](#form-inline)
+  - [Input with Color-set](#input-with-color-set)
+  - [Input with Icons](#input-with-icons)
+- [SCSS variables](#scss-variables)
+
 ## Usage
 
-### default (block)
+### default
 
-```html
+Default style is full-width(`width: 100%;`).
+
+``` html
 <form>
   <fieldset>
     <legend>Form</legend>
@@ -27,34 +37,36 @@
 
 ### form-inline
 
-```html
+``` html
 <form class="form-inline">
   <!-- form contents -->
 </form>
+
+<!-- Apply to individual inputs. -->
+<input type="text" class="inline">
 ```
 
-### Input with color-set
+### Input with Color-set
 
 > based on [Color-set](color-set.md)
 
 Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
 
-```html
+``` html
 <input class="success" type="text">
 ```
 
-#### Related SCSS Variable
+**Related SCSS Variable**
+If `$auto-input-bg-color-enable` is true, background-color of color-set input set automatically. If value is false, background-color set transparent.
 
-```scss
-// If this value set false, color inputs background-color set transparent.
-$input-color-set-bg-enable: true !default;
+``` scss
+$auto-input-bg-color-enable: true !default;
 ```
 
-### Input with icons
+### Input with Icons
 
-### Default
-
-```html
+**Default usage**
+``` html
 <!-- block  -->
 <div class="input with-icon">
   <input type="text" placeholder="Text me..">
@@ -72,9 +84,8 @@ $input-color-set-bg-enable: true !default;
 </div>
 ```
 
-### Icon positioning
-
-```html
+**Icon positioning**
+``` html
 <!-- Right -->
 <div class="input with-icon-right">
   <input type="text" placeholder="Text me..">
@@ -101,4 +112,27 @@ $input-color-set-bg-enable: true !default;
     <i class="fa fa-check" aria-hidden="true"></i>
   </span>
 </div>
+```
+
+## SCSS Variables
+
+``` scss
+$filedset-border: 2px solid $primary-color !default;
+$legend-color: $primary-color !default;
+$label-color: $text-color !default;
+$label-color-focused: $primary-color !default;
+$label-color-disabled: $disabled-color !default;
+
+$input-height: 2em !default;
+$input-padding-y: .2em !default;
+$input-padding-x: .5em !default;
+$input-margin: .5rem 0 !default;
+$input-border: 1px solid $border-color !default;
+$input-radius: $radius-small !default;
+$input-outline-color: $outline-color !default;
+$input-disabled-bg-color: $disabled-color !default;
+// If $auto-input-bg-color-enable is true,
+// background-color of color-set input set automatically.
+// If value is false, background-color set transparent.
+$auto-input-bg-color-enable: true !default;
 ```

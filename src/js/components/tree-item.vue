@@ -37,7 +37,7 @@ export default {
   },
   data() {
     return {
-      open: false,
+      open: this.item.opened ? true : false,
     };
   },
   computed: {
@@ -53,9 +53,7 @@ export default {
   },
   methods: {
     toggle() {
-      if (this.hasItems) {
-        this.open = !this.open;
-      }
+      if (this.hasItems) this.open = !this.open;
     },
   },
 }

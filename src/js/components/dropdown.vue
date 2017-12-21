@@ -45,7 +45,11 @@ export default {
       // NOTE: This is experimental prop.
       type: Boolean,
       default: false,
-    }
+    },
+    buttonWithCaret: {
+      type: Boolean,
+      default: true,
+    },
   },
   data() {
     return {
@@ -81,9 +85,7 @@ export default {
       this.isShown ? this.hide() : this.show();
     },
     onOtherClick(event) {
-      let isOwn = event.target == this.btn
-        || event.target == this.content
-        || ElementUtil.findAncestor(event.target, this.content) != null;
+      let isOwn = ElementUtil.findAncestor(event.target, this.$el) != null;
 
       if (!isOwn && this.isShown == true) this.hide();
     },
@@ -146,6 +148,9 @@ export default {
       // button.
       this.btn = this.$slots.button[0].elm;
       this.btn.classList.add(`dropdown-button`);
+      if (this.buttonWithCaret) {
+        this.btn.classList.add('with-caret');
+      }
       // content.
       this.content = this.$el.querySelector('.dropdown-content');
       // items.

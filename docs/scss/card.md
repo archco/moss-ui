@@ -2,19 +2,21 @@
 
 > source: [scss/parts/card](../../src/scss/parts/_card.scss)
 
-### Option Keywords
-
-- size: `small` `large` (default: medium)
-- direction: `horizontal` (default: vertical)
-- display: `inline` (default: block)
-- hover: `hoverable`
-- contents: `card-image` `card-title` `card-content`
+### Table of contents
+- [Usage](#usage)
+  - [Vertical Card](#vertical-card)
+  - [Horizontal Card](#horizontal-card)
+  - [Inline](#inline)
+  - [Hoverable](#hoverable)
+- [Optional modifier classes](#optional-modifier-classes)
+- [SCSS Variables](#scss-variables)
 
 ## Usage
 
-### Vertical Card (default)
+### Vertical Card
+It is default value of card contents direction.
 
-```html
+``` html
 <div class="card">
   <div class="card-image">
     <img src="image.jpg">
@@ -28,7 +30,7 @@
 
 ### Horizontal Card
 
-```html
+``` html
 <div class="card-horizontal large">
   <div class="card-image">
     <img src="image.jpg">
@@ -41,7 +43,7 @@
 
 ### Inline
 
-```html
+``` html
 <div class="card inline small">
   <div class="card-image">
     <img src="image.jpg">
@@ -54,7 +56,7 @@
 
 ### Hoverable
 
-```html
+``` html
 <a href="#" class="card small hoverable">
   <div class="card-image">
     <img src="image.jpg">
@@ -63,4 +65,27 @@
     <span>Card content</span>
   </div>
 </a>
+```
+
+## Optional modifier classes
+
+- size: `small` `large` (default: medium)
+- direction: `horizontal` (default: vertical)
+- display: `inline` (default: block)
+- hover: `hoverable`
+- contents: `card-image` `card-title` `card-content`
+
+## SCSS Variables
+
+``` scss
+$card-size: 300px !default;
+$card-size-small: 200px !default;
+$card-size-large: 400px !default;
+$card-radius: $radius-small !default;
+$card-shadow: $shadow-normal !default;
+$card-hover-shadow: $shadow-far !default;
+$card-bg-color: $background-color !default;
+$card-title-color: $text-color-invert !default;
+$card-content-padding-y: .5em !default;
+$card-content-padding-x: .5em !default;
 ```

@@ -23,6 +23,10 @@ export default {
         return [];
       },
     },
+    opened: {
+      type: Boolean,
+      default: false,
+    },
     openedHtml: {
       type: String,
       default: '<i class="fa fa-angle-down fa-fw" aria-hidden="true"></i>',
@@ -30,6 +34,20 @@ export default {
     closedHtml: {
       type: String,
       default: '<i class="fa fa-angle-right fa-fw" aria-hidden="true"></i>',
+    },
+  },
+  mounted() {
+    if (this.opened) this.openTreeItems(this.$children);
+  },
+  methods: {
+    openTreeItems(children) {
+      children.forEach(component => {
+        let tag = component.$vnode.componentOptions.tag;
+        if (tag == 'tree' || tag == 'tree-item') {
+          this.openTreeItems(component.$children);
+          if (tag == 'tree-item') component.open = true;
+        }
+      });
     },
   },
 }

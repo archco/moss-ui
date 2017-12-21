@@ -1,12 +1,24 @@
 # Modal
 
-> source: [js/components/modal](../../src/js/components/modal.vue)
+> sources:  
+[js/components/modal.vue](../../src/js/components/modal.vue)  
+[scss/components/modal.scss](../../src/scss/components/_modal.scss)
+
+### Table of contents
+
+- [Usage](#usage)
+  - [Basic](#basic)
+  - [with actions](#with-actions)
+- [Props](#props)
+- [Vue directive](#vue-directive)
+- [SCSS variables](#scss-variables)
+
 
 ## Usage
 
 ### Basic
 
-```html
+``` html
 <button class="btn" v-modal:modal01>Modal Open</button>
 <modal name="modal01" title="Modal Title">
   <h3>Title</h3>
@@ -14,9 +26,9 @@
 </modal>
 ```
 
-### With actions
+### with actions
 
-```html
+``` html
 <button class="btn" v-modal:modal02>Modal Open</button>
 <modal>
   <p>...</p>
@@ -29,24 +41,32 @@
 
 ## Props
 
-| name | type | description | default |
-| ---- | ---- | ----------- | ------- |
-| name | String | Key of modal component. | is required. |
-| title | String | Title text in modal-header | '' |
-| effect | String | Transition effect name. now only 'from-top' | 'from-top' |
-| close-button-html | String | header close button's innerHTML | '✖' |
-| close-on | Boolean | If true, modal close when another clicked. | false |
+| Name | Type | Default | Description |
+| ---- |:----:| ------- | ----------- |
+| name | `String` | required | Key of modal component. |
+| title | `String` | `''` | Title text in modal-header. |
+| effect | `String` | `'from-top'` | Transition effect name. now only 'from-top'. |
+| close-button-html | `String` | `'✖'` | `innerHTML` of close button in modal-header. |
+| close-on | `Boolean` | `false` | If true, modal close when if click outside of it. |
 
-## Directive
+## Vue directive
 
-### v-modal
-
-```html
+``` html
 <button v-modal:{name}.{modifier}>button</button>
 ```
 
-- name: modal's name.
-- modifier
-  - [ no modifier ]: toggling modal.
-  - show: show modal.
-  - close: close modal.
+- `name`: key name of target modal.
+- `modifier`
+  - no modifiers (default): toggling modal.
+  - `show`: show modal.
+  - `close`: close modal.
+
+## SCSS Variables
+
+``` scss
+$modal-mask-color: rgba(0, 0, 0, .5) !default;
+$modal-content-bg-color: $background-color !default;
+$modal-header-bg-color: $background-color !default;
+$modal-close-button-color: rgba($danger-color, .5) !default;
+$modal-close-button-hover-color: rgba($danger-color, 1) !default;
+```

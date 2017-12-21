@@ -7,8 +7,16 @@
   user-select: none;
 }
 
+@mixin reset-btn {
+  background-color: transparent;
+  text-align: inherit;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+}
+
 @mixin btn-color($bg-color, $color: $button-color) {
-  @if not $button-color-is-enable {
+  @if $auto-button-color-enable {
     $color: get-contrast($bg-color);
   }
 

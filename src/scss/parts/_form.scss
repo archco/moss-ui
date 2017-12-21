@@ -50,7 +50,7 @@ select,
 textarea {
   width: 100%;
   min-height: $input-height;
-  padding: $input-padding;
+  padding: $input-padding-y $input-padding-x;
   line-height: 1.4;
   background-color: transparent;
   border: $input-border;
@@ -58,7 +58,7 @@ textarea {
 
   @each $name, $color in $color-set {
     &.#{$name} {
-      @if $input-color-set-bg-enable {
+      @if $auto-input-bg-color-enable {
         background-color: rgba($color, .1);
       }
 
