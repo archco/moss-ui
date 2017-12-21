@@ -47,15 +47,16 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 
 ### [Vue Directives](js/directives.md)
 
-- [Activator](js/directives.md#activator)
-- [Clipboard](js/directives.md#clipboard)
-- [Confirm](js/directives.md#confirm)
-- [Focus](js/directives.md#focus)
-- [Scrollspy](js/directives.md#scrollspy)
-- [Set value](js/directives.md#set-value)
-- [Tooltip](js/directives.md#tooltip)
-- [Trigger](js/directives.md#trigger)
-- [Wrap](js/directives.md#wrap)
+- [v-activator](js/directives.md#activator)
+- [v-clipboard](js/directives.md#clipboard)
+- [v-confirm](js/directives.md#confirm)
+- [v-focus](js/directives.md#focus)
+- [v-ripple](js/directives.md#ripple)
+- [v-scrollspy](js/directives.md#scrollspy)
+- [v-set-value](js/directives.md#set-value)
+- [v-tooltip](js/directives.md#tooltip)
+- [v-trigger](js/directives.md#trigger)
+- [v-wrap](js/directives.md#wrap)
 
 ### JS Libraries
 

@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 - Add prop "opened" into tree.vue (0ded96924e4203b839e3d95dc30a419587fca398)
+- Add the new vue-directive "v-ripple". #62
 
 ### Changed
 - Modify minor things in dropdown. #70
