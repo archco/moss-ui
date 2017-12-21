@@ -85,9 +85,7 @@ export default {
       this.isShown ? this.hide() : this.show();
     },
     onOtherClick(event) {
-      let isOwn = event.target == this.btn
-        || event.target == this.content
-        || ElementUtil.findAncestor(event.target, this.content) != null;
+      let isOwn = ElementUtil.findAncestor(event.target, this.$el) != null;
 
       if (!isOwn && this.isShown == true) this.hide();
     },
