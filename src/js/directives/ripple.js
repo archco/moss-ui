@@ -1,4 +1,5 @@
 import Color from '../lib/color';
+import ElementMeasurer from 'element-measurer';
 
 export default {
   name: 'ripple',
@@ -7,9 +8,9 @@ export default {
     el.classList.add('ripple');
 
     el.addEventListener('click', e => {
-      // FIXME: el.offsetLeft가 아닌 전체 document와의 offset 수치가 필요함.
-      let xPos = e.pageX - el.offsetLeft;
-      let yPos = e.pageY - el.offsetTop;
+      let elSize = new ElementMeasurer(el);
+      let xPos = e.pageX - elSize.getOffset().left;
+      let yPos = e.pageY - elSize.getOffset().top;
       let div = document.createElement('div');
       let size = getShortLength(el);
 
@@ -19,8 +20,6 @@ export default {
       div.style.top = `${yPos - (size / 2)}px`;
       div.style.left = `${xPos - (size / 2)}px`;
 
-      // set ripple color.
-      // TODO: rgba색일 경우의 처리를 고려해보자.
       div.style.backgroundColor = getRippleColor(el, binding);
 
       el.appendChild(div);
@@ -30,20 +29,19 @@ export default {
 };
 
 function getShortLength(elm) {
-  let width = elm.scrollWidth;
-  let height = elm.scrollHeight;
+  let width = elm.getBoundingClientRect().width;
+  let height = elm.getBoundingClientRect().height;
   return width < height ? width : height;
-}
-
-function getContrastColor(elm) {
-  let style = window.getComputedStyle(elm);
-  let color = new Color(style.backgroundColor);
-  return color.contrast();
 }
 
 function getRippleColor(el, binding) {
   let opt = binding.value || {};
   let mod = binding.modifiers;
+  let getContrastColor = elm => {
+    let style = window.getComputedStyle(elm);
+    let color = new Color(style.backgroundColor);
+    return color.contrast();
+  };
 
   return opt.color ? opt.color
     : mod.light ? '#fff'
