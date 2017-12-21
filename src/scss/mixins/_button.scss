@@ -9,7 +9,7 @@
 
 @mixin reset-btn {
   background-color: transparent;
-  text-align: initial;
+  text-align: inherit;
   border: 0;
   cursor: pointer;
   user-select: none;
