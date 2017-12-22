@@ -32,6 +32,8 @@
   &.disabled {
     color: $pagination-disabled-color;
     cursor: default;
+
+    > * { cursor: default; }
   }
 }
 
