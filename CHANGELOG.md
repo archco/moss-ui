@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+## [0.4.2] - 2017-12-24
+### Fixed
+- Fix cursor style in pagination.scss (923fd69bc89410cba0484954f89c2e2a42232bef)
+- Fix import syntax. (b832f183de76d88f383b7b66b5a467c7bf6483b0)
+
 ## [0.4.1] - 2017-12-21
 
 ### Added
