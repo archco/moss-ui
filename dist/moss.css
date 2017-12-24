@@ -3223,6 +3223,8 @@ img.filter.sepia {
     .pagination li.disabled {
       color: #777777;
       cursor: default; }
+      .pagination li.disabled > * {
+        cursor: default; }
 
 carousel,
 [is="carousel"] {

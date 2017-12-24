@@ -22547,10 +22547,9 @@ exports.default = {
       div.style.height = size + 'px';
       div.style.top = yPos - size / 2 + 'px';
       div.style.left = xPos - size / 2 + 'px';
-
       div.style.backgroundColor = getRippleColor(el, binding);
-
       el.appendChild(div);
+
       window.setTimeout(function () {
         return div.remove();
       }, 1500);
