@@ -19,3 +19,4 @@ LICENSE         text eol=lf
 
 example/* linguist-vendored
 test/*    linguist-vendored
+dist/*    linguist-vendored
