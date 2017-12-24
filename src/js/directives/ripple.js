@@ -8,9 +8,9 @@ export default {
     el.classList.add('ripple');
 
     el.addEventListener('click', e => {
-      let elSize = new ElementMeasurer(el);
-      let xPos = e.pageX - elSize.getOffset().left;
-      let yPos = e.pageY - elSize.getOffset().top;
+      let offset = new ElementMeasurer(el).getOffset();
+      let xPos = e.pageX - offset.left;
+      let yPos = e.pageY - offset.top;
       let div = document.createElement('div');
       let size = getShortLength(el);
 
@@ -19,10 +19,9 @@ export default {
       div.style.height = `${size}px`;
       div.style.top = `${yPos - (size / 2)}px`;
       div.style.left = `${xPos - (size / 2)}px`;
-
       div.style.backgroundColor = getRippleColor(el, binding);
-
       el.appendChild(div);
+
       window.setTimeout(() => div.remove(), 1500);
     });
   },

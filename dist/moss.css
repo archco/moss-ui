@@ -1,6 +1,6 @@
 /*!
  * moss-ui - The front-end UI framework with Vue.js and SCSS.
- * @version v0.4.1
+ * @version v0.4.2
  * @link https://github.com/archco/moss-ui
  * @license MIT
  */
@@ -3223,6 +3223,8 @@ img.filter.sepia {
     .pagination li.disabled {
       color: #777777;
       cursor: default; }
+      .pagination li.disabled > * {
+        cursor: default; }
 
 carousel,
 [is="carousel"] {

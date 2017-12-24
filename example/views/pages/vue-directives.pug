@@ -14,8 +14,11 @@ block content
         li(is='anchored-tag' tag='li') v-clipboard
         li(is='anchored-tag' tag='li') v-set-value
         li(is='anchored-tag' tag='li') v-tooltip
+        li(is='anchored-tag' tag='li') v-ripple
 
     section(class='col-md-10')
       include ../includes/directives
       anchored-tag(tag='h1' owned) v-tooltip
       include ../includes/v-tooltip
+      anchored-tag(tag='h1' owned) v-ripple
+      include ../includes/v-ripple
