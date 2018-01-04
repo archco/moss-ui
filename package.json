@@ -50,48 +50,22 @@
     "css-loader": "^0.28.7",
     "eslint": "^4.14.0",
     "eslint-plugin-html": "^4.0.1",
-    "eslint-plugin-vue": "^4.0.0-beta.4",
+    "eslint-plugin-vue": "^4.0.1",
     "extract-text-webpack-plugin": "^3.0.2",
-    "mocha": "^4.0.1",
+    "mocha": "^4.1.0",
     "node-sass": "^4.7.2",
-    "postcss-loader": "^2.0.9",
+    "postcss-loader": "^2.0.10",
     "pug": "^2.0.0-rc.4",
     "pug-cli": "^1.0.0-alpha6",
     "sass-loader": "^6.0.6",
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.19.1",
     "vue": "^2.5.13",
-    "vue-loader": "^13.6.0",
+    "vue-loader": "^13.6.2",
     "vue-template-compiler": "^2.5.13",
     "webpack": "^3.10.0",
     "webpack-merge": "^4.1.1",
     "webpack-notifier": "^1.5.0"
-  },
-  "eslintConfig": {
-    "env": {
-      "node": true,
-      "browser": true,
-      "commonjs": true,
-      "es6": true,
-      "mocha": true
-    },
-    "extends": "eslint:recommended",
-    "parser": "babel-eslint",
-    "parserOptions": {
-      "sourceType": "module"
-    },
-    "rules": {
-      "no-console": "off"
-    },
-    "plugins": [
-      "html",
-      "vue"
-    ],
-    "settings": {
-      "html/html-extensions": [
-        ".html"
-      ]
-    }
   },
   "babel": {
     "presets": [
