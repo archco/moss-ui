@@ -19,7 +19,7 @@ export default {
     let tagId = this.getChildrenTextContent(this.$slots.default)
       .toLowerCase()
       .replace(/\W+/g, '-')
-      .replace(/(^\-|\-$)/g, '');
+      .replace(/(^-|-$)/g, '');
     let data = {
       attrs: {
         id: (this.owned) ? tagId : false,

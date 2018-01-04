@@ -1,5 +1,7 @@
 <template lang="html">
-  <a :href="href" :class="classObject"><slot></slot></a>
+  <a :href="href" :class="classObject">
+    <slot></slot>
+  </a>
 </template>
 
 <script>

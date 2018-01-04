@@ -9,7 +9,9 @@
         @click.native="onToggleClick"
       />
     </div>
-    <collapse id="navbar-body" :class="bodyClass" :expanded="navShow">
+    <collapse id="navbar-body"
+      :class="bodyClass"
+      :expanded="navShow">
       <slot></slot>
     </collapse>
   </nav>

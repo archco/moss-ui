@@ -1,6 +1,10 @@
 <template lang="html">
   <li class="nav-item">
-    <a :href="href" class="nav-link" v-if="hasHref">{{ linkText }}</a>
+    <a :href="href"
+      class="nav-link"
+      v-if="hasHref">
+      {{ linkText }}
+    </a>
     <slot></slot>
   </li>
 </template>
