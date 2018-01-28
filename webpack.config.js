@@ -29,7 +29,10 @@ const dist = merge(common, {
   },
   plugins: [
     new ExtractTextPlugin('moss.css'),
-    new WebpackNotifierPlugin({ alwaysNotify: true }),
+    new WebpackNotifierPlugin({
+      alwaysNotify: true,
+      sound: false,
+    }),
   ],
   devtool: 'source-map',
 });
