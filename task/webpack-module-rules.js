@@ -3,7 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   js: {
     test: /\.js$/,
-    exclude: /(node_modules|bower_components)/,
+    exclude: /node_modules/,
     use: {
       loader: 'babel-loader',
       options: {
@@ -14,47 +14,46 @@ module.exports = {
 
   sourceMap: {
     test: /\.js$/,
-    use: ['source-map-loader'],
+    use: 'source-map-loader',
     enforce: 'pre',
   },
 
   vue: {
     test: /\.vue$/,
-    loader: 'vue-loader',
-    options: {
-      loaders: {
-        js: 'babel-loader',
+    use: {
+      loader: 'vue-loader',
+      options: {
+        loaders: {
+          js: 'babel-loader',
+        },
+        sourceMap: true,
       },
-      sourceMap: true,
     },
   },
 
-  scss(isMin = false) {
-    let postCssPlugins = [require('autoprefixer')()];
-    if (isMin) postCssPlugins.push(require('cssnano')());
-
-    return {
-      test: /\.s[ac]ss$/,
-      use: ExtractTextPlugin.extract({
-        use: [
-          {
-            loader: 'css-loader',
-            options: { sourceMap: !isMin },
+  scss: {
+    test: /\.s[ac]ss$/,
+    use: ExtractTextPlugin.extract({
+      use: [
+        {
+          loader: 'css-loader',
+          options: { sourceMap: true },
+        },
+        {
+          loader: 'postcss-loader',
+          options: {
+            ident: 'postcss',
+            sourceMap: true,
+            plugins: [
+              require('autoprefixer')(),
+            ],
           },
-          {
-            loader: 'postcss-loader',
-            options: {
-              ident: 'postcss',
-              sourceMap: !isMin,
-              plugins: postCssPlugins,
-            },
-          },
-          {
-            loader: 'sass-loader',
-            options: { sourceMap: !isMin },
-          },
-        ],
-      }),
-    };
+        },
+        {
+          loader: 'sass-loader',
+          options: { sourceMap: true },
+        },
+      ],
+    }),
   },
 };

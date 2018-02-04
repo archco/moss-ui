@@ -12,14 +12,14 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Please see test/test.html in browser.\" && exit 1",
+    "test": "cross-env NODE_ENV=test mocha-webpack --webpack-config webpack.config.js --require test/setup.js",
     "prebuild": "node task/banner.js",
     "build": "npm run webpack && npm run pug",
     "dev": "npm run webpack:dev && npm run pug",
-    "watch": "npx concurrently \"npm run webpack:dev -- --watch\" \"npm run pug -- --watch\"",
-    "pug": "npx pug --pretty example/views/pages/ --out ./example/html/",
-    "webpack": "npx webpack --hide-modules",
-    "webpack:dev": "npm run webpack -- --env.task=dev"
+    "watch": "concurrently \"npm run webpack:dev -- --watch\" \"npm run pug -- --watch\"",
+    "pug": "pug --pretty example/views/pages/ --out ./example/html/",
+    "webpack": "webpack --hide-modules",
+    "webpack:prod": "cross-env NODE_ENV=prod npm run webpack"
   },
   "author": "archco",
   "bugs": {
@@ -40,6 +40,7 @@
     "vue-agile": "^0.3.6"
   },
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.11",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
@@ -48,13 +49,19 @@
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "concurrently": "^3.5.1",
+    "cross-env": "^5.1.3",
     "css-loader": "^0.28.9",
     "eslint": "^4.17.0",
     "eslint-plugin-html": "^4.0.2",
     "eslint-plugin-vue": "^4.2.2",
+    "expect": "^22.1.0",
     "extract-text-webpack-plugin": "^3.0.2",
+    "jsdom-global": "^3.0.2",
+    "jsom": "^1.0.0",
     "mocha": "^5.0.0",
+    "mocha-webpack": "^1.0.1",
     "node-sass": "^4.7.2",
+    "optimize-css-assets-webpack-plugin": "^3.2.0",
     "postcss-loader": "^2.1.0",
     "pug": "^2.0.0-rc.4",
     "pug-cli": "^1.0.0-alpha6",
@@ -66,6 +73,7 @@
     "vue-template-compiler": "^2.5.13",
     "webpack": "^3.10.0",
     "webpack-merge": "^4.1.1",
+    "webpack-node-externals": "^1.6.0",
     "webpack-notifier": "^1.5.1"
   },
   "babel": {
