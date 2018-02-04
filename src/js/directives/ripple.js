@@ -1,4 +1,4 @@
-import Color from '../lib/color';
+import { MooColor } from 'moo-color';
 import ElementMeasurer from 'element-measurer';
 
 export default {
@@ -38,8 +38,8 @@ function getRippleColor(el, binding) {
   let mod = binding.modifiers;
   let getContrastColor = elm => {
     let style = window.getComputedStyle(elm);
-    let color = new Color(style.backgroundColor);
-    return color.contrast();
+    let color = new MooColor(style.backgroundColor);
+    return color.isLight ? '#000' : '#fff';
   };
 
   return opt.color ? opt.color

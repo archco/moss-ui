@@ -1,6 +1,6 @@
 <script>
 import CloseButton from './close-button.vue';
-import Color from '../lib/color';
+import { MooColor } from 'moo-color';
 
 export default {
   name: 'chip',
@@ -83,9 +83,9 @@ export default {
     coloring() {
       if (!this.color) return;
 
-      let color = new Color(this.color);
+      let color = new MooColor(this.color);
       this.$el.style.backgroundColor = color.toHex(true);
-      this.$el.style.color = color.contrast('#333', '#fff');
+      this.$el.style.color = color.isLight ? '#333' : '#000';
     },
   },
   mounted() {
