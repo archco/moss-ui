@@ -1,5 +1,64 @@
 /* eslint-disable no-unused-vars */
 
+var options = {};
+
+// data for demo.
+var treeData = [
+  {
+    name: 'MOSS-UI',
+    items: [
+      { name: 'SCSS' },
+      { name: 'Vue' },
+      {
+        name: 'JS Libraries',
+        items: [
+          { name: 'Color' },
+          { name: 'ElementUtil' },
+          { name: 'Util' },
+        ],
+      },
+    ],
+  },
+];
+var treeData2 = [
+  {
+    name: '<a href="./index.html">MOSS-UI</a>',
+    opened: true,
+    items: [
+      { name: '<a href="./scss.html">SCSS</a>' },
+      { name: '<a href="./vue.html">Vue</a>' },
+      {
+        name: '<a href="./js-libraries.html">JS Libraries</a>',
+        items: [
+          { name: '<a href="./js-libraries.html#color">Color</a>' },
+          { name: '<a href="./js-libraries.html#elementutil">ElementUtil</a>' },
+          { name: '<a href="./js-libraries.html#util">Util</a>' },
+        ],
+      },
+    ],
+  },
+];
+
+window.vm = new window.Vue({
+  el: '#app',
+  data: {
+    treeData,
+    treeData2,
+  },
+  methods: {
+    test(arg) {
+      console.log(arg);
+    },
+  },
+
+  beforeMount() {
+    this.$on('clipboard-success', event => {
+      let msg = event.action == 'copy' ? 'Copied' : 'Cut';
+      window.Moss.toast(`${msg} on clipboard.`);
+    });
+  },
+});
+
 /************************************************************
   Aside Menu
 *************************************************************/
