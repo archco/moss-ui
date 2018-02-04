@@ -1,6 +1,6 @@
 const path = require('path');
 const merge = require('webpack-merge');
-const UglifyJSPugin = require('uglifyjs-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const Rules = require('./task/webpack-module-rules');
@@ -44,7 +44,7 @@ const min = merge(common, {
     rules: [Rules.sourceMap, Rules.js, Rules.vue, Rules.scss(true)],
   },
   plugins: [
-    new UglifyJSPugin(),
+    new UglifyJSPlugin(),
     new ExtractTextPlugin('moss.min.css'),
   ],
 });
