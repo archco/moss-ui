@@ -4,6 +4,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
 
 const Rules = require('./task/webpack-module-rules');
 const env = process.env.NODE_ENV || 'dev'; // dev|prod|test
@@ -63,7 +64,7 @@ config = merge(config, {
 }
 
 if (env === 'test') {
-  config.externals = [require('webpack-node-externals')];
+  config.externals = [nodeExternals()];
   config.devtool = 'inline-cheap-module-source-map';
 }
 
