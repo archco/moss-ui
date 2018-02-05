@@ -13,6 +13,7 @@
   },
   "scripts": {
     "test": "cross-env NODE_ENV=test mocha-webpack --webpack-config webpack.config.js --require test/setup.js test/**/*.spec.js",
+    "test:watch": "npm run test -- --watch",
     "prebuild": "node task/banner.js",
     "build": "npm run webpack && npm run pug",
     "dev": "npm run webpack:dev && npm run pug",
@@ -66,6 +67,7 @@
     "pug": "^2.0.0-rc.4",
     "pug-cli": "^1.0.0-alpha6",
     "sass-loader": "^6.0.6",
+    "sinon": "^4.2.2",
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.20.1",
     "vue": "^2.5.13",

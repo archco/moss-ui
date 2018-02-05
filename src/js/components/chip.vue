@@ -85,7 +85,7 @@ export default {
 
       let color = new MooColor(this.color);
       this.$el.style.backgroundColor = color.toHex(true);
-      this.$el.style.color = color.isLight ? '#333' : '#000';
+      this.$el.style.color = color.isLight ? '#333' : '#fff';
     },
   },
   mounted() {
