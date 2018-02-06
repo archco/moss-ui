@@ -16,8 +16,8 @@
     "test:watch": "npm run test -- --watch",
     "prebuild": "node task/banner.js",
     "build": "npm run webpack && npm run pug",
-    "dev": "npm run webpack:dev && npm run pug",
-    "watch": "concurrently \"npm run webpack:dev -- --watch\" \"npm run pug -- --watch\"",
+    "dev": "npm run webpack && npm run pug",
+    "watch": "concurrently \"npm run webpack -- --watch\" \"npm run pug -- --watch\"",
     "pug": "pug --pretty example/views/pages/ --out ./example/html/",
     "webpack": "webpack --hide-modules",
     "webpack:prod": "cross-env NODE_ENV=prod npm run webpack"

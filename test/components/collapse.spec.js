@@ -2,8 +2,8 @@ import expect from 'expect';
 import { mount } from '@vue/test-utils';
 import Collapse from '../../src/js/components/collapse.vue';
 
-describe('#Collapse', function () {
-  it('mount.', function () {
+describe('#Collapse', () => {
+  it('mount.', () => {
     const wrapper = mount(Collapse, {
       propsData: {
         id: 'test-target',
@@ -18,7 +18,7 @@ describe('#Collapse', function () {
     expect(elm.children[0].classList.contains('description')).toBe(true);
   });
 
-  it('expanded prop test.', function () {
+  it('expanded prop test.', () => {
     const wrapper = mount(Collapse, {
       propsData: {
         id: 'test-target',
@@ -32,7 +32,7 @@ describe('#Collapse', function () {
     expect(wrapper.element.style.display).not.toBe('none');
   });
 
-  it('toggle by event emit.', function () {
+  it('toggle by event emit.', () => {
     const wrapper = mount(Collapse, {
       propsData: {
         id: 'test-target',

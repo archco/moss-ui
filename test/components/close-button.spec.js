@@ -2,8 +2,8 @@ import expect from 'expect';
 import { mount } from '@vue/test-utils';
 import CloseButton from '../../src/js/components/close-button.vue';
 
-describe('#CloseButton', function () {
-  it('mount', function () {
+describe('#CloseButton', () => {
+  it('mount', () => {
     const wrapper = mount(CloseButton, {
       propsData: {
         position: 'top-right',
@@ -15,7 +15,7 @@ describe('#CloseButton', function () {
     expect(elm.classList.contains('at-corner')).toBe(true);
   });
 
-  it('closeable.', function () {
+  it('closeable.', () => {
     const wrapper = mount(CloseButton, {
       attachToDocument: true,
     });

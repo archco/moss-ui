@@ -2,10 +2,10 @@ import expect from 'expect';
 import { mount } from '@vue/test-utils';
 import Chip from '../../src/js/components/chip.vue';
 
-describe('#Chip', function () {
+describe('#Chip', () => {
   let wrapper;
 
-  it('set tag and text.', function () {
+  it('set tag and text.', () => {
     wrapper = mount(Chip, {
       propsData: {
         tag: 'span',
@@ -18,7 +18,7 @@ describe('#Chip', function () {
     expect(wrapper.element.textContent).toBe('chip test');
   });
 
-  it('color test.', function () {
+  it('color test.', () => {
     wrapper = mount(Chip, {
       propsData: {
         color: '#333',
@@ -32,7 +32,7 @@ describe('#Chip', function () {
     expect(style.color).toEqual('rgb(255, 255, 255)');
   });
 
-  it('closeable.', function () {
+  it('closeable.', () => {
     wrapper = mount(Chip, {
       propsData: {
         closeable: true,

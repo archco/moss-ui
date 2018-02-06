@@ -2,7 +2,7 @@ import expect from 'expect';
 import { mount } from '@vue/test-utils';
 import Dropdown from '../../src/js/components/dropdown.vue';
 
-const fakeSlots = {
+const slots = {
   button: `<button class="reference">dropdown</button>`,
   default: `
     <a href="#" class="dropdown-item">Item 01</a>
@@ -10,27 +10,27 @@ const fakeSlots = {
     <a href="#" class="dropdown-item">Item 03</a>
   `,
 }
-const fakePop = {
+const fakePopper = {
   constructor: () => {},
   scheduleUpdate: () => {},
 };
 
-describe('#Dropdown', function () {
-  it('mount', function () {
+describe('#Dropdown', () => {
+  it('mount', () => {
     const wrapper = mount(Dropdown, {
-      slots: fakeSlots,
+      slots: slots,
     });
     const elm = wrapper.element;
     expect(elm.classList.contains('dropdown')).toBe(true);
     expect(elm.querySelector('.dropdown-content').children.length).toBe(3);
   });
 
-  it('button click for content toggling.', function () {
+  it('button click for content toggling.', () => {
     const wrapper = mount(Dropdown, {
-      slots: fakeSlots,
+      slots: slots,
     });
     // mock.
-    wrapper.vm.$data.pop = fakePop;
+    wrapper.vm.$data.pop = fakePopper;
 
     const content = wrapper.element.querySelector('.dropdown-content');
     expect(content.classList.contains('show')).toBe(false);

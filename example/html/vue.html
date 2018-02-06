@@ -41,6 +41,7 @@
             <li is="anchored-tag" tag="li">Nav</li>
             <li is="anchored-tag" tag="li">Parallax</li>
             <li is="anchored-tag" tag="li">Simple CRUD</li>
+            <li is="anchored-tag" tag="li">Switch</li>
             <li is="anchored-tag" tag="li">Tab</li>
             <li is="anchored-tag" tag="li">Toast</li>
             <li is="anchored-tag" tag="li">Tree</li>
@@ -400,6 +401,24 @@
                   <button class="btn default" type="button" data-toggle="cancel">Cancel</button></span></form>
             </li>
           </ul>
+          <anchored-tag tag="h1" owned>Switch</anchored-tag>
+          <h3>Input Check</h3>
+          <input-check class="font-small" name="is-small">small</input-check>
+          <input-check name="is-normal">normal</input-check>
+          <input-check class="font-large" name="is-large">large</input-check>
+          <h3>Input Radio</h3>
+          <input-radio class="font-small" name="input-radio" value="small">small</input-radio>
+          <input-radio name="input-radio" value="medium">medium</input-radio>
+          <input-radio class="font-large" name="input-radio" value="large">large</input-radio>
+          <h3>Toggle Style</h3>
+          <div class="group">
+            <input-check class="toggle" name="use-toggle">Toggle</input-check>
+            <input-check class="toggle" name="is-good">Good</input-check>
+          </div>
+          <div class="group">
+            <input-radio class="toggle" name="toggle-radio" value="male">Male</input-radio>
+            <input-radio class="toggle" name="toggle-radio" value="female">Female</input-radio>
+          </div>
           <anchored-tag tag="h1" owned>Tab</anchored-tag>
           <h3>Default Tab</h3>
           <tabs>
