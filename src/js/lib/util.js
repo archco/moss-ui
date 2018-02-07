@@ -1,5 +1,10 @@
 import scrollIt from './utils/scroll-it.js';
 
+// TODO:
+// - change util structure.
+// v add toCamel, toKebab..
+// - remove color.js (also in example..)
+
 export default {
 
   /**
@@ -86,6 +91,47 @@ export default {
    */
   isMobileSize(size = 800) {
     return window.innerWidth < size;
+  },
+
+  /**
+   * String to CamelCase
+   *
+   * @param {string} str
+   * @param {boolean} [isSmallCamel=false] If true, returns as smallCamelCase.
+   * @returns {string}
+   */
+  strToCamel(str, isSmallCamel = false) {
+    return str.replace(/([\s])/g, '-')
+      .toLowerCase()
+      .split('-')
+      .map((word, i) => (i === 0 && isSmallCamel) ? word : word[0].toUpperCase() + word.substr(1))
+      .join('');
+  },
+
+  /**
+   * String to kebab-case.
+   *
+   * @param {string} str
+   * @returns {string}
+   */
+  strToKebab(str) {
+    return str.replace(/([\s])/g, '-')
+      .replace(/([a-z])([A-Z])/g, '$1-$2')
+      .toLowerCase();
+  },
+
+  /**
+   * Capitalize first letters.
+   *
+   * @param {string} str
+   * @returns {string}
+   */
+  capitalize(str) {
+    return str
+      .toLowerCase()
+      .split(' ')
+      .map(word => word[0].toUpperCase() + word.substr(1))
+      .join(' ');
   },
 
   scrollIt,

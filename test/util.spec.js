@@ -31,4 +31,29 @@ describe('Util', () => {
       expect(Util.isEmpty({ a: 1 })).toBe(false);
     });
   });
+
+  describe('#capitalize', () => {
+    it('works.', () => {
+      expect(Util.capitalize('hello world')).toBe('Hello World');
+      expect(Util.capitalize('HELLO WORLD')).toBe('Hello World');
+    });
+  });
+
+  describe('#strToCamel', () => {
+    it('CamelCase', () => {
+      expect(Util.strToCamel('hello-world')).toBe('HelloWorld');
+      expect(Util.strToCamel('space case')).toBe('SpaceCase');
+    });
+
+    it('can to smallCamel.', () => {
+      expect(Util.strToCamel('hello-world', true)).toBe('helloWorld');
+    });
+  });
+
+  describe('#strToKebab', () => {
+    it('works.', () => {
+      expect(Util.strToKebab('HelloWorld')).toBe('hello-world');
+      expect(Util.strToKebab('space cowboy')).toBe('space-cowboy');
+    });
+  });
 });
