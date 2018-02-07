@@ -1,22 +1,22 @@
 <template lang="html">
   <transition :name="effectName">
     <div class="modal-mask" v-if="show">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3>{{ title }}</h3>
-            <button type="button"
-              class="close-button"
-              @click="$emit('close')"
-              v-html="closeButtonHtml">
-            </button>
-          </div>
-          <div class="modal-body">
-            <slot></slot>
-          </div>
-          <div class="modal-footer">
-            <slot name="actions"></slot>
-          </div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>{{ title }}</h3>
+          <button type="button"
+            class="close-button"
+            @click="$emit('close')"
+            v-html="closeButtonHtml">
+          </button>
         </div>
+        <div class="modal-body">
+          <slot></slot>
+        </div>
+        <div class="modal-footer">
+          <slot name="actions"></slot>
+        </div>
+      </div>
     </div>
   </transition>
 </template>
@@ -92,7 +92,7 @@ export default {
       this.$root.$emit('modal-toggle', this.name, 'close');
     });
 
-    if (typeof window.Moss.modal === 'undefined') {
+    if (typeof window.Moss !== 'undefined' && typeof window.Moss.modal === 'undefined') {
       window.Moss.modal = {
         show: name => {
           this.$root.$emit('modal-toggle', name, 'show');

@@ -3,7 +3,7 @@
     <ul :class="tabsClass" v-wrap:responsive>
       <li v-for="tab in tabs"
         :key="tab.name"
-        :style="{ flexGrow: growEnabled ? 1 : null }">
+        :style="{ flexGrow: growEnabled ? '1' : '' }">
         <a
           href="#"
           :class="tabClass(tab)"
@@ -20,8 +20,11 @@
 </template>
 
 <script>
+import Tab from './tab.vue';
+
 export default {
   name:'tabs',
+  components: { Tab },
   props: {
     effect: {
       type: String,
@@ -38,7 +41,7 @@ export default {
   },
   computed: {
     effectName() {
-      return (this.effect) ? `tab-${this.effect}` : 'none';
+      return (this.effect) ? `tab-${this.effect}` : '';
     },
     tabsClass() {
       let classObject = { tabs: true };
@@ -53,9 +56,7 @@ export default {
   },
   methods: {
     selectTab(selectedTab) {
-      this.tabs.forEach(tab => {
-        tab.isActive = (tab.name === selectedTab.name);
-      });
+      this.tabs.forEach(tab => tab.isActive = (tab.name === selectedTab.name));
       this.$emit('tab-selected', selectedTab);
     },
     tabClass(tab) {
@@ -71,9 +72,7 @@ export default {
     this.tabs = this.$children;
   },
   mounted() {
-    this.tabs.forEach(tab => {
-      tab.effectName = this.effectName;
-    });
+    this.tabs.forEach(tab => tab.effectName = this.effectName);
   },
 };
 </script>
