@@ -7,7 +7,7 @@
       :class="className"
       :required="required"
       :checked="state"
-      @change="onChange">
+      @change="toggle">
     <slot name="input-box">
       <span class="input-box">
         <span class="input-box-circle"></span>
@@ -65,9 +65,6 @@ export default {
     }
   },
   methods: {
-    onChange() {
-      this.toggle();
-    },
     toggle() {
       this.$emit('change', this.state ? '' : this.value);
     }

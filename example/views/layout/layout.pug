@@ -37,7 +37,7 @@ html
             dropdown(toggle='toggle' placement='bottom-end')
               button(slot='button') Utilities
               a.dropdown-item(href='scss-helpers.html') SCSS Helpers
-              a.dropdown-item(href='vue-directives.html') Vue Directieves
+              a.dropdown-item(href='vue-directives.html') Vue Directives
               a.dropdown-item(href='js-libraries.html') JS Libraries
 
       block content
@@ -63,6 +63,7 @@ html
       toast
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
+    script(src='../../node_modules/vue/dist/vue.js')
     script(src='../../dist/moss.js')
     script(src='./example.js')
     script.

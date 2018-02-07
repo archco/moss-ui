@@ -16,7 +16,7 @@ const DefaultOptions = {
   insteadName: {},
 };
 
-export default {
+const MossUI = {
   version: version,
   install(Vue, options = {}) {
     if (this.installed) return;
@@ -56,9 +56,15 @@ export default {
   },
 };
 
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(MossUI);
+}
+
 export {
   Color,
   Util,
   ElementUtil,
   ElementMeasurer,
 };
+
+export default MossUI;

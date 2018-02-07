@@ -57,7 +57,7 @@ export default {
     return {
       showToTop: true,
       showToBottom: true,
-      docSize: new ElementMeasurer(document),
+      docSize: new ElementMeasurer(),
     };
   },
   methods: {

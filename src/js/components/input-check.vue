@@ -7,7 +7,7 @@
       :class="className"
       :required="required"
       :checked="state"
-      @change="onChange">
+      @change="toggle">
     <slot name="input-box">
       <span class="input-box">
         <svg class="input-box-tick" viewBox="0 0 16 16">
@@ -70,9 +70,6 @@ export default {
     }
   },
   methods: {
-    onChange() {
-      this.toggle();
-    },
     toggle() {
       let value;
 

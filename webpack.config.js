@@ -3,64 +3,69 @@ const merge = require('webpack-merge');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
+
 const Rules = require('./task/webpack-module-rules');
+const env = process.env.NODE_ENV || 'dev'; // dev|prod|test
 
-//
-// Configs.
-//
-
-const common = {
-  entry: ['./src/js/script.js', './src/scss/moss.scss'],
+let config = {
+  entry: {
+    'moss': ['./src/js/moss.js', './src/scss/moss.scss'],
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js',
+    library: 'MossUI',
+    libraryTarget: 'umd',
+  },
+  module: {
+    rules: [
+      Rules.sourceMap,
+      Rules.js,
+      Rules.vue,
+      Rules.scss,
+    ],
   },
   resolve: {
+    extensions: ['.js', '.json', '.scss', '.vue'],
     alias: {
       vue$: 'vue/dist/vue.esm.js',
     },
   },
-};
-const dist = merge(common, {
-  output: {
-    filename: 'moss.js',
-  },
-  module: {
-    rules: [Rules.sourceMap, Rules.js, Rules.vue, Rules.scss()],
-  },
+  devtool: 'source-map',
   plugins: [
-    new ExtractTextPlugin('moss.css'),
+    new ExtractTextPlugin('[name].css'),
     new WebpackNotifierPlugin({
       alwaysNotify: true,
       sound: false,
     }),
   ],
-  devtool: 'source-map',
-});
-const min = merge(common, {
-  output: {
-    filename: 'moss.min.js',
-  },
-  module: {
-    rules: [Rules.sourceMap, Rules.js, Rules.vue, Rules.scss(true)],
-  },
-  plugins: [
-    new UglifyJSPlugin(),
-    new ExtractTextPlugin('moss.min.css'),
-  ],
-});
-const mod = merge(common, {
-  entry: './src/js/moss.js',
-  output: {
-    filename: 'moss.mod.js',
-    library: 'Moss',
-    libraryTarget: 'umd',
-  },
-  module: {
-    rules: [Rules.sourceMap, Rules.js, Rules.vue],
-  },
-  devtool: 'source-map',
-});
+};
 
-module.exports = env => (env && env.task == 'dev')
-  ? dist
-  : [mod, dist, min];
+if (env === 'prod') {
+config = merge(config, {
+    entry: {'moss.min': './src/js/moss.js'},
+    plugins: [
+      new UglifyJSPlugin({
+        sourceMap: false,
+        include: /\.min\.js$/,
+      }),
+      new ExtractTextPlugin('[name].min.css'),
+      new OptimizeCssAssetsPlugin({
+        assetNameRegExp: /\.min\.css$/g,
+        cssProcessor: require('cssnano'),
+        cssProcessorOptions: {
+          discardComments: { removeAll: false },
+        },
+      }),
+    ],
+  });
+}
+
+if (env === 'test') {
+  config.externals = [nodeExternals()];
+  config.devtool = 'inline-cheap-module-source-map';
+}
+
+module.exports = config;
