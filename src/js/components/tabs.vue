@@ -13,7 +13,7 @@
       </li>
     </ul>
 
-    <div>
+    <div class="tabs-container" :style="containerStyle">
       <slot></slot>
     </div>
   </div>
@@ -36,6 +36,10 @@ export default {
     growEnabled: {
       type: Boolean,
       default: false,
+    },
+    containerStyle: {
+      type: Object,
+      default: () => {},
     },
   },
   computed: {
