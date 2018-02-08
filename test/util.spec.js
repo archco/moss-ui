@@ -1,5 +1,5 @@
 import expect from 'expect';
-import Util from '../src/js/lib/util';
+import * as Util from '../src/js/lib/util';
 
 describe('Util', () => {
   it('is object', () => {

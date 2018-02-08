@@ -7,7 +7,7 @@
 import ElementUtil from 'element-util';
 import ElementMeasurer from 'element-measurer';
 import { MooColor as Color } from 'moo-color';
-import Util from './lib/util';
+import * as Util from './lib/util';
 import components from './components/_index';
 import directives from './directives/_index';
 import { version } from '../../package.json';

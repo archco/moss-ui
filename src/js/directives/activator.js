@@ -1,4 +1,4 @@
-import Util from '../lib/util';
+import { locationSearchToObject, searchToObject, isContains } from '../lib/util';
 
 /*
   v-activator.{modifiers}="'{value}'"
@@ -32,11 +32,11 @@ export default {
 function compareWithLocation(anchor) {
   let l = {
     path: lastTerm(document.location.pathname),
-    query: Util.locationSearchToObject(),
+    query: locationSearchToObject(),
   };
   let a = {
     path: lastTerm(anchor.pathname),
-    query: Util.searchToObject(anchor.search),
+    query: searchToObject(anchor.search),
   };
 
   if (anchor.getAttribute('href') == '#') {
@@ -45,7 +45,7 @@ function compareWithLocation(anchor) {
   }
 
   if (l.path == a.path) {
-    if (!a.query || Util.isContains(l.query, a.query)) return true;
+    if (!a.query || isContains(l.query, a.query)) return true;
   }
 
   return false;

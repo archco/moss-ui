@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import Util from '../lib/util';
+import { scrollIt } from '../lib/util';
 import ElementMeasurer from 'element-measurer';
 
 export default {
@@ -62,10 +62,10 @@ export default {
   },
   methods: {
     toTop() {
-      Util.scrollIt(0, this.duration, this.easing);
+      scrollIt(0, this.duration, this.easing);
     },
     toBottom() {
-      Util.scrollIt(this.docSize.maxScrollTop, this.duration, this.easing);
+      scrollIt(this.docSize.maxScrollTop, this.duration, this.easing);
     },
     onScroll() {
       this.showToTop = this.docSize.scrollTop >= this.offset;

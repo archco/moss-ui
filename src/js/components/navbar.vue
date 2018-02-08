@@ -20,7 +20,7 @@
 <script>
 import NavbarToggle from './navbar-toggle.vue';
 import Collapse from './collapse.vue';
-import Util from '../lib/util';
+import { isMobileSize } from '../lib/util';
 
 export default {
   name: 'navbar',
@@ -60,7 +60,7 @@ export default {
       this.navShow = this.toggleExpanded;
     },
     responsiveBody() {
-      if (Util.isMobileSize(768)) {
+      if (isMobileSize(768)) {
         this.toggleExpanded = this.navShow = false;
       } else {
         this.toggleExpanded = false;
