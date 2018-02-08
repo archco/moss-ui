@@ -5,23 +5,37 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-**Previous Versions**
+### Previous Versions
+
 - [v0.1.\* - v0.3.\*](https://github.com/archco/moss-ui/blob/master/docs/changelog/0.1-0.3.md)
 
 ## [Unreleased][]
 
+### Added
+
+- Adds new test environment for vue component via vue-test-utils. #75, #78
+- Add a new color library 'moo-color'. #72
+
+### Changed
+
+- Change export type of Util to library. #80
+
 ## [0.4.2] - 2017-12-24
+
 ### Fixed
+
 - Fix cursor style in pagination.scss (923fd69bc89410cba0484954f89c2e2a42232bef)
 - Fix import syntax. (b832f183de76d88f383b7b66b5a467c7bf6483b0)
 
 ## [0.4.1] - 2017-12-21
 
 ### Added
+
 - Add prop "opened" into tree.vue (0ded96924e4203b839e3d95dc30a419587fca398)
 - Add the new vue-directive "v-ripple". #62
 
 ### Changed
+
 - Modify minor things in dropdown. #70
   - Available set to dropdown button without caret.
   - Available use to 'button' tag as dropdown-item.
@@ -56,6 +70,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Change prop name in close-button.vue: `parent-relatived` -> `parent-to-relative`. #67
 
 ### Fixed
+
 - Fix position bug in toast.vue #69
 - Fix bug in navbar.scss #66
 - Fix carousel to hides during loading.
@@ -63,11 +78,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.4.0][] - 2017-11-26
 
 ### Added
+
 - Add a new dependency, [Popper.js](https://github.com/FezVrasta/popper.js). #54
 - Add color-set to blockquote. #57
 - Add a new component [Carousel](https://github.com/archco/moss-ui/blob/master/docs/js/carousel.md): It uses [vue-agile](https://github.com/lukaszflorczak/vue-agile). #25
 
 ### Changed
+
 - Improve Dropdown #46
   - Change dropdown vue-component to build on Popper.js #55
   - Add content decorators. See [dropdown.md](https://github.com/archco/moss-ui/blob/master/docs/js/dropdown.md#content-decorators)
@@ -79,12 +96,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   - `moss.mod.js`: ES module file.
   - `moss.css`: Distribution style file.
 - Change browserslist setting "> 1%" to "defaults". #50
-- Change KeybordEvent.keyCode to KeboardEvent.key #53
+- Change KeyboardEvent.keyCode to KeyboardEvent.key #53
 
 ### Fixed
+
 - Fix attribute problem in anchored-tag.vue.
 
 ### Removed
+
 - Remove tooltip.scss. instead use [v-tooltip](https://github.com/archco/moss-ui/blob/master/docs/js/directives.md#tooltip) vue-directive. #56
 - Remove unnecessary part "aside.scss". #60
 - Remove deprecated scss mixin, `flex-container()`. instead use `flex-container-align`. #52
