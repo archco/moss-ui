@@ -9,7 +9,6 @@ import Tooltip from 'tooltip.js';
     If value type is `Object`, then option of Tooltip.js will set by this object value.
  */
 export default {
-  name: 'tooltip',
   inserted(el, binding) {
     new Tooltip(el, parseOption(binding));
   },

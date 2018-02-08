@@ -8,7 +8,6 @@
     close: close modal.
  */
 export default {
-  name: 'modal',
   bind(el, binding, vnode) {
     el.addEventListener('click', event => {
       event.preventDefault();

@@ -5,7 +5,6 @@
   value: {Array} Arguments for event listener.
  */
 export default {
-  name: 'trigger',
   bind(el, binding, vnode) {
     el.addEventListener('click', event => {
       event.preventDefault();

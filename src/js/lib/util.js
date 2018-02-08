@@ -1,9 +1,4 @@
-export { default as scrollIt } from './utils/scroll-it';
-
-// TODO:
-// - change util structure.
-// v add toCamel, toKebab..
-// - remove color.js (also in example..)
+export { default as scrollIt } from './methods/scroll-it';
 
 /**
  * location.search to Object.

@@ -9,7 +9,6 @@ import ElementUtil from 'element-util';
   value: {String} Tag name of wrapper. default value is 'div'.
  */
 export default {
-  name: 'wrap',
   inserted(el, binding) {
     let className = binding.modifiers.raw
       ? binding.arg

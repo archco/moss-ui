@@ -9,7 +9,6 @@ import { locationSearchToObject, searchToObject, isContains } from '../lib/util'
   value: {String} selector. default value is 'a'.
  */
 export default {
-  name: 'activator',
   inserted(el, binding) {
     let isSelf = binding.modifiers.self;
     let isThis = binding.modifiers.this;

@@ -6,8 +6,6 @@
   value: {String} accordion group name.
  */
 export default {
-  name: 'accordion',
-
   bind(el, binding, vnode) {
     let action = binding.modifiers.show ? 'show'
       : binding.modifiers.hide ? 'hide'

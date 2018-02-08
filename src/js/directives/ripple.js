@@ -2,8 +2,6 @@ import { MooColor } from 'moo-color';
 import ElementMeasurer from 'element-measurer';
 
 export default {
-  name: 'ripple',
-
   bind(el, binding) {
     el.classList.add('ripple');
 

@@ -7,7 +7,6 @@ import { locationSearchToObject } from '../lib/util';
   value: {String} Set value directly.
  */
 export default {
-  name: 'set-value',
   bind(el, binding) {
     if (binding.value) {
       el.value = binding.value;

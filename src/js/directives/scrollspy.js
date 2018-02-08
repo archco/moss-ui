@@ -13,8 +13,6 @@ import Scrollspy from '../lib/classes/scrollspy';
   }
  */
 export default {
-  name: 'scrollspy',
-
   inserted(el, binding, vnode) {
     let onActivate = (item) => {
       vnode.context.$root.$emit('scrollspy-activate', item);

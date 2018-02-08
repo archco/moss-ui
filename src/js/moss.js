@@ -9,7 +9,7 @@ import ElementMeasurer from 'element-measurer';
 import { MooColor as Color } from 'moo-color';
 import * as Util from './lib/util';
 import * as components from './components';
-import directives from './directives/_index';
+import * as directives from './directives';
 import { version } from '../../package.json';
 
 const DefaultOptions = {
@@ -35,9 +35,9 @@ const MossUI = {
     }
 
     // Add directives.
-    directives.forEach(directive => {
-      Vue.directive(directive.name, directive);
-    });
+    for (const [key, val] of Object.entries(directives)) {
+      Vue.directive(Util.strToKebab(key), val);
+    }
   },
 
   addMossObject(Vue) {

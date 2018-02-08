@@ -19,8 +19,6 @@ import ElementUtil from 'element-util';
   }
  */
 export default {
-  name: 'clipboard',
-
   bind(el, binding, vnode) {
     let options = resolveOptionsOfClipboard(binding);
     let clipboard = new Clipboard(el, options);

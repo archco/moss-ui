@@ -5,8 +5,6 @@
   arg: collapse id.
  */
 export default {
-  name: 'collapse',
-
   bind(el, binding, vnode) {
     let action = binding.modifiers.show ? 'show'
       : binding.modifiers.hide ? 'hide'
