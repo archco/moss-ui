@@ -6,7 +6,6 @@
 
 <script>
 export default {
-  name: 'navbar-nav',
   props: {
     align: {
       type: String,

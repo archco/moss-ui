@@ -2791,7 +2791,6 @@ var _nodeUtil2 = _interopRequireDefault(_nodeUtil);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  name: 'anchored-tag',
   mixins: [_nodeUtil2.default],
   props: {
     tag: {
@@ -2938,7 +2937,6 @@ var _mooColor = __webpack_require__(4);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  name: 'chip',
   props: {
     tag: {
       type: String,
@@ -3093,7 +3091,6 @@ var _elementUtil2 = _interopRequireDefault(_elementUtil);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  name: 'close-button',
   props: {
     position: {
       type: String,
@@ -3230,7 +3227,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-  name: 'collapse',
   props: {
     id: {
       type: String,
@@ -3375,7 +3371,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 
 exports.default = {
-  name: 'dropdown',
   props: {
     toggle: {
       type: String,
@@ -6071,7 +6066,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-  name: 'message',
   props: {
     status: {
       type: String,
@@ -6134,7 +6128,6 @@ var _message2 = _interopRequireDefault(_message);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  name: 'message-box',
   components: { Message: _message2.default },
   props: {
     effect: {
@@ -6250,7 +6243,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-  name: 'modal',
   props: {
     name: {
       type: String,
@@ -6374,7 +6366,6 @@ var _util = __webpack_require__(2);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  name: 'navbar',
   components: { NavbarToggle: _navbarToggle2.default, Collapse: _collapse2.default },
   props: {
     align: {
@@ -6524,7 +6515,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-  name: 'navbar-toggle',
   props: {
     opened: {
       type: Boolean,
@@ -6568,7 +6558,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-  name: 'navbar-brand',
   props: {
     href: {
       type: String,
@@ -6609,7 +6598,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-  name: 'navbar-nav',
   props: {
     align: {
       type: String,
@@ -6643,7 +6631,6 @@ var _nodeUtil2 = _interopRequireDefault(_nodeUtil);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  name: 'nav-item',
   mixins: [_nodeUtil2.default],
   props: {
     href: {
@@ -6706,7 +6693,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-  name: 'parallax',
   props: {
     src: {
       type: String,
@@ -6767,7 +6753,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 
 exports.default = {
-  name: 'scroll-to',
   props: {
     duration: {
       type: Number,
@@ -6844,7 +6829,6 @@ var _elementUtil2 = _interopRequireDefault(_elementUtil);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  name: 'simple-crud',
   props: {
     view: {
       type: String,
@@ -6979,7 +6963,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-  name: 'tab',
   props: {
     name: {
       type: String,
@@ -7020,7 +7003,6 @@ var _tab2 = _interopRequireDefault(_tab);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  name: 'tabs',
   components: { Tab: _tab2.default },
   props: {
     effect: {
@@ -7120,7 +7102,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-  name: 'toast',
   props: {
     position: {
       type: String,
@@ -7210,7 +7191,6 @@ var _treeItem2 = _interopRequireDefault(_treeItem);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  name: 'tree',
   components: { TreeItem: _treeItem2.default },
   props: {
     items: {
@@ -7350,7 +7330,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-  name: 'tree-item',
   props: {
     item: {
       type: Object,
@@ -7422,7 +7401,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-  name: 'input-check',
   model: {
     prop: 'modelValue',
     event: 'change'
@@ -7534,7 +7512,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-  name: 'input-radio',
   model: {
     prop: 'modelValue',
     event: 'change'
@@ -8181,6 +8158,14 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.ElementMeasurer = exports.ElementUtil = exports.Util = exports.Color = undefined;
 
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }(); /*!
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * moss-ui - The front-end UI framework with Vue.js and SCSS.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @version v0.4.3
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @link https://github.com/archco/moss-ui
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @license MIT
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          */
+
+
 var _elementUtil = __webpack_require__(1);
 
 var _elementUtil2 = _interopRequireDefault(_elementUtil);
@@ -8195,13 +8180,13 @@ var _util = __webpack_require__(2);
 
 var Util = _interopRequireWildcard(_util);
 
-var _index = __webpack_require__(40);
+var _components = __webpack_require__(40);
+
+var components = _interopRequireWildcard(_components);
+
+var _index = __webpack_require__(87);
 
 var _index2 = _interopRequireDefault(_index);
-
-var _index3 = __webpack_require__(87);
-
-var _index4 = _interopRequireDefault(_index3);
 
 var _package = __webpack_require__(111);
 
@@ -8210,14 +8195,8 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var DefaultOptions = {
-  insteadName: {}
-}; /*!
-    * moss-ui - The front-end UI framework with Vue.js and SCSS.
-    * @version v0.4.3
-    * @link https://github.com/archco/moss-ui
-    * @license MIT
-    */
-
+  enableGlobalComponents: true
+};
 
 var MossUI = {
   version: _package.version,
@@ -8233,14 +8212,40 @@ var MossUI = {
     this.addMossObject(Vue);
 
     // Add components.
-    _index2.default.forEach(function (component) {
-      var name = options.insteadName && options.insteadName[component.name] ? options.insteadName[component.name] : component.name;
+    if (options.enableGlobalComponents) {
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
 
-      Vue.component(name, component);
-    });
+      try {
+        for (var _iterator = Object.entries(components)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var _ref = _step.value;
+
+          var _ref2 = _slicedToArray(_ref, 2);
+
+          var key = _ref2[0];
+          var val = _ref2[1];
+
+          Vue.component(Util.strToKebab(key), val);
+        }
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator.return) {
+            _iterator.return();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
+    }
 
     // Add directives.
-    _index4.default.forEach(function (directive) {
+    _index2.default.forEach(function (directive) {
       Vue.directive(directive.name, directive);
     });
   },
@@ -8382,106 +8387,221 @@ Object.defineProperty(exports, "__esModule", {
 
 var _anchoredTag = __webpack_require__(41);
 
-var _anchoredTag2 = _interopRequireDefault(_anchoredTag);
+Object.defineProperty(exports, 'AnchoredTag', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_anchoredTag).default;
+  }
+});
 
 var _chip = __webpack_require__(42);
 
-var _chip2 = _interopRequireDefault(_chip);
+Object.defineProperty(exports, 'Chip', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_chip).default;
+  }
+});
 
 var _closeButton = __webpack_require__(8);
 
-var _closeButton2 = _interopRequireDefault(_closeButton);
+Object.defineProperty(exports, 'CloseButton', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_closeButton).default;
+  }
+});
 
 var _collapse = __webpack_require__(10);
 
-var _collapse2 = _interopRequireDefault(_collapse);
+Object.defineProperty(exports, 'Collapse', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_collapse).default;
+  }
+});
 
 var _dropdown = __webpack_require__(45);
 
-var _dropdown2 = _interopRequireDefault(_dropdown);
+Object.defineProperty(exports, 'Dropdown', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_dropdown).default;
+  }
+});
 
 var _message = __webpack_require__(14);
 
-var _message2 = _interopRequireDefault(_message);
+Object.defineProperty(exports, 'Message', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_message).default;
+  }
+});
 
 var _messageBox = __webpack_require__(49);
 
-var _messageBox2 = _interopRequireDefault(_messageBox);
+Object.defineProperty(exports, 'MessageBox', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_messageBox).default;
+  }
+});
 
 var _modal = __webpack_require__(51);
 
-var _modal2 = _interopRequireDefault(_modal);
+Object.defineProperty(exports, 'Modal', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_modal).default;
+  }
+});
 
 var _navbar = __webpack_require__(53);
 
-var _navbar2 = _interopRequireDefault(_navbar);
+Object.defineProperty(exports, 'Navbar', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_navbar).default;
+  }
+});
 
 var _navbarBrand = __webpack_require__(56);
 
-var _navbarBrand2 = _interopRequireDefault(_navbarBrand);
+Object.defineProperty(exports, 'NavbarBrand', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_navbarBrand).default;
+  }
+});
 
 var _navbarNav = __webpack_require__(58);
 
-var _navbarNav2 = _interopRequireDefault(_navbarNav);
+Object.defineProperty(exports, 'NavbarNav', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_navbarNav).default;
+  }
+});
 
 var _navbarToggle = __webpack_require__(19);
 
-var _navbarToggle2 = _interopRequireDefault(_navbarToggle);
+Object.defineProperty(exports, 'NavbarToggle', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_navbarToggle).default;
+  }
+});
 
 var _navItem = __webpack_require__(60);
 
-var _navItem2 = _interopRequireDefault(_navItem);
+Object.defineProperty(exports, 'NavItem', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_navItem).default;
+  }
+});
 
 var _parallax = __webpack_require__(62);
 
-var _parallax2 = _interopRequireDefault(_parallax);
+Object.defineProperty(exports, 'Parallax', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_parallax).default;
+  }
+});
 
 var _scrollTo = __webpack_require__(64);
 
-var _scrollTo2 = _interopRequireDefault(_scrollTo);
+Object.defineProperty(exports, 'ScrollTo', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_scrollTo).default;
+  }
+});
 
 var _simpleCrud = __webpack_require__(66);
 
-var _simpleCrud2 = _interopRequireDefault(_simpleCrud);
+Object.defineProperty(exports, 'SimpleCRUD', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_simpleCrud).default;
+  }
+});
 
 var _tab = __webpack_require__(27);
 
-var _tab2 = _interopRequireDefault(_tab);
+Object.defineProperty(exports, 'Tab', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_tab).default;
+  }
+});
 
 var _tabs = __webpack_require__(69);
 
-var _tabs2 = _interopRequireDefault(_tabs);
+Object.defineProperty(exports, 'Tabs', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_tabs).default;
+  }
+});
 
 var _toast = __webpack_require__(71);
 
-var _toast2 = _interopRequireDefault(_toast);
+Object.defineProperty(exports, 'Toast', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_toast).default;
+  }
+});
 
 var _tree = __webpack_require__(73);
 
-var _tree2 = _interopRequireDefault(_tree);
+Object.defineProperty(exports, 'Tree', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_tree).default;
+  }
+});
 
 var _treeItem = __webpack_require__(32);
 
-var _treeItem2 = _interopRequireDefault(_treeItem);
+Object.defineProperty(exports, 'TreeItem', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_treeItem).default;
+  }
+});
 
 var _inputCheck = __webpack_require__(76);
 
-var _inputCheck2 = _interopRequireDefault(_inputCheck);
+Object.defineProperty(exports, 'InputCheck', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_inputCheck).default;
+  }
+});
 
 var _inputRadio = __webpack_require__(78);
 
-var _inputRadio2 = _interopRequireDefault(_inputRadio);
+Object.defineProperty(exports, 'InputRadio', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_inputRadio).default;
+  }
+});
 
 var _Agile = __webpack_require__(80);
 
-var _Agile2 = _interopRequireDefault(_Agile);
+Object.defineProperty(exports, 'Carousel', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_Agile).default;
+  }
+});
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// Rename agile to carousel.
-_Agile2.default.name = 'carousel';
-
-exports.default = [_anchoredTag2.default, _chip2.default, _closeButton2.default, _collapse2.default, _dropdown2.default, _message2.default, _messageBox2.default, _modal2.default, _navbar2.default, _navbarBrand2.default, _navbarNav2.default, _navbarToggle2.default, _navItem2.default, _parallax2.default, _scrollTo2.default, _simpleCrud2.default, _tab2.default, _tabs2.default, _toast2.default, _tree2.default, _treeItem2.default, _inputCheck2.default, _inputRadio2.default, _Agile2.default];
 
 /***/ }),
 /* 41 */

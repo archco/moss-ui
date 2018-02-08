@@ -22,7 +22,6 @@ import { scrollIt } from '../lib/util';
 import ElementMeasurer from 'element-measurer';
 
 export default {
-  name: 'scroll-to',
   props: {
     duration: {
       type: Number,

@@ -42,19 +42,19 @@ var treeData2 = [
 window.vm = new window.Vue({
   el: '#app',
   data: {
-    treeData,
-    treeData2,
+    treeData: treeData,
+    treeData2: treeData2,
   },
   methods: {
-    test(arg) {
+    test : function (arg) {
       console.log(arg);
     },
   },
 
-  beforeMount() {
-    this.$on('clipboard-success', event => {
-      let msg = event.action == 'copy' ? 'Copied' : 'Cut';
-      window.Moss.toast(`${msg} on clipboard.`);
+  beforeMount: function () {
+    this.$on('clipboard-success', function (event) {
+      var msg = event.action == 'copy' ? 'Copied' : 'Cut';
+      window.Moss.toast( msg + ' on clipboard.');
     });
   },
 });

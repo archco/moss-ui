@@ -20,7 +20,6 @@
 
 <script>
 export default {
-  name: 'tree-item',
   props: {
     item: {
       type: Object,

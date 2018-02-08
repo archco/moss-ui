@@ -54,6 +54,7 @@ describe('Util', () => {
     it('works.', () => {
       expect(Util.strToKebab('HelloWorld')).toBe('hello-world');
       expect(Util.strToKebab('space cowboy')).toBe('space-cowboy');
+      expect(Util.strToKebab('SimpleCRUD')).toBe('simple-crud');
     });
   });
 });

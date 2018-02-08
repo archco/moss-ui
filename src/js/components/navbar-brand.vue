@@ -6,7 +6,6 @@
 
 <script>
 export default {
-  name: 'navbar-brand',
   props: {
     href: {
       type: String,

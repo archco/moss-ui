@@ -23,7 +23,6 @@
 
 <script>
 export default {
-  name: 'modal',
   props: {
     name: {
       type: String,

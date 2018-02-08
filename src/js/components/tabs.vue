@@ -23,7 +23,6 @@
 import Tab from './tab.vue';
 
 export default {
-  name:'tabs',
   components: { Tab },
   props: {
     effect: {

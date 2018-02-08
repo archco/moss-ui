@@ -19,7 +19,6 @@
 
 <script>
 export default {
-  name: 'input-radio',
   model: {
     prop: 'modelValue',
     event: 'change'

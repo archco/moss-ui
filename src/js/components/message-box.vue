@@ -17,7 +17,6 @@
 import Message from './message.vue';
 
 export default {
-  name: 'message-box',
   components: { Message },
   props: {
     effect: {

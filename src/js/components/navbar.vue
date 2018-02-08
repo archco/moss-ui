@@ -23,7 +23,6 @@ import Collapse from './collapse.vue';
 import { isMobileSize } from '../lib/util';
 
 export default {
-  name: 'navbar',
   components: { NavbarToggle, Collapse },
   props: {
     align: {

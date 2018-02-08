@@ -13,7 +13,6 @@
 import NodeUtil from '../mixins/node-util';
 
 export default {
-  name: 'nav-item',
   mixins: [NodeUtil],
   props: {
     href: {

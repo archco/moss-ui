@@ -13,7 +13,6 @@ import Popper from 'popper.js';
 import ElementUtil from 'element-util';
 
 export default {
-  name: 'dropdown',
   props: {
     toggle: {
       type: String,

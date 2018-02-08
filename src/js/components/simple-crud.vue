@@ -16,7 +16,6 @@
 import ElementUtil from 'element-util';
 
 export default {
-  name: 'simple-crud',
   props: {
     view: {
       type: String,

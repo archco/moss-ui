@@ -2,7 +2,6 @@
 import NodeUtil from '../mixins/node-util';
 
 export default {
-  name: 'anchored-tag',
   mixins: [NodeUtil],
   props: {
     tag: {

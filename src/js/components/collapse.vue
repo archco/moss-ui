@@ -12,7 +12,6 @@
 
 <script>
 export default {
-  name: 'collapse',
   props: {
     id: {
       type: String,

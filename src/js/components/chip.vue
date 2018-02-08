@@ -3,7 +3,6 @@ import CloseButton from './close-button.vue';
 import { MooColor } from 'moo-color';
 
 export default {
-  name: 'chip',
   props: {
     tag: {
       type: String,

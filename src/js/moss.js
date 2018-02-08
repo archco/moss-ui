@@ -8,12 +8,12 @@ import ElementUtil from 'element-util';
 import ElementMeasurer from 'element-measurer';
 import { MooColor as Color } from 'moo-color';
 import * as Util from './lib/util';
-import components from './components/_index';
+import * as components from './components';
 import directives from './directives/_index';
 import { version } from '../../package.json';
 
 const DefaultOptions = {
-  insteadName: {},
+  enableGlobalComponents: true,
 };
 
 const MossUI = {
@@ -28,13 +28,11 @@ const MossUI = {
     this.addMossObject(Vue);
 
     // Add components.
-    components.forEach(component => {
-      let name = (options.insteadName && options.insteadName[component.name])
-        ? options.insteadName[component.name]
-        : component.name;
-
-      Vue.component(name, component);
-    });
+    if (options.enableGlobalComponents) {
+      for (const [key, val] of Object.entries(components)) {
+        Vue.component(Util.strToKebab(key), val);
+      }
+    }
 
     // Add directives.
     directives.forEach(directive => {

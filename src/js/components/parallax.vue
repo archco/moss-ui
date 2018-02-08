@@ -4,7 +4,6 @@
 
 <script>
 export default {
-  name: 'parallax',
   props: {
     src: {
       type: String,

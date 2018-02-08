@@ -13,7 +13,6 @@
 
 <script>
 export default {
-  name: 'message',
   props: {
     status: {
       type: String,

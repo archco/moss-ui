@@ -21,7 +21,6 @@
 
 <script>
 export default {
-  name: 'input-check',
   model: {
     prop: 'modelValue',
     event: 'change'
