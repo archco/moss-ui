@@ -6,11 +6,14 @@
 [scss/components/tab](../../src/scss/components/_tab.scss)
 
 ### Table of contents
+
 - [Usage](#usage)
 - [Props](#props)
 - [SCSS variables](#scss-variables)
 
 ## Usage
+
+### Default
 
 ``` html
 <tabs>
@@ -26,6 +29,14 @@
 </tabs>
 ```
 
+### Specifying style of tabs content container
+
+``` html
+<tabs :container-style="{height: '400px', overflow: 'auto'}">
+  ...
+</tabs>
+```
+
 ## Props
 
 ### tabs
@@ -35,6 +46,7 @@
 | effect | `String` | `''` | Transition effect name. `''`(no effect) or `'fade'` |
 | align | `String` | `'start'` | \*flex alignment of tab-link. |
 | grow-enabled | `Boolean` | `false` | flex-item grow enable on tab-links. |
+| container-style | `Object` | `{}` | Specifies container style of tab contents. |
 
 **Note**: \*flex alignment keywords - `start` `center` `end` `around` `between`
 
