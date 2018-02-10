@@ -14,7 +14,7 @@ button(class='btn' onclick='Moss.modal.toggle("test-modal3")') Trigger
 modal(name='test-modal3' title='with Actions')
   p=lorem
   div(slot='actions')
-    button(class='btn default' onclick='Moss.modal.close("test-modal3")') CANCEL
+    button(class='btn default' data-toggle='close') Cancel
     button(class='btn success') OK
 
 h3 Icon close button

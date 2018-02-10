@@ -6213,29 +6213,12 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+var _elementUtil = __webpack_require__(1);
+
+var _elementUtil2 = _interopRequireDefault(_elementUtil);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
   props: {
@@ -6286,13 +6269,14 @@ exports.default = {
       var action = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'toggle';
 
       if (name !== this.name) return;
-      action = action.toLowerCase();
-      if (action === 'show') {
-        this.show = true;
-      } else if (action === 'close') {
-        this.show = false;
-      } else {
-        this.show = !this.show;
+      switch (action.toLowerCase()) {
+        case 'show':
+          this.show = true;break;
+        case 'close':
+          this.show = false;break;
+        case 'toggle':
+        default:
+          this.show = !this.show;break;
       }
     },
     onKeydown: function onKeydown(event) {
@@ -6305,24 +6289,26 @@ exports.default = {
   beforeMount: function beforeMount() {
     var _this = this;
 
+    // add key listener. close modal if 'esc' key downed.
     window.addEventListener('keydown', this.onKeydown.bind(this));
+    // register events to $root and self.
     this.$root.$on('modal-toggle', this.toggleModal.bind(this));
     this.$on('close', function () {
       _this.$root.$emit('modal-toggle', _this.name, 'close');
     });
 
+    // register help methods to Moss object.
     if (typeof window.Moss !== 'undefined' && typeof window.Moss.modal === 'undefined') {
       window.Moss.modal = {
         show: function show(name) {
-          _this.$root.$emit('modal-toggle', name, 'show');
+          return _this.$root.$emit('modal-toggle', name, 'show');
         },
         close: function close(name) {
-          _this.$root.$emit('modal-toggle', name, 'close');
+          return _this.$root.$emit('modal-toggle', name, 'close');
         },
         toggle: function toggle(name) {
           var action = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'toggle';
-
-          _this.$root.$emit('modal-toggle', name, action);
+          return _this.$root.$emit('modal-toggle', name, action);
         }
       };
     }
@@ -6334,8 +6320,39 @@ exports.default = {
         }
       });
     }
+  },
+  mounted: function mounted() {
+    var _this2 = this;
+
+    // Add data-toggle listeners. 'cancel'|'close'
+    var elms = _elementUtil2.default.getElements('[data-toggle="cancel"],[data-toggle="close"]', this.$el);
+    _elementUtil2.default.addListener(elms, 'click', function () {
+      return _this2.toggleModal(_this2.name, 'close');
+    });
   }
-};
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 18 */
@@ -9155,30 +9172,42 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("transition", { attrs: { name: _vm.effectName } }, [
-    _vm.show
-      ? _c("div", { staticClass: "modal-mask" }, [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c("h3", [_vm._v(_vm._s(_vm.title))]),
-              _vm._v(" "),
-              _c("button", {
-                staticClass: "close-button",
-                attrs: { type: "button" },
-                domProps: { innerHTML: _vm._s(_vm.closeButtonHtml) },
-                on: {
-                  click: function($event) {
-                    _vm.$emit("close")
-                  }
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.show,
+            expression: "show"
+          }
+        ],
+        staticClass: "modal-mask"
+      },
+      [
+        _c("div", { staticClass: "modal-content" }, [
+          _c("div", { staticClass: "modal-header" }, [
+            _c("h3", [_vm._v(_vm._s(_vm.title))]),
+            _vm._v(" "),
+            _c("button", {
+              staticClass: "close-button",
+              attrs: { type: "button" },
+              domProps: { innerHTML: _vm._s(_vm.closeButtonHtml) },
+              on: {
+                click: function($event) {
+                  _vm.$emit("close")
                 }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }, [_vm._t("default")], 2),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }, [_vm._t("actions")], 2)
-          ])
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "modal-body" }, [_vm._t("default")], 2),
+          _vm._v(" "),
+          _c("div", { staticClass: "modal-footer" }, [_vm._t("actions")], 2)
         ])
-      : _vm._e()
+      ]
+    )
   ])
 }
 var staticRenderFns = []
