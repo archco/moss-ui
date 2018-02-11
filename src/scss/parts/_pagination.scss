@@ -13,7 +13,10 @@
 
   a {
     @extend %link-no-deco;
-    transition: color $transition-time, background-color $transition-time;
+    @include transition(
+      color $transition-duration $transition-timing-function,
+      background-color $transition-duration $transition-timing-function
+    );
 
     &:hover {
       color: $pagination-hover-color;

@@ -25,7 +25,7 @@
 a.chip {
   @include no-decoration;
   color: inherit;
-  transition: box-shadow $transition-time;
+  @include transition(box-shadow $transition-duration $transition-timing-function);
 
   &:hover,
   &:focus {

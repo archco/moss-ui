@@ -29,7 +29,7 @@ footer {
 
   a {
     @include set-link-state-color($footer-link-color, null, $footer-link-hover-color);
-    transition: color $transition-time;
+    @include transition(color $transition-duration $transition-timing-function);
   }
 
   .footer-copyright {

@@ -37,7 +37,10 @@ dropdown,
   font-family: inherit;
   font-size: inherit;
   line-height: $dropdown-line-height;
-  transition: color $transition-time, background-color $transition-time;
+  @include transition(
+    color $transition-duration $transition-timing-function,
+    background-color $transition-duration $transition-timing-function
+  );
 
   &.active:not([disabled]) {
     color: $dropdown-active-color;

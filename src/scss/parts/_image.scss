@@ -43,7 +43,7 @@
     height: 100%;
     background-color: $image-overlay-bg-color;
     opacity: 0;
-    transition: $image-overlay-transition ease;
+    @include transition($image-overlay-transition $transition-timing-function);
 
     .text {
       font-size: 1em;

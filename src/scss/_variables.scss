@@ -102,11 +102,15 @@ $enable-transitions: true !default;
 // Misc
 //==============================
 
-$transition-time: .3s !default;
 $default-focus-outline: 2px solid $primary-color !default;
 $outline-color: $primary-color !default;
 $body-line-height: 1.5 !default;
 $position-default-offset: 5% !default;
+
+// transition
+$transition-duration: .3s !default;
+$transition-timing-function: ease-out !default;
+$transition-all: all $transition-duration $transition-timing-function !default;
 
 // radius
 $radius-normal: 4px !default;
@@ -288,7 +292,7 @@ $pagination-item-border-radius: $radius-small !default;
 
 // image
 $image-overlay-base-opacity: .67 !default;
-$image-overlay-transition: $transition-time * 2 !default;
+$image-overlay-transition: $transition-duration * 2 !default;
 $image-overlay-bg-color: $background-color-invert !default;
 
 // helper
@@ -411,7 +415,7 @@ $input-switch-base-size: 1em !default;
 $input-toggle-bg-color: $background-color !default;
 $input-toggle-border-color: $border-color !default;
 $input-toggle-active-color: $primary-color !default;
-$input-toggle-transition-time: $transition-time !default;
+$input-toggle-transition-duration: $transition-duration !default;
 
 // carousel
 $carousel-dot-color: rgba($text-color-light, .5) !default;

@@ -9,7 +9,7 @@
   @include border-radius(50%);
   outline: none;
   box-sizing: content-box;
-  transition: background-color $transition-time;
+  @include transition(background-color $transition-duration $transition-timing-function);
 
   &:hover { background-color: $scroll-to-bg-color; }
 }

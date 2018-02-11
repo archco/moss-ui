@@ -1,10 +1,10 @@
 @mixin vue-fade($name, $entering: '.6s', $leaving: '.6s') {
   .#{$name}-enter-active {
-    transition: opacity #{$entering};
+    @include transition(opacity #{$entering});
   }
 
   .#{$name}-leave-active {
-    transition: opacity #{$leaving};
+    @include transition(opacity #{$leaving});
   }
 
   .#{$name}-enter,

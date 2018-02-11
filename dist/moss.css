@@ -538,7 +538,7 @@ footer {
   color: rgba(255, 255, 255, 0.85);
   background-color: #355e3b; }
   .footer a {
-    transition: color 0.3s; }
+    transition: color 0.3s ease-out; }
     .footer a, .footer a:link {
       color: rgba(255, 255, 255, 0.85); }
     .footer a:visited {
@@ -1950,7 +1950,7 @@ input[type="reset"], .btn, .btn-icon {
   color: #fff;
   background-color: #355e3b;
   outline-color: #355e3b;
-  transition: background-color 0.3s, box-shadow 0.3s; }
+  transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
   input[type="submit"]:link,
   input[type="button"]:link,
   input[type="reset"]:link, .btn:link, .btn-icon:link, input[type="submit"]:visited,
@@ -1977,7 +1977,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #fff;
     background-color: #9a9a9a;
     outline-color: #9a9a9a;
-    transition: background-color 0.3s, box-shadow 0.3s; }
+    transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
     input.default[type="submit"]:link,
     input.default[type="button"]:link,
     input.default[type="reset"]:link, .default.btn:link, .default.btn-icon:link, input.default[type="submit"]:visited,
@@ -2009,7 +2009,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #fff;
     background-color: #355e3b;
     outline-color: #355e3b;
-    transition: background-color 0.3s, box-shadow 0.3s; }
+    transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
     input.primary[type="submit"]:link,
     input.primary[type="button"]:link,
     input.primary[type="reset"]:link, .primary.btn:link, .primary.btn-icon:link, input.primary[type="submit"]:visited,
@@ -2041,7 +2041,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #fff;
     background-color: #87a96b;
     outline-color: #87a96b;
-    transition: background-color 0.3s, box-shadow 0.3s; }
+    transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
     input.secondary[type="submit"]:link,
     input.secondary[type="button"]:link,
     input.secondary[type="reset"]:link, .secondary.btn:link, .secondary.btn-icon:link, input.secondary[type="submit"]:visited,
@@ -2073,7 +2073,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #fff;
     background-color: #008080;
     outline-color: #008080;
-    transition: background-color 0.3s, box-shadow 0.3s; }
+    transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
     input.info[type="submit"]:link,
     input.info[type="button"]:link,
     input.info[type="reset"]:link, .info.btn:link, .info.btn-icon:link, input.info[type="submit"]:visited,
@@ -2105,7 +2105,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #fff;
     background-color: #00a550;
     outline-color: #00a550;
-    transition: background-color 0.3s, box-shadow 0.3s; }
+    transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
     input.success[type="submit"]:link,
     input.success[type="button"]:link,
     input.success[type="reset"]:link, .success.btn:link, .success.btn-icon:link, input.success[type="submit"]:visited,
@@ -2137,7 +2137,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #343434;
     background-color: #ffd300;
     outline-color: #ffd300;
-    transition: background-color 0.3s, box-shadow 0.3s; }
+    transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
     input.warning[type="submit"]:link,
     input.warning[type="button"]:link,
     input.warning[type="reset"]:link, .warning.btn:link, .warning.btn-icon:link, input.warning[type="submit"]:visited,
@@ -2169,7 +2169,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #fff;
     background-color: #e23d28;
     outline-color: #e23d28;
-    transition: background-color 0.3s, box-shadow 0.3s; }
+    transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
     input.danger[type="submit"]:link,
     input.danger[type="button"]:link,
     input.danger[type="reset"]:link, .danger.btn:link, .danger.btn-icon:link, input.danger[type="submit"]:visited,
@@ -2201,7 +2201,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #fff;
     background-color: #e23d28;
     outline-color: #e23d28;
-    transition: background-color 0.3s, box-shadow 0.3s; }
+    transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
     input.error[type="submit"]:link,
     input.error[type="button"]:link,
     input.error[type="reset"]:link, .error.btn:link, .error.btn-icon:link, input.error[type="submit"]:visited,
@@ -2233,7 +2233,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #343434;
     background-color: #fff;
     outline-color: #fff;
-    transition: background-color 0.3s, box-shadow 0.3s; }
+    transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
     input.light[type="submit"]:link,
     input.light[type="button"]:link,
     input.light[type="reset"]:link, .light.btn:link, .light.btn-icon:link, input.light[type="submit"]:visited,
@@ -2265,7 +2265,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #fff;
     background-color: #343434;
     outline-color: #343434;
-    transition: background-color 0.3s, box-shadow 0.3s; }
+    transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
     input.dark[type="submit"]:link,
     input.dark[type="button"]:link,
     input.dark[type="reset"]:link, .dark.btn:link, .dark.btn-icon:link, input.dark[type="submit"]:visited,
@@ -2297,7 +2297,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #343434;
     background-color: #ebebeb;
     outline-color: #ebebeb;
-    transition: background-color 0.3s, box-shadow 0.3s; }
+    transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
     input.shade[type="submit"]:link,
     input.shade[type="button"]:link,
     input.shade[type="reset"]:link, .shade.btn:link, .shade.btn-icon:link, input.shade[type="submit"]:visited,
@@ -2329,7 +2329,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #fff;
     background-color: #0087bd;
     outline-color: #0087bd;
-    transition: background-color 0.3s, box-shadow 0.3s; }
+    transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
     input.link[type="submit"]:link,
     input.link[type="button"]:link,
     input.link[type="reset"]:link, .link.btn:link, .link.btn-icon:link, input.link[type="submit"]:visited,
@@ -2360,7 +2360,7 @@ input[type="reset"], .btn, .btn-icon {
   color: #0087bd;
   background-color: transparent;
   outline-color: rgba(0, 135, 189, 0.2);
-  transition: color 0.3s, background-color 0.3s; }
+  transition: color 0.3s ease-out, background-color 0.3s ease-out; }
   .btn-flat:focus:not([disabled]), .btn-flat:hover:not([disabled]) {
     color: #0087bd;
     background-color: rgba(0, 135, 189, 0.1); }
@@ -2371,7 +2371,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #9a9a9a;
     background-color: transparent;
     outline-color: rgba(154, 154, 154, 0.2);
-    transition: color 0.3s, background-color 0.3s; }
+    transition: color 0.3s ease-out, background-color 0.3s ease-out; }
     .default.btn-flat:focus:not([disabled]), .default.btn-flat:hover:not([disabled]) {
       color: #9a9a9a;
       background-color: rgba(154, 154, 154, 0.1); }
@@ -2382,7 +2382,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #355e3b;
     background-color: transparent;
     outline-color: rgba(53, 94, 59, 0.2);
-    transition: color 0.3s, background-color 0.3s; }
+    transition: color 0.3s ease-out, background-color 0.3s ease-out; }
     .primary.btn-flat:focus:not([disabled]), .primary.btn-flat:hover:not([disabled]) {
       color: #355e3b;
       background-color: rgba(53, 94, 59, 0.1); }
@@ -2393,7 +2393,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #87a96b;
     background-color: transparent;
     outline-color: rgba(135, 169, 107, 0.2);
-    transition: color 0.3s, background-color 0.3s; }
+    transition: color 0.3s ease-out, background-color 0.3s ease-out; }
     .secondary.btn-flat:focus:not([disabled]), .secondary.btn-flat:hover:not([disabled]) {
       color: #87a96b;
       background-color: rgba(135, 169, 107, 0.1); }
@@ -2404,7 +2404,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #008080;
     background-color: transparent;
     outline-color: rgba(0, 128, 128, 0.2);
-    transition: color 0.3s, background-color 0.3s; }
+    transition: color 0.3s ease-out, background-color 0.3s ease-out; }
     .info.btn-flat:focus:not([disabled]), .info.btn-flat:hover:not([disabled]) {
       color: #008080;
       background-color: rgba(0, 128, 128, 0.1); }
@@ -2415,7 +2415,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #00a550;
     background-color: transparent;
     outline-color: rgba(0, 165, 80, 0.2);
-    transition: color 0.3s, background-color 0.3s; }
+    transition: color 0.3s ease-out, background-color 0.3s ease-out; }
     .success.btn-flat:focus:not([disabled]), .success.btn-flat:hover:not([disabled]) {
       color: #00a550;
       background-color: rgba(0, 165, 80, 0.1); }
@@ -2426,7 +2426,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #ffd300;
     background-color: transparent;
     outline-color: rgba(255, 211, 0, 0.2);
-    transition: color 0.3s, background-color 0.3s; }
+    transition: color 0.3s ease-out, background-color 0.3s ease-out; }
     .warning.btn-flat:focus:not([disabled]), .warning.btn-flat:hover:not([disabled]) {
       color: #ffd300;
       background-color: rgba(255, 211, 0, 0.1); }
@@ -2437,7 +2437,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #e23d28;
     background-color: transparent;
     outline-color: rgba(226, 61, 40, 0.2);
-    transition: color 0.3s, background-color 0.3s; }
+    transition: color 0.3s ease-out, background-color 0.3s ease-out; }
     .danger.btn-flat:focus:not([disabled]), .danger.btn-flat:hover:not([disabled]) {
       color: #e23d28;
       background-color: rgba(226, 61, 40, 0.1); }
@@ -2448,7 +2448,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #e23d28;
     background-color: transparent;
     outline-color: rgba(226, 61, 40, 0.2);
-    transition: color 0.3s, background-color 0.3s; }
+    transition: color 0.3s ease-out, background-color 0.3s ease-out; }
     .error.btn-flat:focus:not([disabled]), .error.btn-flat:hover:not([disabled]) {
       color: #e23d28;
       background-color: rgba(226, 61, 40, 0.1); }
@@ -2459,7 +2459,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #fff;
     background-color: transparent;
     outline-color: rgba(255, 255, 255, 0.2);
-    transition: color 0.3s, background-color 0.3s; }
+    transition: color 0.3s ease-out, background-color 0.3s ease-out; }
     .light.btn-flat:focus:not([disabled]), .light.btn-flat:hover:not([disabled]) {
       color: #fff;
       background-color: rgba(255, 255, 255, 0.1); }
@@ -2470,7 +2470,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #343434;
     background-color: transparent;
     outline-color: rgba(52, 52, 52, 0.2);
-    transition: color 0.3s, background-color 0.3s; }
+    transition: color 0.3s ease-out, background-color 0.3s ease-out; }
     .dark.btn-flat:focus:not([disabled]), .dark.btn-flat:hover:not([disabled]) {
       color: #343434;
       background-color: rgba(52, 52, 52, 0.1); }
@@ -2481,7 +2481,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #ebebeb;
     background-color: transparent;
     outline-color: rgba(235, 235, 235, 0.2);
-    transition: color 0.3s, background-color 0.3s; }
+    transition: color 0.3s ease-out, background-color 0.3s ease-out; }
     .shade.btn-flat:focus:not([disabled]), .shade.btn-flat:hover:not([disabled]) {
       color: #ebebeb;
       background-color: rgba(235, 235, 235, 0.1); }
@@ -2492,7 +2492,7 @@ input[type="reset"], .btn, .btn-icon {
     color: #0087bd;
     background-color: transparent;
     outline-color: rgba(0, 135, 189, 0.2);
-    transition: color 0.3s, background-color 0.3s; }
+    transition: color 0.3s ease-out, background-color 0.3s ease-out; }
     .link.btn-flat:focus:not([disabled]), .link.btn-flat:hover:not([disabled]) {
       color: #0087bd;
       background-color: rgba(0, 135, 189, 0.1); }
@@ -2814,7 +2814,7 @@ a.badge {
         margin: .5rem; } }
   .hoverable.card, .hoverable.card-horizontal {
     text-decoration: none;
-    transition: box-shadow 0.3s; }
+    transition: box-shadow 0.3s ease-out; }
     .hoverable.card:focus, .hoverable.card-horizontal:focus, .hoverable.card:hover, .hoverable.card-horizontal:hover {
       text-decoration: none; }
     .hoverable.card:focus, .hoverable.card-horizontal:focus, .hoverable.card:hover, .hoverable.card-horizontal:hover {
@@ -3044,7 +3044,7 @@ ul.card-list {
     height: 100%;
     background-color: #343434;
     opacity: 0;
-    transition: 0.6s ease; }
+    transition: 0.6s ease-out; }
     .image-container .overlay .text {
       font-size: 1em;
       color: #fff; }
@@ -3120,7 +3120,7 @@ img.filter.sepia {
   padding: 0.4em 0.8em;
   margin-bottom: -1px;
   border: 1px solid #bebebe;
-  transition: background-color 0.3s; }
+  transition: background-color 0.3s ease-out; }
   .list-group li.active {
     color: #fff;
     background-color: #355e3b; }
@@ -3199,7 +3199,7 @@ img.filter.sepia {
       background-color: inherit;
       border-radius: 2px; }
     .pagination li a {
-      transition: color 0.3s, background-color 0.3s; }
+      transition: color 0.3s ease-out, background-color 0.3s ease-out; }
       .pagination li a:hover {
         color: #343434;
         background-color: rgba(52, 52, 52, 0.1); }
@@ -3310,7 +3310,7 @@ carousel,
 a.chip {
   text-decoration: none;
   color: inherit;
-  transition: box-shadow 0.3s; }
+  transition: box-shadow 0.3s ease-out; }
   a.chip:focus, a.chip:hover {
     text-decoration: none; }
   a.chip:hover, a.chip:focus {
@@ -3323,7 +3323,7 @@ a.chip {
   vertical-align: baseline;
   background-color: transparent;
   box-sizing: content-box;
-  transition: color 0.3s; }
+  transition: color 0.3s ease-out; }
   .close-button:hover {
     color: inherit; }
   .close-button.at-corner {
@@ -3458,7 +3458,7 @@ a.chip {
 .collapsing-enter-active,
 .collapsing-leave-active {
   overflow: hidden;
-  transition: max-height .3s ease-out; }
+  transition: max-height 0.3s ease-out; }
 
 dropdown,
 [is="dropdown"] {
@@ -3536,7 +3536,7 @@ dropdown,
   font-family: inherit;
   font-size: inherit;
   line-height: 1.5;
-  transition: color 0.3s, background-color 0.3s; }
+  transition: color 0.3s ease-out, background-color 0.3s ease-out; }
   .dropdown-item:focus, .dropdown-item:hover {
     text-decoration: none; }
   .dropdown-item, .dropdown-item:link {
@@ -3644,7 +3644,7 @@ dropdown,
     height: 100%; }
     .input-check .input-box > .input-box-tick > path {
       opacity: 0;
-      transition: stroke-dashoffset .15s ease-in;
+      transition: stroke-dashoffset 0.15s ease-in;
       stroke: #fff;
       stroke-width: 2.3px;
       stroke-dashoffset: 20;
@@ -3691,7 +3691,7 @@ dropdown,
     background: #fff;
     border-radius: 50%;
     opacity: 0;
-    transition: width .15s ease-in, height .15s ease-in; }
+    transition: width 0.15s ease-in, height 0.15s ease-in; }
 
 .message {
   color: #fff;
@@ -3847,7 +3847,7 @@ navbar,
   font-family: inherit;
   font-size: inherit;
   color: inherit;
-  transition: color 0.3s; }
+  transition: color 0.3s ease-out; }
   .nav-item .nav-link:hover, .navbar-brand.text:hover, .nav-item .dropdown .dropdown-button:hover {
     color: #87a96b; }
 
@@ -3937,7 +3937,7 @@ navbar,
   margin: 6px;
   background-color: inherit;
   border-radius: 2px;
-  transition: 0.3s; }
+  transition: all 0.3s ease-out; }
 
 .navbar-toggle.change .icon-bar1 {
   -webkit-transform: rotate(-45deg) translate(-9px, 7px);
@@ -4024,7 +4024,7 @@ navbar,
   border-radius: 50%;
   outline: none;
   box-sizing: content-box;
-  transition: background-color 0.3s; }
+  transition: background-color 0.3s ease-out; }
   .scroll-to-container .scroll-to-top:hover,
   .scroll-to-container .scroll-to-bottom:hover {
     background-color: #182a1a; }

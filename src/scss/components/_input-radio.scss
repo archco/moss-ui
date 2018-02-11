@@ -43,7 +43,7 @@
       background: $input-switch-stroke-color;
       border-radius: 50%;
       opacity: 0;
-      transition: width .15s ease-in, height .15s ease-in;
+      @include transition(width .15s ease-in, height .15s ease-in);
     }
   }
 }

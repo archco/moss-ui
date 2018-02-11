@@ -43,5 +43,5 @@
 .collapsing-enter-active,
 .collapsing-leave-active {
   overflow: hidden;
-  transition: max-height .3s ease-out;
+  @include transition(max-height $transition-duration $transition-timing-function);
 }

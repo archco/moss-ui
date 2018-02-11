@@ -9,7 +9,7 @@ navbar,
   font-family: inherit;
   font-size: inherit;
   color: $nav-link-color;
-  transition: color $transition-time;
+  @include transition(color $transition-duration $transition-timing-function);
 
   &:hover { color: $nav-link-hover-color; }
 }
@@ -92,7 +92,7 @@ navbar,
     margin: round($navbar-toggle-width * 6 / 35);
     background-color: $nav-link-color;
     @include border-radius($radius-normal - 2);
-    transition: $transition-time;
+    @include transition();
   }
 
   &.change {

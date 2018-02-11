@@ -6,7 +6,7 @@
   vertical-align: baseline;
   background-color: transparent;
   box-sizing: content-box;
-  transition: color $transition-time;
+  @include transition(color $transition-duration $transition-timing-function);
 
   &:hover {
     color: inherit;

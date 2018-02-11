@@ -59,7 +59,7 @@
 
   &.hoverable {
     @include no-decoration;
-    transition: box-shadow $transition-time;
+    @include transition(box-shadow $transition-duration $transition-timing-function);
 
     &:focus,
     &:hover {
