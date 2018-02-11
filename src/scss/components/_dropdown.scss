@@ -23,7 +23,7 @@ dropdown,
   min-width: $dropdown-min-width;
   background-color: $dropdown-bg-color;
   border-color: $dropdown-bg-color;
-  box-shadow: $dropdown-shadow;
+  @include box-shadow($dropdown-shadow);
 
   &.show { display: flex; }
 }
