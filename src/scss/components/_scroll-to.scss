@@ -6,7 +6,7 @@
   margin-left: -.25rem;
   color: $scroll-to-color;
   background-color: rgba($scroll-to-bg-color, .5);
-  border-radius: 50%;
+  @include border-radius(50%);
   outline: none;
   box-sizing: content-box;
   transition: background-color $transition-time;

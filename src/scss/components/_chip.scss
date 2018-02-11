@@ -10,7 +10,7 @@
   font-size: $chip-font-size;
   line-height: strip-unit($_chip-size);
   background-color: $chip-bg-color;
-  border-radius: $_chip-size;
+  @include border-radius($_chip-size);
 
   img {
     float: left;
@@ -18,7 +18,7 @@
     height: $_chip-size;
     margin-right: $_chip-size / 4;
     margin-left: -$_chip-size / 2;
-    border-radius: 50%;
+    @include border-radius(50%);
   }
 }
 

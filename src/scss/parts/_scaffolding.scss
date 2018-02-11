@@ -182,7 +182,7 @@ code {
   font-size: $code-font-size;
   color: $code-color;
   background-color: $code-bg-color;
-  border-radius: $code-border-radius;
+  @include border-radius($code-border-radius);
 
   // code inside link
   a & {

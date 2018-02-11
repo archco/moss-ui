@@ -8,7 +8,7 @@
     padding: $pagination-item-padding-y $pagination-item-padding-x;
     color: inherit;
     background-color: inherit;
-    border-radius: $pagination-item-border-radius;
+    @include border-radius($pagination-item-border-radius);
   }
 
   a {

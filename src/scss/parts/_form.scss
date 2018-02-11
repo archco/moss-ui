@@ -5,8 +5,8 @@
 fieldset {
   padding: .5rem 1rem;
   margin-bottom: 1rem;
-  border: $filedset-border;
-  border-radius: $radius-normal;
+  border: $fieldset-border;
+  @include border-radius($radius-normal);
 }
 
 legend {
@@ -54,7 +54,7 @@ textarea {
   line-height: 1.4;
   background-color: transparent;
   border: $input-border;
-  border-radius: $input-radius;
+  @include border-radius($input-radius);
 
   @each $name, $color in $color-set {
     &.#{$name} {

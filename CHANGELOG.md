@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Change export type of Util to library. #80
 - Now available to modal close action with `data-toggle` attribute. #76
+- Rename badge's modifier class name `rounded` to `round`.
 
 ## [0.4.2] - 2017-12-24
 

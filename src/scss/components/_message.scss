@@ -12,7 +12,7 @@
   padding: $message-padding-y $message-padding-x;
   margin: $message-margin;
   vertical-align: middle;
-  border-radius: $radius-normal;
+  @include border-radius($message-border-radius);
 
   .close-button {
     font-size: 1.5rem;

@@ -108,13 +108,29 @@
 .shadow-inset-far { box-shadow: $shadow-inset-far; }
 
 // rounded
-.rounded { border-radius: $radius-normal; }
-.rounded-small { border-radius: $radius-small; }
-.rounded-large { border-radius: $radius-large; }
-.rounded-top { @include border-top-radius($radius-normal); }
-.rounded-right { @include border-right-radius($radius-normal); }
-.rounded-bottom { @include border-bottom-radius($radius-normal); }
-.rounded-left { @include border-left-radius($radius-normal); }
+@each $key, $val in (small: $radius-small, normal: $radius-normal, large: $radius-large) {
+  $_suffix: if($key == normal, '', '-' + $key);
+
+  .rounded#{$_suffix} {
+    border-radius: $val !important;
+  }
+  .rounded-top#{$_suffix} {
+    border-top-left-radius: $val !important;
+    border-top-right-radius: $val !important;
+  }
+  .rounded-right#{$_suffix} {
+    border-top-right-radius: $val !important;
+    border-bottom-right-radius: $val !important;
+  }
+  .rounded-bottom#{$_suffix} {
+    border-bottom-left-radius: $val !important;
+    border-bottom-right-radius: $val !important;
+  }
+  .rounded-left#{$_suffix} {
+    border-top-left-radius: $val !important;
+    border-bottom-left-radius: $val !important;
+  }
+}
 
 // sizing
 @each $key, $value in (w: width, h: height) {

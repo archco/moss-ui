@@ -18,7 +18,7 @@
   color: $toast-text-color;
   text-align: center;
   background-color: $toast-bg-color;
-  border-radius: $toast-border-radius;
+  @include border-radius($toast-border-radius);
 }
 
 // effects.

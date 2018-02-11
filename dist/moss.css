@@ -2767,7 +2767,7 @@ input[type="reset"], .btn, .btn-icon {
       background-color: #0096d1; }
     .badge.link[href]:active {
       background-color: #0078a9; }
-  .badge.rounded {
+  .badge.round {
     padding-right: 0.68em;
     padding-left: 0.68em;
     border-radius: 1.7em; }
@@ -5311,30 +5311,62 @@ simple-crud,
 .shadow-inset-far {
   box-shadow: inset 4px 4px 16px rgba(0, 0, 0, 0.3); }
 
-.rounded {
-  border-radius: 4px; }
-
 .rounded-small {
-  border-radius: 2px; }
+  border-radius: 2px !important; }
 
-.rounded-large {
-  border-radius: 8px; }
+.rounded-top-small {
+  border-top-left-radius: 2px !important;
+  border-top-right-radius: 2px !important; }
+
+.rounded-right-small {
+  border-top-right-radius: 2px !important;
+  border-bottom-right-radius: 2px !important; }
+
+.rounded-bottom-small {
+  border-bottom-left-radius: 2px !important;
+  border-bottom-right-radius: 2px !important; }
+
+.rounded-left-small {
+  border-top-left-radius: 2px !important;
+  border-bottom-left-radius: 2px !important; }
+
+.rounded {
+  border-radius: 4px !important; }
 
 .rounded-top {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px; }
+  border-top-left-radius: 4px !important;
+  border-top-right-radius: 4px !important; }
 
 .rounded-right {
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px; }
+  border-top-right-radius: 4px !important;
+  border-bottom-right-radius: 4px !important; }
 
 .rounded-bottom {
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px; }
+  border-bottom-left-radius: 4px !important;
+  border-bottom-right-radius: 4px !important; }
 
 .rounded-left {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px; }
+  border-top-left-radius: 4px !important;
+  border-bottom-left-radius: 4px !important; }
+
+.rounded-large {
+  border-radius: 8px !important; }
+
+.rounded-top-large {
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important; }
+
+.rounded-right-large {
+  border-top-right-radius: 8px !important;
+  border-bottom-right-radius: 8px !important; }
+
+.rounded-bottom-large {
+  border-bottom-left-radius: 8px !important;
+  border-bottom-right-radius: 8px !important; }
+
+.rounded-left-large {
+  border-top-left-radius: 8px !important;
+  border-bottom-left-radius: 8px !important; }
 
 .w-25 {
   width: 25% !important; }

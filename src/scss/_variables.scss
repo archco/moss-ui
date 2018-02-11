@@ -92,6 +92,13 @@ $color-set: (
   link: $link-color,
 ) !default;
 
+// Options
+//============================
+
+$enable-rounded: true !default;
+$enable-shadows: true !default;
+$enable-transitions: true !default;
+
 // Misc
 //==============================
 
@@ -202,7 +209,7 @@ $grid-columns: 12 !default;
 $grid-gutter-width: 1.5rem !default;
 
 // form
-$filedset-border: 2px solid $primary-color !default;
+$fieldset-border: 2px solid $primary-color !default;
 $legend-color: $primary-color !default;
 $label-color: $text-color !default;
 $label-color-focused: $primary-color !default;
@@ -387,6 +394,7 @@ $message-default-bg-color: $default-color !default;
 $message-padding-y: 1rem !default;
 $message-padding-x: 1.5rem !default;
 $message-margin: 8px !default;
+$message-border-radius: $radius-normal !default;
 
 // simple-crud
 $simple-crud-min-height: 3em !default;

@@ -79,7 +79,7 @@
     vertical-align: middle;
     background: $input-switch-fill-color;
     border: $input-switch-border-width solid $input-switch-border-color;
-    border-radius: percentage(1 / 8);
+    @include border-radius(percentage(1 / 8));
     box-sizing: content-box;
     user-select: none;
 

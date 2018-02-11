@@ -91,7 +91,7 @@ navbar,
     height: round($navbar-toggle-width / 7);
     margin: round($navbar-toggle-width * 6 / 35);
     background-color: $nav-link-color;
-    border-radius: $radius-normal - 2;
+    @include border-radius($radius-normal - 2);
     transition: $transition-time;
   }
 

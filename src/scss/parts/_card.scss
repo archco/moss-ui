@@ -37,7 +37,7 @@
   padding: 0;
   margin-bottom: .75rem;
   background-color: $card-bg-color;
-  border-radius: $card-radius;
+  @include border-radius($card-radius);
   box-shadow: $card-shadow;
 
   &.bordered {
