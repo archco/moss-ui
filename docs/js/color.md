@@ -1,5 +1,7 @@
 # Color
 
+**Deprecated!** use instead [MooColor](https://github.com/archco/moo-color#readme)
+
 > source: [js/lib/color.js](../../src/js/lib/color.js)
 
 Javascript color utility library.

@@ -117,19 +117,21 @@ function convertColor(hexToRgb) {
   }
 }
 
-function getLightness() {
-  var value = Color.lightness(document.querySelector('#input-lightness').value);
+function getBrightness() {
+  var input = document.querySelector('#input-lightness');
+  var value = new Color(input.value).brightness;
   document.querySelector('#output-lightness').innerHTML = 'lightness value: ' + value;
 }
 
 function getContrast() {
-  var inputValue = document.querySelector('#input-contrast').value;
-  var contrast = Color.contrast(inputValue);
+  var input = document.querySelector('#input-contrast');
   var output = document.querySelector('#output-contrast');
+  var color = new Color(input.value);
+  var contrast = new Color(color.isLight ? '#333' : '#fff');
 
-  output.style.backgroundColor = inputValue;
-  output.style.color = contrast;
-  output.innerHTML = 'bg-color: ' + inputValue + ' contrast-color: ' + contrast;
+  output.style.backgroundColor = input.value;
+  output.style.color = contrast.toHex(true);
+  output.innerHTML = 'bg-color: ' + color.toRgb() + ' contrast-color: ' + contrast.toRgb();
 }
 
 /************************************************************

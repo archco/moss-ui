@@ -60,7 +60,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 
 ### JS Libraries
 
-- [Color](js/color.md)
+- [MooColor](https://github.com/archco/moo-color#readme)
 - [ElementMeasurer](https://github.com/archco/element-measurer#api)
 - [ElementUtil](https://github.com/archco/element-util/tree/master/docs)
 - [Util](js/util.md)
