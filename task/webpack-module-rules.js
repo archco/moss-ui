@@ -56,4 +56,9 @@ module.exports = {
       ],
     }),
   },
+
+  svg: {
+    test: /\.svg$/,
+    loader: 'svg-inline-loader?classPrefix',
+  },
 };

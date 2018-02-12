@@ -3240,7 +3240,7 @@ carousel,
   position: absolute; }
 
 .agile__dot {
-  margin: 0 .5rem; }
+  margin: 0 .25rem; }
   .agile__dot > button {
     text-decoration: none;
     line-height: 1.15;
@@ -3251,13 +3251,26 @@ carousel,
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
-    width: 20px;
-    height: 4px;
-    background-color: rgba(255, 255, 255, 0.5); }
+    position: relative;
+    width: 25px;
+    height: 25px;
+    background-color: transparent; }
     .agile__dot > button:focus, .agile__dot > button:hover {
       text-decoration: none; }
+    .agile__dot > button::after {
+      top: 50%;
+      left: 50%;
+      bottom: auto;
+      right: auto;
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+      position: absolute;
+      width: 20px;
+      height: 4px;
+      background-color: rgba(255, 255, 255, 0.5);
+      content: ""; }
 
-.agile__dot--current > button {
+.agile__dot--current > button::after {
   background-color: #fff; }
 
 .agile__arrow {

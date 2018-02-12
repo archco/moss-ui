@@ -13,17 +13,27 @@ carousel,
 }
 
 .agile__dot {
-  margin: 0 .5rem;
+  margin: 0 .25rem;
 
   > button {
     @include btn-base();
-    width: 20px;
-    height: 4px;
-    background-color: $carousel-dot-color;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+
+    &::after {
+      @include position-middle-center();
+      position: absolute;
+      width: 20px;
+      height: 4px;
+      background-color: $carousel-dot-color;
+      content: "";
+    }
   }
 }
 
-.agile__dot--current > button {
+.agile__dot--current > button::after {
   background-color: $carousel-dot-active-color;
 }
 

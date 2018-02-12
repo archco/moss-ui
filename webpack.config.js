@@ -25,10 +25,11 @@ let config = {
       Rules.js,
       Rules.vue,
       Rules.scss,
+      Rules.svg,
     ],
   },
   resolve: {
-    extensions: ['.js', '.json', '.scss', '.vue'],
+    extensions: ['.js', '.json', '.scss', '.vue', '.svg'],
     alias: {
       vue$: 'vue/dist/vue.esm.js',
     },
