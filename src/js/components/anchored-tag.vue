@@ -1,5 +1,6 @@
 <script>
 import NodeUtil from '../mixins/node-util';
+import { strToKebab } from '../lib/util';
 
 export default {
   mixins: [NodeUtil],
@@ -15,16 +16,14 @@ export default {
   },
   render(createElement) {
     // create kebabCase id
-    let tagId = this.getChildrenTextContent(this.$slots.default)
-      .toLowerCase()
-      .replace(/\W+/g, '-')
-      .replace(/(^-|-$)/g, '');
-    let data = {
+    const text = this.getChildrenTextContent(this.$slots.default);
+    const tagId = strToKebab(text);
+    const data = {
       attrs: {
-        id: (this.owned) ? tagId : false,
+        id: this.owned ? tagId : false,
       }
     };
-    let children = [
+    const children = [
       createElement('a', {
         attrs: {
           href: '#' + tagId

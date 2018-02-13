@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Adds new test environment for vue component via vue-test-utils. #75, #78
 - Add a new color library 'moo-color'. #72
+- Add string-case convert methods in Util: `strToNormal()`, `strToCamel()` and `strToKebab()`.
 
 ### Changed
 
@@ -22,6 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Now available to modal close action with `data-toggle` attribute. #76
 - Rename badge's modifier class name `rounded` to `round`.
 - Rename scss-variable `$transition-time` to `$transition-duration`.
+- Improve converting to id attribute in 'anchored-tag.vue' via `Util.strToKebab()` method.
 
 ## [0.4.2] - 2017-12-24
 

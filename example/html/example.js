@@ -31,7 +31,7 @@ var treeData2 = [
         name: '<a href="./js-libraries.html">JS Libraries</a>',
         items: [
           { name: '<a href="./js-libraries.html#color">Color</a>' },
-          { name: '<a href="./js-libraries.html#elementutil">ElementUtil</a>' },
+          { name: '<a href="./js-libraries.html#element-util">ElementUtil</a>' },
           { name: '<a href="./js-libraries.html#util">Util</a>' },
         ],
       },
@@ -175,12 +175,14 @@ function getContrast() {
   if (!arrowIcon) return;
 
   arrowIcon.innerHTML = window.Moss.lib.Svg.arrowRight;
-  arrowIcon.style.transition = 'transform .5s ease-in-out';
+  arrowIcon.style.transition = 'all .5s ease-in-out';
   arrowIcon.addEventListener('click', function () {
     if (arrowIcon.style.transform == '') {
       arrowIcon.style.transform = 'rotate(3.25turn)';
+      arrowIcon.style.color = '#f80';
     } else {
       arrowIcon.style.transform = '';
+      arrowIcon.style.color = '';
     }
   });
 })();

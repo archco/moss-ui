@@ -17,4 +17,17 @@ describe('#AnchoredTag', () => {
     expect(wrapper.element.tagName).toBe('H1');
     expect(wrapper.element.textContent).toBe('Hello');
   });
+
+  it('id will be kebab-case.', () => {
+    const wrapper = mount(AnchoredTag, {
+      propsData: {
+        tag: 'h1',
+        owned: true,
+      },
+      slots: {
+        default: 'HelloWorld',
+      }
+    });
+    expect(wrapper.element.getAttribute('id')).toEqual('hello-world');
+  });
 });

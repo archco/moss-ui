@@ -119,7 +119,7 @@ export function strToKebab(str) {
 export function strToNormal(str) {
   return str.replace(/([A-Z][a-z])/g, ' $1')
     .replace(/([a-z])([A-Z])/g, '$1 $2')
-    .replace(/([\s|\-|_|.]+)/g, ' ')
+    .replace(/([\W|_]+)/g, ' ')
     .trim().toLowerCase();
 }
 
