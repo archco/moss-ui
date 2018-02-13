@@ -39,6 +39,28 @@ describe('Util', () => {
     });
   });
 
+  describe('#strToNormal', () => {
+    it('camel case to normal.', () => {
+      expect(Util.strToNormal('HelloWorld')).toBe('hello world');
+      expect(Util.strToNormal('helloWorld')).toBe('hello world');
+      expect(Util.strToNormal('SimpleCRUD')).toBe('simple crud');
+      expect(Util.strToNormal('HTMLElement')).toBe('html element');
+    });
+
+    it('kebab to normal.', () => {
+      expect(Util.strToNormal('hello-world')).toBe('hello world');
+      expect(Util.strToNormal('-Hello--World')).toBe('hello world');
+    });
+
+    it('snake to normal.', () => {
+      expect(Util.strToNormal('snake_case')).toBe('snake case');
+    });
+
+    it('dot to normal.', () => {
+      expect(Util.strToNormal('hello.world')).toBe('hello world');
+    });
+  });
+
   describe('#strToCamel', () => {
     it('CamelCase', () => {
       expect(Util.strToCamel('hello-world')).toBe('HelloWorld');
@@ -55,6 +77,8 @@ describe('Util', () => {
       expect(Util.strToKebab('HelloWorld')).toBe('hello-world');
       expect(Util.strToKebab('space cowboy')).toBe('space-cowboy');
       expect(Util.strToKebab('SimpleCRUD')).toBe('simple-crud');
+      expect(Util.strToKebab('HTMLElement')).toBe('html-element');
+      expect(Util.strToKebab('  HTMLElement  is  good ')).toBe('html-element-is-good');
     });
   });
 });

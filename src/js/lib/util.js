@@ -94,9 +94,8 @@ export function isMobileSize(size = 800) {
  * @returns {string}
  */
 export function strToCamel(str, isSmallCamel = false) {
-  return str.replace(/([\s])/g, '-')
-    .toLowerCase()
-    .split('-')
+  return strToNormal(str)
+    .split(' ')
     .map((word, i) => (i === 0 && isSmallCamel) ? word : word[0].toUpperCase() + word.substr(1))
     .join('');
 }
@@ -108,9 +107,20 @@ export function strToCamel(str, isSmallCamel = false) {
  * @returns {string}
  */
 export function strToKebab(str) {
-  return str.replace(/([\s])/g, '-')
-    .replace(/([a-z])([A-Z])/g, '$1-$2')
-    .toLowerCase();
+  return strToNormal(str).replace(/([\s])/g, '-');
+}
+
+/**
+ * String to normal case. e.g. 'hello world'
+ *
+ * @param {string} str
+ * @returns {string}
+ */
+export function strToNormal(str) {
+  return str.replace(/([A-Z][a-z])/g, ' $1')
+    .replace(/([a-z])([A-Z])/g, '$1 $2')
+    .replace(/([\s|\-|_|.]+)/g, ' ')
+    .trim().toLowerCase();
 }
 
 /**
@@ -120,9 +130,20 @@ export function strToKebab(str) {
  * @returns {string}
  */
 export function capitalize(str) {
-  return str
-    .toLowerCase()
+  return strToNormal(str)
     .split(' ')
     .map(word => word[0].toUpperCase() + word.substr(1))
     .join(' ');
+}
+
+/**
+ * SVG wrapping for resizing.
+ *
+ * @param {string} svg
+ * @param {string} width
+ * @param {string} height
+ * @returns {string}
+ */
+export function svgWrap(svg, width, height) {
+  return `<svg viewBox="0 0 ${width} ${height}" width="${width}" height="${height}">${svg}</svg>`;
 }
