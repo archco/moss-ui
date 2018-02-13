@@ -12,6 +12,7 @@
 
 <script>
 import TreeItem from './tree-item.vue';
+import { arrowRight, arrowDown } from '../../svg';
 
 export default {
   components: { TreeItem },
@@ -28,11 +29,11 @@ export default {
     },
     openedHtml: {
       type: String,
-      default: '<i class="fa fa-angle-down fa-fw" aria-hidden="true"></i>',
+      default: `<i class="icon">${arrowDown}</i>`,
     },
     closedHtml: {
       type: String,
-      default: '<i class="fa fa-angle-right fa-fw" aria-hidden="true"></i>',
+      default: `<i class="icon">${arrowRight}</i>`,
     },
   },
   mounted() {

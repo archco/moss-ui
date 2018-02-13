@@ -22,3 +22,4 @@ export { default as TreeItem } from './tree-item.vue';
 export { default as InputCheck } from './input-check.vue';
 export { default as InputRadio } from './input-radio.vue';
 export { default as Carousel } from 'vue-agile/dist/Agile.vue';
+export { default as Icon } from './icon.vue';

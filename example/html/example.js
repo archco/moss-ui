@@ -165,3 +165,22 @@ function getContrast() {
     eu.sort('#sort-table-target');
   }
 })();
+
+/***********************************************************
+  SVG
+***********************************************************/
+
+(function () {
+  var arrowIcon = document.querySelector('#svg-arrow-example');
+  if (!arrowIcon) return;
+
+  arrowIcon.innerHTML = window.Moss.lib.Svg.arrowRight;
+  arrowIcon.style.transition = 'transform .5s ease-in-out';
+  arrowIcon.addEventListener('click', function () {
+    if (arrowIcon.style.transform == '') {
+      arrowIcon.style.transform = 'rotate(3.25turn)';
+    } else {
+      arrowIcon.style.transform = '';
+    }
+  });
+})();

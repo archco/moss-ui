@@ -740,6 +740,11 @@ h5.accent,
 h6.accent {
   font-family: Georgia, serif; }
 
+i.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em; }
+
 [v-cloak] {
   display: none !important; }
 

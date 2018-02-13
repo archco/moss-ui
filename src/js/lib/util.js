@@ -135,15 +135,3 @@ export function capitalize(str) {
     .map(word => word[0].toUpperCase() + word.substr(1))
     .join(' ');
 }
-
-/**
- * SVG wrapping for resizing.
- *
- * @param {string} svg
- * @param {string} width
- * @param {string} height
- * @returns {string}
- */
-export function svgWrap(svg, width, height) {
-  return `<svg viewBox="0 0 ${width} ${height}" width="${width}" height="${height}">${svg}</svg>`;
-}

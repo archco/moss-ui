@@ -27,11 +27,11 @@ export default {
     },
     openedHtml: {
       type: String,
-      default: '<i class="fa fa-angle-down fa-fw" aria-hidden="true"></i>',
+      default: '',
     },
     closedHtml: {
       type: String,
-      default: '<i class="fa fa-angle-right fa-fw" aria-hidden="true"></i>',
+      default: '',
     },
   },
   data() {

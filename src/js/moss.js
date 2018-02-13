@@ -10,6 +10,7 @@ import { MooColor as Color } from 'moo-color';
 import * as Util from './lib/util';
 import * as components from './components';
 import * as directives from './directives';
+import * as Svg from '../svg';
 import { version } from '../../package.json';
 
 const DefaultOptions = {
@@ -48,6 +49,7 @@ const MossUI = {
         Util,
         ElementUtil,
         ElementMeasurer,
+        Svg,
       },
     };
     window.Moss = Vue.Moss = Vue.prototype.$moss = Moss;
