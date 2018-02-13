@@ -186,3 +186,20 @@ function getContrast() {
     }
   });
 })();
+
+(function () {
+  var caretIcon = document.querySelector('#svg-caret-example');
+  if (!caretIcon) return;
+
+  caretIcon.innerHTML = window.Moss.lib.Svg.caretDown;
+  caretIcon.style.transition = 'all .2s ease-out';
+  caretIcon.addEventListener('click', function () {
+    if (caretIcon.style.transform == '') {
+      caretIcon.style.transform = 'scale(2, 0.5) rotate(0.5turn)';
+      caretIcon.style.color = 'aqua';
+    } else {
+      caretIcon.style.transform = '';
+      caretIcon.style.color = '';
+    }
+  });
+})();
