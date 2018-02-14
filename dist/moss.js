@@ -3076,11 +3076,6 @@ exports.default = {
   },
 
   methods: {
-    /**
-     * Return data object for chip component.
-     *
-     * @return {Object}
-     */
     dataObject: function dataObject() {
       return {
         'class': {
@@ -3088,15 +3083,9 @@ exports.default = {
         }
       };
     },
-
-    /**
-     * Return array of child nodes.
-     *
-     * @param  {Function} createElement
-     * @return {Array}
-     */
     childrenArray: function childrenArray(createElement) {
       var children = [];
+      // <img>
       if (this.imgSrc) {
         children.push(createElement('img', {
           attrs: {
@@ -3105,20 +3094,20 @@ exports.default = {
           }
         }));
       }
-      children = children.concat(this.$slots.default);
+      // <span>
+      children.push(createElement('span', {}, this.$slots.default));
+      // <close-button>
       if (this.closeable) {
         children.push(createElement(_closeButton2.default, {
           props: {
             action: 'remove'
           }
-        }, ['✖']));
+        }));
       }
-
       return children;
     },
     coloring: function coloring() {
       if (!this.color) return;
-
       var color = new _mooColor.MooColor(this.color);
       this.$el.style.backgroundColor = color.toHex(true);
       this.$el.style.color = color.isLight ? '#333' : '#fff';

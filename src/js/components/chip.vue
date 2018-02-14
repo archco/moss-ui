@@ -33,11 +33,6 @@ export default {
     );
   },
   methods: {
-    /**
-     * Return data object for chip component.
-     *
-     * @return {Object}
-     */
     dataObject() {
       return {
         'class': {
@@ -45,14 +40,9 @@ export default {
         }
       };
     },
-    /**
-     * Return array of child nodes.
-     *
-     * @param  {Function} createElement
-     * @return {Array}
-     */
     childrenArray(createElement) {
-      let children = [];
+      const children = [];
+      // <img>
       if (this.imgSrc) {
         children.push(createElement(
           'img',
@@ -64,7 +54,9 @@ export default {
           }
         ));
       }
-      children = children.concat(this.$slots.default);
+      // <span>
+      children.push(createElement('span', {}, this.$slots.default));
+      // <close-button>
       if (this.closeable) {
         children.push(createElement(
           CloseButton,
@@ -72,17 +64,14 @@ export default {
             props: {
               action: 'remove'
             }
-          },
-          ['✖']
+          }
         ));
       }
-
       return children;
     },
     coloring() {
       if (!this.color) return;
-
-      let color = new MooColor(this.color);
+      const color = new MooColor(this.color);
       this.$el.style.backgroundColor = color.toHex(true);
       this.$el.style.color = color.isLight ? '#333' : '#fff';
     },

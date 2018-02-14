@@ -2,7 +2,9 @@
   // local variables.
   $_chip-size: $chip-height;
 
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
   height: $chip-height;
   padding: 0 $_chip-size / 2;
   margin-right: $_chip-size / 4;
@@ -13,12 +15,17 @@
   @include border-radius($_chip-size);
 
   img {
-    float: left;
     width: $_chip-size;
     height: $_chip-size;
     margin-right: $_chip-size / 4;
     margin-left: -$_chip-size / 2;
     @include border-radius(50%);
+  }
+
+  .close-button {
+    font-size: 1.2em;
+    margin-left: .25rem;
+    margin-right: -.25rem;
   }
 }
 

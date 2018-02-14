@@ -3320,7 +3320,13 @@ carousel,
   right: 0; }
 
 .chip {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  vertical-align: middle;
   height: 2em;
   padding: 0 1em;
   margin-right: 0.5em;
@@ -3330,12 +3336,15 @@ carousel,
   background-color: rgba(52, 52, 52, 0.1);
   border-radius: 2em; }
   .chip img {
-    float: left;
     width: 2em;
     height: 2em;
     margin-right: 0.5em;
     margin-left: -1em;
     border-radius: 50%; }
+  .chip .close-button {
+    font-size: 1.2em;
+    margin-left: .25rem;
+    margin-right: -.25rem; }
 
 a.chip {
   text-decoration: none;
@@ -3348,25 +3357,31 @@ a.chip {
 
 .close-button {
   padding: 0;
-  margin-left: .25em;
-  color: rgba(0, 0, 0, 0.3);
+  margin: 0;
+  color: currentColor;
   vertical-align: inherit;
   line-height: 0;
   background-color: transparent;
-  box-sizing: content-box;
-  transition: color 0.3s ease-out; }
+  opacity: .5;
+  transition: opacity 0.3s ease-out; }
   .close-button:hover {
-    color: inherit; }
+    opacity: 1; }
   .close-button.at-corner {
     position: absolute;
-    top: .5em;
-    right: .5em; }
+    top: 0.5em;
+    right: 0.5em;
+    bottom: auto;
+    left: auto;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); }
   .close-button.at-right-middle {
     position: absolute;
     top: 50%;
-    right: 1em;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%); }
+    right: 0.5em;
+    bottom: auto;
+    left: auto;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%); }
 
 .collapse-toggle {
   text-decoration: none;
