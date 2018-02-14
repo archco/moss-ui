@@ -2,14 +2,18 @@
   <button type="button"
     :class="classObject"
     @click="onClick">
-    <slot></slot>
+    <slot>
+      <icon name="close" />
+    </slot>
   </button>
 </template>
 
 <script>
 import ElementUtil from 'element-util';
+import Icon from './icon.vue';
 
 export default {
+  components: { Icon },
   props: {
     position: {
       type: String,
@@ -23,7 +27,7 @@ export default {
       type: String,
       default: '', // '' (parentNode) | selector
     },
-    parentToRelative: {
+    related: {
       type: Boolean,
       default: false, // If it true, parent node's style position is set 'relative'.
     }
@@ -38,19 +42,18 @@ export default {
     };
   },
   mounted() {
-    if (this.parentToRelative) {
+    if (this.related || this.position !== '') {
       this.$el.parentNode.style.position = 'relative';
     }
   },
   methods: {
     onClick(event) {
-      this.$emit('close');
-      if (!this.action) return;
+      const btn = event.currentTarget;
+      const target = this.target
+        ? ElementUtil.findAncestor(btn, this.target)
+        : btn.parentNode;
 
-      let target = (this.target)
-        ? ElementUtil.findAncestor(event.target, this.target)
-        : event.target.parentNode;
-
+      this.$emit('close', target);
       if (this.action == 'hide') {
         ElementUtil.hide(target);
       } else if (this.action == 'remove') {

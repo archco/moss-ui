@@ -34,13 +34,14 @@
           <ul class="menu list fixed">
             <li is="anchored-tag" tag="li">Carousel</li>
             <li is="anchored-tag" tag="li">Chip</li>
+            <li is="anchored-tag" tag="li">CloseButton</li>
             <li is="anchored-tag" tag="li">Collapse</li>
             <li is="anchored-tag" tag="li">Dropdown</li>
             <li is="anchored-tag" tag="li">Message</li>
             <li is="anchored-tag" tag="li">Modal</li>
             <li is="anchored-tag" tag="li">Nav</li>
             <li is="anchored-tag" tag="li">Parallax</li>
-            <li is="anchored-tag" tag="li">Simple CRUD</li>
+            <li is="anchored-tag" tag="li">SimpleCRUD</li>
             <li is="anchored-tag" tag="li">Switch</li>
             <li is="anchored-tag" tag="li">Tab</li>
             <li is="anchored-tag" tag="li">Toast</li>
@@ -74,6 +75,17 @@
           <h3>Colored Chip</h3>
           <chip tag="span" color="#ffa500">Orange</chip>
           <chip img-src="https://www.cloudschool.org/static/user_images/avatar-04.gif" img-alt="avatar" color="#69c" closeable>Colored</chip>
+          <anchored-tag tag="h1" owned>CloseButton</anchored-tag>
+          <h2>Default usage</h2><span>test text<close-button /></span><span class="badge">Badge<close-button action="remove"/></span>
+          <h2>Specifying position</h2>
+          <h3>middle-right</h3>
+          <div class="pad bg-color-info">
+            Hello world<close-button position="middle-right"/></div>
+          <h3>top-right</h3>
+          <div class="pad bg-color-secondary">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><close-button position="top-right"/>
+          </div>
+          <h2>Hook on 'close' event</h2><span>test text <close-button action="" @close="eventTest">✖</close-button></span>
           <anchored-tag tag="h1" owned>Collapse</anchored-tag>
           <h3>Collapse Basic</h3>
           <button class="btn default" v-collapse:test-collapse>collapse</button>
@@ -339,7 +351,7 @@
             <p>content here...</p>
           </div></div>
           <parallax src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" height="20em"></parallax>
-          <anchored-tag tag="h1" owned>Simple CRUD</anchored-tag>
+          <anchored-tag tag="h1" owned>SimpleCRUD</anchored-tag>
           <form class="form-inline" action="#" method="POST">
             <input type="text" name="name" placeholder="Name">
             <input type="number" name="age" placeholder="Age">

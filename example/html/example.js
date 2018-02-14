@@ -49,6 +49,9 @@ window.vm = new window.Vue({
     test : function (arg) {
       console.log(arg);
     },
+    eventTest: function(event) {
+      console.log(event);
+    },
   },
 
   beforeMount: function () {
@@ -208,17 +211,15 @@ function getContrast() {
   var closeIcon = document.querySelector('#svg-close-example');
   if (!closeIcon) return;
 
-  var baseAnimation = '3s linear infinite spin';
-
   closeIcon.innerHTML = window.Moss.lib.Svg.close;
   closeIcon.style.transition = 'color .2s ease-out';
-  closeIcon.style.animation = baseAnimation;
+  closeIcon.style.animation = '3s linear infinite spin';
   closeIcon.addEventListener('mouseover', function () {
-    closeIcon.style.animation = '.5s linear infinite spin';
+    closeIcon.style.animationDuration = '0.5s';
     closeIcon.style.color = '#32cd32';
   });
   closeIcon.addEventListener('mouseleave', function () {
-    closeIcon.style.animation = baseAnimation;
+    closeIcon.style.animationDuration = '3s';
     closeIcon.style.color = '';
   });
 })();

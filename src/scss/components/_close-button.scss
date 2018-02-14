@@ -3,7 +3,8 @@
   padding: 0;
   margin-left: .25em;
   color: $close-button-color;
-  vertical-align: baseline;
+  vertical-align: inherit;
+  line-height: 0;
   background-color: transparent;
   box-sizing: content-box;
   @include transition(color $transition-duration $transition-timing-function);

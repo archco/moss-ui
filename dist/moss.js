@@ -3200,9 +3200,25 @@ var _elementUtil = __webpack_require__(1);
 
 var _elementUtil2 = _interopRequireDefault(_elementUtil);
 
+var _icon = __webpack_require__(97);
+
+var _icon2 = _interopRequireDefault(_icon);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 exports.default = {
+  components: { Icon: _icon2.default },
   props: {
     position: {
       type: String,
@@ -3216,7 +3232,7 @@ exports.default = {
       type: String,
       default: '' // '' (parentNode) | selector
     },
-    parentToRelative: {
+    related: {
       type: Boolean,
       default: false // If it true, parent node's style position is set 'relative'.
     }
@@ -3231,18 +3247,17 @@ exports.default = {
     };
   },
   mounted: function mounted() {
-    if (this.parentToRelative) {
+    if (this.related || this.position !== '') {
       this.$el.parentNode.style.position = 'relative';
     }
   },
 
   methods: {
     onClick: function onClick(event) {
-      this.$emit('close');
-      if (!this.action) return;
+      var btn = event.currentTarget;
+      var target = this.target ? _elementUtil2.default.findAncestor(btn, this.target) : btn.parentNode;
 
-      var target = this.target ? _elementUtil2.default.findAncestor(event.target, this.target) : event.target.parentNode;
-
+      this.$emit('close', target);
       if (this.action == 'hide') {
         _elementUtil2.default.hide(target);
       } else if (this.action == 'remove') {
@@ -3250,14 +3265,7 @@ exports.default = {
       }
     }
   }
-}; //
-//
-//
-//
-//
-//
-//
-//
+};
 
 /***/ }),
 /* 11 */
@@ -8950,7 +8958,7 @@ var render = function() {
       attrs: { type: "button" },
       on: { click: _vm.onClick }
     },
-    [_vm._t("default")],
+    [_vm._t("default", [_c("icon", { attrs: { name: "close" } })])],
     2
   )
 }
@@ -13843,7 +13851,7 @@ module.exports = {"name":"moss-ui","version":"0.4.3","description":"The front-en
 /* 125 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg data-name=\"close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__2eCZxLb__cls-1{fill:none;stroke:currentColor;stroke-linecap:round;stroke-miterlimit:10;stroke-width:1.5px;}</style></defs><title>close</title><line class=\"__2eCZxLb__cls-1 \" x1=\"3.76\" y1=\"3.76\" x2=\"12.24\" y2=\"12.24\"></line><line class=\"__2eCZxLb__cls-1 \" x1=\"12.24\" y1=\"3.76\" x2=\"3.76\" y2=\"12.24\"></line></svg>"
+module.exports = "<svg data-name=\"close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__335ivNd__cls-1{fill:currentColor;}</style></defs><title>close</title><path class=\"__335ivNd__cls-1 \" d=\"M9.06,8l3.71-3.71a.75.75,0,0,0-1.06-1.06L8,6.94,4.29,3.23A.75.75,0,0,0,3.23,4.29L6.94,8,3.23,11.71a.75.75,0,1,0,1.06,1.06L8,9.06l3.71,3.71a.75.75,0,0,0,1.06-1.06Z\"></path></svg>"
 
 /***/ }),
 /* 126 */

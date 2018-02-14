@@ -10,13 +10,14 @@ block append content
       ul(class='menu list fixed')
         li(is='anchored-tag' tag='li') Carousel
         li(is='anchored-tag' tag='li') Chip
+        li(is='anchored-tag' tag='li') CloseButton
         li(is='anchored-tag' tag='li') Collapse
         li(is='anchored-tag' tag='li') Dropdown
         li(is='anchored-tag' tag='li') Message
         li(is='anchored-tag' tag='li') Modal
         li(is='anchored-tag' tag='li') Nav
         li(is='anchored-tag' tag='li') Parallax
-        li(is='anchored-tag' tag='li') Simple CRUD
+        li(is='anchored-tag' tag='li') SimpleCRUD
         li(is='anchored-tag' tag='li') Switch
         li(is='anchored-tag' tag='li') Tab
         li(is='anchored-tag' tag='li') Toast
@@ -27,6 +28,8 @@ block append content
       include ../includes/carousel
       anchored-tag(tag='h1' owned) Chip
       include ../includes/chip
+      anchored-tag(tag='h1' owned) CloseButton
+      include ../includes/close-button
       anchored-tag(tag='h1' owned) Collapse
       include ../includes/collapse
       anchored-tag(tag='h1' owned) Dropdown
@@ -39,7 +42,7 @@ block append content
       include ../includes/navbar
       anchored-tag(tag='h1' owned) Parallax
       include ../includes/parallax
-      anchored-tag(tag='h1' owned) Simple CRUD
+      anchored-tag(tag='h1' owned) SimpleCRUD
       include ../includes/simple-crud
       anchored-tag(tag='h1' owned) Switch
       include ../includes/switch
