@@ -7,3 +7,4 @@ export { default as caretDown } from './caret-down.svg';
 export { default as caretLeft } from './caret-left.svg';
 export { default as caretRight } from './caret-right.svg';
 export { default as close } from './close.svg';
+export { default as check } from './check.svg';

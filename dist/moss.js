@@ -2871,6 +2871,15 @@ Object.defineProperty(exports, 'close', {
   }
 });
 
+var _check = __webpack_require__(126);
+
+Object.defineProperty(exports, 'check', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_check).default;
+  }
+});
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
@@ -13835,6 +13844,12 @@ module.exports = {"name":"moss-ui","version":"0.4.3","description":"The front-en
 /***/ (function(module, exports) {
 
 module.exports = "<svg data-name=\"close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__2eCZxLb__cls-1{fill:none;stroke:currentColor;stroke-linecap:round;stroke-miterlimit:10;stroke-width:1.5px;}</style></defs><title>close</title><line class=\"__2eCZxLb__cls-1 \" x1=\"3.76\" y1=\"3.76\" x2=\"12.24\" y2=\"12.24\"></line><line class=\"__2eCZxLb__cls-1 \" x1=\"12.24\" y1=\"3.76\" x2=\"3.76\" y2=\"12.24\"></line></svg>"
+
+/***/ }),
+/* 126 */
+/***/ (function(module, exports) {
+
+module.exports = "<svg data-name=\"check\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__2VQRNHs__cls-1{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>check</title><polyline class=\"__2VQRNHs__cls-1 \" points=\"13 4.5 6.33 11.5 3 8\"></polyline></svg>"
 
 /***/ })
 /******/ ]);
