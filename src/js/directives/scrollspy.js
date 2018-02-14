@@ -14,15 +14,14 @@ import Scrollspy from '../lib/classes/scrollspy';
  */
 export default {
   inserted(el, binding, vnode) {
-    let onActivate = (item) => {
+    const onActivate = item => {
       vnode.context.$root.$emit('scrollspy-activate', item);
       if (binding.value && typeof binding.value.onActivate === 'function') {
         binding.value.onActivate(item);
       }
     };
-
-    let options = Object.assign({}, binding.value, { onActivate });
-    let scrollspy = new Scrollspy(el, options);
+    const options = Object.assign({}, binding.value, { onActivate });
+    const scrollspy = new Scrollspy(el, options);
 
     vnode.context.$root.$on('scrollspy-refresh', () => scrollspy.refresh());
   },

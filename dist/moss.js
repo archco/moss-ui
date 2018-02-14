@@ -12985,7 +12985,6 @@ exports.default = {
         binding.value.onActivate(item);
       }
     };
-
     var options = Object.assign({}, binding.value, { onActivate: onActivate });
     var scrollspy = new _scrollspy2.default(el, options);
 
@@ -13036,8 +13035,7 @@ var Scrollspy = function () {
     this._currentActive = null;
     this._scrollHeight = 0;
     this._scrollElement = _elementUtil2.default.getElement(this.options.scrollElement);
-    this._scrollElmentSize = new _elementMeasurer2.default(this._scrollElement);
-    this._isDocument = this._scrollElmentSize.isDocumentTarget();
+    this._scrollElementSize = new _elementMeasurer2.default(this._scrollElement);
 
     this.refresh();
     this.addListener();
@@ -13077,9 +13075,8 @@ var Scrollspy = function () {
     value: function addListener() {
       var _this = this;
 
-      var base = this._isDocument ? window : this._scrollElement;
+      var base = this._scrollElementSize.isDocument ? window : this._scrollElement;
       base.addEventListener('scroll', this.process.bind(this));
-
       this._items.forEach(function (item) {
         item.link.addEventListener('click', _this.process.bind(_this), true);
       });
@@ -13101,18 +13098,16 @@ var Scrollspy = function () {
         return elm.hash;
       });
       this._items = [];
-      this._scrollHeight = this._scrollElmentSize.scrollHeight;
+      this._scrollHeight = this._scrollElementSize.scrollHeight;
 
       links.forEach(function (link) {
         var elm = _elementUtil2.default.getElement(link.hash);
         if (!elm) return;
-
-        var item = {
+        _this2._items.push({
           elm: elm,
           link: link,
-          offsetTop: _this2._getOffset(elm)
-        };
-        _this2._items.push(item);
+          offsetTop: new _elementMeasurer2.default(elm).getOffset().top
+        });
       });
 
       this._items.sort(function (a, b) {
@@ -13131,9 +13126,9 @@ var Scrollspy = function () {
     value: function process() {
       var _this3 = this;
 
-      var scrollTop = this._scrollElmentSize.scrollTop + this.options.offset;
-      var scrollHeight = this._scrollElmentSize.scrollHeight;
-      var maxScroll = this._scrollElmentSize.maxScrollTop + this.options.offset;
+      var scrollTop = this._scrollElementSize.scrollTop + this.options.offset;
+      var scrollHeight = this._scrollElementSize.scrollHeight;
+      var maxScroll = this._scrollElementSize.maxScrollTop + this.options.offset;
 
       if (this._scrollHeight !== scrollHeight) this.refresh();
 
@@ -13164,9 +13159,8 @@ var Scrollspy = function () {
     key: '_activate',
     value: function _activate(item) {
       this._clear();
-      var activeTarget = this._getActiveTarget(item.link);
       this._currentActive = item;
-      activeTarget.classList.add(this.options.activeClass);
+      this._getActiveTarget(item.link).classList.add(this.options.activeClass);
       if (typeof this.options.onActivate === 'function') {
         this.options.onActivate(item);
       }
@@ -13209,21 +13203,6 @@ var Scrollspy = function () {
       } else {
         return _elementUtil2.default.findAncestor(link, this.options.activeTarget);
       }
-    }
-  }, {
-    key: '_getOffset',
-    value: function _getOffset(elm) {
-      var isLeft = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-
-      var val = 0;
-      var offset = isLeft ? 'offsetLeft' : 'offsetTop';
-
-      do {
-        val += elm[offset];
-        elm = elm.offsetParent;
-      } while (elm && elm !== this._scrollElement);
-
-      return val;
     }
   }]);
 

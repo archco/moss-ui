@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Adds new test environment for vue component via vue-test-utils. #75, #78
 - Add a new color library 'moo-color'. #72
 - Add string-case convert methods in Util: `strToNormal()`, `strToCamel()` and `strToKebab()`.
+- Add a new component 'collapse-toggle'.
 
 ### Changed
 
