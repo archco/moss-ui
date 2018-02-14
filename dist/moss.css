@@ -741,9 +741,21 @@ h6.accent {
   font-family: Georgia, serif; }
 
 i.icon {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 1em;
   height: 1em; }
+  i.icon > svg {
+    display: inline-block;
+    width: 100%;
+    height: 100%; }
 
 [v-cloak] {
   display: none !important; }

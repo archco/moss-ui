@@ -203,3 +203,22 @@ function getContrast() {
     }
   });
 })();
+
+(function () {
+  var closeIcon = document.querySelector('#svg-close-example');
+  if (!closeIcon) return;
+
+  var baseAnimation = '3s linear infinite spin';
+
+  closeIcon.innerHTML = window.Moss.lib.Svg.close;
+  closeIcon.style.transition = 'color .2s ease-out';
+  closeIcon.style.animation = baseAnimation;
+  closeIcon.addEventListener('mouseover', function () {
+    closeIcon.style.animation = '.5s linear infinite spin';
+    closeIcon.style.color = '#32cd32';
+  });
+  closeIcon.addEventListener('mouseleave', function () {
+    closeIcon.style.animation = baseAnimation;
+    closeIcon.style.color = '';
+  });
+})();

@@ -237,9 +237,17 @@ blockquote {
 
 // icon
 i.icon {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   width: 1em;
   height: 1em;
+
+  > svg {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 //============================================================
