@@ -1,8 +1,8 @@
 <template lang="html">
   <transition name="collapsing"
-    @enter="enter"
+    @enter="expanding"
     @afterEnter="clearHeight"
-    @leave="leave"
+    @leave="collapsing"
     @afterLeave="clearHeight">
     <div v-show="show">
       <slot></slot>
@@ -31,20 +31,29 @@ export default {
       show: this.expanded
     };
   },
+  computed: {
+    state() {
+      return {
+        id: this.id,
+        expanded: this.show,
+        accordion: this.accordion,
+      };
+    },
+  },
   watch: {
     expanded(val) {
       this.show = val;
     }
   },
   methods: {
-    enter(el) {
+    expanding(el) {
       el.style.maxHeight = 'none';
       const realHeight = window.getComputedStyle(el).height;
       el.style.maxHeight = '0px';
       el.offsetHeight; // Force repaint
       el.style.maxHeight = realHeight;
     },
-    leave(el) {
+    collapsing(el) {
       el.style.maxHeight = 'none';
       const realHeight = window.getComputedStyle(el).height;
       el.style.maxHeight = realHeight;
@@ -52,64 +61,56 @@ export default {
       el.style.maxHeight = '0px';
     },
     clearHeight(el) {
-      el.style.maxHeight = null;
+      el.style.maxHeight = '';
     },
+
+    /**
+     * toggle collapse item.
+     *
+     * @param {string} id collapse-id.
+     * @param {string} action toggle|show|hide
+     * @param {function|null} cb (state) => void
+     */
     toggleCollapse(id, action = 'toggle', cb = null) {
       if (id !== this.id) return;
-      action = action.toLowerCase();
-      if (action === 'show') {
-        this.show = true;
-      } else if (action === 'hide') {
-        this.show = false;
-      } else {
-        this.show = !this.show;
+      switch (action.toLowerCase()) {
+        case 'show': this.show = true; break;
+        case 'hide': this.show = false; break;
+        case 'toggle':
+        default: this.show = !this.show;
       }
-
-      if (typeof cb === 'function') cb(this.show); // return to callback.
+      if (typeof cb === 'function') cb(this.state); // return to callback.
+      this.emitCurrentState();
     },
-    registerAccordion() {
-      // initialize accordion object.
-      if (typeof this.$root.$moss.accordion === 'undefined') {
-        this.$root.$moss.accordion = {};
-      }
 
-      // initialize accordion toggle method.
-      if (typeof this.$root.$moss.accordion.toggle === 'undefined') {
-        this.$root.$moss.accordion.toggle = this.toggleAccordion;
+    /**
+     * toggle accordion
+     * @param {string} accordion accordion group name.
+     * @param {string} id collapse id.
+     * @param {string} action toggle|show|hide
+     */
+    toggleAccordion(accordion, id, action = 'toggle') {
+      if (accordion !== this.accordion) return;
+      const isSelf = this.id === id;
+      switch (action.toLowerCase()) {
+        case 'show': this.show = isSelf ? true : false; break;
+        case 'hide': if (isSelf) this.show = false; break;
+        case 'toggle':
+        default: this.show = isSelf ? !this.show : false;
       }
-
-      // Initialize accordion list.
-      if (typeof this.$root.$moss.accordion[this.accordion] === 'undefined') {
-        this.$root.$moss.accordion[this.accordion] = [];
-      }
-
-      // register.
-      this.$root.$moss.accordion[this.accordion].push(this);
+      this.emitCurrentState();
     },
-    toggleAccordion(accordionId, id, action = 'toggle') {
-      const list = this.$root.$moss.accordion[accordionId];
-      if (!list) return;
-      action = action.toLowerCase();
-
-      list.forEach(item => {
-        if (action == 'show') {
-          item.show = (item.id === id) ? true : false;
-        } else if (action == 'hide') {
-          if (item.id === id) item.show = false;
-        } else {
-          item.show = (item.id === id) ? !item.show : false;
-        }
-      });
-    }
+    // emit collapse or accordion's state to $root.
+    emitCurrentState() {
+      this.$root.$emit('collapse-state', this.state);
+    },
   },
   beforeMount() {
     this.$root.$on('collapse-toggle', this.toggleCollapse.bind(this));
-    this.$root.$on('collapse-item', (id, cb = null) => {
-      if (this.id !== id) return;
-      if (typeof cb === 'function') cb(this);
-    });
-
-    if (this.accordion) this.registerAccordion();
+    if (this.accordion) {
+      this.$root.$on('accordion-toggle', this.toggleAccordion.bind(this));
+    };
+    this.emitCurrentState();
   }
 }
 </script>

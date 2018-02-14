@@ -88,17 +88,19 @@
           </div>
           <h2>Hook on 'close' event</h2><span>test text <close-button action="" @close="eventTest">✖</close-button></span>
           <anchored-tag tag="h1" owned>Collapse</anchored-tag>
-          <h3>Collapse Basic</h3>
-          <button class="btn default" v-collapse:test-collapse>collapse</button>
+          <h2>Default</h2>
+          <button class="btn default" v-collapse:test-collapse>v-collapse</button>
+          <div class="pad bg-color-primary" is="collapse-toggle" target="test-collapse">CollapseToggle</div>
           <collapse id="test-collapse" expanded>
             <h3>test collapse</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </collapse>
-          <h3>Accordion</h3>
+          <h2>Accordion</h2>
+          <button class="btn info" v-accordion:accordion2="'accordion-test'">v-accordion</button>
           <ul class="list-group">
             <li>
-              <div v-accordion:accordion1="'accordion-test'">accordion one</div>
+              <div is="collapse-toggle" target="accordion1" accordion="accordion-test">accordion one</div>
               <collapse id="accordion1" accordion="accordion-test" expanded>
                 <h3>accordion1</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -110,22 +112,22 @@
               </collapse>
             </li>
             <li>
-              <div v-accordion:accordion2="'accordion-test'">accordion two</div>
+              <div is="collapse-toggle" target="accordion2" accordion="accordion-test">accordion two</div>
               <collapse id="accordion2" accordion="accordion-test">
                 <h3>accordion2</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               </collapse>
             </li>
             <li>
-              <div v-accordion:accordion3="'accordion-test'">accordion three</div>
+              <div is="collapse-toggle" target="accordion3" accordion="accordion-test">accordion three</div>
               <collapse id="accordion3" accordion="accordion-test">
                 <h3>accordion3</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               </collapse>
             </li>
           </ul>
-          <h3>Collapse Toggle</h3>
-          <h4>Collapse /w icon</h4>
+          <h2>Collapse Toggle</h2>
+          <h3>Collapse /w icon</h3>
           <div class="collapse-toggle with-plus pad bg-color-primary" v-collapse:test01>TEST01</div>
           <collapse id="test01">
             <p class="pad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -134,7 +136,7 @@
           <collapse id="test02">
             <p class="pad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </collapse>
-          <h4>Accordion /w icon</h4>
+          <h3>Accordion /w icon</h3>
           <ul class="list-group">
             <li>
               <div class="collapse-toggle with-plus" v-accordion:test03="'test1'">accordion one</div>

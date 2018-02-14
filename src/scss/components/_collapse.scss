@@ -10,7 +10,7 @@
     content: '\002B';
   }
 
-  &.with-plus[data-collapsed="false"]::after {
+  &.with-plus[data-expanded="true"]::after {
     content: '\2212';
   }
 
@@ -18,7 +18,7 @@
     @include caret('down');
   }
 
-  &.with-caret[data-collapsed="false"]::after {
+  &.with-caret[data-expanded="true"]::after {
     @include caret('up');
   }
 
@@ -27,7 +27,7 @@
     transform: translate(0, -50%) rotate(45deg);
   }
 
-  &.with-arrow[data-collapsed="false"]::after {
+  &.with-arrow[data-expanded="true"]::after {
     @include arrow('up');
     transform: translate(0, -50%) rotate(-135deg);
   }
@@ -35,8 +35,18 @@
 
 .collapse-toggle {
   @include btn-base;
-  @include _collapse-toggle-with-icon;
+  @include _collapse-toggle-with-icon; // @deprecated
   position: relative;
+
+  .icon {
+    vertical-align: bottom;
+    margin-right: .3em;
+    @include transition(transform $transition-duration $transition-timing-function);
+  }
+
+  &[data-expanded="true"] .icon {
+    transform: rotate(.5turn);
+  }
 }
 
 // transition.
