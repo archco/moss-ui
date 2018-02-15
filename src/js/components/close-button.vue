@@ -2,18 +2,16 @@
   <button type="button"
     :class="classObject"
     @click="onClick">
-    <slot>
-      <icon name="close" />
-    </slot>
+    <slot></slot>
   </button>
 </template>
 
 <script>
 import ElementUtil from 'element-util';
-import Icon from './icon.vue';
+import IconMixin from '../mixins/icon';
 
 export default {
-  components: { Icon },
+  mixins: [IconMixin],
   props: {
     position: {
       type: String,
@@ -44,6 +42,10 @@ export default {
   mounted() {
     if (this.related || this.position !== '') {
       this.$el.parentNode.style.position = 'relative';
+    }
+    if (this.$el.innerHTML === '') {
+      // Appends 'close' icon if default slot is empty.
+      this.$el.appendChild(this.makeIcon('close'));
     }
   },
   methods: {
