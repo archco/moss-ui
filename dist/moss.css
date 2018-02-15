@@ -3895,9 +3895,7 @@ navbar,
   visibility: hidden; }
 
 .nav-item .nav-link, .navbar-brand.text, .nav-item .dropdown .dropdown-button {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: inline-block;
   padding: 0.5em 1em;
   font-family: inherit;
   font-size: inherit;
@@ -3907,9 +3905,7 @@ navbar,
     color: #87a96b; }
 
 .navbar-toggle, .nav-item .dropdown .dropdown-button {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: inline-block;
   background-color: transparent;
   outline: none; }
 
@@ -4015,13 +4011,8 @@ navbar,
   .navbar,
   .navbar-body,
   .navbar-nav {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     width: 100%; }
   .nav-item {
     width: 100%;

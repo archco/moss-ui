@@ -44,15 +44,17 @@ export default {
       return this.closeHtml
         ? this.closeHtml
         : this.makeIconHtml('close');
+    },
+    classObject() {
+      const obj = { message: true };
+      const status = this.status.toLowerCase();
+      if (this.status) obj[status] = true;
+      return obj;
     }
   },
   data() {
-    const classObject = { 'message': true };
-    if (this.status) classObject[`${this.status.toLowerCase()}`] = true;
-
     return {
-      classObject,
-      show: true,
+      show: true
     };
   },
   methods: {

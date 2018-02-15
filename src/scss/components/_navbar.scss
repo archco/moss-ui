@@ -4,7 +4,7 @@ navbar,
 
 %nav-link {
   @extend %link-no-deco;
-  display: inline-flex;
+  display: inline-block;
   padding: $nav-link-padding-y $nav-link-padding-x;
   font-family: inherit;
   font-size: inherit;
@@ -16,7 +16,7 @@ navbar,
 
 %nav-button {
   @extend %btn-common;
-  display: inline-flex;
+  display: inline-block;
   background-color: transparent;
   outline: none;
 }
@@ -120,8 +120,7 @@ navbar,
   .navbar,
   .navbar-body,
   .navbar-nav {
-    flex-flow: column nowrap;
-    justify-content: flex-start;
+    flex-wrap: wrap;
     width: 100%;
   }
 

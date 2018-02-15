@@ -6323,14 +6323,16 @@ exports.default = {
     },
     closeIconHtml: function closeIconHtml() {
       return this.closeHtml ? this.closeHtml : this.makeIconHtml('close');
+    },
+    classObject: function classObject() {
+      var obj = { message: true };
+      var status = this.status.toLowerCase();
+      if (this.status) obj[status] = true;
+      return obj;
     }
   },
   data: function data() {
-    var classObject = { 'message': true };
-    if (this.status) classObject['' + this.status.toLowerCase()] = true;
-
     return {
-      classObject: classObject,
       show: true
     };
   },
