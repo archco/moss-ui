@@ -12,7 +12,6 @@
 
 <script>
 import TreeItem from './tree-item.vue';
-import { arrowRight, arrowDown } from '../../svg';
 
 export default {
   components: { TreeItem },
@@ -29,11 +28,11 @@ export default {
     },
     openedHtml: {
       type: String,
-      default: `<i class="icon">${arrowDown}</i>`,
+      default: '',
     },
     closedHtml: {
       type: String,
-      default: `<i class="icon">${arrowRight}</i>`,
+      default: '',
     },
   },
   mounted() {
@@ -42,7 +41,7 @@ export default {
   methods: {
     openTreeItems(children) {
       children.forEach(component => {
-        let tag = component.$vnode.componentOptions.tag;
+        const tag = component.$vnode.componentOptions.tag;
         if (tag == 'tree' || tag == 'tree-item') {
           this.openTreeItems(component.$children);
           if (tag == 'tree-item') component.open = true;

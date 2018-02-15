@@ -6,14 +6,14 @@
       v-if="!disableTop"
       v-show="showToTop"
       @click.prevent="toTop"
-      v-html="topContent"></button>
+      v-html="topIcon"></button>
     <button
       type="button"
       class="scroll-to-bottom"
       v-if="!disableBottom"
       v-show="showToBottom"
       @click.prevent="toBottom"
-      v-html="bottomContent"></button>
+      v-html="bottomIcon"></button>
   </div>
 </template>
 
@@ -55,11 +55,11 @@ export default {
     }
   },
   computed: {
-    topContent() {
-      return this.topHtml === '' ? this.makeIconHtml('arrow-up') : this.topHtml;
+    topIcon() {
+      return this.topHtml || this.makeIconHtml('arrow-up');
     },
-    bottomContent() {
-      return this.bottomHtml === '' ? this.makeIconHtml('arrow-down') : this.bottomHtml;
+    bottomIcon() {
+      return this.bottomHtml || this.makeIconHtml('arrow-down');
     },
   },
   data() {

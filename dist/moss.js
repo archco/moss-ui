@@ -6925,11 +6925,11 @@ exports.default = {
     }
   },
   computed: {
-    topContent: function topContent() {
-      return this.topHtml === '' ? this.makeIconHtml('arrow-up') : this.topHtml;
+    topIcon: function topIcon() {
+      return this.topHtml || this.makeIconHtml('arrow-up');
     },
-    bottomContent: function bottomContent() {
-      return this.bottomHtml === '' ? this.makeIconHtml('arrow-down') : this.bottomHtml;
+    bottomIcon: function bottomIcon() {
+      return this.bottomHtml || this.makeIconHtml('arrow-down');
     }
   },
   data: function data() {
@@ -7359,22 +7359,7 @@ var _treeItem = __webpack_require__(34);
 
 var _treeItem2 = _interopRequireDefault(_treeItem);
 
-var _svg = __webpack_require__(3);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 exports.default = {
   components: { TreeItem: _treeItem2.default },
@@ -7391,11 +7376,11 @@ exports.default = {
     },
     openedHtml: {
       type: String,
-      default: '<i class="icon">' + _svg.arrowDown + '</i>'
+      default: ''
     },
     closedHtml: {
       type: String,
-      default: '<i class="icon">' + _svg.arrowRight + '</i>'
+      default: ''
     }
   },
   mounted: function mounted() {
@@ -7415,7 +7400,18 @@ exports.default = {
       });
     }
   }
-};
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 34 */
@@ -7483,28 +7479,15 @@ if (false) {(function () {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+var _icon = __webpack_require__(5);
+
+var _icon2 = _interopRequireDefault(_icon);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
+  mixins: [_icon2.default],
   props: {
     item: {
       type: Object,
@@ -7534,6 +7517,12 @@ exports.default = {
         'tree-item': true,
         'has-items': this.hasItems
       };
+    },
+    openedIcon: function openedIcon() {
+      return this.openedHtml || this.makeIconHtml('arrow-down');
+    },
+    closedIcon: function closedIcon() {
+      return this.closedHtml || this.makeIconHtml('arrow-right');
     }
   },
   methods: {
@@ -7541,7 +7530,26 @@ exports.default = {
       if (this.hasItems) this.open = !this.open;
     }
   }
-};
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 36 */
@@ -10179,7 +10187,7 @@ var render = function() {
           ],
           staticClass: "scroll-to-top",
           attrs: { type: "button" },
-          domProps: { innerHTML: _vm._s(_vm.topContent) },
+          domProps: { innerHTML: _vm._s(_vm.topIcon) },
           on: {
             click: function($event) {
               $event.preventDefault()
@@ -10201,7 +10209,7 @@ var render = function() {
           ],
           staticClass: "scroll-to-bottom",
           attrs: { type: "button" },
-          domProps: { innerHTML: _vm._s(_vm.bottomContent) },
+          domProps: { innerHTML: _vm._s(_vm.bottomIcon) },
           on: {
             click: function($event) {
               $event.preventDefault()
@@ -10674,7 +10682,7 @@ var render = function() {
       _vm.hasItems
         ? _c("span", {
             domProps: {
-              innerHTML: _vm._s(_vm.open ? _vm.openedHtml : _vm.closedHtml)
+              innerHTML: _vm._s(_vm.open ? _vm.openedIcon : _vm.closedIcon)
             }
           })
         : _vm._e(),

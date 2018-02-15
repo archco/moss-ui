@@ -3,7 +3,7 @@
     <div :class="itemClass" @click="toggle">
       <span
         v-if="hasItems"
-        v-html="open ? openedHtml : closedHtml">
+        v-html="open ? openedIcon : closedIcon">
       </span>
       <span v-html="item.name"></span>
     </div>
@@ -19,7 +19,10 @@
 </template>
 
 <script>
+import IconMixin from '../mixins/icon';
+
 export default {
+  mixins: [IconMixin],
   props: {
     item: {
       type: Object,
@@ -49,6 +52,12 @@ export default {
         'has-items': this.hasItems,
       };
     },
+    openedIcon() {
+      return this.openedHtml || this.makeIconHtml('arrow-down');
+    },
+    closedIcon() {
+      return this.closedHtml || this.makeIconHtml('arrow-right');
+    }
   },
   methods: {
     toggle() {
