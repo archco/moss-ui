@@ -18,11 +18,11 @@ export function locationSearchToObject() {
 export function searchToObject(search) {
   if (search === '') return null;
 
-  let queries = search.substring(1).split('&');
-  let obj = {};
+  const queries = search.substring(1).split('&');
+  const obj = {};
 
   queries.forEach((value) => {
-    let q = value.split('=');
+    const q = value.split('=');
     if (!q[1]) return;
     obj[decodeURIComponent(q[0])] = decodeURIComponent(q[1]);
   });
@@ -47,10 +47,9 @@ export function isContains(big, small) {
     });
     return correct == small.length;
   } else if (Object(big) === big && Object(small) === small) {
-    for (let p in small) {
+    for (const p in small) {
       if (!(p in big && isContains(big[p], small[p]))) return false;
     }
-
     return true;
   } else {
     return big === small;

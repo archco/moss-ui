@@ -3740,14 +3740,23 @@ dropdown,
 .message {
   color: #fff;
   background-color: #9a9a9a;
-  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   z-index: 2;
   padding: 1rem 1.5rem;
   margin: 8px;
-  vertical-align: middle;
   border-radius: 4px; }
   .message .close-button {
-    font-size: 1.5rem; }
+    font-size: 1.35rem; }
+    .message .close-button svg path {
+      stroke-width: 2px; }
   .message.default {
     color: #fff;
     background-color: #9a9a9a; }

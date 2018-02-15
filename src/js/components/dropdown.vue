@@ -11,9 +11,11 @@
 <script>
 import Popper from 'popper.js';
 import ElementUtil from 'element-util';
+import IconMixin from '../mixins/icon';
 import { caretDown } from '../../svg';
 
 export default {
+  mixins: [IconMixin],
   props: {
     toggle: {
       type: String,
@@ -149,7 +151,7 @@ export default {
       this.btn = this.$slots.button[0].elm;
       this.btn.classList.add(`dropdown-button`);
       if (this.buttonWithCaret) {
-        this.btn.appendChild(this.makeIcon());
+        this.btn.appendChild(this.makeIcon('caret-down'));
       }
       // content.
       this.content = this.$el.querySelector('.dropdown-content');
@@ -171,12 +173,6 @@ export default {
         item => item.addEventListener('keydown', this.onItemKeydown.bind(this))
       );
     },
-    makeIcon() {
-      const i = document.createElement('i');
-      i.classList.add('icon');
-      i.innerHTML = caretDown;
-      return i;
-    }
   },
   mounted() {
     this.initElements();

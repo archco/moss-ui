@@ -3,10 +3,10 @@
 </template>
 
 <script>
-import * as Svg from '../../svg';
-import { strToCamel } from '../lib/util';
+import IconMixin from "../mixins/icon";
 
 export default {
+  mixins: [IconMixin],
   props: {
     name: {
       type: String,
@@ -19,7 +19,7 @@ export default {
   },
   data() {
     return {
-      svgContent: this.svg || Svg[strToCamel(this.name, true)] || '',
+      svgContent: this.svg || this.getSvgByName(this.name) || '',
     };
   },
 }
