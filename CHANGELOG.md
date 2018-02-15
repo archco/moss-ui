@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Add a new color library 'moo-color'. #72
 - Add string-case convert methods in Util: `strToNormal()`, `strToCamel()` and `strToKebab()`.
 - Add a new component 'collapse-toggle'.
+- Add SVG icons #82
 
 ### Changed
 

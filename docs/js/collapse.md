@@ -5,6 +5,7 @@
 [scss/components/collapse](../../src/scss/components/_collapse.scss)
 
 ### Table of contents
+
 - [Usage](#usage)
   - [Basic](#basic)
   - [with collapse-toggle](#with-collapse-toggle)
@@ -32,7 +33,7 @@
 Available optional class: `with-plus` `with-caret` `with-arrow`
 
 ``` html
-<div class="collapse-toggle with-plus" v-collpase:test01>TOGGLE</div>
+<div class="collapse-toggle with-plus" v-collapse:test01>TOGGLE</div>
 <collapse id="test01">
   <h3>Title</h3>
   <p>...</p>
