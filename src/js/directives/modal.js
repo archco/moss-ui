@@ -11,7 +11,7 @@ export default {
   bind(el, binding, vnode) {
     el.addEventListener('click', event => {
       event.preventDefault();
-      let action = binding.modifiers.show ? 'show'
+      const action = binding.modifiers.show ? 'show'
         : binding.modifiers.close ? 'close'
         : 'toggle';
 

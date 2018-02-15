@@ -4,7 +4,7 @@
       <span>
         <slot></slot>
       </span>
-      <close-button action=''
+      <close-button action=""
         @close="onClose"
         v-html="closeHtml"/>
     </div>

@@ -3863,6 +3863,8 @@ dropdown,
     color: rgba(226, 61, 40, 0.5); }
     .modal-header .close-button:hover {
       color: #e23d28; }
+    .modal-header .close-button svg path {
+      stroke-width: 2px; }
 
 .modal-body {
   -webkit-box-flex: 1;

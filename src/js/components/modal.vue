@@ -4,11 +4,9 @@
       <div class="modal-content">
         <div class="modal-header">
           <h3>{{ title }}</h3>
-          <button type="button"
-            class="close-button"
-            @click="$emit('close')"
-            v-html="closeButtonHtml">
-          </button>
+          <close-button action=""
+            @close="$emit('close')"
+            v-html="closeButtonHtml"/>
         </div>
         <div class="modal-body">
           <slot></slot>
@@ -23,8 +21,10 @@
 
 <script>
 import ElementUtil from 'element-util';
+import CloseButton from './close-button.vue';
 
 export default {
+  components: { CloseButton },
   props: {
     name: {
       type: String,
@@ -40,7 +40,7 @@ export default {
     },
     closeButtonHtml: {
       type: String,
-      default: '✖',
+      default: '',
     },
     closeOn: {
       type: Boolean,
@@ -55,15 +55,15 @@ export default {
   data() {
     return {
       show: false,
-      body: document.querySelector('body'),
     };
   },
   watch: {
     show(shown) {
+      const body = document.querySelector('body');
       if (shown) {
-        this.body.classList.add('modal-shown');
+        body.classList.add('modal-shown');
       } else {
-        this.body.classList.remove('modal-shown');
+        body.classList.remove('modal-shown');
       }
     },
   },
@@ -93,7 +93,7 @@ export default {
       this.$root.$emit('modal-toggle', this.name, 'close');
     });
 
-    // register help methods to Moss object.
+    // Attaches helper methods to Moss object.
     if (typeof window.Moss !== 'undefined' && typeof window.Moss.modal === 'undefined') {
       window.Moss.modal = {
         show: name => this.$root.$emit('modal-toggle', name, 'show'),

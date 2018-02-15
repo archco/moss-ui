@@ -26,6 +26,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Rename scss-variable `$transition-time` to `$transition-duration`.
 - Improve converting to id attribute in 'anchored-tag.vue' via `Util.strToKebab()` method.
 
+### Removed
+
+- Remove `close-emit` prop in message.vue. use `close` event instead. (56640b5)
+
 ## [0.4.2] - 2017-12-24
 
 ### Fixed
