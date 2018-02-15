@@ -21,7 +21,11 @@
 ### Basic
 
 ``` html
+<!-- toggling collapse via v-collapse directive. -->
 <button class="btn" v-collapse:collapse01>TOGGLE</button>
+<!-- or use collapse-toggle component. -->
+<div is="collapse-toggle" target="collapse01">TOGGLE</div>
+
 <collapse id="collapse01">
   <h3>Title</h3>
   <p>...</p>
@@ -29,6 +33,8 @@
 ```
 
 ### with collapse-toggle
+
+> @deprecated at v0.5.0. use `collapse-toggle` component instead.
 
 Available optional class: `with-plus` `with-caret` `with-arrow`
 
@@ -45,14 +51,14 @@ Available optional class: `with-plus` `with-caret` `with-arrow`
 ``` html
 <ul class="list-group">
   <li>
-    <div v-accordion:ac01="'accordion-group'">Accordion One</div>
+    <div is="collapse-toggle" accordion="accordion-group" target="ac01">Accordion One</div>
     <collapse id="ac01" accordion="accordion-group" expanded>
       <h3>Title</h3>
       <p>...</p>
     </collapse>
   </li>
   <li>
-    <div v-accordion:ac02="'accordion-group'">Accordion Two</div>
+    <div is="collapse-toggle" accordion="accordion-group" target="ac02">Accordion One</div>
     <collapse id="ac02" accordion="accordion-group">
       <h3>Title</h3>
       <p>...</p>

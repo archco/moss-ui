@@ -35,7 +35,7 @@
 
 .collapse-toggle {
   @include btn-base;
-  @include _collapse-toggle-with-icon; // @deprecated
+  @include _collapse-toggle-with-icon; // @deprecated at v0.5.0. use collapse-toggle.vue instead.
   position: relative;
 
   .icon {
