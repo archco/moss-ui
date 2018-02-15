@@ -3570,18 +3570,9 @@ var _elementUtil = __webpack_require__(1);
 
 var _elementUtil2 = _interopRequireDefault(_elementUtil);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _svg = __webpack_require__(6);
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
   props: {
@@ -3722,7 +3713,7 @@ exports.default = {
       this.btn = this.$slots.button[0].elm;
       this.btn.classList.add('dropdown-button');
       if (this.buttonWithCaret) {
-        this.btn.classList.add('with-caret');
+        this.btn.appendChild(this.makeIcon());
       }
       // content.
       this.content = this.$el.querySelector('.dropdown-content');
@@ -3745,13 +3736,28 @@ exports.default = {
       this.items.forEach(function (item) {
         return item.addEventListener('keydown', _this.onItemKeydown.bind(_this));
       });
+    },
+    makeIcon: function makeIcon() {
+      var i = document.createElement('i');
+      i.classList.add('icon');
+      i.innerHTML = _svg.caretDown;
+      return i;
     }
   },
   mounted: function mounted() {
     this.initElements();
     this.addListeners();
   }
-};
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 16 */

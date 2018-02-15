@@ -4,7 +4,7 @@ navbar,
 
 %nav-link {
   @extend %link-no-deco;
-  display: inline-block;
+  display: inline-flex;
   padding: $nav-link-padding-y $nav-link-padding-x;
   font-family: inherit;
   font-size: inherit;
@@ -16,7 +16,7 @@ navbar,
 
 %nav-button {
   @extend %btn-common;
-  display: inline-block;
+  display: inline-flex;
   background-color: transparent;
   outline: none;
 }

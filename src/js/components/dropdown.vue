@@ -11,6 +11,7 @@
 <script>
 import Popper from 'popper.js';
 import ElementUtil from 'element-util';
+import { caretDown } from '../../svg';
 
 export default {
   props: {
@@ -84,7 +85,7 @@ export default {
       this.isShown ? this.hide() : this.show();
     },
     onOtherClick(event) {
-      let isOwn = ElementUtil.findAncestor(event.target, this.$el) != null;
+      const isOwn = ElementUtil.findAncestor(event.target, this.$el) != null;
 
       if (!isOwn && this.isShown == true) this.hide();
     },
@@ -124,7 +125,7 @@ export default {
       }
     },
     createPopper() {
-      let modifiers = Object.assign(this.modifiers, {
+      const modifiers = Object.assign(this.modifiers, {
         offset: { offset: this.offset },
         flip: { enabled: this.flip === 'on' },
         preventOverflow: { enabled: this.preventOverflow === 'on' },
@@ -148,12 +149,12 @@ export default {
       this.btn = this.$slots.button[0].elm;
       this.btn.classList.add(`dropdown-button`);
       if (this.buttonWithCaret) {
-        this.btn.classList.add('with-caret');
+        this.btn.appendChild(this.makeIcon());
       }
       // content.
       this.content = this.$el.querySelector('.dropdown-content');
       // items.
-      let items = this.content.querySelectorAll('.dropdown-item:not([disabled])');
+      const items = this.content.querySelectorAll('.dropdown-item:not([disabled])');
       this.items = ElementUtil.nodeListToArray(items);
     },
     addListeners() {
@@ -167,11 +168,14 @@ export default {
       // Navigation by key.
       this.btn.addEventListener('keydown', this.onBtnKeydown.bind(this));
       this.items.forEach(
-        item => item.addEventListener(
-          'keydown',
-          this.onItemKeydown.bind(this)
-        )
+        item => item.addEventListener('keydown', this.onItemKeydown.bind(this))
       );
+    },
+    makeIcon() {
+      const i = document.createElement('i');
+      i.classList.add('icon');
+      i.innerHTML = caretDown;
+      return i;
     }
   },
   mounted() {
