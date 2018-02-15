@@ -3640,7 +3640,7 @@ dropdown,
     transition: -webkit-transform 0.3s ease-out;
     transition: transform 0.3s ease-out;
     transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out; }
-  .input-check.toggle .input-box .input-box-tick, .input-radio.toggle .input-box .input-box-tick, .input-check.toggle .input-box .input-box-circle, .input-radio.toggle .input-box .input-box-circle {
+  .input-check.toggle .input-box svg, .input-radio.toggle .input-box svg, .input-check.toggle .input-box .input-box-circle, .input-radio.toggle .input-box .input-box-circle {
     display: none; }
 
 .input-check.toggle input:checked ~ .input-box, .input-radio.toggle input:checked ~ .input-box {
@@ -3652,7 +3652,7 @@ dropdown,
 .input-check input[type="checkbox"] {
   position: absolute;
   opacity: 0; }
-  .input-check input[type="checkbox"]:checked ~ .input-box > .input-box-tick > path {
+  .input-check input[type="checkbox"]:checked ~ .input-box > svg > polyline {
     opacity: 1;
     stroke-dashoffset: 0; }
   .input-check input[type="checkbox"]:focus ~ .input-box,
@@ -3683,14 +3683,14 @@ dropdown,
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none; }
-  .input-check .input-box > .input-box-tick {
+  .input-check .input-box > svg {
     width: 100%;
     height: 100%; }
-    .input-check .input-box > .input-box-tick > path {
+    .input-check .input-box > svg > polyline {
       opacity: 0;
-      transition: stroke-dashoffset 0.15s ease-in;
+      transition: stroke-dashoffset 0.15s ease-in-out;
       stroke: #fff;
-      stroke-width: 2.3px;
+      stroke-width: 2px;
       stroke-dashoffset: 20;
       stroke-dasharray: 20; }
 
@@ -3735,7 +3735,7 @@ dropdown,
     background: #fff;
     border-radius: 50%;
     opacity: 0;
-    transition: width 0.15s ease-in, height 0.15s ease-in; }
+    transition: width 0.15s ease-in-out, height 0.15s ease-in-out; }
 
 .message {
   color: #fff;

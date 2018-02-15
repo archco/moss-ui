@@ -9,17 +9,15 @@
       :checked="state"
       @change="toggle">
     <slot name="input-box">
-      <span class="input-box">
-        <svg class="input-box-tick" viewBox="0 0 16 16">
-          <path fill="none" d="M1.7,7.8l3.8,3.4l9-7.8"></path>
-        </svg>
-      </span>
+      <span class="input-box" v-html="svg"></span>
     </slot>
     <slot></slot>
   </label>
 </template>
 
 <script>
+import { check } from '../../svg';
+
 export default {
   model: {
     prop: 'modelValue',
@@ -28,9 +26,9 @@ export default {
   props: {
     id: {
       type: String,
-      default: function () {
+      default: function () { // use function syntax because access 'this._uid'.
         return 'input-check-id-' + this._uid;
-      },
+      }
     },
     name: {
       type: String,
@@ -41,7 +39,7 @@ export default {
       default: null,
     },
     modelValue: {
-      type: String | Array,
+      type: String|Array,
       default: undefined,
     },
     className: {
@@ -56,6 +54,11 @@ export default {
       type: Boolean,
       default: false,
     },
+  },
+  data() {
+    return {
+      svg: check,
+    };
   },
   computed: {
     state () {

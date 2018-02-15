@@ -29,7 +29,7 @@
       @include transition(transform $input-toggle-transition-duration ease-out);
     }
 
-    .input-box-tick,
+    svg,
     .input-box-circle {
       display: none;
     }
@@ -56,7 +56,7 @@
     opacity: 0;
 
     // scss-lint:disable SelectorDepth
-    &:checked ~ .input-box > .input-box-tick > path {
+    &:checked ~ .input-box > svg > polyline {
       opacity: 1;
       stroke-dashoffset: 0;
     }
@@ -83,16 +83,16 @@
     box-sizing: content-box;
     user-select: none;
 
-    > .input-box-tick {
+    > svg {
       width: 100%;
       height: 100%;
 
       // scss-lint:disable SelectorDepth, NestingDepth
-      > path {
+      > polyline {
         opacity: 0;
-        @include transition(stroke-dashoffset .15s ease-in);
+        @include transition(stroke-dashoffset .15s ease-in-out);
         stroke: $input-switch-stroke-color;
-        stroke-width: 2.3px;
+        stroke-width: 2px;
         stroke-dashoffset: 20;
         stroke-dasharray: 20;
       }

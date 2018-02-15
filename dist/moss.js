@@ -7622,27 +7622,8 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+var _svg = __webpack_require__(6);
 
 exports.default = {
   model: {
@@ -7653,6 +7634,7 @@ exports.default = {
     id: {
       type: String,
       default: function _default() {
+        // use function syntax because access 'this._uid'.
         return 'input-check-id-' + this._uid;
       }
     },
@@ -7681,6 +7663,12 @@ exports.default = {
       default: false
     }
   },
+  data: function data() {
+    return {
+      svg: _svg.check
+    };
+  },
+
   computed: {
     state: function state() {
       if (this.modelValue === undefined) {
@@ -7723,7 +7711,23 @@ exports.default = {
       this.toggle();
     }
   }
-};
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 38 */
@@ -7764,6 +7768,7 @@ exports.default = {
     id: {
       type: String,
       default: function _default() {
+        // use function syntax because access 'this._uid'.
         return 'input-radio-id-' + this._uid;
       }
     },
@@ -7794,10 +7799,7 @@ exports.default = {
   },
   computed: {
     state: function state() {
-      if (this.modelValue === undefined) {
-        return this.checked;
-      }
-      return this.modelValue === this.value;
+      return this.modelValue === undefined ? this.checked : this.modelValue === this.value;
     }
   },
   methods: {
@@ -9126,7 +9128,7 @@ module.exports = "<svg data-name=\"close\" xmlns=\"http://www.w3.org/2000/svg\" 
 /* 56 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg data-name=\"check\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__2VQRNHs__cls-1{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>check</title><polyline class=\"__2VQRNHs__cls-1 \" points=\"13 4.5 6.33 11.5 3 8\"></polyline></svg>"
+module.exports = "<svg data-name=\"check\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__1ewOVC4__cls-1{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>check</title><polyline class=\"__1ewOVC4__cls-1 \" points=\"3 8 6.33 11.5 13 4.5\"></polyline></svg>"
 
 /***/ }),
 /* 57 */
@@ -10829,17 +10831,10 @@ var render = function() {
       }),
       _vm._v(" "),
       _vm._t("input-box", [
-        _c("span", { staticClass: "input-box" }, [
-          _c(
-            "svg",
-            { staticClass: "input-box-tick", attrs: { viewBox: "0 0 16 16" } },
-            [
-              _c("path", {
-                attrs: { fill: "none", d: "M1.7,7.8l3.8,3.4l9-7.8" }
-              })
-            ]
-          )
-        ])
+        _c("span", {
+          staticClass: "input-box",
+          domProps: { innerHTML: _vm._s(_vm.svg) }
+        })
       ]),
       _vm._v(" "),
       _vm._t("default")
