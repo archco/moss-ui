@@ -6,7 +6,7 @@
       </span>
       <close-button action=''
         @close="onClose"
-        v-html="closeIconHtml"/>
+        v-html="closeHtml"/>
     </div>
   </transition>
 </template>
@@ -27,10 +27,6 @@ export default {
       type: String,
       default: 'fade',
     },
-    closeEmit: {
-      type: String,
-      default: '',
-    },
     closeHtml: {
       type: String,
       default: '',
@@ -39,11 +35,6 @@ export default {
   computed: {
     effectName() {
       return `message-${this.effect}`;
-    },
-    closeIconHtml() {
-      return this.closeHtml
-        ? this.closeHtml
-        : this.makeIconHtml('close');
     },
     classObject() {
       const obj = { message: true };
@@ -59,7 +50,8 @@ export default {
   },
   methods: {
     onClose() {
-      this.closeEmit ? this.$emit(this.closeEmit, this) : this.show = false;
+      this.$emit('close', this);
+      this.show = false;
     }
   }
 }

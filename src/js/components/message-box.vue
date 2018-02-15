@@ -6,8 +6,7 @@
       :status="message.status"
       :effect="effect"
       :close-html="closeHtml"
-      close-emit="remove"
-      @remove="onRemove(message.id)">
+      @close="onClose(message.id)">
       {{ message.text }}
     </message>
   </div>
@@ -25,7 +24,7 @@ export default {
     },
     closeHtml: {
       type: String,
-      default: '✖',
+      default: '',
     }
   },
   data() {
@@ -46,8 +45,8 @@ export default {
     clear() {
       this.messages = [];
     },
-    onRemove(id) {
-      let index = this.messages.findIndex(item => item.id === id);
+    onClose(id) {
+      const index = this.messages.findIndex(item => item.id === id);
       this.messages.splice(index, 1);
     }
   },
