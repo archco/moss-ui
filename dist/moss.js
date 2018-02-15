@@ -6886,29 +6886,14 @@ var _elementMeasurer = __webpack_require__(4);
 
 var _elementMeasurer2 = _interopRequireDefault(_elementMeasurer);
 
+var _icon = __webpack_require__(5);
+
+var _icon2 = _interopRequireDefault(_icon);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 exports.default = {
+  mixins: [_icon2.default],
   props: {
     duration: {
       type: Number,
@@ -6924,11 +6909,11 @@ exports.default = {
     },
     topHtml: {
       type: String,
-      default: '↑'
+      default: ''
     },
     bottomHtml: {
       type: String,
-      default: '↓'
+      default: ''
     },
     disableTop: {
       type: Boolean,
@@ -6939,12 +6924,26 @@ exports.default = {
       default: false
     }
   },
+  computed: {
+    topContent: function topContent() {
+      return this.topHtml === '' ? this.makeIconHtml('arrow-up') : this.topHtml;
+    },
+    bottomContent: function bottomContent() {
+      return this.bottomHtml === '' ? this.makeIconHtml('arrow-down') : this.bottomHtml;
+    }
+  },
   data: function data() {
     return {
       showToTop: true,
       showToBottom: true,
       docSize: new _elementMeasurer2.default()
     };
+  },
+  mounted: function mounted() {
+    if (this.offset) {
+      window.addEventListener('scroll', this.onScroll.bind(this));
+      this.onScroll(); // for initialize.
+    }
   },
 
   methods: {
@@ -6958,14 +6957,26 @@ exports.default = {
       this.showToTop = this.docSize.scrollTop >= this.offset;
       this.showToBottom = this.docSize.maxScrollTop - this.docSize.scrollTop >= this.offset;
     }
-  },
-  mounted: function mounted() {
-    if (this.offset) {
-      window.addEventListener('scroll', this.onScroll.bind(this));
-      this.onScroll(); // invoke once.
-    }
   }
-};
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 28 */
@@ -10168,7 +10179,7 @@ var render = function() {
           ],
           staticClass: "scroll-to-top",
           attrs: { type: "button" },
-          domProps: { innerHTML: _vm._s(_vm.topHtml) },
+          domProps: { innerHTML: _vm._s(_vm.topContent) },
           on: {
             click: function($event) {
               $event.preventDefault()
@@ -10190,7 +10201,7 @@ var render = function() {
           ],
           staticClass: "scroll-to-bottom",
           attrs: { type: "button" },
-          domProps: { innerHTML: _vm._s(_vm.bottomHtml) },
+          domProps: { innerHTML: _vm._s(_vm.bottomContent) },
           on: {
             click: function($event) {
               $event.preventDefault()

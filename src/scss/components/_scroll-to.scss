@@ -2,7 +2,9 @@
   @extend %btn-common;
   min-width: 1rem;
   min-height: 1rem;
-  padding: 1rem;
+  font-size: 1.5em;
+  padding: .5em;
+  line-height: 0;
   margin-left: -.25rem;
   color: $scroll-to-color;
   background-color: rgba($scroll-to-bg-color, .5);

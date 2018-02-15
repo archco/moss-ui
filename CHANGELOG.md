@@ -28,7 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Removed
 
-- Remove `close-emit` prop in message.vue. use `close` event instead. (56640b5)
+- Remove `close-emit` prop in message.vue. use `close` event instead. (56640b540d4073796d762b4f154b6eab9455cfef)
 
 ## [0.4.2] - 2017-12-24
 

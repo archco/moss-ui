@@ -6,22 +6,24 @@
       v-if="!disableTop"
       v-show="showToTop"
       @click.prevent="toTop"
-      v-html="topHtml"></button>
+      v-html="topContent"></button>
     <button
       type="button"
       class="scroll-to-bottom"
       v-if="!disableBottom"
       v-show="showToBottom"
       @click.prevent="toBottom"
-      v-html="bottomHtml"></button>
+      v-html="bottomContent"></button>
   </div>
 </template>
 
 <script>
 import { scrollIt } from '../lib/util';
 import ElementMeasurer from 'element-measurer';
+import IconMixin from '../mixins/icon';
 
 export default {
+  mixins: [IconMixin],
   props: {
     duration: {
       type: Number,
@@ -37,11 +39,11 @@ export default {
     },
     topHtml: {
       type: String,
-      default: '↑',
+      default: '',
     },
     bottomHtml: {
       type: String,
-      default: '↓',
+      default: '',
     },
     disableTop: {
       type: Boolean,
@@ -52,12 +54,26 @@ export default {
       default: false,
     }
   },
+  computed: {
+    topContent() {
+      return this.topHtml === '' ? this.makeIconHtml('arrow-up') : this.topHtml;
+    },
+    bottomContent() {
+      return this.bottomHtml === '' ? this.makeIconHtml('arrow-down') : this.bottomHtml;
+    },
+  },
   data() {
     return {
       showToTop: true,
       showToBottom: true,
       docSize: new ElementMeasurer(),
     };
+  },
+  mounted() {
+    if (this.offset) {
+      window.addEventListener('scroll', this.onScroll.bind(this));
+      this.onScroll(); // for initialize.
+    }
   },
   methods: {
     toTop() {
@@ -70,12 +86,6 @@ export default {
       this.showToTop = this.docSize.scrollTop >= this.offset;
       this.showToBottom = (this.docSize.maxScrollTop - this.docSize.scrollTop)
         >= this.offset;
-    }
-  },
-  mounted() {
-    if (this.offset) {
-      window.addEventListener('scroll', this.onScroll.bind(this));
-      this.onScroll(); // invoke once.
     }
   }
 }
