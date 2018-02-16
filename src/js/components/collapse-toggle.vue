@@ -19,7 +19,7 @@ export default {
   },
   render(createElement) {
     const icon = createElement(Icon, {
-      props: { name: 'arrow-down' }
+      props: { name: 'arrow-right' }
     });
     const span = createElement('span', {}, this.$slots.default);
     const directive = this.accordion

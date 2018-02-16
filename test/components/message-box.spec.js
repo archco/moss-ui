@@ -31,7 +31,7 @@ describe('#MessageBox', () => {
   it('remove a message.', () => {
     const targetId = 3
     expect(wrapper.vm.messages.findIndex(m => m.id === targetId)).toEqual(3); // auto increment.
-    wrapper.vm.onRemove(targetId);
+    wrapper.vm.remove(targetId);
     expect(wrapper.vm.messages.findIndex(m => m.id === targetId)).toEqual(-1);
   });
 
