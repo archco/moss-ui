@@ -2,9 +2,15 @@
 
 Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 
-## Index
+### Table of contents
 
-### SCSS Parts
+- [SCSS Parts](#scss-parts)
+- [Vue Components](#vue-components)
+- [Vue Directives](#vue-directives)
+- [JS Libraries](#js-libraries)
+- [SVG Icons](svg-icons.md)
+
+## SCSS Parts
 
 - [Badge](scss/badge.md)
 - [Button](scss/button.md)
@@ -23,9 +29,8 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [Pagination](scss/pagination.md)
 - [Scaffolding](scss/scaffolding.md)
 - [Theme](scss/theme.md): Guide for writing custom-theme variables file.
-- ~~Tooltip~~ Removed at v0.4.0. instead use [v-tooltip](js/directives.md#tooltip)
 
-### Vue Components
+## Vue Components
 
 - [carousel](js/carousel.md)
 - [chip](js/chip.md)
@@ -45,7 +50,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [toast](js/toast.md)
 - [tree](js/tree.md)
 
-### [Vue Directives](js/directives.md)
+## [Vue Directives](js/directives.md)
 
 - [v-activator](js/directives.md#activator)
 - [v-clipboard](js/directives.md#clipboard)
@@ -58,7 +63,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [v-trigger](js/directives.md#trigger)
 - [v-wrap](js/directives.md#wrap)
 
-### JS Libraries
+## JS Libraries
 
 - [MooColor](https://github.com/archco/moo-color#readme)
 - [ElementMeasurer](https://github.com/archco/element-measurer#api)

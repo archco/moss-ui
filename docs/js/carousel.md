@@ -1,7 +1,6 @@
 # Carousel
 
-> This component uses [vue-agile](https://github.com/lukaszflorczak/vue-agile#readme).
-
+> This component uses [vue-agile](https://github.com/lukaszflorczak/vue-agile#readme).  
 > source: [scss/components/carousel](../../src/scss/components/_carousel.scss)
 
 ## Usage
