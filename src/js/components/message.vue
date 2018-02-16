@@ -13,11 +13,9 @@
 
 <script>
 import CloseButton from './close-button.vue';
-import IconMixin from "../mixins/icon";
 
 export default {
   components: { CloseButton },
-  mixins: [IconMixin],
   props: {
     status: {
       type: String,

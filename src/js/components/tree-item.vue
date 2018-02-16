@@ -19,10 +19,9 @@
 </template>
 
 <script>
-import IconMixin from '../mixins/icon';
+import { makeIconHtml } from '../lib/util';
 
 export default {
-  mixins: [IconMixin],
   props: {
     item: {
       type: Object,
@@ -53,10 +52,10 @@ export default {
       };
     },
     openedIcon() {
-      return this.openedHtml || this.makeIconHtml('arrow-down');
+      return this.openedHtml || makeIconHtml('arrow-down');
     },
     closedIcon() {
-      return this.closedHtml || this.makeIconHtml('arrow-right');
+      return this.closedHtml || makeIconHtml('arrow-right');
     }
   },
   methods: {

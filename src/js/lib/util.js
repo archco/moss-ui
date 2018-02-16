@@ -1,4 +1,5 @@
 export { default as scrollIt } from './methods/scroll-it';
+export * from './methods/icon';
 
 /**
  * location.search to Object.

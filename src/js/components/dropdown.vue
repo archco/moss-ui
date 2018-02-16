@@ -11,11 +11,9 @@
 <script>
 import Popper from 'popper.js';
 import ElementUtil from 'element-util';
-import IconMixin from '../mixins/icon';
-import { caretDown } from '../../svg';
+import { makeIcon } from '../lib/util';
 
 export default {
-  mixins: [IconMixin],
   props: {
     toggle: {
       type: String,
@@ -151,7 +149,7 @@ export default {
       this.btn = this.$slots.button[0].elm;
       this.btn.classList.add(`dropdown-button`);
       if (this.buttonWithCaret) {
-        this.btn.appendChild(this.makeIcon('caret-down'));
+        this.btn.appendChild(makeIcon('caret-down'));
       }
       // content.
       this.content = this.$el.querySelector('.dropdown-content');

@@ -8,10 +8,9 @@
 
 <script>
 import ElementUtil from 'element-util';
-import IconMixin from '../mixins/icon';
+import { makeIcon } from '../lib/util';
 
 export default {
-  mixins: [IconMixin],
   props: {
     position: {
       type: String,
@@ -45,7 +44,7 @@ export default {
     }
     if (this.$el.innerHTML === '') {
       // Appends 'close' icon if default slot is empty.
-      this.$el.appendChild(this.makeIcon('close'));
+      this.$el.appendChild(makeIcon('close'));
     }
   },
   methods: {

@@ -3,10 +3,9 @@
 </template>
 
 <script>
-import IconMixin from "../mixins/icon";
+import { getSvgByName } from '../lib/util';
 
 export default {
-  mixins: [IconMixin],
   props: {
     name: {
       type: String,
@@ -19,7 +18,7 @@ export default {
   },
   data() {
     return {
-      svgContent: this.svg || this.getSvgByName(this.name) || '',
+      svgContent: this.svg || getSvgByName(this.name) || '',
     };
   },
 }

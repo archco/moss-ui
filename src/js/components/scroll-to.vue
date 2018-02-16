@@ -18,12 +18,10 @@
 </template>
 
 <script>
-import { scrollIt } from '../lib/util';
 import ElementMeasurer from 'element-measurer';
-import IconMixin from '../mixins/icon';
+import { scrollIt, makeIconHtml } from '../lib/util';
 
 export default {
-  mixins: [IconMixin],
   props: {
     duration: {
       type: Number,
@@ -56,10 +54,10 @@ export default {
   },
   computed: {
     topIcon() {
-      return this.topHtml || this.makeIconHtml('arrow-up');
+      return this.topHtml || makeIconHtml('arrow-up');
     },
     bottomIcon() {
-      return this.bottomHtml || this.makeIconHtml('arrow-down');
+      return this.bottomHtml || makeIconHtml('arrow-down');
     },
   },
   data() {
