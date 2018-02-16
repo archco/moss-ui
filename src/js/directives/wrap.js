@@ -10,10 +10,10 @@ import ElementUtil from 'element-util';
  */
 export default {
   inserted(el, binding) {
-    let className = binding.modifiers.raw
+    const className = binding.modifiers.raw
       ? binding.arg
       : `${binding.arg}-wrapper`;
-    let tagName = binding.value || 'div';
+    const tagName = binding.value || 'div';
 
     ElementUtil.wrap(el, className, tagName);
   },

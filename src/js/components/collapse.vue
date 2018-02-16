@@ -109,7 +109,7 @@ export default {
     this.$root.$on('collapse-toggle', this.toggleCollapse.bind(this));
     if (this.accordion) {
       this.$root.$on('accordion-toggle', this.toggleAccordion.bind(this));
-    };
+    }
     this.emitCurrentState();
   }
 }

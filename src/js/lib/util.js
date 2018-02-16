@@ -51,6 +51,7 @@ export function isContains(big, small) {
     for (const p in small) {
       if (!(p in big && isContains(big[p], small[p]))) return false;
     }
+
     return true;
   } else {
     return big === small;

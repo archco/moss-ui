@@ -23,5 +23,5 @@ export default {
         el.dataset.expanded = item.expanded;
       }
     });
-  }
+  },
 };

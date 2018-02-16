@@ -1,6 +1,6 @@
 <script>
-import CloseButton from './close-button.vue';
 import { MooColor } from 'moo-color';
+import CloseButton from './close-button.vue';
 
 export default {
   props: {

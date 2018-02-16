@@ -20,6 +20,7 @@ export default {
         binding.value.onActivate(item);
       }
     };
+
     const options = Object.assign({}, binding.value, { onActivate });
     const scrollspy = new Scrollspy(el, options);
 

@@ -11,7 +11,7 @@ export default {
     if (binding.value) {
       el.value = binding.value;
     } else {
-      let queries = locationSearchToObject();
+      const queries = locationSearchToObject();
 
       if (queries && queries[binding.arg]) {
         el.value = queries[binding.arg];

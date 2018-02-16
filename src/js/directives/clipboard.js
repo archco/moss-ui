@@ -1,6 +1,7 @@
 /*
   This directive is based on clipboard.js
   @link https://github.com/zenorocha/clipboard.js
+  @license MIT License © Zeno Rocha
  */
 import Clipboard from 'clipboard';
 import ElementUtil from 'element-util';
@@ -20,9 +21,9 @@ import ElementUtil from 'element-util';
  */
 export default {
   bind(el, binding, vnode) {
-    let options = resolveOptionsOfClipboard(binding);
-    let clipboard = new Clipboard(el, options);
-    let eventName = binding.arg || 'clipboard-success';
+    const options = resolveOptionsForClipboard(binding);
+    const clipboard = new Clipboard(el, options);
+    const eventName = binding.arg || 'clipboard-success';
 
     clipboard.on('success', event => {
       vnode.context.$root.$emit(eventName, event);
@@ -35,11 +36,9 @@ export default {
   },
 };
 
-function resolveOptionsOfClipboard(binding) {
-  let options = {
-    action() {
-      return (binding.modifiers.cut) ? 'cut' : 'copy';
-    },
+function resolveOptionsForClipboard(binding) {
+  const options = {
+    action: () => binding.modifiers.cut ? 'cut' : 'copy',
   };
 
   if (typeof binding.value === 'string') {

@@ -46,10 +46,11 @@ window.vm = new window.Vue({
     treeData2: treeData2,
   },
   methods: {
-    test : function (arg) {
+    test: function (arg) {
       console.log(arg);
     },
-    eventTest: function(event) {
+
+    eventTest: function (event) {
       console.log(event);
     },
   },
@@ -57,7 +58,7 @@ window.vm = new window.Vue({
   beforeMount: function () {
     this.$on('clipboard-success', function (event) {
       var msg = event.action == 'copy' ? 'Copied' : 'Cut';
-      window.Moss.toast( msg + ' on clipboard.');
+      window.Moss.toast(msg + ' on clipboard.');
     });
   },
 });
@@ -218,6 +219,7 @@ function getContrast() {
     closeIcon.style.animationDuration = '0.5s';
     closeIcon.style.color = '#32cd32';
   });
+
   closeIcon.addEventListener('mouseleave', function () {
     closeIcon.style.animationDuration = '3s';
     closeIcon.style.color = '';

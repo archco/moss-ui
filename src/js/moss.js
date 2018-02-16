@@ -52,7 +52,7 @@ const MossUI = {
     for (const [key, val] of Object.entries(directives)) {
       Vue.directive(Util.strToKebab(key), val);
     }
-  }
+  },
 };
 
 if (typeof window !== 'undefined' && window.Vue) {

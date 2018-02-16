@@ -11,7 +11,7 @@ const env = process.env.NODE_ENV || 'dev'; // dev|prod|test
 
 let config = {
   entry: {
-    'moss': ['./src/js/moss.js', './src/scss/moss.scss'],
+    moss: ['./src/js/moss.js', './src/scss/moss.scss'],
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -45,8 +45,8 @@ let config = {
 };
 
 if (env === 'prod') {
-config = merge(config, {
-    entry: {'moss.min': './src/js/moss.js'},
+  config = merge(config, {
+    entry: { 'moss.min': './src/js/moss.js' },
     plugins: [
       new UglifyJSPlugin({
         sourceMap: false,

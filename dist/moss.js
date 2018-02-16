@@ -277,6 +277,7 @@ function isContains(big, small) {
     for (var p in small) {
       if (!(p in big && isContains(big[p], small[p]))) return false;
     }
+
     return true;
   } else {
     return big === small;
@@ -2981,7 +2982,7 @@ exports.default = {
     }
   },
   render: function render(createElement) {
-    // create kebabCase id
+    // create kebab-case id
     var text = this.getChildrenTextContent(this.$slots.default);
     var tagId = (0, _util.strToKebab)(text);
     var data = {
@@ -3052,11 +3053,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _mooColor = __webpack_require__(5);
+
 var _closeButton = __webpack_require__(4);
 
 var _closeButton2 = _interopRequireDefault(_closeButton);
-
-var _mooColor = __webpack_require__(5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3403,7 +3404,7 @@ exports.default = {
     this.$root.$on('collapse-toggle', this.toggleCollapse.bind(this));
     if (this.accordion) {
       this.$root.$on('accordion-toggle', this.toggleAccordion.bind(this));
-    };
+    }
     this.emitCurrentState();
   }
 };
@@ -11897,6 +11898,7 @@ Object.defineProperty(exports, "__esModule", {
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; /*
                                                                                                                                                                                                                                                                                 This directive is based on clipboard.js
                                                                                                                                                                                                                                                                                 @link https://github.com/zenorocha/clipboard.js
+                                                                                                                                                                                                                                                                                @license MIT License © Zeno Rocha
                                                                                                                                                                                                                                                                                */
 
 
@@ -11925,7 +11927,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 exports.default = {
   bind: function bind(el, binding, vnode) {
-    var options = resolveOptionsOfClipboard(binding);
+    var options = resolveOptionsForClipboard(binding);
     var clipboard = new _clipboard2.default(el, options);
     var eventName = binding.arg || 'clipboard-success';
 
@@ -11940,7 +11942,7 @@ exports.default = {
 };
 
 
-function resolveOptionsOfClipboard(binding) {
+function resolveOptionsForClipboard(binding) {
   var options = {
     action: function action() {
       return binding.modifiers.cut ? 'cut' : 'copy';
@@ -12942,6 +12944,14 @@ var _elementMeasurer2 = _interopRequireDefault(_elementMeasurer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/*
+  v-ripple.{modifiers}="{value}"
+
+  modifiers: [auto] or light or dark
+  value: {
+    color: '#fff' // ripple color.
+  }
+ */
 exports.default = {
   bind: function bind(el, binding) {
     el.classList.add('ripple');
@@ -13024,6 +13034,7 @@ exports.default = {
         binding.value.onActivate(item);
       }
     };
+
     var options = Object.assign({}, binding.value, { onActivate: onActivate });
     var scrollspy = new _scrollspy2.default(el, options);
 

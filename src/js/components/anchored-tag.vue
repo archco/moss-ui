@@ -15,7 +15,7 @@ export default {
     },
   },
   render(createElement) {
-    // create kebabCase id
+    // create kebab-case id
     const text = this.getChildrenTextContent(this.$slots.default);
     const tagId = strToKebab(text);
     const data = {
