@@ -39,7 +39,9 @@ export default {
     },
     containerStyle: {
       type: Object,
-      default: () => {},
+      default: () => {
+        return {};
+      },
     },
   },
   computed: {
