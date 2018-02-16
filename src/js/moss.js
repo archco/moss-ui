@@ -11,11 +11,24 @@ import * as Util from './lib/util';
 import * as components from './components';
 import * as directives from './directives';
 import * as Svg from '../svg';
-import { version } from '../../package.json';
+import version from '../../task/version';
 
 const DefaultOptions = {
   enableGlobalComponents: true,
 };
+
+const lib = {
+  Color,
+  ElementMeasurer,
+  ElementUtil,
+  Svg,
+  Util,
+};
+
+function addMossObject(Vue) {
+  const Moss = { version, lib };
+  window.Moss = Vue.Moss = Vue.prototype.$moss = Moss;
+}
 
 const MossUI = {
   version: version,
@@ -26,7 +39,7 @@ const MossUI = {
     options = Object.assign(DefaultOptions, options);
 
     // Add object for convenience.
-    this.addMossObject(Vue);
+    addMossObject(Vue);
 
     // Add components.
     if (options.enableGlobalComponents) {
@@ -39,21 +52,7 @@ const MossUI = {
     for (const [key, val] of Object.entries(directives)) {
       Vue.directive(Util.strToKebab(key), val);
     }
-  },
-
-  addMossObject(Vue) {
-    const Moss = {
-      version,
-      lib: {
-        Color,
-        Util,
-        ElementUtil,
-        ElementMeasurer,
-        Svg,
-      },
-    };
-    window.Moss = Vue.Moss = Vue.prototype.$moss = Moss;
-  },
+  }
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -62,9 +61,9 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export {
   Color,
-  Util,
-  ElementUtil,
   ElementMeasurer,
+  ElementUtil,
+  Svg,
+  Util,
 };
-
 export default MossUI;
