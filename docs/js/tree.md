@@ -8,7 +8,7 @@
 
 ### Data Structure
 
-```javascript
+``` js
 const treeData = [
   // list-item.
   { name: 'item1' },
@@ -32,7 +32,7 @@ const treeData = [
 
 ### Basic
 
-```html
+``` html
 <ul is="tree" :items="treeData"></ul>
 
 <!-- '.no-pad' will remove padding-left of <li>. -->
@@ -41,7 +41,7 @@ const treeData = [
 
 ### Item name as HTML
 
-```javascript
+``` js
 // Data Structure.
 const treeData2 = {
   name: '<a href="./index.html">MOSS-UI</a>',
@@ -52,7 +52,7 @@ const treeData2 = {
       name: '<a href="./js-libraries.html">JS Libraries</a>',
       items: [
         { name: '<a href="./js-libraries.html#color">Color</a>' },
-        { name: '<a href="./js-libraries.html#elementutil">ElementUtil</a>' },
+        { name: '<a href="./js-libraries.html#element-util">ElementUtil</a>' },
         { name: '<a href="./js-libraries.html#util">Util</a>' },
       ],
     },
@@ -62,7 +62,7 @@ const treeData2 = {
 
 ### Set Icon
 
-```html
+``` html
 <ul is="tree" :items="treeData" opened-html='[-] ' closed-html='[+] '></ul>
 ```
 

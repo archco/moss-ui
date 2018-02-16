@@ -10,12 +10,12 @@ Helper classes for text. These classes are references of bootstrap. See [Link](h
 - `.font-accent`
 - `.font-sans-serif`
 
-**Font sizes**
+Font sizes
 
 - `.font-small`
 - `.font-large`
 
-**Font weight and italics**
+Font weight and italics
 
 - `.font-weight-light`
 - `.font-weight-normal`

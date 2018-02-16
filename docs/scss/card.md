@@ -3,6 +3,7 @@
 > source: [scss/parts/card](../../src/scss/parts/_card.scss)
 
 ### Table of contents
+
 - [Usage](#usage)
   - [Vertical Card](#vertical-card)
   - [Horizontal Card](#horizontal-card)
@@ -14,6 +15,7 @@
 ## Usage
 
 ### Vertical Card
+
 It is default value of card contents direction.
 
 ``` html

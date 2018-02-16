@@ -3,6 +3,7 @@
 > source: [scss/parts/scaffolding](../../src/scss/parts/_scaffolding.scss)
 
 ### Table of contents
+
 - [Default Tags](#default-tags)
   - [Link](#link)
   - [Table](#table)
@@ -14,24 +15,24 @@
 
 ### Link
 
-**Avoid underline decoration**
+#### no-deco class
 
-The default link causes an underline when hovering. Do one of the following to write `<a>` to avoid underlining.
+It's a way to remove underline decoration in link. The default link causes an underline when hovering. Do one of the following to write `<a>` to avoid underlining.
 
-- Add class `.no-deco` e.g. `<a href="#" class="no-deco">`
 - In html
-  ```html
+  ``` html
   <a href="#" class="no-deco">LINK</a>
   ```
 - In scss
-  ```scss
+  ``` scss
   .target {
     @include no-decoration;
   }
   ```
 
+#### inherit class
 
-**Set inherit color to links color**
+Set inherit color to every state of link. (`:link`, `:visited`, `:hover`, `:focus` and `:active`)
 
 - In html
   ```html
@@ -46,7 +47,8 @@ The default link causes an underline when hovering. Do one of the following to w
 
 ### Table
 
-**Basic and Center position**
+Basic and Center position
+
 ```html
 <table class="table center">
   <thead>...</thead>
@@ -54,22 +56,26 @@ The default link causes an underline when hovering. Do one of the following to w
 </table>
 ```
 
-**Bordered**
+Bordered
+
 ```html
 <table class="table bordered">...</table>
 ```
 
-**Striped**
+Striped
+
 ```html
 <table class="table striped">...</table>
 ```
 
-**Hover**
+Hover
+
 ```html
 <table class="table hover">...</table>
 ```
 
-**Responsive**
+Responsive
+
 - wrapper around
   ```html
   <div class="table-responsive-wrapper">
@@ -82,6 +88,7 @@ The default link causes an underline when hovering. Do one of the following to w
   ```
 
 ### Blockquote
+
 > based on [Color-set](color-set.md)
 
 Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
@@ -90,14 +97,14 @@ Available color keywords: default, primary, secondary, info, success, warning, d
 <blockquote class="success">...</blockquote>
 ```
 
-
 ## Optional Classes
 
 ### pad
 
 Available Tags: `<article>`, `<aside>`, `<div>`, `<p>` and `<blockquote>`
 
-**article with `.pad`**
+**Example**: article with `.pad`
+
 ```html
 <article class="pad">...</article>
 ```

@@ -9,9 +9,10 @@
 [scss/components/navbar](../../src/scss/components/_navbar.scss)
 
 ### Table of Contents
+
 - [Usage](#usage)
   - [Basic](#basic)
-  - [Multiple navigations](#multiple-navigations)
+  - [Multiple navigation](#multiple-navigation)
 - [Props](#props)
 - [SCSS variables](#scss-variables)
 
@@ -37,7 +38,7 @@
 </navbar>
 ```
 
-### Multiple navigations
+### Multiple navigation
 
 ```html
 <navbar align="between">

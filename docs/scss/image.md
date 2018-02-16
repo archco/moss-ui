@@ -3,6 +3,7 @@
 > source: [scss/parts/image](../../src/scss/parts/_image.scss)
 
 ### Table of contents
+
 - [Image Container](#image-container)
   - [with fade-in effect](#with-fade-in-effect)
   - [with slide-in effect](#with-slide-in-effect)

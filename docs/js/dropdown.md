@@ -4,9 +4,10 @@
 [js/components/dropdown](../../src/js/components/dropdown.vue)  
 [scss/components/dropdown](../../src/scss/components/_dropdown.scss)
 
-> This component is built on [Popper.js](https://github.com/FezVrasta/popper.js). If you want more information, please see [popper-documentation](https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/popper-documentation.md).
+**Notice**: This component is built on [Popper.js](https://github.com/FezVrasta/popper.js). If you want more information, please see [popper-documentation](https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/popper-documentation.md).
 
 ### Table of contents
+
 - [Usage](#usage)
   - [Toggle dropdown](#toggle-dropdown)
   - [Hover dropdown](#hover-dropdown)
@@ -40,6 +41,7 @@
 ```
 
 ### Content placement
+
 > @see [Popper.placements][]
 
 - Placements: `auto` `top` `right` `bottom` `left`
@@ -55,6 +57,7 @@
 ```
 
 ### Content Offset
+
 > @see [modifiers~offset][]
 
 If the placement is `top` or `bottom`, this value means `width, height`. In case of `left` or `right`, it means `height, width`.
@@ -70,6 +73,7 @@ If the placement is `top` or `bottom`, this value means `width, height`. In case
 ```
 
 ### Content decorators
+
 - classes: `.dropdown-item`, `.dropdown-header` and `.dropdown-divider`.
 - disabled-item attribute: `[disabled]`
 

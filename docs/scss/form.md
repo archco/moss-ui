@@ -3,6 +3,7 @@
 > source: [scss/parts/form](../../src/scss/parts/_form.scss)
 
 ### Table of contents
+
 - [Usage](#usage)
   - [default](#default)
   - [form-inline](#form-inline)
@@ -65,7 +66,8 @@ $auto-input-bg-color-enable: true !default;
 
 ### Input with Icons
 
-**Default usage**
+#### Default usage
+
 ``` html
 <!-- block  -->
 <div class="input with-icon">
@@ -84,7 +86,8 @@ $auto-input-bg-color-enable: true !default;
 </div>
 ```
 
-**Icon positioning**
+#### Icon positioning
+
 ``` html
 <!-- Right -->
 <div class="input with-icon-right">
@@ -117,7 +120,7 @@ $auto-input-bg-color-enable: true !default;
 ## SCSS Variables
 
 ``` scss
-$filedset-border: 2px solid $primary-color !default;
+$fieldset-border: 2px solid $primary-color !default;
 $legend-color: $primary-color !default;
 $label-color: $text-color !default;
 $label-color-focused: $primary-color !default;

@@ -3,6 +3,7 @@
 > source: [scss/parts/button](../../src/scss/parts/_button.scss)
 
 ### Table of contents
+
 - [Usage](#usage)
   - [btn](#btn)
   - [btn-flat](#btn-flat)
@@ -47,6 +48,7 @@
 ```
 
 ### Button with Color-set
+
 > based on [Color-set](color-set.md)
 
 Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
@@ -69,7 +71,8 @@ This uses [loader](loader.md)
 
 Available content buttons for button-group: `.btn`, `.btn-flat`, `dropdown`
 
-**Horizontal button group (default)**
+#### Horizontal button group (default)
+
 ``` html
 <div class="btn-group">
   <button class="btn">Left</button>
@@ -78,7 +81,8 @@ Available content buttons for button-group: `.btn`, `.btn-flat`, `dropdown`
 </div>
 ```
 
-**Vertical button group**
+#### Vertical button group
+
 ``` html
 <div class="btn-group-vertical">
   <button class="btn">Top</button>
