@@ -1656,10 +1656,9 @@ textarea.inline {
 .form-group {
   margin-bottom: 1rem; }
 
-.input .icon,
-.input .icon-right, .input .icon-left {
+.input > .icon,
+.input > .icon-right, .input > .icon-left {
   position: absolute;
-  top: 0;
   display: -ms-inline-flexbox;
   display: inline-flex;
   -ms-flex-align: center;
@@ -1679,11 +1678,108 @@ textarea.inline {
     padding-right: 2em; }
   .input.with-icon-left input {
     padding-left: 2em; }
-  .input .icon,
-  .input .icon-right {
-    right: 0; }
-  .input .icon-left {
-    left: 0; }
+  .input > .icon,
+  .input > .icon-right {
+    top: 50%;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    transform: translate(0, -50%); }
+  .input > .icon-left {
+    top: 50%;
+    left: 0;
+    bottom: auto;
+    right: auto;
+    transform: translate(0, -50%); }
+
+.input-group {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: stretch;
+      align-items: stretch;
+  width: 100%;
+  margin-bottom: 1rem; }
+  .input-group > input,
+  .input-group > select,
+  .input-group > textarea,
+  .input-group > .input {
+    position: relative;
+    -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0; }
+    .input-group > input + input,
+    .input-group > input + select,
+    .input-group > input + textarea,
+    .input-group > input + .input,
+    .input-group > select + input,
+    .input-group > select + select,
+    .input-group > select + textarea,
+    .input-group > select + .input,
+    .input-group > textarea + input,
+    .input-group > textarea + select,
+    .input-group > textarea + textarea,
+    .input-group > textarea + .input,
+    .input-group > .input + input,
+    .input-group > .input + select,
+    .input-group > .input + textarea,
+    .input-group > .input + .input {
+      margin-left: -1px; }
+    .input-group > input:not(:last-child),
+    .input-group > select:not(:last-child),
+    .input-group > textarea:not(:last-child),
+    .input-group > .input:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0; }
+    .input-group > input:not(:first-child),
+    .input-group > select:not(:first-child),
+    .input-group > textarea:not(:first-child),
+    .input-group > .input:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0; }
+  .input-group > .input {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: stretch;
+        align-items: stretch; }
+
+.input-group-prepend,
+.input-group-append {
+  display: -ms-flexbox;
+  display: flex; }
+  .input-group-prepend .btn,
+  .input-group-append .btn {
+    position: relative;
+    margin: 0; }
+  .input-group-prepend .btn + .btn,
+  .input-group-prepend .btn + .input-group-text,
+  .input-group-prepend .input-group-text + .input-group-text,
+  .input-group-prepend .input-group-text + .btn,
+  .input-group-append .btn + .btn,
+  .input-group-append .btn + .input-group-text,
+  .input-group-append .input-group-text + .input-group-text,
+  .input-group-append .input-group-text + .btn {
+    margin-left: -1px; }
+
+.input-group-prepend {
+  margin-right: -1px; }
+
+.input-group-append {
+  margin-left: -1px; }
+
+.input-group-text {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 0.2em 0.5em;
+  margin-bottom: 0;
+  font-size: 1em;
+  text-align: center;
+  white-space: nowrap;
+  border: 1px solid #bebebe;
+  border-radius: 2px; }
 
 input[type="submit"],
 input[type="button"],

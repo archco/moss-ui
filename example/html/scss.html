@@ -37,6 +37,7 @@
             <li is="anchored-tag" tag="li">Button</li>
             <li is="anchored-tag" tag="li">Card</li>
             <li is="anchored-tag" tag="li">Form</li>
+            <li is="anchored-tag" tag="li">Input Group</li>
             <li is="anchored-tag" tag="li">Grid</li>
             <li is="anchored-tag" tag="li">Helper</li>
             <li is="anchored-tag" tag="li">Image</li>
@@ -397,7 +398,7 @@ SOFTWARE.</code></pre>
             </div>
           </div>
           <anchored-tag tag="h1" owned>Form</anchored-tag>
-          <h3>Default Usage</h3>
+          <h2>Default Usage</h2>
           <form>
             <fieldset>
               <legend>Form</legend>
@@ -447,7 +448,7 @@ SOFTWARE.</code></pre>
               </div>
             </fieldset>
           </form>
-          <h3>Form Inline</h3>
+          <h2>Form Inline</h2>
           <form class="form-inline">
             <fieldset>
               <legend>Form inline</legend>
@@ -478,7 +479,7 @@ SOFTWARE.</code></pre>
               <button class="btn" type="submit">Submit</button>
             </fieldset>
           </form>
-          <h3>Vertical Alignment</h3>
+          <h2>Vertical Alignment</h2>
           <form class="form-inline">
             <fieldset>
               <legend>Select</legend>
@@ -491,7 +492,7 @@ SOFTWARE.</code></pre>
               <input type="date">
             </fieldset>
           </form>
-          <h3>Input with Color-set</h3>
+          <h2>Input with Color-set</h2>
           <div class="row">
             <div class="col-md group">
               <input type="text" placeholder="default">
@@ -512,12 +513,12 @@ SOFTWARE.</code></pre>
           <div class="input inline with-icon-right">
             <input class="danger" type="text" placeholder="Disabled" disabled><span class="icon-right color-default"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span>
           </div>
-          <h3>Input with Icons</h3>
-          <h4>Default</h4>
+          <h2>Input with Icons</h2>
+          <h3>Default</h3>
           <div class="input with-icon">
             <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
           </div>
-          <h4>Icon positioning left or right or both</h4>
+          <h3>Icon positioning left or right or both</h3>
           <div class="input with-icon-right group">
             <input type="text" placeholder="Text me.."><span class="icon-right"><i class="fa fa-commenting" aria-hidden="true"></i></span>
           </div>
@@ -527,11 +528,11 @@ SOFTWARE.</code></pre>
           <div class="input with-icon-left with-icon-right group">
             <input type="text" placeholder="Email.."><span class="icon-left"><i class="fa fa-envelope" aria-hidden="true"></i></span><span class="icon-right"><i class="fa fa-check" aria-hidden="true"></i></span>
           </div>
-          <h4>Inline input</h4>
+          <h3>Inline input</h3>
           <div class="input inline with-icon-left with-icon-right">
             <input class="inline" type="text" placeholder="Email.."><span class="icon-left"><i class="fa fa-envelope" aria-hidden="true"></i></span><span class="icon-right color-success"><i class="fa fa-check" aria-hidden="true"></i></span>
           </div>
-          <h4>Input sizes</h4>
+          <h3>Input sizes</h3>
           <div class="input inline with-icon font-small">
             <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
           </div>
@@ -540,6 +541,31 @@ SOFTWARE.</code></pre>
           </div>
           <div class="input inline with-icon font-large">
             <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+          </div>
+          <anchored-tag tag="h1" owned>Input Group</anchored-tag>
+          <h2>Input group</h2>
+          <div class="input-group">
+            <div class="input-group-prepend"><span class="input-group-text">@</span></div>
+            <input type="text" placeholder="Username">
+          </div>
+          <div class="input-group">
+            <input type="text" placeholder="Recipient">
+            <div class="input-group-append"><span class="input-group-text">@example.com</span></div>
+          </div>
+          <div class="input-group">
+            <input type="text" placeholder="Query">
+            <div class="input-group-append">
+              <button class="btn success">Send</button>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="input with-icon-left">
+              <input type="search" placeholder="Search.."><span class="icon-left">
+                <icon name="search"></icon></span>
+            </div>
+            <div class="input-group-append">
+              <button class="btn link" type="submit">Search</button>
+            </div>
           </div>
           <anchored-tag tag="h1" owned>Grid</anchored-tag>
           <h2>Container</h2>

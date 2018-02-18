@@ -1,0 +1,21 @@
+h2 Input group
+
+div.input-group
+  div.input-group-prepend
+    span.input-group-text @
+  input(type='text' placeholder='Username')
+div.input-group
+  input(type='text' placeholder='Recipient')
+  div.input-group-append
+    span.input-group-text @example.com
+div.input-group
+  input(type='text' placeholder='Query')
+  div.input-group-append
+    button.btn.success Send
+.input-group
+  .input.with-icon-left
+    input(type='search' placeholder='Search..')
+    span.icon-left
+      icon(name='search')
+  .input-group-append
+    button.btn.link(type='submit') Search
