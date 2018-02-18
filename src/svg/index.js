@@ -8,3 +8,4 @@ export { default as caretLeft } from './caret-left.svg';
 export { default as caretRight } from './caret-right.svg';
 export { default as close } from './close.svg';
 export { default as check } from './check.svg';
+export { default as search } from './search.svg';
