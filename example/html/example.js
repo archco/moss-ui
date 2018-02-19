@@ -71,6 +71,7 @@ var docSize = new window.Moss.lib.ElementMeasurer();
 var asideMenu = document.querySelector('aside .menu');
 if (asideMenu) {
   window.addEventListener('scroll', onScroll);
+  onScroll();
 }
 
 function onScroll() {
