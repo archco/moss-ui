@@ -15,7 +15,7 @@
   <body>
     <div id="app">
       <header class="bg-color-primary pad flex-container-center" style="height:100px;">
-        <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI</a></h1>
+        <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI <span class='moss-version'></span></a></h1>
       </header>
       <navbar class="sticky-top shadow-near" align="end">
         <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
@@ -66,7 +66,7 @@
             </div>
           </div>
         </div>
-        <div class="footer-copyright">copyright &copy; 2017 MOSS-UI all rights reserved.</div>
+        <div class="footer-copyright">copyright &copy; <span id='copyright-year'>2017</span> MOSS-UI all rights reserved.</div>
       </footer>
       <scroll-to :duration="800" :offset="400"></scroll-to>
       <toast></toast>
@@ -75,11 +75,5 @@
     <script src="../../node_modules/vue/dist/vue.js"></script>
     <script src="../../dist/moss.js"></script>
     <script src="./example.js"></script>
-    <script>
-      var year = new Date().getFullYear();
-      document.querySelector('.footer-copyright').innerHTML = 'copyright \&copy; ' + year + ' MOSS-UI all rights reserved.';
-      document.querySelector('#project-name').innerHTML = 'MOSS-UI ' + Moss.version;
-      
-    </script>
   </body>
 </html>

@@ -26,7 +26,7 @@ html
     div(id='app')
       header(class='bg-color-primary pad flex-container-center' style="height:100px;")
         h1
-          a.no-deco.inherit(id='project-name' href='index.html') MOSS-UI
+          a.no-deco.inherit(id='project-name' href='index.html') MOSS-UI <span class='moss-version'></span>
 
       navbar(class='sticky-top shadow-near' align='end')
         navbar-brand(href='index.html' type='text' slot='brand' v-activator.this.self) Moss
@@ -58,7 +58,7 @@ html
                 li
                   a(href='#') Link3
         div(class='footer-copyright')
-          |copyright &copy; 2017 MOSS-UI all rights reserved.
+          |copyright &copy; <span id='copyright-year'>2017</span> MOSS-UI all rights reserved.
       scroll-to(:duration='800' :offset='400')
       toast
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
@@ -66,9 +66,5 @@ html
     script(src='../../node_modules/vue/dist/vue.js')
     script(src='../../dist/moss.js')
     script(src='./example.js')
-    script.
-      var year = new Date().getFullYear();
-      document.querySelector('.footer-copyright').innerHTML = 'copyright \&copy; ' + year + ' MOSS-UI all rights reserved.';
-      document.querySelector('#project-name').innerHTML = 'MOSS-UI ' + Moss.version;
 
     block script
