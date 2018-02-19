@@ -37,6 +37,8 @@
         </div>
       </div>
       <section class="pad">
+        <anchored-tag tag="h1" owned>Search</anchored-tag>
+        <search></search>
         <anchored-tag tag="h1" owned>Icon</anchored-tag>
         <h2>SVG default usage</h2>
         <div class="pad" style="font-size:3em;"><i class="icon" id="svg-arrow-example"></i><i class="icon" id="svg-caret-example"></i><i class="icon" id="svg-close-example"></i></div>
@@ -46,17 +48,6 @@
         <icon class="bg-color-dark" name="close" style="font-size:3em;border-radius:50%;"></icon>
         <icon class="bg-color-warning" name="check" style="font-size:2em;"></icon>
         <icon class="bg-color-link" name="search" style="font-size:2em;"></icon>
-        <anchored-tag tag="h1" owned>CloseButton</anchored-tag>
-        <h2>Default usage</h2><span>test text<close-button /></span><span class="badge">Badge<close-button action="remove"/></span>
-        <h2>Specifying position</h2>
-        <h3>middle-right</h3>
-        <div class="pad bg-color-info">
-          Hello world<close-button position="middle-right"/></div>
-        <h3>top-right</h3>
-        <div class="pad bg-color-secondary">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><close-button position="top-right"/>
-        </div>
-        <h2>Hook on 'close' event</h2><span>test text <close-button action="" @close="eventTest">✖</close-button></span>
       </section>
       <footer class="footer">
         <div class="container">
