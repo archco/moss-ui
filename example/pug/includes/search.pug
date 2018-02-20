@@ -1,1 +1,10 @@
-search
+blockquote.link.pad
+  | <i class="fa fa-flask" aria-hidden="true"></i> It is experimental component.
+
+.row
+  .col-lg-4.col-md-6
+    search(
+      :collection='collection' :search-options='searchOptions'
+      :result-limit='6'
+      auto-width
+    )

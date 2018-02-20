@@ -4121,6 +4121,21 @@ simple-crud,
     padding-left: 0;
     cursor: pointer; }
 
+.search-result-list {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: stretch;
+      align-items: stretch;
+  border: 1px solid #888;
+  background-color: #fff;
+  z-index: 10; }
+  .search-result-list > li {
+    text-align: center; }
+    .search-result-list > li:not(:last-child) {
+      border-bottom: 1px solid #888; }
+
 @media only screen and (min-width: 0) {
   .d-none {
     display: none !important; }
