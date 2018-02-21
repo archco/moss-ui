@@ -4,7 +4,10 @@ blockquote.link.pad
 .row
   .col-lg-4.col-md-6
     search(
-      :collection='collection' :search-options='searchOptions'
+      :collection='collection'
+      :search-options='searchOptions'
       :result-limit='6'
       auto-width
+      @item-clicked='eventTest'
+      @submit='eventTest'
     )

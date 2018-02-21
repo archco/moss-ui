@@ -4132,9 +4132,12 @@ simple-crud,
   background-color: #fff;
   z-index: 10; }
   .search-result-list > li {
-    text-align: center; }
+    text-align: center;
+    cursor: pointer; }
     .search-result-list > li:not(:last-child) {
       border-bottom: 1px solid #888; }
+    .search-result-list > li:focus {
+      background-color: #ededed; }
 
 @media only screen and (min-width: 0) {
   .d-none {

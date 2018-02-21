@@ -195,10 +195,33 @@ exports.caretIcon = caretIcon;
 exports.closeIcon = closeIcon;
 // information
 function information() {
+  var elms = document.querySelectorAll('.moss-version');
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = elms[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var elm = _step.value;
+
+      elm.innerHTML = window.Moss.version;
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator.return) {
+        _iterator.return();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+
   document.querySelector('#copyright-year').innerHTML = new Date().getFullYear();
-  document.querySelectorAll('.moss-version').forEach(function (elm) {
-    return elm.innerHTML = window.Moss.version;
-  });
 }
 
 // aside menu.

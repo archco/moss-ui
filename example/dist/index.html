@@ -41,7 +41,7 @@
         <blockquote class="link pad"><i class="fa fa-flask" aria-hidden="true"></i> It is experimental component.</blockquote>
         <div class="row">
           <div class="col-lg-4 col-md-6">
-            <search :collection="collection" :search-options="searchOptions" :result-limit="6" auto-width></search>
+            <search :collection="collection" :search-options="searchOptions" :result-limit="6" auto-width @item-clicked="eventTest" @submit="eventTest"></search>
           </div>
         </div>
         <anchored-tag tag="h1" owned>Icon</anchored-tag>

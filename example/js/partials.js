@@ -1,7 +1,10 @@
 // information
 export function information() {
+  const elms = document.querySelectorAll('.moss-version');
+  for (const elm of elms) {
+    elm.innerHTML = window.Moss.version
+  }
   document.querySelector('#copyright-year').innerHTML = new Date().getFullYear();
-  document.querySelectorAll('.moss-version').forEach(elm => elm.innerHTML = window.Moss.version);
 }
 
 // aside menu.
