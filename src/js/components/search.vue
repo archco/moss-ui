@@ -105,6 +105,7 @@ export default {
     },
 
     onSubmit() {
+      if (!this.input) return;
       const data = {
         input: this.input,
         result: this.result,

@@ -8546,6 +8546,7 @@ exports.default = {
       this.$emit('item-clicked', item);
     },
     onSubmit: function onSubmit() {
+      if (!this.input) return;
       var data = {
         input: this.input,
         result: this.result

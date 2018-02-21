@@ -26,10 +26,11 @@ h2 Example Search
     )
       li(
         slot='result-item'
-        slot-scope='{ item, onClickItem }'
+        slot-scope='props'
         style='text-align:left;'
         tabindex='0'
-        @click='onClickItem(item)'
+        @click='props.onClickItem(props.item)'
       )
-        h3(style='margin:0;') {{ item.name }}
-        span.help {{ item.category }} | {{ item.description }}
+        h3(style='margin:0;' v-text='props.item.name')
+        span.badge(:style='getBadgeStyle(props.item.category)' v-text="props.item.category")
+        span.help(v-text='props.item.description')

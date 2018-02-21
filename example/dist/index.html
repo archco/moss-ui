@@ -49,8 +49,8 @@
         <div class="row">
           <div class="col-lg-4 col-md-6">
             <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="onSearchItemClick" @submit="onSearchSubmit">
-              <li slot="result-item" slot-scope="{ item, onClickItem }" style="text-align:left;" tabindex="0" @click="onClickItem(item)">
-                <h3 style="margin:0;">{{ item.name }}</h3><span class="help">{{ item.category }} | {{ item.description }}</span>
+              <li slot="result-item" slot-scope="props" style="text-align:left;" tabindex="0" @click="props.onClickItem(props.item)">
+                <h3 style="margin:0;" v-text="props.item.name"></h3><span class="badge" :style="getBadgeStyle(props.item.category)" v-text="props.item.category"></span><span class="help" v-text="props.item.description"></span>
               </li>
             </search>
           </div>

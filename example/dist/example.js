@@ -88,6 +88,7 @@ var searchOptions = {
   keys: [{ name: 'name', weight: .5 }, { name: 'category', weight: .3 }, { name: 'description', weight: .2 }]
 }; /* eslint-disable no-unused-vars */
 var strToKebab = window.Moss.lib.Util.strToKebab;
+var Color = window.Moss.lib.Color;
 
 
 window.vm = new window.Vue({
@@ -117,6 +118,24 @@ window.vm = new window.Vue({
 
       if (result.length < 1) return;
       this.onSearchItemClick(result[0]);
+    },
+
+
+    // category badge style of search-result.
+    getBadgeStyle: function getBadgeStyle(category) {
+      // categories: scss, scss-helpers, vue, vue-directives, js-libraries
+      var c = {
+        scss: '#c69',
+        js: '#f5da55',
+        vue: '#4fc08d'
+      };
+      var prefix = /(^\w+)/.exec(category)[1];
+      var bgColor = new Color(c[prefix]);
+      return {
+        marginRight: '.5rem',
+        color: bgColor.brightness > 165 ? '#333' : '#fff',
+        backgroundColor: bgColor.toHex(true)
+      };
     }
   },
 

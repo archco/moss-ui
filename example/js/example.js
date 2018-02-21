@@ -12,6 +12,7 @@ const searchOptions = {
 };
 
 const { strToKebab } = window.Moss.lib.Util;
+const { Color } = window.Moss.lib;
 
 window.vm = new window.Vue({
   el: '#app',
@@ -38,6 +39,23 @@ window.vm = new window.Vue({
     onSearchSubmit({ result }) {
       if (result.length < 1) return;
       this.onSearchItemClick(result[0]);
+    },
+
+    // category badge style of search-result.
+    getBadgeStyle(category) {
+      // categories: scss, scss-helpers, vue, vue-directives, js-libraries
+      const c = {
+        scss: '#c69',
+        js: '#f5da55',
+        vue: '#4fc08d',
+      };
+      const prefix = /(^\w+)/.exec(category)[1];
+      const bgColor = new Color(c[prefix]);
+      return {
+        marginRight: '.5rem',
+        color: bgColor.brightness > 165 ? '#333' : '#fff',
+        backgroundColor: bgColor.toHex(true),
+      };
     }
   },
 
