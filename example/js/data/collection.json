@@ -32,19 +32,19 @@
   {
     "_id": 6,
     "name": "Helper",
-    "category": "scss-helper",
+    "category": "scss-helpers",
     "description": "Helper styles"
   },
   {
     "_id": 7,
     "name": "Text",
-    "category": "scss-helper",
+    "category": "scss-helpers",
     "description": "Helper styles for text contents."
   },
   {
     "_id": 8,
     "name": "Flex",
-    "category": "scss-helper",
+    "category": "scss-helpers",
     "description": "Helper styles for using flexbox."
   },
   {

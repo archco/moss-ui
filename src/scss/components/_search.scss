@@ -1,9 +1,15 @@
+.search-component {
+  .search-form button[type="submit"] {
+    @include btn-color($search-button-bg-color);
+  }
+}
+
 .search-result-list {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  border: 1px solid #888;
-  background-color: #fff;
+  border: $search-result-border-width solid $search-result-border-color;
+  background-color: $search-result-bg-color;
   z-index: 10;
 
   > li {
@@ -11,11 +17,11 @@
     cursor: pointer;
 
     &:not(:last-child) {
-      border-bottom: 1px solid #888;
+      border-bottom: $search-result-border-width solid $search-result-border-color;
     }
 
     &:focus {
-      background-color: #ededed;
+      background-color: $search-result-item-focus-color;
     }
   }
 }

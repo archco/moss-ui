@@ -420,3 +420,10 @@ $carousel-dot-color: rgba($text-color-light, .5) !default;
 $carousel-dot-active-color: $text-color-light !default;
 $carousel-arrow-color: rgba($text-color-light, .5) !default;
 $carousel-arrow-hover-color: $text-color-light !default;
+
+// search
+$search-button-bg-color: $primary-color !default;
+$search-result-border-width: 1px !default;
+$search-result-border-color: $border-color !default;
+$search-result-bg-color: $background-color !default;
+$search-result-item-focus-color: $shade-color !default;

@@ -1,13 +1,35 @@
 blockquote.link.pad
   | <i class="fa fa-flask" aria-hidden="true"></i> It is experimental component.
 
+h2 default
 .row
   .col-lg-4.col-md-6
     search(
       :collection='collection'
       :search-options='searchOptions'
-      :result-limit='6'
+      :result-limit='5'
       auto-width
       @item-clicked='eventTest'
       @submit='eventTest'
     )
+
+h2 Example Search
+.row
+  .col-lg-4.col-md-6
+    search(
+      :collection='collection'
+      :search-options='searchOptions'
+      :result-limit='5'
+      auto-width
+      @item-clicked='onSearchItemClick'
+      @submit='onSearchSubmit'
+    )
+      li(
+        slot='result-item'
+        slot-scope='{ item, onClickItem }'
+        style='text-align:left;'
+        tabindex='0'
+        @click='onClickItem(item)'
+      )
+        h3(style='margin:0;') {{ item.name }}
+        span.help {{ item.category }} | {{ item.description }}

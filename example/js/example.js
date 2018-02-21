@@ -11,6 +11,8 @@ const searchOptions = {
   ],
 };
 
+const { strToKebab } = window.Moss.lib.Util;
+
 window.vm = new window.Vue({
   el: '#app',
   data: {
@@ -27,6 +29,16 @@ window.vm = new window.Vue({
     eventTest(event) {
       console.log(event);
     },
+
+    onSearchItemClick({ name, category }) {
+      // redirect to
+      window.location.href = `${category}.html#${strToKebab(name)}`;
+    },
+
+    onSearchSubmit({ result }) {
+      if (result.length < 1) return;
+      this.onSearchItemClick(result[0]);
+    }
   },
 
   beforeMount() {
@@ -37,8 +49,7 @@ window.vm = new window.Vue({
   },
 });
 
-window.collection = collection;
-
+// invoke function for partial examples.
 for (const fn of Object.values(Partials)) {
   fn();
 }

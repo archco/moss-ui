@@ -8444,12 +8444,8 @@ var _icon2 = _interopRequireDefault(_icon);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * TODO:
- * 1. x events - item-clicked, submit
- * 2. x key navigation.
- * 3. other click (click-away) process.
- */
+//
+//
 //
 //
 //
@@ -8603,7 +8599,6 @@ exports.default = {
 
       // input - ArrowUp|ArrowDown
       this.elm.input.addEventListener('keydown', function (event) {
-        console.log(event.key);
         if (event.key.match(/ArrowUp|ArrowDown|Up|Down/)) {
           event.preventDefault();
           var items = _this.getCurrentItems();
@@ -12928,7 +12923,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "search-component" }, [
     _c(
       "form",
       {
@@ -12968,7 +12963,7 @@ var render = function() {
           _c("div", { staticClass: "input-group-append" }, [
             _c(
               "button",
-              { staticClass: "btn link", attrs: { type: "submit" } },
+              { staticClass: "btn", attrs: { type: "submit" } },
               [_c("icon", { attrs: { name: "search" } })],
               1
             )
@@ -12992,22 +12987,26 @@ var render = function() {
       },
       [
         _vm._l(_vm.result, function(item) {
-          return _vm._t("result-item", [
-            _c(
-              "li",
-              {
-                key: item._id,
-                attrs: { tabindex: "0" },
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.onClickItem(item)
+          return _vm._t(
+            "result-item",
+            [
+              _c(
+                "li",
+                {
+                  key: item._id,
+                  attrs: { tabindex: "0" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.onClickItem(item)
+                    }
                   }
-                }
-              },
-              [_vm._v("\n        " + _vm._s(item.name) + "\n      ")]
-            )
-          ])
+                },
+                [_vm._v("\n        " + _vm._s(item.name) + "\n      ")]
+              )
+            ],
+            { item: item, onClickItem: _vm.onClickItem }
+          )
         })
       ],
       2

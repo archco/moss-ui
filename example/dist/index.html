@@ -39,9 +39,20 @@
       <section class="pad">
         <anchored-tag tag="h1" owned>Search</anchored-tag>
         <blockquote class="link pad"><i class="fa fa-flask" aria-hidden="true"></i> It is experimental component.</blockquote>
+        <h2>default</h2>
         <div class="row">
           <div class="col-lg-4 col-md-6">
-            <search :collection="collection" :search-options="searchOptions" :result-limit="6" auto-width @item-clicked="eventTest" @submit="eventTest"></search>
+            <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="eventTest" @submit="eventTest"></search>
+          </div>
+        </div>
+        <h2>Example Search</h2>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="onSearchItemClick" @submit="onSearchSubmit">
+              <li slot="result-item" slot-scope="{ item, onClickItem }" style="text-align:left;" tabindex="0" @click="onClickItem(item)">
+                <h3 style="margin:0;">{{ item.name }}</h3><span class="help">{{ item.category }} | {{ item.description }}</span>
+              </li>
+            </search>
           </div>
         </div>
         <anchored-tag tag="h1" owned>Icon</anchored-tag>

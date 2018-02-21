@@ -1,17 +1,19 @@
 <template>
-  <div>
+  <div class="search-component">
     <form action="#" method="get" @submit.prevent="onSubmit" class="search-form">
       <div class="input-group">
         <input type="search" name="input" class="search-input" v-model="input" autocomplete="off"/>
         <div class="input-group-append">
-          <button type="submit" class="btn link"><icon name="search"/></button>
+          <button type="submit" class="btn"><icon name="search"/></button>
         </div>
       </div>
     </form>
 
     <ul class="list search-result-list" v-show="showResult">
       <slot name="result-item"
-        v-for="item in result">
+        v-for="item in result"
+        :item="item"
+        :on-click-item="onClickItem">
         <li :key="item._id" @click.prevent="onClickItem(item)" tabindex="0">
           {{ item.name }}
         </li>
@@ -26,12 +28,6 @@ import Fuse from 'fuse.js';
 import Popper from 'popper.js';
 import Icon from './icon.vue';
 
-/**
- * TODO:
- * 1. x events - item-clicked, submit
- * 2. x key navigation.
- * 3. other click (click-away) process.
- */
 export default {
   components: { Icon },
   props: {
@@ -162,7 +158,6 @@ export default {
     addListeners() {
       // input - ArrowUp|ArrowDown
       this.elm.input.addEventListener('keydown', event => {
-        console.log(event.key);
         if (event.key.match(/ArrowUp|ArrowDown|Up|Down/)) {
           event.preventDefault();
           const items = this.getCurrentItems();
