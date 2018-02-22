@@ -15,7 +15,7 @@
   <body>
     <div id="app">
       <header class="bg-color-primary pad flex-container-center" style="height:100px;">
-        <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI</a></h1>
+        <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI <span class='moss-version'></span></a></h1>
       </header>
       <navbar class="sticky-top shadow-near" align="end">
         <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
@@ -37,6 +37,24 @@
         </div>
       </div>
       <section class="pad">
+        <anchored-tag tag="h1" owned>Search</anchored-tag>
+        <blockquote class="link pad"><i class="fa fa-flask" aria-hidden="true"></i> It is experimental component.</blockquote>
+        <h2>default</h2>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="eventTest" @submit="eventTest"></search>
+          </div>
+        </div>
+        <h2>Example Search</h2>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="onSearchItemClick" @submit="onSearchSubmit">
+              <li slot="result-item" slot-scope="props" style="text-align:left;" tabindex="0" @click="props.onClickItem(props.item)">
+                <h3 style="margin:0;" v-text="props.item.name"></h3><span class="badge" :style="getBadgeStyle(props.item.category)" v-text="props.item.category"></span><span class="help" v-text="props.item.description"></span>
+              </li>
+            </search>
+          </div>
+        </div>
         <anchored-tag tag="h1" owned>Icon</anchored-tag>
         <h2>SVG default usage</h2>
         <div class="pad" style="font-size:3em;"><i class="icon" id="svg-arrow-example"></i><i class="icon" id="svg-caret-example"></i><i class="icon" id="svg-close-example"></i></div>
@@ -46,17 +64,6 @@
         <icon class="bg-color-dark" name="close" style="font-size:3em;border-radius:50%;"></icon>
         <icon class="bg-color-warning" name="check" style="font-size:2em;"></icon>
         <icon class="bg-color-link" name="search" style="font-size:2em;"></icon>
-        <anchored-tag tag="h1" owned>CloseButton</anchored-tag>
-        <h2>Default usage</h2><span>test text<close-button /></span><span class="badge">Badge<close-button action="remove"/></span>
-        <h2>Specifying position</h2>
-        <h3>middle-right</h3>
-        <div class="pad bg-color-info">
-          Hello world<close-button position="middle-right"/></div>
-        <h3>top-right</h3>
-        <div class="pad bg-color-secondary">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><close-button position="top-right"/>
-        </div>
-        <h2>Hook on 'close' event</h2><span>test text <close-button action="" @close="eventTest">✖</close-button></span>
       </section>
       <footer class="footer">
         <div class="container">
@@ -75,7 +82,7 @@
             </div>
           </div>
         </div>
-        <div class="footer-copyright">copyright &copy; 2017 MOSS-UI all rights reserved.</div>
+        <div class="footer-copyright">copyright &copy; <span id='copyright-year'>2017</span> MOSS-UI all rights reserved.</div>
       </footer>
       <scroll-to :duration="800" :offset="400"></scroll-to>
       <toast></toast>
@@ -84,11 +91,5 @@
     <script src="../../node_modules/vue/dist/vue.js"></script>
     <script src="../../dist/moss.js"></script>
     <script src="./example.js"></script>
-    <script>
-      var year = new Date().getFullYear();
-      document.querySelector('.footer-copyright').innerHTML = 'copyright \&copy; ' + year + ' MOSS-UI all rights reserved.';
-      document.querySelector('#project-name').innerHTML = 'MOSS-UI ' + Moss.version;
-      
-    </script>
   </body>
 </html>

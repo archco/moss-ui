@@ -78,3 +78,4 @@ Make icon html string by svg-icon name.
 - `caret-down`
 - `close`
 - `check`
+- `search`

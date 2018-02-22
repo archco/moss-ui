@@ -24,3 +24,4 @@ export { default as InputRadio } from './input-radio.vue';
 export { default as Carousel } from 'vue-agile/src/agile.vue';
 export { default as Icon } from './icon.vue';
 export { default as CollapseToggle } from './collapse-toggle.vue';
+export { default as Search } from './search.vue';
