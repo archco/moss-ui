@@ -43,6 +43,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [parallax](js/parallax.md)
 - [scroll-to](js/scroll-to.md)
 - [simple-crud](js/simple-crud.md)
+- [search](js/search.md)
 - [switch](js/switch.md)
   - [input-check](js/switch.md)
   - [input-radio](js/switch.md)

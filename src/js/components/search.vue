@@ -43,15 +43,15 @@ export default {
         return {};
       },
     },
-    resultLimit: {
-      type: Number,
-      default: 0, // no limit.
-    },
     popperOptions: {
       type: Object,
       default: () => {
         return {};
       },
+    },
+    resultLimit: {
+      type: Number,
+      default: 0, // no limit.
     },
     autoWidth: {
       type: Boolean,
