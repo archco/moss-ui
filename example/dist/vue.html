@@ -41,6 +41,7 @@
             <li is="anchored-tag" tag="li">Modal</li>
             <li is="anchored-tag" tag="li">Nav</li>
             <li is="anchored-tag" tag="li">Parallax</li>
+            <li is="anchored-tag" tag="li">Search</li>
             <li is="anchored-tag" tag="li">SimpleCRUD</li>
             <li is="anchored-tag" tag="li">Switch</li>
             <li is="anchored-tag" tag="li">Tab</li>
@@ -354,6 +355,24 @@
             <p>content here...</p>
           </div></div>
           <parallax src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" height="20em"></parallax>
+          <anchored-tag tag="h1" owned>Search</anchored-tag>
+          <p>Simple search component that fuzzy search given collection data such like json.</p>
+          <h2>default</h2>
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="eventTest" @submit="eventTest"></search>
+            </div>
+          </div>
+          <h2>Example Search</h2>
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="onSearchItemClick" @submit="onSearchSubmit">
+                <li slot="result-item" slot-scope="props" style="text-align:left;" tabindex="0" @click="props.onClickItem(props.item)">
+                  <h3 style="margin:0;" v-text="props.item.name"></h3><span class="badge" :style="getBadgeStyle(props.item.category)" v-text="props.item.category"></span><span class="help" v-text="props.item.description"></span>
+                </li>
+              </search>
+            </div>
+          </div>
           <anchored-tag tag="h1" owned>SimpleCRUD</anchored-tag>
           <form class="form-inline" action="#" method="POST">
             <input type="text" name="name" placeholder="Name">

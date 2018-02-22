@@ -226,5 +226,29 @@
     "name": "Util",
     "category": "js-libraries",
     "description": "Javascript util methods."
+  },
+  {
+    "_id": 39,
+    "name": "InputGroup",
+    "category": "scss",
+    "description": "Extend form controls by adding text, buttons."
+  },
+  {
+    "_id": 40,
+    "name": "Search",
+    "category": "vue",
+    "description": "Simple search component that fuzzy search given collection data such like json."
+  },
+  {
+    "_id": 41,
+    "name": "Sizing",
+    "category": "scss-helpers",
+    "description": "Helper classes for specifying width or height of element."
+  },
+  {
+    "_id": 42,
+    "name": "Spacing",
+    "category": "scss-helpers",
+    "description": "Helper classes for specifying margin or padding spacing to element."
   }
 ]
