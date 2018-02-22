@@ -2,7 +2,7 @@
 
 > source:  [scss/helpers/flex](../../src/scss/helpers/_flex.scss)
 
-Helper classes for using [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes). These classes are references of bootstrap. See [Link](https://getbootstrap.com/docs/4.0/utilities/flex/).
+Helper classes for using [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes). These classes are refer to the bootstrap. See [Link](https://getbootstrap.com/docs/4.0/utilities/flex/).
 
 ## Flex Container
 

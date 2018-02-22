@@ -2,7 +2,7 @@
 
 > source:  [scss/helpers/text](../../src/scss/helpers/_text.scss)
 
-Helper classes for text. These classes are references of bootstrap. See [Link](https://getbootstrap.com/docs/4.0/utilities/text/).
+Helper classes for text. These classes are refer to the bootstrap. See [Link](https://getbootstrap.com/docs/4.0/utilities/text/).
 
 ## Fonts
 
