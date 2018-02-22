@@ -18,8 +18,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Add string-case convert methods in Util: `strToNormal()`, `strToCamel()` and `strToKebab()`.
 - Add a new component 'collapse-toggle'.
 - [Add SVG icons](https://github.com/archco/moss-ui/blob/master/docs/svg-icons.md) #82
-- Add a new scss parts 'input-group'. #64
-- Add a new component 'search'. #64
+- Add a new scss part 'input-group'. #64
+- Add a new vue component 'search'. #64
 
 ### Changed
 

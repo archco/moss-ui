@@ -6,7 +6,7 @@
 
 @each $key in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($key) {
-    $infix: get-infix($key);
+    $infix: breakpoint-infix($key);
 
     .d#{$infix}-none { display: none !important; }
     .d#{$infix}-inline { display: inline !important; }

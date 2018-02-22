@@ -1,6 +1,8 @@
 @import 'display';
 @import 'text';
 @import 'flex';
+@import 'sizing';
+@import 'spacing';
 
 // toggling content
 .display-hide { display: none !important; }
@@ -8,7 +10,7 @@
 .display-invisible { visibility: hidden !important; }
 
 // responsive hiding
-%resopnsive-tablet-hide {
+%responsive-tablet-hide {
   @include media-tablet-up() { display: none !important; }
 }
 
@@ -21,7 +23,7 @@
 }
 
 .hide-tablet-up {
-  @extend %resopnsive-tablet-hide;
+  @extend %responsive-tablet-hide;
 }
 
 // responsive wrapper. overflow-x auto.
@@ -131,16 +133,6 @@
     border-bottom-left-radius: $val !important;
   }
 }
-
-// sizing
-@each $key, $value in (w: width, h: height) {
-  @each $size, $length in $sizes {
-    .#{$key}-#{$size} { #{$value}: $length !important; }
-  }
-}
-
-.mw-100 { max-width: 100% !important; }
-.mh-100 { max-height: 100% !important; }
 
 // misc
 .box-line { border: 1px solid $secondary-color; }

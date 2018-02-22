@@ -6,7 +6,7 @@
 
 @each $key in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($key) {
-    $infix: get-infix($key);
+    $infix: breakpoint-infix($key);
 
     // flex-container
     //-----------------------
@@ -46,11 +46,6 @@
 
     // flex-item
     //-----------------------
-
-    // order
-    .order#{$infix}-first { order: -1; }
-    .order#{$infix}-last { order: 1; }
-    .order#{$infix}-0 { order: 0; }
 
     // align-self
     .align-self#{$infix}-auto { align-self: auto !important; }
