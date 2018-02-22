@@ -1,9 +1,9 @@
 # Search
 
+> This component uses [fuse.js](https://github.com/krisk/fuse) and [popper.js](https://github.com/FezVrasta/popper.js/)  
 > sources:  
-js/components/search  
-scss/components/search  
-> This component uses [fuse.js](https://github.com/krisk/fuse) and [popper.js](https://github.com/FezVrasta/popper.js/)
+[js/components/search](https://github.com/archco/moss-ui/blob/master/src/js/components/search.vue)  
+[scss/components/search](https://github.com/archco/moss-ui/blob/master/src/scss/components/_search.scss)
 
 Simple search component that fuzzy search given collection data such like json.
 
@@ -20,8 +20,6 @@ Simple search component that fuzzy search given collection data such like json.
 
 ### Default
 
-Collection
-
 ``` json
 // countries.json
 [
@@ -37,11 +35,11 @@ Collection
     "capital": "Beijing",
     "language": "Chinese"
   },
-  ...
 ]
 ```
 
 ``` html
+<!-- in html -->
 <search :collection="countries"
   :search-options="{ keys: ['name', 'capital']}"
   :result-limit="5"
@@ -89,7 +87,7 @@ Collection
 #### `item-clicked`
 
 - This event occurs when click on result item.
-- Argument: `item` of `collection`.
+- Argument: An `item` object of `collection`.
 
 #### `submit`
 
