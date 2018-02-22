@@ -28,10 +28,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Rename badge's modifier class name `rounded` to `round`.
 - Rename scss-variable `$transition-time` to `$transition-duration`.
 - Improve converting to id attribute in 'anchored-tag.vue' via `Util.strToKebab()` method.
+- Update some scss helpers that refers from bootstrap. #87
+  - Add a new variable `$container-max-widths`.
+  - Remove grid column modifiers `pull` and `push`. use `order` instead.
+  - Move `order` part flex to grid.
 
 ### Removed
 
 - Remove `close-emit` prop in message.vue. use `close` event instead. (56640b540d4073796d762b4f154b6eab9455cfef)
+- Removes text scss helper classes `align-left`, `align-center` and `align-right`. use `text-left`, `text-center` and `text-right` instead.
 
 ## [0.4.2] - 2017-12-24
 
