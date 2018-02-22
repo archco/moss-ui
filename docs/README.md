@@ -5,6 +5,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 ### Table of contents
 
 - [SCSS Parts](#scss-parts)
+- [SCSS Helpers](#scss-helpers)
 - [Vue Components](#vue-components)
 - [Vue Directives](#vue-directives)
 - [JS Libraries](#js-libraries)
@@ -19,9 +20,6 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [Form](scss/form.md)
 - [Grid](scss/grid.md)
 - [Helpers](scss/helpers.md)
-  - [Display](scss/display.md)
-  - [Flex](scss/flex.md)
-  - [Text](scss/text.md)
 - [Hero Banner](scss/hero-banner.md)
 - [Image](scss/image.md)
 - [List](scss/list.md)
@@ -29,6 +27,14 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [Pagination](scss/pagination.md)
 - [Scaffolding](scss/scaffolding.md)
 - [Theme](scss/theme.md): Guide for writing custom-theme variables file.
+
+## [SCSS Helpers](scss/helpers.md)
+
+- [Display](scss/display.md)
+- [Flex](scss/flex.md)
+- [Sizing](scss/sizing.md)
+- [Spacing](scss/spacing.md)
+- [Text](scss/text.md)
 
 ## Vue Components
 
