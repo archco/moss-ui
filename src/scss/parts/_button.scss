@@ -12,7 +12,9 @@
   @include border-radius($button-radius);
   outline-color: $button-outline-color;
 
-  &.full-width {
+
+  &.full-width, // @deprecated.
+  &.w-100 {
     margin-right: 0;
     margin-left: 0;
   }

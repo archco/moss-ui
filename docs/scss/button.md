@@ -96,7 +96,6 @@ Available content buttons for button-group: `.btn`, `.btn-flat`, `dropdown`
 ### Optional modifiers
 
 - [Color-set](color-set.md) classes: `default`, `primary`, `secondary`, `info`, `success`, `warning`, `danger`, `error`, `light`, `dark`, `shade`, `link`
-- Style class: `full-width`
 - disabled attribute: `disabled`
 
 ### Auto button color
