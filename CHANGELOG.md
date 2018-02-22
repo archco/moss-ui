@@ -33,6 +33,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   - Remove grid column modifiers `pull` and `push`. use `order` instead.
   - Move `order` part flex to grid.
 
+### Deprecated
+
+- Some scss-helper classes are deprecated. see [details](https://github.com/archco/moss-ui/issues/88) #88
+
 ### Removed
 
 - Remove `close-emit` prop in message.vue. use `close` event instead. (56640b540d4073796d762b4f154b6eab9455cfef)

@@ -5999,16 +5999,6 @@ simple-crud,
 .box-line {
   border: 1px solid #87a96b; }
 
-.no-margin {
-  padding: 0;
-  margin: 0; }
-
-.full-width {
-  width: 100%; }
-
-.full-height {
-  height: 100%; }
-
 .group {
   margin-bottom: 1rem; }
 
@@ -6056,5 +6046,15 @@ simple-crud,
     transform: rotate(45deg); }
   .arrow.left {
     transform: rotate(135deg); }
+
+.no-margin {
+  padding: 0;
+  margin: 0; }
+
+.full-width {
+  width: 100%; }
+
+.full-height {
+  height: 100%; }
 
 /*# sourceMappingURL=moss.css.map*/
