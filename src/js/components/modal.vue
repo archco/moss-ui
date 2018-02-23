@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import ElementUtil from 'element-util';
+import { getElements, addListener } from 'element-util';
 import CloseButton from './close-button.vue';
 
 export default {
@@ -112,8 +112,8 @@ export default {
   },
   mounted() {
     // Add data-toggle listeners. 'cancel'|'close'
-    const elms = ElementUtil.getElements('[data-toggle="cancel"],[data-toggle="close"]', this.$el);
-    ElementUtil.addListener(elms, 'click', () => this.toggleModal(this.name, 'close'));
+    const elms = getElements('[data-toggle="cancel"],[data-toggle="close"]', this.$el);
+    addListener(elms, 'click', () => this.toggleModal(this.name, 'close'));
   }
 }
 </script>

@@ -1,4 +1,9 @@
-import ElementUtil from 'element-util';
+import {
+  getElement,
+  getElements,
+  nodeListToArray,
+  findAncestor,
+} from 'element-util';
 import ElementMeasurer from 'element-measurer';
 
 export default class Scrollspy {
@@ -10,11 +15,11 @@ export default class Scrollspy {
    */
   constructor(elm, options) {
     this.options = Object.assign(this.getDefaultOptions(), options);
-    this._linksContainerElement = ElementUtil.getElement(elm);
+    this._linksContainerElement = getElement(elm);
     this._items = [];
     this._currentActive = null;
     this._scrollHeight = 0;
-    this._scrollElement = ElementUtil.getElement(this.options.scrollElement);
+    this._scrollElement = getElement(this.options.scrollElement);
     this._scrollElementSize = new ElementMeasurer(this._scrollElement);
 
     this.refresh();
@@ -59,16 +64,16 @@ export default class Scrollspy {
    * @return {void}
    */
   refresh() {
-    const linkNodes = ElementUtil.getElements(
+    const linkNodes = getElements(
         this.options.linkSelector,
         this._linksContainerElement
       );
-    const links = ElementUtil.nodeListToArray(linkNodes).filter(elm => elm.hash);
+    const links = nodeListToArray(linkNodes).filter(elm => elm.hash);
     this._items = [];
     this._scrollHeight = this._scrollElementSize.scrollHeight;
 
     links.forEach(link => {
-      const elm = ElementUtil.getElement(link.hash);
+      const elm = getElement(link.hash);
       if (!elm) return;
       this._items.push({
         elm,
@@ -144,7 +149,7 @@ export default class Scrollspy {
     } else if (this.options.activeTarget == 'parent') {
       return link.parentNode;
     } else {
-      return ElementUtil.findAncestor(link, this.options.activeTarget);
+      return findAncestor(link, this.options.activeTarget);
     }
   }
 }

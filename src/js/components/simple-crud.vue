@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import ElementUtil from 'element-util';
+import { getElements, addListener } from 'element-util';
 
 export default {
   props: {
@@ -32,8 +32,8 @@ export default {
       this.state = state;
     },
     addListener(selector, listener) {
-      const elms = ElementUtil.getElements(selector, this.$el);
-      ElementUtil.addListener(elms, 'click', listener);
+      const elms = getElements(selector, this.$el);
+      addListener(elms, 'click', listener);
     },
   },
   mounted() {

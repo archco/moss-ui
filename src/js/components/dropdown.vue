@@ -10,7 +10,7 @@
 
 <script>
 import Popper from 'popper.js';
-import ElementUtil from 'element-util';
+import { findAncestor, nodeListToArray } from 'element-util';
 import { makeIcon } from '../lib/util';
 
 export default {
@@ -85,7 +85,7 @@ export default {
       this.isShown ? this.hide() : this.show();
     },
     onOtherClick(event) {
-      const isOwn = ElementUtil.findAncestor(event.target, this.$el) != null;
+      const isOwn = findAncestor(event.target, this.$el) != null;
 
       if (!isOwn && this.isShown == true) this.hide();
     },
@@ -155,7 +155,7 @@ export default {
       this.content = this.$el.querySelector('.dropdown-content');
       // items.
       const items = this.content.querySelectorAll('.dropdown-item:not([disabled])');
-      this.items = ElementUtil.nodeListToArray(items);
+      this.items = nodeListToArray(items);
     },
     addListeners() {
       if (this.toggle === 'toggle') {

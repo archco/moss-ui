@@ -4,7 +4,7 @@
  * @link https://github.com/archco/moss-ui
  * @license MIT
  */
-import ElementUtil from 'element-util';
+import * as ElementUtil from 'element-util';
 import ElementMeasurer from 'element-measurer';
 import { MooColor as Color } from 'moo-color';
 import * as Util from './lib/util';

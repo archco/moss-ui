@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import ElementUtil from 'element-util';
+import { findAncestor, getElements, nodeListToArray } from 'element-util';
 import Fuse from 'fuse.js';
 import Popper from 'popper.js';
 import Icon from './icon.vue';
@@ -179,7 +179,7 @@ export default {
       });
       // other click.
       document.documentElement.addEventListener('click', event => {
-        const isOwn = ElementUtil.findAncestor(event.target, this.$el) !== null;
+        const isOwn = findAncestor(event.target, this.$el) !== null;
         if (!isOwn && this.showResult) this.showResult = false;
       });
     },
@@ -191,8 +191,8 @@ export default {
     },
 
     getCurrentItems() {
-      const nodes = ElementUtil.getElements('li', this.elm.resultList);
-      return ElementUtil.nodeListToArray(nodes);
+      const nodes = getElements('li', this.elm.resultList);
+      return nodeListToArray(nodes);
     },
   }
 }

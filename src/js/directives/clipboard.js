@@ -4,7 +4,7 @@
   @license MIT License © Zeno Rocha
  */
 import Clipboard from 'clipboard';
-import ElementUtil from 'element-util';
+import { getElement } from 'element-util';
 
 /*
   v-clipboard.{modifiers}:{arg}="value"
@@ -46,7 +46,7 @@ function resolveOptionsForClipboard(binding) {
   } else if (typeof binding.value === 'object') {
     if (binding.value.text) options.text = () => binding.value.text;
     if (binding.value.target) {
-      options.target = () => ElementUtil.getElement(binding.value.target);
+      options.target = () => getElement(binding.value.target);
     }
   }
 

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import ElementUtil from 'element-util';
+import { findAncestor, hide } from 'element-util';
 import { makeIcon } from '../lib/util';
 
 export default {
@@ -51,12 +51,12 @@ export default {
     onClick(event) {
       const btn = event.currentTarget;
       const target = this.target
-        ? ElementUtil.findAncestor(btn, this.target)
+        ? findAncestor(btn, this.target)
         : btn.parentNode;
 
       this.$emit('close', target);
       if (this.action == 'hide') {
-        ElementUtil.hide(target);
+        hide(target);
       } else if (this.action == 'remove') {
         target.parentNode.removeChild(target);
       }
