@@ -42,9 +42,9 @@ $red: palette('chilired') !default;
 $yellow: palette('naturalyellow') !default;
 
 // theme-colors
-$primary-color: palette('huntergreen') !default;
-$primary-color-accent: darken($primary-color, 16%) !default;
-$secondary-color: palette('asparagus') !default;
+$primary-color: palette('madder') !default;
+$primary-color-accent: lighten($primary-color, 12%) !default;
+$secondary-color: palette('marengo') !default;
 
 // background colors
 $background-color: $white !default;
