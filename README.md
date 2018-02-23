@@ -28,9 +28,9 @@ npm install moss-ui
 ```js
 // In your app.js
 import Vue from 'vue';
-import Moss from 'moss-ui';
+import MossUI from 'moss-ui';
 
-Vue.use(Moss);
+Vue.use(MossUI);
 
 window.vm = new Vue({
   el: '#app',
