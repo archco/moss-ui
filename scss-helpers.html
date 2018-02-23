@@ -14,8 +14,8 @@
   </head>
   <body>
     <div id="app">
-      <header class="bg-color-primary pad flex-container-center" style="height:100px;">
-        <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI</a></h1>
+      <header class="d-flex justify-content-center align-items-center bg-color-primary" style="height:100px;">
+        <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI <span class='moss-version'></span></a></h1>
       </header>
       <navbar class="sticky-top shadow-near" align="end">
         <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
@@ -24,7 +24,7 @@
           <nav-item href="vue.html" text="Vue"></nav-item>
           <nav-item>
             <dropdown toggle="toggle" placement="bottom-end">
-              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directieves</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
+              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
             </dropdown>
           </nav-item>
         </navbar-nav>
@@ -33,6 +33,8 @@
         <aside class="col-md-2 hide-only-mobile">
           <ul class="menu list fixed">
             <li is="anchored-tag" tag="li">Helper</li>
+            <li is="anchored-tag" tag="li">Sizing</li>
+            <li is="anchored-tag" tag="li">Spacing</li>
             <li is="anchored-tag" tag="li">Text</li>
             <li is="anchored-tag" tag="li">Flex</li>
           </ul>
@@ -58,11 +60,6 @@
           <div class="float-clear">
             <div class="float-right pad bg-color-warning">float-right</div>
             <div class="float-left pad bg-color-danger">float-left</div>
-          </div>
-          <h3>Centering</h3>
-          <h4>flex-container-center</h4>
-          <div class="flex-container-center bg-color-success" style="height:250px;">
-            <div>Centering vertically and horizontally.</div>
           </div>
           <h3>Colors</h3>
           <div class="row">
@@ -174,6 +171,26 @@
               <div class="pad bg-color-success rounded-left">rounded-left</div>
             </div>
           </div>
+          <anchored-tag tag="h1" owned>Sizing</anchored-tag>
+          <p>Helper classes for specifying width or height of element.</p>
+          <h2>Width</h2>
+          <div class="w-25 p-3 bg-color-shade">Width 25%</div>
+          <div class="w-50 p-3 bg-color-shade">Width 50%</div>
+          <div class="w-75 p-3 bg-color-shade">Width 75%</div>
+          <div class="w-100 p-3 bg-color-shade">Width 100%</div>
+          <h2>Height</h2>
+          <div class="d-flex justify-content-around bg-color-warning" style="height:150px;">
+            <div class="h-25 px-3 bg-color-dark">Height 25%</div>
+            <div class="h-50 px-3 bg-color-dark">Height 50%</div>
+            <div class="h-75 px-3 bg-color-dark">Height 75%</div>
+            <div class="h-100 px-3 bg-color-dark">Height 100%</div>
+          </div>
+          <anchored-tag tag="h1" owned>Spacing</anchored-tag>
+          <p>Helper classes for specifying margin or padding spacing to element.</p>
+          <h2>Margin</h2>
+          <div class="bg-color-shade p-3"><span class="bg-color-dark m-1">margin-1</span><span class="bg-color-dark m-2">margin-2</span><span class="bg-color-dark m-3">margin-3</span><span class="bg-color-dark m-4">margin-4</span><span class="bg-color-dark m-5">margin-5</span></div>
+          <h2>Padding</h2>
+          <div class="bg-color-shade p-3"><span class="bg-color-dark p-1">padding-1</span><span class="bg-color-dark p-2">padding-2</span><span class="bg-color-dark p-3">padding-3</span><span class="bg-color-dark p-4">padding-4</span><span class="bg-color-dark p-5">padding-5</span></div>
           <anchored-tag tag="h1" owned>Text</anchored-tag>
           <h3>Fonts</h3>
           <div class="group">
@@ -231,19 +248,14 @@
             </div>
           </div>
         </div>
-        <div class="footer-copyright">copyright &copy; 2017 MOSS-UI all rights reserved.</div>
+        <div class="footer-copyright">copyright &copy; <span id='copyright-year'>2017</span> MOSS-UI all rights reserved.</div>
       </footer>
-      <scroll-to :duration="800" :offset="400" top-html="&lt;i class=&quot;fa fa-chevron-up&quot; aria-hidden=&quot;true&quot;&gt;" bottom-html="&lt;i class=&quot;fa fa-chevron-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;"></scroll-to>
+      <scroll-to :duration="800" :offset="400"></scroll-to>
       <toast></toast>
     </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
+    <script src="./node_modules/vue/dist/vue.js"></script>
     <script src="./dist/moss.js"></script>
-    <script src="./example.js"></script>
-    <script>
-      var year = new Date().getFullYear();
-      document.querySelector('.footer-copyright').innerHTML = 'copyright \&copy; ' + year + ' MOSS-UI all rights reserved.';
-      document.querySelector('#project-name').innerHTML = 'MOSS-UI ' + Moss.version;
-      
-    </script>
+    <script src="example.js"></script>
   </body>
 </html>

@@ -14,8 +14,8 @@
   </head>
   <body>
     <div id="app">
-      <header class="bg-color-primary pad flex-container-center" style="height:100px;">
-        <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI</a></h1>
+      <header class="d-flex justify-content-center align-items-center bg-color-primary" style="height:100px;">
+        <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI <span class='moss-version'></span></a></h1>
       </header>
       <navbar class="sticky-top shadow-near" align="end">
         <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
@@ -24,7 +24,7 @@
           <nav-item href="vue.html" text="Vue"></nav-item>
           <nav-item>
             <dropdown toggle="toggle" placement="bottom-end">
-              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directieves</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
+              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
             </dropdown>
           </nav-item>
         </navbar-nav>
@@ -34,13 +34,16 @@
           <ul class="menu list fixed">
             <li is="anchored-tag" tag="li">Carousel</li>
             <li is="anchored-tag" tag="li">Chip</li>
+            <li is="anchored-tag" tag="li">CloseButton</li>
             <li is="anchored-tag" tag="li">Collapse</li>
             <li is="anchored-tag" tag="li">Dropdown</li>
             <li is="anchored-tag" tag="li">Message</li>
             <li is="anchored-tag" tag="li">Modal</li>
             <li is="anchored-tag" tag="li">Nav</li>
             <li is="anchored-tag" tag="li">Parallax</li>
-            <li is="anchored-tag" tag="li">Simple CRUD</li>
+            <li is="anchored-tag" tag="li">Search</li>
+            <li is="anchored-tag" tag="li">SimpleCRUD</li>
+            <li is="anchored-tag" tag="li">Switch</li>
             <li is="anchored-tag" tag="li">Tab</li>
             <li is="anchored-tag" tag="li">Toast</li>
             <li is="anchored-tag" tag="li">Tree</li>
@@ -69,22 +72,36 @@
           <chip img-src="https://www.cloudschool.org/static/user_images/avatar-04.gif" img-alt="person" closeable>John Doe</chip>
           <h3>Link Chip</h3>
           <chip tag="a" href="#" closeable>TagSample</chip>
-          <chip tag="a" href="#" img-src="https://www.cloudschool.org/static/user_images/avatar-04.gif" img-alt="persion" closeable>John Doe</chip>
+          <chip tag="a" href="#" img-src="https://www.cloudschool.org/static/user_images/avatar-04.gif" img-alt="person" closeable>John Doe</chip>
           <h3>Colored Chip</h3>
           <chip tag="span" color="#ffa500">Orange</chip>
+          <chip tag="span" color="#333" closeable>Dark</chip>
           <chip img-src="https://www.cloudschool.org/static/user_images/avatar-04.gif" img-alt="avatar" color="#69c" closeable>Colored</chip>
+          <anchored-tag tag="h1" owned>CloseButton</anchored-tag>
+          <h2>Default usage</h2><span>test text<close-button /></span><span class="badge">Badge<close-button action="remove"/></span>
+          <h2>Specifying position</h2>
+          <h3>middle-right</h3>
+          <div class="pad bg-color-info">
+            Hello world<close-button position="middle-right"/></div>
+          <h3>top-right</h3>
+          <div class="pad bg-color-secondary">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><close-button position="top-right"/>
+          </div>
+          <h2>Hook on 'close' event</h2><span>test text <close-button action="" @close="eventTest">✖</close-button></span>
           <anchored-tag tag="h1" owned>Collapse</anchored-tag>
-          <h3>Collapse Basic</h3>
-          <button class="btn default" v-collapse:test-collapse>collapse</button>
+          <h2>Default</h2>
+          <button class="btn default" v-collapse:test-collapse>v-collapse</button>
+          <div class="pad bg-color-primary" is="collapse-toggle" target="test-collapse">CollapseToggle</div>
           <collapse id="test-collapse" expanded>
             <h3>test collapse</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </collapse>
-          <h3>Accordion</h3>
+          <h2>Accordion</h2>
+          <button class="btn info" v-accordion:accordion2="'accordion-test'">v-accordion</button>
           <ul class="list-group">
             <li>
-              <div v-accordion:accordion1="'accordion-test'">accordion one</div>
+              <div is="collapse-toggle" target="accordion1" accordion="accordion-test">accordion one</div>
               <collapse id="accordion1" accordion="accordion-test" expanded>
                 <h3>accordion1</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -96,22 +113,30 @@
               </collapse>
             </li>
             <li>
-              <div v-accordion:accordion2="'accordion-test'">accordion two</div>
+              <div is="collapse-toggle" target="accordion2" accordion="accordion-test">accordion two</div>
               <collapse id="accordion2" accordion="accordion-test">
                 <h3>accordion2</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               </collapse>
             </li>
             <li>
-              <div v-accordion:accordion3="'accordion-test'">accordion three</div>
+              <div is="collapse-toggle" target="accordion3" accordion="accordion-test">accordion three</div>
               <collapse id="accordion3" accordion="accordion-test">
                 <h3>accordion3</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               </collapse>
             </li>
           </ul>
-          <h3>Collapse Toggle</h3>
-          <h4>Collapse /w icon</h4>
+          <h2>Collapse Toggle</h2>
+          <collapse-toggle class="pad bg-color-shade" target="test-collapse2">toggle</collapse-toggle><span class="d-inline-block bg-color-info" is="collapse-toggle" tag="span" target="test-collapse2">toggle by span</span>
+          <button class="btn" is="collapse-toggle" tag="button" target="test-collapse2">toggle by button</button>
+          <collapse id="test-collapse2">
+            <h3>test collapse</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </collapse>
+          <h2>Collapse Toggle with icon</h2>
+          <blockquote class="pad danger">@deprecated at v0.5.x instead use <code>collapse-toggle</code> component.</blockquote>
+          <h3>Collapse /w icon</h3>
           <div class="collapse-toggle with-plus pad bg-color-primary" v-collapse:test01>TEST01</div>
           <collapse id="test01">
             <p class="pad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -120,7 +145,7 @@
           <collapse id="test02">
             <p class="pad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </collapse>
-          <h4>Accordion /w icon</h4>
+          <h3>Accordion /w icon</h3>
           <ul class="list-group">
             <li>
               <div class="collapse-toggle with-plus" v-accordion:test03="'test1'">accordion one</div>
@@ -195,7 +220,7 @@
                     <button class="btn light" slot="button">Both on</button><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
                   </dropdown>
                   <dropdown toggle="toggle" flip="off">
-                    <button class="btn warning" slot="button">Filp off</button><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
+                    <button class="btn warning" slot="button">Flip off</button><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
                   </dropdown>
                 </div>
                 <div>
@@ -280,7 +305,7 @@
           <modal name="test-modal3" title="with Actions">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <div slot="actions">
-              <button class="btn default" onclick="Moss.modal.close(&quot;test-modal3&quot;)">CANCEL</button>
+              <button class="btn default" data-toggle="close">Cancel</button>
               <button class="btn success">OK</button>
             </div>
           </modal>
@@ -327,18 +352,40 @@
             </navbar-nav>
           </navbar>
           <anchored-tag tag="h1" owned>Parallax</anchored-tag>
-          <parallax src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg"></parallax><div class="flex-center-container bg-color-shade" style="height:250px;">
-          <div>
-            <h2>Content</h2>
-            <p>content here...</p>
-          </div></div>
-          <parallax src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg" height="300px"></parallax><div class="flex-center-container" style="height:300px;">
-          <div>
-            <h2>Content</h2>
-            <p>content here...</p>
-          </div></div>
+          <parallax src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg"></parallax>
+          <div class="d-flex justify-content-center align-items-center bg-color-shade" style="height:250px;">
+            <div>
+              <h2>Content</h2>
+              <p>content here...</p>
+            </div>
+          </div>
+          <parallax src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg" height="300px"></parallax>
+          <div class="d-flex justify-content-center align-items-center" style="height:300px;">
+            <div>
+              <h2>Content</h2>
+              <p>content here...</p>
+            </div>
+          </div>
           <parallax src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" height="20em"></parallax>
-          <anchored-tag tag="h1" owned>Simple CRUD</anchored-tag>
+          <anchored-tag tag="h1" owned>Search</anchored-tag>
+          <p>Simple search component that fuzzy search given collection data such like json.</p>
+          <h2>default</h2>
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="eventTest" @submit="eventTest"></search>
+            </div>
+          </div>
+          <h2>Example Search</h2>
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="onSearchItemClick" @submit="onSearchSubmit">
+                <li slot="result-item" slot-scope="props" style="text-align:left;" tabindex="0" @click="props.onClickItem(props.item)">
+                  <h3 style="margin:0;" v-text="props.item.name"></h3><span class="badge" :style="getBadgeStyle(props.item.category)" v-text="props.item.category"></span><span class="help" v-text="props.item.description"></span>
+                </li>
+              </search>
+            </div>
+          </div>
+          <anchored-tag tag="h1" owned>SimpleCRUD</anchored-tag>
           <form class="form-inline" action="#" method="POST">
             <input type="text" name="name" placeholder="Name">
             <input type="number" name="age" placeholder="Age">
@@ -364,13 +411,13 @@
                   <button class="btn default" type="button" data-toggle="cancel">Cancel</button></span></form>
             </li>
             <li is="simple-crud">
-              <div slot="read"><span class="content"><span>id: 2 name: Caren age: 24</span></span><span class="actions btn-group">
+              <div slot="read"><span class="content"><span>id: 2 name: Karen age: 24</span></span><span class="actions btn-group">
                   <button class="btn" data-toggle="update">Edit</button>
                   <button class="btn danger" data-toggle="delete">Delete</button></span></div>
               <form slot="update" action="#" method="POST"><span class="content"><span>id: 2</span>
                   <input type="hidden" name="id" value="2">
                   <label><span>Name:</span>
-                    <input class="inline" type="text" name="name" value="Caren">
+                    <input class="inline" type="text" name="name" value="Karen">
                   </label>
                   <label><span>Age:</span>
                     <input class="inline" type="number" name="age" value="24">
@@ -400,35 +447,53 @@
                   <button class="btn default" type="button" data-toggle="cancel">Cancel</button></span></form>
             </li>
           </ul>
+          <anchored-tag tag="h1" owned>Switch</anchored-tag>
+          <h3>Input Check</h3>
+          <input-check class="font-small" name="is-small">small</input-check>
+          <input-check name="is-normal">normal</input-check>
+          <input-check class="font-large" name="is-large">large</input-check>
+          <h3>Input Radio</h3>
+          <input-radio class="font-small" name="input-radio" value="small">small</input-radio>
+          <input-radio name="input-radio" value="medium">medium</input-radio>
+          <input-radio class="font-large" name="input-radio" value="large">large</input-radio>
+          <h3>Toggle Style</h3>
+          <div class="group">
+            <input-check class="toggle" name="use-toggle">Toggle</input-check>
+            <input-check class="toggle" name="is-good">Good</input-check>
+          </div>
+          <div class="group">
+            <input-radio class="toggle" name="toggle-radio" value="male">Male</input-radio>
+            <input-radio class="toggle" name="toggle-radio" value="female">Female</input-radio>
+          </div>
           <anchored-tag tag="h1" owned>Tab</anchored-tag>
           <h3>Default Tab</h3>
           <tabs>
             <tab name="tab1" selected>
               <h4>Tab 1</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure d</p>
             </tab>
             <tab name="tab2">
               <h4>Tab 2</h4>
-              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p>g elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint</p>
             </tab>
             <tab name="tab3">
               <h4>Tab 3</h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </tab>
           </tabs>
           <h3>Tab with Fade Effect</h3>
           <tabs effect="fade" grow-enabled>
             <tab name="tab1" selected>
               <h4>Tab 1</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure d</p>
             </tab>
             <tab name="tab2">
               <h4>Tab 2</h4>
-              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p>g elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint</p>
             </tab>
             <tab name="tab3">
               <h4>Tab 3</h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </tab>
           </tabs>
           <h3>Tab Tip based by Color-set</h3>
@@ -478,6 +543,21 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </tab>
           </tabs>
+          <h3>Specifying container size of tab content.</h3>
+          <tabs :container-style="{height: '200px', overflow: 'auto'}">
+            <tab name="tab1" selected>
+              <h4>Tab 1</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill</p>
+            </tab>
+            <tab name="tab2">
+              <h4>Tab 2</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </tab>
+            <tab name="tab3">
+              <h4>Tab 3</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qu</p>
+            </tab>
+          </tabs>
           <anchored-tag tag="h1" owned>Toast</anchored-tag>
           <button class="btn info" id="btn-toast" onclick="toastShow()">Toast</button>
           <anchored-tag tag="h1" owned>Tree</anchored-tag>
@@ -506,19 +586,14 @@
             </div>
           </div>
         </div>
-        <div class="footer-copyright">copyright &copy; 2017 MOSS-UI all rights reserved.</div>
+        <div class="footer-copyright">copyright &copy; <span id='copyright-year'>2017</span> MOSS-UI all rights reserved.</div>
       </footer>
-      <scroll-to :duration="800" :offset="400" top-html="&lt;i class=&quot;fa fa-chevron-up&quot; aria-hidden=&quot;true&quot;&gt;" bottom-html="&lt;i class=&quot;fa fa-chevron-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;"></scroll-to>
+      <scroll-to :duration="800" :offset="400"></scroll-to>
       <toast></toast>
     </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
+    <script src="./node_modules/vue/dist/vue.js"></script>
     <script src="./dist/moss.js"></script>
-    <script src="./example.js"></script>
-    <script>
-      var year = new Date().getFullYear();
-      document.querySelector('.footer-copyright').innerHTML = 'copyright \&copy; ' + year + ' MOSS-UI all rights reserved.';
-      document.querySelector('#project-name').innerHTML = 'MOSS-UI ' + Moss.version;
-      
-    </script>
+    <script src="example.js"></script>
   </body>
 </html>

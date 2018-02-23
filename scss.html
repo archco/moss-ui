@@ -14,8 +14,8 @@
   </head>
   <body>
     <div id="app">
-      <header class="bg-color-primary pad flex-container-center" style="height:100px;">
-        <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI</a></h1>
+      <header class="d-flex justify-content-center align-items-center bg-color-primary" style="height:100px;">
+        <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI <span class='moss-version'></span></a></h1>
       </header>
       <navbar class="sticky-top shadow-near" align="end">
         <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
@@ -24,7 +24,7 @@
           <nav-item href="vue.html" text="Vue"></nav-item>
           <nav-item>
             <dropdown toggle="toggle" placement="bottom-end">
-              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directieves</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
+              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
             </dropdown>
           </nav-item>
         </navbar-nav>
@@ -37,6 +37,7 @@
             <li is="anchored-tag" tag="li">Button</li>
             <li is="anchored-tag" tag="li">Card</li>
             <li is="anchored-tag" tag="li">Form</li>
+            <li is="anchored-tag" tag="li">Input Group</li>
             <li is="anchored-tag" tag="li">Grid</li>
             <li is="anchored-tag" tag="li">Helper</li>
             <li is="anchored-tag" tag="li">Image</li>
@@ -183,7 +184,7 @@ SOFTWARE.</code></pre>
           <button class="btn">Button<span class="badge info">3</span></button>
           <button class="btn warning">Normal</button>
           <h3>in Link</h3><a href="#">Link<span class="badge success">New</span></a><br><a class="badge danger" href="#">Link badge</a>
-          <h2>Rounded Badge</h2><span>text and<span class="badge rounded info">13</span></span><br><a class="badge rounded warning" href="#">rounded badge</a>
+          <h2>Rounded Badge</h2><span>text and<span class="badge round info">13</span></span><br><a class="badge round warning" href="#">rounded badge</a>
           <h2>Badge with Stacked Font Awesome Icon</h2><span class="fa-stack fa-lg"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-bell fa-stack-1x fa-inverse"></i><span class="badge in-icon danger">8,888</span></span><span class="fa-stack fa-2x color-primary"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i><span class="badge in-icon rounded warning">8,888</span></span>
           <anchored-tag tag="h1" owned>Button</anchored-tag>
           <h3>Default Buttons with Color-set</h3>
@@ -397,7 +398,7 @@ SOFTWARE.</code></pre>
             </div>
           </div>
           <anchored-tag tag="h1" owned>Form</anchored-tag>
-          <h3>Default Usage</h3>
+          <h2>Default Usage</h2>
           <form>
             <fieldset>
               <legend>Form</legend>
@@ -447,7 +448,7 @@ SOFTWARE.</code></pre>
               </div>
             </fieldset>
           </form>
-          <h3>Form Inline</h3>
+          <h2>Form Inline</h2>
           <form class="form-inline">
             <fieldset>
               <legend>Form inline</legend>
@@ -478,7 +479,7 @@ SOFTWARE.</code></pre>
               <button class="btn" type="submit">Submit</button>
             </fieldset>
           </form>
-          <h3>Vertical Alignment</h3>
+          <h2>Vertical Alignment</h2>
           <form class="form-inline">
             <fieldset>
               <legend>Select</legend>
@@ -491,7 +492,7 @@ SOFTWARE.</code></pre>
               <input type="date">
             </fieldset>
           </form>
-          <h3>Input with Color-set</h3>
+          <h2>Input with Color-set</h2>
           <div class="row">
             <div class="col-md group">
               <input type="text" placeholder="default">
@@ -512,12 +513,12 @@ SOFTWARE.</code></pre>
           <div class="input inline with-icon-right">
             <input class="danger" type="text" placeholder="Disabled" disabled><span class="icon-right color-default"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span>
           </div>
-          <h3>Input with Icons</h3>
-          <h4>Default</h4>
+          <h2>Input with Icons</h2>
+          <h3>Default</h3>
           <div class="input with-icon">
             <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
           </div>
-          <h4>Icon positioning left or right or both</h4>
+          <h3>Icon positioning left or right or both</h3>
           <div class="input with-icon-right group">
             <input type="text" placeholder="Text me.."><span class="icon-right"><i class="fa fa-commenting" aria-hidden="true"></i></span>
           </div>
@@ -527,11 +528,11 @@ SOFTWARE.</code></pre>
           <div class="input with-icon-left with-icon-right group">
             <input type="text" placeholder="Email.."><span class="icon-left"><i class="fa fa-envelope" aria-hidden="true"></i></span><span class="icon-right"><i class="fa fa-check" aria-hidden="true"></i></span>
           </div>
-          <h4>Inline input</h4>
+          <h3>Inline input</h3>
           <div class="input inline with-icon-left with-icon-right">
             <input class="inline" type="text" placeholder="Email.."><span class="icon-left"><i class="fa fa-envelope" aria-hidden="true"></i></span><span class="icon-right color-success"><i class="fa fa-check" aria-hidden="true"></i></span>
           </div>
-          <h4>Input sizes</h4>
+          <h3>Input sizes</h3>
           <div class="input inline with-icon font-small">
             <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
           </div>
@@ -541,12 +542,37 @@ SOFTWARE.</code></pre>
           <div class="input inline with-icon font-large">
             <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
           </div>
+          <anchored-tag tag="h1" owned>Input Group</anchored-tag>
+          <p>Extend form controls by adding text, buttons.</p>
+          <div class="input-group">
+            <div class="input-group-prepend"><span class="input-group-text">@</span></div>
+            <input type="text" placeholder="Username">
+          </div>
+          <div class="input-group">
+            <input type="text" placeholder="Recipient">
+            <div class="input-group-append"><span class="input-group-text">@example.com</span></div>
+          </div>
+          <div class="input-group">
+            <input type="text" placeholder="Query">
+            <div class="input-group-append">
+              <button class="btn success">Send</button>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="input with-icon-left"><span class="icon-left">
+                <icon name="search"></icon></span>
+              <input type="search" placeholder="Search..">
+            </div>
+            <div class="input-group-append">
+              <button class="btn link" type="submit">Search</button>
+            </div>
+          </div>
           <anchored-tag tag="h1" owned>Grid</anchored-tag>
           <h2>Container</h2>
           <div class="container bg-color-secondary">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
-          <h2>Defualt Grid</h2>
+          <h2>Default Grid</h2>
           <div class="row">
             <div class="col-1 box-line bg-color-primary">col-1</div>
             <div class="col-1 box-line bg-color-primary">col-1</div>
@@ -646,7 +672,7 @@ SOFTWARE.</code></pre>
             <div class="row">
               <div class="col bg-color-success">col</div>
               <div class="col bg-color-info">col</div>
-              <div class="full-width"></div>
+              <div class="w-100"></div>
               <div class="col bg-color-info">col</div>
               <div class="col bg-color-success">col</div>
             </div>
@@ -675,10 +701,11 @@ SOFTWARE.</code></pre>
             <div class="col-md-4 bg-color-primary">col-md-4</div>
             <div class="col-md-4 offset-md-4 bg-color-secondary">col-md-4 offset-md-4</div>
           </div>
-          <h3>Push and pull</h3>
+          <h3>Order classes</h3>
           <div class="row">
-            <div class="col-md-8 push-md-4 bg-color-primary">first but pushed</div>
-            <div class="col-md-4 pull-md-8 bg-color-secondary">second but pulled</div>
+            <div class="col bg-color-primary">First, but unordered</div>
+            <div class="col order-12 bg-color-secondary">Second but last</div>
+            <div class="col order-1 bg-color-info">Third, but first</div>
           </div>
           <anchored-tag tag="h1" owned>Helper</anchored-tag><a href="scss-helpers.html">SCSS Helpers</a>
           <anchored-tag tag="h1" owned>Image</anchored-tag>
@@ -769,8 +796,8 @@ SOFTWARE.</code></pre>
             <li>list</li>
           </ul>
           <anchored-tag tag="h1" owned>Loader</anchored-tag>
-          <div class="pad flex-center-container bg-color-success">
-            <div class="align-center"><span class="loader-one light" style="font-size:3em;"></span><br><span>loading...</span></div>
+          <div class="d-flex justify-content-center pad bg-color-success">
+            <div class="text-center"><span class="loader-one light" style="font-size:3em;"></span><br><span>loading...</span></div>
           </div>
           <h2>Button is loading</h2>
           <button class="btn primary is-loading" id="toggle">loading..</button>
@@ -813,19 +840,14 @@ SOFTWARE.</code></pre>
             </div>
           </div>
         </div>
-        <div class="footer-copyright">copyright &copy; 2017 MOSS-UI all rights reserved.</div>
+        <div class="footer-copyright">copyright &copy; <span id='copyright-year'>2017</span> MOSS-UI all rights reserved.</div>
       </footer>
-      <scroll-to :duration="800" :offset="400" top-html="&lt;i class=&quot;fa fa-chevron-up&quot; aria-hidden=&quot;true&quot;&gt;" bottom-html="&lt;i class=&quot;fa fa-chevron-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;"></scroll-to>
+      <scroll-to :duration="800" :offset="400"></scroll-to>
       <toast></toast>
     </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
+    <script src="./node_modules/vue/dist/vue.js"></script>
     <script src="./dist/moss.js"></script>
-    <script src="./example.js"></script>
-    <script>
-      var year = new Date().getFullYear();
-      document.querySelector('.footer-copyright').innerHTML = 'copyright \&copy; ' + year + ' MOSS-UI all rights reserved.';
-      document.querySelector('#project-name').innerHTML = 'MOSS-UI ' + Moss.version;
-      
-    </script>
+    <script src="example.js"></script>
   </body>
 </html>

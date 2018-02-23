@@ -14,8 +14,8 @@
   </head>
   <body>
     <div id="app">
-      <header class="bg-color-primary pad flex-container-center" style="height:100px;">
-        <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI</a></h1>
+      <header class="d-flex justify-content-center align-items-center bg-color-primary" style="height:100px;">
+        <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI <span class='moss-version'></span></a></h1>
       </header>
       <navbar class="sticky-top shadow-near" align="end">
         <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
@@ -24,7 +24,7 @@
           <nav-item href="vue.html" text="Vue"></nav-item>
           <nav-item>
             <dropdown toggle="toggle" placement="bottom-end">
-              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directieves</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
+              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
             </dropdown>
           </nav-item>
         </navbar-nav>
@@ -44,9 +44,9 @@
           <button class="btn success" type="button" onclick="convertColor(true);">hexToRgb</button>
           <button class="btn success" type="button" onclick="convertColor(false);">rgbToHex</button>
           <input class="inline" id="input-rgb-color" type="text" value="rgb(255, 255, 255)">
-          <h2>lightness</h2>
+          <h2>brightness</h2>
           <input class="inline" id="input-lightness" type="text" value="#888">
-          <button class="btn info" type="button" onclick="getLightness();">lightness</button>
+          <button class="btn info" type="button" onclick="getBrightness();">lightness</button>
           <p class="pad bg-color-secondary" id="output-lightness"></p>
           <h2>contrast</h2>
           <input class="inline" id="input-contrast" type="text" value="#888">
@@ -131,7 +131,7 @@
             </tbody>
           </table>
           <anchored-tag tag="h1" owned>Util</anchored-tag>
-          <p class="pad bg-color-info">comming soon..</p>
+          <p class="pad bg-color-info">coming soon..</p>
         </section>
       </div>
       <footer class="footer">
@@ -151,19 +151,14 @@
             </div>
           </div>
         </div>
-        <div class="footer-copyright">copyright &copy; 2017 MOSS-UI all rights reserved.</div>
+        <div class="footer-copyright">copyright &copy; <span id='copyright-year'>2017</span> MOSS-UI all rights reserved.</div>
       </footer>
-      <scroll-to :duration="800" :offset="400" top-html="&lt;i class=&quot;fa fa-chevron-up&quot; aria-hidden=&quot;true&quot;&gt;" bottom-html="&lt;i class=&quot;fa fa-chevron-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;"></scroll-to>
+      <scroll-to :duration="800" :offset="400"></scroll-to>
       <toast></toast>
     </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
+    <script src="./node_modules/vue/dist/vue.js"></script>
     <script src="./dist/moss.js"></script>
-    <script src="./example.js"></script>
-    <script>
-      var year = new Date().getFullYear();
-      document.querySelector('.footer-copyright').innerHTML = 'copyright \&copy; ' + year + ' MOSS-UI all rights reserved.';
-      document.querySelector('#project-name').innerHTML = 'MOSS-UI ' + Moss.version;
-      
-    </script>
+    <script src="example.js"></script>
   </body>
 </html>
