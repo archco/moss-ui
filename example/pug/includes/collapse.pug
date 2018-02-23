@@ -30,6 +30,19 @@ ul(class='list-group')
       p=lorem
 
 h2 Collapse Toggle
+
+collapse-toggle.pad.bg-color-shade(target='test-collapse2') toggle
+span.d-inline-block.bg-color-info(is='collapse-toggle' tag='span' target='test-collapse2') toggle by span
+button.btn(is='collapse-toggle' tag='button' target='test-collapse2') toggle by button
+
+collapse(id='test-collapse2')
+  h3 test collapse
+  p= lorem
+
+h2 Collapse Toggle with icon
+
+blockquote.pad.danger @deprecated at v0.5.x instead use <code>collapse-toggle</code> component.
+
 h3 Collapse /w icon
 div(class='collapse-toggle with-plus pad bg-color-primary' v-collapse:test01) TEST01
 collapse(id='test01')

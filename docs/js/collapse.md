@@ -8,9 +8,12 @@
 
 - [Usage](#usage)
   - [Basic](#basic)
-  - [with collapse-toggle](#with-collapse-toggle)
   - [Accordion](#accordion)
+  - [Using collapse-toggle](#using-collapse-toggle)
+  - [collapse-toggle class](#collapse-toggle-class)
 - [Props](#props)
+  - [Props of collapse](#props-of-collapse)
+  - [Props of collapse-toggle](#props-of-collapse-toggle)
 - [Directives](#directives)
   - [v-collapse](#v-collapse)
   - [v-accordion](#v-accordion)
@@ -27,20 +30,6 @@
 <div is="collapse-toggle" target="collapse01">TOGGLE</div>
 
 <collapse id="collapse01">
-  <h3>Title</h3>
-  <p>...</p>
-</collapse>
-```
-
-### with collapse-toggle
-
-> @deprecated at v0.5.0. use `collapse-toggle` component instead.
-
-Available optional class: `with-plus` `with-caret` `with-arrow`
-
-``` html
-<div class="collapse-toggle with-plus" v-collapse:test01>TOGGLE</div>
-<collapse id="test01">
   <h3>Title</h3>
   <p>...</p>
 </collapse>
@@ -67,12 +56,54 @@ Available optional class: `with-plus` `with-caret` `with-arrow`
 </ul>
 ```
 
+### Using collapse-toggle
+
+> source: [js/components/collapse-toggle](https://github.com/archco/moss-ui/blob/master/src/js/components/collapse-toggle.vue)
+
+This component is a helper for toggling collapse or accordion.
+
+``` html
+<!-- toggle collapse. -->
+<collapse-toggle target="my-collapse-id">Toggle collapse</collapse-toggle>
+
+<!-- toggle accordion. -->
+<collapse-toggle target="my-accordion-id" accordion="accordion-group-name">Toggle accordion</collapse-toggle>
+
+<!-- specifying tag name. -->
+<span class="d-inline-block" is="collapse-toggle" tag="span" target="my-collapse-id">Toggle</span>
+<button type="button" class="btn" is="collapse-toggle" tag="button" target="my-collapse-id">Toggle</button>
+```
+
+### collapse-toggle class
+
+> @deprecated at v0.5.0. use [`collapse-toggle`](#using-collapse-toggle) component instead.
+
+Available optional class: `with-plus` `with-caret` `with-arrow`
+
+``` html
+<div class="collapse-toggle with-plus" v-collapse:test01>TOGGLE</div>
+<collapse id="test01">
+  <h3>Title</h3>
+  <p>...</p>
+</collapse>
+```
+
 ## Props
+
+### Props of Collapse
 
 | Name | Type | Default | Description |
 | ---- |:----:| ------- | ----------- |
 | id | `String` | required | Key of component. |
 | expanded | `Boolean` | `false` | If true, content is expanded. |
+| accordion | `String` | `''` | Accordion group name. |
+
+### Props of Collapse-toggle
+
+| Name | Type | Default | Description |
+| ---- |:----:| ------- | ----------- |
+| target | `String` | required | Target collapse component's id |
+| tag | `String` | `'div'` | tagName of this element. |
 | accordion | `String` | `''` | Accordion group name. |
 
 ## Directives

@@ -22,6 +22,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [Helpers](scss/helpers.md)
 - [Hero Banner](scss/hero-banner.md)
 - [Image](scss/image.md)
+- [Input Group](scss/input-group.md)
 - [List](scss/list.md)
 - [Loader](scss/loader.md)
 - [Pagination](scss/pagination.md)

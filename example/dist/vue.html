@@ -128,6 +128,14 @@
             </li>
           </ul>
           <h2>Collapse Toggle</h2>
+          <collapse-toggle class="pad bg-color-shade" target="test-collapse2">toggle</collapse-toggle><span class="d-inline-block bg-color-info" is="collapse-toggle" tag="span" target="test-collapse2">toggle by span</span>
+          <button class="btn" is="collapse-toggle" tag="button" target="test-collapse2">toggle by button</button>
+          <collapse id="test-collapse2">
+            <h3>test collapse</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </collapse>
+          <h2>Collapse Toggle with icon</h2>
+          <blockquote class="pad danger">@deprecated at v0.5.x instead use <code>collapse-toggle</code> component.</blockquote>
           <h3>Collapse /w icon</h3>
           <div class="collapse-toggle with-plus pad bg-color-primary" v-collapse:test01>TEST01</div>
           <collapse id="test01">

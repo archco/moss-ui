@@ -11,15 +11,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+## [0.5.0][] - 2018-02-23
+
 ### Added
 
 - Adds new test environment for vue component via vue-test-utils. #75, #78
-- Add a new color library 'moo-color'. #72
+- Add a new color library '[moo-color](https://github.com/archco/moo-color#readme)'. #72
 - Add string-case convert methods in Util: `strToNormal()`, `strToCamel()` and `strToKebab()`.
-- Add a new component 'collapse-toggle'.
-- [Add SVG icons](https://github.com/archco/moss-ui/blob/master/docs/svg-icons.md) #82
-- Add a new scss part 'input-group'. #64
-- Add a new vue component 'search'. #64
+- Add a new component '[collapse-toggle](https://github.com/archco/moss-ui/blob/master/docs/js/collapse.md#using-collapse-toggle)'.
+- Add [SVG icons](https://github.com/archco/moss-ui/blob/master/docs/svg-icons.md) #82
+- Add a new scss part '[input-group](https://github.com/archco/moss-ui/blob/master/docs/scss/input-group.md)'. #64
+- Add a new vue component '[search](https://github.com/archco/moss-ui/blob/master/docs/js/search.md)'. #64
 
 ### Changed
 
@@ -130,7 +132,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Remove unnecessary part "aside.scss". #60
 - Remove deprecated scss mixin, `flex-container()`. instead use `flex-container-align`. #52
 
-[Unreleased]: https://github.com/archco/moss-ui/compare/v0.4.2...HEAD
+[Unreleased]: https://github.com/archco/moss-ui/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/archco/moss-ui/compare/v0.4.2...v0.5.0
 [0.4.2]: https://github.com/archco/moss-ui/compare/v0.4.1...v0.4.2
 [0.4.1]: https://github.com/archco/moss-ui/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/archco/moss-ui/compare/v0.3.2...v0.4.0
