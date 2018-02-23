@@ -3,6 +3,8 @@ import { treeData, treeData2 } from './data/tree';
 import collection from './data/collection.json';
 import * as Partials from './partials';
 
+window.Vue.use(window.MossUI.default);
+
 const searchOptions = {
   keys: [
     { name: 'name', weight: .5 },

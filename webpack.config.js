@@ -11,7 +11,7 @@ const env = process.env.NODE_ENV || 'dev'; // dev|prod|test
 
 let config = {
   entry: {
-    moss: ['./src/js/moss.js', './src/scss/moss.scss'],
+    moss: ['./src/scss/moss.scss', './src/js/moss.js'],
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

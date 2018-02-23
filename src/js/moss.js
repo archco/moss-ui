@@ -30,7 +30,15 @@ function addMossObject(Vue) {
   window.Moss = Vue.Moss = Vue.prototype.$moss = Moss;
 }
 
-const MossUI = {
+export {
+  Color,
+  ElementMeasurer,
+  ElementUtil,
+  Svg,
+  Util,
+};
+
+export default {
   version: version,
   install(Vue, options = {}) {
     if (this.installed) return;
@@ -54,16 +62,3 @@ const MossUI = {
     }
   },
 };
-
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(MossUI);
-}
-
-export {
-  Color,
-  ElementMeasurer,
-  ElementUtil,
-  Svg,
-  Util,
-};
-export default MossUI;

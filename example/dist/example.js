@@ -84,9 +84,13 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+window.Vue.use(window.MossUI.default); /* eslint-disable no-unused-vars */
+
+
 var searchOptions = {
   keys: [{ name: 'name', weight: .5 }, { name: 'category', weight: .3 }, { name: 'description', weight: .2 }]
-}; /* eslint-disable no-unused-vars */
+};
+
 var strToKebab = window.Moss.lib.Util.strToKebab;
 var Color = window.Moss.lib.Color;
 
