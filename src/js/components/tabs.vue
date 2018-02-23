@@ -3,7 +3,7 @@
     <ul :class="tabsClass" v-wrap:responsive>
       <li v-for="tab in tabs"
         :key="tab.name"
-        :style="{ flexGrow: growEnabled ? 1 : null }">
+        :style="{ flexGrow: growEnabled ? '1' : '' }">
         <a
           href="#"
           :class="tabClass(tab)"
@@ -13,15 +13,17 @@
       </li>
     </ul>
 
-    <div>
+    <div class="tabs-container" :style="containerStyle">
       <slot></slot>
     </div>
   </div>
 </template>
 
 <script>
+import Tab from './tab.vue';
+
 export default {
-  name:'tabs',
+  components: { Tab },
   props: {
     effect: {
       type: String,
@@ -35,10 +37,16 @@ export default {
       type: Boolean,
       default: false,
     },
+    containerStyle: {
+      type: Object,
+      default: () => {
+        return {};
+      },
+    },
   },
   computed: {
     effectName() {
-      return (this.effect) ? `tab-${this.effect}` : 'none';
+      return (this.effect) ? `tab-${this.effect}` : '';
     },
     tabsClass() {
       let classObject = { tabs: true };
@@ -53,9 +61,7 @@ export default {
   },
   methods: {
     selectTab(selectedTab) {
-      this.tabs.forEach(tab => {
-        tab.isActive = (tab.name === selectedTab.name);
-      });
+      this.tabs.forEach(tab => tab.isActive = (tab.name === selectedTab.name));
       this.$emit('tab-selected', selectedTab);
     },
     tabClass(tab) {
@@ -71,9 +77,7 @@ export default {
     this.tabs = this.$children;
   },
   mounted() {
-    this.tabs.forEach(tab => {
-      tab.effectName = this.effectName;
-    });
+    this.tabs.forEach(tab => tab.effectName = this.effectName);
   },
 };
 </script>

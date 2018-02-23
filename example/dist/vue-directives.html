@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Directives</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../dist/moss.css">
+    <style>
+      aside { position: relative; }
+      aside .menu { overflow: auto; }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header class="d-flex justify-content-center align-items-center bg-color-primary" style="height:100px;">
+        <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI <span class='moss-version'></span></a></h1>
+      </header>
+      <navbar class="sticky-top shadow-near" align="end">
+        <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
+        <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
+          <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
+          <nav-item href="vue.html" text="Vue"></nav-item>
+          <nav-item>
+            <dropdown toggle="toggle" placement="bottom-end">
+              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
+            </dropdown>
+          </nav-item>
+        </navbar-nav>
+      </navbar>
+      <div class="row">
+        <aside class="col-md-2 hide-only-mobile">
+          <ul class="menu list fixed" v-scrollspy="{activeClass: 'bg-color-shade', activeTarget: 'self', offset: 100}">
+            <li is="anchored-tag" tag="li">v-focus</li>
+            <li is="anchored-tag" tag="li">v-trigger</li>
+            <li is="anchored-tag" tag="li">v-modal</li>
+            <li is="anchored-tag" tag="li">v-clipboard</li>
+            <li is="anchored-tag" tag="li">v-set-value</li>
+            <li is="anchored-tag" tag="li">v-tooltip</li>
+            <li is="anchored-tag" tag="li">v-ripple</li>
+          </ul>
+        </aside>
+        <section class="col-md-10">
+          <anchored-tag tag="h2" owned>v-focus</anchored-tag>
+          <input type="text" placeholder="focused" v-focus>
+          <anchored-tag tag="h2" owned>v-trigger</anchored-tag>
+          <button class="btn" v-trigger:toast-show="['toast-show is triggered.']">TRIGGER</button>
+          <anchored-tag tag="h2" owned>v-modal</anchored-tag>
+          <button class="btn" v-modal:v-modal-test>Trigger</button>
+          <modal name="v-modal-test" title="Directive Test">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div slot="actions">
+              <button class="btn default" v-modal:v-modal-test.close>CANCEL</button>
+              <button class="btn success" v-modal:v-modal-test v-trigger:toast-show="['Okay!']">OK</button>
+            </div>
+          </modal>
+          <anchored-tag tag="h2" owned>v-clipboard</anchored-tag>
+          <h4>Copy text</h4>
+          <button class="btn" v-clipboard="'Hello, World!'">Copy</button>
+          <h4>Cut from input</h4>
+          <input id="input-target" value="input text">
+          <button class="btn" v-clipboard.cut="{ target: '#input-target' }">Cut</button>
+          <h4>Copy from element</h4>
+          <div class="pad bg-color-secondary" id="element-target">
+            <h3>Title</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <button class="btn" v-clipboard="{ target: '#element-target' }">Copy</button>
+          <anchored-tag tag="h2" owned>v-set-value</anchored-tag>
+          <ul class="list-horizontal group">
+            <li><a href="vue-directives.html?q=1#v-set-value">query set 1</a></li>
+            <li><a href="vue-directives.html?q=2#v-set-value">query set 2</a></li>
+            <li><a href="vue-directives.html?q=3#v-set-value">query set 3</a></li>
+          </ul>
+          <select class="inline group" name="set_value_test" v-set-value:q>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+          <anchored-tag tag="h1" owned>v-tooltip</anchored-tag>
+          <blockquote class="pad info">This vue-directive is built on <a href="https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/tooltip-documentation.md">Tooltip.js</a></blockquote>
+          <h3>Default usage of v-tooltip directive</h3>
+          <div class="pad group"><span v-tooltip="'Javascript'">JS</span></div>
+          <h3>Set placement</h3>
+          <div class="pad group"><span v-tooltip:bottom-start="'Cascading Style Sheets'">CSS</span></div>
+          <h3>Set Trigger</h3>
+          <div class="pad group">
+            <button class="btn-flat info" v-tooltip.click="'HTML: Hyper Text Markup Language'">Toggle Me!</button>
+          </div>
+          <anchored-tag tag="h1" owned>v-ripple</anchored-tag>
+          <h3>Default</h3>
+          <button class="btn primary" v-ripple>RIPPLE TEST</button>
+          <button class="btn light" v-ripple>Auto Contrast</button>
+          <button class="btn-flat" v-ripple>Flat Button</button>
+          <dropdown>
+            <div class="pad d-inline-block bg-color-light" id="target" slot="button" v-ripple>HELLO</div>
+            <button class="dropdown-item" v-ripple>It's</button>
+            <button class="dropdown-item" v-ripple>Ripple</button>
+            <button class="dropdown-item" v-ripple>Test</button>
+          </dropdown>
+          <h3>light or dark modifiers</h3>
+          <button class="btn success" v-ripple.light>LIGHT</button>
+          <button class="btn success" v-ripple.dark>DARK</button>
+          <h3>Set ripple color</h3>
+          <div class="row">
+            <div class="col-md pad bg-color-dark" v-ripple="{color: '#fff'}">#fff ripple color</div>
+            <div class="col-md pad bg-color-warning" v-ripple="{color: '#f00'}">#f00 ripple color</div>
+            <div class="col md pad bg-color-shade" v-ripple="{color: '#0ff'}">#0ff ripple color</div>
+          </div>
+        </section>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <h3>Footer content</h3>
+              <p>footer content here..</p>
+            </div>
+            <div class="col-6">
+              <h3>Links</h3>
+              <ul class="list-horizontal">
+                <li><a href="#">Link1</a></li>
+                <li><a href="#">Link2</a></li>
+                <li><a href="#">Link3</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">copyright &copy; <span id='copyright-year'>2017</span> MOSS-UI all rights reserved.</div>
+      </footer>
+      <scroll-to :duration="800" :offset="400"></scroll-to>
+      <toast></toast>
+    </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script src="../../dist/moss.js"></script>
+    <script src="./example.js"></script>
+  </body>
+</html>

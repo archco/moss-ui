@@ -1,10 +1,11 @@
 <template lang="html">
-  <a :href="href" :class="classObject"><slot></slot></a>
+  <a :href="href" :class="classObject">
+    <slot></slot>
+  </a>
 </template>
 
 <script>
 export default {
-  name: 'navbar-brand',
   props: {
     href: {
       type: String,

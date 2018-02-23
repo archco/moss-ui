@@ -1,0 +1,134 @@
+blockquote.pad.info This component is built on <a href="https://github.com/FezVrasta/popper.js">Popper.js</a>
+
+h3 Toggle Dropdown
+div(is='dropdown' class='dropdown')
+  button(class='btn' slot='button') TOGGLE
+  a.dropdown-item.active(href='#') hello
+  a.dropdown-item(href='#') drop
+  a.dropdown-item(href='#') down
+
+h3 Hover Dropdown
+dropdown(toggle='hover')
+  button(class='btn info' slot='button') HOVER
+  a.dropdown-item(href='#') hello
+  a.dropdown-item(href='#') drop
+  a.dropdown-item(href='#') down
+
+h3 Content Placements
+div.d-flex.justify-content-between(style='width:100%;')
+  dropdown(toggle='hover' placement='top')
+    button(class='btn success' slot='button') top
+    a.dropdown-item(href='#') hello
+    a.dropdown-item(href='#') drop
+    a.dropdown-item(href='#') down
+
+  dropdown(toggle='hover' placement='right')
+    button(class='btn link' slot='button') right
+    a.dropdown-item(href='#') hello
+    a.dropdown-item(href='#') drop
+    a.dropdown-item(href='#') down
+
+  dropdown(toggle='hover' placement='left-start')
+    button(class='btn info' slot='button') left-start
+    a.dropdown-item(href='#') hello
+    a.dropdown-item(href='#') drop
+    a.dropdown-item(href='#') down
+
+  dropdown(toggle='hover' placement='bottom-end')
+    button(class='btn warning' slot='button') bottom-end
+    a.dropdown-item(href='#') hello
+    a.dropdown-item(href='#') drop
+    a.dropdown-item(href='#') down
+
+h3 Content Offset
+div.bg-color-info
+  blockquote.warning.pad
+    | <i class="fa fa-exclamation-circle" aria-hidden="true"></i> If you set offset, it could not working as expected in hover type dropdown.
+
+div.d-flex.justify-content-around
+  dropdown(toggle='toggle' offset='0, 10px')
+    button(class='btn dark' slot='button') 0, 10px
+    a.dropdown-item(href='#') hello
+    a.dropdown-item(href='#') drop
+    a.dropdown-item(href='#') down
+
+  dropdown(toggle='toggle' placement='left-end' offset='0, 15%')
+    button(class='btn light' slot='button') 0, 15%
+    a.dropdown-item(href='#') hello
+    a.dropdown-item(href='#') drop
+    a.dropdown-item(href='#') down
+
+h3 With arrow
+blockquote.link.pad
+  | <i class="fa fa-flask" aria-hidden="true"></i> It is experimental feature yet.
+
+dropdown(placement='right-start' with-arrow)
+  button(class='btn' slot='button') with-arrow
+  a.dropdown-item(href='#') hello
+  a.dropdown-item(href='#') drop
+  a.dropdown-item(href='#') down
+
+h3 Flip and PreventOverflow mode
+div.d-flex.justify-content-center.align-items-center(style='width:100%;')
+  div.pad.bg-color-dark(style='width:300px;height:300px;overflow:auto;')
+    div.d-flex.flex-column.justify-content-center.align-items-center(style='width:600px;height:600px;')
+      div
+        dropdown(toggle='toggle' flip='on' prevent-overflow='on')
+          button(class='btn light' slot='button') Both on
+          a.dropdown-item(href='#') hello
+          a.dropdown-item(href='#') drop
+          a.dropdown-item(href='#') down
+
+        dropdown(toggle='toggle' flip='off')
+          button(class='btn warning' slot='button') Flip off
+          a.dropdown-item(href='#') hello
+          a.dropdown-item(href='#') drop
+          a.dropdown-item(href='#') down
+      div
+        dropdown(toggle='toggle' prevent-overflow='off')
+          button(class='btn secondary' slot='button') PO off
+          a.dropdown-item(href='#') hello
+          a.dropdown-item(href='#') drop
+          a.dropdown-item(href='#') down
+
+        dropdown(toggle='toggle' flip='off' prevent-overflow='off')
+          button(class='btn danger' slot='button') Both off
+          a.dropdown-item(href='#') hello
+          a.dropdown-item(href='#') drop
+          a.dropdown-item(href='#') down
+
+h3 Header and Divider
+dropdown
+  button(class='btn info' slot='button') DROPDOWN
+  h3.dropdown-header Header
+  a.dropdown-item(href='#') hello
+  a.dropdown-item(href='#') drop
+  div.dropdown-divider
+  a.dropdown-item(href='#') down
+
+h3 Disabled item
+dropdown(placement='right-start')
+  button(class='btn danger' slot='button') DROPDOWN
+  h3.dropdown-header Header
+  a.dropdown-item(href='#') hello
+  a.dropdown-item(href='#') drop
+  div.dropdown-divider
+  h3.dropdown-header Not allowed
+  span.dropdown-item(href='#' disabled) down
+
+h3 Dropdown button without caret
+dropdown(placement='right' offset='5px, 5px' :button-with-caret='false')
+  button(class='btn info' slot='button') DROPDOWN
+  h3.dropdown-header Header
+  a.dropdown-item(href='#') hello
+  a.dropdown-item(href='#') drop
+  div.dropdown-divider
+  h3.dropdown-header Not allowed
+  span.dropdown-item(href='#' disabled) down
+
+h3 Button tag as dropdown-item
+dropdown(toggle='toggle')
+  button(class='btn dark' slot='button') Button
+  button.dropdown-item Btn
+  button.dropdown-item.active Active
+  a.dropdown-item(href='#') Link

@@ -2,7 +2,9 @@
   // local variables.
   $_chip-size: $chip-height;
 
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
   height: $chip-height;
   padding: 0 $_chip-size / 2;
   margin-right: $_chip-size / 4;
@@ -10,25 +12,30 @@
   font-size: $chip-font-size;
   line-height: strip-unit($_chip-size);
   background-color: $chip-bg-color;
-  border-radius: $_chip-size;
+  @include border-radius($_chip-size);
 
   img {
-    float: left;
     width: $_chip-size;
     height: $_chip-size;
     margin-right: $_chip-size / 4;
     margin-left: -$_chip-size / 2;
-    border-radius: 50%;
+    @include border-radius(50%);
+  }
+
+  .close-button {
+    font-size: 1.2em;
+    margin-left: .25rem;
+    margin-right: -.25rem;
   }
 }
 
 a.chip {
   @include no-decoration;
   color: inherit;
-  transition: box-shadow $transition-time;
+  @include transition(box-shadow $transition-duration $transition-timing-function);
 
   &:hover,
   &:focus {
-    box-shadow: $shadow-near;
+    @include box-shadow($shadow-near);
   }
 }

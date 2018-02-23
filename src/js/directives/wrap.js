@@ -1,4 +1,4 @@
-import ElementUtil from 'element-util';
+import { wrap } from 'element-util';
 
 /*
   v-wrap:{arg}.{modifiers}="'{value}'"
@@ -9,13 +9,12 @@ import ElementUtil from 'element-util';
   value: {String} Tag name of wrapper. default value is 'div'.
  */
 export default {
-  name: 'wrap',
   inserted(el, binding) {
-    let className = binding.modifiers.raw
+    const className = binding.modifiers.raw
       ? binding.arg
       : `${binding.arg}-wrapper`;
-    let tagName = binding.value || 'div';
+    const tagName = binding.value || 'div';
 
-    ElementUtil.wrap(el, className, tagName);
+    wrap(el, className, tagName);
   },
 };

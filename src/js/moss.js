@@ -1,19 +1,41 @@
 /*!
  * moss-ui - The front-end UI framework with Vue.js and SCSS.
- * @version v0.4.2
+ * @version v0.5.1
  * @link https://github.com/archco/moss-ui
  * @license MIT
  */
-import ElementUtil from 'element-util';
+import * as ElementUtil from 'element-util';
 import ElementMeasurer from 'element-measurer';
-import Color from './lib/color';
-import Util from './lib/util';
-import components from './components/_index';
-import directives from './directives/_index';
-import { version } from '../../package.json';
+import { MooColor as Color } from 'moo-color';
+import * as Util from './lib/util';
+import * as components from './components';
+import * as directives from './directives';
+import * as Svg from '../svg';
+import version from '../../task/version';
 
 const DefaultOptions = {
-  insteadName: {},
+  enableGlobalComponents: true,
+};
+
+const lib = {
+  Color,
+  ElementMeasurer,
+  ElementUtil,
+  Svg,
+  Util,
+};
+
+function addMossObject(Vue) {
+  const Moss = { version, lib };
+  window.Moss = Vue.Moss = Vue.prototype.$moss = Moss;
+}
+
+export {
+  Color,
+  ElementMeasurer,
+  ElementUtil,
+  Svg,
+  Util,
 };
 
 export default {
@@ -25,40 +47,18 @@ export default {
     options = Object.assign(DefaultOptions, options);
 
     // Add object for convenience.
-    this.addMossObject(Vue);
+    addMossObject(Vue);
 
     // Add components.
-    components.forEach(component => {
-      let name = (options.insteadName && options.insteadName[component.name])
-        ? options.insteadName[component.name]
-        : component.name;
-
-      Vue.component(name, component);
-    });
+    if (options.enableGlobalComponents) {
+      for (const [key, val] of Object.entries(components)) {
+        Vue.component(Util.strToKebab(key), val);
+      }
+    }
 
     // Add directives.
-    directives.forEach(directive => {
-      Vue.directive(directive.name, directive);
-    });
+    for (const [key, val] of Object.entries(directives)) {
+      Vue.directive(Util.strToKebab(key), val);
+    }
   },
-
-  addMossObject(Vue) {
-    const Moss = {
-      version,
-      lib: {
-        Color,
-        Util,
-        ElementUtil,
-        ElementMeasurer,
-      },
-    };
-    window.Moss = Vue.Moss = Vue.prototype.$moss = Moss;
-  },
-};
-
-export {
-  Color,
-  Util,
-  ElementUtil,
-  ElementMeasurer,
 };

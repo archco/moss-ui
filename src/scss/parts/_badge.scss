@@ -38,7 +38,7 @@
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: $badge-border-radius;
+  @include border-radius($badge-border-radius);
 
   // color-set
   @each $name, $color in $color-set {
@@ -47,7 +47,7 @@
     }
   }
 
-  &.rounded {
+  &.round {
     padding-right: $badge-rounded-padding-x;
     padding-left: $badge-rounded-padding-x;
     border-radius: $badge-rounded-border-radius;

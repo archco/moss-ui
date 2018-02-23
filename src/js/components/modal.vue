@@ -1,25 +1,30 @@
 <template lang="html">
   <transition :name="effectName">
-    <div class="modal-mask" v-if="show">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3>{{ title }}</h3>
-            <button type="button" class="close-button" @click="$emit('close')" v-html="closeButtonHtml"></button>
-          </div>
-          <div class="modal-body">
-            <slot></slot>
-          </div>
-          <div class="modal-footer">
-            <slot name="actions"></slot>
-          </div>
+    <div class="modal-mask" v-show="show">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>{{ title }}</h3>
+          <close-button action=""
+            @close="$emit('close')"
+            v-html="closeButtonHtml"/>
         </div>
+        <div class="modal-body">
+          <slot></slot>
+        </div>
+        <div class="modal-footer">
+          <slot name="actions"></slot>
+        </div>
+      </div>
     </div>
   </transition>
 </template>
 
 <script>
+import { getElements, addListener } from 'element-util';
+import CloseButton from './close-button.vue';
+
 export default {
-  name: 'modal',
+  components: { CloseButton },
   props: {
     name: {
       type: String,
@@ -35,7 +40,7 @@ export default {
     },
     closeButtonHtml: {
       type: String,
-      default: '✖',
+      default: '',
     },
     closeOn: {
       type: Boolean,
@@ -50,28 +55,26 @@ export default {
   data() {
     return {
       show: false,
-      body: document.querySelector('body'),
     };
   },
   watch: {
     show(shown) {
+      const body = document.querySelector('body');
       if (shown) {
-        this.body.classList.add('modal-shown');
+        body.classList.add('modal-shown');
       } else {
-        this.body.classList.remove('modal-shown');
+        body.classList.remove('modal-shown');
       }
     },
   },
   methods: {
     toggleModal(name, action = 'toggle') {
       if (name !== this.name) return;
-      action = action.toLowerCase();
-      if (action === 'show') {
-        this.show = true;
-      } else if (action === 'close') {
-        this.show = false;
-      } else {
-        this.show = !this.show;
+      switch (action.toLowerCase()) {
+        case 'show': this.show = true; break;
+        case 'close': this.show = false; break;
+        case 'toggle':
+        default: this.show = !this.show; break;
       }
     },
     onKeydown(event) {
@@ -82,23 +85,20 @@ export default {
     },
   },
   beforeMount() {
+    // add key listener. close modal if 'esc' key downed.
     window.addEventListener('keydown', this.onKeydown.bind(this));
+    // register events to $root and self.
     this.$root.$on('modal-toggle', this.toggleModal.bind(this));
     this.$on('close', () => {
       this.$root.$emit('modal-toggle', this.name, 'close');
     });
 
-    if (typeof window.Moss.modal === 'undefined') {
+    // Attaches helper methods to Moss object.
+    if (typeof window.Moss !== 'undefined' && typeof window.Moss.modal === 'undefined') {
       window.Moss.modal = {
-        show: name => {
-          this.$root.$emit('modal-toggle', name, 'show');
-        },
-        close: name => {
-          this.$root.$emit('modal-toggle', name, 'close');
-        },
-        toggle: (name, action = 'toggle') => {
-          this.$root.$emit('modal-toggle', name, action);
-        }
+        show: name => this.$root.$emit('modal-toggle', name, 'show'),
+        close: name => this.$root.$emit('modal-toggle', name, 'close'),
+        toggle: (name, action = 'toggle') => this.$root.$emit('modal-toggle', name, action),
       };
     }
 
@@ -109,6 +109,11 @@ export default {
         }
       });
     }
+  },
+  mounted() {
+    // Add data-toggle listeners. 'cancel'|'close'
+    const elms = getElements('[data-toggle="cancel"],[data-toggle="close"]', this.$el);
+    addListener(elms, 'click', () => this.toggleModal(this.name, 'close'));
   }
 }
 </script>

@@ -5,6 +5,7 @@
 [scss/components/chip](../../src/scss/components/_chip.scss)
 
 ### Table of contents
+
 - [Usage](#usage)
   - [Tag chip](#tag-chip)
   - [Contact chip](#contact-chip)
@@ -50,14 +51,6 @@
 ```
 
 ## Props
-
-| name | type | description | default |
-| ---- | ---- | ----------- | ------- |
-| tag | String | tag name. | 'span' |
-| color | String | background-color of a chip. | '' |
-| closeable | Boolean | Enable close-button. | false |
-| img-src | String | image source. | '' |
-| img-alt | String | Alternate text. | '' |
 
 | Name | Type | Default | Description |
 | ---- |:----:| ------- | ----------- |

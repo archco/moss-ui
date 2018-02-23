@@ -42,9 +42,9 @@ $red: palette('chilired') !default;
 $yellow: palette('naturalyellow') !default;
 
 // theme-colors
-$primary-color: palette('huntergreen') !default;
-$primary-color-accent: darken($primary-color, 16%) !default;
-$secondary-color: palette('asparagus') !default;
+$primary-color: palette('madder') !default;
+$primary-color-accent: lighten($primary-color, 12%) !default;
+$secondary-color: palette('marengo') !default;
 
 // background colors
 $background-color: $white !default;
@@ -92,14 +92,72 @@ $color-set: (
   link: $link-color,
 ) !default;
 
+// Options
+//============================
+
+$enable-rounded: true !default;
+$enable-shadows: true !default;
+$enable-transitions: true !default;
+
+// Spacing
+//============================
+
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge((
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+), $spacers);
+
+// Sizing
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: () !default;
+$sizes: map-merge((
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%,
+  auto: auto,
+), $sizes);
+
+// Grid
+//============================
+
+$grid-breakpoints: (
+  base: 0, // Applies all width size.
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+) !default;
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 1.5rem !default;
+
+// Grid containers
+$container-max-widths: (
+  sm: 96%,
+  md: 92%,
+  lg: 88%,
+  xl: 88%,
+) !default;
+
 // Misc
 //==============================
 
-$transition-time: .3s !default;
 $default-focus-outline: 2px solid $primary-color !default;
 $outline-color: $primary-color !default;
 $body-line-height: 1.5 !default;
 $position-default-offset: 5% !default;
+
+// transition
+$transition-duration: .3s !default;
+$transition-timing-function: ease-out !default;
+$transition-all: all $transition-duration $transition-timing-function !default;
 
 // radius
 $radius-normal: 4px !default;
@@ -178,31 +236,12 @@ $footer-link-color: $footer-color !default;
 $footer-copyright-color: $footer-color !default;
 $footer-copyright-bg-color: rgba(#000, .1) !default;
 
-// This variable affects the `.h-*` and `.w-*` classes.
-$sizes: (
-  25: 25%,
-  50: 50%,
-  75: 75%,
-  100: 100%
-) !default;
-
 //============================================================
 // SCSS Parts
 //============================================================
 
-// grid
-$grid-breakpoints: (
-  base: 0, // Applies all width size.
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-) !default;
-$grid-columns: 12 !default;
-$grid-gutter-width: 1.5rem !default;
-
 // form
-$filedset-border: 2px solid $primary-color !default;
+$fieldset-border: 2px solid $primary-color !default;
 $legend-color: $primary-color !default;
 $label-color: $text-color !default;
 $label-color-focused: $primary-color !default;
@@ -212,7 +251,8 @@ $input-height: 2em !default;
 $input-padding-y: .2em !default;
 $input-padding-x: .5em !default;
 $input-margin: .5rem 0 !default;
-$input-border: 1px solid $border-color !default;
+$input-border-width: 1px !default;
+$input-border-color: $border-color !default;
 $input-radius: $radius-small !default;
 $input-outline-color: $outline-color !default;
 $input-disabled-bg-color: $disabled-color !default;
@@ -281,7 +321,7 @@ $pagination-item-border-radius: $radius-small !default;
 
 // image
 $image-overlay-base-opacity: .67 !default;
-$image-overlay-transition: $transition-time * 2 !default;
+$image-overlay-transition: $transition-duration * 2 !default;
 $image-overlay-bg-color: $background-color-invert !default;
 
 // helper
@@ -296,9 +336,6 @@ $hero-banner-pad-large: 9em !default;
 //============================================================
 // Vue Components
 //============================================================
-
-// close-button
-$close-button-color: rgba(#000, .3) !default;
 
 // dropdown
 $dropdown-bg-color: $background-color !default;
@@ -387,6 +424,7 @@ $message-default-bg-color: $default-color !default;
 $message-padding-y: 1rem !default;
 $message-padding-x: 1.5rem !default;
 $message-margin: 8px !default;
+$message-border-radius: $radius-normal !default;
 
 // simple-crud
 $simple-crud-min-height: 3em !default;
@@ -403,10 +441,17 @@ $input-switch-base-size: 1em !default;
 $input-toggle-bg-color: $background-color !default;
 $input-toggle-border-color: $border-color !default;
 $input-toggle-active-color: $primary-color !default;
-$input-toggle-transition-time: $transition-time !default;
+$input-toggle-transition-duration: $transition-duration !default;
 
 // carousel
 $carousel-dot-color: rgba($text-color-light, .5) !default;
 $carousel-dot-active-color: $text-color-light !default;
 $carousel-arrow-color: rgba($text-color-light, .5) !default;
 $carousel-arrow-hover-color: $text-color-light !default;
+
+// search
+$search-button-bg-color: $primary-color !default;
+$search-result-border-width: 1px !default;
+$search-result-border-color: $border-color !default;
+$search-result-bg-color: $background-color !default;
+$search-result-item-focus-color: $shade-color !default;

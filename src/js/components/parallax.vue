@@ -4,7 +4,6 @@
 
 <script>
 export default {
-  name: 'parallax',
   props: {
     src: {
       type: String,
@@ -18,7 +17,7 @@ export default {
   data() {
     return {
       styleObject: {
-        backgroundImage: `url('${this.src}')`,
+        backgroundImage: `url("${this.src}")`,
         height: this.height,
       }
     };

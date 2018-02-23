@@ -6,14 +6,16 @@
 
 ## Usage
 
-**in HTML**
+Add component in HTML.
+
 ``` html
 <toast
   :duration="5000">
 </toast>
 ```
 
-**in script**
+and trigger via `Moss` object.
+
 ``` js
 window.Moss.toast('Toasted!');
 ```

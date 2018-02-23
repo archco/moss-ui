@@ -8,5 +8,5 @@
   white-space: pre;
   background-color: $tooltip-bg-color;
   border-color: $tooltip-bg-color;
-  border-radius: $tooltip-border-radius;
+  @include border-radius($tooltip-border-radius);
 }

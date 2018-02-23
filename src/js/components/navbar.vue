@@ -9,7 +9,9 @@
         @click.native="onToggleClick"
       />
     </div>
-    <collapse id="navbar-body" :class="bodyClass" :expanded="navShow">
+    <collapse id="navbar-body"
+      :class="bodyClass"
+      :expanded="navShow">
       <slot></slot>
     </collapse>
   </nav>
@@ -18,10 +20,9 @@
 <script>
 import NavbarToggle from './navbar-toggle.vue';
 import Collapse from './collapse.vue';
-import Util from '../lib/util';
+import { isMobileSize } from '../lib/util';
 
 export default {
-  name: 'navbar',
   components: { NavbarToggle, Collapse },
   props: {
     align: {
@@ -58,7 +59,7 @@ export default {
       this.navShow = this.toggleExpanded;
     },
     responsiveBody() {
-      if (Util.isMobileSize(768)) {
+      if (isMobileSize(768)) {
         this.toggleExpanded = this.navShow = false;
       } else {
         this.toggleExpanded = false;

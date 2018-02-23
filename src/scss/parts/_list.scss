@@ -17,7 +17,7 @@
     padding: $list-group-padding-y $list-group-padding-x;
     margin-bottom: -$list-border-width;
     border: $list-border-width solid $list-border-color;
-    transition: background-color $transition-time;
+    @include transition(background-color $transition-duration $transition-timing-function);
 
     &.active {
       color: $list-group-active-color;

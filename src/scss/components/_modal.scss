@@ -44,6 +44,10 @@
     font-size: 1.5em;
     color: $modal-close-button-color;
     &:hover { color: $modal-close-button-hover-color; }
+
+    svg path {
+      stroke-width: 2px;
+    }
   }
 }
 

@@ -12,7 +12,14 @@ dropdown,
 
 .dropdown-button {
   @extend %btn-common;
-  &.with-caret::after { @include caret('down'); }
+  display: inline-flex;
+  align-items: center;
+
+  i.icon {
+    font-size: .85em;
+    margin-left: .25em;
+    margin-right: -.25em;
+  }
 }
 
 .dropdown-content {
@@ -23,7 +30,7 @@ dropdown,
   min-width: $dropdown-min-width;
   background-color: $dropdown-bg-color;
   border-color: $dropdown-bg-color;
-  box-shadow: $dropdown-shadow;
+  @include box-shadow($dropdown-shadow);
 
   &.show { display: flex; }
 }
@@ -37,7 +44,10 @@ dropdown,
   font-family: inherit;
   font-size: inherit;
   line-height: $dropdown-line-height;
-  transition: color $transition-time, background-color $transition-time;
+  @include transition(
+    color $transition-duration $transition-timing-function,
+    background-color $transition-duration $transition-timing-function
+  );
 
   &.active:not([disabled]) {
     color: $dropdown-active-color;

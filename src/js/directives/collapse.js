@@ -5,23 +5,19 @@
   arg: collapse id.
  */
 export default {
-  name: 'collapse',
-
   bind(el, binding, vnode) {
-    let action = binding.modifiers.show ? 'show'
+    const collapseId = binding.arg;
+    const action = binding.modifiers.show ? 'show'
       : binding.modifiers.hide ? 'hide'
       : 'toggle';
 
     el.addEventListener('click', () => {
-      vnode.context.$root.$emit('collapse-toggle', binding.arg, action, show => {
-        el.dataset.collapsed = !show;
-      });
+      vnode.context.$root.$emit('collapse-toggle', collapseId, action);
     });
-  },
-
-  inserted(el, binding, vnode) {
-    vnode.context.$root.$emit('collapse-item', binding.arg, item => {
-      el.dataset.collapsed = !item.show;
+    vnode.context.$root.$on('collapse-state', item => {
+      if (item.id === collapseId) {
+        el.dataset.expanded = item.expanded;
+      }
     });
   },
 };

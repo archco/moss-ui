@@ -1,0 +1,64 @@
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  margin-bottom: 1rem; // temporary..
+
+  > input,
+  > select,
+  > textarea,
+  > .input {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+
+    + input,
+    + select,
+    + textarea,
+    + .input {
+      margin-left: -$input-border-width;
+    }
+
+    &:not(:last-child) { @include border-right-radius(0); }
+    &:not(:first-child) { @include border-left-radius(0); }
+  }
+
+  > .input {
+    display: flex;
+    align-items: stretch;
+  }
+}
+
+.input-group-prepend,
+.input-group-append {
+  display: flex;
+
+  .btn {
+    position: relative;
+    margin: 0;
+  }
+
+  .btn + .btn,
+  .btn + .input-group-text,
+  .input-group-text + .input-group-text,
+  .input-group-text + .btn {
+    margin-left: -$input-border-width;
+  }
+}
+
+.input-group-prepend { margin-right: -$input-border-width; }
+.input-group-append { margin-left: -$input-border-width; }
+
+.input-group-text {
+  display: flex;
+  align-items: center;
+  padding: $input-padding-y $input-padding-x;
+  margin-bottom: 0;
+  font-size: $font-size;
+  text-align: center;
+  white-space: nowrap;
+  border: $input-border-width solid $input-border-color;
+  @include border-radius($input-radius);
+}

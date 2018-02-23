@@ -18,6 +18,7 @@ A hero banner is display large image with text, often placed at top of a web pag
 ### Available optional classes
 
 **`hero-banner` with pad option**
+
 ``` html
 <div class="hero-banner pad-small">...</div>
 <div class="hero-banner pad-medium">...</div>

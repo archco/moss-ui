@@ -1,0 +1,42 @@
+h3 Default Tab
+tabs
+  tab(name='tab1' selected)
+    h4 Tab 1
+    p= (lorem + lorem).substr(0, 250)
+  tab(name='tab2')
+    h4 Tab 2
+    p= (lorem + lorem).substr(50, 300)
+  tab(name='tab3')
+    h4 Tab 3
+    p= (lorem + lorem)
+
+h3 Tab with Fade Effect
+tabs(effect='fade' grow-enabled)
+  tab(name='tab1' selected)
+    h4 Tab 1
+    p= (lorem + lorem).substr(0, 250)
+  tab(name='tab2')
+    h4 Tab 2
+    p= (lorem + lorem).substr(50, 300)
+  tab(name='tab3')
+    h4 Tab 3
+    p= (lorem + lorem)
+
+h3 Tab Tip based by Color-set
+tabs(effect='fade')
+  each color in colorSet
+    tab(name=color active-color=color selected=(color == 'success'))
+      h4(class='color-' + color)=color
+      p= lorem
+
+h3 Specifying container size of tab content.
+tabs(:container-style="{height: '200px', overflow: 'auto'}")
+  tab(name='tab1' selected)
+    h4 Tab 1
+    p= (lorem + lorem).substr(0, 300)
+  tab(name='tab2')
+    h4 Tab 2
+    p= (lorem + lorem)
+  tab(name='tab3')
+    h4 Tab 3
+    p= (lorem + lorem).substr(0, 400)

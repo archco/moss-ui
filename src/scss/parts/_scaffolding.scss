@@ -29,7 +29,7 @@ footer {
 
   a {
     @include set-link-state-color($footer-link-color, null, $footer-link-hover-color);
-    transition: color $transition-time;
+    @include transition(color $transition-duration $transition-timing-function);
   }
 
   .footer-copyright {
@@ -182,7 +182,7 @@ code {
   font-size: $code-font-size;
   color: $code-color;
   background-color: $code-bg-color;
-  border-radius: $code-border-radius;
+  @include border-radius($code-border-radius);
 
   // code inside link
   a & {
@@ -232,6 +232,22 @@ blockquote {
 @include headings {
   &.accent {
     font-family: $font-accent;
+  }
+}
+
+// icon
+i.icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 1em;
+  height: 1em;
+
+  > svg {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
   }
 }
 

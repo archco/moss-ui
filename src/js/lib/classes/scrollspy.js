@@ -1,4 +1,9 @@
-import ElementUtil from 'element-util';
+import {
+  getElement,
+  getElements,
+  nodeListToArray,
+  findAncestor,
+} from 'element-util';
 import ElementMeasurer from 'element-measurer';
 
 export default class Scrollspy {
@@ -10,13 +15,12 @@ export default class Scrollspy {
    */
   constructor(elm, options) {
     this.options = Object.assign(this.getDefaultOptions(), options);
-    this._linksContainerElement = ElementUtil.getElement(elm);
+    this._linksContainerElement = getElement(elm);
     this._items = [];
     this._currentActive = null;
     this._scrollHeight = 0;
-    this._scrollElement = ElementUtil.getElement(this.options.scrollElement);
-    this._scrollElmentSize = new ElementMeasurer(this._scrollElement);
-    this._isDocument = this._scrollElmentSize.isDocumentTarget();
+    this._scrollElement = getElement(this.options.scrollElement);
+    this._scrollElementSize = new ElementMeasurer(this._scrollElement);
 
     this.refresh();
     this.addListener();
@@ -47,9 +51,8 @@ export default class Scrollspy {
    * @return {void}
    */
   addListener() {
-    let base = this._isDocument ? window : this._scrollElement;
+    const base = this._scrollElementSize.isDocument ? window : this._scrollElement;
     base.addEventListener('scroll', this.process.bind(this));
-
     this._items.forEach(item => {
       item.link.addEventListener('click', this.process.bind(this), true);
     });
@@ -61,24 +64,22 @@ export default class Scrollspy {
    * @return {void}
    */
   refresh() {
-    let linkNodes = ElementUtil.getElements(
+    const linkNodes = getElements(
         this.options.linkSelector,
         this._linksContainerElement
       );
-    let links = ElementUtil.nodeListToArray(linkNodes).filter(elm => elm.hash);
+    const links = nodeListToArray(linkNodes).filter(elm => elm.hash);
     this._items = [];
-    this._scrollHeight = this._scrollElmentSize.scrollHeight;
+    this._scrollHeight = this._scrollElementSize.scrollHeight;
 
     links.forEach(link => {
-      let elm = ElementUtil.getElement(link.hash);
+      const elm = getElement(link.hash);
       if (!elm) return;
-
-      let item = {
+      this._items.push({
         elm,
         link,
-        offsetTop: this._getOffset(elm),
-      };
-      this._items.push(item);
+        offsetTop: new ElementMeasurer(elm).getOffset().top,
+      });
     });
 
     this._items.sort((a, b) => a.offsetTop - b.offsetTop);
@@ -90,9 +91,9 @@ export default class Scrollspy {
    * @return {void}
    */
   process() {
-    const scrollTop = this._scrollElmentSize.scrollTop + this.options.offset;
-    const scrollHeight = this._scrollElmentSize.scrollHeight;
-    const maxScroll = this._scrollElmentSize.maxScrollTop + this.options.offset;
+    const scrollTop = this._scrollElementSize.scrollTop + this.options.offset;
+    const scrollHeight = this._scrollElementSize.scrollHeight;
+    const maxScroll = this._scrollElementSize.maxScrollTop + this.options.offset;
 
     if (this._scrollHeight !== scrollHeight) this.refresh();
 
@@ -114,7 +115,7 @@ export default class Scrollspy {
     }
 
     this._items.forEach((item, i) => {
-      let nextItem = this._items[i + 1];
+      const nextItem = this._items[i + 1];
       if (
         this._currentActive !== item
         && scrollTop >= item.offsetTop
@@ -129,18 +130,16 @@ export default class Scrollspy {
 
   _activate(item) {
     this._clear();
-    let activeTarget = this._getActiveTarget(item.link);
     this._currentActive = item;
-    activeTarget.classList.add(this.options.activeClass);
+    this._getActiveTarget(item.link).classList.add(this.options.activeClass);
     if (typeof this.options.onActivate === 'function') {
       this.options.onActivate(item);
     }
   }
 
   _clear() {
-    for (let item of this._items) {
-      this._getActiveTarget(item.link)
-        .classList.remove(this.options.activeClass);
+    for (const item of this._items) {
+      this._getActiveTarget(item.link).classList.remove(this.options.activeClass);
     }
   }
 
@@ -150,19 +149,7 @@ export default class Scrollspy {
     } else if (this.options.activeTarget == 'parent') {
       return link.parentNode;
     } else {
-      return ElementUtil.findAncestor(link, this.options.activeTarget);
+      return findAncestor(link, this.options.activeTarget);
     }
-  }
-
-  _getOffset(elm, isLeft = false) {
-    let val = 0;
-    let offset = isLeft ? 'offsetLeft' : 'offsetTop';
-
-    do {
-      val += elm[offset];
-      elm = elm.offsetParent;
-    } while (elm && elm !== this._scrollElement);
-
-    return val;
   }
 }

@@ -8,7 +8,6 @@
 
 <script>
 export default {
-  name: 'navbar-toggle',
   props: {
     opened: {
       type: Boolean,

@@ -9,10 +9,12 @@
   @extend %btn-common;
   padding: $button-padding-y $button-padding-x;
   margin: $button-margin;
-  border-radius: $button-radius;
+  @include border-radius($button-radius);
   outline-color: $button-outline-color;
 
-  &.full-width {
+
+  &.full-width, // @deprecated.
+  &.w-100 {
     margin-right: 0;
     margin-left: 0;
   }
@@ -80,7 +82,7 @@
   @extend %btn-color-set;
   width: 2em;
   height: 2em;
-  border-radius: 50%;
+  @include border-radius(50%);
 }
 
 .btn-flat {

@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCSS Components</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../dist/moss.css">
+    <style>
+      aside { position: relative; }
+      aside .menu { overflow: auto; }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header class="d-flex justify-content-center align-items-center bg-color-primary" style="height:100px;">
+        <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI <span class='moss-version'></span></a></h1>
+      </header>
+      <navbar class="sticky-top shadow-near" align="end">
+        <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
+        <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
+          <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
+          <nav-item href="vue.html" text="Vue"></nav-item>
+          <nav-item>
+            <dropdown toggle="toggle" placement="bottom-end">
+              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
+            </dropdown>
+          </nav-item>
+        </navbar-nav>
+      </navbar>
+      <div class="row">
+        <aside class="col-md-2 hide-only-mobile">
+          <ul class="menu list">
+            <li is="anchored-tag" tag="li">Scaffolding</li>
+            <li is="anchored-tag" tag="li">Badge</li>
+            <li is="anchored-tag" tag="li">Button</li>
+            <li is="anchored-tag" tag="li">Card</li>
+            <li is="anchored-tag" tag="li">Form</li>
+            <li is="anchored-tag" tag="li">Input Group</li>
+            <li is="anchored-tag" tag="li">Grid</li>
+            <li is="anchored-tag" tag="li">Helper</li>
+            <li is="anchored-tag" tag="li">Image</li>
+            <li is="anchored-tag" tag="li">List</li>
+            <li is="anchored-tag" tag="li">Loader</li>
+            <li is="anchored-tag" tag="li">Pagination</li>
+          </ul>
+        </aside>
+        <section class="col-md-10">
+          <anchored-tag tag="h1" owned>Scaffolding</anchored-tag>
+          <h2>Link</h2>
+          <div class="group"><a href="#">link</a><br><a class="no-deco" href="#">no-decoration link</a></div>
+          <h2>Blockquote</h2>
+          <h3>Default blockquote</h3>
+          <blockquote>This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can put Markdown into a blockquote.</blockquote>
+          <h3>Blockquote with color-set</h3>
+          <div class="pad">
+            <blockquote class="link">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini</blockquote>
+            <blockquote class="danger">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
+          </div>
+          <div class="bg-color-dark pad">
+            <blockquote class="success">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini</blockquote>
+            <blockquote class="shade">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
+          </div>
+          <h2>Table</h2>
+          <div class="group">
+            <table class="table center bordered hover">
+              <thead>
+                <tr>
+                  <th>name</th>
+                  <th>age</th>
+                  <th>gender</th>
+                  <th>link</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Karl</td>
+                  <td>18</td>
+                  <td>male</td>
+                  <td><a href="#">karl</a></td>
+                </tr>
+                <tr>
+                  <td>Mia</td>
+                  <td>22</td>
+                  <td>female</td>
+                  <td><a class="btn info" href="#">mia</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="group">
+            <table class="table striped hover" v-wrap:responsive>
+              <thead>
+                <tr>
+                  <th>name</th>
+                  <th>age</th>
+                  <th>gender</th>
+                  <th>link</th>
+                  <th>head #1</th>
+                  <th>head #2</th>
+                  <th>head #3</th>
+                  <th>head #4</th>
+                  <th>head #5</th>
+                  <th>head #6</th>
+                  <th>head #7</th>
+                  <th>head #8</th>
+                  <th>head #9</th>
+                  <th>head #10</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Karl</td>
+                  <td>18</td>
+                  <td>male</td>
+                  <td><a href="#">karl</a></td>
+                  <td>body #1</td>
+                  <td>body #2</td>
+                  <td>body #3</td>
+                  <td>body #4</td>
+                  <td>body #5</td>
+                  <td>body #6</td>
+                  <td>body #7</td>
+                  <td>body #8</td>
+                  <td>body #9</td>
+                  <td>body #10</td>
+                </tr>
+                <tr>
+                  <td>Mia</td>
+                  <td>22</td>
+                  <td>female</td>
+                  <td><a href="#">mia</a></td>
+                  <td>body #1</td>
+                  <td>body #2</td>
+                  <td>body #3</td>
+                  <td>body #4</td>
+                  <td>body #5</td>
+                  <td>body #6</td>
+                  <td>body #7</td>
+                  <td>body #8</td>
+                  <td>body #9</td>
+                  <td>body #10</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h2>Codes</h2>
+          <h3>Inline codes</h3>
+          <p>
+            It is inline <code>code</code>.<br>
+            <code>html, css, javascript</code><br>
+            <a href="#"><code>code</code> in link</a>
+          </p>
+          <h3>Block codes</h3>
+          <pre><code>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</code></pre>
+          <h2>Optional Classes</h2>
+          <h3>.pad</h3>
+          <article class="pad color-primary">article with .pad</article>
+          <div class="pad bg-color-warning">div with .pad</div>
+          <p class="pad color-success">p with .pad</p>
+          <section class="pad bg-color-secondary">
+            <p>If case of section with pad, it's responsive.</p>
+          </section>
+          <h3>.accent</h3>
+          <div class="pad">
+            <h1 class="accent color-danger">Heading with .accent</h1>
+            <h2 class="accent color-danger">Heading with .accent</h2>
+            <h3 class="accent color-danger">Heading with .accent</h3>
+            <h4 class="accent color-danger">Heading with .accent</h4>
+            <h5 class="accent color-danger">Heading with .accent</h5>
+            <h6 class="accent color-danger">Heading with .accent</h6>
+          </div>
+          <anchored-tag tag="h1" owned>Badge</anchored-tag>
+          <h2>Default Badge<span class="badge">Badge</span><a class="badge" href="#">BADGE</a></h2>
+          <h3>in Text</h3><span>text with<span class="badge">badge</span><span class="badge primary">Primary</span><span class="badge danger">Danger</span></span>
+          <h3>in Button</h3>
+          <button class="btn">Button<span class="badge info">3</span></button>
+          <button class="btn warning">Normal</button>
+          <h3>in Link</h3><a href="#">Link<span class="badge success">New</span></a><br><a class="badge danger" href="#">Link badge</a>
+          <h2>Rounded Badge</h2><span>text and<span class="badge round info">13</span></span><br><a class="badge round warning" href="#">rounded badge</a>
+          <h2>Badge with Stacked Font Awesome Icon</h2><span class="fa-stack fa-lg"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-bell fa-stack-1x fa-inverse"></i><span class="badge in-icon danger">8,888</span></span><span class="fa-stack fa-2x color-primary"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i><span class="badge in-icon rounded warning">8,888</span></span>
+          <anchored-tag tag="h1" owned>Button</anchored-tag>
+          <h3>Default Buttons with Color-set</h3>
+          <button class="btn">btn</button>
+          <button class="btn default">default</button>
+          <button class="btn primary">primary</button>
+          <button class="btn secondary">secondary</button>
+          <button class="btn info">info</button>
+          <button class="btn success">success</button>
+          <button class="btn warning">warning</button>
+          <button class="btn danger">danger</button>
+          <button class="btn light">light</button>
+          <button class="btn dark">dark</button>
+          <button class="btn shade">shade</button>
+          <button class="btn link">link</button>
+          <h3>Flat button</h3>
+          <button class="btn-flat">btn-flat</button>
+          <button class="btn-flat default">default</button>
+          <button class="btn-flat primary">primary</button>
+          <button class="btn-flat secondary">secondary</button>
+          <button class="btn-flat info">info</button>
+          <button class="btn-flat success">success</button>
+          <button class="btn-flat warning">warning</button>
+          <button class="btn-flat danger">danger</button>
+          <button class="btn-flat light">light</button>
+          <button class="btn-flat dark">dark</button>
+          <button class="btn-flat shade">shade</button>
+          <button class="btn-flat link">link</button>
+          <h3>Other tag as button</h3>
+          <input type="submit"><a class="btn info" href="#button">link button</a><br><a class="btn-flat" href="#">link flat button</a>
+          <h3>Icon Button</h3>
+          <button class="btn-icon"><i class="fa fa-calendar" aria-hidden="true"></i></button>
+          <button class="btn-icon primary"><i class="fa fa-home" aria-hidden="true"></i></button>
+          <button class="btn-icon secondary"><i class="fa fa-user" aria-hidden="true"></i></button>
+          <button class="btn-icon info"><i class="fa fa-comment" aria-hidden="true"></i></button>
+          <button class="btn-icon success"><i class="fa fa-code" aria-hidden="true"></i></button>
+          <button class="btn-icon warning"><i class="fa fa-exclamation" aria-hidden="true"></i></button>
+          <button class="btn-icon danger"><i class="fa fa-times" aria-hidden="true"></i></button>
+          <h3>Disabled</h3>
+          <button class="btn" disabled>btn</button>
+          <button class="btn-flat" disabled>btn-flat</button>
+          <button class="btn-icon danger" disabled><i class="fa fa-times" aria-hidden="true"></i></button>
+          <h3>Button Group</h3>
+          <h4>Horizontal Button Group (default)</h4>
+          <div class="btn-group">
+            <button class="btn">Left</button>
+            <button class="btn info">Center</button>
+            <button class="btn dark">Right</button>
+          </div>
+          <h4>Group of Flat Buttons</h4>
+          <div class="btn-group">
+            <button class="btn-flat">Left</button>
+            <button class="btn-flat">Center</button>
+            <button class="btn-flat">Right</button>
+          </div>
+          <h4>Vertical Button Group</h4>
+          <div class="btn-group-vertical">
+            <button class="btn">Top</button>
+            <button class="btn">Middle</button>
+            <button class="btn">Bottom</button>
+          </div>
+          <h4>with Dropdown buttons</h4>
+          <div class="btn-group">
+            <button class="btn success">Left</button>
+            <button class="btn">Center</button>
+            <button class="btn">Right</button>
+            <dropdown>
+              <button class="btn" slot="button">Dropdown</button><a class="dropdown-item" href="#">Link 1</a><a class="dropdown-item" href="#">Link 2</a><a class="dropdown-item" href="#">Link 3</a>
+            </dropdown>
+          </div><br>
+          <div class="btn-group-vertical">
+            <button class="btn default">Top</button>
+            <button class="btn shade">Middle</button>
+            <dropdown placement="right-start">
+              <button class="btn dark" slot="button">Dropdown</button><a class="dropdown-item" href="#">Link 1</a><a class="dropdown-item" href="#">Link 2</a><a class="dropdown-item" href="#">Link 3</a>
+            </dropdown>
+            <button class="btn success">Bottom</button>
+          </div>
+          <anchored-tag tag="h1" owned>Card</anchored-tag>
+          <h3>Vertical Card (default)</h3>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="card small">
+                <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg">
+                  <h3 class="card-title">card title</h3>
+                </div>
+                <div class="card-content"><span>card content</span><a href="#">Link</a></div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg" alt="image"></div>
+                <div class="card-content"><span>Card content</span></div>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="card large">
+                <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" alt="image"></div>
+                <div class="card-content">
+                  <div>Title</div>
+                  <div class="help">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3>Horizontal Card</h3>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card-horizontal small">
+                <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" alt="image"></div>
+                <div class="card-content"><span>Card content</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card-horizontal">
+                <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg" alt="image">
+                  <h3 class="card-title">card title</h3>
+                </div>
+                <div class="card-content"><span>Card content</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card-horizontal large">
+                <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg" alt="image"></div>
+                <div class="card-content">
+                  <div>Title</div>
+                  <div class="help">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3>Card Inline</h3>
+          <ul class="card-list">
+            <li class="card inline small">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg" alt="image"></div>
+              <div class="card-content"><span>Card content</span></div>
+            </li>
+            <li class="card inline">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" alt="image"></div>
+              <div class="card-content"><span>Card content</span></div>
+            </li>
+            <li class="card inline large">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg" alt="image"></div>
+              <div class="card-content"><span>Card content</span></div>
+            </li>
+          </ul>
+          <ul class="card-list">
+            <li class="card-horizontal inline small">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg" alt="image"></div>
+              <div class="card-content"><span>Card content</span></div>
+            </li>
+            <li class="card-horizontal inline">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg" alt="image"></div>
+              <div class="card-content"><span>Card content</span></div>
+            </li>
+            <li class="card-horizontal inline large">
+              <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" alt="image"></div>
+              <div class="card-content"><span>Card content</span></div>
+            </li>
+          </ul>
+          <h3>Hoverable</h3>
+          <ul class="card-list">
+            <li><a class="card-horizontal inline small hoverable" href="#">
+                <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg" alt="image"></div>
+                <div class="card-content"><span>Card content</span></div></a></li>
+            <li><a class="card-horizontal inline hoverable" href="#">
+                <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg" alt="image"></div>
+                <div class="card-content"><span>Card content</span></div></a></li>
+            <li><a class="card-horizontal inline large hoverable" href="#">
+                <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" alt="image"></div>
+                <div class="card-content"><span>Card content</span></div></a></li>
+          </ul>
+          <h3>Bordered</h3>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card small bordered">
+                <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg" alt="image"></div>
+                <div class="card-content"><span>Bordered Vertical</span></div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card-horizontal small bordered">
+                <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg" alt="image"></div>
+                <div class="card-content"><span>Bordered Horizontal</span></div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card small bordered hoverable">
+                <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" alt="image"></div>
+                <div class="card-content"><span>Bordered Hoverable</span></div>
+              </div>
+            </div>
+          </div>
+          <h3>Other Examples</h3>
+          <div class="card shadow-near" style="display:inline-flex;width:120px;height:260px;">
+            <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg"></div>
+            <div class="card-content" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
+              <div>Title</div>
+              <div class="text-truncate help">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+            </div>
+          </div>
+          <div class="card-horizontal bg-color-dark hoverable shadow-near" style="display:inline-flex;width:240px;height:140px;">
+            <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg"></div>
+            <div class="card-content">
+              <div>Title</div>
+              <div class="help">Description..</div>
+            </div>
+          </div>
+          <anchored-tag tag="h1" owned>Form</anchored-tag>
+          <h2>Default Usage</h2>
+          <form>
+            <fieldset>
+              <legend>Form</legend>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="name">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+              </div>
+              <div class="form-group">
+                <label for="email">email</label>
+                <input type="email" id="email" name="email" disabled placeholder="read only">
+                <input type="email" id="email" name="email" readonly placeholder="read only">
+              </div>
+              <div class="form-group">
+                <label>checkbox
+                  <input type="checkbox">
+                </label>
+              </div>
+              <div class="form-group">
+                <label>
+                  <input type="radio" name="gender" value="0" checked>male
+                </label><br>
+                <label>
+                  <input type="radio" name="gender" value="1">female
+                </label>
+              </div>
+              <div class="form-group">
+                <input type="file">
+                <input type="range">
+                <input type="color">
+              </div>
+              <div class="form-group">
+                <select name="select">
+                  <option value="0">one</option>
+                  <option value="1">two</option>
+                  <option value="2">three</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea>hello, world!</textarea>
+              </div>
+              <div class="form-group">
+                <button class="btn" type="submit">Submit</button>
+              </div>
+            </fieldset>
+          </form>
+          <h2>Form Inline</h2>
+          <form class="form-inline">
+            <fieldset>
+              <legend>Form inline</legend>
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="name">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password">
+              <label for="email">email</label>
+              <input type="email" id="email" name="email" disabled placeholder="read only">
+              <input type="email" id="email" name="email" readonly placeholder="read only">
+              <label>checkbox</label>
+              <input type="checkbox">
+              <label>
+                <input type="radio" name="gender" value="0" checked>male
+              </label>
+              <label>
+                <input type="radio" name="gender" value="1">female
+              </label>
+              <input type="file">
+              <input type="range">
+              <input type="color">
+              <select name="select">
+                <option value="0">one</option>
+                <option value="1">two</option>
+                <option value="2">three</option>
+              </select>
+              <textarea>hello, world!</textarea>
+              <button class="btn" type="submit">Submit</button>
+            </fieldset>
+          </form>
+          <h2>Vertical Alignment</h2>
+          <form class="form-inline">
+            <fieldset>
+              <legend>Select</legend>
+              <select name="select">
+                <option value="1">option1</option>
+                <option value="2">option2</option>
+                <option value="3">option3</option>
+              </select>
+              <input type="text" placeholder="text">
+              <input type="date">
+            </fieldset>
+          </form>
+          <h2>Input with Color-set</h2>
+          <div class="row">
+            <div class="col-md group">
+              <input type="text" placeholder="default">
+            </div>
+            <div class="col-md group">
+              <input class="success" type="text" placeholder="success">
+            </div>
+            <div class="col-md group">
+              <input class="warning" type="text" placeholder="warning">
+            </div>
+            <div class="col-md group">
+              <input class="danger" type="text" placeholder="danger">
+            </div>
+          </div>
+          <div class="input inline with-icon-right">
+            <input class="danger" type="text" placeholder="wrong.."><span class="icon-right color-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span>
+          </div>
+          <div class="input inline with-icon-right">
+            <input class="danger" type="text" placeholder="Disabled" disabled><span class="icon-right color-default"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span>
+          </div>
+          <h2>Input with Icons</h2>
+          <h3>Default</h3>
+          <div class="input with-icon">
+            <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+          </div>
+          <h3>Icon positioning left or right or both</h3>
+          <div class="input with-icon-right group">
+            <input type="text" placeholder="Text me.."><span class="icon-right"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+          </div>
+          <div class="input with-icon-left group">
+            <input type="search" placeholder="Search.."><span class="icon-left"><i class="fa fa-search" aria-hidden="true"></i></span>
+          </div>
+          <div class="input with-icon-left with-icon-right group">
+            <input type="text" placeholder="Email.."><span class="icon-left"><i class="fa fa-envelope" aria-hidden="true"></i></span><span class="icon-right"><i class="fa fa-check" aria-hidden="true"></i></span>
+          </div>
+          <h3>Inline input</h3>
+          <div class="input inline with-icon-left with-icon-right">
+            <input class="inline" type="text" placeholder="Email.."><span class="icon-left"><i class="fa fa-envelope" aria-hidden="true"></i></span><span class="icon-right color-success"><i class="fa fa-check" aria-hidden="true"></i></span>
+          </div>
+          <h3>Input sizes</h3>
+          <div class="input inline with-icon font-small">
+            <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+          </div>
+          <div class="input inline with-icon">
+            <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+          </div>
+          <div class="input inline with-icon font-large">
+            <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+          </div>
+          <anchored-tag tag="h1" owned>Input Group</anchored-tag>
+          <p>Extend form controls by adding text, buttons.</p>
+          <div class="input-group">
+            <div class="input-group-prepend"><span class="input-group-text">@</span></div>
+            <input type="text" placeholder="Username">
+          </div>
+          <div class="input-group">
+            <input type="text" placeholder="Recipient">
+            <div class="input-group-append"><span class="input-group-text">@example.com</span></div>
+          </div>
+          <div class="input-group">
+            <input type="text" placeholder="Query">
+            <div class="input-group-append">
+              <button class="btn success">Send</button>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="input with-icon-left"><span class="icon-left">
+                <icon name="search"></icon></span>
+              <input type="search" placeholder="Search..">
+            </div>
+            <div class="input-group-append">
+              <button class="btn link" type="submit">Search</button>
+            </div>
+          </div>
+          <anchored-tag tag="h1" owned>Grid</anchored-tag>
+          <h2>Container</h2>
+          <div class="container bg-color-secondary">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <h2>Default Grid</h2>
+          <div class="row">
+            <div class="col-1 box-line bg-color-primary">col-1</div>
+            <div class="col-1 box-line bg-color-primary">col-1</div>
+            <div class="col-1 box-line bg-color-primary">col-1</div>
+            <div class="col-1 box-line bg-color-primary">col-1</div>
+            <div class="col-1 box-line bg-color-primary">col-1</div>
+            <div class="col-1 box-line bg-color-primary">col-1</div>
+            <div class="col-1 box-line bg-color-primary">col-1</div>
+            <div class="col-1 box-line bg-color-primary">col-1</div>
+            <div class="col-1 box-line bg-color-primary">col-1</div>
+            <div class="col-1 box-line bg-color-primary">col-1</div>
+            <div class="col-1 box-line bg-color-primary">col-1</div>
+            <div class="col-1 box-line bg-color-primary">col-1</div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-4 bg-color-primary">
+                <p>4/12 columns</p>
+              </div>
+              <div class="col-8 bg-color-secondary">
+                <p>8/12 columns</p>
+              </div>
+            </div>
+          </div>
+          <h2>Mobile Grid</h2>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 bg-color-primary">
+                <p>col-sm-6</p>
+              </div>
+              <div class="col-sm-6 bg-color-secondary">
+                <p>col-sm-6</p>
+              </div>
+            </div>
+          </div>
+          <h2>Tablet Grid</h2>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 bg-color-secondary">
+                <p>col-md-6</p>
+              </div>
+              <div class="col-md-5 bg-color-primary">
+                <p>col-md-6</p>
+              </div>
+              <div class="col-md-4 bg-color-secondary">
+                <p>col-md-6</p>
+              </div>
+            </div>
+          </div>
+          <h2>Desktop Grid</h2>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-3 col-md-6 bg-color-secondary">
+                <p>col-lg-6</p>
+              </div>
+              <div class="col-lg-3 col-md-6 bg-color-primary">
+                <p>col-lg-6</p>
+              </div>
+              <div class="col-lg-3 col-md-6 bg-color-secondary">
+                <p>col-lg-6</p>
+              </div>
+              <div class="col-lg-3 col-md-6 bg-color-primary">
+                <p>col-lg-6</p>
+              </div>
+            </div>
+          </div>
+          <h3>Equal-width</h3>
+          <div class="container">
+            <div class="row group">
+              <div class="col bg-color-success">1 of 2</div>
+              <div class="col bg-color-info">1 of 2</div>
+            </div>
+            <div class="row group">
+              <div class="col bg-color-success">1 of 3</div>
+              <div class="col bg-color-info">1 of 3</div>
+              <div class="col bg-color-success">1 of 3</div>
+            </div>
+          </div>
+          <h3>Setting one column width</h3>
+          <div class="container">
+            <div class="row">
+              <div class="col bg-color-success">1 of 3</div>
+              <div class="col-6 bg-color-info">2 of 3 (half of full width)</div>
+              <div class="col bg-color-success">3 of 3</div>
+            </div>
+          </div>
+          <h3>Variable width by content</h3>
+          <div class="container">
+            <div class="row">
+              <div class="col bg-color-success">1 of 3</div>
+              <div class="col-auto bg-color-info">Variable width by content.</div>
+              <div class="col bg-color-success">3 of 3</div>
+            </div>
+          </div>
+          <h3>Equal-width multi-row</h3>
+          <div class="container">
+            <div class="row">
+              <div class="col bg-color-success">col</div>
+              <div class="col bg-color-info">col</div>
+              <div class="w-100"></div>
+              <div class="col bg-color-info">col</div>
+              <div class="col bg-color-success">col</div>
+            </div>
+          </div>
+          <h3>No gutters</h3>
+          <div class="container debug-line">
+            <div class="row group">
+              <div class="col">gutters</div>
+              <div class="col">gutters</div>
+            </div>
+            <div class="row no-gutters group">
+              <div class="col">no-gutters</div>
+              <div class="col">no-gutters</div>
+            </div>
+          </div>
+          <h3>Column wrapping</h3>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-8 bg-color-success">col-sm-8</div>
+              <div class="col-sm-6 bg-color-info">col-sm-6</div>
+              <div class="col-sm-4 bg-color-warning">col-sm-4</div>
+            </div>
+          </div>
+          <h3>Offsetting columns</h3>
+          <div class="row">
+            <div class="col-md-4 bg-color-primary">col-md-4</div>
+            <div class="col-md-4 offset-md-4 bg-color-secondary">col-md-4 offset-md-4</div>
+          </div>
+          <h3>Order classes</h3>
+          <div class="row">
+            <div class="col bg-color-primary">First, but unordered</div>
+            <div class="col order-12 bg-color-secondary">Second but last</div>
+            <div class="col order-1 bg-color-info">Third, but first</div>
+          </div>
+          <anchored-tag tag="h1" owned>Helper</anchored-tag><a href="scss-helpers.html">SCSS Helpers</a>
+          <anchored-tag tag="h1" owned>Image</anchored-tag>
+          <h2>Image Container</h2>
+          <div class="image-container" style="display:inline-block;width:120px;"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" alt="avatar">
+            <div class="overlay">
+              <div class="text">Avatar</div>
+            </div>
+          </div>
+          <div class="image-container" style="display:inline-block;width:120px;"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" alt="avatar">
+            <div class="overlay from-top">
+              <div class="text">Avatar</div>
+            </div>
+          </div>
+          <div class="image-container" style="display:inline-block;width:120px;"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" alt="avatar">
+            <div class="overlay from-bottom">
+              <div class="text">Avatar</div>
+            </div>
+          </div>
+          <div class="image-container" style="display:inline-block;width:120px;"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" alt="avatar">
+            <div class="overlay from-right">
+              <div class="text">Avatar</div>
+            </div>
+          </div>
+          <div class="image-container" style="display:inline-block;width:120px;"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" alt="avatar">
+            <div class="overlay from-left">
+              <div class="text">Avatar</div>
+            </div>
+          </div>
+          <h2>Image Filter</h2>
+          <figure style="display:inline-block;width:240px;"><img src="https://images.fineartamerica.com/images-medium-large/fruit-vase-and-clay-bottles-jim-romeo-.jpg" alt="Image">
+            <figcaption>original</figcaption>
+          </figure>
+          <figure style="display:inline-block;width:240px;"><img class="filter blur" src="https://images.fineartamerica.com/images-medium-large/fruit-vase-and-clay-bottles-jim-romeo-.jpg" alt="Image">
+            <figcaption>.filter.blur</figcaption>
+          </figure>
+          <figure style="display:inline-block;width:240px;"><img class="filter lighten" src="https://images.fineartamerica.com/images-medium-large/fruit-vase-and-clay-bottles-jim-romeo-.jpg" alt="Image">
+            <figcaption>.filter.lighten</figcaption>
+          </figure>
+          <figure style="display:inline-block;width:240px;"><img class="filter darken" src="https://images.fineartamerica.com/images-medium-large/fruit-vase-and-clay-bottles-jim-romeo-.jpg" alt="Image">
+            <figcaption>.filter.darken</figcaption>
+          </figure>
+          <figure style="display:inline-block;width:240px;"><img class="filter contrast" src="https://images.fineartamerica.com/images-medium-large/fruit-vase-and-clay-bottles-jim-romeo-.jpg" alt="Image">
+            <figcaption>.filter.contrast</figcaption>
+          </figure>
+          <figure style="display:inline-block;width:240px;"><img class="filter gray" src="https://images.fineartamerica.com/images-medium-large/fruit-vase-and-clay-bottles-jim-romeo-.jpg" alt="Image">
+            <figcaption>.filter.gray</figcaption>
+          </figure>
+          <figure style="display:inline-block;width:240px;"><img class="filter hue-rotate" src="https://images.fineartamerica.com/images-medium-large/fruit-vase-and-clay-bottles-jim-romeo-.jpg" alt="Image">
+            <figcaption>.filter.hue-rotate</figcaption>
+          </figure>
+          <figure style="display:inline-block;width:240px;"><img class="filter invert" src="https://images.fineartamerica.com/images-medium-large/fruit-vase-and-clay-bottles-jim-romeo-.jpg" alt="Image">
+            <figcaption>.filter.invert</figcaption>
+          </figure>
+          <figure style="display:inline-block;width:240px;"><img class="filter opacity" src="https://images.fineartamerica.com/images-medium-large/fruit-vase-and-clay-bottles-jim-romeo-.jpg" alt="Image">
+            <figcaption>.filter.opacity</figcaption>
+          </figure>
+          <figure style="display:inline-block;width:240px;"><img class="filter saturate" src="https://images.fineartamerica.com/images-medium-large/fruit-vase-and-clay-bottles-jim-romeo-.jpg" alt="Image">
+            <figcaption>.filter.saturate</figcaption>
+          </figure>
+          <figure style="display:inline-block;width:240px;"><img class="filter sepia" src="https://images.fineartamerica.com/images-medium-large/fruit-vase-and-clay-bottles-jim-romeo-.jpg" alt="Image">
+            <figcaption>.filter.sepia</figcaption>
+          </figure>
+          <anchored-tag tag="h1" owned>List</anchored-tag>
+          <h2>.list</h2>
+          <ul class="list">
+            <li>list item 1</li>
+            <li>list item 2</li>
+            <li>list item 3</li>
+          </ul>
+          <h2>.list-group</h2>
+          <ul class="list-group hover">
+            <li>list item 1</li>
+            <li>list item 2</li>
+            <li>list item 3</li>
+          </ul>
+          <h2>.list-horizontal</h2>
+          <ul class="list-horizontal">
+            <li>list item 1</li>
+            <li>list item 2</li>
+            <li>list item 3</li>
+          </ul>
+          <h2>.breadcrumb</h2>
+          <ul class="breadcrumb">
+            <li><a href="#">src</a></li>
+            <li><a href="#">scss</a></li>
+            <li><a href="#">components</a></li>
+            <li>list</li>
+          </ul>
+          <anchored-tag tag="h1" owned>Loader</anchored-tag>
+          <div class="d-flex justify-content-center pad bg-color-success">
+            <div class="text-center"><span class="loader-one light" style="font-size:3em;"></span><br><span>loading...</span></div>
+          </div>
+          <h2>Button is loading</h2>
+          <button class="btn primary is-loading" id="toggle">loading..</button>
+          <button class="btn warning is-loading">loading</button>
+          <anchored-tag tag="h1" owned>Pagination</anchored-tag>
+          <ul class="pagination">
+            <li class="disabled"><span>Prev</span></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li class="active"><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">Next</a></li>
+          </ul>
+          <ul class="pagination">
+            <li><a href="#"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
+            <li class="disabled"><span>&hellip;</span></li>
+            <li><a href="#">7</a></li>
+            <li class="active"><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li class="disabled"><span>&hellip;</span></li>
+            <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+          </ul>
+        </section>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <h3>Footer content</h3>
+              <p>footer content here..</p>
+            </div>
+            <div class="col-6">
+              <h3>Links</h3>
+              <ul class="list-horizontal">
+                <li><a href="#">Link1</a></li>
+                <li><a href="#">Link2</a></li>
+                <li><a href="#">Link3</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">copyright &copy; <span id='copyright-year'>2017</span> MOSS-UI all rights reserved.</div>
+      </footer>
+      <scroll-to :duration="800" :offset="400"></scroll-to>
+      <toast></toast>
+    </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script src="../../dist/moss.js"></script>
+    <script src="./example.js"></script>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moss-UI</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../dist/moss.css">
+    <style>
+      aside { position: relative; }
+      aside .menu { overflow: auto; }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header class="d-flex justify-content-center align-items-center bg-color-primary" style="height:100px;">
+        <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI <span class='moss-version'></span></a></h1>
+      </header>
+      <navbar class="sticky-top shadow-near" align="end">
+        <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
+        <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
+          <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
+          <nav-item href="vue.html" text="Vue"></nav-item>
+          <nav-item>
+            <dropdown toggle="toggle" placement="bottom-end">
+              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
+            </dropdown>
+          </nav-item>
+        </navbar-nav>
+      </navbar>
+      <div class="hero-banner pad-large">
+        <div class="hero-background filter gray" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg');"></div>
+        <div class="hero-content font-accent text-center" style="font-size:1.4em;">
+          <h1 class="color-primary">MOSS-UI</h1>
+          <p>The front-end UI framework with Vue.js and SCSS.</p>
+        </div>
+      </div>
+      <section class="pad">
+        <anchored-tag tag="h1" owned>Search</anchored-tag>
+        <p>Simple search component that fuzzy search given collection data such like json.</p>
+        <h2>default</h2>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="eventTest" @submit="eventTest"></search>
+          </div>
+        </div>
+        <h2>Example Search</h2>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="onSearchItemClick" @submit="onSearchSubmit">
+              <li slot="result-item" slot-scope="props" style="text-align:left;" tabindex="0" @click="props.onClickItem(props.item)">
+                <h3 style="margin:0;" v-text="props.item.name"></h3><span class="badge" :style="getBadgeStyle(props.item.category)" v-text="props.item.category"></span><span class="help" v-text="props.item.description"></span>
+              </li>
+            </search>
+          </div>
+        </div>
+        <anchored-tag tag="h1" owned>Icon</anchored-tag>
+        <h2>SVG default usage</h2>
+        <div class="pad" style="font-size:3em;"><i class="icon" id="svg-arrow-example"></i><i class="icon" id="svg-caret-example"></i><i class="icon" id="svg-close-example"></i></div>
+        <h2>Icon component</h2>
+        <icon class="color-danger" name="arrow-down"></icon><span> hello world</span>
+        <icon class="color-success" name="caret-up"></icon>
+        <icon class="bg-color-dark" name="close" style="font-size:3em;border-radius:50%;"></icon>
+        <icon class="bg-color-warning" name="check" style="font-size:2em;"></icon>
+        <icon class="bg-color-link" name="search" style="font-size:2em;"></icon>
+      </section>
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <h3>Footer content</h3>
+              <p>footer content here..</p>
+            </div>
+            <div class="col-6">
+              <h3>Links</h3>
+              <ul class="list-horizontal">
+                <li><a href="#">Link1</a></li>
+                <li><a href="#">Link2</a></li>
+                <li><a href="#">Link3</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">copyright &copy; <span id='copyright-year'>2017</span> MOSS-UI all rights reserved.</div>
+      </footer>
+      <scroll-to :duration="800" :offset="400"></scroll-to>
+      <toast></toast>
+    </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script src="../../dist/moss.js"></script>
+    <script src="./example.js"></script>
+  </body>
+</html>

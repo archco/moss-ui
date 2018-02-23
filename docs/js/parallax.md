@@ -10,7 +10,7 @@
 
 ## Props
 
-| name | type | description | default |
-| ---- | ---- | ----------- | ------- |
-| src | String | Source of background-image. | is required |
-| height | String | Height of element. | '300px' |
+| Name | Type | Default | Description |
+| ---- |:----:| ------- | ----------- |
+| src | `string` | required | Source of background-image. |
+| height | `string` | `'300px'` | Height of element. |

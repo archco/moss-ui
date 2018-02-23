@@ -1,4 +1,4 @@
-import Util from '../lib/util';
+import { locationSearchToObject, searchToObject, isContains } from '../lib/util';
 
 /*
   v-activator.{modifiers}="'{value}'"
@@ -9,15 +9,14 @@ import Util from '../lib/util';
   value: {String} selector. default value is 'a'.
  */
 export default {
-  name: 'activator',
   inserted(el, binding) {
-    let isSelf = binding.modifiers.self;
-    let isThis = binding.modifiers.this;
-    let selector = binding.value || 'a';
-    let links = isThis ? [el] : el.querySelectorAll(selector);
+    const isSelf = binding.modifiers.self;
+    const isThis = binding.modifiers.this;
+    const selector = binding.value || 'a';
+    const links = isThis ? [el] : el.querySelectorAll(selector);
     if (!links.length) return;
 
-    for (let a of links) {
+    for (const a of links) {
       if (compareWithLocation(a)) {
         if (isSelf) {
           a.classList.add('active');
@@ -30,13 +29,13 @@ export default {
 };
 
 function compareWithLocation(anchor) {
-  let l = {
+  const l = {
     path: lastTerm(document.location.pathname),
-    query: Util.locationSearchToObject(),
+    query: locationSearchToObject(),
   };
-  let a = {
+  const a = {
     path: lastTerm(anchor.pathname),
-    query: Util.searchToObject(anchor.search),
+    query: searchToObject(anchor.search),
   };
 
   if (anchor.getAttribute('href') == '#') {
@@ -45,7 +44,7 @@ function compareWithLocation(anchor) {
   }
 
   if (l.path == a.path) {
-    if (!a.query || Util.isContains(l.query, a.query)) return true;
+    if (!a.query || isContains(l.query, a.query)) return true;
   }
 
   return false;

@@ -1,15 +1,21 @@
 <template lang="html">
   <transition :name="effectName">
     <div :class="classObject" v-if="show">
-      <slot></slot>
-      <button type="button" class="close-button at-right-middle" @click="onClose" v-html="closeHtml"></button>
+      <span>
+        <slot></slot>
+      </span>
+      <close-button action=""
+        @close="onClose"
+        v-html="closeHtml"/>
     </div>
   </transition>
 </template>
 
 <script>
+import CloseButton from './close-button.vue';
+
 export default {
-  name: 'message',
+  components: { CloseButton },
   props: {
     status: {
       type: String,
@@ -19,36 +25,31 @@ export default {
       type: String,
       default: 'fade',
     },
-    closeEmit: {
-      type: String,
-      default: '',
-    },
     closeHtml: {
       type: String,
-      default: '✖',
+      default: '',
     }
   },
   computed: {
     effectName() {
       return `message-${this.effect}`;
+    },
+    classObject() {
+      const obj = { message: true };
+      const status = this.status.toLowerCase();
+      if (this.status) obj[status] = true;
+      return obj;
     }
   },
   data() {
-    let classObject = { 'message': true };
-    if (this.status) classObject[`${this.status.toLowerCase()}`] = true;
-
     return {
-      classObject,
-      show: true,
+      show: true
     };
   },
   methods: {
     onClose() {
-      if (this.closeEmit) {
-        this.$emit(this.closeEmit, this);
-      } else {
-        this.show = false;
-      }
+      this.$emit('close', this);
+      this.show = false;
     }
   }
 }

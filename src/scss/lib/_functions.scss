@@ -10,8 +10,8 @@
 
 // get infix from breakpoints key.
 //
-// @param  String  key of grid-breakpoints.
+// @param  String  $breakpoint key of grid-breakpoints.
 // @return String
-@function get-infix($key) {
-  @return if($key == 'base', '', ('-' + $key));
+@function breakpoint-infix($breakpoint) {
+  @return if($breakpoint == 'base', '', ('-' + $breakpoint));
 }

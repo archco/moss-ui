@@ -10,10 +10,10 @@
 
 <script>
 import Popper from 'popper.js';
-import ElementUtil from 'element-util';
+import { findAncestor, nodeListToArray } from 'element-util';
+import { makeIcon } from '../lib/util';
 
 export default {
-  name: 'dropdown',
   props: {
     toggle: {
       type: String,
@@ -85,7 +85,7 @@ export default {
       this.isShown ? this.hide() : this.show();
     },
     onOtherClick(event) {
-      let isOwn = ElementUtil.findAncestor(event.target, this.$el) != null;
+      const isOwn = findAncestor(event.target, this.$el) != null;
 
       if (!isOwn && this.isShown == true) this.hide();
     },
@@ -125,7 +125,7 @@ export default {
       }
     },
     createPopper() {
-      let modifiers = Object.assign(this.modifiers, {
+      const modifiers = Object.assign(this.modifiers, {
         offset: { offset: this.offset },
         flip: { enabled: this.flip === 'on' },
         preventOverflow: { enabled: this.preventOverflow === 'on' },
@@ -149,13 +149,13 @@ export default {
       this.btn = this.$slots.button[0].elm;
       this.btn.classList.add(`dropdown-button`);
       if (this.buttonWithCaret) {
-        this.btn.classList.add('with-caret');
+        this.btn.appendChild(makeIcon('caret-down'));
       }
       // content.
       this.content = this.$el.querySelector('.dropdown-content');
       // items.
-      let items = this.content.querySelectorAll('.dropdown-item:not([disabled])');
-      this.items = ElementUtil.nodeListToArray(items);
+      const items = this.content.querySelectorAll('.dropdown-item:not([disabled])');
+      this.items = nodeListToArray(items);
     },
     addListeners() {
       if (this.toggle === 'toggle') {
@@ -168,12 +168,9 @@ export default {
       // Navigation by key.
       this.btn.addEventListener('keydown', this.onBtnKeydown.bind(this));
       this.items.forEach(
-        item => item.addEventListener(
-          'keydown',
-          this.onItemKeydown.bind(this)
-        )
+        item => item.addEventListener('keydown', this.onItemKeydown.bind(this))
       );
-    }
+    },
   },
   mounted() {
     this.initElements();

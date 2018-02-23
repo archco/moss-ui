@@ -6,16 +6,17 @@
       :status="message.status"
       :effect="effect"
       :close-html="closeHtml"
-      close-emit="remove"
-      @remove="onRemove(message.id)">
+      @close="remove(message.id)">
       {{ message.text }}
     </message>
   </div>
 </template>
 
 <script>
+import Message from './message.vue';
+
 export default {
-  name: 'message-box',
+  components: { Message },
   props: {
     effect: {
       type: String,
@@ -23,7 +24,7 @@ export default {
     },
     closeHtml: {
       type: String,
-      default: '✖',
+      default: '',
     }
   },
   data() {
@@ -44,16 +45,15 @@ export default {
     clear() {
       this.messages = [];
     },
-    onRemove(id) {
-      let index = this.messages.findIndex(item => {
-        return item.id === id;
-      });
+    remove(id) {
+      const index = this.messages.findIndex(item => item.id === id);
       this.messages.splice(index, 1);
     }
   },
   beforeMount() {
-    // message-box is unique component.
-    if (typeof window.Moss.messageBox === 'undefined') {
+    // Attach helper methods to Moss object.
+    // message-box should be unique.
+    if (typeof window.Moss !== 'undefined' && typeof window.Moss.messageBox === 'undefined') {
       this.$root.$on('message-box-add', (text, status) => {
         this.add(text, status);
       });

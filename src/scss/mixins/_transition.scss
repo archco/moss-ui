@@ -1,0 +1,5 @@
+@mixin transition($transition...) {
+  @if $enable-transitions {
+    transition: if(length($transition) == 0, $transition-all, $transition);
+  }
+}

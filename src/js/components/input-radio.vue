@@ -1,5 +1,5 @@
 <template lang="html">
-  <label class="input-radio" :for="id">
+  <label :for="id" class="input-radio">
     <input type="radio"
       :id="id"
       :name="name"
@@ -7,7 +7,7 @@
       :class="className"
       :required="required"
       :checked="state"
-      @change="onChange">
+      @change="toggle">
     <slot name="input-box">
       <span class="input-box">
         <span class="input-box-circle"></span>
@@ -19,7 +19,6 @@
 
 <script>
 export default {
-  name: 'input-radio',
   model: {
     prop: 'modelValue',
     event: 'change'
@@ -27,7 +26,7 @@ export default {
   props: {
     id: {
       type: String,
-      default: function () {
+      default: function () { // use function syntax because access 'this._uid'.
         return 'input-radio-id-' + this._uid;
       },
     },
@@ -58,16 +57,12 @@ export default {
   },
   computed: {
     state () {
-      if (this.modelValue === undefined) {
-        return this.checked;
-      }
-      return this.modelValue === this.value;
+      return this.modelValue === undefined
+        ? this.checked
+        : this.modelValue === this.value;
     }
   },
   methods: {
-    onChange() {
-      this.toggle();
-    },
     toggle() {
       this.$emit('change', this.state ? '' : this.value);
     }

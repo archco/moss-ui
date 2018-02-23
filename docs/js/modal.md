@@ -13,7 +13,6 @@
 - [Vue directive](#vue-directive)
 - [SCSS variables](#scss-variables)
 
-
 ## Usage
 
 ### Basic
@@ -33,7 +32,10 @@
 <modal>
   <p>...</p>
   <div slot="actions">
+    <!-- modal close action with v-modal directive. -->
     <button class="btn default" v-modal:modal02.close>Cancel</button>
+    <!-- or use data-toggle attribute. -->
+    <button class="btn default" data-toggle="close">Cancel</button>
     <button class="btn success">Okay</button>
   </div>
 </modal>
@@ -46,7 +48,7 @@
 | name | `String` | required | Key of modal component. |
 | title | `String` | `''` | Title text in modal-header. |
 | effect | `String` | `'from-top'` | Transition effect name. now only 'from-top'. |
-| close-button-html | `String` | `'✖'` | `innerHTML` of close button in modal-header. |
+| close-button-html | `String` | `''` | `innerHTML` of close button in modal-header. |
 | close-on | `Boolean` | `false` | If true, modal close when if click outside of it. |
 
 ## Vue directive

@@ -9,7 +9,7 @@ navbar,
   font-family: inherit;
   font-size: inherit;
   color: $nav-link-color;
-  transition: color $transition-time;
+  @include transition(color $transition-duration $transition-timing-function);
 
   &:hover { color: $nav-link-hover-color; }
 }
@@ -91,8 +91,8 @@ navbar,
     height: round($navbar-toggle-width / 7);
     margin: round($navbar-toggle-width * 6 / 35);
     background-color: $nav-link-color;
-    border-radius: $radius-normal - 2;
-    transition: $transition-time;
+    @include border-radius($radius-normal - 2);
+    @include transition();
   }
 
   &.change {
@@ -120,8 +120,7 @@ navbar,
   .navbar,
   .navbar-body,
   .navbar-nav {
-    flex-flow: column nowrap;
-    justify-content: flex-start;
+    flex-wrap: wrap;
     width: 100%;
   }
 

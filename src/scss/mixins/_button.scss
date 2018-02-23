@@ -23,7 +23,10 @@
   color: $color;
   background-color: $bg-color;
   outline-color: $bg-color;
-  transition: background-color $transition-time, box-shadow $transition-time;
+  @include transition(
+    background-color $transition-duration $transition-timing-function,
+    box-shadow $transition-duration $transition-timing-function
+  );
 
   &:link,
   &:visited {
@@ -34,13 +37,13 @@
   &:hover:not([disabled]) {
     color: $color;
     background-color: lighten($bg-color, 4%);
-    box-shadow: $shadow-normal;
+    @include box-shadow($shadow-normal);
   }
 
   &:active:not([disabled]) {
     color: $color;
     background-color: darken($bg-color, 4%);
-    box-shadow: $shadow-near;
+    @include box-shadow($shadow-near);
   }
 }
 
@@ -48,7 +51,10 @@
   color: $color;
   background-color: transparent;
   outline-color: rgba($color, .2);
-  transition: color $transition-time, background-color $transition-time;
+  @include transition(
+    color $transition-duration $transition-timing-function,
+    background-color $transition-duration $transition-timing-function
+  );
 
   &:focus:not([disabled]),
   &:hover:not([disabled]) {

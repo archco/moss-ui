@@ -1,6 +1,10 @@
 <template lang="html">
   <li class="nav-item">
-    <a :href="href" class="nav-link" v-if="hasHref">{{ linkText }}</a>
+    <a :href="href"
+      class="nav-link"
+      v-if="hasHref">
+      {{ linkText }}
+    </a>
     <slot></slot>
   </li>
 </template>
@@ -9,7 +13,6 @@
 import NodeUtil from '../mixins/node-util';
 
 export default {
-  name: 'nav-item',
   mixins: [NodeUtil],
   props: {
     href: {

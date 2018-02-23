@@ -1,18 +1,24 @@
-import Color from '../lib/color';
+import { MooColor } from 'moo-color';
 import ElementMeasurer from 'element-measurer';
 
-export default {
-  name: 'ripple',
+/*
+  v-ripple.{modifiers}="{value}"
 
+  modifiers: [auto] or light or dark
+  value: {
+    color: '#fff' // ripple color.
+  }
+ */
+export default {
   bind(el, binding) {
     el.classList.add('ripple');
 
     el.addEventListener('click', e => {
-      let offset = new ElementMeasurer(el).getOffset();
-      let xPos = e.pageX - offset.left;
-      let yPos = e.pageY - offset.top;
-      let div = document.createElement('div');
-      let size = getShortLength(el);
+      const offset = new ElementMeasurer(el).getOffset();
+      const xPos = e.pageX - offset.left;
+      const yPos = e.pageY - offset.top;
+      const div = document.createElement('div');
+      const size = getShortLength(el);
 
       div.classList.add('ripple-effect');
       div.style.width = `${size}px`;
@@ -28,18 +34,18 @@ export default {
 };
 
 function getShortLength(elm) {
-  let width = elm.getBoundingClientRect().width;
-  let height = elm.getBoundingClientRect().height;
+  const width = elm.getBoundingClientRect().width;
+  const height = elm.getBoundingClientRect().height;
   return width < height ? width : height;
 }
 
 function getRippleColor(el, binding) {
-  let opt = binding.value || {};
-  let mod = binding.modifiers;
-  let getContrastColor = elm => {
-    let style = window.getComputedStyle(elm);
-    let color = new Color(style.backgroundColor);
-    return color.contrast();
+  const opt = binding.value || {};
+  const mod = binding.modifiers;
+  const getContrastColor = elm => {
+    const style = window.getComputedStyle(elm);
+    const color = new MooColor(style.backgroundColor);
+    return color.isLight ? '#000' : '#fff';
   };
 
   return opt.color ? opt.color

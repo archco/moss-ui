@@ -17,8 +17,14 @@
 ## Usage
 
 ``` html
-<span>Test Text <close-button>✖</close-button></span>
-<span>Element Remove <close-button action="remove">✖</close-button></span>
+<!-- default. span element will hide when click close-button.  -->
+<span>Test Text <close-button /></span>
+
+<!-- specify innerHTML -->
+<span>Test Text <close-button>✖<close-button></span>
+
+<!-- span element will remove when click close-button. -->
+<span>Element Remove <close-button action="remove" /></span>
 ```
 
 ### Specifying position
@@ -26,9 +32,7 @@
 ``` html
 <div>
   <p>...</p>
-  <close-button position="top-right" parent-to-relative>
-    ✖
-  </close-button>
+  <close-button position="top-right" />
 </div>
 ```
 
@@ -47,8 +51,8 @@
 
 ``` html
 <span>Custom close handle
-  <!-- This will call 'onClose()' custom method when close-button clicked.  -->
-  <close-button action="" @close="onClose()">✖</close-button>
+  <!-- This will call 'onClose()' custom method when click close-button. -->
+  <close-button action="" @close="onClose()" />
 </span>
 ```
 
@@ -59,16 +63,16 @@
 | position | `String` | `''` (no specified) | '' (no specified) or 'top-right' or 'middle-right' |
 | action | `String` | `hide` | `hide` or `remove` or `''` (no-action) |
 | target | `String` | `''` (parentNode) | `''` or selector |
-| parent-to-relative | `Boolean` | `false` | If true, parent node position sets `relative`. |
+| related | `Boolean` | `false` | If true, parent node position sets `relative`. |
 
 ## Events
 
 | name | args | description |
 | ---- | ---- | ----------- |
-| close | - | Emit when close-button clicked. |
+| close | `HTMLElement` (closing target) | Emit when close-button clicked. |
 
 ## SCSS Variables
 
 ``` scss
-$close-button-color: rgba(#000, .3) !default;
+// Not has variables.
 ```

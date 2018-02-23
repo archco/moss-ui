@@ -5,8 +5,8 @@
 fieldset {
   padding: .5rem 1rem;
   margin-bottom: 1rem;
-  border: $filedset-border;
-  border-radius: $radius-normal;
+  border: $fieldset-border;
+  @include border-radius($radius-normal);
 }
 
 legend {
@@ -53,8 +53,8 @@ textarea {
   padding: $input-padding-y $input-padding-x;
   line-height: 1.4;
   background-color: transparent;
-  border: $input-border;
-  border-radius: $input-radius;
+  border: $input-border-width solid $input-border-color;
+  @include border-radius($input-radius);
 
   @each $name, $color in $color-set {
     &.#{$name} {
@@ -146,7 +146,6 @@ input[type="color"] {
 
 %input-icon {
   position: absolute;
-  top: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -170,14 +169,14 @@ input[type="color"] {
     input { padding-left: $input-height; }
   }
 
-  .icon,
-  .icon-right {
+  > .icon,
+  > .icon-right {
     @extend %input-icon;
-    right: 0;
+    @include position-middle-right(0);
   }
 
-  .icon-left {
+  > .icon-left {
     @extend %input-icon;
-    left: 0;
+    @include position-middle-left(0);
   }
 }

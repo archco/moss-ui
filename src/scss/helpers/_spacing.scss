@@ -1,0 +1,51 @@
+// These helpers refer to the bootstrap.
+// @see http://getbootstrap.com/docs/4.0/utilities/spacing/
+// @see https://github.com/twbs/bootstrap/blob/v4-dev/scss/utilities/_spacing.scss
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint);
+
+    @each $prop, $abbr in (margin: m, padding: p) {
+      @each $size, $length in $spacers {
+
+        .#{$abbr}#{$infix}-#{$size} { #{$prop}: $length !important; }
+        .#{$abbr}t#{$infix}-#{$size},
+        .#{$abbr}y#{$infix}-#{$size} {
+          #{$prop}-top: $length !important;
+        }
+        .#{$abbr}r#{$infix}-#{$size},
+        .#{$abbr}x#{$infix}-#{$size} {
+          #{$prop}-right: $length !important;
+        }
+        .#{$abbr}b#{$infix}-#{$size},
+        .#{$abbr}y#{$infix}-#{$size} {
+          #{$prop}-bottom: $length !important;
+        }
+        .#{$abbr}l#{$infix}-#{$size},
+        .#{$abbr}x#{$infix}-#{$size} {
+          #{$prop}-left: $length !important;
+        }
+      }
+    }
+
+    // Some special margin utils
+    .m#{$infix}-auto { margin: auto !important; }
+    .mt#{$infix}-auto,
+    .my#{$infix}-auto {
+      margin-top: auto !important;
+    }
+    .mr#{$infix}-auto,
+    .mx#{$infix}-auto {
+      margin-right: auto !important;
+    }
+    .mb#{$infix}-auto,
+    .my#{$infix}-auto {
+      margin-bottom: auto !important;
+    }
+    .ml#{$infix}-auto,
+    .mx#{$infix}-auto {
+      margin-left: auto !important;
+    }
+  }
+}

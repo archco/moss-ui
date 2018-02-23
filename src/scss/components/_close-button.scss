@@ -1,27 +1,25 @@
 .close-button {
   @extend %btn-common;
   padding: 0;
-  margin-left: .25em;
-  color: $close-button-color;
-  vertical-align: baseline;
+  margin: 0;
+  color: currentColor;
+  vertical-align: inherit;
+  line-height: 0;
   background-color: transparent;
-  box-sizing: content-box;
-  transition: color $transition-time;
+  opacity: .5;
+  @include transition(opacity $transition-duration $transition-timing-function);
 
   &:hover {
-    color: inherit;
+    opacity: 1;
   }
 
   &.at-corner {
     position: absolute;
-    top: .5em;
-    right: .5em;
+    @include position-top-right(.5em);
   }
 
   &.at-right-middle {
     position: absolute;
-    top: 50%;
-    right: 1em;
-    transform: translateY(-50%);
+    @include position-middle-right(.5em);
   }
 }

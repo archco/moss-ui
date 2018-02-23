@@ -16,14 +16,8 @@
 // Alignment
 .text-justify { text-align: justify !important; }
 .text-nowrap { white-space: nowrap !important; }
-
-.align-center,
 .text-center { text-align: center !important; }
-
-.align-right,
 .text-right { text-align: right !important; }
-
-.align-left,
 .text-left { text-align: left !important; }
 
 // Transformation
@@ -38,5 +32,5 @@
   color: $text-color-weak;
 }
 
-.text-truncate { @include text-truncate; }
-.text-hide { @include text-hide; }
+.text-truncate { @include text-truncate(); }
+.text-hide { @include text-hide(); }

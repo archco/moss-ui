@@ -6,23 +6,22 @@
       v-if="!disableTop"
       v-show="showToTop"
       @click.prevent="toTop"
-      v-html="topHtml"></button>
+      v-html="topIcon"></button>
     <button
       type="button"
       class="scroll-to-bottom"
       v-if="!disableBottom"
       v-show="showToBottom"
       @click.prevent="toBottom"
-      v-html="bottomHtml"></button>
+      v-html="bottomIcon"></button>
   </div>
 </template>
 
 <script>
-import Util from '../lib/util';
 import ElementMeasurer from 'element-measurer';
+import { scrollIt, makeIconHtml } from '../lib/util';
 
 export default {
-  name: 'scroll-to',
   props: {
     duration: {
       type: Number,
@@ -38,11 +37,11 @@ export default {
     },
     topHtml: {
       type: String,
-      default: '↑',
+      default: '',
     },
     bottomHtml: {
       type: String,
-      default: '↓',
+      default: '',
     },
     disableTop: {
       type: Boolean,
@@ -53,30 +52,38 @@ export default {
       default: false,
     }
   },
+  computed: {
+    topIcon() {
+      return this.topHtml || makeIconHtml('arrow-up');
+    },
+    bottomIcon() {
+      return this.bottomHtml || makeIconHtml('arrow-down');
+    },
+  },
   data() {
     return {
       showToTop: true,
       showToBottom: true,
-      docSize: new ElementMeasurer(document),
+      docSize: new ElementMeasurer(),
     };
+  },
+  mounted() {
+    if (this.offset) {
+      window.addEventListener('scroll', this.onScroll.bind(this));
+      this.onScroll(); // for initialize.
+    }
   },
   methods: {
     toTop() {
-      Util.scrollIt(0, this.duration, this.easing);
+      scrollIt(0, this.duration, this.easing);
     },
     toBottom() {
-      Util.scrollIt(this.docSize.maxScrollTop, this.duration, this.easing);
+      scrollIt(this.docSize.maxScrollTop, this.duration, this.easing);
     },
     onScroll() {
       this.showToTop = this.docSize.scrollTop >= this.offset;
       this.showToBottom = (this.docSize.maxScrollTop - this.docSize.scrollTop)
         >= this.offset;
-    }
-  },
-  mounted() {
-    if (this.offset) {
-      window.addEventListener('scroll', this.onScroll.bind(this));
-      this.onScroll(); // invoke once.
     }
   }
 }

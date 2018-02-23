@@ -1,4 +1,4 @@
-import Util from '../lib/util';
+import { locationSearchToObject } from '../lib/util';
 
 /*
   v-set-value:{arg}="'{value}'"
@@ -7,12 +7,11 @@ import Util from '../lib/util';
   value: {String} Set value directly.
  */
 export default {
-  name: 'set-value',
   bind(el, binding) {
     if (binding.value) {
       el.value = binding.value;
     } else {
-      let queries = Util.locationSearchToObject();
+      const queries = locationSearchToObject();
 
       if (queries && queries[binding.arg]) {
         el.value = queries[binding.arg];

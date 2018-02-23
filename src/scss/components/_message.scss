@@ -4,18 +4,22 @@
 }
 
 .message {
-  // default color
-  @include _message($message-default-bg-color);
+  @include _message($message-default-bg-color); // default color
   // common attributes.
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   z-index: $z-index-message;
   padding: $message-padding-y $message-padding-x;
   margin: $message-margin;
-  vertical-align: middle;
-  border-radius: $radius-normal;
+  @include border-radius($message-border-radius);
 
   .close-button {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
+
+    svg path {
+      stroke-width: 2px;
+    }
   }
 
   // each color-set

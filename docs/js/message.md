@@ -8,27 +8,19 @@
 ### Table of contents
 
 - [message](#message)
-  - [Usage](#usage-of-message)
-  - [Props](#props-of-message)
-  - [SCSS variables](#scss-variables-of-message)
 - [message-box](#message-box)
-  - [Usage](#usage-of-message)
-  - [Props](#props-of-message)
-  - [Methods](#methods)
-    - [add](#add)
-    - [clear](#clear)
 
 ## Message
 
-### Usage of message
+### Usage
 
-**Basic**
+#### Basic
 
 ``` html
 <message>Hello</message>
 ```
 
-**with status color**
+#### with status color
 
 > This based on [color-set](color-set.md)
 
@@ -38,16 +30,15 @@ Available color keywords: default, primary, secondary, info, success, warning, d
 <message status="success">Task done successfully.</message>
 ```
 
-### Props of message
+### Props
 
 | Name | Type | Default | Description |
 | ---- |:----:| ------- | ----------- |
 | status | `String` | `''` | Status color. |
 | effect | `String` | `'fade'` | Transition effect name: `fade` |
-| close-emit | `String` | `''` | If specified this value, emit custom event instead of default onclick handle when close button is clicked. |
-| close-html | `String` | `'✖'` | `innerHTML` of close-button. |
+| close-html | `String` | `''` (default close icon) | `innerHTML` of close-button. |
 
-### SCSS variables of message
+### SCSS variables
 
 ``` scss
 $message-default-bg-color: $default-color !default;
@@ -58,17 +49,15 @@ $message-margin: 8px !default;
 
 ## Message Box
 
-### Usage of message-box
+### Usage
 
-**in HTML**
 ``` html
-<message-box
-  close-html='<i class="fa fa-times" aria-hidden="true"></i>'>
-</message-box>
+<!-- in HTML -->
+<message-box />
 ```
 
-**in script**
 ``` js
+// in script
 window.Moss.messageBox.add('Some message.', 'info');
 ```
 
@@ -77,7 +66,7 @@ window.Moss.messageBox.add('Some message.', 'info');
 | Name | Type | Default | Description |
 | ---- |:----:| ------- | ----------- |
 | effect | `String` | `'fade'` | A prop for `message` component. |
-| close-html | `String` | `'✖'` | A prop for `message` component. |
+| close-html | `String` | `''` | A prop for `message` component. |
 
 ### Methods
 
@@ -89,8 +78,8 @@ Add a new message in message-box.
   ``` js
   window.Moss.messageBox.add(text, status = 'default');
   ```
-- Param {String} text - message text.
-- Param {String} status - status keyword.
+- Param `String` text - message text.
+- Param `String` status - status keyword.
 
 #### clear
 

@@ -1,0 +1,16 @@
+h2 Default usage
+span test text<close-button />
+span(class='badge') Badge<close-button action="remove"/>
+
+h2 Specifying position
+h3 middle-right
+div.pad.bg-color-info
+  |Hello world
+  <close-button position="middle-right"/>
+h3 top-right
+div.pad.bg-color-secondary
+  p= lorem
+  <close-button position="top-right"/>
+
+h2 Hook on 'close' event
+span test text <close-button action="" @close="eventTest">✖</close-button>

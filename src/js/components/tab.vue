@@ -6,7 +6,6 @@
 
 <script>
 export default {
-  name: 'tab',
   props: {
     name: {
       type: String,

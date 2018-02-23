@@ -3,7 +3,7 @@
     <div :class="itemClass" @click="toggle">
       <span
         v-if="hasItems"
-        v-html="open ? openedHtml : closedHtml">
+        v-html="open ? openedIcon : closedIcon">
       </span>
       <span v-html="item.name"></span>
     </div>
@@ -19,8 +19,9 @@
 </template>
 
 <script>
+import { makeIconHtml } from '../lib/util';
+
 export default {
-  name: 'tree-item',
   props: {
     item: {
       type: Object,
@@ -28,11 +29,11 @@ export default {
     },
     openedHtml: {
       type: String,
-      default: '<i class="fa fa-angle-down fa-fw" aria-hidden="true"></i>',
+      default: '',
     },
     closedHtml: {
       type: String,
-      default: '<i class="fa fa-angle-right fa-fw" aria-hidden="true"></i>',
+      default: '',
     },
   },
   data() {
@@ -50,6 +51,12 @@ export default {
         'has-items': this.hasItems,
       };
     },
+    openedIcon() {
+      return this.openedHtml || makeIconHtml('arrow-down');
+    },
+    closedIcon() {
+      return this.closedHtml || makeIconHtml('arrow-right');
+    }
   },
   methods: {
     toggle() {
