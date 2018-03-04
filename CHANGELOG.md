@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Added
+
+- Added the ["types" declaration file](https://github.com/archco/moss-ui/blob/master/index.d.ts). #92
+
 ## [0.5.1][] - 2018-02-23
 
 ### Fixed

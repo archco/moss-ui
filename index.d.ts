@@ -1,3 +1,6 @@
+// Type definitions for moss-ui v0.5.0
+// @link https://github.com/archco/moss-ui
+
 import { VueConstructor } from 'vue';
 import * as ElementUtil from 'element-util';
 
