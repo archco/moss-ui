@@ -37,7 +37,7 @@
 
 ``` html
 <button class="btn-icon warning">
-  <i class="fa fa-exclamation" aria-hidden="true"></i>
+  <i class="fas fa-exclamation"></i>
 </button>
 ```
 

@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SCSS Components</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../dist/moss.css">
     <style>
       aside { position: relative; }
@@ -185,7 +184,11 @@ SOFTWARE.</code></pre>
           <button class="btn warning">Normal</button>
           <h3>in Link</h3><a href="#">Link<span class="badge success">New</span></a><br><a class="badge danger" href="#">Link badge</a>
           <h2>Rounded Badge</h2><span>text and<span class="badge round info">13</span></span><br><a class="badge round warning" href="#">rounded badge</a>
-          <h2>Badge with Stacked Font Awesome Icon</h2><span class="fa-stack fa-lg"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-bell fa-stack-1x fa-inverse"></i><span class="badge in-icon danger">8,888</span></span><span class="fa-stack fa-2x color-primary"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i><span class="badge in-icon rounded warning">8,888</span></span>
+          <h2>Badge with Stacked Font Awesome Icon</h2>
+          <blockquote class="pad danger">@deprecated in v0.5.x</blockquote>
+          <div class="fa-4x"><span class="fa-layers fa-fw"><i class="fas fa-square"></i>
+<i class="fas fa-bell fa-inverse" data-fa-transform="shrink-6"></i><span class="badge in-icon danger">8,888</span></span><span class="fa-layers fa-fw color-primary"><i class="fas fa-circle"></i>
+<i class="fas fa-envelope fa-inverse" data-fa-transform="shrink-6"></i><span class="badge in-icon rounded warning">8,888</span></span></div><span class="fa-stack fa-lg"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-bell fa-stack-1x fa-inverse"></i><span class="badge in-icon danger">8,888</span></span><span class="fa-stack fa-2x color-primary"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i><span class="badge in-icon rounded warning">8,888</span></span>
           <anchored-tag tag="h1" owned>Button</anchored-tag>
           <h3>Default Buttons with Color-set</h3>
           <button class="btn">btn</button>
@@ -216,17 +219,17 @@ SOFTWARE.</code></pre>
           <h3>Other tag as button</h3>
           <input type="submit"><a class="btn info" href="#button">link button</a><br><a class="btn-flat" href="#">link flat button</a>
           <h3>Icon Button</h3>
-          <button class="btn-icon"><i class="fa fa-calendar" aria-hidden="true"></i></button>
-          <button class="btn-icon primary"><i class="fa fa-home" aria-hidden="true"></i></button>
-          <button class="btn-icon secondary"><i class="fa fa-user" aria-hidden="true"></i></button>
-          <button class="btn-icon info"><i class="fa fa-comment" aria-hidden="true"></i></button>
-          <button class="btn-icon success"><i class="fa fa-code" aria-hidden="true"></i></button>
-          <button class="btn-icon warning"><i class="fa fa-exclamation" aria-hidden="true"></i></button>
-          <button class="btn-icon danger"><i class="fa fa-times" aria-hidden="true"></i></button>
+          <button class="btn-icon"><i class="fas fa-calendar"></i></button>
+          <button class="btn-icon primary"><i class="fas fa-home"></i></button>
+          <button class="btn-icon secondary"><i class="fas fa-user"></i></button>
+          <button class="btn-icon info"><i class="fas fa-comment"></i></button>
+          <button class="btn-icon success"><i class="fas fa-code"></i></button>
+          <button class="btn-icon warning"><i class="fas fa-exclamation"></i></button>
+          <button class="btn-icon danger"><i class="fas fa-times"></i></button>
           <h3>Disabled</h3>
           <button class="btn" disabled>btn</button>
           <button class="btn-flat" disabled>btn-flat</button>
-          <button class="btn-icon danger" disabled><i class="fa fa-times" aria-hidden="true"></i></button>
+          <button class="btn-icon danger" disabled><i class="fas fa-times"></i></button>
           <h3>Button Group</h3>
           <h4>Horizontal Button Group (default)</h4>
           <div class="btn-group">
@@ -508,39 +511,39 @@ SOFTWARE.</code></pre>
             </div>
           </div>
           <div class="input inline with-icon-right">
-            <input class="danger" type="text" placeholder="wrong.."><span class="icon-right color-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span>
+            <input class="danger" type="text" placeholder="wrong.."><span class="icon-right color-danger"><i class="fas fa-exclamation-triangle"></i></span>
           </div>
           <div class="input inline with-icon-right">
-            <input class="danger" type="text" placeholder="Disabled" disabled><span class="icon-right color-default"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span>
+            <input class="danger" type="text" placeholder="Disabled" disabled><span class="icon-right color-default"><i class="fas fa-exclamation-triangle"></i></span>
           </div>
           <h2>Input with Icons</h2>
           <h3>Default</h3>
           <div class="input with-icon">
-            <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+            <input type="text" placeholder="Text me.."><span class="icon"><i class="fas fa-comment-alt"></i></span>
           </div>
           <h3>Icon positioning left or right or both</h3>
           <div class="input with-icon-right group">
-            <input type="text" placeholder="Text me.."><span class="icon-right"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+            <input type="text" placeholder="Text me.."><span class="icon-right"><i class="fas fa-comment-alt"></i></span>
           </div>
           <div class="input with-icon-left group">
-            <input type="search" placeholder="Search.."><span class="icon-left"><i class="fa fa-search" aria-hidden="true"></i></span>
+            <input type="search" placeholder="Search.."><span class="icon-left"><i class="fas fa-search"></i></span>
           </div>
           <div class="input with-icon-left with-icon-right group">
-            <input type="text" placeholder="Email.."><span class="icon-left"><i class="fa fa-envelope" aria-hidden="true"></i></span><span class="icon-right"><i class="fa fa-check" aria-hidden="true"></i></span>
+            <input type="text" placeholder="Email.."><span class="icon-left"><i class="fas fa-envelope"></i></span><span class="icon-right"><i class="fas fa-check"></i></span>
           </div>
           <h3>Inline input</h3>
           <div class="input inline with-icon-left with-icon-right">
-            <input class="inline" type="text" placeholder="Email.."><span class="icon-left"><i class="fa fa-envelope" aria-hidden="true"></i></span><span class="icon-right color-success"><i class="fa fa-check" aria-hidden="true"></i></span>
+            <input class="inline" type="text" placeholder="Email.."><span class="icon-left"><i class="fas fa-envelope"></i></span><span class="icon-right color-success"><i class="fas fa-check"></i></span>
           </div>
           <h3>Input sizes</h3>
           <div class="input inline with-icon font-small">
-            <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+            <input type="text" placeholder="Text me.."><span class="icon"><i class="fas fa-comment-alt"></i></span>
           </div>
           <div class="input inline with-icon">
-            <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+            <input type="text" placeholder="Text me.."><span class="icon"><i class="fas fa-comment-alt"></i></span>
           </div>
           <div class="input inline with-icon font-large">
-            <input type="text" placeholder="Text me.."><span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+            <input type="text" placeholder="Text me.."><span class="icon"><i class="fas fa-comment-alt"></i></span>
           </div>
           <anchored-tag tag="h1" owned>Input Group</anchored-tag>
           <p>Extend form controls by adding text, buttons.</p>
@@ -813,13 +816,13 @@ SOFTWARE.</code></pre>
             <li><a href="#">Next</a></li>
           </ul>
           <ul class="pagination">
-            <li><a href="#"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fas fa-chevron-left"></i></a></li>
             <li class="disabled"><span>&hellip;</span></li>
             <li><a href="#">7</a></li>
             <li class="active"><a href="#">8</a></li>
             <li><a href="#">9</a></li>
             <li class="disabled"><span>&hellip;</span></li>
-            <li><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i></a></li>
           </ul>
         </section>
       </div>
@@ -846,6 +849,7 @@ SOFTWARE.</code></pre>
       <toast></toast>
     </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <script src="../../node_modules/vue/dist/vue.js"></script>
     <script src="../../dist/moss.js"></script>
     <script src="./example.js"></script>

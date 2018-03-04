@@ -73,7 +73,7 @@ $auto-input-bg-color-enable: true !default;
 <div class="input with-icon">
   <input type="text" placeholder="Text me..">
   <span class="icon">
-    <i class="fa fa-commenting" aria-hidden="true"></i>
+    <i class="fas fa-comment-alt"></i>
   </span>
 </div>
 
@@ -81,7 +81,7 @@ $auto-input-bg-color-enable: true !default;
 <div class="input inline with-icon">
   <input type="text" placeholder="Text me..">
   <span class="icon">
-    <i class="fa fa-commenting" aria-hidden="true"></i>
+    <i class="fas fa-comment-alt"></i>
   </span>
 </div>
 ```
@@ -93,7 +93,7 @@ $auto-input-bg-color-enable: true !default;
 <div class="input with-icon-right">
   <input type="text" placeholder="Text me..">
   <span class="icon-right">
-    <i class="fa fa-commenting" aria-hidden="true"></i>
+    <i class="fas fa-comment-alt"></i>
   </span>
 </div>
 
@@ -101,7 +101,7 @@ $auto-input-bg-color-enable: true !default;
 <div class="input with-icon-left">
   <input type="search" placeholder="Search..">
   <span class="icon-left">
-    <i class="fa fa-search" aria-hidden="true"></i>
+    <i class="fas fa-search"></i>
   </span>
 </div>
 
@@ -109,10 +109,10 @@ $auto-input-bg-color-enable: true !default;
 <div class="input with-icon-left with-icon-right">
   <input type="text" placeholder="Email..">
   <span class="icon-left">
-    <i class="fa fa-envelope" aria-hidden="true"></i>
+    <i class="fas fa-envelope"></i>
   </span>
   <span class="icon-right">
-    <i class="fa fa-check" aria-hidden="true"></i>
+    <i class="fas fa-check"></i>
   </span>
 </div>
 ```

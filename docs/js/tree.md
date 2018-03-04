@@ -72,5 +72,5 @@ const treeData2 = {
 | ---- | ---- | ------- | ----------- |
 | items | `Array` | `[]` | Item array. |
 | opened | `Boolean` | `false` | Whether all children item is open or not. |
-| opened-html | `String` | `'<i class="fa fa-angle-down fa-fw" aria-hidden="true"></i>'` (font-awesome icon) | Icon of tree-item, It will show if opened. |
-| closed-html | `String` | `'<i class="fa fa-angle-right fa-fw" aria-hidden="true"></i>'` (font-awesome icon) | Icon of tree-item, It will show if closed. |
+| opened-html | `String` | `'<i class="fas fa-angle-down"></i>'` (font-awesome icon) | Icon of tree-item, It will show if opened. |
+| closed-html | `String` | `'<i class="fas fa-angle-right"></i>'` (font-awesome icon) | Icon of tree-item, It will show if closed. |

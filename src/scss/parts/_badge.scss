@@ -53,6 +53,7 @@
     border-radius: $badge-rounded-border-radius;
   }
 
+  // @deprecated in v0.5.x
   &.in-icon {
     position: absolute;
     top: 2%;
