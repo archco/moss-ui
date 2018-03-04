@@ -5698,6 +5698,10 @@ exports.default = {
       type: Boolean,
       default: false
     },
+    closeAction: {
+      type: String,
+      default: 'remove' // 'hide'|'remove'|''(no-action)
+    },
     color: {
       type: String,
       default: ''
@@ -5724,6 +5728,8 @@ exports.default = {
       };
     },
     childrenArray: function childrenArray(createElement) {
+      var _this = this;
+
       var children = [];
       // <img>
       if (this.imgSrc) {
@@ -5740,7 +5746,12 @@ exports.default = {
       if (this.closeable) {
         children.push(createElement(_closeButton2.default, {
           props: {
-            action: 'remove'
+            action: this.closeAction
+          },
+          on: {
+            close: function close() {
+              return _this.$emit('close', _this);
+            }
           }
         }));
       }

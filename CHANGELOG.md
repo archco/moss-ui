@@ -15,6 +15,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Added the ["types" declaration file](https://github.com/archco/moss-ui/blob/master/index.d.ts). #92
 
+### Changed
+
+- Improve Chip component. #90
+  - Add prop `close-action`. It can set 'remove', 'hide' or '' (It's no action). default is 'remove'.
+  - Add event `close`. It triggers when clicked close-button.
+
 ## [0.5.1][] - 2018-02-23
 
 ### Fixed

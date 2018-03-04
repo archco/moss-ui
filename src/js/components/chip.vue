@@ -12,6 +12,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    closeAction: {
+      type: String,
+      default: 'remove', // 'hide'|'remove'|''(no-action)
+    },
     color: {
       type: String,
       default: '',
@@ -62,8 +66,11 @@ export default {
           CloseButton,
           {
             props: {
-              action: 'remove'
-            }
+              action: this.closeAction,
+            },
+            on: {
+              close: () => this.$emit('close', this),
+            },
           }
         ));
       }

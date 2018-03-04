@@ -45,4 +45,18 @@ describe('#Chip', () => {
     const c = wrapper.find('button');
     expect(c.element.classList.contains('close-button')).toBe(true);
   });
+
+  it('can set custom `close` event.', () => {
+    wrapper = mount(Chip, {
+      propsData: {
+        closeable: true,
+        closeAction: '', // no action.
+      },
+      slots: {
+        default: 'chip test',
+      }
+    });
+    wrapper.find('button.close-button').trigger('click');
+    expect(wrapper.emitted().close).toBeTruthy();
+  });
 });
