@@ -32,14 +32,14 @@ $font-weight-bold: bold !default;
 // @links  https://archco.github.io/scss-palette/
 $white: palette('white') !default;
 $black: palette('jet') !default;
-$lightgray: palette('gainsboro') !default;
-$mediumgray: palette('mediumgray') !default;
-$darkgray: palette('dimgray') !default;
+$light-gray: palette('gainsboro') !default;
+$medium-gray: palette('medium-gray') !default;
+$dark-gray: palette('dim-gray') !default;
 $teal: palette('teal') !default;
-$lightblue: palette('naturalblue') !default;
-$green: palette('pigmentgreen') !default;
-$red: palette('chilired') !default;
-$yellow: palette('naturalyellow') !default;
+$light-blue: palette('natural-blue') !default;
+$green: palette('pigment-green') !default;
+$red: palette('chili-red') !default;
+$yellow: palette('natural-yellow') !default;
 
 // theme-colors
 $primary-color: palette('madder') !default;
@@ -70,10 +70,10 @@ $success-color: $green !default;
 $danger-color: $red !default;
 $error-color: $red !default;
 $warning-color: $yellow !default;
-$link-color: $lightblue !default;
+$link-color: $light-blue !default;
 $shadow-color: rgba(#000, .3) !default;
-$border-color: $mediumgray !default;
-$disabled-color: rgba($mediumgray, .33) !default;
+$border-color: $medium-gray !default;
+$disabled-color: rgba($medium-gray, .33) !default;
 
 // color-set
 $color-set: (

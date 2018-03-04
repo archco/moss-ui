@@ -1,7 +1,6 @@
 import {
   getElement,
-  getElements,
-  nodeListToArray,
+  getElementsAsArray,
   findAncestor,
 } from 'element-util';
 import ElementMeasurer from 'element-measurer';
@@ -64,11 +63,10 @@ export default class Scrollspy {
    * @return {void}
    */
   refresh() {
-    const linkNodes = getElements(
+    const links = getElementsAsArray(
         this.options.linkSelector,
         this._linksContainerElement
-      );
-    const links = nodeListToArray(linkNodes).filter(elm => elm.hash);
+      ).filter(elm => elm.hash);
     this._items = [];
     this._scrollHeight = this._scrollElementSize.scrollHeight;
 

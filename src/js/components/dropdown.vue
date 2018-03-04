@@ -10,7 +10,7 @@
 
 <script>
 import Popper from 'popper.js';
-import { findAncestor, nodeListToArray } from 'element-util';
+import { findAncestor, getElementsAsArray } from 'element-util';
 import { makeIcon } from '../lib/util';
 
 export default {
@@ -154,8 +154,7 @@ export default {
       // content.
       this.content = this.$el.querySelector('.dropdown-content');
       // items.
-      const items = this.content.querySelectorAll('.dropdown-item:not([disabled])');
-      this.items = nodeListToArray(items);
+      this.items = getElementsAsArray('.dropdown-item:not([disabled])', this.content);
     },
     addListeners() {
       if (this.toggle === 'toggle') {

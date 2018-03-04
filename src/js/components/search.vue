@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { findAncestor, getElements, nodeListToArray } from 'element-util';
+import { findAncestor, getElementsAsArray } from 'element-util';
 import Fuse from 'fuse.js';
 import Popper from 'popper.js';
 import Icon from './icon.vue';
@@ -191,8 +191,7 @@ export default {
     },
 
     getCurrentItems() {
-      const nodes = getElements('li', this.elm.resultList);
-      return nodeListToArray(nodes);
+      return getElementsAsArray('li', this.elm.resultList);
     },
   }
 }
