@@ -4,6 +4,7 @@
   "description": "The front-end UI framework with Vue.js and SCSS.",
   "main": "dist/moss.js",
   "scss": "src/scss/moss.scss",
+  "types": "index.d.ts",
   "directories": {
     "dist": "dist",
     "doc": "docs",
