@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- Update [scss-palette](https://github.com/archco/scss-palette/releases) to v0.5.1
+  - Changes case of color name to `kebab-case`.
 - Improve Chip component. #90
   - Add prop `close-action`. It can set 'remove', 'hide' or '' (It's no action). default is 'remove'.
   - Add event `close`. It triggers when clicked close-button.
