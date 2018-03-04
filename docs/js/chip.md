@@ -11,6 +11,7 @@
   - [Contact chip](#contact-chip)
   - [Link chip](#link-chip)
   - [with color](#with-color)
+  - [Closeable](#closeable)
 - [Props](#props)
 - [Events](#events)
 - [SCSS variables](#scss-variables)
@@ -49,6 +50,21 @@
 
 ``` html
 <chip color="#69c">Color Chip</chip>
+```
+
+### Closeable
+
+This props will insert [`close-button`](./close-button.md) into chip. It will be useful if you want to remove or hide the chip.
+
+``` html
+<!-- Default `close-action` is 'remove'. When you click `close-button` then chip will be removed. -->
+<chip closeable>Closeable Chip</chip>
+
+<!-- Hiding the chip when clicked `close-button`. -->
+<chip closeable close-action="hide">Hide Chip</chip>
+
+<!-- Custom action. -->
+<chip closeable close-action="" @close="onClose">Custom Action</chip>
 ```
 
 ## Props
