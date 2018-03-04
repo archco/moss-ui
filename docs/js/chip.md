@@ -12,6 +12,7 @@
   - [Link chip](#link-chip)
   - [with color](#with-color)
 - [Props](#props)
+- [Events](#events)
 - [SCSS variables](#scss-variables)
 
 ## Usage
@@ -57,8 +58,15 @@
 | tag | `String` | `'span'` | A tag name. e.g. `'a'`, `'span'` |
 | color | `String` | `''` | `background-color` of a chip. |
 | closeable | `Boolean` | `false` | Enable close-button. |
+| close-action | `String` | `'remove'` | Specify an action when clicked the close-button. It can set 'remove', 'hide' or '' (It's no action) |
 | img-src | `String` | `''` | Image source. |
 | img-alt | `String` | `''` | Alternate text. |
+
+## Events
+
+| Name | Argument | Description |
+| ---- |:--------:| ----------- |
+| close | chip: `VNode` | It triggers when clicked close-button. |
 
 ## SCSS variables
 

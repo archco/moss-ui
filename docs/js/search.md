@@ -84,21 +84,19 @@ Simple search component that fuzzy search given collection data such like json.
 
 ## Events
 
-#### `item-clicked`
+| Name | Argument | Description |
+| ---- |:--------:| ----------- |
+| item-clicked | item: `object` - An object of `collection`. | This event occurs when click on result item. |
+| submit | data: [`SubmitData`](#submit-data) | This event occurs when submit on search form. |
 
-- This event occurs when click on result item.
-- Argument: An `item` object of `collection`.
+### Submit Data
 
-#### `submit`
-
-- This event occurs when submit on search form.
-- Argument
-  ``` js
-  const data = {
-    input: '',  // value of search input.
-    result: [], // array of result items.
-  };
-  ```
+``` ts
+interface SubmitData {
+  input: string; // value of search input.
+  result: any[]; // array of result items.
+}
+```
 
 ## SCSS Variables
 

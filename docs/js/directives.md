@@ -104,22 +104,20 @@ Automatically activate HTML anchor based on scroll position.
 
 ### Events
 
-- On activate: `scrollspy-activate`
-  ``` js
-  vm.$on('scrollspy-activate', item => {
-    /*
-      item = {
-        elm: {Element} target element.
-        link: {Element} link element.
-        offsetTop: {Number} the distance of the current element relative to the top.
-      }
-    */
-  });
-  ```
-- Emit refresh: `scrollspy-refresh`
-  ``` js
-  vm.$emit('scrollspy-refresh');
-  ```
+| Name | Argument | Description |
+| ---- |:--------:| ----------- |
+| scrollspy-activate | item: [`ActivatedItem`](#activated-item) | This event occurs when scroll are placed on the target element. |
+| scrollspy-refresh | none | You can refresh scrollspy via `$emit('scrollspy-refresh')`. |
+
+#### Activated Item
+
+``` ts
+interface ActivatedItem {
+  elm: HTMLElement;   // The target element.
+  link: HTMLElement;  // The anchor element.
+  offsetTop: Number;  // The distance of the current element relative to the top.
+}
+```
 
 ## Set Value
 
