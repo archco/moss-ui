@@ -97,7 +97,7 @@ function onInputChange({ input, vnode }) {
 
 | Name | Type | Default | Description |
 | ---- |:----:| ------- | ----------- |
-| collection | `any[]` | `[]` | A data collection that target for searching. |
+| collection | `any[]` | `[]` | A data collection that target for searching. If you not specifying this prop, than this component will be not used the fuse.js. |
 | search-options | `object` | `{}` | Search options for [fuse.js](http://fusejs.io/#live-demo) |
 | popper-options | `object` | `{}` | Options for [popper.js](https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/popper-documentation.md#Popper.Defaults) |
 | input-placeholder | `string` | `''` | The `placeholder` attribute for search input. |
