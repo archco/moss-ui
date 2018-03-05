@@ -22,6 +22,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Improve Chip component. #90
   - Add prop `close-action`. It can set 'remove', 'hide' or '' (It's no action). default is 'remove'.
   - Add event `close`. It triggers when clicked close-button.
+- Improve Search component. #91
+  - Add event `input-change`.
+  - Add prop `input-placeholder`.
+  - Add data `suggests`.
 
 ## [0.5.1][] - 2018-02-23
 
