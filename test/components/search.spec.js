@@ -37,7 +37,7 @@ describe('#Search', () => {
     });
   });
 
-  describe('#Set suggests.', () => {
+  describe('#Set suggestions.', () => {
     const wrapper2 = mount(Search, {
       propsData: {
         // no-collection. -> not use fuse.js
@@ -55,8 +55,8 @@ describe('#Search', () => {
       });
     });
 
-    it('set data `suggests`.', (done) => {
-      wrapper2.setData({ suggests: [
+    it('set data `suggestions`.', (done) => {
+      wrapper2.setData({ suggestions: [
         { name: 'test-1' },
         { name: 'test-2' },
         { name: 'test-3' },

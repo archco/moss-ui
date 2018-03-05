@@ -73,7 +73,7 @@ export default {
     return {
       input: '',
       result: [],
-      suggests: [],
+      suggestions: [],
       elm: {},
       fuse: new Fuse(this.collection, this.searchOptions),
       popper: null,
@@ -103,7 +103,7 @@ export default {
       if (!this.popper) this.createPopper();
       if (val) this.popper.scheduleUpdate();
     },
-    suggests(val) {
+    suggestions(val) {
       this.setResult(val);
     },
   },

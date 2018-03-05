@@ -123,6 +123,22 @@ window.vm = new window.Vue({
       if (result.length < 1) return;
       this.onSearchItemClick(result[0]);
     },
+    onSearchInputChange: function onSearchInputChange(_ref3) {
+      var input = _ref3.input,
+          vnode = _ref3.vnode;
+
+      // Set suggestions. (Ajax Simulation)
+      var suggestions = [{ name: 'Tim Robbins' }, { name: 'Tim Burton' }, { name: 'Tim Tebow' }];
+      if (input.toLowerCase() === 'tim') {
+        setTimeout(function () {
+          vnode.suggestions = suggestions;
+        }, 500);
+      } else {
+        setTimeout(function () {
+          vnode.suggestions = [];
+        }, 200);
+      }
+    },
 
 
     // category badge style of search-result.

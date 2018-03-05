@@ -54,6 +54,14 @@
             </search>
           </div>
         </div>
+        <h2>Set Suggestions (Ajax Simulation)</h2>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <search input-placeholder="input &quot;tim&quot;.." auto-width @input-change="onSearchInputChange">
+              <li slot="result-item" slot-scope="props" tabindex="0" @click="props.onClickItem(props.item)"><span v-text="props.item.name"></span></li>
+            </search>
+          </div>
+        </div>
         <anchored-tag tag="h1" owned>Icon</anchored-tag>
         <h2>SVG default usage</h2>
         <div class="pad" style="font-size:3em;"><i class="icon" id="svg-arrow-example"></i><i class="icon" id="svg-caret-example"></i><i class="icon" id="svg-close-example"></i></div>

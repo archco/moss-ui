@@ -12,6 +12,7 @@ Simple search component that fuzzy search given collection data such like json.
 - [Usage](#usage)
   - [Default](#default)
   - [Customize of result item rendering](#customize-of-result-item-rendering)
+  - [Set Suggestions](#set-suggestions)
 - [Props](#props)
 - [Events](#events)
 - [SCSS Variables](#scss-variables)
@@ -72,6 +73,26 @@ Simple search component that fuzzy search given collection data such like json.
 - `tabindex="0"` attribute is required for key navigation on result-list.
 - `@click="props.onClickItem(props.item)"` attribute is required for emit `item-clicked` event.
 
+### Set Suggestions
+
+In addition, This component can also be used to display search-suggestions via AJAX without using fuse.js.
+
+``` html
+<!-- If you not specifying `collection` prop, than this component will be not used the fuse.js. -->
+<search @input-change="onInputChange">
+  ...
+</search>
+```
+
+``` js
+function onInputChange({ input, vnode }) {
+  axios.get('search', { params: { input } })
+    .then(({ data }) => {
+      vnode.suggestions = data.results;
+    });
+}
+```
+
 ## Props
 
 | Name | Type | Default | Description |
@@ -79,6 +100,7 @@ Simple search component that fuzzy search given collection data such like json.
 | collection | `any[]` | `[]` | A data collection that target for searching. |
 | search-options | `object` | `{}` | Search options for [fuse.js](http://fusejs.io/#live-demo) |
 | popper-options | `object` | `{}` | Options for [popper.js](https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/popper-documentation.md#Popper.Defaults) |
+| input-placeholder | `string` | `''` | The `placeholder` attribute for search input. |
 | result-limit | `number` | `0` | Limits count of result-items. If set 0, no limit. |
 | auto-width | `boolean` | `false` | Auto-width style on result-list if this value true. |
 
@@ -88,6 +110,7 @@ Simple search component that fuzzy search given collection data such like json.
 | ---- |:--------:| ----------- |
 | item-clicked | item: `object` - An object of `collection`. | This event occurs when click on result item. |
 | submit | data: [`SubmitData`](#submit-data) | This event occurs when submit on search form. |
+| input-change | data: [`InputData`](#input-data) | This event occurs when search-input are changed. |
 
 ### Submit Data
 
@@ -95,6 +118,15 @@ Simple search component that fuzzy search given collection data such like json.
 interface SubmitData {
   input: string; // value of search input.
   result: any[]; // array of result items.
+}
+```
+
+### Input Data
+
+``` ts
+interface InputData {
+  input: string; // value of search input.
+  vnode: VNode;  // search component.
 }
 ```
 

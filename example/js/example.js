@@ -43,6 +43,24 @@ window.vm = new window.Vue({
       this.onSearchItemClick(result[0]);
     },
 
+    onSearchInputChange({ input, vnode }) {
+      // Set suggestions. (Ajax Simulation)
+      const suggestions = [
+        { name: 'Tim Robbins' },
+        { name: 'Tim Burton' },
+        { name: 'Tim Tebow' },
+      ];
+      if (input.toLowerCase() === 'tim') {
+        setTimeout(() => {
+          vnode.suggestions = suggestions;
+        }, 500);
+      } else {
+        setTimeout(() => {
+          vnode.suggestions = [];
+        }, 200);
+      }
+    },
+
     // category badge style of search-result.
     getBadgeStyle(category) {
       // categories: scss, scss-helpers, vue, vue-directives, js-libraries
