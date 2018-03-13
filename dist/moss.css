@@ -39,42 +39,42 @@
     opacity: 0;
     transform: scale(50); } }
 
-.with-arrow[x-placement^="top"].dropdown-content [x-arrow], .with-arrow[x-placement^="top"].tooltip [x-arrow], .with-arrow[x-placement^="bottom"].dropdown-content [x-arrow], .with-arrow[x-placement^="bottom"].tooltip [x-arrow], .with-arrow[x-placement^="right"].dropdown-content [x-arrow], .with-arrow[x-placement^="right"].tooltip [x-arrow], .with-arrow[x-placement^="left"].dropdown-content [x-arrow], .with-arrow[x-placement^="left"].tooltip [x-arrow] {
+.with-arrow.dropdown-content[x-placement^="top"] [x-arrow], .with-arrow.tooltip[x-placement^="top"] [x-arrow], .with-arrow.dropdown-content[x-placement^="bottom"] [x-arrow], .with-arrow.tooltip[x-placement^="bottom"] [x-arrow], .with-arrow.dropdown-content[x-placement^="right"] [x-arrow], .with-arrow.tooltip[x-placement^="right"] [x-arrow], .with-arrow.dropdown-content[x-placement^="left"] [x-arrow], .with-arrow.tooltip[x-placement^="left"] [x-arrow] {
   position: absolute;
   width: 0;
   height: 0;
   border: 5px solid transparent; }
 
-.with-arrow[x-placement^="top"].dropdown-content, .with-arrow[x-placement^="top"].tooltip {
+.with-arrow.dropdown-content[x-placement^="top"], .with-arrow.tooltip[x-placement^="top"] {
   margin-bottom: 5px; }
-  .with-arrow[x-placement^="top"].dropdown-content [x-arrow], .with-arrow[x-placement^="top"].tooltip [x-arrow] {
+  .with-arrow.dropdown-content[x-placement^="top"] [x-arrow], .with-arrow.tooltip[x-placement^="top"] [x-arrow] {
     bottom: -5px;
     left: calc(50% - 5px);
     margin: 0 5px;
     border-top-color: inherit;
     border-bottom-width: 0; }
 
-.with-arrow[x-placement^="bottom"].dropdown-content, .with-arrow[x-placement^="bottom"].tooltip {
+.with-arrow.dropdown-content[x-placement^="bottom"], .with-arrow.tooltip[x-placement^="bottom"] {
   margin-top: 5px; }
-  .with-arrow[x-placement^="bottom"].dropdown-content [x-arrow], .with-arrow[x-placement^="bottom"].tooltip [x-arrow] {
+  .with-arrow.dropdown-content[x-placement^="bottom"] [x-arrow], .with-arrow.tooltip[x-placement^="bottom"] [x-arrow] {
     top: -5px;
     left: calc(50% - 5px);
     margin: 0 5px;
     border-bottom-color: inherit;
     border-top-width: 0; }
 
-.with-arrow[x-placement^="right"].dropdown-content, .with-arrow[x-placement^="right"].tooltip {
+.with-arrow.dropdown-content[x-placement^="right"], .with-arrow.tooltip[x-placement^="right"] {
   margin-left: 5px; }
-  .with-arrow[x-placement^="right"].dropdown-content [x-arrow], .with-arrow[x-placement^="right"].tooltip [x-arrow] {
+  .with-arrow.dropdown-content[x-placement^="right"] [x-arrow], .with-arrow.tooltip[x-placement^="right"] [x-arrow] {
     top: calc(50% - 5px);
     left: -5px;
     margin: 5px 0;
     border-right-color: inherit;
     border-left-width: 0; }
 
-.with-arrow[x-placement^="left"].dropdown-content, .with-arrow[x-placement^="left"].tooltip {
+.with-arrow.dropdown-content[x-placement^="left"], .with-arrow.tooltip[x-placement^="left"] {
   margin-right: 5px; }
-  .with-arrow[x-placement^="left"].dropdown-content [x-arrow], .with-arrow[x-placement^="left"].tooltip [x-arrow] {
+  .with-arrow.dropdown-content[x-placement^="left"] [x-arrow], .with-arrow.tooltip[x-placement^="left"] [x-arrow] {
     top: calc(50% - 5px);
     right: -5px;
     margin: 5px 0;
@@ -1781,12 +1781,12 @@ input[type="reset"], .btn, .btn-flat, .btn-icon, .close-button, .dropdown-button
   display: inline-block;
   text-align: center;
   vertical-align: middle; }
-  input[type="submit"]:focus,
-  input[type="button"]:focus,
-  input[type="reset"]:focus, .btn:focus, .btn-flat:focus, .btn-icon:focus, .close-button:focus, .dropdown-button:focus, .navbar-toggle:focus, .nav-item .dropdown .dropdown-button:focus, .scroll-to-container .scroll-to-top:focus,
-  .scroll-to-container .scroll-to-bottom:focus, input[type="submit"]:hover,
-  input[type="button"]:hover,
-  input[type="reset"]:hover, .btn:hover, .btn-flat:hover, .btn-icon:hover, .close-button:hover, .dropdown-button:hover, .navbar-toggle:hover, .nav-item .dropdown .dropdown-button:hover, .scroll-to-container .scroll-to-top:hover,
+  input:focus[type="submit"],
+  input:focus[type="button"],
+  input:focus[type="reset"], .btn:focus, .btn-flat:focus, .btn-icon:focus, .close-button:focus, .dropdown-button:focus, .navbar-toggle:focus, .nav-item .dropdown .dropdown-button:focus, .scroll-to-container .scroll-to-top:focus,
+  .scroll-to-container .scroll-to-bottom:focus, input:hover[type="submit"],
+  input:hover[type="button"],
+  input:hover[type="reset"], .btn:hover, .btn-flat:hover, .btn-icon:hover, .close-button:hover, .dropdown-button:hover, .navbar-toggle:hover, .nav-item .dropdown .dropdown-button:hover, .scroll-to-container .scroll-to-top:hover,
   .scroll-to-container .scroll-to-bottom:hover {
     text-decoration: none; }
 
@@ -1804,9 +1804,9 @@ input[type="reset"], .btn, .btn-flat {
   input.w-100[type="reset"], .w-100.btn, .w-100.btn-flat {
     margin-right: 0;
     margin-left: 0; }
-  input.is-loading[type="submit"]:not([disabled]),
-  input.is-loading[type="button"]:not([disabled]),
-  input.is-loading[type="reset"]:not([disabled]), .is-loading.btn:not([disabled]), .is-loading.btn-flat:not([disabled]) {
+  input.is-loading:not([disabled])[type="submit"],
+  input.is-loading:not([disabled])[type="button"],
+  input.is-loading:not([disabled])[type="reset"], .is-loading.btn:not([disabled]), .is-loading.btn-flat:not([disabled]) {
     position: relative;
     color: transparent !important; }
     input.is-loading[type="submit"]:not([disabled])::after,
@@ -1829,7 +1829,7 @@ input[type="reset"], .btn, .btn-flat {
 
 input[disabled][type="submit"],
 input[disabled][type="button"],
-input[disabled][type="reset"], [disabled].btn, [disabled].btn-icon, [disabled].btn-flat {
+input[disabled][type="reset"], .btn[disabled], .btn-icon[disabled], .btn-flat[disabled] {
   cursor: default;
   opacity: .7;
   box-shadow: none; }
@@ -1841,23 +1841,23 @@ input[type="reset"], .btn, .btn-icon {
   background-color: #a50021;
   outline-color: #a50021;
   transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-  input[type="submit"]:link,
-  input[type="button"]:link,
-  input[type="reset"]:link, .btn:link, .btn-icon:link, input[type="submit"]:visited,
-  input[type="button"]:visited,
-  input[type="reset"]:visited, .btn:visited, .btn-icon:visited {
+  input:link[type="submit"],
+  input:link[type="button"],
+  input:link[type="reset"], .btn:link, .btn-icon:link, input:visited[type="submit"],
+  input:visited[type="button"],
+  input:visited[type="reset"], .btn:visited, .btn-icon:visited {
     color: #fff; }
-  input[type="submit"]:focus:not([disabled]),
-  input[type="button"]:focus:not([disabled]),
-  input[type="reset"]:focus:not([disabled]), .btn:focus:not([disabled]), .btn-icon:focus:not([disabled]), input[type="submit"]:hover:not([disabled]),
-  input[type="button"]:hover:not([disabled]),
-  input[type="reset"]:hover:not([disabled]), .btn:hover:not([disabled]), .btn-icon:hover:not([disabled]) {
+  input:focus:not([disabled])[type="submit"],
+  input:focus:not([disabled])[type="button"],
+  input:focus:not([disabled])[type="reset"], .btn:focus:not([disabled]), .btn-icon:focus:not([disabled]), input:hover:not([disabled])[type="submit"],
+  input:hover:not([disabled])[type="button"],
+  input:hover:not([disabled])[type="reset"], .btn:hover:not([disabled]), .btn-icon:hover:not([disabled]) {
     color: #fff;
     background-color: #b90025;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-  input[type="submit"]:active:not([disabled]),
-  input[type="button"]:active:not([disabled]),
-  input[type="reset"]:active:not([disabled]), .btn:active:not([disabled]), .btn-icon:active:not([disabled]) {
+  input:active:not([disabled])[type="submit"],
+  input:active:not([disabled])[type="button"],
+  input:active:not([disabled])[type="reset"], .btn:active:not([disabled]), .btn-icon:active:not([disabled]) {
     color: #fff;
     background-color: #91001d;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
@@ -1868,23 +1868,23 @@ input[type="reset"], .btn, .btn-icon {
     background-color: #9a9a9a;
     outline-color: #9a9a9a;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.default[type="submit"]:link,
-    input.default[type="button"]:link,
-    input.default[type="reset"]:link, .default.btn:link, .default.btn-icon:link, input.default[type="submit"]:visited,
-    input.default[type="button"]:visited,
-    input.default[type="reset"]:visited, .default.btn:visited, .default.btn-icon:visited {
+    input.default:link[type="submit"],
+    input.default:link[type="button"],
+    input.default:link[type="reset"], .default.btn:link, .default.btn-icon:link, input.default:visited[type="submit"],
+    input.default:visited[type="button"],
+    input.default:visited[type="reset"], .default.btn:visited, .default.btn-icon:visited {
       color: #fff; }
-    input.default[type="submit"]:focus:not([disabled]),
-    input.default[type="button"]:focus:not([disabled]),
-    input.default[type="reset"]:focus:not([disabled]), .default.btn:focus:not([disabled]), .default.btn-icon:focus:not([disabled]), input.default[type="submit"]:hover:not([disabled]),
-    input.default[type="button"]:hover:not([disabled]),
-    input.default[type="reset"]:hover:not([disabled]), .default.btn:hover:not([disabled]), .default.btn-icon:hover:not([disabled]) {
+    input.default:focus:not([disabled])[type="submit"],
+    input.default:focus:not([disabled])[type="button"],
+    input.default:focus:not([disabled])[type="reset"], .default.btn:focus:not([disabled]), .default.btn-icon:focus:not([disabled]), input.default:hover:not([disabled])[type="submit"],
+    input.default:hover:not([disabled])[type="button"],
+    input.default:hover:not([disabled])[type="reset"], .default.btn:hover:not([disabled]), .default.btn-icon:hover:not([disabled]) {
       color: #fff;
       background-color: #a4a4a4;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.default[type="submit"]:active:not([disabled]),
-    input.default[type="button"]:active:not([disabled]),
-    input.default[type="reset"]:active:not([disabled]), .default.btn:active:not([disabled]), .default.btn-icon:active:not([disabled]) {
+    input.default:active:not([disabled])[type="submit"],
+    input.default:active:not([disabled])[type="button"],
+    input.default:active:not([disabled])[type="reset"], .default.btn:active:not([disabled]), .default.btn-icon:active:not([disabled]) {
       color: #fff;
       background-color: #909090;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
@@ -1900,23 +1900,23 @@ input[type="reset"], .btn, .btn-icon {
     background-color: #a50021;
     outline-color: #a50021;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.primary[type="submit"]:link,
-    input.primary[type="button"]:link,
-    input.primary[type="reset"]:link, .primary.btn:link, .primary.btn-icon:link, input.primary[type="submit"]:visited,
-    input.primary[type="button"]:visited,
-    input.primary[type="reset"]:visited, .primary.btn:visited, .primary.btn-icon:visited {
+    input.primary:link[type="submit"],
+    input.primary:link[type="button"],
+    input.primary:link[type="reset"], .primary.btn:link, .primary.btn-icon:link, input.primary:visited[type="submit"],
+    input.primary:visited[type="button"],
+    input.primary:visited[type="reset"], .primary.btn:visited, .primary.btn-icon:visited {
       color: #fff; }
-    input.primary[type="submit"]:focus:not([disabled]),
-    input.primary[type="button"]:focus:not([disabled]),
-    input.primary[type="reset"]:focus:not([disabled]), .primary.btn:focus:not([disabled]), .primary.btn-icon:focus:not([disabled]), input.primary[type="submit"]:hover:not([disabled]),
-    input.primary[type="button"]:hover:not([disabled]),
-    input.primary[type="reset"]:hover:not([disabled]), .primary.btn:hover:not([disabled]), .primary.btn-icon:hover:not([disabled]) {
+    input.primary:focus:not([disabled])[type="submit"],
+    input.primary:focus:not([disabled])[type="button"],
+    input.primary:focus:not([disabled])[type="reset"], .primary.btn:focus:not([disabled]), .primary.btn-icon:focus:not([disabled]), input.primary:hover:not([disabled])[type="submit"],
+    input.primary:hover:not([disabled])[type="button"],
+    input.primary:hover:not([disabled])[type="reset"], .primary.btn:hover:not([disabled]), .primary.btn-icon:hover:not([disabled]) {
       color: #fff;
       background-color: #b90025;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.primary[type="submit"]:active:not([disabled]),
-    input.primary[type="button"]:active:not([disabled]),
-    input.primary[type="reset"]:active:not([disabled]), .primary.btn:active:not([disabled]), .primary.btn-icon:active:not([disabled]) {
+    input.primary:active:not([disabled])[type="submit"],
+    input.primary:active:not([disabled])[type="button"],
+    input.primary:active:not([disabled])[type="reset"], .primary.btn:active:not([disabled]), .primary.btn-icon:active:not([disabled]) {
       color: #fff;
       background-color: #91001d;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
@@ -1932,23 +1932,23 @@ input[type="reset"], .btn, .btn-icon {
     background-color: #4c5866;
     outline-color: #4c5866;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.secondary[type="submit"]:link,
-    input.secondary[type="button"]:link,
-    input.secondary[type="reset"]:link, .secondary.btn:link, .secondary.btn-icon:link, input.secondary[type="submit"]:visited,
-    input.secondary[type="button"]:visited,
-    input.secondary[type="reset"]:visited, .secondary.btn:visited, .secondary.btn-icon:visited {
+    input.secondary:link[type="submit"],
+    input.secondary:link[type="button"],
+    input.secondary:link[type="reset"], .secondary.btn:link, .secondary.btn-icon:link, input.secondary:visited[type="submit"],
+    input.secondary:visited[type="button"],
+    input.secondary:visited[type="reset"], .secondary.btn:visited, .secondary.btn-icon:visited {
       color: #fff; }
-    input.secondary[type="submit"]:focus:not([disabled]),
-    input.secondary[type="button"]:focus:not([disabled]),
-    input.secondary[type="reset"]:focus:not([disabled]), .secondary.btn:focus:not([disabled]), .secondary.btn-icon:focus:not([disabled]), input.secondary[type="submit"]:hover:not([disabled]),
-    input.secondary[type="button"]:hover:not([disabled]),
-    input.secondary[type="reset"]:hover:not([disabled]), .secondary.btn:hover:not([disabled]), .secondary.btn-icon:hover:not([disabled]) {
+    input.secondary:focus:not([disabled])[type="submit"],
+    input.secondary:focus:not([disabled])[type="button"],
+    input.secondary:focus:not([disabled])[type="reset"], .secondary.btn:focus:not([disabled]), .secondary.btn-icon:focus:not([disabled]), input.secondary:hover:not([disabled])[type="submit"],
+    input.secondary:hover:not([disabled])[type="button"],
+    input.secondary:hover:not([disabled])[type="reset"], .secondary.btn:hover:not([disabled]), .secondary.btn-icon:hover:not([disabled]) {
       color: #fff;
       background-color: #556272;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.secondary[type="submit"]:active:not([disabled]),
-    input.secondary[type="button"]:active:not([disabled]),
-    input.secondary[type="reset"]:active:not([disabled]), .secondary.btn:active:not([disabled]), .secondary.btn-icon:active:not([disabled]) {
+    input.secondary:active:not([disabled])[type="submit"],
+    input.secondary:active:not([disabled])[type="button"],
+    input.secondary:active:not([disabled])[type="reset"], .secondary.btn:active:not([disabled]), .secondary.btn-icon:active:not([disabled]) {
       color: #fff;
       background-color: #434e5a;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
@@ -1964,23 +1964,23 @@ input[type="reset"], .btn, .btn-icon {
     background-color: #008080;
     outline-color: #008080;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.info[type="submit"]:link,
-    input.info[type="button"]:link,
-    input.info[type="reset"]:link, .info.btn:link, .info.btn-icon:link, input.info[type="submit"]:visited,
-    input.info[type="button"]:visited,
-    input.info[type="reset"]:visited, .info.btn:visited, .info.btn-icon:visited {
+    input.info:link[type="submit"],
+    input.info:link[type="button"],
+    input.info:link[type="reset"], .info.btn:link, .info.btn-icon:link, input.info:visited[type="submit"],
+    input.info:visited[type="button"],
+    input.info:visited[type="reset"], .info.btn:visited, .info.btn-icon:visited {
       color: #fff; }
-    input.info[type="submit"]:focus:not([disabled]),
-    input.info[type="button"]:focus:not([disabled]),
-    input.info[type="reset"]:focus:not([disabled]), .info.btn:focus:not([disabled]), .info.btn-icon:focus:not([disabled]), input.info[type="submit"]:hover:not([disabled]),
-    input.info[type="button"]:hover:not([disabled]),
-    input.info[type="reset"]:hover:not([disabled]), .info.btn:hover:not([disabled]), .info.btn-icon:hover:not([disabled]) {
+    input.info:focus:not([disabled])[type="submit"],
+    input.info:focus:not([disabled])[type="button"],
+    input.info:focus:not([disabled])[type="reset"], .info.btn:focus:not([disabled]), .info.btn-icon:focus:not([disabled]), input.info:hover:not([disabled])[type="submit"],
+    input.info:hover:not([disabled])[type="button"],
+    input.info:hover:not([disabled])[type="reset"], .info.btn:hover:not([disabled]), .info.btn-icon:hover:not([disabled]) {
       color: #fff;
       background-color: #009494;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.info[type="submit"]:active:not([disabled]),
-    input.info[type="button"]:active:not([disabled]),
-    input.info[type="reset"]:active:not([disabled]), .info.btn:active:not([disabled]), .info.btn-icon:active:not([disabled]) {
+    input.info:active:not([disabled])[type="submit"],
+    input.info:active:not([disabled])[type="button"],
+    input.info:active:not([disabled])[type="reset"], .info.btn:active:not([disabled]), .info.btn-icon:active:not([disabled]) {
       color: #fff;
       background-color: #006c6c;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
@@ -1996,23 +1996,23 @@ input[type="reset"], .btn, .btn-icon {
     background-color: #00a550;
     outline-color: #00a550;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.success[type="submit"]:link,
-    input.success[type="button"]:link,
-    input.success[type="reset"]:link, .success.btn:link, .success.btn-icon:link, input.success[type="submit"]:visited,
-    input.success[type="button"]:visited,
-    input.success[type="reset"]:visited, .success.btn:visited, .success.btn-icon:visited {
+    input.success:link[type="submit"],
+    input.success:link[type="button"],
+    input.success:link[type="reset"], .success.btn:link, .success.btn-icon:link, input.success:visited[type="submit"],
+    input.success:visited[type="button"],
+    input.success:visited[type="reset"], .success.btn:visited, .success.btn-icon:visited {
       color: #fff; }
-    input.success[type="submit"]:focus:not([disabled]),
-    input.success[type="button"]:focus:not([disabled]),
-    input.success[type="reset"]:focus:not([disabled]), .success.btn:focus:not([disabled]), .success.btn-icon:focus:not([disabled]), input.success[type="submit"]:hover:not([disabled]),
-    input.success[type="button"]:hover:not([disabled]),
-    input.success[type="reset"]:hover:not([disabled]), .success.btn:hover:not([disabled]), .success.btn-icon:hover:not([disabled]) {
+    input.success:focus:not([disabled])[type="submit"],
+    input.success:focus:not([disabled])[type="button"],
+    input.success:focus:not([disabled])[type="reset"], .success.btn:focus:not([disabled]), .success.btn-icon:focus:not([disabled]), input.success:hover:not([disabled])[type="submit"],
+    input.success:hover:not([disabled])[type="button"],
+    input.success:hover:not([disabled])[type="reset"], .success.btn:hover:not([disabled]), .success.btn-icon:hover:not([disabled]) {
       color: #fff;
       background-color: #00b95a;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.success[type="submit"]:active:not([disabled]),
-    input.success[type="button"]:active:not([disabled]),
-    input.success[type="reset"]:active:not([disabled]), .success.btn:active:not([disabled]), .success.btn-icon:active:not([disabled]) {
+    input.success:active:not([disabled])[type="submit"],
+    input.success:active:not([disabled])[type="button"],
+    input.success:active:not([disabled])[type="reset"], .success.btn:active:not([disabled]), .success.btn-icon:active:not([disabled]) {
       color: #fff;
       background-color: #009146;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
@@ -2028,23 +2028,23 @@ input[type="reset"], .btn, .btn-icon {
     background-color: #ffd300;
     outline-color: #ffd300;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.warning[type="submit"]:link,
-    input.warning[type="button"]:link,
-    input.warning[type="reset"]:link, .warning.btn:link, .warning.btn-icon:link, input.warning[type="submit"]:visited,
-    input.warning[type="button"]:visited,
-    input.warning[type="reset"]:visited, .warning.btn:visited, .warning.btn-icon:visited {
+    input.warning:link[type="submit"],
+    input.warning:link[type="button"],
+    input.warning:link[type="reset"], .warning.btn:link, .warning.btn-icon:link, input.warning:visited[type="submit"],
+    input.warning:visited[type="button"],
+    input.warning:visited[type="reset"], .warning.btn:visited, .warning.btn-icon:visited {
       color: #343434; }
-    input.warning[type="submit"]:focus:not([disabled]),
-    input.warning[type="button"]:focus:not([disabled]),
-    input.warning[type="reset"]:focus:not([disabled]), .warning.btn:focus:not([disabled]), .warning.btn-icon:focus:not([disabled]), input.warning[type="submit"]:hover:not([disabled]),
-    input.warning[type="button"]:hover:not([disabled]),
-    input.warning[type="reset"]:hover:not([disabled]), .warning.btn:hover:not([disabled]), .warning.btn-icon:hover:not([disabled]) {
+    input.warning:focus:not([disabled])[type="submit"],
+    input.warning:focus:not([disabled])[type="button"],
+    input.warning:focus:not([disabled])[type="reset"], .warning.btn:focus:not([disabled]), .warning.btn-icon:focus:not([disabled]), input.warning:hover:not([disabled])[type="submit"],
+    input.warning:hover:not([disabled])[type="button"],
+    input.warning:hover:not([disabled])[type="reset"], .warning.btn:hover:not([disabled]), .warning.btn-icon:hover:not([disabled]) {
       color: #343434;
       background-color: #ffd714;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.warning[type="submit"]:active:not([disabled]),
-    input.warning[type="button"]:active:not([disabled]),
-    input.warning[type="reset"]:active:not([disabled]), .warning.btn:active:not([disabled]), .warning.btn-icon:active:not([disabled]) {
+    input.warning:active:not([disabled])[type="submit"],
+    input.warning:active:not([disabled])[type="button"],
+    input.warning:active:not([disabled])[type="reset"], .warning.btn:active:not([disabled]), .warning.btn-icon:active:not([disabled]) {
       color: #343434;
       background-color: #ebc200;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
@@ -2060,23 +2060,23 @@ input[type="reset"], .btn, .btn-icon {
     background-color: #e23d28;
     outline-color: #e23d28;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.danger[type="submit"]:link,
-    input.danger[type="button"]:link,
-    input.danger[type="reset"]:link, .danger.btn:link, .danger.btn-icon:link, input.danger[type="submit"]:visited,
-    input.danger[type="button"]:visited,
-    input.danger[type="reset"]:visited, .danger.btn:visited, .danger.btn-icon:visited {
+    input.danger:link[type="submit"],
+    input.danger:link[type="button"],
+    input.danger:link[type="reset"], .danger.btn:link, .danger.btn-icon:link, input.danger:visited[type="submit"],
+    input.danger:visited[type="button"],
+    input.danger:visited[type="reset"], .danger.btn:visited, .danger.btn-icon:visited {
       color: #fff; }
-    input.danger[type="submit"]:focus:not([disabled]),
-    input.danger[type="button"]:focus:not([disabled]),
-    input.danger[type="reset"]:focus:not([disabled]), .danger.btn:focus:not([disabled]), .danger.btn-icon:focus:not([disabled]), input.danger[type="submit"]:hover:not([disabled]),
-    input.danger[type="button"]:hover:not([disabled]),
-    input.danger[type="reset"]:hover:not([disabled]), .danger.btn:hover:not([disabled]), .danger.btn-icon:hover:not([disabled]) {
+    input.danger:focus:not([disabled])[type="submit"],
+    input.danger:focus:not([disabled])[type="button"],
+    input.danger:focus:not([disabled])[type="reset"], .danger.btn:focus:not([disabled]), .danger.btn-icon:focus:not([disabled]), input.danger:hover:not([disabled])[type="submit"],
+    input.danger:hover:not([disabled])[type="button"],
+    input.danger:hover:not([disabled])[type="reset"], .danger.btn:hover:not([disabled]), .danger.btn-icon:hover:not([disabled]) {
       color: #fff;
       background-color: #e44d3a;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.danger[type="submit"]:active:not([disabled]),
-    input.danger[type="button"]:active:not([disabled]),
-    input.danger[type="reset"]:active:not([disabled]), .danger.btn:active:not([disabled]), .danger.btn-icon:active:not([disabled]) {
+    input.danger:active:not([disabled])[type="submit"],
+    input.danger:active:not([disabled])[type="button"],
+    input.danger:active:not([disabled])[type="reset"], .danger.btn:active:not([disabled]), .danger.btn-icon:active:not([disabled]) {
       color: #fff;
       background-color: #d8321d;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
@@ -2092,23 +2092,23 @@ input[type="reset"], .btn, .btn-icon {
     background-color: #e23d28;
     outline-color: #e23d28;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.error[type="submit"]:link,
-    input.error[type="button"]:link,
-    input.error[type="reset"]:link, .error.btn:link, .error.btn-icon:link, input.error[type="submit"]:visited,
-    input.error[type="button"]:visited,
-    input.error[type="reset"]:visited, .error.btn:visited, .error.btn-icon:visited {
+    input.error:link[type="submit"],
+    input.error:link[type="button"],
+    input.error:link[type="reset"], .error.btn:link, .error.btn-icon:link, input.error:visited[type="submit"],
+    input.error:visited[type="button"],
+    input.error:visited[type="reset"], .error.btn:visited, .error.btn-icon:visited {
       color: #fff; }
-    input.error[type="submit"]:focus:not([disabled]),
-    input.error[type="button"]:focus:not([disabled]),
-    input.error[type="reset"]:focus:not([disabled]), .error.btn:focus:not([disabled]), .error.btn-icon:focus:not([disabled]), input.error[type="submit"]:hover:not([disabled]),
-    input.error[type="button"]:hover:not([disabled]),
-    input.error[type="reset"]:hover:not([disabled]), .error.btn:hover:not([disabled]), .error.btn-icon:hover:not([disabled]) {
+    input.error:focus:not([disabled])[type="submit"],
+    input.error:focus:not([disabled])[type="button"],
+    input.error:focus:not([disabled])[type="reset"], .error.btn:focus:not([disabled]), .error.btn-icon:focus:not([disabled]), input.error:hover:not([disabled])[type="submit"],
+    input.error:hover:not([disabled])[type="button"],
+    input.error:hover:not([disabled])[type="reset"], .error.btn:hover:not([disabled]), .error.btn-icon:hover:not([disabled]) {
       color: #fff;
       background-color: #e44d3a;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.error[type="submit"]:active:not([disabled]),
-    input.error[type="button"]:active:not([disabled]),
-    input.error[type="reset"]:active:not([disabled]), .error.btn:active:not([disabled]), .error.btn-icon:active:not([disabled]) {
+    input.error:active:not([disabled])[type="submit"],
+    input.error:active:not([disabled])[type="button"],
+    input.error:active:not([disabled])[type="reset"], .error.btn:active:not([disabled]), .error.btn-icon:active:not([disabled]) {
       color: #fff;
       background-color: #d8321d;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
@@ -2124,23 +2124,23 @@ input[type="reset"], .btn, .btn-icon {
     background-color: #fff;
     outline-color: #fff;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.light[type="submit"]:link,
-    input.light[type="button"]:link,
-    input.light[type="reset"]:link, .light.btn:link, .light.btn-icon:link, input.light[type="submit"]:visited,
-    input.light[type="button"]:visited,
-    input.light[type="reset"]:visited, .light.btn:visited, .light.btn-icon:visited {
+    input.light:link[type="submit"],
+    input.light:link[type="button"],
+    input.light:link[type="reset"], .light.btn:link, .light.btn-icon:link, input.light:visited[type="submit"],
+    input.light:visited[type="button"],
+    input.light:visited[type="reset"], .light.btn:visited, .light.btn-icon:visited {
       color: #343434; }
-    input.light[type="submit"]:focus:not([disabled]),
-    input.light[type="button"]:focus:not([disabled]),
-    input.light[type="reset"]:focus:not([disabled]), .light.btn:focus:not([disabled]), .light.btn-icon:focus:not([disabled]), input.light[type="submit"]:hover:not([disabled]),
-    input.light[type="button"]:hover:not([disabled]),
-    input.light[type="reset"]:hover:not([disabled]), .light.btn:hover:not([disabled]), .light.btn-icon:hover:not([disabled]) {
+    input.light:focus:not([disabled])[type="submit"],
+    input.light:focus:not([disabled])[type="button"],
+    input.light:focus:not([disabled])[type="reset"], .light.btn:focus:not([disabled]), .light.btn-icon:focus:not([disabled]), input.light:hover:not([disabled])[type="submit"],
+    input.light:hover:not([disabled])[type="button"],
+    input.light:hover:not([disabled])[type="reset"], .light.btn:hover:not([disabled]), .light.btn-icon:hover:not([disabled]) {
       color: #343434;
       background-color: white;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.light[type="submit"]:active:not([disabled]),
-    input.light[type="button"]:active:not([disabled]),
-    input.light[type="reset"]:active:not([disabled]), .light.btn:active:not([disabled]), .light.btn-icon:active:not([disabled]) {
+    input.light:active:not([disabled])[type="submit"],
+    input.light:active:not([disabled])[type="button"],
+    input.light:active:not([disabled])[type="reset"], .light.btn:active:not([disabled]), .light.btn-icon:active:not([disabled]) {
       color: #343434;
       background-color: whitesmoke;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
@@ -2156,23 +2156,23 @@ input[type="reset"], .btn, .btn-icon {
     background-color: #343434;
     outline-color: #343434;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.dark[type="submit"]:link,
-    input.dark[type="button"]:link,
-    input.dark[type="reset"]:link, .dark.btn:link, .dark.btn-icon:link, input.dark[type="submit"]:visited,
-    input.dark[type="button"]:visited,
-    input.dark[type="reset"]:visited, .dark.btn:visited, .dark.btn-icon:visited {
+    input.dark:link[type="submit"],
+    input.dark:link[type="button"],
+    input.dark:link[type="reset"], .dark.btn:link, .dark.btn-icon:link, input.dark:visited[type="submit"],
+    input.dark:visited[type="button"],
+    input.dark:visited[type="reset"], .dark.btn:visited, .dark.btn-icon:visited {
       color: #fff; }
-    input.dark[type="submit"]:focus:not([disabled]),
-    input.dark[type="button"]:focus:not([disabled]),
-    input.dark[type="reset"]:focus:not([disabled]), .dark.btn:focus:not([disabled]), .dark.btn-icon:focus:not([disabled]), input.dark[type="submit"]:hover:not([disabled]),
-    input.dark[type="button"]:hover:not([disabled]),
-    input.dark[type="reset"]:hover:not([disabled]), .dark.btn:hover:not([disabled]), .dark.btn-icon:hover:not([disabled]) {
+    input.dark:focus:not([disabled])[type="submit"],
+    input.dark:focus:not([disabled])[type="button"],
+    input.dark:focus:not([disabled])[type="reset"], .dark.btn:focus:not([disabled]), .dark.btn-icon:focus:not([disabled]), input.dark:hover:not([disabled])[type="submit"],
+    input.dark:hover:not([disabled])[type="button"],
+    input.dark:hover:not([disabled])[type="reset"], .dark.btn:hover:not([disabled]), .dark.btn-icon:hover:not([disabled]) {
       color: #fff;
       background-color: #3e3e3e;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.dark[type="submit"]:active:not([disabled]),
-    input.dark[type="button"]:active:not([disabled]),
-    input.dark[type="reset"]:active:not([disabled]), .dark.btn:active:not([disabled]), .dark.btn-icon:active:not([disabled]) {
+    input.dark:active:not([disabled])[type="submit"],
+    input.dark:active:not([disabled])[type="button"],
+    input.dark:active:not([disabled])[type="reset"], .dark.btn:active:not([disabled]), .dark.btn-icon:active:not([disabled]) {
       color: #fff;
       background-color: #2a2a2a;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
@@ -2188,23 +2188,23 @@ input[type="reset"], .btn, .btn-icon {
     background-color: #ebebeb;
     outline-color: #ebebeb;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.shade[type="submit"]:link,
-    input.shade[type="button"]:link,
-    input.shade[type="reset"]:link, .shade.btn:link, .shade.btn-icon:link, input.shade[type="submit"]:visited,
-    input.shade[type="button"]:visited,
-    input.shade[type="reset"]:visited, .shade.btn:visited, .shade.btn-icon:visited {
+    input.shade:link[type="submit"],
+    input.shade:link[type="button"],
+    input.shade:link[type="reset"], .shade.btn:link, .shade.btn-icon:link, input.shade:visited[type="submit"],
+    input.shade:visited[type="button"],
+    input.shade:visited[type="reset"], .shade.btn:visited, .shade.btn-icon:visited {
       color: #343434; }
-    input.shade[type="submit"]:focus:not([disabled]),
-    input.shade[type="button"]:focus:not([disabled]),
-    input.shade[type="reset"]:focus:not([disabled]), .shade.btn:focus:not([disabled]), .shade.btn-icon:focus:not([disabled]), input.shade[type="submit"]:hover:not([disabled]),
-    input.shade[type="button"]:hover:not([disabled]),
-    input.shade[type="reset"]:hover:not([disabled]), .shade.btn:hover:not([disabled]), .shade.btn-icon:hover:not([disabled]) {
+    input.shade:focus:not([disabled])[type="submit"],
+    input.shade:focus:not([disabled])[type="button"],
+    input.shade:focus:not([disabled])[type="reset"], .shade.btn:focus:not([disabled]), .shade.btn-icon:focus:not([disabled]), input.shade:hover:not([disabled])[type="submit"],
+    input.shade:hover:not([disabled])[type="button"],
+    input.shade:hover:not([disabled])[type="reset"], .shade.btn:hover:not([disabled]), .shade.btn-icon:hover:not([disabled]) {
       color: #343434;
       background-color: whitesmoke;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.shade[type="submit"]:active:not([disabled]),
-    input.shade[type="button"]:active:not([disabled]),
-    input.shade[type="reset"]:active:not([disabled]), .shade.btn:active:not([disabled]), .shade.btn-icon:active:not([disabled]) {
+    input.shade:active:not([disabled])[type="submit"],
+    input.shade:active:not([disabled])[type="button"],
+    input.shade:active:not([disabled])[type="reset"], .shade.btn:active:not([disabled]), .shade.btn-icon:active:not([disabled]) {
       color: #343434;
       background-color: #e1e1e1;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
@@ -2220,23 +2220,23 @@ input[type="reset"], .btn, .btn-icon {
     background-color: #0087bd;
     outline-color: #0087bd;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.link[type="submit"]:link,
-    input.link[type="button"]:link,
-    input.link[type="reset"]:link, .link.btn:link, .link.btn-icon:link, input.link[type="submit"]:visited,
-    input.link[type="button"]:visited,
-    input.link[type="reset"]:visited, .link.btn:visited, .link.btn-icon:visited {
+    input.link:link[type="submit"],
+    input.link:link[type="button"],
+    input.link:link[type="reset"], .link.btn:link, .link.btn-icon:link, input.link:visited[type="submit"],
+    input.link:visited[type="button"],
+    input.link:visited[type="reset"], .link.btn:visited, .link.btn-icon:visited {
       color: #fff; }
-    input.link[type="submit"]:focus:not([disabled]),
-    input.link[type="button"]:focus:not([disabled]),
-    input.link[type="reset"]:focus:not([disabled]), .link.btn:focus:not([disabled]), .link.btn-icon:focus:not([disabled]), input.link[type="submit"]:hover:not([disabled]),
-    input.link[type="button"]:hover:not([disabled]),
-    input.link[type="reset"]:hover:not([disabled]), .link.btn:hover:not([disabled]), .link.btn-icon:hover:not([disabled]) {
+    input.link:focus:not([disabled])[type="submit"],
+    input.link:focus:not([disabled])[type="button"],
+    input.link:focus:not([disabled])[type="reset"], .link.btn:focus:not([disabled]), .link.btn-icon:focus:not([disabled]), input.link:hover:not([disabled])[type="submit"],
+    input.link:hover:not([disabled])[type="button"],
+    input.link:hover:not([disabled])[type="reset"], .link.btn:hover:not([disabled]), .link.btn-icon:hover:not([disabled]) {
       color: #fff;
       background-color: #0096d1;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.link[type="submit"]:active:not([disabled]),
-    input.link[type="button"]:active:not([disabled]),
-    input.link[type="reset"]:active:not([disabled]), .link.btn:active:not([disabled]), .link.btn-icon:active:not([disabled]) {
+    input.link:active:not([disabled])[type="submit"],
+    input.link:active:not([disabled])[type="button"],
+    input.link:active:not([disabled])[type="reset"], .link.btn:active:not([disabled]), .link.btn-icon:active:not([disabled]) {
       color: #fff;
       background-color: #0078a9;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
@@ -2403,11 +2403,17 @@ input[type="reset"], .btn, .btn-icon {
   display: -ms-inline-flexbox;
   display: inline-flex;
   margin: .2em; }
-  .btn-group > .btn, .btn-group-vertical > .btn, .btn-group > .btn-flat, .btn-group-vertical > .btn-flat, .btn-group > .dropdown > .dropdown-button, .btn-group-vertical > .dropdown > .dropdown-button {
+  .btn-group > .btn, .btn-group-vertical > .btn,
+  .btn-group > .btn-flat,
+  .btn-group-vertical > .btn-flat,
+  .btn-group > .dropdown > .dropdown-button,
+  .btn-group-vertical > .dropdown > .dropdown-button {
     -ms-flex: 0 1 auto;
         flex: 0 1 auto;
     margin: 0; }
-  .btn-group > .btn:not(:first-child):not(:last-child), .btn-group-vertical > .btn:not(:first-child):not(:last-child), .btn-group > .btn-flat:not(:first-child):not(:last-child), .btn-group-vertical > .btn-flat:not(:first-child):not(:last-child) {
+  .btn-group > .btn:not(:first-child):not(:last-child), .btn-group-vertical > .btn:not(:first-child):not(:last-child),
+  .btn-group > .btn-flat:not(:first-child):not(:last-child),
+  .btn-group-vertical > .btn-flat:not(:first-child):not(:last-child) {
     border-radius: 0; }
   .btn-group > .dropdown:not(:first-child):not(:last-child) > .dropdown-button, .btn-group-vertical > .dropdown:not(:first-child):not(:last-child) > .dropdown-button {
     border-radius: 0; }
@@ -3448,7 +3454,9 @@ dropdown,
     border-radius: 50%;
     content: '';
     transition: transform 0.3s ease-out; }
-  .input-check.toggle .input-box svg, .input-radio.toggle .input-box svg, .input-check.toggle .input-box .input-box-circle, .input-radio.toggle .input-box .input-box-circle {
+  .input-check.toggle .input-box svg, .input-radio.toggle .input-box svg,
+  .input-check.toggle .input-box .input-box-circle,
+  .input-radio.toggle .input-box .input-box-circle {
     display: none; }
 
 .input-check.toggle input:checked ~ .input-box, .input-radio.toggle input:checked ~ .input-box {
@@ -3872,14 +3880,10 @@ simple-crud,
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   background-color: rgba(52, 52, 52, 0.1); }
-  .simple-crud-item .read .content,
-  .simple-crud-item .update .content,
-  .simple-crud-item .delete .content {
+  .simple-crud-item .read .content, .simple-crud-item .update .content, .simple-crud-item .delete .content {
     -ms-flex: 1 1 auto;
         flex: 1 1 auto; }
-  .simple-crud-item .read .actions,
-  .simple-crud-item .update .actions,
-  .simple-crud-item .delete .actions {
+  .simple-crud-item .read .actions, .simple-crud-item .update .actions, .simple-crud-item .delete .actions {
     -ms-flex: 0 1 auto;
         flex: 0 1 auto; }
 
