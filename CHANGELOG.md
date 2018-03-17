@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Added
+
+- Added `.travis.yml`. [![Build Status](https://travis-ci.org/archco/moss-ui.svg?branch=master)](https://travis-ci.org/archco/moss-ui)
+
 ### Changed
 
 - Changed testing tool to [vue-jest](https://vue-test-utils.vuejs.org/en/guides/testing-SFCs-with-jest.html). #96
