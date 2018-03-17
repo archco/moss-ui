@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Changed
+
+- Changed testing tool to [vue-jest](https://vue-test-utils.vuejs.org/en/guides/testing-SFCs-with-jest.html). #96
+- Updated webpack to v4.1.1. #94 #96
+
 ## [0.5.2][] - 2018-03-05
 
 ### Added
