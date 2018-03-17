@@ -12,7 +12,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "cross-env NODE_ENV=test jest",
+    "test": "jest",
     "prebuild": "node task/pre-build.js",
     "build": "webpack --hide-modules --config ./task/webpack.prod.config.js && npm run pug",
     "dev": "webpack --hide-modules --config ./task/webpack.dev.config.js",
@@ -40,15 +40,12 @@
   },
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.12",
-    "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
     "babel-jest": "^23.0.0-alpha.0",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "babel-register": "^6.26.0",
     "concurrently": "^3.5.1",
-    "cross-env": "^5.1.4",
     "css-loader": "^0.28.10",
     "eslint": "^4.18.2",
     "eslint-plugin-html": "^4.0.2",
@@ -72,7 +69,6 @@
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.11",
     "webpack-merge": "^4.1.2",
-    "webpack-node-externals": "^1.6.0",
     "webpack-notifier": "^1.6.0"
   },
   "babel": {

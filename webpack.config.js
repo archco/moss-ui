@@ -1,9 +1,8 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
-const nodeExternals = require('webpack-node-externals');
 
-const config = {
+module.exports = {
   entry: {
     moss: ['./src/scss/moss.scss', './src/js/moss.js'],
   },
@@ -90,10 +89,3 @@ const config = {
     }),
   ],
 };
-
-if (process.env.NODE_ENV === 'test') {
-  config.externals = [nodeExternals()];
-  config.devtool = 'inline-cheap-module-source-map';
-}
-
-module.exports = config;
