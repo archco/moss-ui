@@ -8,7 +8,7 @@ describe('#MessageBox', () => {
   });
   const getMessage = index => wrapper.vm.messages[index];
 
-  before(() => {
+  beforeAll(() => {
     document.documentElement.appendChild(wrapper.element);
   });
 
