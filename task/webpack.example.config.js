@@ -1,23 +1,27 @@
 const path = require('path');
-const Rules = require('./webpack-module-rules');
-const WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = {
   entry: {
     example: './example/js/example.js',
   },
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   output: {
     path: path.resolve(__dirname, '../example/dist'),
     filename: '[name].js',
   },
   module: {
-    rules: [Rules.js],
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env'],
+          },
+        },
+      },
+    ],
   },
   devtool: 'source-map',
-  plugins: [
-    new WebpackNotifierPlugin({
-      alwaysNotify: true,
-      sound: false,
-    }),
-  ]
 };
