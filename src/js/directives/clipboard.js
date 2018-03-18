@@ -26,7 +26,7 @@ export default {
     const eventName = binding.arg || 'clipboard-success';
 
     clipboard.on('success', event => {
-      vnode.context.$root.$emit(eventName, event);
+      vnode.context.$emit(eventName, event);
 
       if (typeof binding.value === 'object'
         && typeof binding.value.callback === 'function') {
@@ -44,11 +44,12 @@ function resolveOptionsForClipboard(binding) {
   if (typeof binding.value === 'string') {
     options.text = () => binding.value;
   } else if (typeof binding.value === 'object') {
-    if (binding.value.text) options.text = () => binding.value.text;
+    if (binding.value.text) {
+      options.text = () => binding.value.text;
+    }
     if (binding.value.target) {
       options.target = () => getElement(binding.value.target);
     }
   }
-
   return options;
 }

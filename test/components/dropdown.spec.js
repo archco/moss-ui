@@ -1,4 +1,3 @@
-import expect from 'expect';
 import { mount } from '@vue/test-utils';
 import Dropdown from '../../src/js/components/dropdown.vue';
 

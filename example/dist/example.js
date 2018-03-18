@@ -138,8 +138,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-window.Vue.use(window.MossUI.default); /* eslint-disable no-unused-vars */
-
+window.Vue.use(window.MossUI.default);
 
 var searchOptions = {
   keys: [{ name: 'name', weight: .5 }, { name: 'category', weight: .3 }, { name: 'description', weight: .2 }]
@@ -217,6 +216,9 @@ window.vm = new window.Vue({
     this.$on('clipboard-success', function (event) {
       var msg = event.action == 'copy' ? 'Copied' : 'Cut';
       window.Moss.toast(msg + ' on clipboard');
+    });
+    this.$on('scrollspy-activate', function (item) {
+      console.log(item.elm);
     });
   }
 });

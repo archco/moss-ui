@@ -19,6 +19,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Changed testing tool to [vue-jest](https://vue-test-utils.vuejs.org/en/guides/testing-SFCs-with-jest.html). #96
 - Updated webpack to v4.1.1. #94 #96
+- Changed event target to VNode, not $root. #97
+  - v-clipboard: `clipboard-success`
+  - v-scrollspy: `scrollspy-active`, `scrollspy-refresh`
 
 ## [0.5.2][] - 2018-03-05
 

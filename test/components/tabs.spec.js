@@ -1,4 +1,3 @@
-import expect from 'expect';
 import { shallow } from '@vue/test-utils';
 import Tabs from '../../src/js/components/tabs.vue';
 

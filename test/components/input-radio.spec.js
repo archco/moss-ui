@@ -1,4 +1,3 @@
-import expect from 'expect';
 import { mount } from '@vue/test-utils';
 import InputRadio from '../../src/js/components/input-radio.vue';
 

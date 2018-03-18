@@ -1,4 +1,3 @@
-import expect from 'expect';
 import { mount } from '@vue/test-utils';
 import Search from '../../src/js/components/search.vue';
 import collection from '../../example/js/data/collection.json';

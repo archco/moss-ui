@@ -1,4 +1,3 @@
-import expect from 'expect';
 import { mount } from '@vue/test-utils';
 import AnchoredTag from '../../src/js/components/anchored-tag.vue';
 

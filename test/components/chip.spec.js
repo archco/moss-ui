@@ -1,4 +1,3 @@
-import expect from 'expect';
 import { mount } from '@vue/test-utils';
 import Chip from '../../src/js/components/chip.vue';
 

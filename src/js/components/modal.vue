@@ -90,7 +90,7 @@ export default {
     // register events to $root and self.
     this.$root.$on('modal-toggle', this.toggleModal.bind(this));
     this.$on('close', () => {
-      this.$root.$emit('modal-toggle', this.name, 'close');
+      this.toggleModal(this.name, 'close');
     });
 
     // Attaches helper methods to Moss object.

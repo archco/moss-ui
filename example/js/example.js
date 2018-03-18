@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { treeData, treeData2 } from './data/tree';
 import collection from './data/collection.json';
 import * as Partials from './partials';
@@ -76,13 +75,16 @@ window.vm = new window.Vue({
         color: bgColor.brightness > 165 ? '#333' : '#fff',
         backgroundColor: bgColor.toHex(true),
       };
-    }
+    },
   },
 
   beforeMount() {
     this.$on('clipboard-success', event => {
       const msg = event.action == 'copy' ? 'Copied' : 'Cut';
       window.Moss.toast(`${msg} on clipboard`);
+    });
+    this.$on('scrollspy-activate', item => {
+      console.log(item.elm);
     });
   },
 });
