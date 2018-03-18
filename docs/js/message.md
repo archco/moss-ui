@@ -75,9 +75,11 @@ window.Moss.messageBox.add('Some message.', 'info');
 Add a new message in message-box.
 
 - Syntax
+
   ``` js
   window.Moss.messageBox.add(text, status = 'default');
   ```
+
 - Param `String` text - message text.
 - Param `String` status - status keyword.
 
@@ -86,6 +88,7 @@ Add a new message in message-box.
 Clear all messages in message-box.
 
 - Syntax
+
   ``` js
   window.Moss.messageBox.clear();
   ```
