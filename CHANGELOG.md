@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+## [0.5.3][] - 2018-03-18
+
 ### Added
 
 - Added `.travis.yml`. [![Build Status](https://travis-ci.org/archco/moss-ui.svg?branch=master)](https://travis-ci.org/archco/moss-ui)
@@ -168,7 +170,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Remove unnecessary part "aside.scss". #60
 - Remove deprecated scss mixin, `flex-container()`. instead use `flex-container-align`. #52
 
-[Unreleased]: https://github.com/archco/moss-ui/compare/v0.5.2...HEAD
+[Unreleased]: https://github.com/archco/moss-ui/compare/v0.5.3...HEAD
+[0.5.3]: https://github.com/archco/moss-ui/compare/v0.5.2...v0.5.3
 [0.5.2]: https://github.com/archco/moss-ui/compare/v0.5.1...v0.5.2
 [0.5.1]: https://github.com/archco/moss-ui/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/archco/moss-ui/compare/v0.4.2...v0.5.0
