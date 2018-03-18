@@ -1,4 +1,3 @@
-import expect from 'expect';
 import { mount } from '@vue/test-utils';
 import Modal from '../../src/js/components/modal.vue';
 

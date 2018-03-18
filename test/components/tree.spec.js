@@ -1,4 +1,3 @@
-import expect from 'expect';
 import { createLocalVue, shallow } from '@vue/test-utils';
 import Tree from '../../src/js/components/tree.vue';
 import TreeItem from '../../src/js/components/tree-item.vue';

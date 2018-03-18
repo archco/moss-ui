@@ -1,4 +1,3 @@
-import expect from 'expect';
 import { shallow } from '@vue/test-utils';
 import MessageBox from '../../src/js/components/message-box.vue';
 
