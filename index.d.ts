@@ -1,7 +1,11 @@
 // Type definitions for moss-ui v0.5.0
 // @link https://github.com/archco/moss-ui
 
-import { VueConstructor } from 'vue';
+import {
+  DirectiveOptions,
+  PluginObject,
+  VueConstructor,
+} from 'vue';
 import * as Case from 'cake-case';
 import * as ElementUtil from 'element-util';
 
@@ -42,19 +46,19 @@ export namespace Components {
 }
 
 export namespace Directives {
-  export const Accordion: VueConstructor;
-  export const Activator: VueConstructor;
-  export const Clipboard: VueConstructor;
-  export const Collapse: VueConstructor;
-  export const Confirm: VueConstructor;
-  export const Focus: VueConstructor;
-  export const Modal: VueConstructor;
-  export const Ripple: VueConstructor;
-  export const Scrollspy: VueConstructor;
-  export const SetValue: VueConstructor;
-  export const Tooltip: VueConstructor;
-  export const Trigger: VueConstructor;
-  export const Wrap: VueConstructor;
+  export const Accordion: DirectiveOptions;
+  export const Activator: DirectiveOptions;
+  export const Clipboard: DirectiveOptions;
+  export const Collapse: DirectiveOptions;
+  export const Confirm: DirectiveOptions;
+  export const Focus: DirectiveOptions;
+  export const Modal: DirectiveOptions;
+  export const Ripple: DirectiveOptions;
+  export const Scrollspy: DirectiveOptions;
+  export const SetValue: DirectiveOptions;
+  export const Tooltip: DirectiveOptions;
+  export const Trigger: DirectiveOptions;
+  export const Wrap: DirectiveOptions;
 }
 
 export namespace Svg {
@@ -152,7 +156,6 @@ export interface MossOptions {
   enableGlobalComponents: boolean;
 }
 
-export default interface MossUI {
-  version: string;
-  install(Vue: VueConstructor, options?: MossOptions): void;
-}
+declare const MossPlugin: PluginObject<MossOptions>;
+
+export default MossPlugin;
