@@ -654,16 +654,16 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_node_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../mixins/node-util */ "./src/js/mixins/node-util.js");
-/* harmony import */ var _mixins_node_util__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_mixins_node_util__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _lib_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lib/util */ "./src/js/lib/util.js");
-/* harmony import */ var _lib_util__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_lib_util__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var cake_case__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! cake-case */ "./node_modules/cake-case/dist/cake-case.js");
+/* harmony import */ var cake_case__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(cake_case__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _mixins_node_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../mixins/node-util */ "./src/js/mixins/node-util.js");
+/* harmony import */ var _mixins_node_util__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_mixins_node_util__WEBPACK_IMPORTED_MODULE_1__);
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mixins: [_mixins_node_util__WEBPACK_IMPORTED_MODULE_0___default.a],
+  mixins: [_mixins_node_util__WEBPACK_IMPORTED_MODULE_1___default.a],
   props: {
     tag: {
       type: String,
@@ -677,7 +677,7 @@ __webpack_require__.r(__webpack_exports__);
   render: function render(createElement) {
     // create kebab-case id
     var text = this.getChildrenTextContent(this.$slots.default);
-    var tagId = Object(_lib_util__WEBPACK_IMPORTED_MODULE_1__["strToKebab"])(text);
+    var tagId = Object(cake_case__WEBPACK_IMPORTED_MODULE_0__["kebab"])(text);
     var data = {
       attrs: {
         id: this.owned ? tagId : false
@@ -2965,6 +2965,155 @@ __webpack_require__.r(__webpack_exports__);
     }
   }
 });
+
+/***/ }),
+
+/***/ "./node_modules/cake-case/dist/cake-case.js":
+/*!**************************************************!*\
+  !*** ./node_modules/cake-case/dist/cake-case.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else {}
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/cake-case.ts");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/cake-case.ts":
+/*!**************************!*\
+  !*** ./src/cake-case.ts ***!
+  \**************************/
+/*! exports provided: normal, lower, upper, capital, camel, pascal, kebab, snake */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "normal", function() { return normal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lower", function() { return lower; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "upper", function() { return upper; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "capital", function() { return capital; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "camel", function() { return camel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pascal", function() { return pascal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "kebab", function() { return kebab; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "snake", function() { return snake; });
+function normal(str, fill) {
+    if (fill === void 0) { fill = ' '; }
+    return str.replace(/([A-Z][a-z]|[0-9][a-zA-Z])/g, ' $1')
+        .replace(/([a-z])([A-Z])/g, '$1 $2')
+        .replace(/([0-9])([a-zA-Z])/g, '$1 $2')
+        .replace(/([a-zA-Z])([0-9])/g, '$1 $2')
+        .replace(/([\W|_]+)/g, ' ')
+        .trim()
+        .replace(/\s+/g, fill);
+}
+function lower(str, fill) {
+    if (fill === void 0) { fill = ' '; }
+    return normal(str, fill).toLowerCase();
+}
+function upper(str, fill) {
+    if (fill === void 0) { fill = ' '; }
+    return normal(str, fill).toUpperCase();
+}
+function capital(str, fill) {
+    if (fill === void 0) { fill = ' '; }
+    return lower(str, ' ').split(' ')
+        .map(function (word) { return word[0].toUpperCase() + word.substr(1); })
+        .join(' ').replace(/\s+/g, fill);
+}
+function camel(str) {
+    str = capital(str, '');
+    return str[0].toLowerCase() + str.substr(1);
+}
+function pascal(str) {
+    return capital(str, '');
+}
+function kebab(str) {
+    return lower(str, '-');
+}
+function snake(str) {
+    return lower(str, '_');
+}
+
+
+/***/ })
+
+/******/ });
+});
+
 
 /***/ }),
 
@@ -14789,7 +14938,7 @@ exports.getSvgByName = getSvgByName;
 exports.makeIcon = makeIcon;
 exports.makeIconHtml = makeIconHtml;
 
-var _util = __webpack_require__(/*! ../util */ "./src/js/lib/util.js");
+var _cakeCase = __webpack_require__(/*! cake-case */ "./node_modules/cake-case/dist/cake-case.js");
 
 var _svg = __webpack_require__(/*! ../../../svg */ "./src/svg/index.js");
 
@@ -14804,7 +14953,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
  * @returns {string}
  */
 function getSvgByName(name) {
-  return Svg[(0, _util.strToCamel)(name, true)] || '';
+  return Svg[(0, _cakeCase.camel)(name)] || '';
 }
 
 /**
@@ -15076,6 +15225,7 @@ function isMobileSize() {
 
 /**
  * String to CamelCase
+ * @deprecated in v0.6.x. use Case.camel or Case.pascal instead.
  *
  * @param {string} str
  * @param {boolean} [isSmallCamel=false] If true, returns as smallCamelCase.
@@ -15091,6 +15241,7 @@ function strToCamel(str) {
 
 /**
  * String to kebab-case.
+ * @deprecated in v0.6.x. use Case.kebab instead.
  *
  * @param {string} str
  * @returns {string}
@@ -15101,6 +15252,7 @@ function strToKebab(str) {
 
 /**
  * String to normal case. e.g. 'hello world'
+ * @deprecated in v0.6.x. use Case.lower instead.
  *
  * @param {string} str
  * @returns {string}
@@ -15111,6 +15263,7 @@ function strToNormal(str) {
 
 /**
  * Capitalize first letters.
+ * @deprecated in v0.6.x. use Case.capital instead.
  *
  * @param {string} str
  * @returns {string}
@@ -15193,6 +15346,10 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           */
 
 
+var _cakeCase = __webpack_require__(/*! cake-case */ "./node_modules/cake-case/dist/cake-case.js");
+
+var Case = _interopRequireWildcard(_cakeCase);
+
 var _elementUtil = __webpack_require__(/*! element-util */ "./node_modules/element-util/dist/element-util.js");
 
 var ElementUtil = _interopRequireWildcard(_elementUtil);
@@ -15232,6 +15389,7 @@ var DefaultOptions = {
 };
 
 var lib = {
+  Case: Case,
   Color: _mooColor.MooColor,
   ElementMeasurer: _elementMeasurer2.default,
   ElementUtil: ElementUtil,
@@ -15277,7 +15435,7 @@ exports.default = {
           var key = _ref2[0];
           var val = _ref2[1];
 
-          Vue.component(Util.strToKebab(key), val);
+          Vue.component(Case.kebab(key), val);
         }
       } catch (err) {
         _didIteratorError = true;
@@ -15309,7 +15467,7 @@ exports.default = {
         var _key = _ref4[0];
         var _val = _ref4[1];
 
-        Vue.directive(Util.strToKebab(_key), _val);
+        Vue.directive(Case.kebab(_key), _val);
       }
     } catch (err) {
       _didIteratorError2 = true;

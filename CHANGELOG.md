@@ -13,11 +13,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- Add dependency "[cake-case](https://github.com/archco/cake-case#readme)".
+- Add dependency "[cake-case](https://github.com/archco/cake-case#readme)". #103
 
 ### Deprecated
 
-- Some JS util methods are deprecated. use `[cake-case](https://github.com/archco/cake-case#readme)` instead.
+- Some JS util methods are deprecated. use [`cake-case`](https://github.com/archco/cake-case#readme) instead.
   - `Util.strToCamel`: use `Case.camel` or `Case.pascal` instead.
   - `Util.strToKebab`: use `Case.kebab` instead.
   - `Util.strToNormal`: use `Case.lower` instead.
