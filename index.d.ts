@@ -2,11 +2,12 @@
 // @link https://github.com/archco/moss-ui
 
 import { VueConstructor } from 'vue';
+import * as Case from 'cake-case';
 import * as ElementUtil from 'element-util';
 
 export { MooColor as Color } from 'moo-color';
 export { default as ElementMeasurer } from 'element-measurer';
-export { ElementUtil };
+export { Case, ElementUtil };
 
 export namespace Svg {
   export const arrowLeft: string;
