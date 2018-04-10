@@ -73,7 +73,8 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 
 ## JS Libraries
 
-- [MooColor](https://github.com/archco/moo-color#readme)
+- [CakeCase](https://github.com/archco/cake-case#readme)
 - [ElementMeasurer](https://github.com/archco/element-measurer#api)
 - [ElementUtil](https://github.com/archco/element-util/tree/master/docs)
+- [MooColor](https://github.com/archco/moo-color#readme)
 - [Util](js/util.md)

@@ -83,6 +83,8 @@ Determine whether value is empty.
 
 ### strToCamel
 
+> **Deprecated in 0.6.x** - use `Case.camel` or `Case.pascal` instead.
+
 Converts string to CamelCase.
 
 - Syntax
@@ -97,6 +99,8 @@ Converts string to CamelCase.
 
 ### strToKebab
 
+> **Deprecated in 0.6.x** - use `Case.kebab` instead.
+
 Converts string to kebab-case.
 
 - Syntax
@@ -110,6 +114,8 @@ Converts string to kebab-case.
 
 ### strToNormal
 
+> **Deprecated in 0.6.x** - use `Case.lower` instead.
+
 Converts string to normal case. e.g. 'HelloWorld' -> 'hello world'
 
 - Syntax
@@ -122,6 +128,8 @@ Converts string to normal case. e.g. 'HelloWorld' -> 'hello world'
 - Returns `string`
 
 ### capitalize
+
+> **Deprecated in 0.6.x** - use `Case.capital` instead.
 
 Capitalize first letters.
 
