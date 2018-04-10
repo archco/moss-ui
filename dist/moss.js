@@ -782,7 +782,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     coloring: function coloring() {
       if (!this.color) return;
-      var color = new moo_color__WEBPACK_IMPORTED_MODULE_0__["MooColor"](this.color);
+      var color = new moo_color__WEBPACK_IMPORTED_MODULE_0___default.a(this.color);
       this.$el.style.backgroundColor = color.toHex(true);
       this.$el.style.color = color.isLight ? '#333' : '#fff';
     }
@@ -4240,21 +4240,23 @@ return /******/ (function(modules) { // webpackBootstrap
 /*!*********************************!*\
   !*** ./src/element-measurer.ts ***!
   \*********************************/
-/*! exports provided: default */
+/*! exports provided: ElementMeasurer, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ElementMeasurer", function() { return ElementMeasurer; });
 /**
- * Element measurer.
+ * The library class that can measures size of element.
  *
  * @export
  * @class ElementMeasurer
  */
 var ElementMeasurer = /** @class */ (function () {
     /**
-     * constructor
-     * @param target
+     * Creates an instance of ElementMeasurer.
+     * @param {AllowedTarget} [target=document.documentElement]
+     * @memberof ElementMeasurer
      */
     function ElementMeasurer(target) {
         if (target === void 0) { target = document.documentElement; }
@@ -4263,7 +4265,10 @@ var ElementMeasurer = /** @class */ (function () {
     Object.defineProperty(ElementMeasurer.prototype, "isDocument", {
         /**
          * Returns whether target is document or html element.
-         * @return
+         *
+         * @readonly
+         * @type {boolean}
+         * @memberof ElementMeasurer
          */
         get: function () {
             return this.target === document.documentElement
@@ -4275,7 +4280,10 @@ var ElementMeasurer = /** @class */ (function () {
     Object.defineProperty(ElementMeasurer.prototype, "clientWidth", {
         /**
          * Returns inner width of an element in pixels.
-         * @return
+         *
+         * @readonly
+         * @type {number}
+         * @memberof ElementMeasurer
          */
         get: function () {
             return this.isDocument
@@ -4288,7 +4296,10 @@ var ElementMeasurer = /** @class */ (function () {
     Object.defineProperty(ElementMeasurer.prototype, "clientHeight", {
         /**
          * Returns inner height of an element in pixels.
-         * @return
+         *
+         * @readonly
+         * @type {number}
+         * @memberof ElementMeasurer
          */
         get: function () {
             return this.isDocument
@@ -4301,7 +4312,9 @@ var ElementMeasurer = /** @class */ (function () {
     Object.defineProperty(ElementMeasurer.prototype, "scrollTop", {
         /**
          * Gets or sets the number of pixels that an element's content is scrolled vertically.
-         * @return
+         *
+         * @type {number}
+         * @memberof ElementMeasurer
          */
         get: function () {
             return this.isDocument ? window.pageYOffset : this.target.scrollTop;
@@ -4320,7 +4333,9 @@ var ElementMeasurer = /** @class */ (function () {
     Object.defineProperty(ElementMeasurer.prototype, "scrollLeft", {
         /**
          * Gets or sets the number of pixels that an element's content is scrolled to the left.
-         * @return
+         *
+         * @type {number}
+         * @memberof ElementMeasurer
          */
         get: function () {
             return this.isDocument ? window.pageXOffset : this.target.scrollLeft;
@@ -4339,7 +4354,10 @@ var ElementMeasurer = /** @class */ (function () {
     Object.defineProperty(ElementMeasurer.prototype, "scrollWidth", {
         /**
          * Returns the width of the entire content of an element.
-         * @return
+         *
+         * @readonly
+         * @type {number}
+         * @memberof ElementMeasurer
          */
         get: function () {
             return this.target.scrollWidth;
@@ -4350,7 +4368,10 @@ var ElementMeasurer = /** @class */ (function () {
     Object.defineProperty(ElementMeasurer.prototype, "scrollHeight", {
         /**
          * Returns the height of the entire content of an element.
-         * @return
+         *
+         * @readonly
+         * @type {number}
+         * @memberof ElementMeasurer
          */
         get: function () {
             return this.target.scrollHeight;
@@ -4361,7 +4382,10 @@ var ElementMeasurer = /** @class */ (function () {
     Object.defineProperty(ElementMeasurer.prototype, "maxScrollTop", {
         /**
          * Returns maximum top scroll offset possible for the element.
-         * @return
+         *
+         * @readonly
+         * @type {number}
+         * @memberof ElementMeasurer
          */
         get: function () {
             return this.scrollHeight - this.clientHeight;
@@ -4372,7 +4396,10 @@ var ElementMeasurer = /** @class */ (function () {
     Object.defineProperty(ElementMeasurer.prototype, "maxScrollLeft", {
         /**
          * Returns maximum left scroll offset possible for the element.
-         * @return
+         *
+         * @readonly
+         * @type {number}
+         * @memberof ElementMeasurer
          */
         get: function () {
             return this.scrollWidth - this.clientWidth;
@@ -4382,8 +4409,10 @@ var ElementMeasurer = /** @class */ (function () {
     });
     /**
      * Set target element.
-     * @param  val
-     * @return
+     *
+     * @param {AllowedTarget} val target element.
+     * @returns {this}
+     * @memberof ElementMeasurer
      */
     ElementMeasurer.prototype.setTarget = function (val) {
         if (val instanceof HTMLElement || val instanceof Element) {
@@ -4403,6 +4432,8 @@ var ElementMeasurer = /** @class */ (function () {
     /**
      * Returns top and left values that indicates offset distance to html document.
      * @see https://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element#answer-442474
+     * @returns {Offsets} {top, left}
+     * @memberof ElementMeasurer
      */
     ElementMeasurer.prototype.getOffset = function () {
         var elm = this.target;
@@ -4417,6 +4448,7 @@ var ElementMeasurer = /** @class */ (function () {
     };
     return ElementMeasurer;
 }());
+
 /* harmony default export */ __webpack_exports__["default"] = (ElementMeasurer);
 
 
@@ -6838,7 +6870,7 @@ function resolveHwb(h, w, b) {
 /*!********************************!*\
   !*** ./src/color-formatter.ts ***!
   \********************************/
-/*! exports provided: ColorFormatter */
+/*! exports provided: ColorFormatter, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7081,6 +7113,7 @@ var ColorFormatter = /** @class */ (function () {
     return ColorFormatter;
 }());
 
+/* harmony default export */ __webpack_exports__["default"] = (ColorFormatter);
 
 
 /***/ }),
@@ -7268,13 +7301,15 @@ function parseCmyk(input) {
 /*!**************************!*\
   !*** ./src/moo-color.ts ***!
   \**************************/
-/*! exports provided: MooColor */
+/*! exports provided: ColorFormatter, MooColor, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MooColor", function() { return MooColor; });
 /* harmony import */ var _color_formatter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./color-formatter */ "./src/color-formatter.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ColorFormatter", function() { return _color_formatter__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
 /* harmony import */ var _input_parser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./input-parser */ "./src/input-parser.ts");
 /* harmony import */ var _util_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util/util */ "./src/util/util.ts");
 var __extends = (undefined && undefined.__extends) || (function () {
@@ -7287,6 +7322,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+
 
 
 
@@ -7539,8 +7575,9 @@ var MooColor = /** @class */ (function (_super) {
         return this.setColor(color).changeModel(m);
     };
     return MooColor;
-}(_color_formatter__WEBPACK_IMPORTED_MODULE_0__["ColorFormatter"]));
+}(_color_formatter__WEBPACK_IMPORTED_MODULE_0__["default"]));
 
+/* harmony default export */ __webpack_exports__["default"] = (MooColor);
 
 
 /***/ }),
@@ -7624,7 +7661,7 @@ function arrayIsEqual(arr1, arr2) {
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(global) {/**!
  * @fileOverview Kickass library to create and place poppers near their reference elements.
- * @version 1.14.1
+ * @version 1.14.3
  * @license
  * Copyright (c) 2016 Federico Zivolo and contributors
  *
@@ -7647,6 +7684,7 @@ __webpack_require__.r(__webpack_exports__);
  * SOFTWARE.
  */
 var isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined';
+
 var longerTimeoutBrowsers = ['Edge', 'Trident', 'Firefox'];
 var timeoutDuration = 0;
 for (var i = 0; i < longerTimeoutBrowsers.length; i += 1) {
@@ -7773,40 +7811,25 @@ function getScrollParent(element) {
   return getScrollParent(getParentNode(element));
 }
 
+var isIE11 = isBrowser && !!(window.MSInputMethodContext && document.documentMode);
+var isIE10 = isBrowser && /MSIE 10/.test(navigator.userAgent);
+
 /**
- * Tells if you are running Internet Explorer
+ * Determines if the browser is Internet Explorer
  * @method
  * @memberof Popper.Utils
- * @argument {number} version to check
+ * @param {Number} version to check
  * @returns {Boolean} isIE
  */
-var cache = {};
-
-var isIE = function () {
-  var version = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'all';
-
-  version = version.toString();
-  if (cache.hasOwnProperty(version)) {
-    return cache[version];
+function isIE(version) {
+  if (version === 11) {
+    return isIE11;
   }
-  switch (version) {
-    case '11':
-      cache[version] = navigator.userAgent.indexOf('Trident') !== -1;
-      break;
-    case '10':
-      cache[version] = navigator.appVersion.indexOf('MSIE 10') !== -1;
-      break;
-    case 'all':
-      cache[version] = navigator.userAgent.indexOf('Trident') !== -1 || navigator.userAgent.indexOf('MSIE') !== -1;
-      break;
+  if (version === 10) {
+    return isIE10;
   }
-
-  //Set IE
-  cache.all = cache.all || Object.keys(cache).some(function (key) {
-    return cache[key];
-  });
-  return cache[version];
-};
+  return isIE11 || isIE10;
+}
 
 /**
  * Returns the offset parent of the given element
@@ -8559,6 +8582,7 @@ function update() {
 
   // compute the popper offsets
   data.offsets.popper = getPopperOffsets(this.popper, data.offsets.reference, data.placement);
+
   data.offsets.popper.position = this.options.positionFixed ? 'fixed' : 'absolute';
 
   // run the modifiers
@@ -8864,11 +8888,13 @@ function computeStyle(data, options) {
     position: popper.position
   };
 
-  // floor sides to avoid blurry text
+  // Avoid blurry text by using full pixel integers.
+  // For pixel-perfect positioning, top/bottom prefers rounded
+  // values, while left/right prefers floored values.
   var offsets = {
     left: Math.floor(popper.left),
-    top: Math.floor(popper.top),
-    bottom: Math.floor(popper.bottom),
+    top: Math.round(popper.top),
+    bottom: Math.round(popper.bottom),
     right: Math.floor(popper.right)
   };
 
@@ -9424,7 +9450,27 @@ function preventOverflow(data, options) {
     boundariesElement = getOffsetParent(boundariesElement);
   }
 
+  // NOTE: DOM access here
+  // resets the popper's position so that the document size can be calculated excluding
+  // the size of the popper element itself
+  var transformProp = getSupportedPropertyName('transform');
+  var popperStyles = data.instance.popper.style; // assignment to help minification
+  var top = popperStyles.top,
+      left = popperStyles.left,
+      transform = popperStyles[transformProp];
+
+  popperStyles.top = '';
+  popperStyles.left = '';
+  popperStyles[transformProp] = '';
+
   var boundaries = getBoundaries(data.instance.popper, data.instance.reference, options.padding, boundariesElement, data.positionFixed);
+
+  // NOTE: DOM access here
+  // restores the original style properties after the offsets have been computed
+  popperStyles.top = top;
+  popperStyles.left = left;
+  popperStyles[transformProp] = transform;
+
   options.boundaries = boundaries;
 
   var order = options.priority;
@@ -14411,6 +14457,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _mooColor = __webpack_require__(/*! moo-color */ "./node_modules/moo-color/dist/moo-color.js");
 
+var _mooColor2 = _interopRequireDefault(_mooColor);
+
 var _elementMeasurer = __webpack_require__(/*! element-measurer */ "./node_modules/element-measurer/dist/element-measurer.js");
 
 var _elementMeasurer2 = _interopRequireDefault(_elementMeasurer);
@@ -14463,7 +14511,7 @@ function getRippleColor(el, binding) {
   var mod = binding.modifiers;
   var getContrastColor = function getContrastColor(elm) {
     var style = window.getComputedStyle(elm);
-    var color = new _mooColor.MooColor(style.backgroundColor);
+    var color = new _mooColor2.default(style.backgroundColor);
     return color.isLight ? '#000' : '#fff';
   };
 
@@ -15336,7 +15384,7 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Util = exports.Svg = exports.ElementUtil = exports.ElementMeasurer = exports.Color = undefined;
+exports.Util = exports.Svg = exports.ElementUtil = exports.ElementMeasurer = exports.Directives = exports.Components = exports.Color = undefined;
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }(); /*!
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * moss-ui - The front-end UI framework with Vue.js and SCSS.
@@ -15360,17 +15408,19 @@ var _elementMeasurer2 = _interopRequireDefault(_elementMeasurer);
 
 var _mooColor = __webpack_require__(/*! moo-color */ "./node_modules/moo-color/dist/moo-color.js");
 
+var _mooColor2 = _interopRequireDefault(_mooColor);
+
 var _util = __webpack_require__(/*! ./lib/util */ "./src/js/lib/util.js");
 
 var Util = _interopRequireWildcard(_util);
 
 var _components = __webpack_require__(/*! ./components */ "./src/js/components/index.js");
 
-var components = _interopRequireWildcard(_components);
+var Components = _interopRequireWildcard(_components);
 
 var _directives = __webpack_require__(/*! ./directives */ "./src/js/directives/index.js");
 
-var directives = _interopRequireWildcard(_directives);
+var Directives = _interopRequireWildcard(_directives);
 
 var _svg = __webpack_require__(/*! ../svg */ "./src/svg/index.js");
 
@@ -15390,7 +15440,7 @@ var DefaultOptions = {
 
 var lib = {
   Case: Case,
-  Color: _mooColor.MooColor,
+  Color: _mooColor2.default,
   ElementMeasurer: _elementMeasurer2.default,
   ElementUtil: ElementUtil,
   Svg: Svg,
@@ -15402,7 +15452,9 @@ function addMossObject(Vue) {
   window.Moss = Vue.Moss = Vue.prototype.$moss = Moss;
 }
 
-exports.Color = _mooColor.MooColor;
+exports.Color = _mooColor2.default;
+exports.Components = Components;
+exports.Directives = Directives;
 exports.ElementMeasurer = _elementMeasurer2.default;
 exports.ElementUtil = ElementUtil;
 exports.Svg = Svg;
@@ -15427,7 +15479,7 @@ exports.default = {
       var _iteratorError = undefined;
 
       try {
-        for (var _iterator = Object.entries(components)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        for (var _iterator = Object.entries(Components)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
           var _ref = _step.value;
 
           var _ref2 = _slicedToArray(_ref, 2);
@@ -15459,7 +15511,7 @@ exports.default = {
     var _iteratorError2 = undefined;
 
     try {
-      for (var _iterator2 = Object.entries(directives)[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+      for (var _iterator2 = Object.entries(Directives)[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
         var _ref3 = _step2.value;
 
         var _ref4 = _slicedToArray(_ref3, 2);

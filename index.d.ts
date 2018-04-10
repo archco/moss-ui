@@ -5,9 +5,57 @@ import { VueConstructor } from 'vue';
 import * as Case from 'cake-case';
 import * as ElementUtil from 'element-util';
 
+export as namespace MossUI;
+
 export { default as Color } from 'moo-color';
 export { default as ElementMeasurer } from 'element-measurer';
 export { Case, ElementUtil };
+
+export namespace Components {
+  export const AnchoredTag: VueConstructor;
+  export const Chip: VueConstructor;
+  export const CloseButton: VueConstructor;
+  export const Collapse: VueConstructor;
+  export const Dropdown: VueConstructor;
+  export const Message: VueConstructor;
+  export const MessageBox: VueConstructor;
+  export const Modal: VueConstructor;
+  export const Navbar: VueConstructor;
+  export const NavbarBrand: VueConstructor;
+  export const NavbarNav: VueConstructor;
+  export const NavbarToggle: VueConstructor;
+  export const NavItem: VueConstructor;
+  export const Parallax: VueConstructor;
+  export const ScrollTo: VueConstructor;
+  export const SimpleCRUD: VueConstructor;
+  export const Tab: VueConstructor;
+  export const Tabs: VueConstructor;
+  export const Toast: VueConstructor;
+  export const Tree: VueConstructor;
+  export const TreeItem: VueConstructor;
+  export const InputCheck: VueConstructor;
+  export const InputRadio: VueConstructor;
+  export const Carousel: VueConstructor;
+  export const Icon: VueConstructor;
+  export const CollapseToggle: VueConstructor;
+  export const Search: VueConstructor;
+}
+
+export namespace Directives {
+  export const Accordion: VueConstructor;
+  export const Activator: VueConstructor;
+  export const Clipboard: VueConstructor;
+  export const Collapse: VueConstructor;
+  export const Confirm: VueConstructor;
+  export const Focus: VueConstructor;
+  export const Modal: VueConstructor;
+  export const Ripple: VueConstructor;
+  export const Scrollspy: VueConstructor;
+  export const SetValue: VueConstructor;
+  export const Tooltip: VueConstructor;
+  export const Trigger: VueConstructor;
+  export const Wrap: VueConstructor;
+}
 
 export namespace Svg {
   export const arrowLeft: string;
