@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Add dependency "[cake-case](https://github.com/archco/cake-case#readme)". #103
 
+### Changed
+
+- Changed js module: Exports vue components and directives. #100
+
 ### Deprecated
 
 - Some JS util methods are deprecated. use [`cake-case`](https://github.com/archco/cake-case#readme) instead.
