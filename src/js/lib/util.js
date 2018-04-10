@@ -89,6 +89,7 @@ export function isMobileSize(size = 800) {
 
 /**
  * String to CamelCase
+ * @deprecated in v0.6.x. use Case.camel or Case.pascal instead.
  *
  * @param {string} str
  * @param {boolean} [isSmallCamel=false] If true, returns as smallCamelCase.
@@ -103,6 +104,7 @@ export function strToCamel(str, isSmallCamel = false) {
 
 /**
  * String to kebab-case.
+ * @deprecated in v0.6.x. use Case.kebab instead.
  *
  * @param {string} str
  * @returns {string}
@@ -113,6 +115,7 @@ export function strToKebab(str) {
 
 /**
  * String to normal case. e.g. 'hello world'
+ * @deprecated in v0.6.x. use Case.lower instead.
  *
  * @param {string} str
  * @returns {string}
@@ -126,6 +129,7 @@ export function strToNormal(str) {
 
 /**
  * Capitalize first letters.
+ * @deprecated in v0.6.x. use Case.capital instead.
  *
  * @param {string} str
  * @returns {string}

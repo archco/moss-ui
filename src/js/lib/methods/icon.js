@@ -1,4 +1,4 @@
-import { strToCamel } from '../util';
+import { camel } from 'cake-case';
 import * as Svg from '../../../svg';
 
 /**
@@ -8,7 +8,7 @@ import * as Svg from '../../../svg';
  * @returns {string}
  */
 export function getSvgByName(name) {
-  return Svg[strToCamel(name, true)] || '';
+  return Svg[camel(name)] || '';
 }
 
 /**

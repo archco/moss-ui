@@ -4,6 +4,7 @@
  * @link https://github.com/archco/moss-ui
  * @license MIT
  */
+import * as Case from 'cake-case';
 import * as ElementUtil from 'element-util';
 import ElementMeasurer from 'element-measurer';
 import { MooColor as Color } from 'moo-color';
@@ -18,6 +19,7 @@ const DefaultOptions = {
 };
 
 const lib = {
+  Case,
   Color,
   ElementMeasurer,
   ElementUtil,
@@ -52,13 +54,13 @@ export default {
     // Add components.
     if (options.enableGlobalComponents) {
       for (const [key, val] of Object.entries(components)) {
-        Vue.component(Util.strToKebab(key), val);
+        Vue.component(Case.kebab(key), val);
       }
     }
 
     // Add directives.
     for (const [key, val] of Object.entries(directives)) {
-      Vue.directive(Util.strToKebab(key), val);
+      Vue.directive(Case.kebab(key), val);
     }
   },
 };
