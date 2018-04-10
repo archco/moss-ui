@@ -5,7 +5,7 @@ import { VueConstructor } from 'vue';
 import * as Case from 'cake-case';
 import * as ElementUtil from 'element-util';
 
-export { MooColor as Color } from 'moo-color';
+export { default as Color } from 'moo-color';
 export { default as ElementMeasurer } from 'element-measurer';
 export { Case, ElementUtil };
 

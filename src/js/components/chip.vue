@@ -1,5 +1,5 @@
 <script>
-import { MooColor } from 'moo-color';
+import MooColor from 'moo-color';
 import CloseButton from './close-button.vue';
 
 export default {

@@ -7,7 +7,7 @@
 import * as Case from 'cake-case';
 import * as ElementUtil from 'element-util';
 import ElementMeasurer from 'element-measurer';
-import { MooColor as Color } from 'moo-color';
+import Color from 'moo-color';
 import * as Util from './lib/util';
 import * as components from './components';
 import * as directives from './directives';

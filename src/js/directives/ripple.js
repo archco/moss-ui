@@ -1,4 +1,4 @@
-import { MooColor } from 'moo-color';
+import MooColor from 'moo-color';
 import ElementMeasurer from 'element-measurer';
 
 /*
