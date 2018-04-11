@@ -3,17 +3,22 @@
 //============================================================
 
 fieldset {
-  padding: .5rem 1rem;
   margin-bottom: 1rem;
-  border: $fieldset-border;
-  @include border-radius($radius-normal);
+  border: $fieldset-border-width solid $fieldset-border-color;
+  @include border-radius($fieldset-border-radius);
+  @each $name, $color in $color-set {
+    &.#{$name} {
+      border-color: $color;
+      > legend { color: $color !important; }
+    }
+  }
 }
 
 legend {
-  padding: .5em 1em;
-  font-size: 1.2em;
+  padding: .25rem .5rem;
   font-weight: bold;
-  color: $legend-color;
+  font-size: 1.1em;
+  color: $fieldset-border-color;
 }
 
 label {

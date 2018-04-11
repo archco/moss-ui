@@ -241,8 +241,9 @@ $footer-copyright-bg-color: rgba(#000, .1) !default;
 //============================================================
 
 // form
-$fieldset-border: 2px solid $primary-color !default;
-$legend-color: $primary-color !default;
+$fieldset-border-width: 1px !default;
+$fieldset-border-color: $primary-color !default;
+$fieldset-border-radius: $radius-normal !default;
 $label-color: $text-color !default;
 $label-color-focused: $primary-color !default;
 $label-color-disabled: $disabled-color !default;
