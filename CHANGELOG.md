@@ -19,6 +19,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Changed js module: Exports vue components and directives. #100
 
+### Fixed
+
+- Fix link style that inside an inline code. #99
+
 ### Deprecated
 
 - Some JS util methods are deprecated. use [`cake-case`](https://github.com/archco/cake-case#readme) instead.
