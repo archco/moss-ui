@@ -21,11 +21,12 @@ $color-set: (
 );
 ```
 
-## Components of uses this color-set
+## Parts or Components that uses this color-set
 
 - [Badge](badge.md)
 - [Button](button.md)
 - [Form#input-with-color-set](form.md#input-with-color-set)
+- [Form#fieldset-with-color-set](form.md#fieldset-with-color-set)
 - [Helpers#color](helpers.md#color) : color of text and background.
 - [Message](../js/message.md) : color of message box.
 - [Scaffolding#blockquote](scaffolding.md#blockquote)

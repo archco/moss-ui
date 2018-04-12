@@ -113,6 +113,12 @@ $spacers: map-merge((
   5: $spacer * 3,
 ), $spacers);
 
+$space-1: map-get($spacers, 1);
+$space-2: map-get($spacers, 2);
+$space-3: map-get($spacers, 3);
+$space-4: map-get($spacers, 4);
+$space-5: map-get($spacers, 5);
+
 // Sizing
 // This variable affects the `.h-*` and `.w-*` classes.
 $sizes: () !default;
@@ -244,9 +250,9 @@ $footer-copyright-bg-color: rgba(#000, .1) !default;
 $fieldset-border-width: 1px !default;
 $fieldset-border-color: $primary-color !default;
 $fieldset-border-radius: $radius-normal !default;
+$legend-padding-y: $space-1 !default;
+$legend-padding-x: $space-2 !default;
 $label-color: $text-color !default;
-$label-color-focused: $primary-color !default;
-$label-color-disabled: $disabled-color !default;
 
 $input-height: 2em !default;
 $input-padding-y: .2em !default;

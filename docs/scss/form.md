@@ -117,14 +117,28 @@ $auto-input-bg-color-enable: true !default;
 </div>
 ```
 
+### Fieldset with color-set
+
+> based on [Color-set](color-set.md)
+
+Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
+
+``` html
+<fieldset class="secondary">
+  <legend>Secondary Colored</legend>
+
+</fieldset>
+```
+
 ## SCSS Variables
 
 ``` scss
-$fieldset-border: 2px solid $primary-color !default;
-$legend-color: $primary-color !default;
+$fieldset-border-width: 1px !default;
+$fieldset-border-color: $primary-color !default;
+$fieldset-border-radius: $radius-normal !default;
+$legend-padding-y: $space-1 !default;
+$legend-padding-x: $space-2 !default;
 $label-color: $text-color !default;
-$label-color-focused: $primary-color !default;
-$label-color-disabled: $disabled-color !default;
 
 $input-height: 2em !default;
 $input-padding-y: .2em !default;
