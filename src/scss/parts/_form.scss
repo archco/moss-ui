@@ -40,26 +40,30 @@ textarea {
 
 // input generalize
 input:not([type]),
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="url"],
-input[type="time"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="tel"],
-input[type="number"],
-input[type="search"],
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=url],
+input[type=time],
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=tel],
+input[type=number],
+input[type=search],
 select,
 textarea {
   width: 100%;
   min-height: $input-height;
   padding: $input-padding-y $input-padding-x;
   line-height: 1.4;
-  background-color: transparent;
+  background-color: $input-bg-color;
   border: $input-border-width solid $input-border-color;
   @include border-radius($input-radius);
+
+  &:focus {
+    border-color: $input-outline-color;
+  }
 
   @each $name, $color in $color-set {
     &.#{$name} {
@@ -78,7 +82,7 @@ textarea {
   }
 }
 
-input[type="text"] {
+input[type=text] {
   &.password,
   &.pw {
     -webkit-text-security: disc;
@@ -90,26 +94,26 @@ textarea {
   &.inline { height: auto; }
 }
 
-input[type="submit"],
-input[type="button"],
-input[type="reset"] {
+input[type=submit],
+input[type=button],
+input[type=reset] {
   @extend %btn;
   @extend %btn-disabled;
   @extend %btn-color-set;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type=checkbox],
+input[type=radio] {
   width: $input-height * .6;
   height: $input-height * .6;
   vertical-align: middle;
 }
 
-input[type="range"] {
+input[type=range] {
   width: 100%;
 }
 
-input[type="color"] {
+input[type=color] {
   width: $input-height * 1.5;
   height: $input-height;
   padding: 0;

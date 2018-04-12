@@ -18,6 +18,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 
 - Changed js module: Exports vue components and directives. #100
+- Improve Styles #107
+  - Improved `<fieldset>` style. #105
+  - Changed input style. #101
 
 ### Fixed
 

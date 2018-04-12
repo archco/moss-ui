@@ -143,7 +143,7 @@ $label-color: $text-color !default;
 $input-height: 2em !default;
 $input-padding-y: .2em !default;
 $input-padding-x: .5em !default;
-$input-margin: .5rem 0 !default;
+$input-bg-color: $background-color !default;
 $input-border: 1px solid $border-color !default;
 $input-radius: $radius-small !default;
 $input-outline-color: $outline-color !default;
