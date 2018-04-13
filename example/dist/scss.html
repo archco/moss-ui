@@ -32,6 +32,7 @@
         <aside class="col-md-2 hide-only-mobile">
           <ul class="menu list">
             <li is="anchored-tag" tag="li">Scaffolding</li>
+            <li is="anchored-tag" tag="li">Code</li>
             <li is="anchored-tag" tag="li">Badge</li>
             <li is="anchored-tag" tag="li">Button</li>
             <li is="anchored-tag" tag="li">Card</li>
@@ -144,21 +145,6 @@
               </tbody>
             </table>
           </div>
-          <h2>Codes</h2>
-          <h3>Inline codes</h3>
-          <p>
-            It is inline <code>code</code>.<br>
-            <code>HTML</code>, <code>CSS</code>, <code>JavaScript</code><br>
-            <a href="#"><code>code</code></a>  in link
-          </p>
-          <h3>Block codes</h3>
-          <pre><code>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</code></pre>
           <h2>Optional Classes</h2>
           <h3>.pad</h3>
           <article class="pad color-primary">article with .pad</article>
@@ -176,6 +162,25 @@ SOFTWARE.</code></pre>
             <h5 class="accent color-danger">Heading with .accent</h5>
             <h6 class="accent color-danger">Heading with .accent</h6>
           </div>
+          <anchored-tag tag="h1" owned>Code</anchored-tag>
+          <p>Display inline or block fragment of computer code.</p>
+          <h2>Inline code</h2>
+          <p>
+            It is inline <code>code</code>.<br>
+            <code>HTML</code>, <code>CSS</code>, <code>JavaScript</code><br>
+            <a href="#"><code>code</code></a>  in link
+          </p>
+          <h2>Code blocks</h2>
+          <pre><code>function getTarget() {
+ const elm = document.querySelector('#target');
+ return elm;
+}</code></pre>
+          <h2>Variables</h2>
+          <p class="pad"><var>x</var> = <var>y</var> + 2 </p></p>
+          <h2>User input</h2>
+          <p class="pad"><kbd>ctrl + p</kbd> and <kbd>Enter</kbd></p>
+          <h2>Sample output</h2>
+          <p class="pad"><samp>This text is meant to be treated as sample output from a computer program.</samp></p>
           <anchored-tag tag="h1" owned>Badge</anchored-tag>
           <h2>Default Badge<span class="badge">Badge</span><a class="badge" href="#">BADGE</a></h2>
           <h3>in Text</h3><span>text with<span class="badge">badge</span><span class="badge primary">Primary</span><span class="badge danger">Danger</span></span>
@@ -453,7 +458,7 @@ SOFTWARE.</code></pre>
           </form>
           <h2>Form Inline</h2>
           <form class="form-inline">
-            <fieldset>
+            <fieldset class="success">
               <legend>Form inline</legend>
               <label for="name">Name</label>
               <input type="text" id="name" name="name" placeholder="name">
@@ -484,8 +489,8 @@ SOFTWARE.</code></pre>
           </form>
           <h2>Vertical Alignment</h2>
           <form class="form-inline">
-            <fieldset>
-              <legend>Select</legend>
+            <fieldset class="info">
+              <legend class="font-weight-normal">Select</legend>
               <select name="select">
                 <option value="1">option1</option>
                 <option value="2">option2</option>
@@ -547,21 +552,21 @@ SOFTWARE.</code></pre>
           </div>
           <anchored-tag tag="h1" owned>Input Group</anchored-tag>
           <p>Extend form controls by adding text, buttons.</p>
-          <div class="input-group">
+          <div class="input-group mb-2">
             <div class="input-group-prepend"><span class="input-group-text">@</span></div>
             <input type="text" placeholder="Username">
           </div>
-          <div class="input-group">
+          <div class="input-group mb-2">
             <input type="text" placeholder="Recipient">
             <div class="input-group-append"><span class="input-group-text">@example.com</span></div>
           </div>
-          <div class="input-group">
+          <div class="input-group mb-2">
             <input type="text" placeholder="Query">
             <div class="input-group-append">
               <button class="btn success">Send</button>
             </div>
           </div>
-          <div class="input-group">
+          <div class="input-group mb-2">
             <div class="input with-icon-left"><span class="icon-left">
                 <icon name="search"></icon></span>
               <input type="search" placeholder="Search..">

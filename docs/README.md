@@ -16,6 +16,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [Badge](scss/badge.md)
 - [Button](scss/button.md)
 - [Card](scss/card.md)
+- [Code](scss/code.md)
 - [Color-set](scss/color-set.md)
 - [Form](scss/form.md)
 - [Grid](scss/grid.md)

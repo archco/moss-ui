@@ -9,7 +9,7 @@
 }
 
 .toast {
-  $_margin-bottom: 1rem;
+  $_margin-bottom: $space-3;
 
   min-width: $toast-min-width;
   padding: $toast-padding-y $toast-padding-x;

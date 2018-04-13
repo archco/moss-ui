@@ -33,7 +33,7 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  padding: .8rem .5rem;
+  padding: $space-2;
   background-color: $modal-header-bg-color;
 
   @include headings {
@@ -53,14 +53,14 @@
 
 .modal-body {
   flex-grow: 1;
-  padding: .8rem .5rem;
+  padding: $space-2;
 }
 
 .modal-footer {
   display: flex;
   align-items: baseline;
   justify-content: flex-end;
-  padding: .8rem .5rem;
+  padding: $space-2;
 }
 
 // effects.

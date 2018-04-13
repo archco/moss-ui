@@ -72,6 +72,6 @@
 
 ``` scss
 $simple-crud-min-height: 3em !default;
-$simple-crud-padding-x: .5rem !default;
-$simple-crud-margin-bottom: .75rem !default;
+$simple-crud-padding-x: $space-2 !default;
+$simple-crud-margin-bottom: $space-2 !default;
 ```

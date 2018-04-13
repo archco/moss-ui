@@ -35,7 +35,7 @@
   z-index: $z-index-card;
   display: flex;
   padding: 0;
-  margin-bottom: .75rem;
+  margin-bottom: $space-3;
   background-color: $card-bg-color;
   @include border-radius($card-radius);
   @include box-shadow($card-shadow);
@@ -53,7 +53,7 @@
     vertical-align: text-top;
 
     @include media-tablet-up {
-      margin: .5rem;
+      margin: $space-2;
     }
   }
 
