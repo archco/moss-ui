@@ -5,7 +5,7 @@
   font-size: 1.5em;
   padding: .5em;
   line-height: 0;
-  margin-left: -.25rem;
+  margin-left: -$space-1;
   color: $scroll-to-color;
   background-color: rgba($scroll-to-bg-color, .5);
   @include border-radius(50%);

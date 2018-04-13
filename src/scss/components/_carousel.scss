@@ -13,7 +13,7 @@ carousel,
 }
 
 .agile__dot {
-  margin: 0 .25rem;
+  margin: 0 $space-1;
 
   > button {
     @include btn-base();

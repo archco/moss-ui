@@ -142,7 +142,7 @@ $grid-breakpoints: (
 ) !default;
 
 $grid-columns: 12 !default;
-$grid-gutter-width: 1.5rem !default;
+$grid-gutter-width: $space-4 !default;
 
 // Grid containers
 $container-max-widths: (
@@ -313,7 +313,7 @@ $card-content-padding-y: .5em !default;
 $card-content-padding-x: .5em !default;
 
 // pagination
-$pagination-margin: 1rem 0 !default;
+$pagination-margin: $space-3 0 !default;
 $pagination-color: $text-color !default;
 $pagination-bg-color: transparent !default;
 $pagination-hover-color: $text-color !default;
@@ -321,7 +321,8 @@ $pagination-hover-bg-color: $background-color-shade !default;
 $pagination-active-bg-color: $primary-color !default;
 $pagination-active-color: get-contrast($pagination-active-bg-color) !default;
 $pagination-disabled-color: $text-color-weak !default;
-$pagination-item-margin: 0 .2rem !default;
+$pagination-item-margin-y: 0 !default;
+$pagination-item-margin-x: $space-1 !default;
 $pagination-item-padding-y: .2em !default;
 $pagination-item-padding-x: .67em !default;
 $pagination-item-border-radius: $radius-small !default;
@@ -358,7 +359,7 @@ $dropdown-min-width: 120px !default;
 $dropdown-shadow: $shadow-normal !default;
 $dropdown-header-color: $text-color-weak !default;
 $dropdown-header-font-size: 1em !default;
-$dropdown-divider-margin-y: .4rem !default;
+$dropdown-divider-margin-y: $space-1 !default;
 $dropdown-divider-color: $border-color !default;
 
 // navbar
@@ -428,15 +429,15 @@ $toast-container-position-offset: 5% !default;
 
 // message
 $message-default-bg-color: $default-color !default;
-$message-padding-y: 1rem !default;
-$message-padding-x: 1.5rem !default;
+$message-padding-y: $space-3 !default;
+$message-padding-x: $space-4 !default;
 $message-margin: 8px !default;
 $message-border-radius: $radius-normal !default;
 
 // simple-crud
 $simple-crud-min-height: 3em !default;
-$simple-crud-padding-x: .5rem !default;
-$simple-crud-margin-bottom: .75rem !default;
+$simple-crud-padding-x: $space-2 !default;
+$simple-crud-margin-bottom: $space-2 !default;
 
 // input-switch (input-check or input-radio) and input-toggle
 $input-switch-stroke-color: $text-color-light !default;
