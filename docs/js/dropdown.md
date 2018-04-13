@@ -123,7 +123,7 @@ $dropdown-min-width: 120px !default;
 $dropdown-shadow: $shadow-normal !default;
 $dropdown-header-color: $text-color-weak !default;
 $dropdown-header-font-size: 1em !default;
-$dropdown-divider-margin-y: .4rem !default;
+$dropdown-divider-margin-y: $space-1 !default;
 $dropdown-divider-color: $border-color !default;
 ```
 

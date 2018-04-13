@@ -5,7 +5,6 @@
 ## SCSS variables
 
 ```scss
-// variables of grid.
 $grid-breakpoints: (
   base: 0, // Applies all width size.
   sm: 576px,
@@ -13,8 +12,17 @@ $grid-breakpoints: (
   lg: 992px,
   xl: 1200px,
 ) !default;
+
 $grid-columns: 12 !default;
-$grid-gutter-width: 1.5rem !default;
+$grid-gutter-width: $space-4 !default;
+
+// Grid containers
+$container-max-widths: (
+  sm: 96%,
+  md: 92%,
+  lg: 88%,
+  xl: 88%,
+) !default;
 ```
 
 ## Usage
