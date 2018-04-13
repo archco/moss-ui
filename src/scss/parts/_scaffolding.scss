@@ -168,38 +168,6 @@ table {
 }
 
 //==========================================================
-// Code
-//==========================================================
-
-code,
-kbd,
-samp,
-pre {
-  font-family: $font-monospace;
-}
-// inline code
-code {
-  padding: $code-padding-y $code-padding-x;
-  font-size: $code-font-size;
-  color: $code-color;
-  background-color: $code-bg-color;
-  @include border-radius($code-border-radius);
-
-  // code inside link
-  a & {
-    color: inherit;
-  }
-}
-// block code
-pre code {
-  display: block;
-  padding: $code-block-padding-y $code-block-padding-x;
-  overflow-x: auto;
-  line-height: $code-block-line-height;
-  color: $code-color;
-}
-
-//==========================================================
 // Scaffolding Optional Classes
 //==========================================================
 

@@ -223,17 +223,6 @@ $table-row-hover-bg: rgba($background-color-invert, .1) !default;
 $blockquote-color: $text-color-weak !default;
 $blockquote-border-color: $background-color-shade !default;
 
-// codes
-$code-padding-y: .15em !default;
-$code-padding-x: .25em !default;
-$code-font-size: .85em !default;
-$code-bg-color: rgba($background-color-invert, .05) !default;
-$code-color: get-contrast(rgba-to-rgb($code-bg-color, $background-color)) !default;
-$code-border-radius: $radius-normal !default;
-$code-block-padding-y: 1em !default;
-$code-block-padding-x: 1em !default;
-$code-block-line-height: 1.45 !default;
-
 // footer
 $footer-bg-color: $primary-color !default;
 $footer-link-hover-color: get-contrast($footer-bg-color) !default;
@@ -245,6 +234,20 @@ $footer-copyright-bg-color: rgba(#000, .1) !default;
 //============================================================
 // SCSS Parts
 //============================================================
+
+// code
+$code-padding-y: .15em !default;
+$code-padding-x: .25em !default;
+$code-font-size: .85em !default;
+$code-bg-color: rgba($background-color-invert, .05) !default;
+$code-color: get-contrast(rgba-to-rgb($code-bg-color, $background-color)) !default;
+$code-border-radius: $radius-normal !default;
+$code-block-padding-y: 1em !default;
+$code-block-padding-x: 1em !default;
+$code-block-line-height: 1.45 !default;
+$kbd-color: strongen($text-color-weak, 15%) !default;
+$kbd-bg-color: $background-color !default;
+$kbd-border-color: $border-color !default;
 
 // form
 $fieldset-border-width: 1px !default;
