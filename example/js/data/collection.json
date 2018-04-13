@@ -250,5 +250,11 @@
     "name": "Spacing",
     "category": "scss-helpers",
     "description": "Helper classes for specifying margin or padding spacing to element."
+  },
+  {
+    "_id": 43,
+    "name": "Code",
+    "category": "scss",
+    "description": "Display inline or block fragment of computer code."
   }
 ]

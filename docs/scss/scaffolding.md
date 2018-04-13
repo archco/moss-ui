@@ -20,10 +20,13 @@
 It's a way to remove underline decoration in link. The default link causes an underline when hovering. Do one of the following to write `<a>` to avoid underlining.
 
 - In html
+
   ``` html
   <a href="#" class="no-deco">LINK</a>
   ```
+
 - In scss
+
   ``` scss
   .target {
     @include no-decoration;
@@ -35,10 +38,13 @@ It's a way to remove underline decoration in link. The default link causes an un
 Set inherit color to every state of link. (`:link`, `:visited`, `:hover`, `:focus` and `:active`)
 
 - In html
+
   ```html
   <a href="#" class="inherit">LINK</a>
   ```
+
 - In scss
+
   ```scss
   .target {
     @include set-link-state-color(inherit);
@@ -77,12 +83,15 @@ Hover
 Responsive
 
 - wrapper around
+
   ```html
   <div class="table-responsive-wrapper">
     <table>...</table>
   </div>
   ```
+
 - Use "wrap" directive
+
   ```html
   <table class="table" v-wrap:responsive>...</table>
   ```
@@ -140,17 +149,6 @@ $table-row-hover-bg: rgba($background-color-invert, .1) !default;
 $blockquote-color: $text-color-weak !default;
 $blockquote-border-color: $background-color-shade !default;
 
-// codes
-$code-padding-y: .15em !default;
-$code-padding-x: .25em !default;
-$code-font-size: .85em !default;
-$code-bg-color: rgba($background-color-invert, .05) !default;
-$code-color: get-contrast(rgba-to-rgb($code-bg-color, $background-color)) !default;
-$code-border-radius: $radius-normal !default;
-$code-block-padding-y: 1em !default;
-$code-block-padding-x: 1em !default;
-$code-block-line-height: 1.45 !default;
-
 // footer
 $footer-bg-color: $primary-color !default;
 $footer-link-hover-color: get-contrast($footer-bg-color) !default;
@@ -158,12 +156,4 @@ $footer-color: rgba($footer-link-hover-color, .85) !default;
 $footer-link-color: $footer-color !default;
 $footer-copyright-color: $footer-color !default;
 $footer-copyright-bg-color: rgba(#000, .1) !default;
-
-// This variable affects the `.h-*` and `.w-*` classes.
-$sizes: (
-  25: 25%,
-  50: 50%,
-  75: 75%,
-  100: 100%
-) !default;
 ```

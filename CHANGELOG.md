@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - Add dependency "[cake-case](https://github.com/archco/cake-case#readme)". #103
+- Add style for `<kbd>` tag. #109
 
 ### Changed
 
@@ -21,6 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Improve Styles #107
   - Improved `<fieldset>` style. #105
   - Changed input style. #101
+- Separates code part from scaffolding.scss. #109
 
 ### Fixed
 

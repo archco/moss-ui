@@ -36,41 +36,25 @@
         </div>
       </div>
       <section class="pad">
-        <anchored-tag tag="h1" owned>Search</anchored-tag>
-        <p>Simple search component that fuzzy search given collection data such like json.</p>
-        <h2>default</h2>
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="eventTest" @submit="eventTest"></search>
-          </div>
-        </div>
-        <h2>Example Search</h2>
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="onSearchItemClick" @submit="onSearchSubmit">
-              <li slot="result-item" slot-scope="props" style="text-align:left;" tabindex="0" @click="props.onClickItem(props.item)">
-                <h3 style="margin:0;" v-text="props.item.name"></h3><span class="badge" :style="getBadgeStyle(props.item.category)" v-text="props.item.category"></span><span class="help" v-text="props.item.description"></span>
-              </li>
-            </search>
-          </div>
-        </div>
-        <h2>Set Suggestions (Ajax Simulation)</h2>
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <search input-placeholder="input &quot;tim&quot;.." auto-width @input-change="onSearchInputChange">
-              <li slot="result-item" slot-scope="props" tabindex="0" @click="props.onClickItem(props.item)"><span v-text="props.item.name"></span></li>
-            </search>
-          </div>
-        </div>
-        <anchored-tag tag="h1" owned>Icon</anchored-tag>
-        <h2>SVG default usage</h2>
-        <div class="pad" style="font-size:3em;"><i class="icon" id="svg-arrow-example"></i><i class="icon" id="svg-caret-example"></i><i class="icon" id="svg-close-example"></i></div>
-        <h2>Icon component</h2>
-        <icon class="color-danger" name="arrow-down"></icon><span> hello world</span>
-        <icon class="color-success" name="caret-up"></icon>
-        <icon class="bg-color-dark" name="close" style="font-size:3em;border-radius:50%;"></icon>
-        <icon class="bg-color-warning" name="check" style="font-size:2em;"></icon>
-        <icon class="bg-color-link" name="search" style="font-size:2em;"></icon>
+        <anchored-tag tag="h1" owned>Code</anchored-tag>
+        <p>Display inline or block fragment of computer code.</p>
+        <h2>Inline code</h2>
+        <p>
+          It is inline <code>code</code>.<br>
+          <code>HTML</code>, <code>CSS</code>, <code>JavaScript</code><br>
+          <a href="#"><code>code</code></a>  in link
+        </p>
+        <h2>Code blocks</h2>
+        <pre><code>function getTarget() {
+ const elm = document.querySelector('#target');
+ return elm;
+}</code></pre>
+        <h2>Variables</h2>
+        <p class="pad"><var>x</var> = <var>y</var> + 2 </p></p>
+        <h2>User input</h2>
+        <p class="pad"><kbd>ctrl + p</kbd> and <kbd>Enter</kbd></p>
+        <h2>Sample output</h2>
+        <p class="pad"><samp>This text is meant to be treated as sample output from a computer program.</samp></p>
       </section>
       <footer class="footer">
         <div class="container">
