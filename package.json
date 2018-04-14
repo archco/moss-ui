@@ -105,11 +105,12 @@
       "vue"
     ],
     "transform": {
-      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
-      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+      ".*\\.(vue)$": "vue-jest",
+      "^.+\\.js$": "babel-jest"
     },
     "moduleNameMapper": {
-      "\\.(gif|ttf|eot|svg)$": "<rootDir>/test/__mocks__/fileMock.js"
+      "\\.(gif|ttf|eot|svg)$": "<rootDir>/test/__mocks__/fileMock.js",
+      "^@/(.*)$": "<rootDir>/src/js/$1"
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <i class="icon" v-html="svgContent"></i>
+  <i class="moss-icon" v-html="svgContent"></i>
 </template>
 
 <script>

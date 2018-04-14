@@ -19,7 +19,7 @@ export function getSvgByName(name) {
  */
 export function makeIcon(name) {
   const i = document.createElement('i');
-  i.classList.add('icon');
+  i.classList.add('moss-icon');
   i.innerHTML = getSvgByName(name);
   return i;
 }
@@ -31,5 +31,5 @@ export function makeIcon(name) {
  * @returns {string}
  */
 export function makeIconHtml(name) {
-  return `<i class="icon">${getSvgByName(name)}</i>`;
+  return `<i class="moss-icon">${getSvgByName(name)}</i>`;
 }
