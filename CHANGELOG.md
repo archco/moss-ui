@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   - Improved `<fieldset>` style. #105
   - Changed input style. #101
 - Separates code part from scaffolding.scss. #109
+- Add prefix for class name of the icon. `.icon` -> `.moss-icon` #98
 
 ### Fixed
 

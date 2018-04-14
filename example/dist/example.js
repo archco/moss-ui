@@ -315,8 +315,9 @@ function asideMenu() {
       asideMenu.style.position = 'fixed';
       asideMenu.style.top = '45px';
     } else {
-      asideMenu.style.position = null;
-      asideMenu.style.top = null;
+      asideMenu.style.position = '';
+      asideMenu.style.top = '';
+      asideMenu.style.maxWidth = '';
     }
   };
 

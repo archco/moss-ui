@@ -33,6 +33,13 @@
         <div class="hero-content font-accent text-center" style="font-size:1.4em;">
           <h1 class="color-primary">MOSS-UI</h1>
           <p>The front-end UI framework with Vue.js and SCSS.</p>
+          <div class="w-75 mx-auto" style="font-size:1rem;">
+            <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="onSearchItemClick" @submit="onSearchSubmit">
+              <li slot="result-item" slot-scope="props" style="text-align:left;" tabindex="0" @click="props.onClickItem(props.item)">
+                <h3 style="margin:0;" v-text="props.item.name"></h3><span class="badge" :style="getBadgeStyle(props.item.category)" v-text="props.item.category"></span><span class="help" v-text="props.item.description"></span>
+              </li>
+            </search>
+          </div>
         </div>
       </div>
       <section class="pad">
@@ -55,6 +62,15 @@
         <p class="pad"><kbd>ctrl + p</kbd> and <kbd>Enter</kbd></p>
         <h2>Sample output</h2>
         <p class="pad"><samp>This text is meant to be treated as sample output from a computer program.</samp></p>
+        <anchored-tag tag="h1" owned>Icon</anchored-tag>
+        <h2>SVG default usage</h2>
+        <div class="pad" style="font-size:3em;"><i class="moss-icon" id="svg-arrow-example"></i><i class="moss-icon" id="svg-caret-example"></i><i class="moss-icon" id="svg-close-example"></i></div>
+        <h2>Icon component</h2>
+        <icon class="color-danger" name="arrow-down"></icon><span> hello world</span>
+        <icon class="color-success" name="caret-up"></icon>
+        <icon class="bg-color-dark" name="close" style="font-size:3em;border-radius:50%;"></icon>
+        <icon class="bg-color-warning" name="check" style="font-size:2em;"></icon>
+        <icon class="bg-color-link" name="search" style="font-size:2em;"></icon>
       </section>
       <footer class="footer">
         <div class="container">

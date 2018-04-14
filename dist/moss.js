@@ -11090,7 +11090,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("i", {
-    staticClass: "icon",
+    staticClass: "moss-icon",
     domProps: { innerHTML: _vm._s(_vm.svgContent) }
   })
 }
@@ -15012,7 +15012,7 @@ function getSvgByName(name) {
  */
 function makeIcon(name) {
   var i = document.createElement('i');
-  i.classList.add('icon');
+  i.classList.add('moss-icon');
   i.innerHTML = getSvgByName(name);
   return i;
 }
@@ -15024,7 +15024,7 @@ function makeIcon(name) {
  * @returns {string}
  */
 function makeIconHtml(name) {
-  return '<i class="icon">' + getSvgByName(name) + '</i>';
+  return '<i class="moss-icon">' + getSvgByName(name) + '</i>';
 }
 
 /***/ }),

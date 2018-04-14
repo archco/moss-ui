@@ -583,7 +583,7 @@ h5.accent,
 h6.accent {
   font-family: Georgia, serif; }
 
-i.icon {
+i.moss-icon {
   display: -ms-inline-flexbox;
   display: inline-flex;
   -ms-flex-pack: center;
@@ -594,7 +594,7 @@ i.icon {
       align-self: center;
   width: 1em;
   height: 1em; }
-  i.icon > svg {
+  i.moss-icon > svg {
     display: inline-block;
     width: 100%;
     height: 100%; }
@@ -2880,8 +2880,7 @@ ul.card-list {
   -ms-flex-pack: center;
       justify-content: center;
   width: 100%;
-  min-height: 10em;
-  overflow: hidden; }
+  min-height: 10em; }
   .hero-banner.pad-small {
     padding-top: 3em;
     padding-bottom: 3em; }
