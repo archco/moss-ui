@@ -38,13 +38,16 @@
   @include _collapse-toggle-with-icon; // @deprecated at v0.5.0. use collapse-toggle.vue instead.
   position: relative;
 
-  .icon {
-    vertical-align: bottom;
-    margin-right: .3em;
+  > span {
+    display: inline-block;
+  }
+
+  > .moss-icon {
+    margin-right: .25em;
     @include transition(transform $transition-duration $transition-timing-function);
   }
 
-  &[data-expanded="true"] .icon {
+  &[data-expanded="true"] .moss-icon {
     transform: rotate(.25turn);
   }
 }

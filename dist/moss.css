@@ -592,6 +592,7 @@ i.moss-icon {
       align-items: center;
   -ms-flex-item-align: center;
       align-self: center;
+  vertical-align: middle;
   width: 1em;
   height: 1em; }
   i.moss-icon > svg {
@@ -3402,11 +3403,12 @@ a.chip {
       transform: rotate(45deg); }
     .collapse-toggle.with-arrow[data-expanded="true"]::after.left {
       transform: rotate(135deg); }
-  .collapse-toggle .icon {
-    vertical-align: bottom;
-    margin-right: .3em;
+  .collapse-toggle > span {
+    display: inline-block; }
+  .collapse-toggle > .moss-icon {
+    margin-right: .25em;
     transition: transform 0.3s ease-out; }
-  .collapse-toggle[data-expanded="true"] .icon {
+  .collapse-toggle[data-expanded="true"] .moss-icon {
     transform: rotate(0.25turn); }
 
 .collapsing-enter-active,
@@ -3434,7 +3436,7 @@ dropdown,
   display: inline-flex;
   -ms-flex-align: center;
       align-items: center; }
-  .dropdown-button i.icon {
+  .dropdown-button i.moss-icon {
     font-size: .85em;
     margin-left: .25em;
     margin-right: -.25em; }

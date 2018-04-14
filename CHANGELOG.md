@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 
 - Fix link style that inside an inline code. #99
+- Fix icon vertical-align to `middle`. #110
 
 ### Deprecated
 
