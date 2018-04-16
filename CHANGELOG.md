@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   - Changed input style. #101
 - Separates code part from scaffolding.scss. #109
 - Add prefix for class name of the icon. `.icon` -> `.moss-icon` #98
+- Improved collapse: Now available to collapse horizontally. #111
 
 ### Fixed
 
