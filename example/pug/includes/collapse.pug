@@ -29,6 +29,30 @@ ul(class='list-group')
       h3 accordion3
       p=lorem
 
+h2 Horizontal Collapse
+
+button(class='btn dark' v-collapse:horizontal-collapse) toggle
+collapse(id='horizontal-collapse' direction='horizontal')
+  h3 test collapse
+  p= lorem
+
+h3 with Grid
+
+.row
+  collapse.col-2.bg-color-shade(id='aside-collapse1' direction='horizontal' expanded)
+    div.pad
+      div hello
+      div world
+  .col
+    div.pad
+      button.btn-flat.dark(v-collapse:aside-collapse1) Toggle aside1
+      button.btn-flat.info(v-collapse:aside-collapse2) Toggle aside2
+    p= lorem
+  collapse.col-2.bg-color-info(id='aside-collapse2' direction='horizontal' expanded)
+    div.pad
+      div hello
+      div world
+
 h2 Collapse Toggle
 
 collapse-toggle.pad.bg-color-shade(target='test-collapse2') toggle

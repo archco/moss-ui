@@ -9,6 +9,7 @@
 - [Usage](#usage)
   - [Basic](#basic)
   - [Accordion](#accordion)
+  - [Horizontal](#horizontal)
   - [Using collapse-toggle](#using-collapse-toggle)
   - [collapse-toggle class](#collapse-toggle-class)
 - [Props](#props)
@@ -56,6 +57,28 @@
 </ul>
 ```
 
+### Horizontal
+
+``` html
+<button v-collapse:target1>TOGGLE</button>
+
+<collapse id="target1" direction="horizontal">...</collapse>
+```
+
+#### Horizontal collapse with Grid
+
+``` html
+<div class="row">
+  <div class="col-3" is="collapse" id="target1" direction="horizontal">
+    ...
+  </div>
+  <div class="col">
+    <button v-collapse:target1>TOGGLE</button>
+    ...
+  </div>
+</div>
+```
+
 ### Using collapse-toggle
 
 > source: [js/components/collapse-toggle](https://github.com/archco/moss-ui/blob/master/src/js/components/collapse-toggle.vue)
@@ -97,6 +120,7 @@ Available optional class: `with-plus` `with-caret` `with-arrow`
 | id | `String` | required | Key of component. |
 | expanded | `Boolean` | `false` | If true, content is expanded. |
 | accordion | `String` | `''` | Accordion group name. |
+| direction | `String` | `'vertical'` | Collapsing direction. `vertical` or `horizontal` |
 
 ### Props of Collapse-toggle
 
