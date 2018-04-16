@@ -71,6 +71,115 @@
         <icon class="bg-color-dark" name="close" style="font-size:3em;border-radius:50%;"></icon>
         <icon class="bg-color-warning" name="check" style="font-size:2em;"></icon>
         <icon class="bg-color-link" name="search" style="font-size:2em;"></icon>
+        <anchored-tag tag="h1" owned>Collapse</anchored-tag>
+        <h2>Default</h2>
+        <button class="btn default" v-collapse:test-collapse>v-collapse</button>
+        <div class="pad bg-color-primary" is="collapse-toggle" target="test-collapse">CollapseToggle</div>
+        <collapse id="test-collapse" expanded>
+          <h3>test collapse</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </collapse>
+        <h2>Accordion</h2>
+        <button class="btn info" v-accordion:accordion2="'accordion-test'">v-accordion</button>
+        <ul class="list-group">
+          <li>
+            <div is="collapse-toggle" target="accordion1" accordion="accordion-test">accordion one</div>
+            <collapse id="accordion1" accordion="accordion-test" expanded>
+              <h3>accordion1</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <button v-collapse:test00>nested</button>
+              <collapse id="test00">
+                <h4>Nested</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </collapse>
+            </collapse>
+          </li>
+          <li>
+            <div is="collapse-toggle" target="accordion2" accordion="accordion-test">accordion two</div>
+            <collapse id="accordion2" accordion="accordion-test">
+              <h3>accordion2</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </collapse>
+          </li>
+          <li>
+            <div is="collapse-toggle" target="accordion3" accordion="accordion-test">accordion three</div>
+            <collapse id="accordion3" accordion="accordion-test">
+              <h3>accordion3</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </collapse>
+          </li>
+        </ul>
+        <h2>Horizontal Collapse</h2>
+        <button class="btn dark" v-collapse:horizontal-collapse>toggle</button>
+        <collapse id="horizontal-collapse" direction="horizontal">
+          <h3>test collapse</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </collapse>
+        <h3>with Grid</h3>
+        <div class="row">
+          <collapse class="col-2 bg-color-shade" id="aside-collapse1" direction="horizontal" expanded>
+            <div class="pad">
+              <div>hello</div>
+              <div>world</div>
+            </div>
+          </collapse>
+          <div class="col">
+            <div class="pad">
+              <button class="btn-flat dark" v-collapse:aside-collapse1>Toggle aside1</button>
+              <button class="btn-flat info" v-collapse:aside-collapse2>Toggle aside2</button>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <collapse class="col-2 bg-color-info" id="aside-collapse2" direction="horizontal" expanded>
+            <div class="pad">
+              <div>hello</div>
+              <div>world</div>
+            </div>
+          </collapse>
+        </div>
+        <h2>Collapse Toggle</h2>
+        <collapse-toggle class="pad bg-color-shade" target="test-collapse2">toggle</collapse-toggle><span class="d-inline-block bg-color-info" is="collapse-toggle" tag="span" target="test-collapse2">toggle by span</span>
+        <button class="btn" is="collapse-toggle" tag="button" target="test-collapse2">toggle by button</button>
+        <collapse id="test-collapse2">
+          <h3>test collapse</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </collapse>
+        <h2>Collapse Toggle with icon</h2>
+        <blockquote class="pad danger">@deprecated at v0.5.x instead use <code>collapse-toggle</code> component.</blockquote>
+        <h3>Collapse /w icon</h3>
+        <div class="collapse-toggle with-plus pad bg-color-primary" v-collapse:test01>TEST01</div>
+        <collapse id="test01">
+          <p class="pad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </collapse>
+        <div class="collapse-toggle with-caret pad bg-color-secondary" v-collapse:test02>TEST02</div>
+        <collapse id="test02">
+          <p class="pad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </collapse>
+        <h3>Accordion /w icon</h3>
+        <ul class="list-group">
+          <li>
+            <div class="collapse-toggle with-plus" v-accordion:test03="'test1'">accordion one</div>
+            <collapse id="test03" accordion="test1">
+              <h3>test03</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </collapse>
+          </li>
+          <li>
+            <div class="collapse-toggle with-caret" v-accordion:test04="'test1'">accordion two</div>
+            <collapse id="test04" accordion="test1">
+              <h3>test04</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </collapse>
+          </li>
+          <li>
+            <div class="collapse-toggle with-arrow" v-accordion:test05="'test1'">accordion three</div>
+            <collapse id="test05" accordion="test1">
+              <h3>test05</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </collapse>
+          </li>
+        </ul>
       </section>
       <footer class="footer">
         <div class="container">
