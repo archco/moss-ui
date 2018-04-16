@@ -56,5 +56,8 @@
 .collapsing-enter-active,
 .collapsing-leave-active {
   overflow: hidden;
-  @include transition(max-height $transition-duration $transition-timing-function);
+  @include transition(
+    max-width $transition-duration $transition-timing-function,
+    max-height $transition-duration $transition-timing-function
+  );
 }

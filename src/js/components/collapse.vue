@@ -24,7 +24,11 @@ export default {
     accordion: {
       type: String,
       default: '',
-    }
+    },
+    direction: {
+      type: String,
+      default: 'vertical', // 'vertical'|'horizontal'
+    },
   },
   data() {
     return {
@@ -47,20 +51,39 @@ export default {
   },
   methods: {
     expanding(el) {
-      el.style.maxHeight = 'none';
-      const realHeight = window.getComputedStyle(el).height;
-      el.style.maxHeight = '0px';
-      el.offsetHeight; // Force repaint
-      el.style.maxHeight = realHeight;
+      const style = () => window.getComputedStyle(el);
+
+      if (this.direction === 'vertical') {
+        const realHeight = style().height;
+        el.style.maxHeight = '0px';
+        el.offsetHeight; // Force repaint
+        el.style.maxHeight = realHeight;
+      } else {
+        el.style.maxWidth = 'none';
+        const { width, height } = style();
+        el.style.maxWidth = '0px';
+        el.offsetWidth; // Force repaint
+        el.style.maxWidth = width;
+        el.style.maxHeight = height;
+      }
     },
     collapsing(el) {
-      el.style.maxHeight = 'none';
-      const realHeight = window.getComputedStyle(el).height;
-      el.style.maxHeight = realHeight;
-      el.offsetHeight; // Force repaint
-      el.style.maxHeight = '0px';
+      const style = () => window.getComputedStyle(el);
+
+      if (this.direction === 'vertical') {
+        el.style.maxHeight = style().height; // real height.
+        el.offsetHeight; // Force repaint
+        el.style.maxHeight = '0px';
+      } else {
+        const { width, height } = style();
+        el.style.maxWidth = width;
+        el.style.maxHeight = height;
+        el.offsetWidth; // Force repaint
+        el.style.maxWidth = '0px';
+      }
     },
     clearHeight(el) {
+      el.style.maxWidth = '';
       el.style.maxHeight = '';
     },
 
