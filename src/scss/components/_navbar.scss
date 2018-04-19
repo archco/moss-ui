@@ -68,6 +68,10 @@ navbar,
   }
 }
 
+.nav-button {
+  @extend %nav-button, %nav-link;
+}
+
 .navbar-brand {
   display: flex;
   width: auto;

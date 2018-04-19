@@ -26,18 +26,18 @@ html
       header.d-flex.justify-content-center.align-items-center.bg-color-primary(style="height:100px;")
         h1
           a.no-deco.inherit(id='project-name' href='index.html') MOSS-UI <span class='moss-version'></span>
-
-      navbar(class='sticky-top shadow-near' align='end')
-        navbar-brand(href='index.html' type='text' slot='brand' v-activator.this.self) Moss
-        navbar-nav(v-activator="'.nav-item > .nav-link'")
-          nav-item(href='scss.html?q=components' text='SCSS')
-          nav-item(href='vue.html' text='Vue')
-          nav-item
-            dropdown(toggle='toggle' placement='bottom-end')
-              button(slot='button') Utilities
-              a.dropdown-item(href='scss-helpers.html') SCSS Helpers
-              a.dropdown-item(href='vue-directives.html') Vue Directives
-              a.dropdown-item(href='js-libraries.html') JS Libraries
+      block nav
+        navbar(class='sticky-top shadow-near' align='end')
+          navbar-brand(href='index.html' type='text' slot='brand' v-activator.this.self) Moss
+          navbar-nav(v-activator="'.nav-item > .nav-link'")
+            nav-item(href='scss.html?q=components' text='SCSS')
+            nav-item(href='vue.html' text='Vue')
+            nav-item
+              dropdown(toggle='toggle' placement='bottom-end')
+                button(slot='button') Utilities
+                a.dropdown-item(href='scss-helpers.html') SCSS Helpers
+                a.dropdown-item(href='vue-directives.html') Vue Directives
+                a.dropdown-item(href='js-libraries.html') JS Libraries
 
       block content
 
