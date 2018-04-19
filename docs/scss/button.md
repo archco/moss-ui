@@ -7,6 +7,7 @@
 - [Usage](#usage)
   - [btn](#btn)
   - [btn-flat](#btn-flat)
+  - [btn-text](#btn-text)
   - [btn-icon](#btn-icon)
   - [disabled](#disabled)
   - [Button with color-set](#button-with-color-set)
@@ -31,6 +32,14 @@
 ``` html
 <button class="btn-flat success">Success</button>
 <a class="btn-flat warning" href="#">link button</a>
+```
+
+### btn-text
+
+This button style is assimilated with text.
+
+``` html
+<button class="btn-text">As Text</button>
 ```
 
 ### btn-icon
