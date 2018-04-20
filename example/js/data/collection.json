@@ -260,6 +260,7 @@
   {
     "_id": 44,
     "name": "v-outer",
+    "category": "vue-directives",
     "description": "Add listener for the event that occurs outer of the element."
   }
 ]

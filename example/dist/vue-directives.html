@@ -109,10 +109,11 @@
             <div class="col md pad bg-color-shade" v-ripple="{color: '#0ff'}">#0ff ripple color</div>
           </div>
           <anchored-tag tag="h1" owned>v-outer</anchored-tag>
-          <div class="d-flex justify-content-around align-items-center bg-color-shade mb-3" id="outer-box" style="height:250px;">
-            <div class="bg-color-dark" style="width:100px;height:100px;">Other</div>
-            <div class="bg-color-success" style="width:100px;height:100px;" v-outer.click="{root: '#outer-box', callback: onOuterClick}">Target</div>
-            <div class="bg-color-dark" style="width:100px;height:100px;">Other</div>
+          <p>Add listener for the event that occurs outer of the element.</p>
+          <div class="d-flex justify-content-around align-items-center bg-color-shade mb-3" id="outer-box" style="height:150px;">
+            <div class="bg-color-dark" style="width:25%;height:100px;">Other</div>
+            <div class="bg-color-success" style="width:25%;height:100px;" v-outer.click="{root: '#outer-box', listener: onOuterClick}">Target</div>
+            <div class="bg-color-dark" style="width:25%;height:100px;">Other</div>
           </div>
         </section>
       </div>

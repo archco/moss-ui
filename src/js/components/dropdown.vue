@@ -10,7 +10,7 @@
 
 <script>
 import Popper from 'popper.js';
-import { findAncestor, getElementsAsArray } from 'element-util';
+import { addOuterListener, getElementsAsArray } from 'element-util';
 import { makeIcon } from '../lib/util';
 
 export default {
@@ -84,10 +84,8 @@ export default {
     toggleShow() {
       this.isShown ? this.hide() : this.show();
     },
-    onOtherClick(event) {
-      const isOwn = findAncestor(event.target, this.$el) != null;
-
-      if (!isOwn && this.isShown == true) this.hide();
+    onOuterClick() {
+      if (this.isShown) this.hide();
     },
     onBtnKeydown(event) {
       if (event.key.match(/Escape|Esc/)) {
@@ -159,7 +157,12 @@ export default {
     addListeners() {
       if (this.toggle === 'toggle') {
         this.btn.addEventListener('click', this.toggleShow.bind(this));
-        window.addEventListener('click', this.onOtherClick.bind(this));
+        addOuterListener(
+          document.documentElement,
+          this.$el,
+          'click',
+          this.onOuterClick.bind(this)
+        );
       } else if (this.toggle === 'hover') {
         this.$el.addEventListener('mouseover', this.show.bind(this));
         this.$el.addEventListener('mouseout', this.hide.bind(this));
