@@ -1,5 +1,5 @@
 /// <reference path="../vue.d.ts" />
-import { getElement } from 'element-util';
+import { addOuterListener } from 'element-util';
 
 /*
   v-outer.{modifiers}="{value}"
@@ -23,17 +23,9 @@ export default {
    */
   inserted(el, binding) {
     const options = resolveOptions(el, binding);
-    const { root, events } = options;
-    events.forEach(name => {
-      root.addEventListener(name, eventHandler.bind(options));
-    });
-  },
-
-  unbind(el, binding) {
-    const options = resolveOptions(el, binding);
-    const { root, events } = options;
-    events.forEach(name => {
-      root.removeEventListener(name, eventHandler);
+    const { root, events, target, listener } = options;
+    events.forEach(type => {
+      addOuterListener(root, target, type, listener);
     });
   }
 };
@@ -66,20 +58,5 @@ function resolveOptions(el, binding) {
   if (binding.modifiers) {
     options.events = Object.keys(binding.modifiers);
   }
-  options.target = getElement(options.target);
-  options.root = getElement(options.root);
   return options;
-}
-
-/**
- * Event handler.
- *
- * @param {Event} event
- */
-function eventHandler(event) {
-  const { target, listener } = this;
-  if (target !== event.target
-    && !target.contains(event.target)) {
-    listener(event);
-  }
 }
