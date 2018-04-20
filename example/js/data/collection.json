@@ -256,5 +256,10 @@
     "name": "Code",
     "category": "scss",
     "description": "Display inline or block fragment of computer code."
+  },
+  {
+    "_id": 44,
+    "name": "v-outer",
+    "description": "Add listener for the event that occurs outer of the element."
   }
 ]

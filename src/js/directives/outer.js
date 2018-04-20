@@ -5,13 +5,13 @@ import { getElement } from 'element-util';
   v-outer.{modifiers}="{value}"
 
   modifiers: event type.
-  value: options object or event callback function.
+  value: options object or event listener function.
 
   interface OuterOptions {
     root: HTMLElement|window; // default = document.documentElement
     target: HTMLElement; // default = el
     events: string[];
-    callback: (event: Event) => void;
+    listener: (event: Event) => void;
   }
 */
 export default {
@@ -46,7 +46,7 @@ const DefaultOptions = {
   /** @type {string[]} */
   events: [],
   /** @type {(event: Event) => void} */
-  callback: null,
+  listener: null,
 };
 
 /**
@@ -59,7 +59,7 @@ const DefaultOptions = {
 function resolveOptions(el, binding) {
   let options = Object.assign(DefaultOptions, { target: el });
   if (typeof binding.value === 'function') {
-    options.callback = binding.value;
+    options.listener = binding.value;
   } else {
     options = Object.assign(options, binding.value);
   }
@@ -77,9 +77,9 @@ function resolveOptions(el, binding) {
  * @param {Event} event
  */
 function eventHandler(event) {
-  const { target, callback } = this;
+  const { target, listener } = this;
   if (target !== event.target
     && !target.contains(event.target)) {
-    callback(event);
+    listener(event);
   }
 }

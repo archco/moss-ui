@@ -66,6 +66,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [v-confirm](js/directives.md#confirm)
 - [v-focus](js/directives.md#focus)
 - [v-ripple](js/directives.md#ripple)
+- [v-outer](js/directives.md#outer)
 - [v-scrollspy](js/directives.md#scrollspy)
 - [v-set-value](js/directives.md#set-value)
 - [v-tooltip](js/directives.md#tooltip)

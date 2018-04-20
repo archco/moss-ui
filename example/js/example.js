@@ -76,6 +76,10 @@ window.vm = new window.Vue({
         backgroundColor: bgColor.toHex(true),
       };
     },
+
+    onOuterClick() {
+      window.Moss.toast('Clicked an outer element.');
+    },
   },
 
   beforeMount() {

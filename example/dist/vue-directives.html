@@ -38,6 +38,7 @@
             <li is="anchored-tag" tag="li">v-set-value</li>
             <li is="anchored-tag" tag="li">v-tooltip</li>
             <li is="anchored-tag" tag="li">v-ripple</li>
+            <li is="anchored-tag" tag="li">v-outer</li>
           </ul>
         </aside>
         <section class="col-md-10">
@@ -106,6 +107,12 @@
             <div class="col-md pad bg-color-dark" v-ripple="{color: '#fff'}">#fff ripple color</div>
             <div class="col-md pad bg-color-warning" v-ripple="{color: '#f00'}">#f00 ripple color</div>
             <div class="col md pad bg-color-shade" v-ripple="{color: '#0ff'}">#0ff ripple color</div>
+          </div>
+          <anchored-tag tag="h1" owned>v-outer</anchored-tag>
+          <div class="d-flex justify-content-around align-items-center bg-color-shade mb-3" id="outer-box" style="height:250px;">
+            <div class="bg-color-dark" style="width:100px;height:100px;">Other</div>
+            <div class="bg-color-success" style="width:100px;height:100px;" v-outer.click="{root: '#outer-box', callback: onOuterClick}">Target</div>
+            <div class="bg-color-dark" style="width:100px;height:100px;">Other</div>
           </div>
         </section>
       </div>

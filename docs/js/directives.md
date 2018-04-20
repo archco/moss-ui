@@ -71,6 +71,39 @@ Auto focus on element.
   <input type="text" v-focus>
   ```
 
+## Outer
+
+Add listener for the event that occurs outer of the element.
+
+- Syntax
+
+  ``` html
+  <div v-outer.{modifiers}="{value}"></div>
+  ```
+
+- modifiers - event types.
+- value `Function`|[`OuterOptions`](#outeroptions) - event listener function or Options object.
+
+### OuterOptions
+
+``` ts
+interface OuterOptions {
+  root: HTMLElement|window; // default = document.documentElement
+  target: HTMLElement; // default = el
+  events: string[];
+  listener: (event: Event) => void;
+}
+```
+
+### Example
+
+``` html
+<!-- Basic usage -->
+<div v-outer.click="onOuterClick">
+<!-- Usage via options -->
+<div v-outer.mouseover="{root: '.table', target: 'th', listener: onOuterMouseover}">
+```
+
 ## Ripple
 
 Apply ripple effect on element. It triggered on click.
