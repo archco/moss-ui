@@ -3,24 +3,17 @@ nav-drawer,
 [is="nav-drawer"] { display: none; }
 
 .nav-drawer {
-  $_drawer-widths: (
-    sm: 67%,
-    md: 50%,
-    lg: 33%,
-    xl: 25%,
-  );
-
   display: flex;
   flex-direction: column;
   position: fixed;
   z-index: $z-index-fixed;
   top: 0;
   left: 0;
-  width: 280px;
+  width: $nav-drawer-base-width;
   height: 100%;
-  box-shadow: $shadow-normal;
+  box-shadow: $nav-drawer-shadow;
 
-  @each $breakpoint, $width in $_drawer-widths {
+  @each $breakpoint, $width in $nav-drawer-widths {
     @include media-breakpoint-up($breakpoint) {
       width: $width;
     }
@@ -31,16 +24,19 @@ nav-drawer,
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: $space-2;
-  font-size: 2rem;
-  background-color: $shade-color;
+  padding: $nav-drawer-header-padding-y $nav-drawer-header-padding-x;
+  font-size: $nav-drawer-header-font-size;
+  background-color: $nav-drawer-header-bg-color;
+  color: $nav-drawer-header-color;
 }
 
 .nav-drawer-body {
   display: flex;
   flex-direction: column;
-  background-color: $background-color;
   height: 100%;
+  font-size: $nav-drawer-body-font-size;
+  background-color: $nav-drawer-body-bg-color;
+  color: $nav-drawer-body-color;
   overflow-y: auto;
 
   .info {
@@ -50,35 +46,35 @@ nav-drawer,
 
   .menu-header {
     display: block;
-    padding: $space-2;
+    padding: .5em;
     margin: 0;
-    color: $text-color-weak;
+    color: $nav-drawer-menu-header-color;
   }
 
   .menu-item {
     @extend %nav-link;
     display: block;
-    padding: $space-2 $space-3;
+    padding: .5em 1em;
     margin: 0;
 
     &:hover:not([disabled]) {
-      background-color: $shade-color;
+      background-color: $nav-drawer-menu-item-hover-bg-color;
     }
 
     &[disabled] {
-      color: $text-color-weak;
+      color: $nav-drawer-menu-item-disabled-color;
       cursor: default;
     }
 
     &.active {
-      background-color: $shade-color;
+      background-color: $nav-drawer-menu-item-active-bg-color;
     }
   }
 
   .menu-divider {
     height: 0;
-    margin: $space-1 0;
+    margin: .25em 0;
     overflow: hidden;
-    border-top: 1px solid $border-color;
+    border-top: 1px solid $nav-drawer-menu-divider-color;
   }
 }

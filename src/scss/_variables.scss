@@ -377,6 +377,29 @@ $nav-font-size: 1.25em !default;
 $nav-line-height: 1.25 !default;
 $navbar-toggle-width: 35px !default;
 
+// nav-drawer
+$nav-drawer-base-width: 280px !default;
+$nav-drawer-widths: (
+  sm: 67%,
+  md: 50%,
+  lg: 33%,
+  xl: 25%,
+) !default;
+$nav-drawer-shadow: $shadow-normal !default;
+$nav-drawer-header-padding-y: $space-2 !default;
+$nav-drawer-header-padding-x: $space-2 !default;
+$nav-drawer-header-font-size: 2rem !default;
+$nav-drawer-header-bg-color: $background-color !default;
+$nav-drawer-header-color: $text-color !default;
+$nav-drawer-body-font-size: 1em !default;
+$nav-drawer-body-bg-color: $background-color !default;
+$nav-drawer-body-color: $text-color !default;
+$nav-drawer-menu-header-color: $text-color-weak !default;
+$nav-drawer-menu-item-hover-bg-color: $shade-color !default;
+$nav-drawer-menu-item-active-bg-color: $shade-color !default;
+$nav-drawer-menu-item-disabled-color: $text-color-middle !default;
+$nav-drawer-menu-divider-color: $border-color !default;
+
 // scroll-to
 $scroll-to-bg-color: $primary-color-accent !default;
 $scroll-to-color: get-contrast($scroll-to-bg-color) !default;
