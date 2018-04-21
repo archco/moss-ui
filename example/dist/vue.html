@@ -39,6 +39,7 @@
             <li is="anchored-tag" tag="li">Message</li>
             <li is="anchored-tag" tag="li">Modal</li>
             <li is="anchored-tag" tag="li">Nav</li>
+            <li is="anchored-tag" tag="li">NavDrawer</li>
             <li is="anchored-tag" tag="li">Parallax</li>
             <li is="anchored-tag" tag="li">Search</li>
             <li is="anchored-tag" tag="li">SimpleCRUD</li>
@@ -380,6 +381,24 @@
               <nav-item href="#" text="logout"></nav-item>
             </navbar-nav>
           </navbar>
+          <anchored-tag tag="h1" owned>NavDrawer</anchored-tag>
+          <p>It's the navigation drawer that using horizontal-collapse.</p>
+          <button class="btn info" v-collapse:drawer01>Open Drawer</button>
+          <nav-drawer id="drawer01">
+            <div class="nav-drawer-header">
+              <button class="btn-text" v-collapse:drawer01.hide>
+                <icon name="close"></icon>
+              </button>
+            </div>
+            <div class="nav-drawer-body">
+              <div class="info bg-color-secondary d-flex justify-content-center align-items-center" style="height:150px;">
+                <h2>HELLO</h2>
+              </div>
+              <h3 class="menu-header">Main Menu</h3><a class="menu-item" href="#">item1</a><a class="menu-item active" href="#">item2</a><a class="menu-item" href="#">item3</a>
+              <div class="menu-divider"></div>
+              <h4 class="menu-header">Sub Menu</h4><a class="menu-item" href="#" disabled>disabled item</a><a class="menu-item" href="#">item5</a><a class="menu-item" href="#">item6</a>
+            </div>
+          </nav-drawer>
           <anchored-tag tag="h1" owned>Parallax</anchored-tag>
           <parallax src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg"></parallax>
           <div class="d-flex justify-content-center align-items-center bg-color-shade" style="height:250px;">
