@@ -256,5 +256,17 @@
     "name": "Code",
     "category": "scss",
     "description": "Display inline or block fragment of computer code."
+  },
+  {
+    "_id": 44,
+    "name": "v-outer",
+    "category": "vue-directives",
+    "description": "Add listener for the event that occurs outer of the element."
+  },
+  {
+    "_id": 45,
+    "name": "NavDrawer",
+    "category": "vue",
+    "description": "It's the navigation drawer that using horizontal-collapse."
   }
 ]

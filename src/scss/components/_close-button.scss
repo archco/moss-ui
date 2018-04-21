@@ -1,11 +1,5 @@
 .close-button {
-  @extend %btn-common;
-  padding: 0;
-  margin: 0;
-  color: currentColor;
-  vertical-align: inherit;
-  line-height: 0;
-  background-color: transparent;
+  @extend %btn-text;
   opacity: .5;
   @include transition(opacity $transition-duration $transition-timing-function);
 

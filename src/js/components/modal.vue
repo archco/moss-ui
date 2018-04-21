@@ -59,11 +59,11 @@ export default {
   },
   watch: {
     show(shown) {
-      const body = document.querySelector('body');
+      const c = 'modal-shown';
       if (shown) {
-        body.classList.add('modal-shown');
+        document.body.classList.add(c);
       } else {
-        body.classList.remove('modal-shown');
+        document.body.classList.remove(c);
       }
     },
   },
@@ -103,9 +103,9 @@ export default {
     }
 
     if (this.closeOn) {
-      window.addEventListener('click', event => {
+      document.documentElement.addEventListener('click', event => {
         if (event.target.classList.contains('modal-mask')) {
-          this.$root.$emit('modal-toggle', this.name, 'close');
+          this.toggleModal(this.name, 'close');
         }
       });
     }

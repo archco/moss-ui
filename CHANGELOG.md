@@ -13,8 +13,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- Add dependency "[cake-case](https://github.com/archco/cake-case#readme)". #103
-- Add style for `<kbd>` tag. #109
+- Added dependency "[cake-case](https://github.com/archco/cake-case#readme)". #103
+- Added style for `<kbd>` tag. #109
+- Added scss-class `.btn-text`. #113
+- Added a new vue-directive `v-outer`. #112
+- Added a new vue-component `nav-drawer`. #24, #114
 
 ### Changed
 

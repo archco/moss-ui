@@ -456,9 +456,9 @@ a {
   a.inherit:active {
     color: inherit; }
 
-.pagination li a, .nav-item .nav-link, .navbar-brand.text, .nav-item .dropdown .dropdown-button {
+.pagination li a, .nav-item .nav-link, .nav-button, .navbar-brand.text, .nav-item .dropdown .dropdown-button, .nav-drawer-body .menu-item {
   text-decoration: none; }
-  .pagination li a:focus, .nav-item .nav-link:focus, .navbar-brand.text:focus, .nav-item .dropdown .dropdown-button:focus, .pagination li a:hover, .nav-item .nav-link:hover, .navbar-brand.text:hover, .nav-item .dropdown .dropdown-button:hover {
+  .pagination li a:focus, .nav-item .nav-link:focus, .nav-button:focus, .navbar-brand.text:focus, .nav-item .dropdown .dropdown-button:focus, .nav-drawer-body .menu-item:focus, .pagination li a:hover, .nav-item .nav-link:hover, .nav-button:hover, .navbar-brand.text:hover, .nav-item .dropdown .dropdown-button:hover, .nav-drawer-body .menu-item:hover {
     text-decoration: none; }
 
 blockquote {
@@ -1838,9 +1838,9 @@ textarea.inline {
   border: 1px solid #bebebe;
   border-radius: 2px; }
 
-input[type=submit],
+.btn-text, .close-button, input[type=submit],
 input[type=button],
-input[type=reset], .btn, .btn-flat, .btn-icon, .close-button, .dropdown-button, .navbar-toggle, .nav-item .dropdown .dropdown-button, .scroll-to-container .scroll-to-top,
+input[type=reset], .btn, .btn-flat, .btn-icon, .dropdown-button, .nav-button, .navbar-toggle, .nav-item .dropdown .dropdown-button, .scroll-to-container .scroll-to-top,
 .scroll-to-container .scroll-to-bottom {
   text-decoration: none;
   line-height: 1.15;
@@ -1854,14 +1854,22 @@ input[type=reset], .btn, .btn-flat, .btn-icon, .close-button, .dropdown-button, 
   display: inline-block;
   text-align: center;
   vertical-align: middle; }
-  input:focus[type=submit],
+  .btn-text:focus, .close-button:focus, input:focus[type=submit],
   input:focus[type=button],
-  input:focus[type=reset], .btn:focus, .btn-flat:focus, .btn-icon:focus, .close-button:focus, .dropdown-button:focus, .navbar-toggle:focus, .nav-item .dropdown .dropdown-button:focus, .scroll-to-container .scroll-to-top:focus,
-  .scroll-to-container .scroll-to-bottom:focus, input:hover[type=submit],
+  input:focus[type=reset], .btn:focus, .btn-flat:focus, .btn-icon:focus, .dropdown-button:focus, .nav-button:focus, .navbar-toggle:focus, .nav-item .dropdown .dropdown-button:focus, .scroll-to-container .scroll-to-top:focus,
+  .scroll-to-container .scroll-to-bottom:focus, .btn-text:hover, .close-button:hover, input:hover[type=submit],
   input:hover[type=button],
-  input:hover[type=reset], .btn:hover, .btn-flat:hover, .btn-icon:hover, .close-button:hover, .dropdown-button:hover, .navbar-toggle:hover, .nav-item .dropdown .dropdown-button:hover, .scroll-to-container .scroll-to-top:hover,
+  input:hover[type=reset], .btn:hover, .btn-flat:hover, .btn-icon:hover, .dropdown-button:hover, .nav-button:hover, .navbar-toggle:hover, .nav-item .dropdown .dropdown-button:hover, .scroll-to-container .scroll-to-top:hover,
   .scroll-to-container .scroll-to-bottom:hover {
     text-decoration: none; }
+
+.btn-text, .close-button {
+  padding: 0;
+  margin: 0;
+  color: currentColor;
+  vertical-align: inherit;
+  line-height: 0;
+  background-color: transparent; }
 
 input[type=submit],
 input[type=button],
@@ -3274,12 +3282,6 @@ a.chip {
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
 
 .close-button {
-  padding: 0;
-  margin: 0;
-  color: currentColor;
-  vertical-align: inherit;
-  line-height: 0;
-  background-color: transparent;
   opacity: .5;
   transition: opacity 0.3s ease-out; }
   .close-button:hover {
@@ -3763,17 +3765,17 @@ navbar,
 [is="navbar"] {
   visibility: hidden; }
 
-.nav-item .nav-link, .navbar-brand.text, .nav-item .dropdown .dropdown-button {
+.nav-item .nav-link, .nav-button, .navbar-brand.text, .nav-item .dropdown .dropdown-button, .nav-drawer-body .menu-item {
   display: inline-block;
   padding: 0.5em 1em;
   font-family: inherit;
   font-size: inherit;
   color: inherit;
   transition: color 0.3s ease-out; }
-  .nav-item .nav-link:hover, .navbar-brand.text:hover, .nav-item .dropdown .dropdown-button:hover {
+  .nav-item .nav-link:hover, .nav-button:hover, .navbar-brand.text:hover, .nav-item .dropdown .dropdown-button:hover, .nav-drawer-body .menu-item:hover {
     color: #4c5866; }
 
-.navbar-toggle, .nav-item .dropdown .dropdown-button {
+.nav-button, .navbar-toggle, .nav-item .dropdown .dropdown-button {
   display: inline-block;
   background-color: transparent;
   outline: none; }
@@ -3890,6 +3892,83 @@ navbar,
       width: 100%; }
   .nav-item .dropdown-content {
     width: calc(100% - 10px); } }
+
+nav-drawer,
+[is="nav-drawer"] {
+  display: none; }
+
+.nav-drawer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  position: fixed;
+  z-index: 12;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
+  @media only screen and (min-width: 576px) {
+    .nav-drawer {
+      width: 67%; } }
+  @media only screen and (min-width: 768px) {
+    .nav-drawer {
+      width: 50%; } }
+  @media only screen and (min-width: 992px) {
+    .nav-drawer {
+      width: 33%; } }
+  @media only screen and (min-width: 1200px) {
+    .nav-drawer {
+      width: 25%; } }
+
+.nav-drawer-header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  padding: 0.5rem 0.5rem;
+  font-size: 2rem;
+  background-color: #fff;
+  color: #343434; }
+
+.nav-drawer-body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  height: 100%;
+  font-size: 1em;
+  background-color: #fff;
+  color: #343434;
+  overflow-y: auto; }
+  .nav-drawer-body .info {
+    display: block;
+    -ms-flex: 0 0 auto;
+        flex: 0 0 auto; }
+  .nav-drawer-body .menu-header {
+    display: block;
+    padding: .5em;
+    margin: 0;
+    color: #777777; }
+  .nav-drawer-body .menu-item {
+    display: block;
+    padding: .5em 1em;
+    margin: 0; }
+    .nav-drawer-body .menu-item:hover:not([disabled]) {
+      background-color: #ebebeb; }
+    .nav-drawer-body .menu-item[disabled] {
+      color: #9a9a9a;
+      cursor: default; }
+    .nav-drawer-body .menu-item.active {
+      background-color: #ebebeb; }
+  .nav-drawer-body .menu-divider {
+    height: 0;
+    margin: .25em 0;
+    overflow: hidden;
+    border-top: 1px solid #bebebe; }
 
 .parallax {
   background-attachment: fixed;

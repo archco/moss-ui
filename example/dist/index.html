@@ -43,6 +43,24 @@
         </div>
       </div>
       <section class="pad">
+        <anchored-tag tag="h1" owned>NavDrawer</anchored-tag>
+        <p>It's the navigation drawer that using horizontal-collapse.</p>
+        <button class="btn info" v-collapse:drawer01>Open Drawer</button>
+        <nav-drawer id="drawer01">
+          <div class="nav-drawer-header">
+            <button class="btn-text" v-collapse:drawer01.hide>
+              <icon name="close"></icon>
+            </button>
+          </div>
+          <div class="nav-drawer-body">
+            <div class="info bg-color-secondary d-flex justify-content-center align-items-center" style="height:150px;">
+              <h2>HELLO</h2>
+            </div>
+            <h3 class="menu-header">Main Menu</h3><a class="menu-item" href="#">item1</a><a class="menu-item active" href="#">item2</a><a class="menu-item" href="#">item3</a>
+            <div class="menu-divider"></div>
+            <h4 class="menu-header">Sub Menu</h4><a class="menu-item" href="#" disabled>disabled item</a><a class="menu-item" href="#">item5</a><a class="menu-item" href="#">item6</a>
+          </div>
+        </nav-drawer>
         <anchored-tag tag="h1" owned>Code</anchored-tag>
         <p>Display inline or block fragment of computer code.</p>
         <h2>Inline code</h2>

@@ -11,3 +11,4 @@ export { default as SetValue } from './set-value';
 export { default as Tooltip } from './tooltip';
 export { default as Trigger } from './trigger';
 export { default as Wrap } from './wrap';
+export { default as Outer } from './outer';
