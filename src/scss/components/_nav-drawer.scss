@@ -13,7 +13,7 @@ nav-drawer,
   display: flex;
   flex-direction: column;
   position: fixed;
-  z-index: $z-index-nav;
+  z-index: $z-index-fixed;
   top: 0;
   left: 0;
   width: 280px;

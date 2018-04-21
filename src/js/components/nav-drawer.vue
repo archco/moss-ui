@@ -9,9 +9,16 @@
 
 <script>
 import { addOuterListener } from 'element-util';
+import Collapse from './collapse.vue';
 
 export default {
+  components: { Collapse },
   props: ['id'],
+  computed: {
+    shown() {
+      return this.$refs.collapse.show;
+    },
+  },
   mounted() {
     addOuterListener(
       document.documentElement,
@@ -23,8 +30,13 @@ export default {
   },
   methods: {
     onOtherClick() {
-      const c = this.$refs.collapse;
-      if (c.show) c.toggleCollapse(this.id, 'close');
+      if (this.shown) this.close();
+    },
+    open() {
+      this.$refs.collapse.toggleCollapse(this.id, 'show');
+    },
+    close() {
+      this.$refs.collapse.toggleCollapse(this.id, 'close');
     }
   }
 }
