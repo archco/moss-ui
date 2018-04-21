@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added style for `<kbd>` tag. #109
 - Added scss-class `.btn-text`. #113
 - Added a new vue-directive `v-outer`. #112
+- Added a new vue-component `nav-drawer`. #24, #114
 
 ### Changed
 

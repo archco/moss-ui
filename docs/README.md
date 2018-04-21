@@ -48,6 +48,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [message](js/message.md)
 - [modal](js/modal.md)
 - [navbar](js/navbar.md)
+- [nav-drawer](js/nav-drawer.md)
 - [parallax](js/parallax.md)
 - [scroll-to](js/scroll-to.md)
 - [simple-crud](js/simple-crud.md)
