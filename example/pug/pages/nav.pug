@@ -11,16 +11,21 @@ block nav
 block content
   nav-drawer(id='main-nav')
     .nav-drawer-header
-      .header-actions
-        button.btn(v-collapse:main-nav.hide)
+      button.btn-text(v-collapse:main-nav.hide)
           icon(name='close')
     .nav-drawer-body
+      .info.bg-color-secondary.d-flex.justify-content-center.align-items-center(style='height:150px;')
+        h2 HELLO
       h3.menu-header Main Menu
       a.menu-item(href='#') item1
-      a.menu-item(href='#') item2
+      a.menu-item.active(href='#') item2
       a.menu-item(href='#') item3
       .menu-divider
-      a.menu-item(href='#') item4
+      a.menu-item(href='#' disabled) item4
+      a.menu-item(href='#') item5
+      a.menu-item(href='#') item6
+      a.menu-item(href='#') item5
+      a.menu-item(href='#') item6
   div(class='hero-banner pad-large')
     div(class='hero-background filter gray' style=`background-image:url('${imageSrc[0]}');`)
     div(class='hero-content font-accent text-center' style='font-size:1.4em;')

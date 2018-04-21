@@ -1,47 +1,57 @@
+// Hide during loading.
+nav-drawer,
+[is="nav-drawer"] { display: none; }
+
 .nav-drawer {
+  $_drawer-widths: (
+    sm: 67%,
+    md: 50%,
+    lg: 33%,
+    xl: 25%,
+  );
+
   display: flex;
   flex-direction: column;
   position: fixed;
   z-index: $z-index-nav;
   top: 0;
   left: 0;
-  width: 67%;
+  width: 280px;
   height: 100%;
   box-shadow: $shadow-normal;
+
+  @each $breakpoint, $width in $_drawer-widths {
+    @include media-breakpoint-up($breakpoint) {
+      width: $width;
+    }
+  }
 }
 
 .nav-drawer-header {
   display: flex;
-  flex-direction: column;
-
-  .header-actions {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: $space-2;
-    font-size: $font-size-large;
-    background-color: $shade-color;
-  }
-
-  .header-info {
-    display: block;
-    flex-grow: 1;
-    padding: $space-2;
-  }
+  align-items: center;
+  justify-content: flex-end;
+  padding: $space-2;
+  font-size: 2rem;
+  background-color: $shade-color;
 }
 
 .nav-drawer-body {
-  flex-grow: 1;
-  padding: $space-2;
-  background-color: $background-color;
   display: flex;
   flex-direction: column;
+  background-color: $background-color;
+  height: 100%;
+  overflow-y: auto;
+
+  .info {
+    display: block;
+    flex: 0 0 auto;
+  }
 
   .menu-header {
     display: block;
-    padding: $space-2 $space-3;
+    padding: $space-2;
     margin: 0;
-    // font-size: 1.1em;
     color: $text-color-weak;
   }
 
@@ -50,6 +60,19 @@
     display: block;
     padding: $space-2 $space-3;
     margin: 0;
+
+    &:hover:not([disabled]) {
+      background-color: $shade-color;
+    }
+
+    &[disabled] {
+      color: $text-color-weak;
+      cursor: default;
+    }
+
+    &.active {
+      background-color: $shade-color;
+    }
   }
 
   .menu-divider {
