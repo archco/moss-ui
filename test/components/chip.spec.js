@@ -1,4 +1,3 @@
-import expect from 'expect';
 import { mount } from '@vue/test-utils';
 import Chip from '../../src/js/components/chip.vue';
 
@@ -44,5 +43,19 @@ describe('#Chip', () => {
     expect(wrapper.contains('button')).toBe(true);
     const c = wrapper.find('button');
     expect(c.element.classList.contains('close-button')).toBe(true);
+  });
+
+  it('can set custom `close` event.', () => {
+    wrapper = mount(Chip, {
+      propsData: {
+        closeable: true,
+        closeAction: '', // no action.
+      },
+      slots: {
+        default: 'chip test',
+      }
+    });
+    wrapper.find('button.close-button').trigger('click');
+    expect(wrapper.emitted().close).toBeTruthy();
   });
 });

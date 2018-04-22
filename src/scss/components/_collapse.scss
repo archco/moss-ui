@@ -1,50 +1,17 @@
-@mixin _collapse-toggle-with-icon {
-  &::after {
-    position: absolute;
-    top: 50%;
-    right: 1em;
-    transform: translate(0, -50%);
-  }
-
-  &.with-plus::after {
-    content: '\002B';
-  }
-
-  &.with-plus[data-expanded="true"]::after {
-    content: '\2212';
-  }
-
-  &.with-caret::after {
-    @include caret('down');
-  }
-
-  &.with-caret[data-expanded="true"]::after {
-    @include caret('up');
-  }
-
-  &.with-arrow::after {
-    @include arrow('down');
-    transform: translate(0, -50%) rotate(45deg);
-  }
-
-  &.with-arrow[data-expanded="true"]::after {
-    @include arrow('up');
-    transform: translate(0, -50%) rotate(-135deg);
-  }
-}
-
 .collapse-toggle {
   @include btn-base;
-  @include _collapse-toggle-with-icon; // @deprecated at v0.5.0. use collapse-toggle.vue instead.
   position: relative;
 
-  .icon {
-    vertical-align: bottom;
-    margin-right: .3em;
+  > span {
+    display: inline-block;
+  }
+
+  > .moss-icon {
+    margin-right: .25em;
     @include transition(transform $transition-duration $transition-timing-function);
   }
 
-  &[data-expanded="true"] .icon {
+  &[data-expanded="true"] .moss-icon {
     transform: rotate(.25turn);
   }
 }
@@ -53,5 +20,8 @@
 .collapsing-enter-active,
 .collapsing-leave-active {
   overflow: hidden;
-  @include transition(max-height $transition-duration $transition-timing-function);
+  @include transition(
+    max-width $transition-duration $transition-timing-function,
+    max-height $transition-duration $transition-timing-function
+  );
 }

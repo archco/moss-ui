@@ -7,6 +7,7 @@
 - [Usage](#usage)
   - [btn](#btn)
   - [btn-flat](#btn-flat)
+  - [btn-text](#btn-text)
   - [btn-icon](#btn-icon)
   - [disabled](#disabled)
   - [Button with color-set](#button-with-color-set)
@@ -33,11 +34,19 @@
 <a class="btn-flat warning" href="#">link button</a>
 ```
 
+### btn-text
+
+This button style is assimilated with text.
+
+``` html
+<button class="btn-text">As Text</button>
+```
+
 ### btn-icon
 
 ``` html
 <button class="btn-icon warning">
-  <i class="fa fa-exclamation" aria-hidden="true"></i>
+  <i class="fas fa-exclamation"></i>
 </button>
 ```
 

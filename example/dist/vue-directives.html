@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Directives</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./dist/moss.css">
+    <link rel="stylesheet" href="../../dist/moss.css">
     <style>
       aside { position: relative; }
       aside .menu { overflow: auto; }
@@ -39,6 +38,7 @@
             <li is="anchored-tag" tag="li">v-set-value</li>
             <li is="anchored-tag" tag="li">v-tooltip</li>
             <li is="anchored-tag" tag="li">v-ripple</li>
+            <li is="anchored-tag" tag="li">v-outer</li>
           </ul>
         </aside>
         <section class="col-md-10">
@@ -108,6 +108,13 @@
             <div class="col-md pad bg-color-warning" v-ripple="{color: '#f00'}">#f00 ripple color</div>
             <div class="col md pad bg-color-shade" v-ripple="{color: '#0ff'}">#0ff ripple color</div>
           </div>
+          <anchored-tag tag="h1" owned>v-outer</anchored-tag>
+          <p>Add listener for the event that occurs outer of the element.</p>
+          <div class="d-flex justify-content-around align-items-center bg-color-shade mb-3" id="outer-box" style="height:150px;">
+            <div class="bg-color-dark" style="width:25%;height:100px;">Other</div>
+            <div class="bg-color-success" style="width:25%;height:100px;" v-outer.click="{root: '#outer-box', listener: onOuterClick}">Target</div>
+            <div class="bg-color-dark" style="width:25%;height:100px;">Other</div>
+          </div>
         </section>
       </div>
       <footer class="footer">
@@ -133,8 +140,9 @@
       <toast></toast>
     </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
-    <script src="./dist/moss.js"></script>
-    <script src="example.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script src="../../dist/moss.js"></script>
+    <script src="./example.js"></script>
   </body>
 </html>

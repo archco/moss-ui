@@ -16,7 +16,6 @@
   justify-content: center;
   width: 100%;
   min-height: $hero-banner-min-height;
-  overflow: hidden;
 
   &.pad-small { @include _banner-padding-y($hero-banner-pad-small); }
   &.pad-medium { @include _banner-padding-y($hero-banner-pad-medium); }

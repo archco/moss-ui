@@ -1,6 +1,6 @@
 @mixin _pagination-item {
   display: inline-block;
-  margin: $pagination-item-margin;
+  margin: $pagination-item-margin-y $pagination-item-margin-x;
 
   span,
   a {

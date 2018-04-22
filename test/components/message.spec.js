@@ -1,4 +1,3 @@
-import expect from 'expect';
 import { mount } from '@vue/test-utils';
 import Message from '../../src/js/components/message.vue';
 

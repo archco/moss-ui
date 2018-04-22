@@ -34,7 +34,7 @@ Available color keywords: default, primary, secondary, info, success, warning, d
 
 ### Badge with Stacked Font Awesome Icon
 
-> Link: [http://fontawesome.io/examples/#stacked](http://fontawesome.io/examples/#stacked)
+> ~~Link: [http://fontawesome.io/examples/#stacked](http://fontawesome.io/examples/#stacked)~~ @deprecated in v0.5.x
 
 ``` html
 <span class="fa-stack fa-lg">

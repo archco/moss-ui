@@ -1,14 +1,15 @@
-//- SCSS Components.
+//- SCSS Parts
 extends ../layout/layout.pug
 
 block title
-  title= 'SCSS Components'
+  title= 'SCSS Parts'
 
 block append content
   div(class='row')
     aside(class='col-md-2 hide-only-mobile')
       ul(class='menu list')
         li(is='anchored-tag' tag='li') Scaffolding
+        li(is='anchored-tag' tag='li') Code
         li(is='anchored-tag' tag='li') Badge
         li(is='anchored-tag' tag='li') Button
         li(is='anchored-tag' tag='li') Card
@@ -23,6 +24,8 @@ block append content
     section(class='col-md-10')
       anchored-tag(tag='h1' owned) Scaffolding
       include ../includes/scaffolding.pug
+      anchored-tag(tag='h1' owned) Code
+      include ../includes/code.pug
       anchored-tag(tag='h1' owned) Badge
       include ../includes/badge.pug
       anchored-tag(tag='h1' owned) Button

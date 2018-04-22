@@ -1,4 +1,3 @@
-import expect from 'expect';
 import { mount } from '@vue/test-utils';
 import CloseButton from '../../src/js/components/close-button.vue';
 

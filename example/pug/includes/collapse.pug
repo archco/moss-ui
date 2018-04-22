@@ -29,6 +29,30 @@ ul(class='list-group')
       h3 accordion3
       p=lorem
 
+h2 Horizontal Collapse
+
+button(class='btn dark' v-collapse:horizontal-collapse) toggle
+collapse(id='horizontal-collapse' direction='horizontal')
+  h3 test collapse
+  p= lorem
+
+h3 with Grid
+
+.row
+  collapse.col-2.bg-color-shade(id='aside-collapse1' direction='horizontal' expanded)
+    div.pad
+      div hello
+      div world
+  .col
+    div.pad
+      button.btn-flat.dark(v-collapse:aside-collapse1) Toggle aside1
+      button.btn-flat.info(v-collapse:aside-collapse2) Toggle aside2
+    p= lorem
+  collapse.col-2.bg-color-info(id='aside-collapse2' direction='horizontal' expanded)
+    div.pad
+      div hello
+      div world
+
 h2 Collapse Toggle
 
 collapse-toggle.pad.bg-color-shade(target='test-collapse2') toggle
@@ -38,34 +62,3 @@ button.btn(is='collapse-toggle' tag='button' target='test-collapse2') toggle by 
 collapse(id='test-collapse2')
   h3 test collapse
   p= lorem
-
-h2 Collapse Toggle with icon
-
-blockquote.pad.danger @deprecated at v0.5.x instead use <code>collapse-toggle</code> component.
-
-h3 Collapse /w icon
-div(class='collapse-toggle with-plus pad bg-color-primary' v-collapse:test01) TEST01
-collapse(id='test01')
-  p(class='pad')= lorem
-
-div(class='collapse-toggle with-caret pad bg-color-secondary' v-collapse:test02) TEST02
-collapse(id='test02')
-  p(class='pad')= lorem
-
-h3 Accordion /w icon
-ul(class='list-group')
-  li
-    div(class='collapse-toggle with-plus' v-accordion:test03="'test1'") accordion one
-    collapse(id='test03' accordion='test1')
-      h3 test03
-      p=lorem
-  li
-    div(class='collapse-toggle with-caret' v-accordion:test04="'test1'") accordion two
-    collapse(id='test04' accordion='test1')
-      h3 test04
-      p=lorem
-  li
-    div(class='collapse-toggle with-arrow' v-accordion:test05="'test1'") accordion three
-    collapse(id='test05' accordion='test1')
-      h3 test05
-      p=lorem

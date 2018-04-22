@@ -68,4 +68,10 @@ $spacers: map-merge((
   4: $spacer * 1.5,
   5: $spacer * 3,
 ), $spacers);
+
+$space-1: map-get($spacers, 1);
+$space-2: map-get($spacers, 2);
+$space-3: map-get($spacers, 3);
+$space-4: map-get($spacers, 4);
+$space-5: map-get($spacers, 5);
 ```

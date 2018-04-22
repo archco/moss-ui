@@ -1,4 +1,3 @@
-import expect from 'expect';
 import { mount } from '@vue/test-utils';
 import Collapse from '../../src/js/components/collapse.vue';
 
@@ -45,5 +44,23 @@ describe('#Collapse', () => {
     const toggleEvent = wrapper.emitted()['collapse-toggle'];
     expect(toggleEvent).toBeTruthy();
     expect(toggleEvent[0]).toEqual(['test-target']);
+  });
+
+  it('can collapse horizontally.', () => {
+    const wrapper = mount(Collapse, {
+      propsData: {
+        id: 'target',
+        expanded: true,
+        direction: 'horizontal',
+      },
+      slots: {
+        default: `<p class="description">Hello world</p>`,
+      }
+    });
+    expect(wrapper.element.style.display).not.toBe('none');
+    wrapper.vm.toggleCollapse('target', 'hide');
+    wrapper.vm.$nextTick(() => {
+      expect(wrapper.element.style.display).toBe('none');
+    });
   });
 });

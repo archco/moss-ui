@@ -1,0 +1,80 @@
+// Hide during loading.
+nav-drawer,
+[is="nav-drawer"] { display: none; }
+
+.nav-drawer {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: $z-index-fixed;
+  top: 0;
+  left: 0;
+  width: $nav-drawer-base-width;
+  height: 100%;
+  @include box-shadow($nav-drawer-shadow);
+
+  @each $breakpoint, $width in $nav-drawer-widths {
+    @include media-breakpoint-up($breakpoint) {
+      width: $width;
+    }
+  }
+}
+
+.nav-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: $nav-drawer-header-padding-y $nav-drawer-header-padding-x;
+  font-size: $nav-drawer-header-font-size;
+  background-color: $nav-drawer-header-bg-color;
+  color: $nav-drawer-header-color;
+}
+
+.nav-drawer-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-size: $nav-drawer-body-font-size;
+  background-color: $nav-drawer-body-bg-color;
+  color: $nav-drawer-body-color;
+  overflow-y: auto;
+
+  .info {
+    display: block;
+    flex: 0 0 auto;
+  }
+
+  .menu-header {
+    display: block;
+    padding: .5em;
+    margin: 0;
+    color: $nav-drawer-menu-header-color;
+  }
+
+  .menu-item {
+    @extend %nav-link;
+    display: block;
+    padding: .5em 1em;
+    margin: 0;
+
+    &:hover:not([disabled]) {
+      background-color: $nav-drawer-menu-item-hover-bg-color;
+    }
+
+    &[disabled] {
+      color: $nav-drawer-menu-item-disabled-color;
+      cursor: default;
+    }
+
+    &.active {
+      background-color: $nav-drawer-menu-item-active-bg-color;
+    }
+  }
+
+  .menu-divider {
+    height: 0;
+    margin: .25em 0;
+    overflow: hidden;
+    border-top: 1px solid $nav-drawer-menu-divider-color;
+  }
+}

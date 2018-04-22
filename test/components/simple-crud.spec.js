@@ -1,4 +1,3 @@
-import expect from 'expect';
 import { mount } from '@vue/test-utils';
 import SimpleCrud from '../../src/js/components/simple-crud.vue';
 

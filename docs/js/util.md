@@ -22,9 +22,11 @@ let isMobile = window.Moss.lib.Util.isMobileSize();
 location.search to Object.
 
 - Syntax
+
   ``` js
   let obj = Util.locationSearchToObject();
   ```
+
 - Return `Object|null`
 
 ### searchToObject
@@ -33,9 +35,11 @@ location.search to Object.
 Convert HTMLAnchorElement.search to object.
 
 - Syntax
+
   ``` js
   let obj = Util.searchToObject(search);
   ```
+
 - Param `String` search - value of `HTMLAnchorElement.search`
 - Return `Object|null`
 
@@ -44,9 +48,11 @@ Convert HTMLAnchorElement.search to object.
 Returns true if "big object" contains "small object".
 
 - Syntax
+
   ``` js
   let bool = Util.isContains(big, small);
   ```
+
 - Param `any` big
 - Param `any` small
 - Return: `Boolean`
@@ -56,62 +62,82 @@ Returns true if "big object" contains "small object".
 Determine whether value is empty.
 
 - Syntax
+
   ``` js
   let bool = Util.isEmpty(val);
   ```
+
 - Param `any` val
 - Return: `Boolean`
 
 ### isMobileSize
 
 - Syntax
+
   ``` js
   let bool = Util.isMobileSize(size = 800);
   ```
+
 - Param `Number` [ size = 800 ] - width (px)
 - Return `Boolean`
 
 ### strToCamel
 
+> **Deprecated in 0.6.x** - use `Case.camel` or `Case.pascal` instead.
+
 Converts string to CamelCase.
 
 - Syntax
+
   ``` js
   let str = Util.strToCamel(str, isSmallCamel = false);
   ```
+
 - Param `string` str
 - Param `boolean` [ isSmallCamel = false ] - If true, returns as smallCamelCase.
 - Returns `string`
 
 ### strToKebab
 
+> **Deprecated in 0.6.x** - use `Case.kebab` instead.
+
 Converts string to kebab-case.
 
 - Syntax
+
   ``` js
   let str = Util.strToKebab(str);
   ```
+
 - Param `string` str
 - Returns `string`
 
 ### strToNormal
 
+> **Deprecated in 0.6.x** - use `Case.lower` instead.
+
 Converts string to normal case. e.g. 'HelloWorld' -> 'hello world'
 
 - Syntax
+
   ``` js
   let str = Util.strToNormal(str);
   ```
+
 - Param `string` str
 - Returns `string`
 
 ### capitalize
 
+> **Deprecated in 0.6.x** - use `Case.capital` instead.
+
 Capitalize first letters.
 
 - Syntax
+
   ``` js
   let str = Util.capitalize(str);
   ```
+
 - Param `string` str
 - Returns `string`

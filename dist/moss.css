@@ -1,10 +1,10 @@
 /*!
  * moss-ui - The front-end UI framework with Vue.js and SCSS.
- * @version v0.5.1
+ * @version v0.6.0
  * @link https://github.com/archco/moss-ui
  * @license MIT
  */
-/*! scss-palette v0.4.1 | 458 colors | https://github.com/archco/scss-palette#readme | MIT License */
+/*! scss-palette v0.5.1 | 453 colors | https://github.com/archco/scss-palette#readme | MIT License */
 @keyframes spin {
   0% {
     transform: rotate(0deg); }
@@ -39,42 +39,42 @@
     opacity: 0;
     transform: scale(50); } }
 
-.with-arrow[x-placement^="top"].dropdown-content [x-arrow], .with-arrow[x-placement^="top"].tooltip [x-arrow], .with-arrow[x-placement^="bottom"].dropdown-content [x-arrow], .with-arrow[x-placement^="bottom"].tooltip [x-arrow], .with-arrow[x-placement^="right"].dropdown-content [x-arrow], .with-arrow[x-placement^="right"].tooltip [x-arrow], .with-arrow[x-placement^="left"].dropdown-content [x-arrow], .with-arrow[x-placement^="left"].tooltip [x-arrow] {
+.with-arrow.dropdown-content[x-placement^="top"] [x-arrow], .with-arrow.tooltip[x-placement^="top"] [x-arrow], .with-arrow.dropdown-content[x-placement^="bottom"] [x-arrow], .with-arrow.tooltip[x-placement^="bottom"] [x-arrow], .with-arrow.dropdown-content[x-placement^="right"] [x-arrow], .with-arrow.tooltip[x-placement^="right"] [x-arrow], .with-arrow.dropdown-content[x-placement^="left"] [x-arrow], .with-arrow.tooltip[x-placement^="left"] [x-arrow] {
   position: absolute;
   width: 0;
   height: 0;
   border: 5px solid transparent; }
 
-.with-arrow[x-placement^="top"].dropdown-content, .with-arrow[x-placement^="top"].tooltip {
+.with-arrow.dropdown-content[x-placement^="top"], .with-arrow.tooltip[x-placement^="top"] {
   margin-bottom: 5px; }
-  .with-arrow[x-placement^="top"].dropdown-content [x-arrow], .with-arrow[x-placement^="top"].tooltip [x-arrow] {
+  .with-arrow.dropdown-content[x-placement^="top"] [x-arrow], .with-arrow.tooltip[x-placement^="top"] [x-arrow] {
     bottom: -5px;
     left: calc(50% - 5px);
     margin: 0 5px;
     border-top-color: inherit;
     border-bottom-width: 0; }
 
-.with-arrow[x-placement^="bottom"].dropdown-content, .with-arrow[x-placement^="bottom"].tooltip {
+.with-arrow.dropdown-content[x-placement^="bottom"], .with-arrow.tooltip[x-placement^="bottom"] {
   margin-top: 5px; }
-  .with-arrow[x-placement^="bottom"].dropdown-content [x-arrow], .with-arrow[x-placement^="bottom"].tooltip [x-arrow] {
+  .with-arrow.dropdown-content[x-placement^="bottom"] [x-arrow], .with-arrow.tooltip[x-placement^="bottom"] [x-arrow] {
     top: -5px;
     left: calc(50% - 5px);
     margin: 0 5px;
     border-bottom-color: inherit;
     border-top-width: 0; }
 
-.with-arrow[x-placement^="right"].dropdown-content, .with-arrow[x-placement^="right"].tooltip {
+.with-arrow.dropdown-content[x-placement^="right"], .with-arrow.tooltip[x-placement^="right"] {
   margin-left: 5px; }
-  .with-arrow[x-placement^="right"].dropdown-content [x-arrow], .with-arrow[x-placement^="right"].tooltip [x-arrow] {
+  .with-arrow.dropdown-content[x-placement^="right"] [x-arrow], .with-arrow.tooltip[x-placement^="right"] [x-arrow] {
     top: calc(50% - 5px);
     left: -5px;
     margin: 5px 0;
     border-right-color: inherit;
     border-left-width: 0; }
 
-.with-arrow[x-placement^="left"].dropdown-content, .with-arrow[x-placement^="left"].tooltip {
+.with-arrow.dropdown-content[x-placement^="left"], .with-arrow.tooltip[x-placement^="left"] {
   margin-right: 5px; }
-  .with-arrow[x-placement^="left"].dropdown-content [x-arrow], .with-arrow[x-placement^="left"].tooltip [x-arrow] {
+  .with-arrow.dropdown-content[x-placement^="left"] [x-arrow], .with-arrow.tooltip[x-placement^="left"] [x-arrow] {
     top: calc(50% - 5px);
     right: -5px;
     margin: 5px 0;
@@ -403,7 +403,7 @@ footer {
 
 .footer {
   color: rgba(255, 255, 255, 0.85);
-  background-color: #a50021; }
+  background-color: #ff8200; }
   .footer a {
     transition: color 0.3s ease-out; }
     .footer a, .footer a:link {
@@ -415,7 +415,7 @@ footer {
     .footer a:active {
       color: rgba(255, 255, 255, 0.85); }
   .footer .footer-copyright {
-    padding: .5rem 0;
+    padding: 0.5rem 0;
     color: rgba(255, 255, 255, 0.85);
     text-align: center;
     background-color: rgba(0, 0, 0, 0.1); }
@@ -456,9 +456,9 @@ a {
   a.inherit:active {
     color: inherit; }
 
-.pagination li a, .nav-item .nav-link, .navbar-brand.text, .nav-item .dropdown .dropdown-button {
+.pagination li a, .nav-item .nav-link, .nav-button, .navbar-brand.text, .nav-item .dropdown .dropdown-button, .nav-drawer-body .menu-item {
   text-decoration: none; }
-  .pagination li a:focus, .nav-item .nav-link:focus, .navbar-brand.text:focus, .nav-item .dropdown .dropdown-button:focus, .pagination li a:hover, .nav-item .nav-link:hover, .navbar-brand.text:hover, .nav-item .dropdown .dropdown-button:hover {
+  .pagination li a:focus, .nav-item .nav-link:focus, .nav-button:focus, .navbar-brand.text:focus, .nav-item .dropdown .dropdown-button:focus, .nav-drawer-body .menu-item:focus, .pagination li a:hover, .nav-item .nav-link:hover, .nav-button:hover, .navbar-brand.text:hover, .nav-item .dropdown .dropdown-button:hover, .nav-drawer-body .menu-item:hover {
     text-decoration: none; }
 
 blockquote {
@@ -473,9 +473,9 @@ blockquote {
     background-color: rgba(154, 154, 154, 0.2);
     border-color: #9a9a9a; }
   blockquote.primary {
-    color: #a50021;
-    background-color: rgba(165, 0, 33, 0.2);
-    border-color: #a50021; }
+    color: #ff8200;
+    background-color: rgba(255, 130, 0, 0.2);
+    border-color: #ff8200; }
   blockquote.secondary {
     color: #4c5866;
     background-color: rgba(76, 88, 102, 0.2);
@@ -539,7 +539,7 @@ table {
   .table th {
     color: #fff;
     text-align: left;
-    background-color: #a50021; }
+    background-color: #ff8200; }
   .table.center {
     margin: 0 auto;
     text-align: initial; }
@@ -560,6 +560,49 @@ table {
     width: auto;
     max-width: none; }
 
+article.pad,
+aside.pad,
+div.pad,
+p.pad,
+blockquote.pad {
+  padding: 1em .5em; }
+
+@media only screen and (min-width: 768px) {
+  section.pad {
+    padding: 3rem 5%; } }
+
+@media only screen and (max-width: 767px) {
+  section.pad {
+    padding: 3rem 0.5rem; } }
+
+h1.accent,
+h2.accent,
+h3.accent,
+h4.accent,
+h5.accent,
+h6.accent {
+  font-family: Georgia, serif; }
+
+i.moss-icon {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em; }
+  i.moss-icon > svg {
+    display: inline-block;
+    width: 100%;
+    height: 100%; }
+
+[v-cloak] {
+  display: none !important; }
+
 code,
 kbd,
 samp,
@@ -573,9 +616,7 @@ code {
   background-color: rgba(52, 52, 52, 0.05);
   border-radius: 4px; }
   a code {
-    padding: 0;
-    color: inherit;
-    background-color: inherit; }
+    color: inherit; }
 
 pre code {
   display: block;
@@ -584,47 +625,18 @@ pre code {
   line-height: 1.45;
   color: #343434; }
 
-article.pad,
-aside.pad,
-div.pad,
-p.pad,
-blockquote.pad {
-  padding: 1em .5em; }
-
-@media only screen and (min-width: 768px) {
-  section.pad {
-    padding: 2rem 5%; } }
-
-@media only screen and (max-width: 767px) {
-  section.pad {
-    padding: 2rem .5rem; } }
-
-h1.accent,
-h2.accent,
-h3.accent,
-h4.accent,
-h5.accent,
-h6.accent {
-  font-family: Georgia, serif; }
-
-i.icon {
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-item-align: center;
-      align-self: center;
-  width: 1em;
-  height: 1em; }
-  i.icon > svg {
-    display: inline-block;
-    width: 100%;
-    height: 100%; }
-
-[v-cloak] {
-  display: none !important; }
+kbd {
+  display: inline-block;
+  padding: .3em .4em;
+  font-size: .8em;
+  line-height: .8;
+  color: #515151;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 0.0625em solid #bebebe;
+  border-bottom-color: #989898;
+  border-radius: .25em;
+  box-shadow: inset 0 -0.0625em 0 #989898; }
 
 .container {
   width: 100%;
@@ -1323,20 +1335,67 @@ i.icon {
     margin-left: 91.67%; } }
 
 fieldset {
-  padding: .5rem 1rem;
   margin-bottom: 1rem;
-  border: 2px solid #a50021;
+  border: 1px solid #ff8200;
   border-radius: 4px; }
+  fieldset.default {
+    border-color: #9a9a9a; }
+    fieldset.default > legend {
+      color: #9a9a9a !important; }
+  fieldset.primary {
+    border-color: #ff8200; }
+    fieldset.primary > legend {
+      color: #ff8200 !important; }
+  fieldset.secondary {
+    border-color: #4c5866; }
+    fieldset.secondary > legend {
+      color: #4c5866 !important; }
+  fieldset.info {
+    border-color: #008080; }
+    fieldset.info > legend {
+      color: #008080 !important; }
+  fieldset.success {
+    border-color: #00a550; }
+    fieldset.success > legend {
+      color: #00a550 !important; }
+  fieldset.warning {
+    border-color: #ffd300; }
+    fieldset.warning > legend {
+      color: #ffd300 !important; }
+  fieldset.danger {
+    border-color: #e23d28; }
+    fieldset.danger > legend {
+      color: #e23d28 !important; }
+  fieldset.error {
+    border-color: #e23d28; }
+    fieldset.error > legend {
+      color: #e23d28 !important; }
+  fieldset.light {
+    border-color: #fff; }
+    fieldset.light > legend {
+      color: #fff !important; }
+  fieldset.dark {
+    border-color: #343434; }
+    fieldset.dark > legend {
+      color: #343434 !important; }
+  fieldset.shade {
+    border-color: #ebebeb; }
+    fieldset.shade > legend {
+      color: #ebebeb !important; }
+  fieldset.link {
+    border-color: #0087bd; }
+    fieldset.link > legend {
+      color: #0087bd !important; }
 
 legend {
-  padding: .5em 1em;
-  font-size: 1.2em;
+  padding: 0.25rem 0.5rem;
   font-weight: bold;
-  color: #a50021; }
+  font-size: 1.1em;
+  color: #ff8200; }
 
 label {
   display: inline-block;
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
   font-weight: bold;
   color: #343434; }
 
@@ -1345,263 +1404,278 @@ select,
 textarea {
   color: inherit;
   vertical-align: middle;
-  outline-color: #a50021; }
+  outline-color: #ff8200; }
 
 input:not([type]),
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="url"],
-input[type="time"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="tel"],
-input[type="number"],
-input[type="search"],
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=url],
+input[type=time],
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=tel],
+input[type=number],
+input[type=search],
 select,
 textarea {
   width: 100%;
   min-height: 2em;
   padding: 0.2em 0.5em;
   line-height: 1.4;
-  background-color: transparent;
+  background-color: #fff;
   border: 1px solid #bebebe;
   border-radius: 2px; }
+  input:not([type]):focus,
+  input[type=text]:focus,
+  input[type=email]:focus,
+  input[type=password]:focus,
+  input[type=url]:focus,
+  input[type=time]:focus,
+  input[type=date]:focus,
+  input[type=datetime]:focus,
+  input[type=datetime-local]:focus,
+  input[type=tel]:focus,
+  input[type=number]:focus,
+  input[type=search]:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #ff8200; }
   input:not([type]).default,
-  input[type="text"].default,
-  input[type="email"].default,
-  input[type="password"].default,
-  input[type="url"].default,
-  input[type="time"].default,
-  input[type="date"].default,
-  input[type="datetime"].default,
-  input[type="datetime-local"].default,
-  input[type="tel"].default,
-  input[type="number"].default,
-  input[type="search"].default,
+  input[type=text].default,
+  input[type=email].default,
+  input[type=password].default,
+  input[type=url].default,
+  input[type=time].default,
+  input[type=date].default,
+  input[type=datetime].default,
+  input[type=datetime-local].default,
+  input[type=tel].default,
+  input[type=number].default,
+  input[type=search].default,
   select.default,
   textarea.default {
     background-color: rgba(154, 154, 154, 0.1);
     border-color: #9a9a9a;
     outline-color: #9a9a9a; }
   input:not([type]).primary,
-  input[type="text"].primary,
-  input[type="email"].primary,
-  input[type="password"].primary,
-  input[type="url"].primary,
-  input[type="time"].primary,
-  input[type="date"].primary,
-  input[type="datetime"].primary,
-  input[type="datetime-local"].primary,
-  input[type="tel"].primary,
-  input[type="number"].primary,
-  input[type="search"].primary,
+  input[type=text].primary,
+  input[type=email].primary,
+  input[type=password].primary,
+  input[type=url].primary,
+  input[type=time].primary,
+  input[type=date].primary,
+  input[type=datetime].primary,
+  input[type=datetime-local].primary,
+  input[type=tel].primary,
+  input[type=number].primary,
+  input[type=search].primary,
   select.primary,
   textarea.primary {
-    background-color: rgba(165, 0, 33, 0.1);
-    border-color: #a50021;
-    outline-color: #a50021; }
+    background-color: rgba(255, 130, 0, 0.1);
+    border-color: #ff8200;
+    outline-color: #ff8200; }
   input:not([type]).secondary,
-  input[type="text"].secondary,
-  input[type="email"].secondary,
-  input[type="password"].secondary,
-  input[type="url"].secondary,
-  input[type="time"].secondary,
-  input[type="date"].secondary,
-  input[type="datetime"].secondary,
-  input[type="datetime-local"].secondary,
-  input[type="tel"].secondary,
-  input[type="number"].secondary,
-  input[type="search"].secondary,
+  input[type=text].secondary,
+  input[type=email].secondary,
+  input[type=password].secondary,
+  input[type=url].secondary,
+  input[type=time].secondary,
+  input[type=date].secondary,
+  input[type=datetime].secondary,
+  input[type=datetime-local].secondary,
+  input[type=tel].secondary,
+  input[type=number].secondary,
+  input[type=search].secondary,
   select.secondary,
   textarea.secondary {
     background-color: rgba(76, 88, 102, 0.1);
     border-color: #4c5866;
     outline-color: #4c5866; }
   input:not([type]).info,
-  input[type="text"].info,
-  input[type="email"].info,
-  input[type="password"].info,
-  input[type="url"].info,
-  input[type="time"].info,
-  input[type="date"].info,
-  input[type="datetime"].info,
-  input[type="datetime-local"].info,
-  input[type="tel"].info,
-  input[type="number"].info,
-  input[type="search"].info,
+  input[type=text].info,
+  input[type=email].info,
+  input[type=password].info,
+  input[type=url].info,
+  input[type=time].info,
+  input[type=date].info,
+  input[type=datetime].info,
+  input[type=datetime-local].info,
+  input[type=tel].info,
+  input[type=number].info,
+  input[type=search].info,
   select.info,
   textarea.info {
     background-color: rgba(0, 128, 128, 0.1);
     border-color: #008080;
     outline-color: #008080; }
   input:not([type]).success,
-  input[type="text"].success,
-  input[type="email"].success,
-  input[type="password"].success,
-  input[type="url"].success,
-  input[type="time"].success,
-  input[type="date"].success,
-  input[type="datetime"].success,
-  input[type="datetime-local"].success,
-  input[type="tel"].success,
-  input[type="number"].success,
-  input[type="search"].success,
+  input[type=text].success,
+  input[type=email].success,
+  input[type=password].success,
+  input[type=url].success,
+  input[type=time].success,
+  input[type=date].success,
+  input[type=datetime].success,
+  input[type=datetime-local].success,
+  input[type=tel].success,
+  input[type=number].success,
+  input[type=search].success,
   select.success,
   textarea.success {
     background-color: rgba(0, 165, 80, 0.1);
     border-color: #00a550;
     outline-color: #00a550; }
   input:not([type]).warning,
-  input[type="text"].warning,
-  input[type="email"].warning,
-  input[type="password"].warning,
-  input[type="url"].warning,
-  input[type="time"].warning,
-  input[type="date"].warning,
-  input[type="datetime"].warning,
-  input[type="datetime-local"].warning,
-  input[type="tel"].warning,
-  input[type="number"].warning,
-  input[type="search"].warning,
+  input[type=text].warning,
+  input[type=email].warning,
+  input[type=password].warning,
+  input[type=url].warning,
+  input[type=time].warning,
+  input[type=date].warning,
+  input[type=datetime].warning,
+  input[type=datetime-local].warning,
+  input[type=tel].warning,
+  input[type=number].warning,
+  input[type=search].warning,
   select.warning,
   textarea.warning {
     background-color: rgba(255, 211, 0, 0.1);
     border-color: #ffd300;
     outline-color: #ffd300; }
   input:not([type]).danger,
-  input[type="text"].danger,
-  input[type="email"].danger,
-  input[type="password"].danger,
-  input[type="url"].danger,
-  input[type="time"].danger,
-  input[type="date"].danger,
-  input[type="datetime"].danger,
-  input[type="datetime-local"].danger,
-  input[type="tel"].danger,
-  input[type="number"].danger,
-  input[type="search"].danger,
+  input[type=text].danger,
+  input[type=email].danger,
+  input[type=password].danger,
+  input[type=url].danger,
+  input[type=time].danger,
+  input[type=date].danger,
+  input[type=datetime].danger,
+  input[type=datetime-local].danger,
+  input[type=tel].danger,
+  input[type=number].danger,
+  input[type=search].danger,
   select.danger,
   textarea.danger {
     background-color: rgba(226, 61, 40, 0.1);
     border-color: #e23d28;
     outline-color: #e23d28; }
   input:not([type]).error,
-  input[type="text"].error,
-  input[type="email"].error,
-  input[type="password"].error,
-  input[type="url"].error,
-  input[type="time"].error,
-  input[type="date"].error,
-  input[type="datetime"].error,
-  input[type="datetime-local"].error,
-  input[type="tel"].error,
-  input[type="number"].error,
-  input[type="search"].error,
+  input[type=text].error,
+  input[type=email].error,
+  input[type=password].error,
+  input[type=url].error,
+  input[type=time].error,
+  input[type=date].error,
+  input[type=datetime].error,
+  input[type=datetime-local].error,
+  input[type=tel].error,
+  input[type=number].error,
+  input[type=search].error,
   select.error,
   textarea.error {
     background-color: rgba(226, 61, 40, 0.1);
     border-color: #e23d28;
     outline-color: #e23d28; }
   input:not([type]).light,
-  input[type="text"].light,
-  input[type="email"].light,
-  input[type="password"].light,
-  input[type="url"].light,
-  input[type="time"].light,
-  input[type="date"].light,
-  input[type="datetime"].light,
-  input[type="datetime-local"].light,
-  input[type="tel"].light,
-  input[type="number"].light,
-  input[type="search"].light,
+  input[type=text].light,
+  input[type=email].light,
+  input[type=password].light,
+  input[type=url].light,
+  input[type=time].light,
+  input[type=date].light,
+  input[type=datetime].light,
+  input[type=datetime-local].light,
+  input[type=tel].light,
+  input[type=number].light,
+  input[type=search].light,
   select.light,
   textarea.light {
     background-color: rgba(255, 255, 255, 0.1);
     border-color: #fff;
     outline-color: #fff; }
   input:not([type]).dark,
-  input[type="text"].dark,
-  input[type="email"].dark,
-  input[type="password"].dark,
-  input[type="url"].dark,
-  input[type="time"].dark,
-  input[type="date"].dark,
-  input[type="datetime"].dark,
-  input[type="datetime-local"].dark,
-  input[type="tel"].dark,
-  input[type="number"].dark,
-  input[type="search"].dark,
+  input[type=text].dark,
+  input[type=email].dark,
+  input[type=password].dark,
+  input[type=url].dark,
+  input[type=time].dark,
+  input[type=date].dark,
+  input[type=datetime].dark,
+  input[type=datetime-local].dark,
+  input[type=tel].dark,
+  input[type=number].dark,
+  input[type=search].dark,
   select.dark,
   textarea.dark {
     background-color: rgba(52, 52, 52, 0.1);
     border-color: #343434;
     outline-color: #343434; }
   input:not([type]).shade,
-  input[type="text"].shade,
-  input[type="email"].shade,
-  input[type="password"].shade,
-  input[type="url"].shade,
-  input[type="time"].shade,
-  input[type="date"].shade,
-  input[type="datetime"].shade,
-  input[type="datetime-local"].shade,
-  input[type="tel"].shade,
-  input[type="number"].shade,
-  input[type="search"].shade,
+  input[type=text].shade,
+  input[type=email].shade,
+  input[type=password].shade,
+  input[type=url].shade,
+  input[type=time].shade,
+  input[type=date].shade,
+  input[type=datetime].shade,
+  input[type=datetime-local].shade,
+  input[type=tel].shade,
+  input[type=number].shade,
+  input[type=search].shade,
   select.shade,
   textarea.shade {
     background-color: rgba(235, 235, 235, 0.1);
     border-color: #ebebeb;
     outline-color: #ebebeb; }
   input:not([type]).link,
-  input[type="text"].link,
-  input[type="email"].link,
-  input[type="password"].link,
-  input[type="url"].link,
-  input[type="time"].link,
-  input[type="date"].link,
-  input[type="datetime"].link,
-  input[type="datetime-local"].link,
-  input[type="tel"].link,
-  input[type="number"].link,
-  input[type="search"].link,
+  input[type=text].link,
+  input[type=email].link,
+  input[type=password].link,
+  input[type=url].link,
+  input[type=time].link,
+  input[type=date].link,
+  input[type=datetime].link,
+  input[type=datetime-local].link,
+  input[type=tel].link,
+  input[type=number].link,
+  input[type=search].link,
   select.link,
   textarea.link {
     background-color: rgba(0, 135, 189, 0.1);
     border-color: #0087bd;
     outline-color: #0087bd; }
   input:not([type])[disabled], input:not([type])[readonly],
-  input[type="text"][disabled],
-  input[type="text"][readonly],
-  input[type="email"][disabled],
-  input[type="email"][readonly],
-  input[type="password"][disabled],
-  input[type="password"][readonly],
-  input[type="url"][disabled],
-  input[type="url"][readonly],
-  input[type="time"][disabled],
-  input[type="time"][readonly],
-  input[type="date"][disabled],
-  input[type="date"][readonly],
-  input[type="datetime"][disabled],
-  input[type="datetime"][readonly],
-  input[type="datetime-local"][disabled],
-  input[type="datetime-local"][readonly],
-  input[type="tel"][disabled],
-  input[type="tel"][readonly],
-  input[type="number"][disabled],
-  input[type="number"][readonly],
-  input[type="search"][disabled],
-  input[type="search"][readonly],
+  input[type=text][disabled],
+  input[type=text][readonly],
+  input[type=email][disabled],
+  input[type=email][readonly],
+  input[type=password][disabled],
+  input[type=password][readonly],
+  input[type=url][disabled],
+  input[type=url][readonly],
+  input[type=time][disabled],
+  input[type=time][readonly],
+  input[type=date][disabled],
+  input[type=date][readonly],
+  input[type=datetime][disabled],
+  input[type=datetime][readonly],
+  input[type=datetime-local][disabled],
+  input[type=datetime-local][readonly],
+  input[type=tel][disabled],
+  input[type=tel][readonly],
+  input[type=number][disabled],
+  input[type=number][readonly],
+  input[type=search][disabled],
+  input[type=search][readonly],
   select[disabled],
   select[readonly],
   textarea[disabled],
   textarea[readonly] {
     background-color: rgba(190, 190, 190, 0.33); }
 
-input[type="text"].password, input[type="text"].pw {
+input[type=text].password, input[type=text].pw {
   -webkit-text-security: disc; }
 
 textarea {
@@ -1609,16 +1683,16 @@ textarea {
   textarea.inline {
     height: auto; }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type=checkbox],
+input[type=radio] {
   width: 1.2em;
   height: 1.2em;
   vertical-align: middle; }
 
-input[type="range"] {
+input[type=range] {
   width: 100%; }
 
-input[type="color"] {
+input[type=color] {
   width: 3em;
   height: 2em;
   padding: 0; }
@@ -1682,8 +1756,7 @@ textarea.inline {
   display: flex;
   -ms-flex-align: stretch;
       align-items: stretch;
-  width: 100%;
-  margin-bottom: 1rem; }
+  width: 100%; }
   .input-group > input,
   .input-group > select,
   .input-group > textarea,
@@ -1765,9 +1838,9 @@ textarea.inline {
   border: 1px solid #bebebe;
   border-radius: 2px; }
 
-input[type="submit"],
-input[type="button"],
-input[type="reset"], .btn, .btn-flat, .btn-icon, .close-button, .dropdown-button, .navbar-toggle, .nav-item .dropdown .dropdown-button, .scroll-to-container .scroll-to-top,
+.btn-text, .close-button, input[type=submit],
+input[type=button],
+input[type=reset], .btn, .btn-flat, .btn-icon, .dropdown-button, .nav-button, .navbar-toggle, .nav-item .dropdown .dropdown-button, .scroll-to-container .scroll-to-top,
 .scroll-to-container .scroll-to-bottom {
   text-decoration: none;
   line-height: 1.15;
@@ -1781,37 +1854,43 @@ input[type="reset"], .btn, .btn-flat, .btn-icon, .close-button, .dropdown-button
   display: inline-block;
   text-align: center;
   vertical-align: middle; }
-  input[type="submit"]:focus,
-  input[type="button"]:focus,
-  input[type="reset"]:focus, .btn:focus, .btn-flat:focus, .btn-icon:focus, .close-button:focus, .dropdown-button:focus, .navbar-toggle:focus, .nav-item .dropdown .dropdown-button:focus, .scroll-to-container .scroll-to-top:focus,
-  .scroll-to-container .scroll-to-bottom:focus, input[type="submit"]:hover,
-  input[type="button"]:hover,
-  input[type="reset"]:hover, .btn:hover, .btn-flat:hover, .btn-icon:hover, .close-button:hover, .dropdown-button:hover, .navbar-toggle:hover, .nav-item .dropdown .dropdown-button:hover, .scroll-to-container .scroll-to-top:hover,
+  .btn-text:focus, .close-button:focus, input:focus[type=submit],
+  input:focus[type=button],
+  input:focus[type=reset], .btn:focus, .btn-flat:focus, .btn-icon:focus, .dropdown-button:focus, .nav-button:focus, .navbar-toggle:focus, .nav-item .dropdown .dropdown-button:focus, .scroll-to-container .scroll-to-top:focus,
+  .scroll-to-container .scroll-to-bottom:focus, .btn-text:hover, .close-button:hover, input:hover[type=submit],
+  input:hover[type=button],
+  input:hover[type=reset], .btn:hover, .btn-flat:hover, .btn-icon:hover, .dropdown-button:hover, .nav-button:hover, .navbar-toggle:hover, .nav-item .dropdown .dropdown-button:hover, .scroll-to-container .scroll-to-top:hover,
   .scroll-to-container .scroll-to-bottom:hover {
     text-decoration: none; }
 
-input[type="submit"],
-input[type="button"],
-input[type="reset"], .btn, .btn-flat {
+.btn-text, .close-button {
+  padding: 0;
+  margin: 0;
+  color: currentColor;
+  vertical-align: inherit;
+  line-height: 0;
+  background-color: transparent; }
+
+input[type=submit],
+input[type=button],
+input[type=reset], .btn, .btn-flat {
   padding: 0.5em 1em;
   margin: 0.2em;
   border-radius: 2px;
-  outline-color: #a50021; }
-  input.full-width[type="submit"],
-  input.full-width[type="button"],
-  input.full-width[type="reset"], .full-width.btn, .full-width.btn-flat, input.w-100[type="submit"],
-  input.w-100[type="button"],
-  input.w-100[type="reset"], .w-100.btn, .w-100.btn-flat {
+  outline-color: #ff8200; }
+  input.w-100[type=submit],
+  input.w-100[type=button],
+  input.w-100[type=reset], .w-100.btn, .w-100.btn-flat {
     margin-right: 0;
     margin-left: 0; }
-  input.is-loading[type="submit"]:not([disabled]),
-  input.is-loading[type="button"]:not([disabled]),
-  input.is-loading[type="reset"]:not([disabled]), .is-loading.btn:not([disabled]), .is-loading.btn-flat:not([disabled]) {
+  input.is-loading:not([disabled])[type=submit],
+  input.is-loading:not([disabled])[type=button],
+  input.is-loading:not([disabled])[type=reset], .is-loading.btn:not([disabled]), .is-loading.btn-flat:not([disabled]) {
     position: relative;
     color: transparent !important; }
-    input.is-loading[type="submit"]:not([disabled])::after,
-    input.is-loading[type="button"]:not([disabled])::after,
-    input.is-loading[type="reset"]:not([disabled])::after, .is-loading.btn:not([disabled])::after, .is-loading.btn-flat:not([disabled])::after {
+    input.is-loading[type=submit]:not([disabled])::after,
+    input.is-loading[type=button]:not([disabled])::after,
+    input.is-loading[type=reset]:not([disabled])::after, .is-loading.btn:not([disabled])::after, .is-loading.btn-flat:not([disabled])::after {
       display: inline-block;
       width: 1em;
       height: 1em;
@@ -1827,422 +1906,422 @@ input[type="reset"], .btn, .btn-flat {
       margin-left: -.5em;
       content: ''; }
 
-input[disabled][type="submit"],
-input[disabled][type="button"],
-input[disabled][type="reset"], [disabled].btn, [disabled].btn-icon, [disabled].btn-flat {
+input[disabled][type=submit],
+input[disabled][type=button],
+input[disabled][type=reset], .btn[disabled], .btn-icon[disabled], .btn-flat[disabled] {
   cursor: default;
   opacity: .7;
   box-shadow: none; }
 
-input[type="submit"],
-input[type="button"],
-input[type="reset"], .btn, .btn-icon {
+input[type=submit],
+input[type=button],
+input[type=reset], .btn, .btn-icon {
   color: #fff;
-  background-color: #a50021;
-  outline-color: #a50021;
+  background-color: #ff8200;
+  outline-color: #ff8200;
   transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-  input[type="submit"]:link,
-  input[type="button"]:link,
-  input[type="reset"]:link, .btn:link, .btn-icon:link, input[type="submit"]:visited,
-  input[type="button"]:visited,
-  input[type="reset"]:visited, .btn:visited, .btn-icon:visited {
+  input:link[type=submit],
+  input:link[type=button],
+  input:link[type=reset], .btn:link, .btn-icon:link, input:visited[type=submit],
+  input:visited[type=button],
+  input:visited[type=reset], .btn:visited, .btn-icon:visited {
     color: #fff; }
-  input[type="submit"]:focus:not([disabled]),
-  input[type="button"]:focus:not([disabled]),
-  input[type="reset"]:focus:not([disabled]), .btn:focus:not([disabled]), .btn-icon:focus:not([disabled]), input[type="submit"]:hover:not([disabled]),
-  input[type="button"]:hover:not([disabled]),
-  input[type="reset"]:hover:not([disabled]), .btn:hover:not([disabled]), .btn-icon:hover:not([disabled]) {
+  input:focus:not([disabled])[type=submit],
+  input:focus:not([disabled])[type=button],
+  input:focus:not([disabled])[type=reset], .btn:focus:not([disabled]), .btn-icon:focus:not([disabled]), input:hover:not([disabled])[type=submit],
+  input:hover:not([disabled])[type=button],
+  input:hover:not([disabled])[type=reset], .btn:hover:not([disabled]), .btn-icon:hover:not([disabled]) {
     color: #fff;
-    background-color: #b90025;
+    background-color: #ff8c14;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-  input[type="submit"]:active:not([disabled]),
-  input[type="button"]:active:not([disabled]),
-  input[type="reset"]:active:not([disabled]), .btn:active:not([disabled]), .btn-icon:active:not([disabled]) {
+  input:active:not([disabled])[type=submit],
+  input:active:not([disabled])[type=button],
+  input:active:not([disabled])[type=reset], .btn:active:not([disabled]), .btn-icon:active:not([disabled]) {
     color: #fff;
-    background-color: #91001d;
+    background-color: #eb7800;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
-  input.default[type="submit"],
-  input.default[type="button"],
-  input.default[type="reset"], .default.btn, .default.btn-icon {
+  input.default[type=submit],
+  input.default[type=button],
+  input.default[type=reset], .default.btn, .default.btn-icon {
     color: #fff;
     background-color: #9a9a9a;
     outline-color: #9a9a9a;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.default[type="submit"]:link,
-    input.default[type="button"]:link,
-    input.default[type="reset"]:link, .default.btn:link, .default.btn-icon:link, input.default[type="submit"]:visited,
-    input.default[type="button"]:visited,
-    input.default[type="reset"]:visited, .default.btn:visited, .default.btn-icon:visited {
+    input.default:link[type=submit],
+    input.default:link[type=button],
+    input.default:link[type=reset], .default.btn:link, .default.btn-icon:link, input.default:visited[type=submit],
+    input.default:visited[type=button],
+    input.default:visited[type=reset], .default.btn:visited, .default.btn-icon:visited {
       color: #fff; }
-    input.default[type="submit"]:focus:not([disabled]),
-    input.default[type="button"]:focus:not([disabled]),
-    input.default[type="reset"]:focus:not([disabled]), .default.btn:focus:not([disabled]), .default.btn-icon:focus:not([disabled]), input.default[type="submit"]:hover:not([disabled]),
-    input.default[type="button"]:hover:not([disabled]),
-    input.default[type="reset"]:hover:not([disabled]), .default.btn:hover:not([disabled]), .default.btn-icon:hover:not([disabled]) {
+    input.default:focus:not([disabled])[type=submit],
+    input.default:focus:not([disabled])[type=button],
+    input.default:focus:not([disabled])[type=reset], .default.btn:focus:not([disabled]), .default.btn-icon:focus:not([disabled]), input.default:hover:not([disabled])[type=submit],
+    input.default:hover:not([disabled])[type=button],
+    input.default:hover:not([disabled])[type=reset], .default.btn:hover:not([disabled]), .default.btn-icon:hover:not([disabled]) {
       color: #fff;
       background-color: #a4a4a4;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.default[type="submit"]:active:not([disabled]),
-    input.default[type="button"]:active:not([disabled]),
-    input.default[type="reset"]:active:not([disabled]), .default.btn:active:not([disabled]), .default.btn-icon:active:not([disabled]) {
+    input.default:active:not([disabled])[type=submit],
+    input.default:active:not([disabled])[type=button],
+    input.default:active:not([disabled])[type=reset], .default.btn:active:not([disabled]), .default.btn-icon:active:not([disabled]) {
       color: #fff;
       background-color: #909090;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
-    input.default.is-loading[type="submit"]:not([disabled])::after,
-    input.default.is-loading[type="button"]:not([disabled])::after,
-    input.default.is-loading[type="reset"]:not([disabled])::after, .default.is-loading.btn:not([disabled])::after, .default.is-loading.btn-icon:not([disabled])::after {
+    input.default.is-loading[type=submit]:not([disabled])::after,
+    input.default.is-loading[type=button]:not([disabled])::after,
+    input.default.is-loading[type=reset]:not([disabled])::after, .default.is-loading.btn:not([disabled])::after, .default.is-loading.btn-icon:not([disabled])::after {
       border-left-color: #fff;
       border-bottom-color: #fff; }
-  input.primary[type="submit"],
-  input.primary[type="button"],
-  input.primary[type="reset"], .primary.btn, .primary.btn-icon {
+  input.primary[type=submit],
+  input.primary[type=button],
+  input.primary[type=reset], .primary.btn, .primary.btn-icon {
     color: #fff;
-    background-color: #a50021;
-    outline-color: #a50021;
+    background-color: #ff8200;
+    outline-color: #ff8200;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.primary[type="submit"]:link,
-    input.primary[type="button"]:link,
-    input.primary[type="reset"]:link, .primary.btn:link, .primary.btn-icon:link, input.primary[type="submit"]:visited,
-    input.primary[type="button"]:visited,
-    input.primary[type="reset"]:visited, .primary.btn:visited, .primary.btn-icon:visited {
+    input.primary:link[type=submit],
+    input.primary:link[type=button],
+    input.primary:link[type=reset], .primary.btn:link, .primary.btn-icon:link, input.primary:visited[type=submit],
+    input.primary:visited[type=button],
+    input.primary:visited[type=reset], .primary.btn:visited, .primary.btn-icon:visited {
       color: #fff; }
-    input.primary[type="submit"]:focus:not([disabled]),
-    input.primary[type="button"]:focus:not([disabled]),
-    input.primary[type="reset"]:focus:not([disabled]), .primary.btn:focus:not([disabled]), .primary.btn-icon:focus:not([disabled]), input.primary[type="submit"]:hover:not([disabled]),
-    input.primary[type="button"]:hover:not([disabled]),
-    input.primary[type="reset"]:hover:not([disabled]), .primary.btn:hover:not([disabled]), .primary.btn-icon:hover:not([disabled]) {
+    input.primary:focus:not([disabled])[type=submit],
+    input.primary:focus:not([disabled])[type=button],
+    input.primary:focus:not([disabled])[type=reset], .primary.btn:focus:not([disabled]), .primary.btn-icon:focus:not([disabled]), input.primary:hover:not([disabled])[type=submit],
+    input.primary:hover:not([disabled])[type=button],
+    input.primary:hover:not([disabled])[type=reset], .primary.btn:hover:not([disabled]), .primary.btn-icon:hover:not([disabled]) {
       color: #fff;
-      background-color: #b90025;
+      background-color: #ff8c14;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.primary[type="submit"]:active:not([disabled]),
-    input.primary[type="button"]:active:not([disabled]),
-    input.primary[type="reset"]:active:not([disabled]), .primary.btn:active:not([disabled]), .primary.btn-icon:active:not([disabled]) {
+    input.primary:active:not([disabled])[type=submit],
+    input.primary:active:not([disabled])[type=button],
+    input.primary:active:not([disabled])[type=reset], .primary.btn:active:not([disabled]), .primary.btn-icon:active:not([disabled]) {
       color: #fff;
-      background-color: #91001d;
+      background-color: #eb7800;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
-    input.primary.is-loading[type="submit"]:not([disabled])::after,
-    input.primary.is-loading[type="button"]:not([disabled])::after,
-    input.primary.is-loading[type="reset"]:not([disabled])::after, .primary.is-loading.btn:not([disabled])::after, .primary.is-loading.btn-icon:not([disabled])::after {
+    input.primary.is-loading[type=submit]:not([disabled])::after,
+    input.primary.is-loading[type=button]:not([disabled])::after,
+    input.primary.is-loading[type=reset]:not([disabled])::after, .primary.is-loading.btn:not([disabled])::after, .primary.is-loading.btn-icon:not([disabled])::after {
       border-left-color: #fff;
       border-bottom-color: #fff; }
-  input.secondary[type="submit"],
-  input.secondary[type="button"],
-  input.secondary[type="reset"], .secondary.btn, .secondary.btn-icon {
+  input.secondary[type=submit],
+  input.secondary[type=button],
+  input.secondary[type=reset], .secondary.btn, .secondary.btn-icon {
     color: #fff;
     background-color: #4c5866;
     outline-color: #4c5866;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.secondary[type="submit"]:link,
-    input.secondary[type="button"]:link,
-    input.secondary[type="reset"]:link, .secondary.btn:link, .secondary.btn-icon:link, input.secondary[type="submit"]:visited,
-    input.secondary[type="button"]:visited,
-    input.secondary[type="reset"]:visited, .secondary.btn:visited, .secondary.btn-icon:visited {
+    input.secondary:link[type=submit],
+    input.secondary:link[type=button],
+    input.secondary:link[type=reset], .secondary.btn:link, .secondary.btn-icon:link, input.secondary:visited[type=submit],
+    input.secondary:visited[type=button],
+    input.secondary:visited[type=reset], .secondary.btn:visited, .secondary.btn-icon:visited {
       color: #fff; }
-    input.secondary[type="submit"]:focus:not([disabled]),
-    input.secondary[type="button"]:focus:not([disabled]),
-    input.secondary[type="reset"]:focus:not([disabled]), .secondary.btn:focus:not([disabled]), .secondary.btn-icon:focus:not([disabled]), input.secondary[type="submit"]:hover:not([disabled]),
-    input.secondary[type="button"]:hover:not([disabled]),
-    input.secondary[type="reset"]:hover:not([disabled]), .secondary.btn:hover:not([disabled]), .secondary.btn-icon:hover:not([disabled]) {
+    input.secondary:focus:not([disabled])[type=submit],
+    input.secondary:focus:not([disabled])[type=button],
+    input.secondary:focus:not([disabled])[type=reset], .secondary.btn:focus:not([disabled]), .secondary.btn-icon:focus:not([disabled]), input.secondary:hover:not([disabled])[type=submit],
+    input.secondary:hover:not([disabled])[type=button],
+    input.secondary:hover:not([disabled])[type=reset], .secondary.btn:hover:not([disabled]), .secondary.btn-icon:hover:not([disabled]) {
       color: #fff;
       background-color: #556272;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.secondary[type="submit"]:active:not([disabled]),
-    input.secondary[type="button"]:active:not([disabled]),
-    input.secondary[type="reset"]:active:not([disabled]), .secondary.btn:active:not([disabled]), .secondary.btn-icon:active:not([disabled]) {
+    input.secondary:active:not([disabled])[type=submit],
+    input.secondary:active:not([disabled])[type=button],
+    input.secondary:active:not([disabled])[type=reset], .secondary.btn:active:not([disabled]), .secondary.btn-icon:active:not([disabled]) {
       color: #fff;
       background-color: #434e5a;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
-    input.secondary.is-loading[type="submit"]:not([disabled])::after,
-    input.secondary.is-loading[type="button"]:not([disabled])::after,
-    input.secondary.is-loading[type="reset"]:not([disabled])::after, .secondary.is-loading.btn:not([disabled])::after, .secondary.is-loading.btn-icon:not([disabled])::after {
+    input.secondary.is-loading[type=submit]:not([disabled])::after,
+    input.secondary.is-loading[type=button]:not([disabled])::after,
+    input.secondary.is-loading[type=reset]:not([disabled])::after, .secondary.is-loading.btn:not([disabled])::after, .secondary.is-loading.btn-icon:not([disabled])::after {
       border-left-color: #fff;
       border-bottom-color: #fff; }
-  input.info[type="submit"],
-  input.info[type="button"],
-  input.info[type="reset"], .info.btn, .info.btn-icon {
+  input.info[type=submit],
+  input.info[type=button],
+  input.info[type=reset], .info.btn, .info.btn-icon {
     color: #fff;
     background-color: #008080;
     outline-color: #008080;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.info[type="submit"]:link,
-    input.info[type="button"]:link,
-    input.info[type="reset"]:link, .info.btn:link, .info.btn-icon:link, input.info[type="submit"]:visited,
-    input.info[type="button"]:visited,
-    input.info[type="reset"]:visited, .info.btn:visited, .info.btn-icon:visited {
+    input.info:link[type=submit],
+    input.info:link[type=button],
+    input.info:link[type=reset], .info.btn:link, .info.btn-icon:link, input.info:visited[type=submit],
+    input.info:visited[type=button],
+    input.info:visited[type=reset], .info.btn:visited, .info.btn-icon:visited {
       color: #fff; }
-    input.info[type="submit"]:focus:not([disabled]),
-    input.info[type="button"]:focus:not([disabled]),
-    input.info[type="reset"]:focus:not([disabled]), .info.btn:focus:not([disabled]), .info.btn-icon:focus:not([disabled]), input.info[type="submit"]:hover:not([disabled]),
-    input.info[type="button"]:hover:not([disabled]),
-    input.info[type="reset"]:hover:not([disabled]), .info.btn:hover:not([disabled]), .info.btn-icon:hover:not([disabled]) {
+    input.info:focus:not([disabled])[type=submit],
+    input.info:focus:not([disabled])[type=button],
+    input.info:focus:not([disabled])[type=reset], .info.btn:focus:not([disabled]), .info.btn-icon:focus:not([disabled]), input.info:hover:not([disabled])[type=submit],
+    input.info:hover:not([disabled])[type=button],
+    input.info:hover:not([disabled])[type=reset], .info.btn:hover:not([disabled]), .info.btn-icon:hover:not([disabled]) {
       color: #fff;
       background-color: #009494;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.info[type="submit"]:active:not([disabled]),
-    input.info[type="button"]:active:not([disabled]),
-    input.info[type="reset"]:active:not([disabled]), .info.btn:active:not([disabled]), .info.btn-icon:active:not([disabled]) {
+    input.info:active:not([disabled])[type=submit],
+    input.info:active:not([disabled])[type=button],
+    input.info:active:not([disabled])[type=reset], .info.btn:active:not([disabled]), .info.btn-icon:active:not([disabled]) {
       color: #fff;
       background-color: #006c6c;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
-    input.info.is-loading[type="submit"]:not([disabled])::after,
-    input.info.is-loading[type="button"]:not([disabled])::after,
-    input.info.is-loading[type="reset"]:not([disabled])::after, .info.is-loading.btn:not([disabled])::after, .info.is-loading.btn-icon:not([disabled])::after {
+    input.info.is-loading[type=submit]:not([disabled])::after,
+    input.info.is-loading[type=button]:not([disabled])::after,
+    input.info.is-loading[type=reset]:not([disabled])::after, .info.is-loading.btn:not([disabled])::after, .info.is-loading.btn-icon:not([disabled])::after {
       border-left-color: #fff;
       border-bottom-color: #fff; }
-  input.success[type="submit"],
-  input.success[type="button"],
-  input.success[type="reset"], .success.btn, .success.btn-icon {
+  input.success[type=submit],
+  input.success[type=button],
+  input.success[type=reset], .success.btn, .success.btn-icon {
     color: #fff;
     background-color: #00a550;
     outline-color: #00a550;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.success[type="submit"]:link,
-    input.success[type="button"]:link,
-    input.success[type="reset"]:link, .success.btn:link, .success.btn-icon:link, input.success[type="submit"]:visited,
-    input.success[type="button"]:visited,
-    input.success[type="reset"]:visited, .success.btn:visited, .success.btn-icon:visited {
+    input.success:link[type=submit],
+    input.success:link[type=button],
+    input.success:link[type=reset], .success.btn:link, .success.btn-icon:link, input.success:visited[type=submit],
+    input.success:visited[type=button],
+    input.success:visited[type=reset], .success.btn:visited, .success.btn-icon:visited {
       color: #fff; }
-    input.success[type="submit"]:focus:not([disabled]),
-    input.success[type="button"]:focus:not([disabled]),
-    input.success[type="reset"]:focus:not([disabled]), .success.btn:focus:not([disabled]), .success.btn-icon:focus:not([disabled]), input.success[type="submit"]:hover:not([disabled]),
-    input.success[type="button"]:hover:not([disabled]),
-    input.success[type="reset"]:hover:not([disabled]), .success.btn:hover:not([disabled]), .success.btn-icon:hover:not([disabled]) {
+    input.success:focus:not([disabled])[type=submit],
+    input.success:focus:not([disabled])[type=button],
+    input.success:focus:not([disabled])[type=reset], .success.btn:focus:not([disabled]), .success.btn-icon:focus:not([disabled]), input.success:hover:not([disabled])[type=submit],
+    input.success:hover:not([disabled])[type=button],
+    input.success:hover:not([disabled])[type=reset], .success.btn:hover:not([disabled]), .success.btn-icon:hover:not([disabled]) {
       color: #fff;
       background-color: #00b95a;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.success[type="submit"]:active:not([disabled]),
-    input.success[type="button"]:active:not([disabled]),
-    input.success[type="reset"]:active:not([disabled]), .success.btn:active:not([disabled]), .success.btn-icon:active:not([disabled]) {
+    input.success:active:not([disabled])[type=submit],
+    input.success:active:not([disabled])[type=button],
+    input.success:active:not([disabled])[type=reset], .success.btn:active:not([disabled]), .success.btn-icon:active:not([disabled]) {
       color: #fff;
       background-color: #009146;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
-    input.success.is-loading[type="submit"]:not([disabled])::after,
-    input.success.is-loading[type="button"]:not([disabled])::after,
-    input.success.is-loading[type="reset"]:not([disabled])::after, .success.is-loading.btn:not([disabled])::after, .success.is-loading.btn-icon:not([disabled])::after {
+    input.success.is-loading[type=submit]:not([disabled])::after,
+    input.success.is-loading[type=button]:not([disabled])::after,
+    input.success.is-loading[type=reset]:not([disabled])::after, .success.is-loading.btn:not([disabled])::after, .success.is-loading.btn-icon:not([disabled])::after {
       border-left-color: #fff;
       border-bottom-color: #fff; }
-  input.warning[type="submit"],
-  input.warning[type="button"],
-  input.warning[type="reset"], .warning.btn, .warning.btn-icon {
+  input.warning[type=submit],
+  input.warning[type=button],
+  input.warning[type=reset], .warning.btn, .warning.btn-icon {
     color: #343434;
     background-color: #ffd300;
     outline-color: #ffd300;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.warning[type="submit"]:link,
-    input.warning[type="button"]:link,
-    input.warning[type="reset"]:link, .warning.btn:link, .warning.btn-icon:link, input.warning[type="submit"]:visited,
-    input.warning[type="button"]:visited,
-    input.warning[type="reset"]:visited, .warning.btn:visited, .warning.btn-icon:visited {
+    input.warning:link[type=submit],
+    input.warning:link[type=button],
+    input.warning:link[type=reset], .warning.btn:link, .warning.btn-icon:link, input.warning:visited[type=submit],
+    input.warning:visited[type=button],
+    input.warning:visited[type=reset], .warning.btn:visited, .warning.btn-icon:visited {
       color: #343434; }
-    input.warning[type="submit"]:focus:not([disabled]),
-    input.warning[type="button"]:focus:not([disabled]),
-    input.warning[type="reset"]:focus:not([disabled]), .warning.btn:focus:not([disabled]), .warning.btn-icon:focus:not([disabled]), input.warning[type="submit"]:hover:not([disabled]),
-    input.warning[type="button"]:hover:not([disabled]),
-    input.warning[type="reset"]:hover:not([disabled]), .warning.btn:hover:not([disabled]), .warning.btn-icon:hover:not([disabled]) {
+    input.warning:focus:not([disabled])[type=submit],
+    input.warning:focus:not([disabled])[type=button],
+    input.warning:focus:not([disabled])[type=reset], .warning.btn:focus:not([disabled]), .warning.btn-icon:focus:not([disabled]), input.warning:hover:not([disabled])[type=submit],
+    input.warning:hover:not([disabled])[type=button],
+    input.warning:hover:not([disabled])[type=reset], .warning.btn:hover:not([disabled]), .warning.btn-icon:hover:not([disabled]) {
       color: #343434;
       background-color: #ffd714;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.warning[type="submit"]:active:not([disabled]),
-    input.warning[type="button"]:active:not([disabled]),
-    input.warning[type="reset"]:active:not([disabled]), .warning.btn:active:not([disabled]), .warning.btn-icon:active:not([disabled]) {
+    input.warning:active:not([disabled])[type=submit],
+    input.warning:active:not([disabled])[type=button],
+    input.warning:active:not([disabled])[type=reset], .warning.btn:active:not([disabled]), .warning.btn-icon:active:not([disabled]) {
       color: #343434;
       background-color: #ebc200;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
-    input.warning.is-loading[type="submit"]:not([disabled])::after,
-    input.warning.is-loading[type="button"]:not([disabled])::after,
-    input.warning.is-loading[type="reset"]:not([disabled])::after, .warning.is-loading.btn:not([disabled])::after, .warning.is-loading.btn-icon:not([disabled])::after {
+    input.warning.is-loading[type=submit]:not([disabled])::after,
+    input.warning.is-loading[type=button]:not([disabled])::after,
+    input.warning.is-loading[type=reset]:not([disabled])::after, .warning.is-loading.btn:not([disabled])::after, .warning.is-loading.btn-icon:not([disabled])::after {
       border-left-color: #343434;
       border-bottom-color: #343434; }
-  input.danger[type="submit"],
-  input.danger[type="button"],
-  input.danger[type="reset"], .danger.btn, .danger.btn-icon {
+  input.danger[type=submit],
+  input.danger[type=button],
+  input.danger[type=reset], .danger.btn, .danger.btn-icon {
     color: #fff;
     background-color: #e23d28;
     outline-color: #e23d28;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.danger[type="submit"]:link,
-    input.danger[type="button"]:link,
-    input.danger[type="reset"]:link, .danger.btn:link, .danger.btn-icon:link, input.danger[type="submit"]:visited,
-    input.danger[type="button"]:visited,
-    input.danger[type="reset"]:visited, .danger.btn:visited, .danger.btn-icon:visited {
+    input.danger:link[type=submit],
+    input.danger:link[type=button],
+    input.danger:link[type=reset], .danger.btn:link, .danger.btn-icon:link, input.danger:visited[type=submit],
+    input.danger:visited[type=button],
+    input.danger:visited[type=reset], .danger.btn:visited, .danger.btn-icon:visited {
       color: #fff; }
-    input.danger[type="submit"]:focus:not([disabled]),
-    input.danger[type="button"]:focus:not([disabled]),
-    input.danger[type="reset"]:focus:not([disabled]), .danger.btn:focus:not([disabled]), .danger.btn-icon:focus:not([disabled]), input.danger[type="submit"]:hover:not([disabled]),
-    input.danger[type="button"]:hover:not([disabled]),
-    input.danger[type="reset"]:hover:not([disabled]), .danger.btn:hover:not([disabled]), .danger.btn-icon:hover:not([disabled]) {
+    input.danger:focus:not([disabled])[type=submit],
+    input.danger:focus:not([disabled])[type=button],
+    input.danger:focus:not([disabled])[type=reset], .danger.btn:focus:not([disabled]), .danger.btn-icon:focus:not([disabled]), input.danger:hover:not([disabled])[type=submit],
+    input.danger:hover:not([disabled])[type=button],
+    input.danger:hover:not([disabled])[type=reset], .danger.btn:hover:not([disabled]), .danger.btn-icon:hover:not([disabled]) {
       color: #fff;
       background-color: #e44d3a;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.danger[type="submit"]:active:not([disabled]),
-    input.danger[type="button"]:active:not([disabled]),
-    input.danger[type="reset"]:active:not([disabled]), .danger.btn:active:not([disabled]), .danger.btn-icon:active:not([disabled]) {
+    input.danger:active:not([disabled])[type=submit],
+    input.danger:active:not([disabled])[type=button],
+    input.danger:active:not([disabled])[type=reset], .danger.btn:active:not([disabled]), .danger.btn-icon:active:not([disabled]) {
       color: #fff;
       background-color: #d8321d;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
-    input.danger.is-loading[type="submit"]:not([disabled])::after,
-    input.danger.is-loading[type="button"]:not([disabled])::after,
-    input.danger.is-loading[type="reset"]:not([disabled])::after, .danger.is-loading.btn:not([disabled])::after, .danger.is-loading.btn-icon:not([disabled])::after {
+    input.danger.is-loading[type=submit]:not([disabled])::after,
+    input.danger.is-loading[type=button]:not([disabled])::after,
+    input.danger.is-loading[type=reset]:not([disabled])::after, .danger.is-loading.btn:not([disabled])::after, .danger.is-loading.btn-icon:not([disabled])::after {
       border-left-color: #fff;
       border-bottom-color: #fff; }
-  input.error[type="submit"],
-  input.error[type="button"],
-  input.error[type="reset"], .error.btn, .error.btn-icon {
+  input.error[type=submit],
+  input.error[type=button],
+  input.error[type=reset], .error.btn, .error.btn-icon {
     color: #fff;
     background-color: #e23d28;
     outline-color: #e23d28;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.error[type="submit"]:link,
-    input.error[type="button"]:link,
-    input.error[type="reset"]:link, .error.btn:link, .error.btn-icon:link, input.error[type="submit"]:visited,
-    input.error[type="button"]:visited,
-    input.error[type="reset"]:visited, .error.btn:visited, .error.btn-icon:visited {
+    input.error:link[type=submit],
+    input.error:link[type=button],
+    input.error:link[type=reset], .error.btn:link, .error.btn-icon:link, input.error:visited[type=submit],
+    input.error:visited[type=button],
+    input.error:visited[type=reset], .error.btn:visited, .error.btn-icon:visited {
       color: #fff; }
-    input.error[type="submit"]:focus:not([disabled]),
-    input.error[type="button"]:focus:not([disabled]),
-    input.error[type="reset"]:focus:not([disabled]), .error.btn:focus:not([disabled]), .error.btn-icon:focus:not([disabled]), input.error[type="submit"]:hover:not([disabled]),
-    input.error[type="button"]:hover:not([disabled]),
-    input.error[type="reset"]:hover:not([disabled]), .error.btn:hover:not([disabled]), .error.btn-icon:hover:not([disabled]) {
+    input.error:focus:not([disabled])[type=submit],
+    input.error:focus:not([disabled])[type=button],
+    input.error:focus:not([disabled])[type=reset], .error.btn:focus:not([disabled]), .error.btn-icon:focus:not([disabled]), input.error:hover:not([disabled])[type=submit],
+    input.error:hover:not([disabled])[type=button],
+    input.error:hover:not([disabled])[type=reset], .error.btn:hover:not([disabled]), .error.btn-icon:hover:not([disabled]) {
       color: #fff;
       background-color: #e44d3a;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.error[type="submit"]:active:not([disabled]),
-    input.error[type="button"]:active:not([disabled]),
-    input.error[type="reset"]:active:not([disabled]), .error.btn:active:not([disabled]), .error.btn-icon:active:not([disabled]) {
+    input.error:active:not([disabled])[type=submit],
+    input.error:active:not([disabled])[type=button],
+    input.error:active:not([disabled])[type=reset], .error.btn:active:not([disabled]), .error.btn-icon:active:not([disabled]) {
       color: #fff;
       background-color: #d8321d;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
-    input.error.is-loading[type="submit"]:not([disabled])::after,
-    input.error.is-loading[type="button"]:not([disabled])::after,
-    input.error.is-loading[type="reset"]:not([disabled])::after, .error.is-loading.btn:not([disabled])::after, .error.is-loading.btn-icon:not([disabled])::after {
+    input.error.is-loading[type=submit]:not([disabled])::after,
+    input.error.is-loading[type=button]:not([disabled])::after,
+    input.error.is-loading[type=reset]:not([disabled])::after, .error.is-loading.btn:not([disabled])::after, .error.is-loading.btn-icon:not([disabled])::after {
       border-left-color: #fff;
       border-bottom-color: #fff; }
-  input.light[type="submit"],
-  input.light[type="button"],
-  input.light[type="reset"], .light.btn, .light.btn-icon {
+  input.light[type=submit],
+  input.light[type=button],
+  input.light[type=reset], .light.btn, .light.btn-icon {
     color: #343434;
     background-color: #fff;
     outline-color: #fff;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.light[type="submit"]:link,
-    input.light[type="button"]:link,
-    input.light[type="reset"]:link, .light.btn:link, .light.btn-icon:link, input.light[type="submit"]:visited,
-    input.light[type="button"]:visited,
-    input.light[type="reset"]:visited, .light.btn:visited, .light.btn-icon:visited {
+    input.light:link[type=submit],
+    input.light:link[type=button],
+    input.light:link[type=reset], .light.btn:link, .light.btn-icon:link, input.light:visited[type=submit],
+    input.light:visited[type=button],
+    input.light:visited[type=reset], .light.btn:visited, .light.btn-icon:visited {
       color: #343434; }
-    input.light[type="submit"]:focus:not([disabled]),
-    input.light[type="button"]:focus:not([disabled]),
-    input.light[type="reset"]:focus:not([disabled]), .light.btn:focus:not([disabled]), .light.btn-icon:focus:not([disabled]), input.light[type="submit"]:hover:not([disabled]),
-    input.light[type="button"]:hover:not([disabled]),
-    input.light[type="reset"]:hover:not([disabled]), .light.btn:hover:not([disabled]), .light.btn-icon:hover:not([disabled]) {
+    input.light:focus:not([disabled])[type=submit],
+    input.light:focus:not([disabled])[type=button],
+    input.light:focus:not([disabled])[type=reset], .light.btn:focus:not([disabled]), .light.btn-icon:focus:not([disabled]), input.light:hover:not([disabled])[type=submit],
+    input.light:hover:not([disabled])[type=button],
+    input.light:hover:not([disabled])[type=reset], .light.btn:hover:not([disabled]), .light.btn-icon:hover:not([disabled]) {
       color: #343434;
       background-color: white;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.light[type="submit"]:active:not([disabled]),
-    input.light[type="button"]:active:not([disabled]),
-    input.light[type="reset"]:active:not([disabled]), .light.btn:active:not([disabled]), .light.btn-icon:active:not([disabled]) {
+    input.light:active:not([disabled])[type=submit],
+    input.light:active:not([disabled])[type=button],
+    input.light:active:not([disabled])[type=reset], .light.btn:active:not([disabled]), .light.btn-icon:active:not([disabled]) {
       color: #343434;
       background-color: whitesmoke;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
-    input.light.is-loading[type="submit"]:not([disabled])::after,
-    input.light.is-loading[type="button"]:not([disabled])::after,
-    input.light.is-loading[type="reset"]:not([disabled])::after, .light.is-loading.btn:not([disabled])::after, .light.is-loading.btn-icon:not([disabled])::after {
+    input.light.is-loading[type=submit]:not([disabled])::after,
+    input.light.is-loading[type=button]:not([disabled])::after,
+    input.light.is-loading[type=reset]:not([disabled])::after, .light.is-loading.btn:not([disabled])::after, .light.is-loading.btn-icon:not([disabled])::after {
       border-left-color: #343434;
       border-bottom-color: #343434; }
-  input.dark[type="submit"],
-  input.dark[type="button"],
-  input.dark[type="reset"], .dark.btn, .dark.btn-icon {
+  input.dark[type=submit],
+  input.dark[type=button],
+  input.dark[type=reset], .dark.btn, .dark.btn-icon {
     color: #fff;
     background-color: #343434;
     outline-color: #343434;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.dark[type="submit"]:link,
-    input.dark[type="button"]:link,
-    input.dark[type="reset"]:link, .dark.btn:link, .dark.btn-icon:link, input.dark[type="submit"]:visited,
-    input.dark[type="button"]:visited,
-    input.dark[type="reset"]:visited, .dark.btn:visited, .dark.btn-icon:visited {
+    input.dark:link[type=submit],
+    input.dark:link[type=button],
+    input.dark:link[type=reset], .dark.btn:link, .dark.btn-icon:link, input.dark:visited[type=submit],
+    input.dark:visited[type=button],
+    input.dark:visited[type=reset], .dark.btn:visited, .dark.btn-icon:visited {
       color: #fff; }
-    input.dark[type="submit"]:focus:not([disabled]),
-    input.dark[type="button"]:focus:not([disabled]),
-    input.dark[type="reset"]:focus:not([disabled]), .dark.btn:focus:not([disabled]), .dark.btn-icon:focus:not([disabled]), input.dark[type="submit"]:hover:not([disabled]),
-    input.dark[type="button"]:hover:not([disabled]),
-    input.dark[type="reset"]:hover:not([disabled]), .dark.btn:hover:not([disabled]), .dark.btn-icon:hover:not([disabled]) {
+    input.dark:focus:not([disabled])[type=submit],
+    input.dark:focus:not([disabled])[type=button],
+    input.dark:focus:not([disabled])[type=reset], .dark.btn:focus:not([disabled]), .dark.btn-icon:focus:not([disabled]), input.dark:hover:not([disabled])[type=submit],
+    input.dark:hover:not([disabled])[type=button],
+    input.dark:hover:not([disabled])[type=reset], .dark.btn:hover:not([disabled]), .dark.btn-icon:hover:not([disabled]) {
       color: #fff;
       background-color: #3e3e3e;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.dark[type="submit"]:active:not([disabled]),
-    input.dark[type="button"]:active:not([disabled]),
-    input.dark[type="reset"]:active:not([disabled]), .dark.btn:active:not([disabled]), .dark.btn-icon:active:not([disabled]) {
+    input.dark:active:not([disabled])[type=submit],
+    input.dark:active:not([disabled])[type=button],
+    input.dark:active:not([disabled])[type=reset], .dark.btn:active:not([disabled]), .dark.btn-icon:active:not([disabled]) {
       color: #fff;
       background-color: #2a2a2a;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
-    input.dark.is-loading[type="submit"]:not([disabled])::after,
-    input.dark.is-loading[type="button"]:not([disabled])::after,
-    input.dark.is-loading[type="reset"]:not([disabled])::after, .dark.is-loading.btn:not([disabled])::after, .dark.is-loading.btn-icon:not([disabled])::after {
+    input.dark.is-loading[type=submit]:not([disabled])::after,
+    input.dark.is-loading[type=button]:not([disabled])::after,
+    input.dark.is-loading[type=reset]:not([disabled])::after, .dark.is-loading.btn:not([disabled])::after, .dark.is-loading.btn-icon:not([disabled])::after {
       border-left-color: #fff;
       border-bottom-color: #fff; }
-  input.shade[type="submit"],
-  input.shade[type="button"],
-  input.shade[type="reset"], .shade.btn, .shade.btn-icon {
+  input.shade[type=submit],
+  input.shade[type=button],
+  input.shade[type=reset], .shade.btn, .shade.btn-icon {
     color: #343434;
     background-color: #ebebeb;
     outline-color: #ebebeb;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.shade[type="submit"]:link,
-    input.shade[type="button"]:link,
-    input.shade[type="reset"]:link, .shade.btn:link, .shade.btn-icon:link, input.shade[type="submit"]:visited,
-    input.shade[type="button"]:visited,
-    input.shade[type="reset"]:visited, .shade.btn:visited, .shade.btn-icon:visited {
+    input.shade:link[type=submit],
+    input.shade:link[type=button],
+    input.shade:link[type=reset], .shade.btn:link, .shade.btn-icon:link, input.shade:visited[type=submit],
+    input.shade:visited[type=button],
+    input.shade:visited[type=reset], .shade.btn:visited, .shade.btn-icon:visited {
       color: #343434; }
-    input.shade[type="submit"]:focus:not([disabled]),
-    input.shade[type="button"]:focus:not([disabled]),
-    input.shade[type="reset"]:focus:not([disabled]), .shade.btn:focus:not([disabled]), .shade.btn-icon:focus:not([disabled]), input.shade[type="submit"]:hover:not([disabled]),
-    input.shade[type="button"]:hover:not([disabled]),
-    input.shade[type="reset"]:hover:not([disabled]), .shade.btn:hover:not([disabled]), .shade.btn-icon:hover:not([disabled]) {
+    input.shade:focus:not([disabled])[type=submit],
+    input.shade:focus:not([disabled])[type=button],
+    input.shade:focus:not([disabled])[type=reset], .shade.btn:focus:not([disabled]), .shade.btn-icon:focus:not([disabled]), input.shade:hover:not([disabled])[type=submit],
+    input.shade:hover:not([disabled])[type=button],
+    input.shade:hover:not([disabled])[type=reset], .shade.btn:hover:not([disabled]), .shade.btn-icon:hover:not([disabled]) {
       color: #343434;
       background-color: whitesmoke;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.shade[type="submit"]:active:not([disabled]),
-    input.shade[type="button"]:active:not([disabled]),
-    input.shade[type="reset"]:active:not([disabled]), .shade.btn:active:not([disabled]), .shade.btn-icon:active:not([disabled]) {
+    input.shade:active:not([disabled])[type=submit],
+    input.shade:active:not([disabled])[type=button],
+    input.shade:active:not([disabled])[type=reset], .shade.btn:active:not([disabled]), .shade.btn-icon:active:not([disabled]) {
       color: #343434;
       background-color: #e1e1e1;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
-    input.shade.is-loading[type="submit"]:not([disabled])::after,
-    input.shade.is-loading[type="button"]:not([disabled])::after,
-    input.shade.is-loading[type="reset"]:not([disabled])::after, .shade.is-loading.btn:not([disabled])::after, .shade.is-loading.btn-icon:not([disabled])::after {
+    input.shade.is-loading[type=submit]:not([disabled])::after,
+    input.shade.is-loading[type=button]:not([disabled])::after,
+    input.shade.is-loading[type=reset]:not([disabled])::after, .shade.is-loading.btn:not([disabled])::after, .shade.is-loading.btn-icon:not([disabled])::after {
       border-left-color: #343434;
       border-bottom-color: #343434; }
-  input.link[type="submit"],
-  input.link[type="button"],
-  input.link[type="reset"], .link.btn, .link.btn-icon {
+  input.link[type=submit],
+  input.link[type=button],
+  input.link[type=reset], .link.btn, .link.btn-icon {
     color: #fff;
     background-color: #0087bd;
     outline-color: #0087bd;
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
-    input.link[type="submit"]:link,
-    input.link[type="button"]:link,
-    input.link[type="reset"]:link, .link.btn:link, .link.btn-icon:link, input.link[type="submit"]:visited,
-    input.link[type="button"]:visited,
-    input.link[type="reset"]:visited, .link.btn:visited, .link.btn-icon:visited {
+    input.link:link[type=submit],
+    input.link:link[type=button],
+    input.link:link[type=reset], .link.btn:link, .link.btn-icon:link, input.link:visited[type=submit],
+    input.link:visited[type=button],
+    input.link:visited[type=reset], .link.btn:visited, .link.btn-icon:visited {
       color: #fff; }
-    input.link[type="submit"]:focus:not([disabled]),
-    input.link[type="button"]:focus:not([disabled]),
-    input.link[type="reset"]:focus:not([disabled]), .link.btn:focus:not([disabled]), .link.btn-icon:focus:not([disabled]), input.link[type="submit"]:hover:not([disabled]),
-    input.link[type="button"]:hover:not([disabled]),
-    input.link[type="reset"]:hover:not([disabled]), .link.btn:hover:not([disabled]), .link.btn-icon:hover:not([disabled]) {
+    input.link:focus:not([disabled])[type=submit],
+    input.link:focus:not([disabled])[type=button],
+    input.link:focus:not([disabled])[type=reset], .link.btn:focus:not([disabled]), .link.btn-icon:focus:not([disabled]), input.link:hover:not([disabled])[type=submit],
+    input.link:hover:not([disabled])[type=button],
+    input.link:hover:not([disabled])[type=reset], .link.btn:hover:not([disabled]), .link.btn-icon:hover:not([disabled]) {
       color: #fff;
       background-color: #0096d1;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
-    input.link[type="submit"]:active:not([disabled]),
-    input.link[type="button"]:active:not([disabled]),
-    input.link[type="reset"]:active:not([disabled]), .link.btn:active:not([disabled]), .link.btn-icon:active:not([disabled]) {
+    input.link:active:not([disabled])[type=submit],
+    input.link:active:not([disabled])[type=button],
+    input.link:active:not([disabled])[type=reset], .link.btn:active:not([disabled]), .link.btn-icon:active:not([disabled]) {
       color: #fff;
       background-color: #0078a9;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
-    input.link.is-loading[type="submit"]:not([disabled])::after,
-    input.link.is-loading[type="button"]:not([disabled])::after,
-    input.link.is-loading[type="reset"]:not([disabled])::after, .link.is-loading.btn:not([disabled])::after, .link.is-loading.btn-icon:not([disabled])::after {
+    input.link.is-loading[type=submit]:not([disabled])::after,
+    input.link.is-loading[type=button]:not([disabled])::after,
+    input.link.is-loading[type=reset]:not([disabled])::after, .link.is-loading.btn:not([disabled])::after, .link.is-loading.btn-icon:not([disabled])::after {
       border-left-color: #fff;
       border-bottom-color: #fff; }
 
@@ -2269,16 +2348,16 @@ input[type="reset"], .btn, .btn-icon {
       color: #9a9a9a;
       background-color: rgba(154, 154, 154, 0.2); }
   .primary.btn-flat {
-    color: #a50021;
+    color: #ff8200;
     background-color: transparent;
-    outline-color: rgba(165, 0, 33, 0.2);
+    outline-color: rgba(255, 130, 0, 0.2);
     transition: color 0.3s ease-out, background-color 0.3s ease-out; }
     .primary.btn-flat:focus:not([disabled]), .primary.btn-flat:hover:not([disabled]) {
-      color: #a50021;
-      background-color: rgba(165, 0, 33, 0.1); }
+      color: #ff8200;
+      background-color: rgba(255, 130, 0, 0.1); }
     .primary.btn-flat:active:not([disabled]) {
-      color: #a50021;
-      background-color: rgba(165, 0, 33, 0.2); }
+      color: #ff8200;
+      background-color: rgba(255, 130, 0, 0.2); }
   .secondary.btn-flat {
     color: #4c5866;
     background-color: transparent;
@@ -2403,11 +2482,17 @@ input[type="reset"], .btn, .btn-icon {
   display: -ms-inline-flexbox;
   display: inline-flex;
   margin: .2em; }
-  .btn-group > .btn, .btn-group-vertical > .btn, .btn-group > .btn-flat, .btn-group-vertical > .btn-flat, .btn-group > .dropdown > .dropdown-button, .btn-group-vertical > .dropdown > .dropdown-button {
+  .btn-group > .btn, .btn-group-vertical > .btn,
+  .btn-group > .btn-flat,
+  .btn-group-vertical > .btn-flat,
+  .btn-group > .dropdown > .dropdown-button,
+  .btn-group-vertical > .dropdown > .dropdown-button {
     -ms-flex: 0 1 auto;
         flex: 0 1 auto;
     margin: 0; }
-  .btn-group > .btn:not(:first-child):not(:last-child), .btn-group-vertical > .btn:not(:first-child):not(:last-child), .btn-group > .btn-flat:not(:first-child):not(:last-child), .btn-group-vertical > .btn-flat:not(:first-child):not(:last-child) {
+  .btn-group > .btn:not(:first-child):not(:last-child), .btn-group-vertical > .btn:not(:first-child):not(:last-child),
+  .btn-group > .btn-flat:not(:first-child):not(:last-child),
+  .btn-group-vertical > .btn-flat:not(:first-child):not(:last-child) {
     border-radius: 0; }
   .btn-group > .dropdown:not(:first-child):not(:last-child) > .dropdown-button, .btn-group-vertical > .dropdown:not(:first-child):not(:last-child) > .dropdown-button {
     border-radius: 0; }
@@ -2489,7 +2574,7 @@ input[type="reset"], .btn, .btn-icon {
     .badge.default[href]:active {
       background-color: #909090; }
   .badge.primary {
-    background-color: #a50021;
+    background-color: #ff8200;
     color: #fff; }
     .badge.primary[href], .badge.primary[href]:link {
       color: #fff; }
@@ -2500,9 +2585,9 @@ input[type="reset"], .btn, .btn-icon {
     .badge.primary[href]:active {
       color: #fff; }
     .badge.primary[href]:hover, .badge.primary[href]:focus {
-      background-color: #b90025; }
+      background-color: #ff8c14; }
     .badge.primary[href]:active {
-      background-color: #91001d; }
+      background-color: #eb7800; }
   .badge.secondary {
     background-color: #4c5866;
     color: #fff; }
@@ -2657,11 +2742,6 @@ input[type="reset"], .btn, .btn-icon {
     padding-right: 0.68em;
     padding-left: 0.68em;
     border-radius: 1.7em; }
-  .badge.in-icon {
-    position: absolute;
-    top: 2%;
-    right: 0%;
-    font-size: .3em; }
   .badge:empty {
     display: none; }
 
@@ -2675,7 +2755,7 @@ a.badge {
   display: -ms-flexbox;
   display: flex;
   padding: 0;
-  margin-bottom: .75rem;
+  margin-bottom: 1rem;
   background-color: #fff;
   border-radius: 2px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
@@ -2695,7 +2775,7 @@ a.badge {
       width: 500px; }
     @media only screen and (min-width: 768px) {
       .inline.card, .inline.card-horizontal {
-        margin: .5rem; } }
+        margin: 0.5rem; } }
   .hoverable.card, .hoverable.card-horizontal {
     text-decoration: none;
     transition: box-shadow 0.3s ease-out; }
@@ -2802,8 +2882,7 @@ ul.card-list {
   -ms-flex-pack: center;
       justify-content: center;
   width: 100%;
-  min-height: 10em;
-  overflow: hidden; }
+  min-height: 10em; }
   .hero-banner.pad-small {
     padding-top: 3em;
     padding-bottom: 3em; }
@@ -2987,7 +3066,7 @@ img.filter.sepia {
   transition: background-color 0.3s ease-out; }
   .list-group li.active {
     color: #fff;
-    background-color: #a50021; }
+    background-color: #ff8200; }
 
 .list-group li:first-child {
   border-top-left-radius: 4px;
@@ -3051,7 +3130,7 @@ img.filter.sepia {
           user-select: none; }
   .pagination li {
     display: inline-block;
-    margin: 0 0.2rem; }
+    margin: 0 0.25rem; }
     .pagination li span,
     .pagination li a {
       display: block;
@@ -3066,7 +3145,7 @@ img.filter.sepia {
         background-color: rgba(52, 52, 52, 0.1); }
     .pagination li.active > a,
     .pagination li.active > span {
-      background-color: #a50021; }
+      background-color: #ff8200; }
       .pagination li.active > a, .pagination li.active > a:link,
       .pagination li.active > span,
       .pagination li.active > span:link {
@@ -3100,7 +3179,7 @@ carousel,
   position: absolute; }
 
 .agile__dot {
-  margin: 0 .25rem; }
+  margin: 0 0.25rem; }
   .agile__dot > button {
     text-decoration: none;
     line-height: 1.15;
@@ -3183,8 +3262,8 @@ carousel,
     border-radius: 50%; }
   .chip .close-button {
     font-size: 1.2em;
-    margin-left: .25rem;
-    margin-right: -.25rem; }
+    margin-left: 0.25rem;
+    margin-right: -0.25rem; }
 
 a.chip {
   text-decoration: none;
@@ -3196,12 +3275,6 @@ a.chip {
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
 
 .close-button {
-  padding: 0;
-  margin: 0;
-  color: currentColor;
-  vertical-align: inherit;
-  line-height: 0;
-  background-color: transparent;
   opacity: .5;
   transition: opacity 0.3s ease-out; }
   .close-button:hover {
@@ -3234,108 +3307,18 @@ a.chip {
   position: relative; }
   .collapse-toggle:focus, .collapse-toggle:hover {
     text-decoration: none; }
-  .collapse-toggle::after {
-    position: absolute;
-    top: 50%;
-    right: 1em;
-    transform: translate(0, -50%); }
-  .collapse-toggle.with-plus::after {
-    content: '+'; }
-  .collapse-toggle.with-plus[data-expanded="true"]::after {
-    content: '\2212'; }
-  .collapse-toggle.with-caret::after {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    margin-left: 0.25em;
-    vertical-align: middle;
-    border: 0.25em solid transparent;
-    content: '';
-    border-color: transparent;
-    border-top-color: initial; }
-    .collapse-toggle.with-caret::after:empty {
-      margin-left: 0; }
-    .collapse-toggle.with-caret::after.up {
-      border-color: transparent;
-      border-bottom-color: initial; }
-    .collapse-toggle.with-caret::after.right {
-      border-color: transparent;
-      border-left-color: initial; }
-    .collapse-toggle.with-caret::after.down {
-      border-color: transparent;
-      border-top-color: initial; }
-    .collapse-toggle.with-caret::after.left {
-      border-color: transparent;
-      border-right-color: initial; }
-  .collapse-toggle.with-caret[data-expanded="true"]::after {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    margin-left: 0.25em;
-    vertical-align: middle;
-    border: 0.25em solid transparent;
-    content: '';
-    border-color: transparent;
-    border-bottom-color: initial; }
-    .collapse-toggle.with-caret[data-expanded="true"]::after:empty {
-      margin-left: 0; }
-    .collapse-toggle.with-caret[data-expanded="true"]::after.up {
-      border-color: transparent;
-      border-bottom-color: initial; }
-    .collapse-toggle.with-caret[data-expanded="true"]::after.right {
-      border-color: transparent;
-      border-left-color: initial; }
-    .collapse-toggle.with-caret[data-expanded="true"]::after.down {
-      border-color: transparent;
-      border-top-color: initial; }
-    .collapse-toggle.with-caret[data-expanded="true"]::after.left {
-      border-color: transparent;
-      border-right-color: initial; }
-  .collapse-toggle.with-arrow::after {
-    display: inline-block;
-    vertical-align: middle;
-    padding: .19em;
-    border-style: solid;
-    border-width: 0 .19em .19em 0;
-    content: '';
-    transform: rotate(45deg);
-    transform: translate(0, -50%) rotate(45deg); }
-    .collapse-toggle.with-arrow::after.up {
-      transform: rotate(-135deg); }
-    .collapse-toggle.with-arrow::after.right {
-      transform: rotate(-45deg); }
-    .collapse-toggle.with-arrow::after.down {
-      transform: rotate(45deg); }
-    .collapse-toggle.with-arrow::after.left {
-      transform: rotate(135deg); }
-  .collapse-toggle.with-arrow[data-expanded="true"]::after {
-    display: inline-block;
-    vertical-align: middle;
-    padding: .19em;
-    border-style: solid;
-    border-width: 0 .19em .19em 0;
-    content: '';
-    transform: rotate(-135deg);
-    transform: translate(0, -50%) rotate(-135deg); }
-    .collapse-toggle.with-arrow[data-expanded="true"]::after.up {
-      transform: rotate(-135deg); }
-    .collapse-toggle.with-arrow[data-expanded="true"]::after.right {
-      transform: rotate(-45deg); }
-    .collapse-toggle.with-arrow[data-expanded="true"]::after.down {
-      transform: rotate(45deg); }
-    .collapse-toggle.with-arrow[data-expanded="true"]::after.left {
-      transform: rotate(135deg); }
-  .collapse-toggle .icon {
-    vertical-align: bottom;
-    margin-right: .3em;
+  .collapse-toggle > span {
+    display: inline-block; }
+  .collapse-toggle > .moss-icon {
+    margin-right: .25em;
     transition: transform 0.3s ease-out; }
-  .collapse-toggle[data-expanded="true"] .icon {
+  .collapse-toggle[data-expanded="true"] .moss-icon {
     transform: rotate(0.25turn); }
 
 .collapsing-enter-active,
 .collapsing-leave-active {
   overflow: hidden;
-  transition: max-height 0.3s ease-out; }
+  transition: max-width 0.3s ease-out, max-height 0.3s ease-out; }
 
 dropdown,
 [is="dropdown"] {
@@ -3357,7 +3340,7 @@ dropdown,
   display: inline-flex;
   -ms-flex-align: center;
       align-items: center; }
-  .dropdown-button i.icon {
+  .dropdown-button i.moss-icon {
     font-size: .85em;
     margin-left: .25em;
     margin-right: -.25em; }
@@ -3420,7 +3403,7 @@ dropdown,
 
 .dropdown-divider {
   height: 0;
-  margin: 0.4rem 0;
+  margin: 0.25rem 0;
   overflow: hidden;
   border-top: 1px solid #bebebe; }
 
@@ -3448,11 +3431,13 @@ dropdown,
     border-radius: 50%;
     content: '';
     transition: transform 0.3s ease-out; }
-  .input-check.toggle .input-box svg, .input-radio.toggle .input-box svg, .input-check.toggle .input-box .input-box-circle, .input-radio.toggle .input-box .input-box-circle {
+  .input-check.toggle .input-box svg, .input-radio.toggle .input-box svg,
+  .input-check.toggle .input-box .input-box-circle,
+  .input-radio.toggle .input-box .input-box-circle {
     display: none; }
 
 .input-check.toggle input:checked ~ .input-box, .input-radio.toggle input:checked ~ .input-box {
-  background-color: #a50021; }
+  background-color: #ff8200; }
   .input-check.toggle input:checked ~ .input-box::before, .input-radio.toggle input:checked ~ .input-box::before {
     transform: translateX(0.6em); }
 
@@ -3464,7 +3449,7 @@ dropdown,
     stroke-dashoffset: 0; }
   .input-check input[type="checkbox"]:focus ~ .input-box,
   .input-check input[type="checkbox"]:active ~ .input-box {
-    box-shadow: 0 0 0 0.0625em #a50021; }
+    box-shadow: 0 0 0 0.0625em #ff8200; }
 
 .input-check .input-box {
   display: -ms-inline-flexbox;
@@ -3479,7 +3464,7 @@ dropdown,
   margin: 0;
   overflow: hidden;
   vertical-align: middle;
-  background: #a50021;
+  background: #ff8200;
   border: 0.0625em solid #fff;
   border-radius: 12.5%;
   box-sizing: content-box;
@@ -3507,7 +3492,7 @@ dropdown,
     opacity: 1; }
   .input-radio input[type="radio"]:focus ~ .input-box,
   .input-radio input[type="radio"]:active ~ .input-box {
-    box-shadow: 0 0 0 0.0625em #a50021; }
+    box-shadow: 0 0 0 0.0625em #ff8200; }
 
 .input-radio .input-box {
   display: -ms-inline-flexbox;
@@ -3522,7 +3507,7 @@ dropdown,
   margin: 0;
   overflow: hidden;
   vertical-align: middle;
-  background: #a50021;
+  background: #ff8200;
   border: 0.0625em solid #fff;
   border-radius: 50%;
   box-sizing: content-box;
@@ -3560,7 +3545,7 @@ dropdown,
     background-color: #9a9a9a; }
   .message.primary {
     color: #fff;
-    background-color: #a50021; }
+    background-color: #ff8200; }
   .message.secondary {
     color: #fff;
     background-color: #4c5866; }
@@ -3641,7 +3626,7 @@ dropdown,
       align-items: baseline;
   -ms-flex-pack: justify;
       justify-content: space-between;
-  padding: .8rem .5rem;
+  padding: 0.5rem;
   background-color: #fff; }
   .modal-header h1,
   .modal-header h2,
@@ -3661,7 +3646,7 @@ dropdown,
 .modal-body {
   -ms-flex-positive: 1;
       flex-grow: 1;
-  padding: .8rem .5rem; }
+  padding: 0.5rem; }
 
 .modal-footer {
   display: -ms-flexbox;
@@ -3670,7 +3655,7 @@ dropdown,
       align-items: baseline;
   -ms-flex-pack: end;
       justify-content: flex-end;
-  padding: .8rem .5rem; }
+  padding: 0.5rem; }
 
 .modal-from-top-enter-active {
   animation: .4s from-top; }
@@ -3682,17 +3667,17 @@ navbar,
 [is="navbar"] {
   visibility: hidden; }
 
-.nav-item .nav-link, .navbar-brand.text, .nav-item .dropdown .dropdown-button {
+.nav-item .nav-link, .nav-button, .navbar-brand.text, .nav-item .dropdown .dropdown-button, .nav-drawer-body .menu-item {
   display: inline-block;
   padding: 0.5em 1em;
   font-family: inherit;
   font-size: inherit;
   color: inherit;
   transition: color 0.3s ease-out; }
-  .nav-item .nav-link:hover, .navbar-brand.text:hover, .nav-item .dropdown .dropdown-button:hover {
+  .nav-item .nav-link:hover, .nav-button:hover, .navbar-brand.text:hover, .nav-item .dropdown .dropdown-button:hover, .nav-drawer-body .menu-item:hover {
     color: #4c5866; }
 
-.navbar-toggle, .nav-item .dropdown .dropdown-button {
+.nav-button, .navbar-toggle, .nav-item .dropdown .dropdown-button {
   display: inline-block;
   background-color: transparent;
   outline: none; }
@@ -3747,14 +3732,14 @@ navbar,
 .nav-item {
   text-align: left; }
   .nav-item.active .nav-link {
-    color: #a50021; }
+    color: #ff8200; }
 
 .navbar-brand {
   display: -ms-flexbox;
   display: flex;
   width: auto; }
   .navbar-brand.text.active {
-    color: #a50021; }
+    color: #ff8200; }
 
 .navbar-toggle .icon-bar1,
 .navbar-toggle .icon-bar2,
@@ -3777,7 +3762,7 @@ navbar,
 
 .navbar-toggle.right {
   position: absolute;
-  right: .5rem; }
+  right: 0.5rem; }
 
 @media only screen and (max-width: 767px) {
   .navbar,
@@ -3810,6 +3795,83 @@ navbar,
   .nav-item .dropdown-content {
     width: calc(100% - 10px); } }
 
+nav-drawer,
+[is="nav-drawer"] {
+  display: none; }
+
+.nav-drawer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  position: fixed;
+  z-index: 12;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
+  @media only screen and (min-width: 576px) {
+    .nav-drawer {
+      width: 67%; } }
+  @media only screen and (min-width: 768px) {
+    .nav-drawer {
+      width: 50%; } }
+  @media only screen and (min-width: 992px) {
+    .nav-drawer {
+      width: 33%; } }
+  @media only screen and (min-width: 1200px) {
+    .nav-drawer {
+      width: 25%; } }
+
+.nav-drawer-header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  padding: 0.5rem 0.5rem;
+  font-size: 2rem;
+  background-color: #fff;
+  color: #343434; }
+
+.nav-drawer-body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  height: 100%;
+  font-size: 1em;
+  background-color: #fff;
+  color: #343434;
+  overflow-y: auto; }
+  .nav-drawer-body .info {
+    display: block;
+    -ms-flex: 0 0 auto;
+        flex: 0 0 auto; }
+  .nav-drawer-body .menu-header {
+    display: block;
+    padding: .5em;
+    margin: 0;
+    color: #777777; }
+  .nav-drawer-body .menu-item {
+    display: block;
+    padding: .5em 1em;
+    margin: 0; }
+    .nav-drawer-body .menu-item:hover:not([disabled]) {
+      background-color: #ebebeb; }
+    .nav-drawer-body .menu-item[disabled] {
+      color: #9a9a9a;
+      cursor: default; }
+    .nav-drawer-body .menu-item.active {
+      background-color: #ebebeb; }
+  .nav-drawer-body .menu-divider {
+    height: 0;
+    margin: .25em 0;
+    overflow: hidden;
+    border-top: 1px solid #bebebe; }
+
 .parallax {
   background-attachment: fixed;
   background-position: center;
@@ -3838,16 +3900,16 @@ navbar,
   font-size: 1.5em;
   padding: .5em;
   line-height: 0;
-  margin-left: -.25rem;
-  color: #fff;
-  background-color: rgba(226, 0, 45, 0.5);
+  margin-left: -0.25rem;
+  color: #343434;
+  background-color: rgba(255, 160, 61, 0.5);
   border-radius: 50%;
   outline: none;
   box-sizing: content-box;
   transition: background-color 0.3s ease-out; }
   .scroll-to-container .scroll-to-top:hover,
   .scroll-to-container .scroll-to-bottom:hover {
-    background-color: #e2002d; }
+    background-color: #ffa03d; }
 
 .scroll-to-container {
   position: fixed;
@@ -3872,14 +3934,10 @@ simple-crud,
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   background-color: rgba(52, 52, 52, 0.1); }
-  .simple-crud-item .read .content,
-  .simple-crud-item .update .content,
-  .simple-crud-item .delete .content {
+  .simple-crud-item .read .content, .simple-crud-item .update .content, .simple-crud-item .delete .content {
     -ms-flex: 1 1 auto;
         flex: 1 1 auto; }
-  .simple-crud-item .read .actions,
-  .simple-crud-item .update .actions,
-  .simple-crud-item .delete .actions {
+  .simple-crud-item .read .actions, .simple-crud-item .update .actions, .simple-crud-item .delete .actions {
     -ms-flex: 0 1 auto;
         flex: 0 1 auto; }
 
@@ -3889,7 +3947,7 @@ simple-crud,
   padding: 0; }
 
 .simple-crud-item {
-  margin-bottom: 0.75rem; }
+  margin-bottom: 0.5rem; }
 
 .tabs {
   list-style: none;
@@ -3930,18 +3988,18 @@ simple-crud,
   .tab-link:hover, .tab-link:focus {
     color: #515151; }
   .tab-link:active {
-    color: #a50021; }
+    color: #ff8200; }
   .tab-link.active {
     font-weight: bold;
-    color: #a50021;
+    color: #ff8200;
     cursor: default;
-    border-bottom-color: #a50021; }
+    border-bottom-color: #ff8200; }
     .tab-link.active.default {
       color: #9a9a9a;
       border-bottom-color: #9a9a9a; }
     .tab-link.active.primary {
-      color: #a50021;
-      border-bottom-color: #a50021; }
+      color: #ff8200;
+      border-bottom-color: #ff8200; }
     .tab-link.active.secondary {
       color: #4c5866;
       border-bottom-color: #4c5866; }
@@ -4109,18 +4167,18 @@ simple-crud,
 
 .search-component .search-form button[type="submit"] {
   color: #fff;
-  background-color: #a50021;
-  outline-color: #a50021;
+  background-color: #ff8200;
+  outline-color: #ff8200;
   transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out; }
   .search-component .search-form button[type="submit"]:link, .search-component .search-form button[type="submit"]:visited {
     color: #fff; }
   .search-component .search-form button[type="submit"]:focus:not([disabled]), .search-component .search-form button[type="submit"]:hover:not([disabled]) {
     color: #fff;
-    background-color: #b90025;
+    background-color: #ff8c14;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); }
   .search-component .search-form button[type="submit"]:active:not([disabled]) {
     color: #fff;
-    background-color: #91001d;
+    background-color: #eb7800;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
 
 .search-result-list {
@@ -5781,24 +5839,6 @@ simple-crud,
     width: auto;
     max-width: none; }
 
-.vertical-center-container,
-.flex-container-vertical-center {
-  -ms-flex-pack: start;
-      justify-content: flex-start;
-  -ms-flex-align: center;
-      align-items: center;
-  display: -ms-flexbox;
-  display: flex; }
-
-.flex-center-container,
-.flex-container-center {
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
-  display: -ms-flexbox;
-  display: flex; }
-
 .center-position-container,
 .position-center-container {
   position: relative; }
@@ -5809,11 +5849,6 @@ simple-crud,
     position: absolute;
     top: 50%;
     transform: translate(0, -50%); }
-
-.center-block {
-  display: block;
-  margin-right: auto;
-  margin-left: auto; }
 
 .float-clear::after {
   display: block;
@@ -5847,11 +5882,11 @@ simple-crud,
   background-color: #9a9a9a; }
 
 .color-primary {
-  color: #a50021; }
+  color: #ff8200; }
 
 .bg-color-primary {
   color: #fff;
-  background-color: #a50021; }
+  background-color: #ff8200; }
 
 .color-secondary {
   color: #4c5866; }
@@ -6048,15 +6083,5 @@ simple-crud,
     transform: rotate(45deg); }
   .arrow.left {
     transform: rotate(135deg); }
-
-.no-margin {
-  padding: 0;
-  margin: 0; }
-
-.full-width {
-  width: 100%; }
-
-.full-height {
-  height: 100%; }
 
 /*# sourceMappingURL=moss.css.map*/

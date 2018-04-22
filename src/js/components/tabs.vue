@@ -21,9 +21,11 @@
 
 <script>
 import Tab from './tab.vue';
+import Wrap from '../directives/wrap';
 
 export default {
   components: { Tab },
+  directives: { Wrap },
   props: {
     effect: {
       type: String,

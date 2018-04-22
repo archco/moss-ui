@@ -2,7 +2,13 @@
   <div class="search-component">
     <form action="#" method="get" @submit.prevent="onSubmit" class="search-form">
       <div class="input-group">
-        <input type="search" name="input" class="search-input" v-model="input" autocomplete="off"/>
+        <input type="search"
+          name="input"
+          class="search-input"
+          :placeholder="inputPlaceholder"
+          autocomplete="off"
+          v-model="input"
+        />
         <div class="input-group-append">
           <button type="submit" class="btn"><icon name="search"/></button>
         </div>
@@ -23,9 +29,10 @@
 </template>
 
 <script>
-import { findAncestor, getElements, nodeListToArray } from 'element-util';
+import { findAncestor, getElementsAsArray } from 'element-util';
 import Fuse from 'fuse.js';
 import Popper from 'popper.js';
+import { isEmpty } from '../lib/util';
 import Icon from './icon.vue';
 
 export default {
@@ -49,6 +56,10 @@ export default {
         return {};
       },
     },
+    inputPlaceholder: {
+      type: String,
+      default: '',
+    },
     resultLimit: {
       type: Number,
       default: 0, // no limit.
@@ -61,21 +72,29 @@ export default {
   data() {
     return {
       input: '',
+      result: [],
+      suggestions: [],
+      elm: {},
       fuse: new Fuse(this.collection, this.searchOptions),
       popper: null,
-      result: [],
-      elm: {},
       showResult: false,
       itemKeydownListenerAttached: false,
     };
   },
+  computed: {
+    useFuse() {
+      return !isEmpty(this.collection);
+    },
+  },
   watch: {
     input(val) {
-      this.search(val);
+      if (this.useFuse) this.setResult(this.fuse.search(val));
+      this.$emit('input-change', { input: val, vnode: this });
     },
     result(val) {
       if (val.length > 0) {
         this.itemKeydownListenerAttached = false;
+        this.showResult = true;
       } else {
         this.showResult = false;
       }
@@ -83,7 +102,10 @@ export default {
     showResult(val) {
       if (!this.popper) this.createPopper();
       if (val) this.popper.scheduleUpdate();
-    }
+    },
+    suggestions(val) {
+      this.setResult(val);
+    },
   },
   mounted() {
     this.initElements();
@@ -91,13 +113,11 @@ export default {
     if (this.autoWidth) this.setAutoWidth(); // auto width to result-list.
   },
   methods: {
-    search(str) {
-      let res = this.fuse.search(str);
+    setResult(arr) {
       if (this.resultLimit > 0) {
-        res = res.slice(0, this.resultLimit);
+        arr = arr.slice(0, this.resultLimit);
       }
-      if (res.length > 0) this.showResult = true;
-      return this.result = res;
+      this.result = arr;
     },
 
     onClickItem(item) {
@@ -191,8 +211,7 @@ export default {
     },
 
     getCurrentItems() {
-      const nodes = getElements('li', this.elm.resultList);
-      return nodeListToArray(nodes);
+      return getElementsAsArray('li', this.elm.resultList);
     },
   }
 }

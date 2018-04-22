@@ -15,7 +15,7 @@ import Scrollspy from '../lib/classes/scrollspy';
 export default {
   inserted(el, binding, vnode) {
     const onActivate = item => {
-      vnode.context.$root.$emit('scrollspy-activate', item);
+      vnode.context.$emit('scrollspy-activate', item);
       if (binding.value && typeof binding.value.onActivate === 'function') {
         binding.value.onActivate(item);
       }
@@ -24,6 +24,6 @@ export default {
     const options = Object.assign({}, binding.value, { onActivate });
     const scrollspy = new Scrollspy(el, options);
 
-    vnode.context.$root.$on('scrollspy-refresh', () => scrollspy.refresh());
+    vnode.context.$on('scrollspy-refresh', () => scrollspy.refresh());
   },
 };

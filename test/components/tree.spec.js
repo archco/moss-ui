@@ -1,5 +1,4 @@
-import expect from 'expect';
-import { shallow } from '@vue/test-utils';
+import { createLocalVue, shallow } from '@vue/test-utils';
 import Tree from '../../src/js/components/tree.vue';
 import TreeItem from '../../src/js/components/tree-item.vue';
 
@@ -54,7 +53,12 @@ describe('#Tree', () => {
 });
 
 describe('#TreeItem', () => {
+  const localVue = createLocalVue();
+
+  localVue.component('tree', Tree);
+
   const wrapper = shallow(TreeItem, {
+    localVue,
     propsData: {
       item: treeItemData,
     },

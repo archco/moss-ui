@@ -1,6 +1,6 @@
 <script>
+import { kebab } from 'cake-case';
 import NodeUtil from '../mixins/node-util';
-import { strToKebab } from '../lib/util';
 
 export default {
   mixins: [NodeUtil],
@@ -17,7 +17,7 @@ export default {
   render(createElement) {
     // create kebab-case id
     const text = this.getChildrenTextContent(this.$slots.default);
-    const tagId = strToKebab(text);
+    const tagId = kebab(text);
     const data = {
       attrs: {
         id: this.owned ? tagId : false,

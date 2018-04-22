@@ -11,6 +11,77 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+## [0.6.0][] - 2018-04-22
+
+### Added
+
+- Added dependency "[cake-case](https://github.com/archco/cake-case#readme)". #103
+- Added style for `<kbd>` tag. #109
+- Added scss-class `.btn-text`. #113
+- Added a new vue-directive `v-outer`. #112
+- Added a new vue-component `nav-drawer`. #24, #114
+
+### Changed
+
+- Changed js module: Exports vue components and directives. #100
+- Improve Styles #107
+  - Improved `<fieldset>` style. #105
+  - Changed input style. #101
+- Separates code part from scaffolding.scss. #109
+- Add prefix for class name of the icon. `.icon` -> `.moss-icon` #98
+- Improved collapse: Now available to collapse horizontally. #111
+
+### Fixed
+
+- Fix link style that inside an inline code. #99
+- Fix icon vertical-align to `middle`. #110
+
+### Deprecated
+
+- Some JS util methods are deprecated. use [`cake-case`](https://github.com/archco/cake-case#readme) instead.
+  - `Util.strToCamel`: use `Case.camel` or `Case.pascal` instead.
+  - `Util.strToKebab`: use `Case.kebab` instead.
+  - `Util.strToNormal`: use `Case.lower` instead.
+  - `Util.capitalize`: use `Case.capital` instead.
+- `scss/mixins/_arrow.scss` - It's useless. use [Icon](https://github.com/archco/moss-ui/blob/master/docs/svg-icons.md#svg-icons) instead.
+- `scss/mixins/_caret.scss` - It's useless. use [Icon](https://github.com/archco/moss-ui/blob/master/docs/svg-icons.md#svg-icons) instead.
+
+### Removed
+
+- Removes deprecated in v0.5.x. #88
+
+## [0.5.3][] - 2018-03-18
+
+### Added
+
+- Added `.travis.yml`. [![Build Status](https://travis-ci.org/archco/moss-ui.svg?branch=master)](https://travis-ci.org/archco/moss-ui)
+
+### Changed
+
+- Changed testing tool to [vue-jest](https://vue-test-utils.vuejs.org/en/guides/testing-SFCs-with-jest.html). #96
+- Updated webpack to v4.1.1. #94 #96
+- Changed event target to VNode, not $root. #97
+  - v-clipboard: `clipboard-success`
+  - v-scrollspy: `scrollspy-active`, `scrollspy-refresh`
+
+## [0.5.2][] - 2018-03-05
+
+### Added
+
+- Added the ["types" declaration file](https://github.com/archco/moss-ui/blob/master/index.d.ts). #92
+
+### Changed
+
+- Update [scss-palette](https://github.com/archco/scss-palette/releases) to v0.5.1
+  - Changes case of color name to `kebab-case`.
+- Improve Chip component. #90
+  - Add prop `close-action`. It can set 'remove', 'hide' or '' (It's no action). default is 'remove'.
+  - Add event `close`. It triggers when clicked close-button.
+- Improve Search component. #91
+  - Add event `input-change`.
+  - Add prop `input-placeholder`.
+  - Add data `suggestions`.
+
 ## [0.5.1][] - 2018-02-23
 
 ### Fixed
@@ -138,7 +209,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Remove unnecessary part "aside.scss". #60
 - Remove deprecated scss mixin, `flex-container()`. instead use `flex-container-align`. #52
 
-[Unreleased]: https://github.com/archco/moss-ui/compare/v0.5.1...HEAD
+[Unreleased]: https://github.com/archco/moss-ui/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/archco/moss-ui/compare/v0.5.3...v0.6.0
+[0.5.3]: https://github.com/archco/moss-ui/compare/v0.5.2...v0.5.3
+[0.5.2]: https://github.com/archco/moss-ui/compare/v0.5.1...v0.5.2
 [0.5.1]: https://github.com/archco/moss-ui/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/archco/moss-ui/compare/v0.4.2...v0.5.0
 [0.4.2]: https://github.com/archco/moss-ui/compare/v0.4.1...v0.4.2

@@ -42,9 +42,10 @@ Available color keywords: default, primary, secondary, info, success, warning, d
 
 ``` scss
 $message-default-bg-color: $default-color !default;
-$message-padding-y: 1rem !default;
-$message-padding-x: 1.5rem !default;
+$message-padding-y: $space-3 !default;
+$message-padding-x: $space-4 !default;
 $message-margin: 8px !default;
+$message-border-radius: $radius-normal !default;
 ```
 
 ## Message Box
@@ -75,9 +76,11 @@ window.Moss.messageBox.add('Some message.', 'info');
 Add a new message in message-box.
 
 - Syntax
+
   ``` js
   window.Moss.messageBox.add(text, status = 'default');
   ```
+
 - Param `String` text - message text.
 - Param `String` status - status keyword.
 
@@ -86,6 +89,7 @@ Add a new message in message-box.
 Clear all messages in message-box.
 
 - Syntax
+
   ``` js
   window.Moss.messageBox.clear();
   ```

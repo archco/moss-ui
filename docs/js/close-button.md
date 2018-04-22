@@ -67,9 +67,9 @@
 
 ## Events
 
-| name | args | description |
-| ---- | ---- | ----------- |
-| close | `HTMLElement` (closing target) | Emit when close-button clicked. |
+| Name | Argument | Description |
+| ---- |:--------:| ----------- |
+| close | target: `HTMLElement` - The closing target. | Emit when close-button clicked. |
 
 ## SCSS Variables
 

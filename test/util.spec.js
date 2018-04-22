@@ -1,4 +1,3 @@
-import expect from 'expect';
 import * as Util from '../src/js/lib/util';
 
 describe('Util', () => {

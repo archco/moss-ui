@@ -5,6 +5,16 @@
   vertical-align: middle;
 }
 
+%btn-text {
+  @extend %btn-common;
+  padding: 0;
+  margin: 0;
+  color: currentColor;
+  vertical-align: inherit;
+  line-height: 0;
+  background-color: transparent;
+}
+
 %btn {
   @extend %btn-common;
   padding: $button-padding-y $button-padding-x;
@@ -13,7 +23,6 @@
   outline-color: $button-outline-color;
 
 
-  &.full-width, // @deprecated.
   &.w-100 {
     margin-right: 0;
     margin-left: 0;
@@ -90,4 +99,8 @@
   @extend %btn-disabled;
   @extend %btn-flat-color-set;
   margin: 0;
+}
+
+.btn-text {
+  @extend %btn-text;
 }

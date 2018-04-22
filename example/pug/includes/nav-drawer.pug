@@ -1,0 +1,20 @@
+p It's the navigation drawer that using horizontal-collapse.
+
+button.btn.info(v-collapse:drawer01) Open Drawer
+
+nav-drawer(id='drawer01')
+  .nav-drawer-header
+    button.btn-text(v-collapse:drawer01.hide)
+      icon(name='close')
+  .nav-drawer-body
+    .info.bg-color-secondary.d-flex.justify-content-center.align-items-center(style='height:150px;')
+      h2 HELLO
+    h3.menu-header Main Menu
+    a.menu-item(href='#') item1
+    a.menu-item.active(href='#') item2
+    a.menu-item(href='#') item3
+    .menu-divider
+    h4.menu-header Sub Menu
+    a.menu-item(href='#' disabled) disabled item
+    a.menu-item(href='#') item5
+    a.menu-item(href='#') item6

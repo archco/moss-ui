@@ -73,7 +73,7 @@ $auto-input-bg-color-enable: true !default;
 <div class="input with-icon">
   <input type="text" placeholder="Text me..">
   <span class="icon">
-    <i class="fa fa-commenting" aria-hidden="true"></i>
+    <i class="fas fa-comment-alt"></i>
   </span>
 </div>
 
@@ -81,7 +81,7 @@ $auto-input-bg-color-enable: true !default;
 <div class="input inline with-icon">
   <input type="text" placeholder="Text me..">
   <span class="icon">
-    <i class="fa fa-commenting" aria-hidden="true"></i>
+    <i class="fas fa-comment-alt"></i>
   </span>
 </div>
 ```
@@ -93,7 +93,7 @@ $auto-input-bg-color-enable: true !default;
 <div class="input with-icon-right">
   <input type="text" placeholder="Text me..">
   <span class="icon-right">
-    <i class="fa fa-commenting" aria-hidden="true"></i>
+    <i class="fas fa-comment-alt"></i>
   </span>
 </div>
 
@@ -101,7 +101,7 @@ $auto-input-bg-color-enable: true !default;
 <div class="input with-icon-left">
   <input type="search" placeholder="Search..">
   <span class="icon-left">
-    <i class="fa fa-search" aria-hidden="true"></i>
+    <i class="fas fa-search"></i>
   </span>
 </div>
 
@@ -109,27 +109,41 @@ $auto-input-bg-color-enable: true !default;
 <div class="input with-icon-left with-icon-right">
   <input type="text" placeholder="Email..">
   <span class="icon-left">
-    <i class="fa fa-envelope" aria-hidden="true"></i>
+    <i class="fas fa-envelope"></i>
   </span>
   <span class="icon-right">
-    <i class="fa fa-check" aria-hidden="true"></i>
+    <i class="fas fa-check"></i>
   </span>
 </div>
+```
+
+### Fieldset with color-set
+
+> based on [Color-set](color-set.md)
+
+Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
+
+``` html
+<fieldset class="secondary">
+  <legend>Secondary Colored</legend>
+
+</fieldset>
 ```
 
 ## SCSS Variables
 
 ``` scss
-$fieldset-border: 2px solid $primary-color !default;
-$legend-color: $primary-color !default;
+$fieldset-border-width: 1px !default;
+$fieldset-border-color: $primary-color !default;
+$fieldset-border-radius: $radius-normal !default;
+$legend-padding-y: $space-1 !default;
+$legend-padding-x: $space-2 !default;
 $label-color: $text-color !default;
-$label-color-focused: $primary-color !default;
-$label-color-disabled: $disabled-color !default;
 
 $input-height: 2em !default;
 $input-padding-y: .2em !default;
 $input-padding-x: .5em !default;
-$input-margin: .5rem 0 !default;
+$input-bg-color: $background-color !default;
 $input-border: 1px solid $border-color !default;
 $input-radius: $radius-small !default;
 $input-outline-color: $outline-color !default;

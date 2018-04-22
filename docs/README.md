@@ -16,6 +16,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [Badge](scss/badge.md)
 - [Button](scss/button.md)
 - [Card](scss/card.md)
+- [Code](scss/code.md)
 - [Color-set](scss/color-set.md)
 - [Form](scss/form.md)
 - [Grid](scss/grid.md)
@@ -47,6 +48,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [message](js/message.md)
 - [modal](js/modal.md)
 - [navbar](js/navbar.md)
+- [nav-drawer](js/nav-drawer.md)
 - [parallax](js/parallax.md)
 - [scroll-to](js/scroll-to.md)
 - [simple-crud](js/simple-crud.md)
@@ -65,6 +67,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [v-confirm](js/directives.md#confirm)
 - [v-focus](js/directives.md#focus)
 - [v-ripple](js/directives.md#ripple)
+- [v-outer](js/directives.md#outer)
 - [v-scrollspy](js/directives.md#scrollspy)
 - [v-set-value](js/directives.md#set-value)
 - [v-tooltip](js/directives.md#tooltip)
@@ -73,7 +76,8 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 
 ## JS Libraries
 
-- [MooColor](https://github.com/archco/moo-color#readme)
+- [CakeCase](https://github.com/archco/cake-case#readme)
 - [ElementMeasurer](https://github.com/archco/element-measurer#api)
 - [ElementUtil](https://github.com/archco/element-util/tree/master/docs)
+- [MooColor](https://github.com/archco/moo-color#readme)
 - [Util](js/util.md)

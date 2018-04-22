@@ -1,5 +1,5 @@
 <script>
-import { MooColor } from 'moo-color';
+import MooColor from 'moo-color';
 import CloseButton from './close-button.vue';
 
 export default {
@@ -11,6 +11,10 @@ export default {
     closeable: {
       type: Boolean,
       default: false,
+    },
+    closeAction: {
+      type: String,
+      default: 'remove', // 'hide'|'remove'|''(no-action)
     },
     color: {
       type: String,
@@ -62,8 +66,11 @@ export default {
           CloseButton,
           {
             props: {
-              action: 'remove'
-            }
+              action: this.closeAction,
+            },
+            on: {
+              close: () => this.$emit('close', this),
+            },
           }
         ));
       }

@@ -38,9 +38,11 @@ document.querySelector('#target').appendChild(icon);
 Get svg string by name.
 
 - Syntax
+
   ``` js
   const svgStr = getSvgByName(name);
   ```
+
 - Param `string` name - a name of svg icon. e.g. 'arrow-down', 'close'
 - Returns `string` - `'<svg>...</svg>'`
 
@@ -49,22 +51,26 @@ Get svg string by name.
 Make icon element by svg-icon name.
 
 - Syntax
+
   ``` js
   const icon = makeIcon(name);
   ```
+
 - Param `string` name - a name of svg icon. e.g. 'arrow-down', 'close'
-- Returns `HTMLElement` - `<i class="icon"><svg>...</svg></i>`
+- Returns `HTMLElement` - `<i class="moss-icon"><svg>...</svg></i>`
 
 #### makeIconHtml
 
 Make icon html string by svg-icon name.
 
 - Syntax
+
   ``` js
   const iconHtml = makeIconHtml(name);
   ```
+
 - Param `string` name - a name of svg icon. e.g. 'arrow-down', 'close'
-- Returns `string` - `'<i class="icon"><svg>...</svg></i>'`
+- Returns `string` - `'<i class="moss-icon"><svg>...</svg></i>'`
 
 ## Icons
 

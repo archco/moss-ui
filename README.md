@@ -1,5 +1,9 @@
 # MOSS-UI
 
+[![Build Status](https://travis-ci.org/archco/moss-ui.svg?branch=master)](https://travis-ci.org/archco/moss-ui)
+[![npm version](https://badge.fury.io/js/moss-ui.svg)](https://www.npmjs.com/package/moss-ui)
+[![Downloads](https://img.shields.io/npm/dm/moss-ui.svg)](https://www.npmjs.com/package/moss-ui)
+
 The front-end UI framework with Vue.js and SCSS.
 
 ## Demo

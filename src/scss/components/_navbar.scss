@@ -68,6 +68,10 @@ navbar,
   }
 }
 
+.nav-button {
+  @extend %nav-button, %nav-link;
+}
+
 .navbar-brand {
   display: flex;
   width: auto;
@@ -111,7 +115,7 @@ navbar,
 
   &.right {
     position: absolute;
-    right: .5rem;
+    right: $space-2;
   }
 }
 

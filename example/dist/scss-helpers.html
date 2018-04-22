@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SCSS Helpers</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./dist/moss.css">
+    <link rel="stylesheet" href="../../dist/moss.css">
     <style>
       aside { position: relative; }
       aside .menu { overflow: auto; }
@@ -109,6 +108,7 @@
             </div>
           </div>
           <h3>Caret</h3>
+          <blockquote class="danger pad"><strong>@deprecated</strong> in v0.6.x. use Icon instead.</blockquote>
           <div class="pad bg-color-warning">
             up <span class="caret up"></span>
             right <span class="caret right"></span>
@@ -116,6 +116,7 @@
             left <span class="caret left"></span>
           </div>
           <h3>Arrow</h3>
+          <blockquote class="danger pad"><strong>@deprecated</strong> in v0.6.x. use Icon instead.</blockquote>
           <div class="pad bg-color-secondary">
             up <span class="arrow up"></span>
             right <span class="arrow right"></span>
@@ -254,8 +255,9 @@
       <toast></toast>
     </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
-    <script src="./dist/moss.js"></script>
-    <script src="example.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script src="../../dist/moss.js"></script>
+    <script src="./example.js"></script>
   </body>
 </html>

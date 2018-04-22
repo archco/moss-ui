@@ -250,5 +250,23 @@
     "name": "Spacing",
     "category": "scss-helpers",
     "description": "Helper classes for specifying margin or padding spacing to element."
+  },
+  {
+    "_id": 43,
+    "name": "Code",
+    "category": "scss",
+    "description": "Display inline or block fragment of computer code."
+  },
+  {
+    "_id": 44,
+    "name": "v-outer",
+    "category": "vue-directives",
+    "description": "Add listener for the event that occurs outer of the element."
+  },
+  {
+    "_id": 45,
+    "name": "NavDrawer",
+    "category": "vue",
+    "description": "It's the navigation drawer that using horizontal-collapse."
   }
 ]

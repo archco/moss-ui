@@ -15,21 +15,20 @@ h2 default
 h2 Example Search
 .row
   .col-lg-4.col-md-6
+    include ../partials/search-module
+
+h2 Set Suggestions (Ajax Simulation)
+.row
+  .col-lg-4.col-md-6
     search(
-      :collection='collection'
-      :search-options='searchOptions'
-      :result-limit='5'
+      input-placeholder='input "tim"..'
       auto-width
-      @item-clicked='onSearchItemClick'
-      @submit='onSearchSubmit'
+      @input-change='onSearchInputChange'
     )
       li(
         slot='result-item'
         slot-scope='props'
-        style='text-align:left;'
         tabindex='0'
         @click='props.onClickItem(props.item)'
       )
-        h3(style='margin:0;' v-text='props.item.name')
-        span.badge(:style='getBadgeStyle(props.item.category)' v-text="props.item.category")
-        span.help(v-text='props.item.description')
+        span(v-text='props.item.name')

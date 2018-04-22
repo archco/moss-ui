@@ -11,7 +11,9 @@
   - [Contact chip](#contact-chip)
   - [Link chip](#link-chip)
   - [with color](#with-color)
+  - [Closeable](#closeable)
 - [Props](#props)
+- [Events](#events)
 - [SCSS variables](#scss-variables)
 
 ## Usage
@@ -50,6 +52,21 @@
 <chip color="#69c">Color Chip</chip>
 ```
 
+### Closeable
+
+This props will insert [`close-button`](./close-button.md) into chip. It will be useful if you want to remove or hide the chip.
+
+``` html
+<!-- Default `close-action` is 'remove'. When you click `close-button` then chip will be removed. -->
+<chip closeable>Closeable Chip</chip>
+
+<!-- Hiding the chip when clicked `close-button`. -->
+<chip closeable close-action="hide">Hide Chip</chip>
+
+<!-- Custom action. -->
+<chip closeable close-action="" @close="onClose">Custom Action</chip>
+```
+
 ## Props
 
 | Name | Type | Default | Description |
@@ -57,8 +74,15 @@
 | tag | `String` | `'span'` | A tag name. e.g. `'a'`, `'span'` |
 | color | `String` | `''` | `background-color` of a chip. |
 | closeable | `Boolean` | `false` | Enable close-button. |
+| close-action | `String` | `'remove'` | Specify an action when clicked the close-button. It can set 'remove', 'hide' or '' (It's no action) |
 | img-src | `String` | `''` | Image source. |
 | img-alt | `String` | `''` | Alternate text. |
+
+## Events
+
+| Name | Argument | Description |
+| ---- |:--------:| ----------- |
+| close | chip: `VNode` | It triggers when clicked close-button. |
 
 ## SCSS variables
 

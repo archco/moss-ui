@@ -8,6 +8,9 @@ button(class='btn-flat') btn-flat
 each color in colorSet
   button(class='btn-flat '+color)= color
 
+h3 Text button
+div.pad Hello <button class="btn-text color-danger">Beautiful</button> World!
+
 h3 Other tag as button
 input(type='submit')
 a(href='#button' class='btn info') link button
@@ -16,25 +19,25 @@ a(href='#' class='btn-flat') link flat button
 
 h3 Icon Button
 button(class='btn-icon')
-  <i class="fa fa-calendar" aria-hidden="true"></i>
+  <i class="fas fa-calendar"></i>
 button(class='btn-icon primary')
-  <i class="fa fa-home" aria-hidden="true"></i>
+  <i class="fas fa-home"></i>
 button(class='btn-icon secondary')
-  <i class="fa fa-user" aria-hidden="true"></i>
+  <i class="fas fa-user"></i>
 button(class='btn-icon info')
-  <i class="fa fa-comment" aria-hidden="true"></i>
+  <i class="fas fa-comment"></i>
 button(class='btn-icon success')
-  <i class="fa fa-code" aria-hidden="true"></i>
+  <i class="fas fa-code"></i>
 button(class='btn-icon warning')
-  <i class="fa fa-exclamation" aria-hidden="true"></i>
+  <i class="fas fa-exclamation"></i>
 button(class='btn-icon danger')
-  <i class="fa fa-times" aria-hidden="true"></i>
+  <i class="fas fa-times"></i>
 
 h3 Disabled
 button(class='btn' disabled) btn
 button(class='btn-flat' disabled) btn-flat
 button(class='btn-icon danger' disabled)
-  <i class="fa fa-times" aria-hidden="true"></i>
+  <i class="fas fa-times"></i>
 
 h3 Button Group
 h4 Horizontal Button Group (default)

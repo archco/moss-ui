@@ -5,9 +5,11 @@
 Activator is provide convenience for "active" class into child-node item. It's compare between link and current location.
 
 - Syntax
+
   ``` html
   <navbar-nav v-activator.{modifiers}="'{value}'"></navbar-nav>
   ```
+
 - modifiers
   - `self`: If this given, `active` class into self element, not `parentNode`.
   - `this`: If this given, activator on own element, not `childNodes`.
@@ -18,15 +20,18 @@ Activator is provide convenience for "active" class into child-node item. It's c
 Provide convenience for copy to clipboard. It is based on [clipboard.js](https://github.com/zenorocha/clipboard.js)
 
 - Syntax
+
   ``` html
   <button v-clipboard.{modifiers}:{arg}="value">Copy</button>
   ```
+
 - modifiers
   - `cut`: If this given, set action to 'cut'. (default value is 'copy')
 - arg: Event name, default is 'clipboard-success'. This event emit to `$root` vue model when copy to clipboard is successfully.
 - value: `String`|`Object`
   - If type is string, this value copy to clipboard as text.
   - If type is object, see below.
+
   ``` js
   // Value set as object.
   const value = {
@@ -43,9 +48,11 @@ Provide convenience for copy to clipboard. It is based on [clipboard.js](https:/
 Provide the function to confirm when "submission" is the case.
 
 - Syntax
+
   ``` html
   <form action="#" v-confirm:{arg}="'{value}'"></form>
   ```
+
 - arg: event type.
 - value: `String` confirm message. default value is 'Are you confirm?'.
 
@@ -59,23 +66,60 @@ Provide the function to confirm when "submission" is the case.
 Auto focus on element.
 
 - Syntax
+
   ``` html
   <input type="text" v-focus>
   ```
+
+## Outer
+
+Add listener for the event that occurs outer of the element.
+
+- Syntax
+
+  ``` html
+  <div v-outer.{modifiers}="{value}"></div>
+  ```
+
+- modifiers - event types.
+- value `Function`|[`OuterOptions`](#outeroptions) - event listener function or Options object.
+
+### OuterOptions
+
+``` ts
+interface OuterOptions {
+  root: HTMLElement|window; // default = document.documentElement
+  target: HTMLElement; // default = el
+  events: string[];
+  listener: (event: Event) => void;
+}
+```
+
+### Example
+
+``` html
+<!-- Basic usage -->
+<div v-outer.click="onOuterClick">
+<!-- Usage via options -->
+<div v-outer.mouseover="{root: '.table', target: 'th', listener: onOuterMouseover}">
+```
 
 ## Ripple
 
 Apply ripple effect on element. It triggered on click.
 
 - Syntax
+
   ``` html
   <button class="btn" v-ripple.{modifiers}="{value}">BUTTON</button>
   ```
+
 - modifiers - Option for set ripple color.
   - default: Auto, Set ripple color to contrast of element's background-color.
   - `light`: Set ripple color to `#fff`.
   - `dark`: Set ripple color to `#000`.
 - value: `Object` Option object.
+
   ``` js
   value: {
     color: '#fff', // ripple color.
@@ -87,10 +131,13 @@ Apply ripple effect on element. It triggered on click.
 Automatically activate HTML anchor based on scroll position.
 
 - Syntax
+
   ``` html
   <nav v-scrollspy="{value}">...</nav>
   ```
+
 - value: `Object` options.
+
   ``` js
   value: {
     linkSelector: 'a',
@@ -104,31 +151,31 @@ Automatically activate HTML anchor based on scroll position.
 
 ### Events
 
-- On activate: `scrollspy-activate`
-  ``` js
-  vm.$on('scrollspy-activate', item => {
-    /*
-      item = {
-        elm: {Element} target element.
-        link: {Element} link element.
-        offsetTop: {Number} the distance of the current element relative to the top.
-      }
-    */
-  });
-  ```
-- Emit refresh: `scrollspy-refresh`
-  ``` js
-  vm.$emit('scrollspy-refresh');
-  ```
+| Name | Argument | Description |
+| ---- |:--------:| ----------- |
+| scrollspy-activate | item: [`ActivatedItem`](#activated-item) | This event occurs when scroll are placed on the target element. |
+| scrollspy-refresh | none | You can refresh scrollspy via `$emit('scrollspy-refresh')`. |
+
+#### Activated Item
+
+``` ts
+interface ActivatedItem {
+  elm: HTMLElement;   // The target element.
+  link: HTMLElement;  // The anchor element.
+  offsetTop: Number;  // The distance of the current element relative to the top.
+}
+```
 
 ## Set Value
 
 Set value on a element.
 
 - Syntax
+
   ``` html
   <select v-set-value:{arg}="'{value}'">...</select>
   ```
+
 - arg: Key of query string.
 - value: Set value directly.
 
@@ -144,9 +191,11 @@ Set value on a element.
 > This directive is built on [Tooltip.js](https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/tooltip-documentation.md)
 
 - Syntax
+
   ``` html
   <span v-tooltip:{arg}.{modifiers}="'{value}'">...</span>
   ```
+
 - arg: placement. top (default) | right | bottom | left (additional suffix: '-start' and '-end')
 - modifiers: trigger. hover (default) | focus | click | manual (no actions)
 - value: `String`|`Object` - If value type is `String`, then tooltip title is set by value. If value type is `Object`, then [option of Tooltip.js](https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/tooltip-documentation.md#new-tooltipreference-options) will set by this object value.
@@ -167,9 +216,11 @@ $tooltip-border-radius: $radius-small !default;
 Emit event on context root.
 
 - Syntax
+
   ``` html
   <button type="button" v-trigger:{arg}="[{value}]">Trigger</button>
   ```
+
 - arg: event name.
 - value: `Array` Arguments for event listener.
 
@@ -184,9 +235,11 @@ Emit event on context root.
 Wrap the element in a wrapper.
 
 - Syntax
+
   ``` html
   <div v-wrap:{arg}.{modifiers}="'{value}'"></div>
   ```
+
 - arg: class name. It is auto convert. e.g.) `item` -> `item-wrapper`
 - modifiers
   - raw: If this given, it does not convert class name.

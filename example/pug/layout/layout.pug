@@ -4,7 +4,8 @@
   var imageSrc = [
     'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg'
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Charles_Meynier_-_Napoleon_in_Berlin.png/1280px-Charles_Meynier_-_Napoleon_in_Berlin.png'
   ]
   var colorSet = ['default', 'primary', 'secondary', 'info', 'success', 'warning', 'danger', 'light', 'dark', 'shade', 'link']
   var lorem = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
@@ -17,8 +18,7 @@ html
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     block title
       title "Default title"
-    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
-    link(rel="stylesheet" href="./dist/moss.css")
+    link(rel="stylesheet" href="../../dist/moss.css")
     style
       |aside { position: relative; }
       |aside .menu { overflow: auto; }
@@ -27,18 +27,18 @@ html
       header.d-flex.justify-content-center.align-items-center.bg-color-primary(style="height:100px;")
         h1
           a.no-deco.inherit(id='project-name' href='index.html') MOSS-UI <span class='moss-version'></span>
-
-      navbar(class='sticky-top shadow-near' align='end')
-        navbar-brand(href='index.html' type='text' slot='brand' v-activator.this.self) Moss
-        navbar-nav(v-activator="'.nav-item > .nav-link'")
-          nav-item(href='scss.html?q=components' text='SCSS')
-          nav-item(href='vue.html' text='Vue')
-          nav-item
-            dropdown(toggle='toggle' placement='bottom-end')
-              button(slot='button') Utilities
-              a.dropdown-item(href='scss-helpers.html') SCSS Helpers
-              a.dropdown-item(href='vue-directives.html') Vue Directives
-              a.dropdown-item(href='js-libraries.html') JS Libraries
+      block nav
+        navbar(class='sticky-top shadow-near' align='end')
+          navbar-brand(href='index.html' type='text' slot='brand' v-activator.this.self) Moss
+          navbar-nav(v-activator="'.nav-item > .nav-link'")
+            nav-item(href='scss.html?q=components' text='SCSS')
+            nav-item(href='vue.html' text='Vue')
+            nav-item
+              dropdown(toggle='toggle' placement='bottom-end')
+                button(slot='button') Utilities
+                a.dropdown-item(href='scss-helpers.html') SCSS Helpers
+                a.dropdown-item(href='vue-directives.html') Vue Directives
+                a.dropdown-item(href='js-libraries.html') JS Libraries
 
       block content
 
@@ -63,8 +63,9 @@ html
       toast
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js')
-    script(src='./dist/moss.js')
-    script(src='example.js')
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    script(src='../../node_modules/vue/dist/vue.js')
+    script(src='../../dist/moss.js')
+    script(src='./example.js')
 
     block script
