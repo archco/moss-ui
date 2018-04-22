@@ -41,20 +41,6 @@
 %position-center-container { @include position-center-container; }
 %position-center { @include position-center; }
 
-// @deprecated. use `helpers/flex` instead.
-.vertical-center-container,
-.flex-container-vertical-center {
-  @include flex-container-align('flex-start', 'center');
-  display: flex;
-}
-
-// @deprecated. use `helpers/flex` instead.
-.flex-center-container,
-.flex-container-center {
-  @include flex-container-align('center', 'center');
-  display: flex;
-}
-
 .center-position-container,
 .position-center-container {
   @include position-center-container;
@@ -63,13 +49,6 @@
   .position-center {
     @include position-center;
   }
-}
-
-// @deprecated. use `helpers/spacing` instead.
-.center-block {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 // float
@@ -143,7 +122,3 @@
 .debug-line { @include debug; }
 .caret { @include caret('down'); }
 .arrow { @include arrow; }
-
-.no-margin { padding: 0; margin: 0;} // @deprecated. use `helper/spacing` instead.
-.full-width { width: 100%; } // @deprecated. use `helper/sizing` instead.
-.full-height { height: 100%; } // @deprecated. use `helper/sizing` instead.

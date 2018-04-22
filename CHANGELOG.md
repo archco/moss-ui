@@ -41,6 +41,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   - `Util.strToKebab`: use `Case.kebab` instead.
   - `Util.strToNormal`: use `Case.lower` instead.
   - `Util.capitalize`: use `Case.capital` instead.
+- `scss/mixins/_arrow.scss` - It's useless. use [Icon](https://github.com/archco/moss-ui/blob/master/docs/svg-icons.md#svg-icons) instead.
+- `scss/mixins/_caret.scss` - It's useless. use [Icon](https://github.com/archco/moss-ui/blob/master/docs/svg-icons.md#svg-icons) instead.
+
+### Removed
+
+- Removes deprecated in v0.5.x. #88
 
 ## [0.5.3][] - 2018-03-18
 

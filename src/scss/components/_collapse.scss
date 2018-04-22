@@ -1,41 +1,5 @@
-@mixin _collapse-toggle-with-icon {
-  &::after {
-    position: absolute;
-    top: 50%;
-    right: 1em;
-    transform: translate(0, -50%);
-  }
-
-  &.with-plus::after {
-    content: '\002B';
-  }
-
-  &.with-plus[data-expanded="true"]::after {
-    content: '\2212';
-  }
-
-  &.with-caret::after {
-    @include caret('down');
-  }
-
-  &.with-caret[data-expanded="true"]::after {
-    @include caret('up');
-  }
-
-  &.with-arrow::after {
-    @include arrow('down');
-    transform: translate(0, -50%) rotate(45deg);
-  }
-
-  &.with-arrow[data-expanded="true"]::after {
-    @include arrow('up');
-    transform: translate(0, -50%) rotate(-135deg);
-  }
-}
-
 .collapse-toggle {
   @include btn-base;
-  @include _collapse-toggle-with-icon; // @deprecated at v0.5.0. use collapse-toggle.vue instead.
   position: relative;
 
   > span {
