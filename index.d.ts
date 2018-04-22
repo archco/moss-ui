@@ -29,6 +29,7 @@ export namespace Components {
   export const NavbarNav: VueConstructor;
   export const NavbarToggle: VueConstructor;
   export const NavItem: VueConstructor;
+  export const NavDrawer: VueConstructor;
   export const Parallax: VueConstructor;
   export const ScrollTo: VueConstructor;
   export const SimpleCRUD: VueConstructor;
@@ -53,6 +54,7 @@ export namespace Directives {
   export const Confirm: DirectiveOptions;
   export const Focus: DirectiveOptions;
   export const Modal: DirectiveOptions;
+  export const Outer: DirectiveOptions;
   export const Ripple: DirectiveOptions;
   export const Scrollspy: DirectiveOptions;
   export const SetValue: DirectiveOptions;
