@@ -1,4 +1,4 @@
-// Type definitions for moss-ui v0.5.0
+// Type definitions for moss-ui v0.6.0
 // @link https://github.com/archco/moss-ui
 
 import {
@@ -119,6 +119,7 @@ export namespace Util {
 
   /**
    * String to CamelCase
+   * @deprecated in v0.6.x. use Case.camel or Case.pascal instead.
    *
    * @param {string} str
    * @param {boolean} [isSmallCamel=false] If true, returns as smallCamelCase.
@@ -128,6 +129,7 @@ export namespace Util {
 
   /**
    * String to kebab-case.
+   * @deprecated in v0.6.x. use Case.kebab instead.
    *
    * @param {string} str
    * @returns {string}
@@ -136,6 +138,7 @@ export namespace Util {
 
   /**
    * String to normal case. e.g. 'hello world'
+   * @deprecated in v0.6.x. use Case.lower instead.
    *
    * @param {string} str
    * @returns {string}
@@ -144,6 +147,7 @@ export namespace Util {
 
   /**
    * Capitalize first letters.
+   * @deprecated in v0.6.x. use Case.capital instead.
    *
    * @param {string} str
    * @returns {string}
