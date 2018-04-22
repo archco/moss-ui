@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moss-UI</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./dist/moss.css">
     <style>
       aside { position: relative; }
@@ -30,24 +29,11 @@
         </navbar-nav>
       </navbar>
       <div class="hero-banner pad-large">
-        <div class="hero-background filter gray" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg');"></div>
+        <div class="hero-background filter gray" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Charles_Meynier_-_Napoleon_in_Berlin.png/1280px-Charles_Meynier_-_Napoleon_in_Berlin.png');"></div>
         <div class="hero-content font-accent text-center" style="font-size:1.4em;">
-          <h1 class="color-primary">MOSS-UI</h1>
-          <p>The front-end UI framework with Vue.js and SCSS.</p>
-        </div>
-      </div>
-      <section class="pad">
-        <anchored-tag tag="h1" owned>Search</anchored-tag>
-        <p>Simple search component that fuzzy search given collection data such like json.</p>
-        <h2>default</h2>
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="eventTest" @submit="eventTest"></search>
-          </div>
-        </div>
-        <h2>Example Search</h2>
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
+          <h1 class="color-primary" style="text-shadow: 0px 1px 2px #000;">MOSS-UI</h1>
+          <p class="color-light" style="text-shadow: 0px 1px 2px #000;">The front-end UI framework with Vue.js and SCSS.</p>
+          <div class="w-75 mx-auto" style="font-size:1rem;">
             <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="onSearchItemClick" @submit="onSearchSubmit">
               <li slot="result-item" slot-scope="props" style="text-align:left;" tabindex="0" @click="props.onClickItem(props.item)">
                 <h3 style="margin:0;" v-text="props.item.name"></h3><span class="badge" :style="getBadgeStyle(props.item.category)" v-text="props.item.category"></span><span class="help" v-text="props.item.description"></span>
@@ -55,15 +41,128 @@
             </search>
           </div>
         </div>
+      </div>
+      <section class="pad">
+        <anchored-tag tag="h1" owned>NavDrawer</anchored-tag>
+        <p>It's the navigation drawer that using horizontal-collapse.</p>
+        <button class="btn info" v-collapse:drawer01>Open Drawer</button>
+        <nav-drawer id="drawer01">
+          <div class="nav-drawer-header">
+            <button class="btn-text" v-collapse:drawer01.hide>
+              <icon name="close"></icon>
+            </button>
+          </div>
+          <div class="nav-drawer-body">
+            <div class="info bg-color-secondary d-flex justify-content-center align-items-center" style="height:150px;">
+              <h2>HELLO</h2>
+            </div>
+            <h3 class="menu-header">Main Menu</h3><a class="menu-item" href="#">item1</a><a class="menu-item active" href="#">item2</a><a class="menu-item" href="#">item3</a>
+            <div class="menu-divider"></div>
+            <h4 class="menu-header">Sub Menu</h4><a class="menu-item" href="#" disabled>disabled item</a><a class="menu-item" href="#">item5</a><a class="menu-item" href="#">item6</a>
+          </div>
+        </nav-drawer>
+        <anchored-tag tag="h1" owned>Code</anchored-tag>
+        <p>Display inline or block fragment of computer code.</p>
+        <h2>Inline code</h2>
+        <p>
+          It is inline <code>code</code>.<br>
+          <code>HTML</code>, <code>CSS</code>, <code>JavaScript</code><br>
+          <a href="#"><code>code</code></a>  in link
+        </p>
+        <h2>Code blocks</h2>
+        <pre><code>function getTarget() {
+ const elm = document.querySelector('#target');
+ return elm;
+}</code></pre>
+        <h2>Variables</h2>
+        <p class="pad"><var>x</var> = <var>y</var> + 2 </p></p>
+        <h2>User input</h2>
+        <p class="pad"><kbd>ctrl + p</kbd> and <kbd>Enter</kbd></p>
+        <h2>Sample output</h2>
+        <p class="pad"><samp>This text is meant to be treated as sample output from a computer program.</samp></p>
         <anchored-tag tag="h1" owned>Icon</anchored-tag>
         <h2>SVG default usage</h2>
-        <div class="pad" style="font-size:3em;"><i class="icon" id="svg-arrow-example"></i><i class="icon" id="svg-caret-example"></i><i class="icon" id="svg-close-example"></i></div>
+        <div class="pad" style="font-size:3em;"><i class="moss-icon" id="svg-arrow-example"></i><i class="moss-icon" id="svg-caret-example"></i><i class="moss-icon" id="svg-close-example"></i></div>
         <h2>Icon component</h2>
         <icon class="color-danger" name="arrow-down"></icon><span> hello world</span>
-        <icon class="color-success" name="caret-up"></icon>
+        <icon class="color-success" name="caret-up"></icon><span class="d-inline-block">InlineBlock</span>
         <icon class="bg-color-dark" name="close" style="font-size:3em;border-radius:50%;"></icon>
         <icon class="bg-color-warning" name="check" style="font-size:2em;"></icon>
         <icon class="bg-color-link" name="search" style="font-size:2em;"></icon>
+        <anchored-tag tag="h1" owned>Collapse</anchored-tag>
+        <h2>Default</h2>
+        <button class="btn default" v-collapse:test-collapse>v-collapse</button>
+        <div class="pad bg-color-primary" is="collapse-toggle" target="test-collapse">CollapseToggle</div>
+        <collapse id="test-collapse" expanded>
+          <h3>test collapse</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </collapse>
+        <h2>Accordion</h2>
+        <button class="btn info" v-accordion:accordion2="'accordion-test'">v-accordion</button>
+        <ul class="list-group">
+          <li>
+            <div is="collapse-toggle" target="accordion1" accordion="accordion-test">accordion one</div>
+            <collapse id="accordion1" accordion="accordion-test" expanded>
+              <h3>accordion1</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <button v-collapse:test00>nested</button>
+              <collapse id="test00">
+                <h4>Nested</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </collapse>
+            </collapse>
+          </li>
+          <li>
+            <div is="collapse-toggle" target="accordion2" accordion="accordion-test">accordion two</div>
+            <collapse id="accordion2" accordion="accordion-test">
+              <h3>accordion2</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </collapse>
+          </li>
+          <li>
+            <div is="collapse-toggle" target="accordion3" accordion="accordion-test">accordion three</div>
+            <collapse id="accordion3" accordion="accordion-test">
+              <h3>accordion3</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </collapse>
+          </li>
+        </ul>
+        <h2>Horizontal Collapse</h2>
+        <button class="btn dark" v-collapse:horizontal-collapse>toggle</button>
+        <collapse id="horizontal-collapse" direction="horizontal">
+          <h3>test collapse</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </collapse>
+        <h3>with Grid</h3>
+        <div class="row">
+          <collapse class="col-2 bg-color-shade" id="aside-collapse1" direction="horizontal" expanded>
+            <div class="pad">
+              <div>hello</div>
+              <div>world</div>
+            </div>
+          </collapse>
+          <div class="col">
+            <div class="pad">
+              <button class="btn-flat dark" v-collapse:aside-collapse1>Toggle aside1</button>
+              <button class="btn-flat info" v-collapse:aside-collapse2>Toggle aside2</button>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <collapse class="col-2 bg-color-info" id="aside-collapse2" direction="horizontal" expanded>
+            <div class="pad">
+              <div>hello</div>
+              <div>world</div>
+            </div>
+          </collapse>
+        </div>
+        <h2>Collapse Toggle</h2>
+        <collapse-toggle class="pad bg-color-shade" target="test-collapse2">toggle</collapse-toggle><span class="d-inline-block bg-color-info" is="collapse-toggle" tag="span" target="test-collapse2">toggle by span</span>
+        <button class="btn" is="collapse-toggle" tag="button" target="test-collapse2">toggle by button</button>
+        <collapse id="test-collapse2">
+          <h3>test collapse</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </collapse>
       </section>
       <footer class="footer">
         <div class="container">
@@ -88,8 +187,9 @@
       <toast></toast>
     </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="./node_modules/vue/dist/vue.js"></script>
     <script src="./dist/moss.js"></script>
-    <script src="example.js"></script>
+    <script src="./example.js"></script>
   </body>
 </html>
