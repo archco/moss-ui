@@ -46,6 +46,22 @@ describe('#Collapse', () => {
     expect(toggleEvent[0]).toEqual(['test-target']);
   });
 
+  it('will be emitted `state` event when state changes.', () => {
+    const wrapper = mount(Collapse, {
+      propsData: {
+        id: 'target',
+        expanded: true,
+      },
+      slots: {
+        default: `<p class="description">Hello world</p>`,
+      }
+    });
+    expect(wrapper.emitted('state').length).toBe(1); // init.
+    wrapper.vm.toggleCollapse('target', 'toggle');
+    expect(wrapper.emitted('state').length).toBe(2);
+    expect(wrapper.vm.show).toBe(false);
+  });
+
   it('can collapse horizontally.', () => {
     const wrapper = mount(Collapse, {
       propsData: {

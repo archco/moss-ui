@@ -126,6 +126,7 @@ export default {
     // emit collapse or accordion's state to $root.
     emitCurrentState() {
       this.$root.$emit('collapse-state', this.state);
+      this.$emit('state', this.state);
     },
   },
   beforeMount() {

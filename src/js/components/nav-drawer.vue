@@ -2,7 +2,8 @@
   <collapse class="nav-drawer"
     :id="id"
     direction="horizontal"
-    ref="collapse">
+    ref="collapse"
+    @state="onStateChange">
     <slot></slot>
   </collapse>
 </template>
@@ -37,6 +38,9 @@ export default {
     },
     close() {
       this.$refs.collapse.toggleCollapse(this.id, 'close');
+    },
+    onStateChange(state) {
+      this.$emit('state', state);
     }
   }
 }
