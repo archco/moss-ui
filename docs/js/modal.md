@@ -10,6 +10,7 @@
   - [Basic](#basic)
   - [with actions](#with-actions)
 - [Props](#props)
+- [Events](#events)
 - [Vue directive](#vue-directive)
 - [SCSS variables](#scss-variables)
 
@@ -50,6 +51,12 @@
 | effect | `String` | `'from-top'` | Transition effect name. now only 'from-top'. |
 | close-button-html | `String` | `''` | `innerHTML` of close button in modal-header. |
 | close-on | `Boolean` | `false` | If true, modal close when if click outside of it. |
+
+## Events
+
+| Name | Argument | Description |
+| ---- |:--------:| ----------- |
+| state | `boolean` | This event occurs when state changed. The argument represents whether to content is shown or not. |
 
 ## Vue directive
 

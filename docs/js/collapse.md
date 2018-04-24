@@ -15,6 +15,7 @@
 - [Props](#props)
   - [Props of collapse](#props-of-collapse)
   - [Props of collapse-toggle](#props-of-collapse-toggle)
+- [Events](#events)
 - [Directives](#directives)
   - [v-collapse](#v-collapse)
   - [v-accordion](#v-accordion)
@@ -129,6 +130,22 @@ Available optional class: `with-plus` `with-caret` `with-arrow`
 | target | `String` | required | Target collapse component's id |
 | tag | `String` | `'div'` | tagName of this element. |
 | accordion | `String` | `''` | Accordion group name. |
+
+## Events
+
+| Name | Argument | Description |
+| ---- |:--------:| ----------- |
+| state | [`CollapseState`](#collapsestate) | This event occurs when state changed. |
+
+### CollapseState
+
+``` ts
+interface CollapseState {
+  id: string;         // collapse id.
+  expanded: boolean;  // whether expanded or not.
+  accordion: string;  // accordion group name.
+}
+```
 
 ## Directives
 

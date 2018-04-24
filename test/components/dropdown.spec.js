@@ -36,4 +36,18 @@ describe('#Dropdown', () => {
     wrapper.find('button.reference').trigger('click');
     expect(content.classList.contains('show')).toBe(true);
   });
+
+  it('will be emitted `state` event when state changes.', () => {
+    const wrapper = mount(Dropdown, {
+      slots: slots,
+    });
+    // mock.
+    wrapper.vm.$data.pop = fakePopper;
+    wrapper.vm.btn.click();
+    expect(wrapper.emitted('state').length).toBe(1);
+    expect(wrapper.emitted('state')[0]).toEqual([true]);
+    wrapper.vm.btn.click();
+    expect(wrapper.emitted('state').length).toBe(2);
+    expect(wrapper.emitted('state')[1]).toEqual([false]);
+  });
 });
