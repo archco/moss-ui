@@ -11,7 +11,7 @@ nav-drawer,
   left: 0;
   width: $nav-drawer-base-width;
   height: 100%;
-  box-shadow: $nav-drawer-shadow;
+  @include box-shadow($nav-drawer-shadow);
 
   @each $breakpoint, $width in $nav-drawer-widths {
     @include media-breakpoint-up($breakpoint) {
