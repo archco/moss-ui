@@ -11,6 +11,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Added
+
+- Added "state" event to some vue-components. #117
+  - [collapse](https://github.com/archco/moss-ui/blob/master/docs/js/collapse.md#events)
+  - [dropdown](https://github.com/archco/moss-ui/blob/master/docs/js/dropdown.md#events)
+  - [modal](https://github.com/archco/moss-ui/blob/master/docs/js/modal.md#events)
+  - [nav-drawer](https://github.com/archco/moss-ui/blob/master/docs/js/nav-drawer.md#events)
+
 ## [0.6.0][] - 2018-04-22
 
 ### Added

@@ -11,6 +11,7 @@ It's the navigation drawer that using horizontal-collapse.
 - [Usage](#usage)
 - [Menu Decorators](#menu-decorators)
 - [Props](#props)
+- [Events](#events)
 - [SCSS Variables](#scss-variables)
 
 ## Usage
@@ -78,6 +79,22 @@ It's the navigation drawer that using horizontal-collapse.
 | Name | Type | Default | Description |
 | ---- |:----:| ------- | ----------- |
 | id | `string` | required | Key for the `collapse` component. |
+
+## Events
+
+| Name | Argument | Description |
+| ---- |:--------:| ----------- |
+| state | [`CollapseState`](#collapseState) | This event occurs when state changed. |
+
+### CollapseState
+
+``` ts
+interface CollapseState {
+  id: string;         // collapse id.
+  expanded: boolean;  // whether expanded or not.
+  accordion: string;  // accordion group name.
+}
+```
 
 ## SCSS Variables
 
