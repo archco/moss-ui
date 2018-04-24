@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+## [0.6.1][] - 2018-04-24
+
 ### Added
 
 - Added "state" event to some vue-components. #117
@@ -18,6 +20,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   - [dropdown](https://github.com/archco/moss-ui/blob/master/docs/js/dropdown.md#events)
   - [modal](https://github.com/archco/moss-ui/blob/master/docs/js/modal.md#events)
   - [nav-drawer](https://github.com/archco/moss-ui/blob/master/docs/js/nav-drawer.md#events)
+
+### Fixed
+
+- Fixed declaration file. (8cc60acab42a3426da1afa2493773f5604d771b0)
 
 ## [0.6.0][] - 2018-04-22
 
@@ -217,7 +223,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Remove unnecessary part "aside.scss". #60
 - Remove deprecated scss mixin, `flex-container()`. instead use `flex-container-align`. #52
 
-[Unreleased]: https://github.com/archco/moss-ui/compare/v0.6.0...HEAD
+[Unreleased]: https://github.com/archco/moss-ui/compare/v0.6.1...HEAD
+[0.6.1]: https://github.com/archco/moss-ui/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/archco/moss-ui/compare/v0.5.3...v0.6.0
 [0.5.3]: https://github.com/archco/moss-ui/compare/v0.5.2...v0.5.3
 [0.5.2]: https://github.com/archco/moss-ui/compare/v0.5.1...v0.5.2

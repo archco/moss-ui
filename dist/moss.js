@@ -1097,6 +1097,7 @@ __webpack_require__.r(__webpack_exports__);
     // emit collapse or accordion's state to $root.
     emitCurrentState: function emitCurrentState() {
       this.$root.$emit('collapse-state', this.state);
+      this.$emit('state', this.state);
     }
   },
   beforeMount: function beforeMount() {
@@ -1190,6 +1191,7 @@ __webpack_require__.r(__webpack_exports__);
   watch: {
     isShown: function isShown(val) {
       if (val) this.updatePopper();
+      this.$emit('state', val);
     }
   },
   computed: {
@@ -1805,6 +1807,7 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         document.body.classList.remove(c);
       }
+      this.$emit('state', shown);
     }
   },
   methods: {
@@ -1898,6 +1901,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -1923,6 +1927,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     close: function close() {
       this.$refs.collapse.toggleCollapse(this.id, 'close');
+    },
+    onStateChange: function onStateChange(state) {
+      this.$emit('state', state);
     }
   }
 });
@@ -11351,7 +11358,8 @@ var render = function() {
     {
       ref: "collapse",
       staticClass: "nav-drawer",
-      attrs: { id: _vm.id, direction: "horizontal" }
+      attrs: { id: _vm.id, direction: "horizontal" },
+      on: { state: _vm.onStateChange }
     },
     [_vm._t("default")],
     2
@@ -15740,7 +15748,7 @@ exports.Util = exports.Svg = exports.ElementUtil = exports.ElementMeasurer = exp
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }(); /*!
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * moss-ui - The front-end UI framework with Vue.js and SCSS.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @version v0.6.0
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @version v0.6.1
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * @link https://github.com/archco/moss-ui
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * @license MIT
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           */
@@ -16154,7 +16162,7 @@ module.exports = "<svg data-name=\"search\" xmlns=\"http://www.w3.org/2000/svg\"
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = '0.6.0';
+exports.default = '0.6.1';
 
 /***/ }),
 
