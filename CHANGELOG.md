@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Fixed
+
+- Fixed list style: Changes css selector `ul.list li` to `ul.list > li`.
+
 ## [0.6.1][] - 2018-04-24
 
 ### Added
