@@ -3,7 +3,8 @@
  */
 
 const merge = require('webpack-merge');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const devConfig = require('../webpack.config');
 const exampleConfig = require('./webpack.example.config');
@@ -17,7 +18,10 @@ const prodConfig = merge(devConfig, {
 });
 
 prodConfig.plugins = [
-  new ExtractTextPlugin('[name].min.css'),
+  new VueLoaderPlugin(),
+  new MiniCssExtractPlugin({
+    filename: '[name].min.css',
+  }),
   new OptimizeCssAssetsPlugin({
     assetNameRegExp: /\.min\.css$/g,
     cssProcessor: require('cssnano'),
