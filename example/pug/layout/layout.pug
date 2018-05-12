@@ -19,6 +19,7 @@ html
     block title
       title "Default title"
     link(rel="stylesheet" href="../../dist/moss.css")
+    link(rel="stylesheet" href="example.css")
     style
       |aside { position: relative; }
       |aside .menu { overflow: auto; }
@@ -33,6 +34,7 @@ html
           navbar-nav(v-activator="'.nav-item > .nav-link'")
             nav-item(href='scss.html?q=components' text='SCSS')
             nav-item(href='vue.html' text='Vue')
+            nav-item(href='svg.html' text='SVG')
             nav-item
               dropdown(toggle='toggle' placement='bottom-end')
                 button(slot='button') Utilities
