@@ -37,6 +37,7 @@
     "popper.js": "^1.14.3",
     "scss-palette": "^0.5.2",
     "tooltip.js": "^1.2.0",
+    "transition-timing": "^1.0.0",
     "vue-agile": "github:archco/vue-agile"
   },
   "devDependencies": {
