@@ -1,0 +1,46 @@
+[
+  {
+    "name": "arrow-left",
+    "keywords": ["arrow", "chevron", "left"]
+  },
+  {
+    "name": "arrow-right",
+    "keywords": ["arrow", "chevron", "right"]
+  },
+  {
+    "name": "arrow-up",
+    "keywords": ["arrow", "chevron", "up"]
+  },
+  {
+    "name": "arrow-down",
+    "keywords": ["arrow", "chevron", "down"]
+  },
+  {
+    "name": "caret-left",
+    "keywords": ["caret", "triangle", "left"]
+  },
+  {
+    "name": "caret-right",
+    "keywords": ["caret", "triangle", "right"]
+  },
+  {
+    "name": "caret-up",
+    "keywords": ["caret", "triangle", "up"]
+  },
+  {
+    "name": "caret-down",
+    "keywords": ["caret", "triangle", "down"]
+  },
+  {
+    "name": "close",
+    "keywords": ["close", "cross"]
+  },
+  {
+    "name": "check",
+    "keywords": ["check"]
+  },
+  {
+    "name": "search",
+    "keywords": ["search", "magnifying glass"]
+  }
+]

@@ -1,6 +1,7 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
+const { VueLoaderPlugin } = require('vue-loader');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
@@ -18,7 +19,10 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: file => (
+          /node_modules/.test(file) &&
+          !/\.vue\.js/.test(file)
+        ),
         use: {
           loader: 'babel-loader',
           options: {
@@ -33,40 +37,31 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        use: {
-          loader: 'vue-loader',
-          options: {
-            loaders: {
-              js: 'babel-loader',
-            },
-            sourceMap: true,
-          },
-        },
+        use: 'vue-loader',
       },
       {
         test: /\.s[ac]ss$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            {
-              loader: 'css-loader',
-              options: { sourceMap: true },
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: { sourceMap: true },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              sourceMap: true,
+              plugins: [
+                require('autoprefixer')(),
+              ],
             },
-            {
-              loader: 'postcss-loader',
-              options: {
-                ident: 'postcss',
-                sourceMap: true,
-                plugins: [
-                  require('autoprefixer')(),
-                ],
-              },
-            },
-            {
-              loader: 'sass-loader',
-              options: { sourceMap: true },
-            },
-          ],
-        }),
+          },
+          {
+            loader: 'sass-loader',
+            options: { sourceMap: true },
+          },
+        ],
       },
       {
         test: /\.svg$/,
@@ -82,7 +77,10 @@ module.exports = {
   },
   devtool: 'source-map',
   plugins: [
-    new ExtractTextPlugin('[name].css'),
+    new VueLoaderPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
     new WebpackNotifierPlugin({
       alwaysNotify: true,
       sound: false,

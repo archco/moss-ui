@@ -63,6 +63,7 @@ export default {
   watch: {
     isShown(val) {
       if (val) this.updatePopper();
+      this.$emit('state', val);
     },
   },
   computed: {

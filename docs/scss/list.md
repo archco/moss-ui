@@ -63,4 +63,5 @@ $list-group-hover-bg-color: rgba($background-color-invert, .1) !default;
 $list-group-active-bg-color: $primary-color !default;
 $list-group-active-color: get-contrast($list-group-active-bg-color) !default;
 $breadcrumb-separator: '/' !default;
+$breadcrumb-space: .4em !default;
 ```

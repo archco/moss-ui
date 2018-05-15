@@ -1,8 +1,12 @@
 import { treeData, treeData2 } from './data/tree';
 import collection from './data/collection.json';
 import * as Partials from './partials';
+import IconList from './components/IconList.vue';
 
-window.Vue.use(window.MossUI.default);
+const Vue = window.Vue;
+
+Vue.use(window.MossUI.default);
+Vue.component('icon-list', IconList);
 
 const searchOptions = {
   keys: [

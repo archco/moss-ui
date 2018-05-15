@@ -65,6 +65,7 @@ export default {
       } else {
         document.body.classList.remove(c);
       }
+      this.$emit('state', shown);
     },
   },
   methods: {

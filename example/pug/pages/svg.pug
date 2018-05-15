@@ -1,0 +1,15 @@
+//- svg icons
+extends ../layout/layout.pug
+
+block title
+  title= 'SVG'
+
+block content
+  div.row
+    aside.col-md-2.hide-only-mobile
+      ul.menu.list.fixed
+        li(is='anchored-tag' tag='li') Icons
+
+    section.col-md-10
+      anchored-tag(tag='h1' owned) Icons
+      include ../includes/icon

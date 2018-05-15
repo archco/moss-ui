@@ -15,6 +15,7 @@
   - [Content offset](#content-offset)
   - [Content decorators](#content-decorators)
 - [Props](#props)
+- [Events](#events)
 - [SCSS variables](#scss-variables)
 
 ## Usage
@@ -106,6 +107,12 @@ If the placement is `top` or `bottom`, this value means `width, height`. In case
 | prevent-overflow | `String` | `'on'` | Turn on/off preventOverflow mode. see [modifiers~preventOverflow] |
 | modifiers | `Object` | `{}` | set [modifiers][] option for Popper.js |
 | button-with-caret | `Boolean` | `true` | Whether append caret or not on dropdown-button. |
+
+## Events
+
+| Name | Argument | Description |
+| ---- |:--------:| ----------- |
+| state | `boolean` | This event occurs when state changed. The argument represents whether to content is shown or not. |
 
 ## SCSS variables
 

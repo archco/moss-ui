@@ -10,6 +10,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [Vue Directives](#vue-directives)
 - [JS Libraries](#js-libraries)
 - [SVG Icons](svg-icons.md)
+- [Moss Object](moss-object.md)
 
 ## SCSS Parts
 

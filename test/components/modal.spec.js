@@ -38,4 +38,12 @@ describe('#Modal', () => {
       done();
     });
   });
+
+  it('will be emitted `state` event when state changed.', () => {
+    wrapper.vm.toggleModal('test-modal', 'show');
+    wrapper.vm.$nextTick(() => {
+      expect(wrapper.emitted('state')).toBeTruthy();
+      expect(wrapper.emitted('state')[0]).toEqual([true]);
+    });
+  });
 });

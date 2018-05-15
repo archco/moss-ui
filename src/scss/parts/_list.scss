@@ -3,17 +3,16 @@
 .list-horizontal,
 .breadcrumb {
   @include reset-list;
-  margin-bottom: $space-3;
 }
 
 .list {
-  li {
+  > li {
     padding: $list-padding-y $list-padding-x;
   }
 }
 
 .list-group {
-  li {
+  > li {
     padding: $list-group-padding-y $list-group-padding-x;
     margin-bottom: -$list-border-width;
     border: $list-border-width solid $list-border-color;
@@ -25,16 +24,16 @@
     }
   }
 
-  li:first-child {
+  > li:first-child {
     @include border-top-radius($list-group-border-radius);
   }
 
-  li:last-child {
+  > li:last-child {
     @include border-bottom-radius($list-group-border-radius);
   }
 
   &.hover {
-    li:hover:not(.active) {
+    > li:hover:not(.active) {
       background-color: $list-group-hover-bg-color;
     }
   }
@@ -43,13 +42,13 @@
 .list-horizontal {
   padding: $list-padding-y 0;
 
-  li {
+  > li {
     display: inline-block;
     padding: 0 $list-padding-x;
     border-right: $list-border-width solid $list-border-color;
   }
 
-  li:last-child {
+  > li:last-child {
     border-right: 0;
   }
 }
@@ -57,12 +56,12 @@
 .breadcrumb {
   padding: $list-padding-y $list-padding-x;
 
-  li {
+  > li {
     display: inline-block;
 
     + li::before {
       display: inline-block;
-      padding-right: $list-padding-x;
+      margin-right: $breadcrumb-space;
       content: "#{$breadcrumb-separator}";
     }
   }

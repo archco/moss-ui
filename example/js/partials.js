@@ -97,7 +97,7 @@ export function elementUtil() {
 
   // filter list
   eu.addListener('#input-filter-list', 'keyup', (e) => {
-    eu.filter('#filter-list li', e.currentTarget.value);
+    eu.filter('#filter-list li', e.currentTarget.value, { action: 'hideOthers' });
   });
 
   eu.addListener('#btn-sort-list', 'click', () => {

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG</title>
+    <link rel="stylesheet" href="../../dist/moss.css">
+    <link rel="stylesheet" href="example.css">
+    <style>
+      aside { position: relative; }
+      aside .menu { overflow: auto; }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header class="d-flex justify-content-center align-items-center bg-color-primary" style="height:100px;">
+        <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI <span class='moss-version'></span></a></h1>
+      </header>
+      <navbar class="sticky-top shadow-near" align="end">
+        <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
+        <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
+          <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
+          <nav-item href="vue.html" text="Vue"></nav-item>
+          <nav-item href="svg.html" text="SVG"></nav-item>
+          <nav-item>
+            <dropdown toggle="toggle" placement="bottom-end">
+              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
+            </dropdown>
+          </nav-item>
+        </navbar-nav>
+      </navbar>
+      <div class="row">
+        <aside class="col-md-2 hide-only-mobile">
+          <ul class="menu list fixed">
+            <li is="anchored-tag" tag="li">Icons</li>
+          </ul>
+        </aside>
+        <section class="col-md-10">
+          <anchored-tag tag="h1" owned>Icons</anchored-tag>
+          <h2>Default usage</h2>
+          <div class="my-4" style="font-size:3em;"><i class="moss-icon" id="svg-arrow-example"></i><i class="moss-icon" id="svg-caret-example"></i><i class="moss-icon" id="svg-close-example"></i></div>
+          <h2>Icon component</h2>
+          <icon class="color-danger" name="arrow-down"></icon><span> hello world</span>
+          <icon class="color-success" name="caret-up"></icon><span class="d-inline-block">InlineBlock</span>
+          <icon class="bg-color-dark" name="close" style="font-size:3em;border-radius:50%;"></icon>
+          <icon class="bg-color-warning" name="check" style="font-size:2em;"></icon>
+          <icon class="bg-color-link" name="search" style="font-size:2em;"></icon>
+          <h2>Icon list</h2>
+          <icon-list></icon-list>
+        </section>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <h3>Footer content</h3>
+              <p>footer content here..</p>
+            </div>
+            <div class="col-6">
+              <h3>Links</h3>
+              <ul class="list-horizontal">
+                <li><a href="#">Link1</a></li>
+                <li><a href="#">Link2</a></li>
+                <li><a href="#">Link3</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">copyright &copy; <span id='copyright-year'>2017</span> MOSS-UI all rights reserved.</div>
+      </footer>
+      <scroll-to :duration="800" :offset="400"></scroll-to>
+      <toast></toast>
+    </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+    <script src="../../dist/moss.js"></script>
+    <script src="./example.js"></script>
+  </body>
+</html>

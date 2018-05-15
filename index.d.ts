@@ -1,4 +1,6 @@
-// Type definitions for moss-ui v0.6.0
+/// <reference path="./src/js/lib/methods/scrollTo.d.ts" />
+
+// Type definitions for moss-ui v0.6.2
 // @link https://github.com/archco/moss-ui
 
 import {
@@ -78,6 +80,17 @@ export namespace Svg {
 }
 
 export namespace Util {
+
+  /**
+   * Scroll to destination with transition.
+   *
+   * @export
+   * @param {ScrollTo.DestType} dest
+   * @param {ScrollTo.ScrollToOptions} [options={}]
+   * @returns {Promise<void>}
+   */
+  export function scrollTo(dest: ScrollTo.DestType, options?: ScrollTo.ScrollToOptions): Promise<void>;
+
   /**
    * location.search to Object.
    *
