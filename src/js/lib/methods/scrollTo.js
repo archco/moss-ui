@@ -37,8 +37,7 @@ export default function scrollTo(
         return;
       }
 
-      const scroll = () => {
-        const now = performance.now();
+      const scroll = (now) => {
         const timeRatio = Math.min(1, (now - startTime) / duration);
         const outputRatio = timeFn(timeRatio);
 
@@ -55,7 +54,7 @@ export default function scrollTo(
         requestAnimationFrame(scroll);
       }
 
-      scroll();
+      scroll(performance.now());
     } catch (error) {
       reject(error);
     }
