@@ -19,7 +19,7 @@
 
 <script>
 import ElementMeasurer from 'element-measurer';
-import { scrollIt, makeIconHtml } from '../lib/util';
+import { scrollTo, makeIconHtml } from '../lib/util';
 
 export default {
   props: {
@@ -29,7 +29,7 @@ export default {
     },
     easing: {
       type: String,
-      default: 'easeOutCubic',
+      default: 'easeInOut',
     },
     offset: {
       type: Number,
@@ -75,10 +75,10 @@ export default {
   },
   methods: {
     toTop() {
-      scrollIt(0, this.duration, this.easing);
+      scrollTo(0, { duration: this.duration, easing: this.easing });
     },
     toBottom() {
-      scrollIt(this.docSize.maxScrollTop, this.duration, this.easing);
+      scrollTo(this.docSize.maxScrollTop, { duration: this.duration, easing: this.easing });
     },
     onScroll() {
       this.showToTop = this.docSize.scrollTop >= this.offset;

@@ -11,10 +11,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Added
+
+- Write document about [the Moss object](https://github.com/archco/moss-ui/blob/master/docs/moss-object.md). #119
+- Add a new util method `scrollTo()`. #123
+
+### Changed
+
+- In `scroll-to`, replace the `scrollIt()` method to `scrollTo()`. Therefore, you need to modify the value of `easing` property. #123
+
 ### Fixed
 
 - Fixed list style: Changes css selector `ul.list li` to `ul.list > li`. #121
 - Fixed `.container` style. #120
+
+### Deprecated
+
+- Deprecates `scrollIt()` util method, use `scrollTo()` instead. #123
 
 ## [0.6.1][] - 2018-04-24
 

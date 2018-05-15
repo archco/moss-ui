@@ -62,7 +62,7 @@ export default function scrollTo(
 }
 
 /**
- * Get scroll top destination.
+ * Get scroll destination.
  *
  * @param {ScrollTo.DestType} dest
  * @param {ElementMeasurer} baseSize
@@ -87,5 +87,5 @@ function getScrollDest(dest, baseSize) {
   const scrollLeftDest = (baseSize.scrollWidth - offsetLeft < baseSize.clientWidth)
     ? baseSize.scrollWidth - baseSize.clientWidth
     : offsetLeft;
-  return [scrollTopDest, scrollLeftDest].map(x => Math.round(x));
+  return [scrollTopDest, scrollLeftDest].map(x => Math.max(Math.round(x), 0));
 }

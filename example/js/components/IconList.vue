@@ -35,12 +35,6 @@ export default {
       filter('.icon-list > .icon-item', val, { action: 'hideOthers' });
     },
   },
-  mounted() {
-    const items = document.querySelectorAll('.icon-list > .icon-item');
-
-    console.log(items);
-    items.forEach(item => console.log(item.textContent));
-  }
 }
 </script>
 

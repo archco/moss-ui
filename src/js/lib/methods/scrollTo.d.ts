@@ -9,13 +9,13 @@ export interface ScrollToOptions {
   /** Transition duration time. unit is milliseconds. If this value sets 0, then scroll position sets destination immediately.  */
   duration?: number;
 
-  /** Specify easing type. available common keywords is `linear`, `ease`, `easIn`, `easeOut` or `easeInOut`. default value is `linear`. */
+  /** Specify an easing type. available common keywords is `linear`, `ease`, `easIn`, `easeOut` or `easeInOut`. default value is `linear`. */
   easing?: string;
 
-  /** Specify callback function that will called after scroll moved done. */
+  /** Specify a callback function that will called after scroll moved done. */
   callback?: () => void;
 
-  /** Specify base element. default is `document.documentElement`. If you want to move scroll inside element such as has style `overflow: auto;`, then you should set this value to target element. */
+  /** Specify the base element. default is `document.documentElement`. If you want to move scrolling within an element with has style such as `overflow: auto;`, then you should set this value to target element. */
   base?: string|HTMLElement;
 }
 
