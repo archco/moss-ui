@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Components</title>
     <link rel="stylesheet" href="./dist/moss.css">
+    <link rel="stylesheet" href="example.css">
     <style>
       aside { position: relative; }
       aside .menu { overflow: auto; }
@@ -21,6 +22,7 @@
         <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
           <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
           <nav-item href="vue.html" text="Vue"></nav-item>
+          <nav-item href="svg.html" text="SVG"></nav-item>
           <nav-item>
             <dropdown toggle="toggle" placement="bottom-end">
               <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
@@ -349,7 +351,7 @@
           <anchored-tag tag="h1" owned>NavDrawer</anchored-tag>
           <p>It's the navigation drawer that using horizontal-collapse.</p>
           <button class="btn info" v-collapse:drawer01>Open Drawer</button>
-          <nav-drawer id="drawer01">
+          <nav-drawer id="drawer01" @state="eventTest">
             <div class="nav-drawer-header">
               <button class="btn-text" v-collapse:drawer01.hide>
                 <icon name="close"></icon>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SCSS Parts</title>
     <link rel="stylesheet" href="./dist/moss.css">
+    <link rel="stylesheet" href="example.css">
     <style>
       aside { position: relative; }
       aside .menu { overflow: auto; }
@@ -21,6 +22,7 @@
         <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
           <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
           <nav-item href="vue.html" text="Vue"></nav-item>
+          <nav-item href="svg.html" text="SVG"></nav-item>
           <nav-item>
             <dropdown toggle="toggle" placement="bottom-end">
               <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
@@ -799,6 +801,24 @@
             <li><a href="#">scss</a></li>
             <li><a href="#">components</a></li>
             <li>list</li>
+          </ul>
+          <h2>Collaborations</h2>
+          <ul class="list-group hover">
+            <li>item1</li>
+            <li>item2</li>
+            <li>
+              <ul class="list">
+                <li>sub1</li>
+                <li>sub2</li>
+              </ul>
+            </li>
+            <li>
+              <ul class="breadcrumb">
+                <li>scss</li>
+                <li>parts</li>
+                <li>list</li>
+              </ul>
+            </li>
           </ul>
           <anchored-tag tag="h1" owned>Loader</anchored-tag>
           <div class="d-flex justify-content-center pad bg-color-success">
