@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - Write document about [the Moss object](https://github.com/archco/moss-ui/blob/master/docs/moss-object.md). #119
-- Add a new util method `scrollTo()`. #123
+- Add a new util method [`scrollTo()`](https://github.com/archco/moss-ui/blob/master/docs/js/util.md#scrollto). #123
 
 ### Changed
 
