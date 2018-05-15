@@ -2,9 +2,19 @@
 
 > source: [js/lib/util](../../src/js/lib/util.js)
 
-The utility library for javascript.
+The javascript library that includes utility methods.
 
-## Usage
+### Table of contents
+
+- [Basic usage](#basic-usage)
+- [Functions](#functions)
+  - [locationSearchToObject](#locationsearchtoobject)
+  - [searchToObject](#searchtoobject)
+  - [isContains](#iscontains)
+  - [isEmpty](#isempty)
+  - [isMobileSize](#ismobilesize)
+
+## Basic usage
 
 ``` js
 // Import member from package.
@@ -19,7 +29,7 @@ let isMobile = window.Moss.lib.Util.isMobileSize();
 
 ### locationSearchToObject
 
-location.search to Object.
+Converts current `location.search` to object.
 
 - Syntax
 
@@ -31,8 +41,7 @@ location.search to Object.
 
 ### searchToObject
 
-> [HTMLAnchorElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement)  
-Convert HTMLAnchorElement.search to object.
+Converts [`HTMLHyperlinkElementUtils.search`] to object.
 
 - Syntax
 
@@ -40,8 +49,8 @@ Convert HTMLAnchorElement.search to object.
   let obj = Util.searchToObject(search);
   ```
 
-- Param `String` search - value of `HTMLAnchorElement.search`
-- Return `Object|null`
+- Param `string` search - value of [`HTMLHyperlinkElementUtils.search`]
+- Return `object|null`
 
 ### isContains
 
@@ -141,3 +150,41 @@ Capitalize first letters.
 
 - Param `string` str
 - Returns `string`
+
+### scrollTo
+
+Scroll to destination with transition.
+
+- Syntax
+
+  ``` js
+  Util.scrollTo(dest, options = {});
+  ```
+
+- Param `DestType` dest - Destination types. If it's `number` means scrollTop destination. or if it's `[number, number]` means [scrollTop, scrollLeft] destination. If it's `string` or `HTMLElement`, then sets destination as Element.
+
+  ``` ts
+  type DestType = number|[number, number]|string|HTMLElement;
+  ```
+
+- Param `ScrollTopOptions` [options={}]
+
+  ``` ts
+  interface ScrollToOptions {
+    /** Transition duration time. unit is milliseconds. If this value sets 0, then scroll position sets destination immediately.  */
+    duration?: number;
+
+    /** Specify an easing type. available common keywords is `linear`, `ease`, `easIn`, `easeOut` or `easeInOut`. default value is `linear`. */
+    easing?: string;
+
+    /** Specify a callback function that will called after scroll moved done. */
+    callback?: () => void;
+
+    /** Specify the base element. default is `document.documentElement`. If you want to move scrolling within an element with has style such as `overflow: auto;`, then you should set this value to target element. */
+    base?: string|HTMLElement;
+  }
+  ```
+
+- Returns `Promise<void>`
+
+[`HTMLHyperlinkElementUtils.search`]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/search

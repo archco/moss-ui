@@ -3,7 +3,7 @@ export { default as scrollTo } from './methods/scrollTo';
 export * from './methods/icon';
 
 /**
- * location.search to Object.
+ * Converts current `location.search` to object.
  *
  * @return {object|null}
  */
@@ -12,7 +12,7 @@ export function locationSearchToObject() {
 }
 
 /**
- * searchToObject
+ * Converts `HTMLAnchorElement.search` to object.
  *
  * @param  {string} search HTMLAnchorElement.search
  * @return {object|null}
@@ -33,7 +33,7 @@ export function searchToObject(search) {
 }
 
 /**
- * returns true if 'big' contains 'small'.
+ * Returns true if 'big' contains 'small'.
  *
  * @param  {any}  big
  * @param  {any}  small
