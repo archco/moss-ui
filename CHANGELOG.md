@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+## [0.6.2][] - 2018-05-15
+
 ### Added
 
 - Write document about [the Moss object](https://github.com/archco/moss-ui/blob/master/docs/moss-object.md). #119
@@ -241,7 +243,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Remove unnecessary part "aside.scss". #60
 - Remove deprecated scss mixin, `flex-container()`. instead use `flex-container-align`. #52
 
-[Unreleased]: https://github.com/archco/moss-ui/compare/v0.6.1...HEAD
+[Unreleased]: https://github.com/archco/moss-ui/compare/v0.6.2...HEAD
+[0.6.2]: https://github.com/archco/moss-ui/compare/v0.6.1...v0.6.2
 [0.6.1]: https://github.com/archco/moss-ui/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/archco/moss-ui/compare/v0.5.3...v0.6.0
 [0.5.3]: https://github.com/archco/moss-ui/compare/v0.5.2...v0.5.3

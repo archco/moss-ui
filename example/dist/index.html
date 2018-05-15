@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moss-UI</title>
     <link rel="stylesheet" href="../../dist/moss.css">
+    <link rel="stylesheet" href="example.css">
     <style>
       aside { position: relative; }
       aside .menu { overflow: auto; }
@@ -21,6 +22,7 @@
         <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
           <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
           <nav-item href="vue.html" text="Vue"></nav-item>
+          <nav-item href="svg.html" text="SVG"></nav-item>
           <nav-item>
             <dropdown toggle="toggle" placement="bottom-end">
               <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
@@ -43,6 +45,146 @@
         </div>
       </div>
       <section class="pad">
+        <anchored-tag tag="h1" owned>Grid</anchored-tag>
+        <h2>Container</h2>
+        <div class="container bg-color-secondary">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <h2>Default Grid</h2>
+        <div class="row">
+          <div class="col-1 box-line bg-color-primary">col-1</div>
+          <div class="col-1 box-line bg-color-primary">col-1</div>
+          <div class="col-1 box-line bg-color-primary">col-1</div>
+          <div class="col-1 box-line bg-color-primary">col-1</div>
+          <div class="col-1 box-line bg-color-primary">col-1</div>
+          <div class="col-1 box-line bg-color-primary">col-1</div>
+          <div class="col-1 box-line bg-color-primary">col-1</div>
+          <div class="col-1 box-line bg-color-primary">col-1</div>
+          <div class="col-1 box-line bg-color-primary">col-1</div>
+          <div class="col-1 box-line bg-color-primary">col-1</div>
+          <div class="col-1 box-line bg-color-primary">col-1</div>
+          <div class="col-1 box-line bg-color-primary">col-1</div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-4 bg-color-primary">
+              <p>4/12 columns</p>
+            </div>
+            <div class="col-8 bg-color-secondary">
+              <p>8/12 columns</p>
+            </div>
+          </div>
+        </div>
+        <h2>Mobile Grid</h2>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 bg-color-primary">
+              <p>col-sm-6</p>
+            </div>
+            <div class="col-sm-6 bg-color-secondary">
+              <p>col-sm-6</p>
+            </div>
+          </div>
+        </div>
+        <h2>Tablet Grid</h2>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 bg-color-secondary">
+              <p>col-md-6</p>
+            </div>
+            <div class="col-md-5 bg-color-primary">
+              <p>col-md-6</p>
+            </div>
+            <div class="col-md-4 bg-color-secondary">
+              <p>col-md-6</p>
+            </div>
+          </div>
+        </div>
+        <h2>Desktop Grid</h2>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 bg-color-secondary">
+              <p>col-lg-6</p>
+            </div>
+            <div class="col-lg-3 col-md-6 bg-color-primary">
+              <p>col-lg-6</p>
+            </div>
+            <div class="col-lg-3 col-md-6 bg-color-secondary">
+              <p>col-lg-6</p>
+            </div>
+            <div class="col-lg-3 col-md-6 bg-color-primary">
+              <p>col-lg-6</p>
+            </div>
+          </div>
+        </div>
+        <h3>Equal-width</h3>
+        <div class="container">
+          <div class="row group">
+            <div class="col bg-color-success">1 of 2</div>
+            <div class="col bg-color-info">1 of 2</div>
+          </div>
+          <div class="row group">
+            <div class="col bg-color-success">1 of 3</div>
+            <div class="col bg-color-info">1 of 3</div>
+            <div class="col bg-color-success">1 of 3</div>
+          </div>
+        </div>
+        <h3>Setting one column width</h3>
+        <div class="container">
+          <div class="row">
+            <div class="col bg-color-success">1 of 3</div>
+            <div class="col-6 bg-color-info">2 of 3 (half of full width)</div>
+            <div class="col bg-color-success">3 of 3</div>
+          </div>
+        </div>
+        <h3>Variable width by content</h3>
+        <div class="container">
+          <div class="row">
+            <div class="col bg-color-success">1 of 3</div>
+            <div class="col-auto bg-color-info">Variable width by content.</div>
+            <div class="col bg-color-success">3 of 3</div>
+          </div>
+        </div>
+        <h3>Equal-width multi-row</h3>
+        <div class="container">
+          <div class="row">
+            <div class="col bg-color-success">col</div>
+            <div class="col bg-color-info">col</div>
+            <div class="w-100"></div>
+            <div class="col bg-color-info">col</div>
+            <div class="col bg-color-success">col</div>
+          </div>
+        </div>
+        <h3>No gutters</h3>
+        <div class="container debug-line">
+          <div class="row group">
+            <div class="col">gutters</div>
+            <div class="col">gutters</div>
+          </div>
+          <div class="row no-gutters group">
+            <div class="col">no-gutters</div>
+            <div class="col">no-gutters</div>
+          </div>
+        </div>
+        <h3>Column wrapping</h3>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 bg-color-success">col-sm-8</div>
+            <div class="col-sm-6 bg-color-info">col-sm-6</div>
+            <div class="col-sm-4 bg-color-warning">col-sm-4</div>
+          </div>
+        </div>
+        <h3>Offsetting columns</h3>
+        <div class="row">
+          <div class="col-md-4 bg-color-primary">col-md-4</div>
+          <div class="col-md-4 offset-md-4 bg-color-secondary">col-md-4 offset-md-4</div>
+        </div>
+        <h3>Order classes</h3>
+        <div class="row">
+          <div class="col bg-color-primary">First, but unordered</div>
+          <div class="col order-12 bg-color-secondary">Second but last</div>
+          <div class="col order-1 bg-color-info">Third, but first</div>
+        </div>
         <anchored-tag tag="h1" owned>NavDrawer</anchored-tag>
         <p>It's the navigation drawer that using horizontal-collapse.</p>
         <button class="btn info" v-collapse:drawer01>Open Drawer</button>
@@ -61,108 +203,17 @@
             <h4 class="menu-header">Sub Menu</h4><a class="menu-item" href="#" disabled>disabled item</a><a class="menu-item" href="#">item5</a><a class="menu-item" href="#">item6</a>
           </div>
         </nav-drawer>
-        <anchored-tag tag="h1" owned>Code</anchored-tag>
-        <p>Display inline or block fragment of computer code.</p>
-        <h2>Inline code</h2>
-        <p>
-          It is inline <code>code</code>.<br>
-          <code>HTML</code>, <code>CSS</code>, <code>JavaScript</code><br>
-          <a href="#"><code>code</code></a>  in link
-        </p>
-        <h2>Code blocks</h2>
-        <pre><code>function getTarget() {
- const elm = document.querySelector('#target');
- return elm;
-}</code></pre>
-        <h2>Variables</h2>
-        <p class="pad"><var>x</var> = <var>y</var> + 2 </p></p>
-        <h2>User input</h2>
-        <p class="pad"><kbd>ctrl + p</kbd> and <kbd>Enter</kbd></p>
-        <h2>Sample output</h2>
-        <p class="pad"><samp>This text is meant to be treated as sample output from a computer program.</samp></p>
         <anchored-tag tag="h1" owned>Icon</anchored-tag>
-        <h2>SVG default usage</h2>
-        <div class="pad" style="font-size:3em;"><i class="moss-icon" id="svg-arrow-example"></i><i class="moss-icon" id="svg-caret-example"></i><i class="moss-icon" id="svg-close-example"></i></div>
+        <h2>Default usage</h2>
+        <div class="my-4" style="font-size:3em;"><i class="moss-icon" id="svg-arrow-example"></i><i class="moss-icon" id="svg-caret-example"></i><i class="moss-icon" id="svg-close-example"></i></div>
         <h2>Icon component</h2>
         <icon class="color-danger" name="arrow-down"></icon><span> hello world</span>
         <icon class="color-success" name="caret-up"></icon><span class="d-inline-block">InlineBlock</span>
         <icon class="bg-color-dark" name="close" style="font-size:3em;border-radius:50%;"></icon>
         <icon class="bg-color-warning" name="check" style="font-size:2em;"></icon>
         <icon class="bg-color-link" name="search" style="font-size:2em;"></icon>
-        <anchored-tag tag="h1" owned>Collapse</anchored-tag>
-        <h2>Default</h2>
-        <button class="btn default" v-collapse:test-collapse>v-collapse</button>
-        <div class="pad bg-color-primary" is="collapse-toggle" target="test-collapse">CollapseToggle</div>
-        <collapse id="test-collapse" expanded>
-          <h3>test collapse</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </collapse>
-        <h2>Accordion</h2>
-        <button class="btn info" v-accordion:accordion2="'accordion-test'">v-accordion</button>
-        <ul class="list-group">
-          <li>
-            <div is="collapse-toggle" target="accordion1" accordion="accordion-test">accordion one</div>
-            <collapse id="accordion1" accordion="accordion-test" expanded>
-              <h3>accordion1</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <button v-collapse:test00>nested</button>
-              <collapse id="test00">
-                <h4>Nested</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </collapse>
-            </collapse>
-          </li>
-          <li>
-            <div is="collapse-toggle" target="accordion2" accordion="accordion-test">accordion two</div>
-            <collapse id="accordion2" accordion="accordion-test">
-              <h3>accordion2</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </collapse>
-          </li>
-          <li>
-            <div is="collapse-toggle" target="accordion3" accordion="accordion-test">accordion three</div>
-            <collapse id="accordion3" accordion="accordion-test">
-              <h3>accordion3</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </collapse>
-          </li>
-        </ul>
-        <h2>Horizontal Collapse</h2>
-        <button class="btn dark" v-collapse:horizontal-collapse>toggle</button>
-        <collapse id="horizontal-collapse" direction="horizontal">
-          <h3>test collapse</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </collapse>
-        <h3>with Grid</h3>
-        <div class="row">
-          <collapse class="col-2 bg-color-shade" id="aside-collapse1" direction="horizontal" expanded>
-            <div class="pad">
-              <div>hello</div>
-              <div>world</div>
-            </div>
-          </collapse>
-          <div class="col">
-            <div class="pad">
-              <button class="btn-flat dark" v-collapse:aside-collapse1>Toggle aside1</button>
-              <button class="btn-flat info" v-collapse:aside-collapse2>Toggle aside2</button>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <collapse class="col-2 bg-color-info" id="aside-collapse2" direction="horizontal" expanded>
-            <div class="pad">
-              <div>hello</div>
-              <div>world</div>
-            </div>
-          </collapse>
-        </div>
-        <h2>Collapse Toggle</h2>
-        <collapse-toggle class="pad bg-color-shade" target="test-collapse2">toggle</collapse-toggle><span class="d-inline-block bg-color-info" is="collapse-toggle" tag="span" target="test-collapse2">toggle by span</span>
-        <button class="btn" is="collapse-toggle" tag="button" target="test-collapse2">toggle by button</button>
-        <collapse id="test-collapse2">
-          <h3>test collapse</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </collapse>
+        <h2>Icon list</h2>
+        <icon-list></icon-list>
       </section>
       <footer class="footer">
         <div class="container">

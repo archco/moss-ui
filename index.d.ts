@@ -1,6 +1,6 @@
 /// <reference path="./src/js/lib/methods/scrollTo.d.ts" />
 
-// Type definitions for moss-ui v0.6.0
+// Type definitions for moss-ui v0.6.2
 // @link https://github.com/archco/moss-ui
 
 import {
