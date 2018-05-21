@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Changed
+
+- Update moo-color to [v0.2.0](https://github.com/archco/moo-color/releases/tag/v0.2.0)
+
 ## [0.6.2][] - 2018-05-15
 
 ### Added
