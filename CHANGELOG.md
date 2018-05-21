@@ -11,9 +11,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+## [0.6.3][] - 2018-05-21
+
 ### Changed
 
 - Update moo-color to [v0.2.0](https://github.com/archco/moo-color/releases/tag/v0.2.0)
+
+### Fixed
+
+- Fix style problem in carousel component. #125
 
 ## [0.6.2][] - 2018-05-15
 
@@ -247,7 +253,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Remove unnecessary part "aside.scss". #60
 - Remove deprecated scss mixin, `flex-container()`. instead use `flex-container-align`. #52
 
-[Unreleased]: https://github.com/archco/moss-ui/compare/v0.6.2...HEAD
+[Unreleased]: https://github.com/archco/moss-ui/compare/v0.6.3...HEAD
+[0.6.3]: https://github.com/archco/moss-ui/compare/v0.6.2...v0.6.3
 [0.6.2]: https://github.com/archco/moss-ui/compare/v0.6.1...v0.6.2
 [0.6.1]: https://github.com/archco/moss-ui/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/archco/moss-ui/compare/v0.5.3...v0.6.0
