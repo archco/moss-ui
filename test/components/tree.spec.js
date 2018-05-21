@@ -1,4 +1,4 @@
-import { createLocalVue, shallow } from '@vue/test-utils';
+import { createLocalVue, shallowMount } from '@vue/test-utils';
 import Tree from '../../src/js/components/tree.vue';
 import TreeItem from '../../src/js/components/tree-item.vue';
 
@@ -40,7 +40,7 @@ const treeItemData = {
 
 describe('#Tree', () => {
   it('can mount.', () => {
-    const wrapper = shallow(Tree, {
+    const wrapper = shallowMount(Tree, {
       propsData: {
         items: treeData,
       },
@@ -57,7 +57,7 @@ describe('#TreeItem', () => {
 
   localVue.component('tree', Tree);
 
-  const wrapper = shallow(TreeItem, {
+  const wrapper = shallowMount(TreeItem, {
     localVue,
     propsData: {
       item: treeItemData,

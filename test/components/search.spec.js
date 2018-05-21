@@ -1,4 +1,5 @@
-import { mount } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
+import flushPromises from 'flush-promises';
 import Search from '../../src/js/components/search.vue';
 import collection from '../../example/js/data/collection.json';
 
@@ -8,7 +9,7 @@ const fakePopper = {
 };
 
 describe('#Search', () => {
-  const wrapper = mount(Search, {
+  const wrapper = shallowMount(Search, {
     propsData: {
       collection,
       searchOptions: {
@@ -37,34 +38,40 @@ describe('#Search', () => {
   });
 
   describe('#Set suggestions.', () => {
-    const wrapper2 = mount(Search, {
+    const wrapper = shallowMount(Search, {
       propsData: {
         // no-collection. -> not use fuse.js
       }
     });
-    wrapper2.vm.$data.popper = fakePopper;
+    wrapper.vm.$data.popper = fakePopper;
 
-    it('`input-change` event.', (done) => {
-      wrapper2.vm.$data.input = 'test';
-      wrapper2.vm.$nextTick().then(() => {
-        expect(wrapper2.emitted('input-change')).toBeTruthy();
-        const [inputData] = wrapper2.emitted('input-change')[0];
-        expect(inputData.input).toEqual('test');
-        done();
-      });
+    it('`input-change` event.', async () => {
+      wrapper.vm.$data.input = 'test';
+      await flushPromises();
+      expect(wrapper.emitted('input-change')).toBeTruthy();
+      const [inputData] = wrapper.emitted('input-change')[0];
+      expect(inputData.input).toEqual('test');
     });
 
-    it('set data `suggestions`.', (done) => {
-      wrapper2.setData({ suggestions: [
+    it('set data `suggestions`.', async () => {
+      /**
+       * FIXME: Bug in vue-test-utils v1.0.0-beta.16
+       * @see https://github.com/vuejs/vue-test-utils/issues/605
+       * */
+      // wrapper.setData({ suggestions: [
+      //   { name: 'test-1' },
+      //   { name: 'test-2' },
+      //   { name: 'test-3' },
+      // ]});
+      const newSuggestions = [
         { name: 'test-1' },
         { name: 'test-2' },
         { name: 'test-3' },
-      ]});
-      wrapper2.vm.$nextTick().then(() => {
-        expect(wrapper2.vm.result.length).toBe(3);
-        expect(wrapper2.vm.$data.showResult).toBe(true);
-        done();
-      });
+      ];
+      wrapper.vm.setResult(newSuggestions);
+      await flushPromises();
+      expect(wrapper.vm.result.length).toBe(3);
+      expect(wrapper.vm.$data.showResult).toBe(true);
     });
   });
 });
