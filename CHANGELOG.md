@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Deprecated
+
+- The switch components `input-check` and `input-radio` are deprecated. Recommend you use default tags or other external plugins. #104
+
 ## [0.6.3][] - 2018-05-21
 
 ### Changed
