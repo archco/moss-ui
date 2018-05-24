@@ -13,7 +13,7 @@ The javascript library that includes utility methods.
   - [isContains](#iscontains)
   - [isEmpty](#isempty)
   - [isMobileSize](#ismobilesize)
-  - [scrollTo](#scrollTo)
+  - [scrollTo](#scrollto)
 
 ## Basic usage
 
