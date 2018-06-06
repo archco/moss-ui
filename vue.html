@@ -210,7 +210,7 @@
           </dropdown>
           <h3>Flip and PreventOverflow mode</h3>
           <div class="d-flex justify-content-center align-items-center" style="width:100%;">
-            <div class="pad bg-color-dark" style="width:300px;height:300px;overflow:auto;">
+            <div class="pad bg-color-dark" id="dropdown-box-1" style="width:300px;height:300px;overflow:auto;">
               <div class="d-flex flex-column justify-content-center align-items-center" style="width:600px;height:600px;">
                 <div>
                   <dropdown toggle="toggle" flip="on" prevent-overflow="on">
@@ -300,11 +300,24 @@
           <h3>with Actions</h3>
           <button class="btn" onclick="Moss.modal.toggle(&quot;test-modal3&quot;)">Trigger</button>
           <modal name="test-modal3" title="with Actions">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="p-3">
+              <input name="title" placeholder="test me..">
+            </div>
             <div slot="actions">
               <button class="btn default" data-toggle="close">Cancel</button>
               <button class="btn success">OK</button>
             </div>
+          </modal>
+          <h3>Custom header</h3>
+          <button class="btn danger" onclick="Moss.modal.show(&quot;test-modal5&quot;)">Open modal</button>
+          <modal name="test-modal5" title="fake title" effect="fade">
+            <div class="modal-header bg-color-shade" slot="header">
+              <h3 class="color-danger">Custom Title</h3>
+              <button class="btn-text" data-toggle="close">
+                <icon name="close"></icon>
+              </button>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </modal>
           <h3>Icon close button</h3>
           <button class="btn info" onclick="Moss.modal.toggle(&quot;test-modal4&quot;)">Trigger</button>
@@ -313,6 +326,19 @@
             <div slot="actions">
               <button class="btn success" onclick="Moss.modal.close(&quot;test-modal4&quot;)">Okay</button>
             </div>
+          </modal>
+          <h3>Transition Effects</h3>
+          <button class="btn default" onclick="Moss.modal.show(&quot;test-modal6&quot;)">from-top (default)</button>
+          <modal name="test-modal6" title="From-top" close-on>
+            <p class="text-center"><code>from-top</code> effect.</p>
+          </modal>
+          <button class="btn info" onclick="Moss.modal.show(&quot;test-modal7&quot;)">fade</button>
+          <modal name="test-modal7" title="Fade" effect="fade" close-on>
+            <p class="text-center"><code>fade</code> effect.</p>
+          </modal>
+          <button class="btn link" onclick="Moss.modal.show(&quot;test-modal8&quot;)">no-effect</button>
+          <modal name="test-modal8" title="No effect" effect="" close-on>
+            <p class="text-center">No transition effect.</p>
           </modal>
           <anchored-tag tag="h1" owned>Navbar</anchored-tag>
           <h3>Basic</h3>
@@ -471,6 +497,7 @@
             </li>
           </ul>
           <anchored-tag tag="h1" owned>Switch</anchored-tag>
+          <blockquote class="pad danger"><strong>@deprecated in v0.6.x.</strong> Recommend you use default tags or other external plugins.</blockquote>
           <h3>Input Check</h3>
           <input-check class="font-small" name="is-small">small</input-check>
           <input-check name="is-normal">normal</input-check>

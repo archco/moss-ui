@@ -45,175 +45,61 @@
         </div>
       </div>
       <section class="pad">
-        <anchored-tag tag="h1" owned>Grid</anchored-tag>
-        <h2>Container</h2>
-        <div class="container bg-color-secondary">
+        <anchored-tag tag="h1" owned>Modal</anchored-tag>
+        <h3>Basic</h3>
+        <button class="btn warning" onclick="Moss.modal.toggle(&quot;test-modal&quot;)">Trigger</button>
+        <modal name="test-modal">
+          <h3>Test</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <h2>Default Grid</h2>
-        <div class="row">
-          <div class="col-1 box-line bg-color-primary">col-1</div>
-          <div class="col-1 box-line bg-color-primary">col-1</div>
-          <div class="col-1 box-line bg-color-primary">col-1</div>
-          <div class="col-1 box-line bg-color-primary">col-1</div>
-          <div class="col-1 box-line bg-color-primary">col-1</div>
-          <div class="col-1 box-line bg-color-primary">col-1</div>
-          <div class="col-1 box-line bg-color-primary">col-1</div>
-          <div class="col-1 box-line bg-color-primary">col-1</div>
-          <div class="col-1 box-line bg-color-primary">col-1</div>
-          <div class="col-1 box-line bg-color-primary">col-1</div>
-          <div class="col-1 box-line bg-color-primary">col-1</div>
-          <div class="col-1 box-line bg-color-primary">col-1</div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-4 bg-color-primary">
-              <p>4/12 columns</p>
-            </div>
-            <div class="col-8 bg-color-secondary">
-              <p>8/12 columns</p>
-            </div>
+        </modal>
+        <h3>Close when another clicked</h3>
+        <button class="btn success" onclick="Moss.modal.show(&quot;test-modal2&quot;)">Trigger</button>
+        <modal name="test-modal2" title="Close when another clicked" close-on>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </modal>
+        <h3>with Actions</h3>
+        <button class="btn" onclick="Moss.modal.toggle(&quot;test-modal3&quot;)">Trigger</button>
+        <modal name="test-modal3" title="with Actions">
+          <div class="p-3">
+            <input name="title" placeholder="test me..">
           </div>
-        </div>
-        <h2>Mobile Grid</h2>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-6 bg-color-primary">
-              <p>col-sm-6</p>
-            </div>
-            <div class="col-sm-6 bg-color-secondary">
-              <p>col-sm-6</p>
-            </div>
+          <div slot="actions">
+            <button class="btn default" data-toggle="close">Cancel</button>
+            <button class="btn success">OK</button>
           </div>
-        </div>
-        <h2>Tablet Grid</h2>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-3 bg-color-secondary">
-              <p>col-md-6</p>
-            </div>
-            <div class="col-md-5 bg-color-primary">
-              <p>col-md-6</p>
-            </div>
-            <div class="col-md-4 bg-color-secondary">
-              <p>col-md-6</p>
-            </div>
-          </div>
-        </div>
-        <h2>Desktop Grid</h2>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3 col-md-6 bg-color-secondary">
-              <p>col-lg-6</p>
-            </div>
-            <div class="col-lg-3 col-md-6 bg-color-primary">
-              <p>col-lg-6</p>
-            </div>
-            <div class="col-lg-3 col-md-6 bg-color-secondary">
-              <p>col-lg-6</p>
-            </div>
-            <div class="col-lg-3 col-md-6 bg-color-primary">
-              <p>col-lg-6</p>
-            </div>
-          </div>
-        </div>
-        <h3>Equal-width</h3>
-        <div class="container">
-          <div class="row group">
-            <div class="col bg-color-success">1 of 2</div>
-            <div class="col bg-color-info">1 of 2</div>
-          </div>
-          <div class="row group">
-            <div class="col bg-color-success">1 of 3</div>
-            <div class="col bg-color-info">1 of 3</div>
-            <div class="col bg-color-success">1 of 3</div>
-          </div>
-        </div>
-        <h3>Setting one column width</h3>
-        <div class="container">
-          <div class="row">
-            <div class="col bg-color-success">1 of 3</div>
-            <div class="col-6 bg-color-info">2 of 3 (half of full width)</div>
-            <div class="col bg-color-success">3 of 3</div>
-          </div>
-        </div>
-        <h3>Variable width by content</h3>
-        <div class="container">
-          <div class="row">
-            <div class="col bg-color-success">1 of 3</div>
-            <div class="col-auto bg-color-info">Variable width by content.</div>
-            <div class="col bg-color-success">3 of 3</div>
-          </div>
-        </div>
-        <h3>Equal-width multi-row</h3>
-        <div class="container">
-          <div class="row">
-            <div class="col bg-color-success">col</div>
-            <div class="col bg-color-info">col</div>
-            <div class="w-100"></div>
-            <div class="col bg-color-info">col</div>
-            <div class="col bg-color-success">col</div>
-          </div>
-        </div>
-        <h3>No gutters</h3>
-        <div class="container debug-line">
-          <div class="row group">
-            <div class="col">gutters</div>
-            <div class="col">gutters</div>
-          </div>
-          <div class="row no-gutters group">
-            <div class="col">no-gutters</div>
-            <div class="col">no-gutters</div>
-          </div>
-        </div>
-        <h3>Column wrapping</h3>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 bg-color-success">col-sm-8</div>
-            <div class="col-sm-6 bg-color-info">col-sm-6</div>
-            <div class="col-sm-4 bg-color-warning">col-sm-4</div>
-          </div>
-        </div>
-        <h3>Offsetting columns</h3>
-        <div class="row">
-          <div class="col-md-4 bg-color-primary">col-md-4</div>
-          <div class="col-md-4 offset-md-4 bg-color-secondary">col-md-4 offset-md-4</div>
-        </div>
-        <h3>Order classes</h3>
-        <div class="row">
-          <div class="col bg-color-primary">First, but unordered</div>
-          <div class="col order-12 bg-color-secondary">Second but last</div>
-          <div class="col order-1 bg-color-info">Third, but first</div>
-        </div>
-        <anchored-tag tag="h1" owned>NavDrawer</anchored-tag>
-        <p>It's the navigation drawer that using horizontal-collapse.</p>
-        <button class="btn info" v-collapse:drawer01>Open Drawer</button>
-        <nav-drawer id="drawer01" @state="eventTest">
-          <div class="nav-drawer-header">
-            <button class="btn-text" v-collapse:drawer01.hide>
+        </modal>
+        <h3>Custom header</h3>
+        <button class="btn danger" onclick="Moss.modal.show(&quot;test-modal5&quot;)">Open modal</button>
+        <modal name="test-modal5" title="fake title" effect="fade">
+          <div class="modal-header bg-color-shade" slot="header">
+            <h3 class="color-danger">Custom Title</h3>
+            <button class="btn-text" data-toggle="close">
               <icon name="close"></icon>
             </button>
           </div>
-          <div class="nav-drawer-body">
-            <div class="info bg-color-secondary d-flex justify-content-center align-items-center" style="height:150px;">
-              <h2>HELLO</h2>
-            </div>
-            <h3 class="menu-header">Main Menu</h3><a class="menu-item" href="#">item1</a><a class="menu-item active" href="#">item2</a><a class="menu-item" href="#">item3</a>
-            <div class="menu-divider"></div>
-            <h4 class="menu-header">Sub Menu</h4><a class="menu-item" href="#" disabled>disabled item</a><a class="menu-item" href="#">item5</a><a class="menu-item" href="#">item6</a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </modal>
+        <h3>Icon close button</h3>
+        <button class="btn info" onclick="Moss.modal.toggle(&quot;test-modal4&quot;)">Trigger</button>
+        <modal name="test-modal4" title="Icon close button" close-button-html="&lt;i class=&quot;fas fa-times&quot;&gt;&lt;/i&gt;" close-on>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div slot="actions">
+            <button class="btn success" onclick="Moss.modal.close(&quot;test-modal4&quot;)">Okay</button>
           </div>
-        </nav-drawer>
-        <anchored-tag tag="h1" owned>Icon</anchored-tag>
-        <h2>Default usage</h2>
-        <div class="my-4" style="font-size:3em;"><i class="moss-icon" id="svg-arrow-example"></i><i class="moss-icon" id="svg-caret-example"></i><i class="moss-icon" id="svg-close-example"></i></div>
-        <h2>Icon component</h2>
-        <icon class="color-danger" name="arrow-down"></icon><span> hello world</span>
-        <icon class="color-success" name="caret-up"></icon><span class="d-inline-block">InlineBlock</span>
-        <icon class="bg-color-dark" name="close" style="font-size:3em;border-radius:50%;"></icon>
-        <icon class="bg-color-warning" name="check" style="font-size:2em;"></icon>
-        <icon class="bg-color-link" name="search" style="font-size:2em;"></icon>
-        <h2>Icon list</h2>
-        <icon-list></icon-list>
+        </modal>
+        <h3>Transition Effects</h3>
+        <button class="btn default" onclick="Moss.modal.show(&quot;test-modal6&quot;)">from-top (default)</button>
+        <modal name="test-modal6" title="From-top" close-on>
+          <p class="text-center"><code>from-top</code> effect.</p>
+        </modal>
+        <button class="btn info" onclick="Moss.modal.show(&quot;test-modal7&quot;)">fade</button>
+        <modal name="test-modal7" title="Fade" effect="fade" close-on>
+          <p class="text-center"><code>fade</code> effect.</p>
+        </modal>
+        <button class="btn link" onclick="Moss.modal.show(&quot;test-modal8&quot;)">no-effect</button>
+        <modal name="test-modal8" title="No effect" effect="" close-on>
+          <p class="text-center">No transition effect.</p>
+        </modal>
       </section>
       <footer class="footer">
         <div class="container">
