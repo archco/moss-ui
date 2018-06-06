@@ -9,15 +9,6 @@ button(class='btn success' onclick='Moss.modal.show("test-modal2")') Trigger
 modal(name='test-modal2' title='Close when another clicked' close-on)
   p=lorem
 
-h3 Set custom header
-button.btn.danger(onclick='Moss.modal.show("test-modal5")') Open modal
-modal(name='test-modal5' title='fake title' effect='fade')
-  div.modal-header(slot='header')
-    h3.color-danger Custom Title
-    button.btn-text(data-toggle='close')
-      icon(name='close')
-  p=lorem
-
 h3 with Actions
 button(class='btn' onclick='Moss.modal.toggle("test-modal3")') Trigger
 modal(name='test-modal3' title='with Actions')
@@ -26,6 +17,15 @@ modal(name='test-modal3' title='with Actions')
   div(slot='actions')
     button(class='btn default' data-toggle='close') Cancel
     button(class='btn success') OK
+
+h3 Custom header
+button.btn.danger(onclick='Moss.modal.show("test-modal5")') Open modal
+modal(name='test-modal5' title='fake title' effect='fade')
+  div.modal-header.bg-color-shade(slot='header')
+    h3.color-danger Custom Title
+    button.btn-text(data-toggle='close')
+      icon(name='close')
+  p=lorem
 
 h3 Icon close button
 button(class='btn info' onclick='Moss.modal.toggle("test-modal4")') Trigger

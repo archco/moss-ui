@@ -11,6 +11,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Changed
+
+- Improved modal. #126
+  - Now available set custom header optionally via `header` slot. [modal#custom-header](https://github.com/archco/moss-ui/blob/master/docs/js/modal.md#custom-header)
+  - Add transition effect `fade`.
+  - Add scss-variable `$modal-effect-duration`.
+
+### Fixed
+
+- Fix bug in modal: In `keydown` event handler, It has some situation that `event.key` is not exists. #126, (073abe3e6a38af64fe1c90afc3cfc625f7b6765e)
+- Fix bug in modal: hide modal content during page loading. #126, (ab307cbdf5c4584f7781f6a948406cc9ce7adcc4)
+
 ### Deprecated
 
 - The switch components `input-check` and `input-radio` are deprecated. Recommend you use default tags or other external plugins. #104
