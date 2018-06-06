@@ -46,17 +46,32 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
 /******/ 		}
 /******/ 	};
 /******/
 /******/ 	// define __esModule on exports
 /******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
 /******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -913,6 +928,7 @@ exports.default = {
     }
   },
   mounted: function mounted() {
+    console.warn('"input-check" component deprecated in v0.6.x. Recommend you use default tags or other external plugins.');
     if (this.checked && !this.state) {
       this.toggle();
     }
@@ -1026,6 +1042,7 @@ exports.default = {
     }
   },
   mounted: function mounted() {
+    console.warn('"input-radio" component deprecated in v0.6.x. Recommend you use default tags or other external plugins.');
     if (this.checked && !this.state) {
       this.toggle();
     }
@@ -1254,6 +1271,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
 
 exports.default = {
   components: { CloseButton: _closeButton2.default },
@@ -1317,7 +1336,7 @@ exports.default = {
       }
     },
     onKeydown: function onKeydown(event) {
-      if (this.show && event.key.match(/Escape|Esc/)) {
+      if (this.show && /Escape|Esc/.test(event.key)) {
         event.preventDefault();
         this.show = false;
       }
@@ -4059,17 +4078,32 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
 /******/ 		}
 /******/ 	};
 /******/
 /******/ 	// define __esModule on exports
 /******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
 /******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -4587,9 +4621,6 @@ function getElement(selector, base) {
     else if (selector instanceof NodeList) {
         return selector[0];
     }
-    else {
-        throw new TypeError('selector is must be String or Element');
-    }
 }
 /**
  * Get elements as NodeList.
@@ -4606,13 +4637,10 @@ function getElements(selector, base) {
         return base.querySelectorAll(selector);
     }
     else if (selector instanceof Element) {
-        return toNodeList(selector);
+        return toNodeList(selector, base);
     }
     else if (selector instanceof NodeList) {
         return selector;
-    }
-    else {
-        throw new TypeError('selector is must be String or NodeList');
     }
 }
 /**
@@ -4644,16 +4672,19 @@ function removeElements(selector, base) {
     return elms.length;
 }
 /**
- * Converts a single element to NodeList.
+ * Convert a single element to NodeList.
  *
  * @export
  * @param {(Element|string)} elm
+ * @param {(Document|ElementTarget)} [base=document] base element. default is Document.
  * @returns {NodeList}
  */
-function toNodeList(elm) {
+function toNodeList(elm, base) {
+    if (base === void 0) { base = document; }
+    base = resolveBase(base);
     elm = getElement(elm);
     elm.setAttribute('toNodeList', '');
-    var nodeList = document.querySelectorAll('[toNodeList]');
+    var nodeList = base.querySelectorAll('[toNodeList]');
     elm.removeAttribute('toNodeList');
     return nodeList;
 }
@@ -4665,13 +4696,9 @@ function toNodeList(elm) {
  * @returns {any[]}
  */
 function nodeListToArray(list) {
-    if (Array.isArray(list)) {
-        return list;
-    }
-    else {
-        list = getElements(list);
-        return [].slice.call(list);
-    }
+    return Array.isArray(list)
+        ? list
+        : [].slice.call(getElements(list));
 }
 /**
  * Find ancestor element.
@@ -10436,19 +10463,19 @@ var _initialiseProps = function _initialiseProps() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-!function(r,n){ true?module.exports=n():undefined}(this,function(){return function(r){var n={};function e(t){if(n[t])return n[t].exports;var o=n[t]={i:t,l:!1,exports:{}};return r[t].call(o.exports,o,o.exports,e),o.l=!0,o.exports}return e.m=r,e.c=n,e.d=function(r,n,t){e.o(r,n)||Object.defineProperty(r,n,{configurable:!1,enumerable:!0,get:t})},e.r=function(r){Object.defineProperty(r,"__esModule",{value:!0})},e.n=function(r){var n=r&&r.__esModule?function(){return r.default}:function(){return r};return e.d(n,"a",n),n},e.o=function(r,n){return Object.prototype.hasOwnProperty.call(r,n)},e.p="",e(e.s="./src/index.ts")}({"./node_modules/bezier-easing/src/index.js":
+!function(e,r){ true?module.exports=r():undefined}(this,function(){return function(e){var r={};function n(t){if(r[t])return r[t].exports;var o=r[t]={i:t,l:!1,exports:{}};return e[t].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=r,n.d=function(e,r,t){n.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,r){if(1&r&&(e=n(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var t=Object.create(null);if(n.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var o in e)n.d(t,o,function(r){return e[r]}.bind(null,o));return t},n.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(r,"a",r),r},n.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},n.p="",n(n.s="./src/index.ts")}({"./node_modules/bezier-easing/src/index.js":
 /*!*************************************************!*\
   !*** ./node_modules/bezier-easing/src/index.js ***!
   \*************************************************/
-/*! no static exports found */function(r,n){var e=4,t=.001,o=1e-7,u=10,i=11,s=1/(i-1),f="function"==typeof Float32Array;function c(r,n){return 1-3*n+3*r}function a(r,n){return 3*n-6*r}function p(r){return 3*r}function d(r,n,e){return((c(n,e)*r+a(n,e))*r+p(n))*r}function l(r,n,e){return 3*c(n,e)*r*r+2*a(n,e)*r+p(n)}r.exports=function(r,n,c,a){if(!(0<=r&&r<=1&&0<=c&&c<=1))throw new Error("bezier x values must be in [0, 1] range");var p=f?new Float32Array(i):new Array(i);if(r!==n||c!==a)for(var v=0;v<i;++v)p[v]=d(v*s,r,c);function y(n){for(var f=0,a=1,v=i-1;a!==v&&p[a]<=n;++a)f+=s;var y=f+(n-p[--a])/(p[a+1]-p[a])*s,b=l(y,r,c);return b>=t?function(r,n,t,o){for(var u=0;u<e;++u){var i=l(n,t,o);if(0===i)return n;n-=(d(n,t,o)-r)/i}return n}(n,y,r,c):0===b?y:function(r,n,e,t,i){var s,f,c=0;do{(s=d(f=n+(e-n)/2,t,i)-r)>0?e=f:n=f}while(Math.abs(s)>o&&++c<u);return f}(n,f,f+s,r,c)}return function(e){return r===n&&c===a?e:0===e?0:1===e?1:d(y(e),n,a)}}},"./src/index.ts":
+/*! no static exports found */function(e,r){var n=4,t=.001,o=1e-7,u=10,i=11,f=1/(i-1),s="function"==typeof Float32Array;function c(e,r){return 1-3*r+3*e}function a(e,r){return 3*r-6*e}function l(e){return 3*e}function d(e,r,n){return((c(r,n)*e+a(r,n))*e+l(r))*e}function p(e,r,n){return 3*c(r,n)*e*e+2*a(r,n)*e+l(r)}e.exports=function(e,r,c,a){if(!(0<=e&&e<=1&&0<=c&&c<=1))throw new Error("bezier x values must be in [0, 1] range");var l=s?new Float32Array(i):new Array(i);if(e!==r||c!==a)for(var v=0;v<i;++v)l[v]=d(v*f,e,c);function y(r){for(var s=0,a=1,v=i-1;a!==v&&l[a]<=r;++a)s+=f;var y=s+(r-l[--a])/(l[a+1]-l[a])*f,b=p(y,e,c);return b>=t?function(e,r,t,o){for(var u=0;u<n;++u){var i=p(r,t,o);if(0===i)return r;r-=(d(r,t,o)-e)/i}return r}(r,y,e,c):0===b?y:function(e,r,n,t,i){var f,s,c=0;do{(f=d(s=r+(n-r)/2,t,i)-e)>0?n=s:r=s}while(Math.abs(f)>o&&++c<u);return s}(r,s,s+f,e,c)}return function(n){return e===r&&c===a?n:0===n?0:1===n?1:d(y(n),r,a)}}},"./src/index.ts":
 /*!**********************!*\
   !*** ./src/index.ts ***!
   \**********************/
-/*! exports provided: cubicBezier, steps, Common, easing */function(r,n,e){"use strict";e.r(n),e.d(n,"Common",function(){return u}),e.d(n,"easing",function(){return i});var t=e(/*! bezier-easing */"./node_modules/bezier-easing/src/index.js");e.d(n,"cubicBezier",function(){return t});var o=e(/*! ./steps */"./src/steps.ts");e.d(n,"steps",function(){return o.steps});var u={linear:[0,0,1,1],ease:[.25,.1,.25,1],easeIn:[.42,0,1,1],easeOut:[0,0,.58,1],easeInOut:[.42,0,.58,1]};function i(){for(var r=[],n=0;n<arguments.length;n++)r[n]=arguments[n];var e=[];if(1===r.length&&"string"==typeof r[0])e=u[r[0]];else if(1===r.length&&Array.isArray(r[0]))e=r[0];else{if(4!==r.length||!r.every(function(r){return"number"==typeof r}))throw new TypeError("Wrong arguments.");e=r}var o=e[0],i=e[1],s=e[2],f=e[3];return t(o,i,s,f)}},"./src/steps.ts":
+/*! exports provided: cubicBezier, steps, Common, easing */function(e,r,n){"use strict";n.r(r),n.d(r,"Common",function(){return u}),n.d(r,"easing",function(){return i});var t=n(/*! bezier-easing */"./node_modules/bezier-easing/src/index.js");n.d(r,"cubicBezier",function(){return t});var o=n(/*! ./steps */"./src/steps.ts");n.d(r,"steps",function(){return o.steps});var u={linear:[0,0,1,1],ease:[.25,.1,.25,1],easeIn:[.42,0,1,1],easeOut:[0,0,.58,1],easeInOut:[.42,0,.58,1]};function i(){for(var e=[],r=0;r<arguments.length;r++)e[r]=arguments[r];var n=[];if(1===e.length&&"string"==typeof e[0]){if(!(n=u[e[0]]))throw new ReferenceError("Wrong common keyword.")}else if(1===e.length&&Array.isArray(e[0]))n=e[0];else{if(4!==e.length||!e.every(function(e){return"number"==typeof e}))throw new TypeError("Wrong arguments.");n=e}var o=n[0],i=n[1],f=n[2],s=n[3];return t(o,i,f,s)}},"./src/steps.ts":
 /*!**********************!*\
   !*** ./src/steps.ts ***!
   \**********************/
-/*! exports provided: steps */function(r,n,e){"use strict";function t(r,n){var e="start"===n;return function(n){switch(n){case 0:return 0;case 1:return 1}for(var t=1;t<=r;t++){var o=t/r;if(o>n)return e?o:(t-1)/r}}}e.r(n),e.d(n,"steps",function(){return t})}})});
+/*! exports provided: steps */function(e,r,n){"use strict";function t(e,r){var n="start"===r;return function(r){switch(r){case 0:return 0;case 1:return 1}for(var t=1;t<=e;t++){var o=t/e;if(o>r)return n?o:(t-1)/e}}}n.r(r),n.d(r,"steps",function(){return t})}})});
 
 /***/ }),
 
@@ -10837,30 +10864,37 @@ var render = function() {
         staticClass: "modal-mask"
       },
       [
-        _c("div", { staticClass: "modal-content" }, [
-          _c(
-            "div",
-            { staticClass: "modal-header" },
-            [
-              _c("h3", [_vm._v(_vm._s(_vm.title))]),
-              _vm._v(" "),
-              _c("close-button", {
-                attrs: { action: "" },
-                domProps: { innerHTML: _vm._s(_vm.closeButtonHtml) },
-                on: {
-                  close: function($event) {
-                    _vm.$emit("close")
-                  }
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "modal-body" }, [_vm._t("default")], 2),
-          _vm._v(" "),
-          _c("div", { staticClass: "modal-footer" }, [_vm._t("actions")], 2)
-        ])
+        _c(
+          "div",
+          { staticClass: "modal-content" },
+          [
+            _vm._t("header", [
+              _c(
+                "div",
+                { staticClass: "modal-header" },
+                [
+                  _c("h3", [_vm._v(_vm._s(_vm.title))]),
+                  _vm._v(" "),
+                  _c("close-button", {
+                    attrs: { action: "" },
+                    domProps: { innerHTML: _vm._s(_vm.closeButtonHtml) },
+                    on: {
+                      close: function($event) {
+                        _vm.$emit("close")
+                      }
+                    }
+                  })
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [_vm._t("default")], 2),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-footer" }, [_vm._t("actions")], 2)
+          ],
+          2
+        )
       ]
     )
   ])
@@ -15548,7 +15582,7 @@ exports.Util = exports.Svg = exports.ElementUtil = exports.ElementMeasurer = exp
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }(); /*!
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * moss-ui - The front-end UI framework with Vue.js and SCSS.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @version v0.6.3
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @version v0.6.4
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * @link https://github.com/archco/moss-ui
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * @license MIT
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           */
@@ -15962,7 +15996,7 @@ module.exports = "<svg data-name=\"search\" xmlns=\"http://www.w3.org/2000/svg\"
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = '0.6.3';
+exports.default = '0.6.4';
 
 /***/ }),
 

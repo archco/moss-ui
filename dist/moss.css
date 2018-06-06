@@ -1,6 +1,6 @@
 /*!
  * moss-ui - The front-end UI framework with Vue.js and SCSS.
- * @version v0.6.3
+ * @version v0.6.4
  * @link https://github.com/archco/moss-ui
  * @license MIT
  */
@@ -3585,6 +3585,10 @@ dropdown,
 .message-fade-enter-to {
   opacity: 1; }
 
+modal,
+[is="modal"] {
+  display: none; }
+
 .modal-shown {
   overflow: hidden; }
 
@@ -3652,10 +3656,16 @@ dropdown,
   padding: 0.5rem; }
 
 .modal-from-top-enter-active {
-  animation: .4s from-top; }
+  animation: 0.4s from-top; }
 
 .modal-from-top-leave-active {
-  animation: .4s from-top reverse; }
+  animation: 0.4s from-top reverse; }
+
+.modal-fade-enter-active {
+  animation: 0.4s fade-in; }
+
+.modal-fade-leave-active {
+  animation: 0.4s fade-in reverse; }
 
 navbar,
 [is="navbar"] {
