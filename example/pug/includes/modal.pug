@@ -11,7 +11,7 @@ modal(name='test-modal2' title='Close when another clicked' close-on)
 
 h3 Set custom header
 button.btn.danger(onclick='Moss.modal.show("test-modal5")') Open modal
-modal(name='test-modal5' title='fake title')
+modal(name='test-modal5' title='fake title' effect='fade')
   div.modal-header(slot='header')
     h3.color-danger Custom Title
     button.btn-text(data-toggle='close')
@@ -33,3 +33,17 @@ modal(name='test-modal4' title='Icon close button' close-button-html='<i class="
   p=lorem
   div(slot='actions')
     button(class='btn success' onclick='Moss.modal.close("test-modal4")') Okay
+
+h3 Transition Effects
+
+button.btn.default(onclick='Moss.modal.show("test-modal6")') from-top (default)
+modal(name='test-modal6' title='From-top' close-on)
+  p.text-center <code>from-top</code> effect.
+
+button.btn.info(onclick='Moss.modal.show("test-modal7")') fade
+modal(name='test-modal7' title='Fade' effect='fade' close-on)
+  p.text-center <code>fade</code> effect.
+
+button.btn.link(onclick='Moss.modal.show("test-modal8")') no-effect
+modal(name='test-modal8' title='No effect' effect='' close-on)
+  p.text-center No transition effect.
