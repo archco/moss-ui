@@ -60,9 +60,9 @@ describe('#Modal', () => {
       },
       attachToDocument: true,
     });
-    const header = wrapper2.element.querySelector('.modal-header');
-    expect(header.children.length).toBe(1);
-    expect(header.children[0].tagName).toEqual('H4');
-    expect(header.children[0].textContent).toEqual('MY TITLE');
+    const header = wrapper2.vm.$slots.header;
+    expect(header.length).toBe(1);
+    expect(header[0].elm.tagName).toEqual('H4');
+    expect(header[0].elm.textContent).toEqual('MY TITLE');
   });
 });
