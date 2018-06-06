@@ -79,7 +79,7 @@ export default {
       }
     },
     onKeydown(event) {
-      if (this.show && event.key.match(/Escape|Esc/)) {
+      if (this.show && /Escape|Esc/.test(event.key)) {
         event.preventDefault();
         this.show = false;
       }

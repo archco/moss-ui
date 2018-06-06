@@ -12,7 +12,8 @@ modal(name='test-modal2' title='Close when another clicked' close-on)
 h3 with Actions
 button(class='btn' onclick='Moss.modal.toggle("test-modal3")') Trigger
 modal(name='test-modal3' title='with Actions')
-  p=lorem
+  div.p-3
+    input(name='title' placeholder='test me..')
   div(slot='actions')
     button(class='btn default' data-toggle='close') Cancel
     button(class='btn success') OK
