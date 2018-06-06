@@ -1,4 +1,4 @@
-import { shallow } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import Tabs from '../../src/js/components/tabs.vue';
 
 function makeTab(name, content, selected = false) {
@@ -10,7 +10,7 @@ function makeTab(name, content, selected = false) {
 }
 
 describe('#Tabs', () => {
-  const wrapper = shallow(Tabs, {
+  const wrapper = shallowMount(Tabs, {
     slots: {
       default: `
       ${makeTab('tab1', 'content', true)}
@@ -20,7 +20,7 @@ describe('#Tabs', () => {
     }
   });
 
-  it('shallow.', () => {
+  it('shallowMount.', () => {
     expect(wrapper.vm.tabs.length).toBe(3);
     expect(wrapper.vm.tabs[2].name).toEqual('tab3');
   });

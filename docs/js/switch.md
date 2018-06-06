@@ -1,6 +1,7 @@
 # Switch
 
-> sources:  
+> **@deprecated in [v0.6.x](https://github.com/archco/moss-ui/issues/104)**. Recommend you use default tags or other external plugins.  
+sources:  
 [js/components/input-check](../../src/js/components/input-check.vue)  
 [scss/components/input-check](../../src/scss/components/_input-check.scss)
 [js/components/input-radio](../../src/js/components/input-radio.vue)  
@@ -30,6 +31,8 @@
 
 ### input-check
 
+> **@deprecated in [v0.6.x](https://github.com/archco/moss-ui/issues/104)**. Recommend you use default tags or other external plugins.
+
 | Name | Type | Default | Description |
 | ---- |:----:| ------- | ----------- |
 | id | `String` | auto (e.g. "input-check-id-1") | The id attribute for `<input>`. |
@@ -40,6 +43,9 @@
 | required | `Boolean` | `false` | The required attribute for `<input>`. |
 
 ### input-radio
+
+> **@deprecated in [v0.6.x](https://github.com/archco/moss-ui/issues/104)**. Recommend you use default tags or other external plugins.
+
 
 | Name | Type | Default | Description |
 | ---- |:----:| ------- | ----------- |

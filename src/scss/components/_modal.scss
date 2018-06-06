@@ -1,3 +1,7 @@
+// Hide during loading.
+modal,
+[is="modal"] { display: none; }
+
 // kill the scroll on the body.
 .modal-shown {
   overflow: hidden;
@@ -63,11 +67,20 @@
   padding: $space-2;
 }
 
-// effects.
+// effect `from-top`
 .modal-from-top-enter-active {
-  animation: .4s from-top;
+  animation: $modal-effect-duration from-top;
 }
 
 .modal-from-top-leave-active {
-  animation: .4s from-top reverse;
+  animation: $modal-effect-duration from-top reverse;
+}
+
+// effect `fade`
+.modal-fade-enter-active {
+  animation: $modal-effect-duration fade-in;
+}
+
+.modal-fade-leave-active {
+  animation:  $modal-effect-duration fade-in reverse;
 }

@@ -1,8 +1,8 @@
-import { shallow } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import MessageBox from '../../src/js/components/message-box.vue';
 
 describe('#MessageBox', () => {
-  const wrapper = shallow(MessageBox, {
+  const wrapper = shallowMount(MessageBox, {
     attachToDocument: true,
   });
   const getMessage = index => wrapper.vm.messages[index];

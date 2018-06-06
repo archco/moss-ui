@@ -1,4 +1,4 @@
-import { shallow } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import NavDrawer from '../../src/js/components/nav-drawer.vue';
 
 // mock method.
@@ -10,7 +10,7 @@ jest.mock('element-util', () => {
 
 describe('#NavDrawer', () => {
   it('mount.', () => {
-    const wrapper = shallow(NavDrawer, {
+    const wrapper = shallowMount(NavDrawer, {
       propsData: {
         id: 'drawer01',
       },

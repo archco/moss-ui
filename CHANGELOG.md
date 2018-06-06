@@ -11,6 +11,34 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+## [0.6.4][] - 2018-06-06
+
+### Changed
+
+- Improved modal. #126
+  - Now available set custom header optionally via `header` slot. [modal#custom-header](https://github.com/archco/moss-ui/blob/master/docs/js/modal.md#custom-header)
+  - Add transition effect `fade`.
+  - Add scss-variable `$modal-effect-duration`.
+
+### Fixed
+
+- Fix bug in modal: In `keydown` event handler, It has some situation that `event.key` is not exists. #126, (073abe3e6a38af64fe1c90afc3cfc625f7b6765e)
+- Fix bug in modal: hide modal content during page loading. #126, (ab307cbdf5c4584f7781f6a948406cc9ce7adcc4)
+
+### Deprecated
+
+- The switch components `input-check` and `input-radio` are deprecated. Recommend you use default tags or other external plugins. #104
+
+## [0.6.3][] - 2018-05-21
+
+### Changed
+
+- Update moo-color to [v0.2.0](https://github.com/archco/moo-color/releases/tag/v0.2.0)
+
+### Fixed
+
+- Fix style problem in carousel component. #125
+
 ## [0.6.2][] - 2018-05-15
 
 ### Added
@@ -243,7 +271,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Remove unnecessary part "aside.scss". #60
 - Remove deprecated scss mixin, `flex-container()`. instead use `flex-container-align`. #52
 
-[Unreleased]: https://github.com/archco/moss-ui/compare/v0.6.2...HEAD
+[Unreleased]: https://github.com/archco/moss-ui/compare/v0.6.4...HEAD
+[0.6.4]: https://github.com/archco/moss-ui/compare/v0.6.3...v0.6.4
+[0.6.3]: https://github.com/archco/moss-ui/compare/v0.6.2...v0.6.3
 [0.6.2]: https://github.com/archco/moss-ui/compare/v0.6.1...v0.6.2
 [0.6.1]: https://github.com/archco/moss-ui/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/archco/moss-ui/compare/v0.5.3...v0.6.0

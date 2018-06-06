@@ -75,6 +75,7 @@ export default {
     }
   },
   mounted() {
+    console.warn('"input-radio" component deprecated in v0.6.x. Recommend you use default tags or other external plugins.');
     if (this.checked && !this.state) {
       this.toggle();
     }
