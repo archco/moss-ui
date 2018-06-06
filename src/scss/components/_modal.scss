@@ -1,3 +1,7 @@
+// Hide during loading.
+modal,
+[is="modal"] { display: none; }
+
 // kill the scroll on the body.
 .modal-shown {
   overflow: hidden;
