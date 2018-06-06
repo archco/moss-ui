@@ -1,5 +1,6 @@
-import { mount } from '@vue/test-utils';
+import { shallowMount as mount } from '@vue/test-utils';
 import Modal from '../../src/js/components/modal.vue';
+import flushPromises from 'flush-promises';
 
 describe('#Modal', () => {
   const wrapper = mount(Modal, {
@@ -23,27 +24,45 @@ describe('#Modal', () => {
     expect(wrapper.vm.name).toBe('test-modal');
   });
 
-  it('modal open.', (done) => {
+  it('modal open.', async () => {
     wrapper.vm.toggleModal('test-modal', 'show');
-    wrapper.vm.$nextTick(() => {
-      expect(wrapper.vm.show).toBe(true);
-      done();
-    });
+    await flushPromises();
+    expect(wrapper.vm.show).toBe(true);
   });
 
-  it('close modal by "data-toggle=close" button.', (done) => {
+  it('close modal by "data-toggle=close" button.', async () => {
     wrapper.find('#closeBtn').trigger('click');
-    wrapper.vm.$nextTick(() => {
-      expect(wrapper.vm.show).toBe(false);
-      done();
-    });
+    await flushPromises();
+    expect(wrapper.vm.show).toBe(false);
   });
 
-  it('will be emitted `state` event when state changed.', () => {
+  it('will be emitted `state` event when state changed.', async () => {
     wrapper.vm.toggleModal('test-modal', 'show');
-    wrapper.vm.$nextTick(() => {
-      expect(wrapper.emitted('state')).toBeTruthy();
-      expect(wrapper.emitted('state')[0]).toEqual([true]);
+    await flushPromises();
+    expect(wrapper.emitted('state')).toBeTruthy();
+    expect(wrapper.emitted('state')[0]).toEqual([true]);
+  });
+
+  it('can set custom header.', () => {
+    const wrapper2 = mount(Modal, {
+      propsData: {
+        name: 'test2',
+        title: 'TEST',
+      },
+      slots: {
+        header: `
+        <h4>MY TITLE</h4>
+        `,
+        default: `
+        <p>Modal contents</p>
+        <button id="closeBtn" data-toggle="close">close</button>
+        `,
+      },
+      attachToDocument: true,
     });
+    const header = wrapper2.element.querySelector('.modal-header');
+    expect(header.children.length).toBe(1);
+    expect(header.children[0].tagName).toEqual('H4');
+    expect(header.children[0].textContent).toEqual('MY TITLE');
   });
 });

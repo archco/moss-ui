@@ -2,12 +2,14 @@
   <transition :name="effectName">
     <div class="modal-mask" v-show="show">
       <div class="modal-content">
-        <div class="modal-header">
-          <h3>{{ title }}</h3>
-          <close-button action=""
-            @close="$emit('close')"
-            v-html="closeButtonHtml"/>
-        </div>
+        <slot name="header">
+          <div class="modal-header">
+            <h3>{{ title }}</h3>
+            <close-button action=""
+              @close="$emit('close')"
+              v-html="closeButtonHtml"/>
+          </div>
+        </slot>
         <div class="modal-body">
           <slot></slot>
         </div>
