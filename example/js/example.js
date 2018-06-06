@@ -95,9 +95,11 @@ window.vm = new window.Vue({
       console.log(item.elm);
     });
   },
-});
 
-// invoke function for partial examples.
-for (const fn of Object.values(Partials)) {
-  fn();
-}
+  mounted() {
+    // invoke function for partial examples.
+    for (const fn of Object.values(Partials)) {
+      fn();
+    }
+  }
+});

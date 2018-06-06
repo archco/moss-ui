@@ -162,3 +162,14 @@ export function closeIcon() {
     closeIcon.style.color = '';
   });
 }
+
+export function centeringDropdownBox() {
+  const scrollTo = window.Moss.lib.Util.scrollTo;
+  const dropdownBox = document.querySelector('#dropdown-box-1');
+  if (!dropdownBox) return;
+
+  scrollTo([150, 150], {
+    base: dropdownBox,
+    duration: 0,
+  });
+}
