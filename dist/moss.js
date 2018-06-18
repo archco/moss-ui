@@ -110,7 +110,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _cakeCase = __webpack_require__(/*! cake-case */ "./node_modules/cake-case/dist/cake-case.js");
+var _cakeCase = __webpack_require__(/*! cake-case */ "./node_modules/cake-case/dist/module/cake-case.js");
 
 var _nodeUtil = __webpack_require__(/*! ../mixins/node-util */ "./src/js/mixins/node-util.js");
 
@@ -2642,108 +2642,16 @@ exports.default = {
 
 /***/ }),
 
-/***/ "./node_modules/cake-case/dist/cake-case.js":
-/*!**************************************************!*\
-  !*** ./node_modules/cake-case/dist/cake-case.js ***!
-  \**************************************************/
+/***/ "./node_modules/cake-case/dist/module/cake-case.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/cake-case/dist/module/cake-case.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(true)
-		module.exports = factory();
-	else {}
-})(this, function() {
-return /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/cake-case.ts");
-/******/ })
-/************************************************************************/
-/******/ ({
-
-/***/ "./src/cake-case.ts":
-/*!**************************!*\
-  !*** ./src/cake-case.ts ***!
-  \**************************/
-/*! exports provided: normal, lower, upper, capital, camel, pascal, kebab, snake */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "normal", function() { return normal; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lower", function() { return lower; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "upper", function() { return upper; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "capital", function() { return capital; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "camel", function() { return camel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pascal", function() { return pascal; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "kebab", function() { return kebab; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "snake", function() { return snake; });
+
+Object.defineProperty(exports, "__esModule", { value: true });
 function normal(str, fill) {
     if (fill === void 0) { fill = ' '; }
     return str.replace(/([A-Z][a-z]|[0-9][a-zA-Z])/g, ' $1')
@@ -2754,39 +2662,41 @@ function normal(str, fill) {
         .trim()
         .replace(/\s+/g, fill);
 }
+exports.normal = normal;
 function lower(str, fill) {
     if (fill === void 0) { fill = ' '; }
     return normal(str, fill).toLowerCase();
 }
+exports.lower = lower;
 function upper(str, fill) {
     if (fill === void 0) { fill = ' '; }
     return normal(str, fill).toUpperCase();
 }
+exports.upper = upper;
 function capital(str, fill) {
     if (fill === void 0) { fill = ' '; }
     return lower(str, ' ').split(' ')
         .map(function (word) { return word[0].toUpperCase() + word.substr(1); })
         .join(' ').replace(/\s+/g, fill);
 }
+exports.capital = capital;
 function camel(str) {
     str = capital(str, '');
     return str[0].toLowerCase() + str.substr(1);
 }
+exports.camel = camel;
 function pascal(str) {
     return capital(str, '');
 }
+exports.pascal = pascal;
 function kebab(str) {
     return lower(str, '-');
 }
+exports.kebab = kebab;
 function snake(str) {
     return lower(str, '_');
 }
-
-
-/***/ })
-
-/******/ });
-});
+exports.snake = snake;
 
 
 /***/ }),
@@ -3769,17 +3679,32 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
 /******/ 		}
 /******/ 	};
 /******/
 /******/ 	// define __esModule on exports
 /******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
 /******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -4758,13 +4683,11 @@ __webpack_require__.r(__webpack_exports__);
  * @param {string} type event type
  * @param {EventListener} listener
  * @param {(boolean|AddEventListenerOptions)} [options=false]
- * @returns {number} the number of affected.
  */
 function addListener(selector, type, listener, options) {
     if (options === void 0) { options = false; }
     var elms = Object(_base__WEBPACK_IMPORTED_MODULE_0__["getElementsAsArray"])(selector);
     elms.forEach(function (elm) { return elm.addEventListener(type, listener, options); });
-    return elms.length;
 }
 /**
  * Add listener for the event that occurs outer of the target element.
@@ -4970,7 +4893,7 @@ function appendHiddenInput(target, name, value) {
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
- * Fuse.js v3.2.0 - Lightweight fuzzy-search (http://fusejs.io)
+ * Fuse.js v3.2.1 - Lightweight fuzzy-search (http://fusejs.io)
  * 
  * Copyright (c) 2012-2017 Kirollos Risk (http://kiro.me)
  * All Rights Reserved. Apache Software License 2.0
@@ -5058,7 +4981,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 module.exports = function (obj) {
-  return Object.prototype.toString.call(obj) === '[object Array]';
+  return !Array.isArray ? Object.prototype.toString.call(obj) === '[object Array]' : Array.isArray(obj);
 };
 
 /***/ }),
@@ -5488,12 +5411,16 @@ module.exports = function (text, pattern, patternAlphabet, _ref) {
       distance: distance
     });
 
+    // console.log('score', score, finalScore)
+
     if (_score2 > currentThreshold) {
       break;
     }
 
     lastBitArr = bitArr;
   }
+
+  // console.log('FINAL SCORE', finalScore)
 
   // Count exact matches (those with a score of 0) to be "almost" exact
   return {
@@ -5846,7 +5773,7 @@ var Fuse = function () {
         var output = results[i].output;
         var scoreLen = output.length;
 
-        var totalScore = 0;
+        var currScore = 1;
         var bestScore = 1;
 
         for (var j = 0; j < scoreLen; j += 1) {
@@ -5858,11 +5785,11 @@ var Fuse = function () {
             bestScore = Math.min(bestScore, nScore);
           } else {
             output[j].nScore = nScore;
-            totalScore += nScore;
+            currScore *= nScore;
           }
         }
 
-        results[i].score = bestScore === 1 ? totalScore / scoreLen : bestScore;
+        results[i].score = bestScore === 1 ? currScore : bestScore;
 
         this._log(results[i]);
       }
@@ -5878,7 +5805,9 @@ var Fuse = function () {
     value: function _format(results) {
       var finalOutput = [];
 
-      this._log('\n\nOutput:\n\n', JSON.stringify(results));
+      if (this.options.verbose) {
+        this._log('\n\nOutput:\n\n', JSON.stringify(results));
+      }
 
       var transformers = [];
 
@@ -6013,17 +5942,32 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
 /******/ 		}
 /******/ 	};
 /******/
 /******/ 	// define __esModule on exports
 /******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
 /******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -6465,12 +6409,12 @@ function hsvToHwb(h, s, v) {
  * @returns {number[]} [hue, saturation, value] (0-360, 0-100, 0-100)
  */
 function hwbToHsv(h, w, b) {
+    var _a;
     _a = resolveHwb(h, w, b), h = _a[0], w = _a[1], b = _a[2];
     w /= 100, b /= 100;
     var s = 1 - w / (1 - b);
     var v = 1 - b;
     return [h, s * 100, v * 100];
-    var _a;
 }
 /**
  * Converts RGB to HEX string.
@@ -6670,16 +6614,16 @@ var ColorFormatter = /** @class */ (function () {
      * @returns {string}
      */
     ColorFormatter.prototype.toRgb = function (mode) {
+        var _a;
         if (mode === void 0) { mode = 'default'; }
         var color = this.getColorAs('rgb');
-        var _a = color.values.map(function (x) { return Math.round(x); }), r = _a[0], g = _a[1], b = _a[2];
+        var _b = color.values.map(function (x) { return Math.round(x); }), r = _b[0], g = _b[1], b = _b[2];
         if (mode === 'percent') {
-            _b = [r, g, b].map(function (x) { return x / 255 * 100 + "%"; }), r = _b[0], g = _b[1], b = _b[2];
+            _a = [r, g, b].map(function (x) { return x / 255 * 100 + "%"; }), r = _a[0], g = _a[1], b = _a[2];
         }
         return color.alpha === 1
             ? "rgb(" + r + ", " + g + ", " + b + ")"
             : "rgba(" + r + ", " + g + ", " + b + ", " + color.alpha + ")";
-        var _b;
     };
     /**
      * Represents color as HWB notation.
@@ -7029,8 +6973,9 @@ var MooColor = /** @class */ (function (_super) {
      * @memberof MooColor
      */
     MooColor.random = function (_a) {
-        var _b = _a === void 0 ? {} : _a, hue = _b.hue, white = _b.white, black = _b.black;
-        _c = [hue, white, black].map(function (x, i) {
+        var _b;
+        var _c = _a === void 0 ? {} : _a, hue = _c.hue, white = _c.white, black = _c.black;
+        _b = [hue, white, black].map(function (x, i) {
             if (typeof x === 'number') {
                 return x;
             }
@@ -7041,13 +6986,12 @@ var MooColor = /** @class */ (function (_super) {
             else {
                 return i === 0 ? Object(_util_util__WEBPACK_IMPORTED_MODULE_3__["getRandom"])(0, 360) : Object(_util_util__WEBPACK_IMPORTED_MODULE_3__["getRandom"])(0, 100, 2);
             }
-        }), hue = _c[0], white = _c[1], black = _c[2];
+        }), hue = _b[0], white = _b[1], black = _b[2];
         return new MooColor({
             model: 'hwb',
             values: Object(_color_converter__WEBPACK_IMPORTED_MODULE_0__["resolveHwb"])(Object(_util_util__WEBPACK_IMPORTED_MODULE_3__["degree"])(hue), Object(_util_util__WEBPACK_IMPORTED_MODULE_3__["clamp"])(white, 0, 100), Object(_util_util__WEBPACK_IMPORTED_MODULE_3__["clamp"])(black, 0, 100)),
             alpha: 1,
         });
-        var _c;
     };
     MooColor.prototype.setColorByParser = function (str) {
         var color = Object(_input_parser__WEBPACK_IMPORTED_MODULE_2__["default"])(str);
@@ -7289,7 +7233,7 @@ function makePad(chars, limit) {
     while (chars.length < limit) {
         chars += chars;
     }
-    return chars.length > limit ? chars.substring(chars.length - limit) : chars;
+    return chars.substring(0, limit);
 }
 function clamp(num, min, max) {
     return Math.min(Math.max(min, num), max);
@@ -10463,19 +10407,19 @@ var _initialiseProps = function _initialiseProps() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-!function(e,r){ true?module.exports=r():undefined}(this,function(){return function(e){var r={};function n(t){if(r[t])return r[t].exports;var o=r[t]={i:t,l:!1,exports:{}};return e[t].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=r,n.d=function(e,r,t){n.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,r){if(1&r&&(e=n(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var t=Object.create(null);if(n.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var o in e)n.d(t,o,function(r){return e[r]}.bind(null,o));return t},n.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(r,"a",r),r},n.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},n.p="",n(n.s="./src/index.ts")}({"./node_modules/bezier-easing/src/index.js":
+!function(r,e){ true?module.exports=e():undefined}(this,function(){return function(r){var e={};function n(t){if(e[t])return e[t].exports;var o=e[t]={i:t,l:!1,exports:{}};return r[t].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=r,n.c=e,n.d=function(r,e,t){n.o(r,e)||Object.defineProperty(r,e,{enumerable:!0,get:t})},n.r=function(r){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(r,"__esModule",{value:!0})},n.t=function(r,e){if(1&e&&(r=n(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var t=Object.create(null);if(n.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var o in r)n.d(t,o,function(e){return r[e]}.bind(null,o));return t},n.n=function(r){var e=r&&r.__esModule?function(){return r.default}:function(){return r};return n.d(e,"a",e),e},n.o=function(r,e){return Object.prototype.hasOwnProperty.call(r,e)},n.p="",n(n.s="./src/index.ts")}({"./node_modules/bezier-easing/src/index.js":
 /*!*************************************************!*\
   !*** ./node_modules/bezier-easing/src/index.js ***!
   \*************************************************/
-/*! no static exports found */function(e,r){var n=4,t=.001,o=1e-7,u=10,i=11,f=1/(i-1),s="function"==typeof Float32Array;function c(e,r){return 1-3*r+3*e}function a(e,r){return 3*r-6*e}function l(e){return 3*e}function d(e,r,n){return((c(r,n)*e+a(r,n))*e+l(r))*e}function p(e,r,n){return 3*c(r,n)*e*e+2*a(r,n)*e+l(r)}e.exports=function(e,r,c,a){if(!(0<=e&&e<=1&&0<=c&&c<=1))throw new Error("bezier x values must be in [0, 1] range");var l=s?new Float32Array(i):new Array(i);if(e!==r||c!==a)for(var v=0;v<i;++v)l[v]=d(v*f,e,c);function y(r){for(var s=0,a=1,v=i-1;a!==v&&l[a]<=r;++a)s+=f;var y=s+(r-l[--a])/(l[a+1]-l[a])*f,b=p(y,e,c);return b>=t?function(e,r,t,o){for(var u=0;u<n;++u){var i=p(r,t,o);if(0===i)return r;r-=(d(r,t,o)-e)/i}return r}(r,y,e,c):0===b?y:function(e,r,n,t,i){var f,s,c=0;do{(f=d(s=r+(n-r)/2,t,i)-e)>0?n=s:r=s}while(Math.abs(f)>o&&++c<u);return s}(r,s,s+f,e,c)}return function(n){return e===r&&c===a?n:0===n?0:1===n?1:d(y(n),r,a)}}},"./src/index.ts":
+/*! no static exports found */function(r,e){var n=4,t=.001,o=1e-7,u=10,i=11,f=1/(i-1),c="function"==typeof Float32Array;function s(r,e){return 1-3*e+3*r}function a(r,e){return 3*e-6*r}function l(r){return 3*r}function d(r,e,n){return((s(e,n)*r+a(e,n))*r+l(e))*r}function p(r,e,n){return 3*s(e,n)*r*r+2*a(e,n)*r+l(e)}function y(r){return r}r.exports=function(r,e,s,a){if(!(0<=r&&r<=1&&0<=s&&s<=1))throw new Error("bezier x values must be in [0, 1] range");if(r===e&&s===a)return y;for(var l=c?new Float32Array(i):new Array(i),v=0;v<i;++v)l[v]=d(v*f,r,s);function b(e){for(var c=0,a=1,y=i-1;a!==y&&l[a]<=e;++a)c+=f;var v=c+(e-l[--a])/(l[a+1]-l[a])*f,b=p(v,r,s);return b>=t?function(r,e,t,o){for(var u=0;u<n;++u){var i=p(e,t,o);if(0===i)return e;e-=(d(e,t,o)-r)/i}return e}(e,v,r,s):0===b?v:function(r,e,n,t,i){var f,c,s=0;do{(f=d(c=e+(n-e)/2,t,i)-r)>0?n=c:e=c}while(Math.abs(f)>o&&++s<u);return c}(e,c,c+f,r,s)}return function(r){return 0===r?0:1===r?1:d(b(r),e,a)}}},"./src/index.ts":
 /*!**********************!*\
   !*** ./src/index.ts ***!
   \**********************/
-/*! exports provided: cubicBezier, steps, Common, easing */function(e,r,n){"use strict";n.r(r),n.d(r,"Common",function(){return u}),n.d(r,"easing",function(){return i});var t=n(/*! bezier-easing */"./node_modules/bezier-easing/src/index.js");n.d(r,"cubicBezier",function(){return t});var o=n(/*! ./steps */"./src/steps.ts");n.d(r,"steps",function(){return o.steps});var u={linear:[0,0,1,1],ease:[.25,.1,.25,1],easeIn:[.42,0,1,1],easeOut:[0,0,.58,1],easeInOut:[.42,0,.58,1]};function i(){for(var e=[],r=0;r<arguments.length;r++)e[r]=arguments[r];var n=[];if(1===e.length&&"string"==typeof e[0]){if(!(n=u[e[0]]))throw new ReferenceError("Wrong common keyword.")}else if(1===e.length&&Array.isArray(e[0]))n=e[0];else{if(4!==e.length||!e.every(function(e){return"number"==typeof e}))throw new TypeError("Wrong arguments.");n=e}var o=n[0],i=n[1],f=n[2],s=n[3];return t(o,i,f,s)}},"./src/steps.ts":
+/*! exports provided: cubicBezier, steps, Common, easing */function(r,e,n){"use strict";n.r(e),n.d(e,"Common",function(){return u}),n.d(e,"easing",function(){return i});var t=n(/*! bezier-easing */"./node_modules/bezier-easing/src/index.js");n.d(e,"cubicBezier",function(){return t});var o=n(/*! ./steps */"./src/steps.ts");n.d(e,"steps",function(){return o.steps});var u={linear:[0,0,1,1],ease:[.25,.1,.25,1],easeIn:[.42,0,1,1],easeOut:[0,0,.58,1],easeInOut:[.42,0,.58,1]};function i(){for(var r=[],e=0;e<arguments.length;e++)r[e]=arguments[e];var n=[];if(1===r.length&&"string"==typeof r[0]){if(!(n=u[r[0]]))throw new ReferenceError("Wrong common keyword.")}else if(1===r.length&&Array.isArray(r[0]))n=r[0];else{if(4!==r.length||!r.every(function(r){return"number"==typeof r}))throw new TypeError("Wrong arguments.");n=r}var o=n[0],i=n[1],f=n[2],c=n[3];return t(o,i,f,c)}},"./src/steps.ts":
 /*!**********************!*\
   !*** ./src/steps.ts ***!
   \**********************/
-/*! exports provided: steps */function(e,r,n){"use strict";function t(e,r){var n="start"===r;return function(r){switch(r){case 0:return 0;case 1:return 1}for(var t=1;t<=e;t++){var o=t/e;if(o>r)return n?o:(t-1)/e}}}n.r(r),n.d(r,"steps",function(){return t})}})});
+/*! exports provided: steps */function(r,e,n){"use strict";function t(r,e){var n="start"===e;return function(e){switch(e){case 0:return 0;case 1:return 1}for(var t=1;t<=r;t++){var o=t/r;if(o>e)return n?o:(t-1)/r}}}n.r(e),n.d(e,"steps",function(){return t})}})});
 
 /***/ }),
 
@@ -15050,7 +14994,7 @@ exports.getSvgByName = getSvgByName;
 exports.makeIcon = makeIcon;
 exports.makeIconHtml = makeIconHtml;
 
-var _cakeCase = __webpack_require__(/*! cake-case */ "./node_modules/cake-case/dist/cake-case.js");
+var _cakeCase = __webpack_require__(/*! cake-case */ "./node_modules/cake-case/dist/module/cake-case.js");
 
 var _svg = __webpack_require__(/*! ../../../svg */ "./src/svg/index.js");
 
@@ -15582,13 +15526,13 @@ exports.Util = exports.Svg = exports.ElementUtil = exports.ElementMeasurer = exp
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }(); /*!
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * moss-ui - The front-end UI framework with Vue.js and SCSS.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @version v0.6.4
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @version v0.6.5
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * @link https://github.com/archco/moss-ui
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * @license MIT
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           */
 
 
-var _cakeCase = __webpack_require__(/*! cake-case */ "./node_modules/cake-case/dist/cake-case.js");
+var _cakeCase = __webpack_require__(/*! cake-case */ "./node_modules/cake-case/dist/module/cake-case.js");
 
 var Case = _interopRequireWildcard(_cakeCase);
 
@@ -15752,7 +15696,7 @@ exports.default = {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg data-name=\"arrow-down\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__1gd2QAI__cls-1{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>arrow-down</title><polyline class=\"__1gd2QAI__cls-1 \" points=\"13.66 5.17 8 10.83 2.34 5.17\"></polyline></svg>"
+module.exports = "<svg data-name=\"arrow-down\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__2-DWHFj__cls-1{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><polyline class=\"__2-DWHFj__cls-1 \" points=\"13.66 5.17 8 10.83 2.34 5.17\"></polyline></svg>"
 
 /***/ }),
 
@@ -15763,7 +15707,7 @@ module.exports = "<svg data-name=\"arrow-down\" xmlns=\"http://www.w3.org/2000/s
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg data-name=\"arrow-left\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__2GvJOc___cls-1{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>arrow-left</title><polyline class=\"__2GvJOc___cls-1 \" points=\"10.83 13.66 5.17 8 10.83 2.34\"></polyline></svg>"
+module.exports = "<svg data-name=\"arrow-left\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__1EMiEkc__cls-1{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><polyline class=\"__1EMiEkc__cls-1 \" points=\"10.83 13.66 5.17 8 10.83 2.34\"></polyline></svg>"
 
 /***/ }),
 
@@ -15774,7 +15718,7 @@ module.exports = "<svg data-name=\"arrow-left\" xmlns=\"http://www.w3.org/2000/s
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg data-name=\"arrow-right\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__3aCiuLN__cls-1{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>arrow-right</title><polyline class=\"__3aCiuLN__cls-1 \" points=\"5.17 2.34 10.83 8 5.17 13.66\"></polyline></svg>"
+module.exports = "<svg data-name=\"arrow-right\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__3_fbqAA__cls-1{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><polyline class=\"__3_fbqAA__cls-1 \" points=\"5.17 2.34 10.83 8 5.17 13.66\"></polyline></svg>"
 
 /***/ }),
 
@@ -15785,7 +15729,7 @@ module.exports = "<svg data-name=\"arrow-right\" xmlns=\"http://www.w3.org/2000/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg data-name=\"arrow-up\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__LjpxLLk__cls-1{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>arrow-up</title><polyline class=\"__LjpxLLk__cls-1 \" points=\"2.34 10.83 8 5.17 13.66 10.83\"></polyline></svg>"
+module.exports = "<svg data-name=\"arrow-up\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__l-ohweN__cls-1{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><polyline class=\"__l-ohweN__cls-1 \" points=\"2.34 10.83 8 5.17 13.66 10.83\"></polyline></svg>"
 
 /***/ }),
 
@@ -15796,7 +15740,7 @@ module.exports = "<svg data-name=\"arrow-up\" xmlns=\"http://www.w3.org/2000/svg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg data-name=\"caret-down\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__3RRJRTc__cls-1{fill:currentColor;}</style></defs><title>caret-down</title><path class=\"__3RRJRTc__cls-1 \" d=\"M7.5,10.88a.53.53,0,0,0,1,0l3.33-5.77c.27-.48,0-.87-.5-.87H4.67c-.55,0-.78.39-.5.87Z\"></path></svg>"
+module.exports = "<svg data-name=\"caret-down\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__3ptanXG__cls-1{fill:currentColor;}</style></defs><path class=\"__3ptanXG__cls-1 \" d=\"M7.5,10.88a.53.53,0,0,0,1,0l3.33-5.77c.27-.48,0-.87-.5-.87H4.67c-.55,0-.78.39-.5.87Z\"></path></svg>"
 
 /***/ }),
 
@@ -15807,7 +15751,7 @@ module.exports = "<svg data-name=\"caret-down\" xmlns=\"http://www.w3.org/2000/s
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg data-name=\"caret-left\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__1I4fSS8__cls-1{fill:currentColor;}</style></defs><title>caret-left</title><path class=\"__1I4fSS8__cls-1 \" d=\"M5.12,7.5a.53.53,0,0,0,0,1l5.77,3.33c.48.27.87,0,.87-.5V4.67c0-.55-.39-.78-.87-.5Z\"></path></svg>"
+module.exports = "<svg data-name=\"caret-left\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__KS7ZD-k__cls-1{fill:currentColor;}</style></defs><path class=\"__KS7ZD-k__cls-1 \" d=\"M5.12,7.5a.53.53,0,0,0,0,1l5.77,3.33c.48.27.87,0,.87-.5V4.67c0-.55-.39-.78-.87-.5Z\"></path></svg>"
 
 /***/ }),
 
@@ -15818,7 +15762,7 @@ module.exports = "<svg data-name=\"caret-left\" xmlns=\"http://www.w3.org/2000/s
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg data-name=\"caret-right\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__3x70OrN__cls-1{fill:currentColor;}</style></defs><title>caret-right</title><path class=\"__3x70OrN__cls-1 \" d=\"M10.88,8.5a.53.53,0,0,0,0-1L5.12,4.17c-.48-.28-.87,0-.87.5v6.66c0,.55.39.77.87.5Z\"></path></svg>"
+module.exports = "<svg data-name=\"caret-right\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__353YwR8__cls-1{fill:currentColor;}</style></defs><path class=\"__353YwR8__cls-1 \" d=\"M10.88,8.5a.53.53,0,0,0,0-1L5.12,4.17c-.48-.28-.87,0-.87.5v6.66c0,.55.39.77.87.5Z\"></path></svg>"
 
 /***/ }),
 
@@ -15829,7 +15773,7 @@ module.exports = "<svg data-name=\"caret-right\" xmlns=\"http://www.w3.org/2000/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg data-name=\"caret-up\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__b93E2uj__cls-1{fill:currentColor;}</style></defs><title>caret-up</title><path class=\"__b93E2uj__cls-1 \" d=\"M8.5,5.12a.53.53,0,0,0-1,0L4.17,10.88c-.28.48,0,.87.5.87h6.66c.55,0,.77-.39.5-.87Z\"></path></svg>"
+module.exports = "<svg data-name=\"caret-up\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__Z94_uQ4__cls-1{fill:currentColor;}</style></defs><path class=\"__Z94_uQ4__cls-1 \" d=\"M8.5,5.12a.53.53,0,0,0-1,0L4.17,10.88c-.28.48,0,.87.5.87h6.66c.55,0,.77-.39.5-.87Z\"></path></svg>"
 
 /***/ }),
 
@@ -15840,7 +15784,7 @@ module.exports = "<svg data-name=\"caret-up\" xmlns=\"http://www.w3.org/2000/svg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg data-name=\"check\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__1ewOVC4__cls-1{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>check</title><polyline class=\"__1ewOVC4__cls-1 \" points=\"3 8 6.33 11.5 13 4.5\"></polyline></svg>"
+module.exports = "<svg data-name=\"check\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__asdzD7l__cls-1{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><polyline class=\"__asdzD7l__cls-1 \" points=\"3 8 6.33 11.5 13 4.5\"></polyline></svg>"
 
 /***/ }),
 
@@ -15851,7 +15795,29 @@ module.exports = "<svg data-name=\"check\" xmlns=\"http://www.w3.org/2000/svg\" 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg data-name=\"close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__5pVlV0m__cls-1{fill:none;stroke:currentColor;stroke-linecap:round;stroke-miterlimit:10;stroke-width:1.5px;}</style></defs><title>close</title><path class=\"__5pVlV0m__cls-1 \" d=\"M3.76 3.76 L12.24 12.24 M12.24 3.76 L3.76 12.24\"></path></svg>"
+module.exports = "<svg data-name=\"close\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__bTDb5ds__cls-1{fill:none;stroke:currentColor;stroke-linecap:round;stroke-miterlimit:10;stroke-width:1.5px;}</style></defs><path class=\"__bTDb5ds__cls-1 \" d=\"M3.76 3.76 L12.24 12.24 M12.24 3.76 L3.76 12.24\"></path></svg>"
+
+/***/ }),
+
+/***/ "./src/svg/ellipsis-horizontal.svg":
+/*!*****************************************!*\
+  !*** ./src/svg/ellipsis-horizontal.svg ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<svg data-name=\"ellipsis-horizontal\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__1j5HEso__a{fill:currentColor;}</style></defs><circle class=\"__1j5HEso__a \" cx=\"8\" cy=\"8\" r=\"1\"></circle><circle class=\"__1j5HEso__a \" cx=\"11.5\" cy=\"8\" r=\"1\"></circle><circle class=\"__1j5HEso__a \" cx=\"4.5\" cy=\"8\" r=\"1\"></circle></svg>"
+
+/***/ }),
+
+/***/ "./src/svg/ellipsis-vertical.svg":
+/*!***************************************!*\
+  !*** ./src/svg/ellipsis-vertical.svg ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<svg data-name=\"ellipsis-vertical\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__Uo3Ph8H__a{fill:currentColor;}</style></defs><circle class=\"__Uo3Ph8H__a \" cx=\"8\" cy=\"8\" r=\"1\"></circle><circle class=\"__Uo3Ph8H__a \" cx=\"8\" cy=\"11.5\" r=\"1\"></circle><circle class=\"__Uo3Ph8H__a \" cx=\"8\" cy=\"4.5\" r=\"1\"></circle></svg>"
 
 /***/ }),
 
@@ -15968,7 +15934,45 @@ Object.defineProperty(exports, 'search', {
   }
 });
 
+var _menu = __webpack_require__(/*! ./menu.svg */ "./src/svg/menu.svg");
+
+Object.defineProperty(exports, 'menu', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_menu).default;
+  }
+});
+
+var _ellipsisVertical = __webpack_require__(/*! ./ellipsis-vertical.svg */ "./src/svg/ellipsis-vertical.svg");
+
+Object.defineProperty(exports, 'ellipsisVertical', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_ellipsisVertical).default;
+  }
+});
+
+var _ellipsisHorizontal = __webpack_require__(/*! ./ellipsis-horizontal.svg */ "./src/svg/ellipsis-horizontal.svg");
+
+Object.defineProperty(exports, 'ellipsisHorizontal', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_ellipsisHorizontal).default;
+  }
+});
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+
+/***/ "./src/svg/menu.svg":
+/*!**************************!*\
+  !*** ./src/svg/menu.svg ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<svg data-name=\"menu\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__E2JdyHf__a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-miterlimit:10;stroke-width:1.5px;}</style></defs><line class=\"__E2JdyHf__a \" x1=\"4\" y1=\"8\" x2=\"12\" y2=\"8\"></line><line class=\"__E2JdyHf__a \" x1=\"4\" y1=\"11.5\" x2=\"12\" y2=\"11.5\"></line><line class=\"__E2JdyHf__a \" x1=\"4\" y1=\"4.5\" x2=\"12\" y2=\"4.5\"></line></svg>"
 
 /***/ }),
 
@@ -15979,7 +15983,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg data-name=\"search\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__1jzGpc-__cls-1,.__1jzGpc-__cls-2{fill:none;stroke:currentColor;stroke-miterlimit:10;stroke-width:1.5px;}.__1jzGpc-__cls-2{stroke-linecap:round;}</style></defs><title>search</title><circle class=\"__1jzGpc-__cls-1 \" cx=\"6.49\" cy=\"6.49\" r=\"4\"></circle><line class=\"__1jzGpc-__cls-2 \" x1=\"13.51\" y1=\"13.51\" x2=\"9.97\" y2=\"9.97\"></line></svg>"
+module.exports = "<svg data-name=\"search\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__2yZqk1a__cls-1,.__2yZqk1a__cls-2{fill:none;stroke:currentColor;stroke-miterlimit:10;stroke-width:1.5px;}.__2yZqk1a__cls-2{stroke-linecap:round;}</style></defs><circle class=\"__2yZqk1a__cls-1 \" cx=\"6.49\" cy=\"6.49\" r=\"4\"></circle><line class=\"__2yZqk1a__cls-2 \" x1=\"13.51\" y1=\"13.51\" x2=\"9.97\" y2=\"9.97\"></line></svg>"
 
 /***/ }),
 
@@ -15996,7 +16000,7 @@ module.exports = "<svg data-name=\"search\" xmlns=\"http://www.w3.org/2000/svg\"
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = '0.6.4';
+exports.default = '0.6.5';
 
 /***/ }),
 
