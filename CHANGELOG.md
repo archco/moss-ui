@@ -11,9 +11,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Added
+
+- Add new icons: `menu`, `ellipsis-vertical` and `ellipsis-horizontal`. #116
+
 ### Updated
 
 - Updated `scss-palette` to [v0.6.0](https://github.com/archco/scss-palette/releases/tag/v0.6.0).
+
+### Fixed
+
+- Fix bug in svg-icons: removes unnecessary title tag in the svg. #129
 
 ## [0.6.4][] - 2018-06-06
 

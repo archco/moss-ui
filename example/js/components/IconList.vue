@@ -38,14 +38,22 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .icon-item {
   margin-right: 1rem;
   margin-bottom: 1rem;
+  padding: .25rem;
   width: 130px;
   display: inline-flex;
   flex-direction: column;
   text-align: center;
+  border-radius: 4px;
+  transition: all .4s ease-in-out;
+
+  &:hover {
+    background-color: #333;
+    color: #fff;
+  }
 }
 
 .icon-box {
