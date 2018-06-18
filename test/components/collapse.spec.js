@@ -41,9 +41,9 @@ describe('#Collapse', () => {
       }
     });
     wrapper.vm.$root.$emit('collapse-toggle', 'test-target');
-    const toggleEvent = wrapper.emitted()['collapse-toggle'];
-    expect(toggleEvent).toBeTruthy();
-    expect(toggleEvent[0]).toEqual(['test-target']);
+    const stateEvent = wrapper.emitted('state');
+    expect(stateEvent).toBeTruthy();
+    expect(stateEvent[0][0].id).toEqual('test-target');
   });
 
   it('will be emitted `state` event when state changes.', () => {

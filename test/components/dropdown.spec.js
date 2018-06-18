@@ -3,11 +3,11 @@ import Dropdown from '../../src/js/components/dropdown.vue';
 
 const slots = {
   button: `<button class="reference">dropdown</button>`,
-  default: `
-    <a href="#" class="dropdown-item">Item 01</a>
-    <a href="#" class="dropdown-item">Item 02</a>
-    <a href="#" class="dropdown-item">Item 03</a>
-  `,
+  default: [
+    '<a href="#" class="dropdown-item">Item 01</a>',
+    '<a href="#" class="dropdown-item">Item 02</a>',
+    '<a href="#" class="dropdown-item">Item 03</a>',
+  ],
 }
 const fakePopper = {
   constructor: () => {},

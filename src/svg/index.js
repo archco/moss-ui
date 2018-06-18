@@ -9,3 +9,6 @@ export { default as caretRight } from './caret-right.svg';
 export { default as close } from './close.svg';
 export { default as check } from './check.svg';
 export { default as search } from './search.svg';
+export { default as menu } from './menu.svg';
+export { default as ellipsisVertical } from './ellipsis-vertical.svg';
+export { default as ellipsisHorizontal } from './ellipsis-horizontal.svg';

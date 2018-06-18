@@ -9,13 +9,14 @@ describe('#Modal', () => {
       title: 'TEST',
     },
     slots: {
-      default: `
-      <p>Modal contents</p>
-      <button id="closeBtn" data-toggle="close">close</button>
-      `,
+      default: [
+        '<p>Modal contents</p>',
+        '<button id="closeBtn" data-toggle="close">close</button>'
+      ],
     },
     attachToDocument: true,
   });
+  //
   document.documentElement.appendChild(wrapper.element);
 
   it('mount.', () => {
@@ -53,10 +54,10 @@ describe('#Modal', () => {
         header: `
         <h4>MY TITLE</h4>
         `,
-        default: `
-        <p>Modal contents</p>
-        <button id="closeBtn" data-toggle="close">close</button>
-        `,
+        default: [
+          '<p>Modal contents</p>',
+          '<button id="closeBtn" data-toggle="close">close</button>',
+        ],
       },
       attachToDocument: true,
     });

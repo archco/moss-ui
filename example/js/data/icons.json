@@ -42,5 +42,17 @@
   {
     "name": "search",
     "keywords": ["search", "magnifying glass"]
+  },
+  {
+    "name": "menu",
+    "keywords": ["menu", "hamburger", "bars"]
+  },
+  {
+    "name": "ellipsis-vertical",
+    "keywords": ["ellipsis", "dots", "vertical"]
+  },
+  {
+    "name": "ellipsis-horizontal",
+    "keywords": ["ellipsis", "dots", "horizontal"]
   }
 ]
