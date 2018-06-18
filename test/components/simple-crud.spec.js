@@ -4,13 +4,13 @@ import SimpleCrud from '../../src/js/components/simple-crud.vue';
 describe('#SimpleCrud', () => {
   const wrapper = mount(SimpleCrud, {
     slots: {
-      read: `
-        <span class="content">Model Information</span>
-        <span class="actions btn-group">
+      read: [
+        '<span class="content">Model Information</span>',
+        `<span class="actions btn-group">
           <button id="change-to-update" type="button" class="btn" data-toggle="update">Edit</button>
           <button type="button" class="btn danger" data-toggle="delete">Delete</button>
-        </span>
-      `,
+        </span>`
+      ],
       update: `
         <form slot="update" action="#" method="POST">
           <span class="content">Some inputs</span>

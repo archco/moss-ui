@@ -54,22 +54,16 @@ describe('#Search', () => {
     });
 
     it('set data `suggestions`.', async () => {
-      /**
-       * FIXME: Bug in vue-test-utils v1.0.0-beta.16
-       * @see https://github.com/vuejs/vue-test-utils/issues/605
-       * */
-      // wrapper.setData({ suggestions: [
-      //   { name: 'test-1' },
-      //   { name: 'test-2' },
-      //   { name: 'test-3' },
-      // ]});
-      const newSuggestions = [
-        { name: 'test-1' },
-        { name: 'test-2' },
-        { name: 'test-3' },
-      ];
-      wrapper.vm.setResult(newSuggestions);
+      wrapper.setData({
+        suggestions: [
+          { name: 'test-1' },
+          { name: 'test-2' },
+          { name: 'test-3' },
+        ]
+      });
+
       await flushPromises();
+
       expect(wrapper.vm.result.length).toBe(3);
       expect(wrapper.vm.$data.showResult).toBe(true);
     });
