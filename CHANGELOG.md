@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Updated
+
+- Updated `scss-palette` to [v0.6.0](https://github.com/archco/scss-palette/releases/tag/v0.6.0).
+
 ## [0.6.4][] - 2018-06-06
 
 ### Changed
