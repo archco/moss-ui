@@ -1,6 +1,6 @@
 <template lang="html">
   <nav class="navbar">
-    <div :class="headerClass">
+    <div :class="headerClass" :style="headerStyle">
       <slot name="brand"></slot>
       <navbar-toggle
         class="hide-tablet-up"
@@ -32,6 +32,12 @@ export default {
     headerAlign: {
       type: String,
       default: '',
+    },
+    headerStyle: {
+      type: Object,
+      default() {
+        return {};
+      },
     }
   },
   data() {
