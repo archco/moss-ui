@@ -195,7 +195,7 @@ $z-index-fixed:               12 !default;
 $z-index-sticky:              12 !default;
 $z-index-dropdown-content:    14 !default;
 $z-index-tooltip:             14 !default;
-$z-index-scroll-to-button:    16 !default;
+$z-index-scroll-button:       16 !default;
 $z-index-modal:               18 !default;
 $z-index-toast:               20 !default;
 
@@ -402,9 +402,9 @@ $nav-drawer-menu-item-active-bg-color: $shade-color !default;
 $nav-drawer-menu-item-disabled-color: $text-color-middle !default;
 $nav-drawer-menu-divider-color: $border-color !default;
 
-// scroll-to
-$scroll-to-bg-color: $primary-color-accent !default;
-$scroll-to-color: get-contrast($scroll-to-bg-color) !default;
+// scroll-button
+$scroll-button-bg-color: $primary-color-accent !default;
+$scroll-button-color: get-contrast($scroll-button-bg-color) !default;
 
 // modal
 $modal-mask-color: rgba(0, 0, 0, .5) !default;

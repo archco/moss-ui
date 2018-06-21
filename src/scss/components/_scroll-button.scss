@@ -1,4 +1,4 @@
-%scroll-to-button {
+%scroll-button {
   @extend %btn-common;
   min-width: 1rem;
   min-height: 1rem;
@@ -6,24 +6,23 @@
   padding: .5em;
   line-height: 0;
   margin-left: -$space-1;
-  color: $scroll-to-color;
-  background-color: rgba($scroll-to-bg-color, .5);
+  color: $scroll-button-color;
+  background-color: rgba($scroll-button-bg-color, .5);
   @include border-radius(50%);
   outline: none;
   box-sizing: content-box;
   @include transition(background-color $transition-duration $transition-timing-function);
 
-  &:hover { background-color: $scroll-to-bg-color; }
+  &:hover { background-color: $scroll-button-bg-color; }
 }
 
-.scroll-to-container {
+.scroll-button-container {
   position: fixed;
   right: 4%;
   bottom: 4%;
-  z-index: $z-index-scroll-to-button;
+  z-index: $z-index-scroll-button;
 
-  .scroll-to-top,
-  .scroll-to-bottom {
-    @extend %scroll-to-button;
+  .scroll-button {
+    @extend %scroll-button;
   }
 }

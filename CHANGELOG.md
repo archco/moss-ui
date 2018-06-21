@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- Changed name of the `scroll-to` component to `scroll-button`. #124
 - Improved navbar: add variable $navbar-header-height. see [this](https://github.com/archco/moss-ui/blob/master/docs/js/navbar.md#specifying-height) #131
 - Changed modal: change default value of the `effect` prop from `'from-top'` to `''`. #128
 

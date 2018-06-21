@@ -12,7 +12,7 @@ export { default as NavbarNav } from './navbar-nav.vue';
 export { default as NavbarToggle } from './navbar-toggle.vue';
 export { default as NavItem } from './nav-item.vue';
 export { default as Parallax } from './parallax.vue';
-export { default as ScrollTo } from './scroll-to.vue';
+export { default as ScrollButton } from './scroll-button.vue';
 export { default as SimpleCRUD } from './simple-crud.vue';
 export { default as Tab } from './tab.vue';
 export { default as Tabs } from './tabs.vue';

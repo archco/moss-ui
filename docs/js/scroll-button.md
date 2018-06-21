@@ -1,16 +1,16 @@
-# Scroll to
+# Scroll Button
 
 > sources:  
-[js/components/scroll-to](../../src/js/components/scroll-to.vue)  
-[scss/components/scroll-to](../../src/scss/components/_scroll-to.scss)
+[js/components/scroll-button](../../src/js/components/scroll-button.vue)  
+[scss/components/scroll-button](../../src/scss/components/_scroll-button.scss)
 
 ## Usage
 
 ``` html
-<scroll-to
+<scroll-button
   :duration="800"
   :offset="400">
-</scroll-to>
+</scroll-button>
 ```
 
 ## Props
@@ -48,6 +48,6 @@
 ## SCSS variables
 
 ``` scss
-$scroll-to-bg-color: $primary-color-accent !default;
-$scroll-to-color: get-contrast($scroll-to-bg-color) !default;
+$scroll-button-bg-color: $primary-color-accent !default;
+$scroll-button-color: get-contrast($scroll-button-bg-color) !default;
 ```
