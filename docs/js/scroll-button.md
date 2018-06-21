@@ -18,32 +18,12 @@
 | Name | Type | Default | Description |
 | ---- |:----:| ------- | ----------- |
 | duration | `Number` | `600` | Duration time in scroll moves. The unit is milliseconds. |
-| easing | `String` | `'easeOutCubic'` | [easing function name](#available-easing-function-names) |
+| easing | `String` | `'easeInOut'` | Specify an easing type. available common keywords is `linear`, `ease`, `easIn`, `easeOut` or `easeInOut`. |
 | offset | `Number` | `0` | Buttons will hide automatically within this offset value. The unit is pixels. |
-| top-html | `String` | `'↑'` | `innerHTML` value of to-top button. |
-| bottom-html | `String` | `'↓'` | `innerHTML` value of to-bottom button. |
-| disable-top | `Boolean` | `false` | Disable to-top button. |
-| disable-bottom | `Boolean` | `false` | Disable to-bottom button. |
-
-## Notes
-
-### Available easing function names
-
-> @see [scroll-it.js](../../src/js/lib/utils/scroll-it.js) and [easing types](https://docs111.mootools.net/Effects/Fx-Transitions)
-
-- `linear`
-- `easeInQuad`
-- `easeOutQuad`
-- `easeInOutQuad`
-- `easeInCubic`
-- `easeOutCubic`
-- `easeInOutCubic`
-- `easeInQuart`
-- `easeOutQuart`
-- `easeInOutQuart`
-- `easeInQuint`
-- `easeOutQuint`
-- `easeInOutQuint`
+| top-html | `String` | 'arrow-up' icon | The `innerHTML` value of the `.scroll-button-top`. |
+| bottom-html | `String` | 'arrow-down' icon | The `innerHTML` value of the `.scroll-button-button`. |
+| disable-top | `Boolean` | `false` | Disable `.scroll-button-top` |
+| disable-bottom | `Boolean` | `false` | Disable `.scroll-button-button`. |
 
 ## SCSS variables
 

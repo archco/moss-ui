@@ -22,7 +22,8 @@
   bottom: 4%;
   z-index: $z-index-scroll-button;
 
-  .scroll-button {
+  .scroll-button-top,
+  .scroll-button-bottom {
     @extend %scroll-button;
   }
 }

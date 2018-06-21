@@ -2,14 +2,14 @@
   <div class="scroll-button-container">
     <button
       type="button"
-      class="scroll-button"
+      class="scroll-button-top"
       v-if="!disableTop"
       v-show="showToTop"
       @click.prevent="toTop"
       v-html="topIcon"></button>
     <button
       type="button"
-      class="scroll-button"
+      class="scroll-button-bottom"
       v-if="!disableBottom"
       v-show="showToBottom"
       @click.prevent="toBottom"
