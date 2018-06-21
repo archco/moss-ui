@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Changed
+
+- Improved navbar: add variable $navbar-header-height. see [this](https://github.com/archco/moss-ui/blob/master/docs/js/navbar.md#specifying-height) #131
+
 ### Fixed
 
 - Fix bug in `nav-item`. #130
