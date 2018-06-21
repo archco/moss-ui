@@ -2,8 +2,8 @@
   <li class="nav-item">
     <a :href="href"
       class="nav-link"
-      v-if="hasHref">
-      {{ linkText }}
+      v-if="hasHref"
+      v-text="linkText">
     </a>
     <slot></slot>
   </li>
