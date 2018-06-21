@@ -38,7 +38,7 @@ export default {
     },
     effect: {
       type: String,
-      default: 'from-top',
+      default: '', // 'from-top' or 'fade'.
     },
     closeButtonHtml: {
       type: String,
