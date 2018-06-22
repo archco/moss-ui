@@ -9,6 +9,7 @@
   - [form-inline](#form-inline)
   - [Input with Color-set](#input-with-color-set)
   - [Input with Icons](#input-with-icons)
+  - [Form Grid](#form-grid)
 - [SCSS variables](#scss-variables)
 
 ## Usage
@@ -128,6 +129,21 @@ Available color keywords: default, primary, secondary, info, success, warning, d
   <legend>Secondary Colored</legend>
 
 </fieldset>
+```
+
+### Form Grid
+
+``` html
+<form>
+  <div class="form-row">
+    <div class="col">
+      <input type="text">
+    </div>
+    <div class="col">
+      <input type="text">
+    </div>
+  </div>
+</form>
 ```
 
 ## SCSS Variables

@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Added
+
+- Added new `.form-row` for form grid style. #127
+
 ### Changed
 
 - Changed name of the `scroll-to` component to `scroll-button`. #124
