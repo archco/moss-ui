@@ -137,10 +137,10 @@ Available color keywords: default, primary, secondary, info, success, warning, d
 <form>
   <div class="form-row">
     <div class="col">
-      <input type="text">
+      <input type="text" placeholder="First name">
     </div>
     <div class="col">
-      <input type="text">
+      <input type="text" Placeholder="Last name">
     </div>
   </div>
 </form>
