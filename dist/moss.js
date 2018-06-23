@@ -15322,10 +15322,6 @@ exports.searchToObject = searchToObject;
 exports.isContains = isContains;
 exports.isEmpty = isEmpty;
 exports.isMobileSize = isMobileSize;
-exports.strToCamel = strToCamel;
-exports.strToKebab = strToKebab;
-exports.strToNormal = strToNormal;
-exports.capitalize = capitalize;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -15415,57 +15411,6 @@ function isMobileSize() {
   var size = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 800;
 
   return window.innerWidth < size;
-}
-
-/**
- * String to CamelCase
- * @deprecated in v0.6.x. use Case.camel or Case.pascal instead.
- *
- * @param {string} str
- * @param {boolean} [isSmallCamel=false] If true, returns as smallCamelCase.
- * @returns {string}
- */
-function strToCamel(str) {
-  var isSmallCamel = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-
-  return strToNormal(str).split(' ').map(function (word, i) {
-    return i === 0 && isSmallCamel ? word : word[0].toUpperCase() + word.substr(1);
-  }).join('');
-}
-
-/**
- * String to kebab-case.
- * @deprecated in v0.6.x. use Case.kebab instead.
- *
- * @param {string} str
- * @returns {string}
- */
-function strToKebab(str) {
-  return strToNormal(str).replace(/([\s])/g, '-');
-}
-
-/**
- * String to normal case. e.g. 'hello world'
- * @deprecated in v0.6.x. use Case.lower instead.
- *
- * @param {string} str
- * @returns {string}
- */
-function strToNormal(str) {
-  return str.replace(/([A-Z][a-z])/g, ' $1').replace(/([a-z])([A-Z])/g, '$1 $2').replace(/([\W|_]+)/g, ' ').trim().toLowerCase();
-}
-
-/**
- * Capitalize first letters.
- * @deprecated in v0.6.x. use Case.capital instead.
- *
- * @param {string} str
- * @returns {string}
- */
-function capitalize(str) {
-  return strToNormal(str).split(' ').map(function (word) {
-    return word[0].toUpperCase() + word.substr(1);
-  }).join(' ');
 }
 
 /***/ }),
