@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+## [0.7.0][] - 2018-06-23
+
 ### Added
 
 - Added new `.form-row` for form grid style. #127
@@ -321,7 +323,8 @@ Remove deprecated in v0.5.x #104
 - Remove unnecessary part "aside.scss". #60
 - Remove deprecated scss mixin, `flex-container()`. instead use `flex-container-align`. #52
 
-[Unreleased]: https://github.com/archco/moss-ui/compare/v0.6.5...HEAD
+[Unreleased]: https://github.com/archco/moss-ui/compare/v0.7.0...HEAD
+[0.7.0]: https://github.com/archco/moss-ui/compare/v0.6.5...v0.7.0
 [0.6.5]: https://github.com/archco/moss-ui/compare/v0.6.4...v0.6.5
 [0.6.4]: https://github.com/archco/moss-ui/compare/v0.6.3...v0.6.4
 [0.6.3]: https://github.com/archco/moss-ui/compare/v0.6.2...v0.6.3
