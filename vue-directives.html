@@ -10,6 +10,7 @@
     <style>
       aside { position: relative; }
       aside .menu { overflow: auto; }
+      .fragment:target { padding-top: 45px; }
     </style>
   </head>
   <body>
@@ -80,7 +81,7 @@
             <option value="2">Two</option>
             <option value="3">Three</option>
           </select>
-          <anchored-tag tag="h1" owned>v-tooltip</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>v-tooltip</anchored-tag>
           <blockquote class="pad info">This vue-directive is built on <a href="https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/tooltip-documentation.md">Tooltip.js</a></blockquote>
           <h3>Default usage of v-tooltip directive</h3>
           <div class="pad group"><span v-tooltip="'Javascript'">JS</span></div>
@@ -90,7 +91,7 @@
           <div class="pad group">
             <button class="btn-flat info" v-tooltip.click="'HTML: Hyper Text Markup Language'">Toggle Me!</button>
           </div>
-          <anchored-tag tag="h1" owned>v-ripple</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>v-ripple</anchored-tag>
           <h3>Default</h3>
           <button class="btn primary" v-ripple>RIPPLE TEST</button>
           <button class="btn light" v-ripple>Auto Contrast</button>
@@ -110,7 +111,7 @@
             <div class="col-md pad bg-color-warning" v-ripple="{color: '#f00'}">#f00 ripple color</div>
             <div class="col md pad bg-color-shade" v-ripple="{color: '#0ff'}">#0ff ripple color</div>
           </div>
-          <anchored-tag tag="h1" owned>v-outer</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>v-outer</anchored-tag>
           <p>Add listener for the event that occurs outer of the element.</p>
           <div class="d-flex justify-content-around align-items-center bg-color-shade mb-3" id="outer-box" style="height:150px;">
             <div class="bg-color-dark" style="width:25%;height:100px;">Other</div>
@@ -138,7 +139,7 @@
         </div>
         <div class="footer-copyright">copyright &copy; <span id='copyright-year'>2017</span> MOSS-UI all rights reserved.</div>
       </footer>
-      <scroll-to :duration="800" :offset="400"></scroll-to>
+      <scroll-button :duration="800" :offset="400"></scroll-button>
       <toast></toast>
     </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
