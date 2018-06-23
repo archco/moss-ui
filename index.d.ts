@@ -1,6 +1,6 @@
 /// <reference path="./src/js/lib/methods/scrollTo.d.ts" />
 
-// Type definitions for moss-ui v0.6.2
+// Type definitions for moss-ui v0.7.0
 // @link https://github.com/archco/moss-ui
 
 import {
@@ -40,8 +40,6 @@ export namespace Components {
   export const Toast: VueConstructor;
   export const Tree: VueConstructor;
   export const TreeItem: VueConstructor;
-  export const InputCheck: VueConstructor;
-  export const InputRadio: VueConstructor;
   export const Carousel: VueConstructor;
   export const Icon: VueConstructor;
   export const CollapseToggle: VueConstructor;
@@ -131,43 +129,6 @@ export namespace Util {
    * @return {boolean}
    */
   export function isMobileSize(size?: number): boolean;
-
-  /**
-   * String to CamelCase
-   * @deprecated in v0.6.x. use Case.camel or Case.pascal instead.
-   *
-   * @param {string} str
-   * @param {boolean} [isSmallCamel=false] If true, returns as smallCamelCase.
-   * @returns {string}
-   */
-  export function strToCamel(str: string, isSmallCamel?: boolean): string;
-
-  /**
-   * String to kebab-case.
-   * @deprecated in v0.6.x. use Case.kebab instead.
-   *
-   * @param {string} str
-   * @returns {string}
-   */
-  export function strToKebab(str: string): string;
-
-  /**
-   * String to normal case. e.g. 'hello world'
-   * @deprecated in v0.6.x. use Case.lower instead.
-   *
-   * @param {string} str
-   * @returns {string}
-   */
-  export function strToNormal(str: string): string;
-
-  /**
-   * Capitalize first letters.
-   * @deprecated in v0.6.x. use Case.capital instead.
-   *
-   * @param {string} str
-   * @returns {string}
-   */
-  export function capitalize(str: string): string;
 }
 
 export interface MossOptions {
