@@ -60,7 +60,7 @@
 | ---- |:----:| ------- | ----------- |
 | name | `String` | required | Key of modal component. |
 | title | `String` | `''` | Title text in modal-header. |
-| effect | `String` | `'from-top'` | Transition effect name. `from-top` or `fade`. If you don't want to the transition effect, please set this value to `''`. |
+| effect | `String` | `''` | Transition effect name. `from-top` or `fade`. If you don't want to the transition effect, please set this value to `''`. |
 | close-button-html | `String` | `''` | `innerHTML` value for the close button in the modal-header. |
 | close-on | `Boolean` | `false` | If this value true, modal close when click outside of it. |
 

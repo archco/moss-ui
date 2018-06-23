@@ -39,20 +39,7 @@ textarea {
 }
 
 // input generalize
-input:not([type]),
-input[type=text],
-input[type=email],
-input[type=password],
-input[type=url],
-input[type=time],
-input[type=date],
-input[type=datetime],
-input[type=datetime-local],
-input[type=tel],
-input[type=number],
-input[type=search],
-select,
-textarea {
+@include general-inputs() {
   width: 100%;
   min-height: $input-height;
   padding: $input-padding-y $input-padding-x;
@@ -189,3 +176,37 @@ input[type=color] {
     @include position-middle-left(0);
   }
 }
+
+//==========================================================
+// Form grid
+// Special replacement for `.row` for tighter form layouts.
+// https://github.com/twbs/bootstrap/blob/v4-dev/scss/_forms.scss#L187
+//==========================================================
+
+.form-row {
+  $_tight_gutter: $grid-gutter-width / 4;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: - $_tight_gutter;
+  margin-left: - $_tight_gutter;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: $_tight_gutter;
+    padding-left: $_tight_gutter;
+  }
+}
+
+//==========================================================
+// Form validation
+//
+// Provide feedback to users when form field values are valid or invalid.
+// Works primarily for client-side validation via scoped
+// `:invalid` and `:valid` pseudo-classes but also includes
+// `.is-invalid` and `.is-valid` classes for server side validation.
+// https://github.com/twbs/bootstrap/blob/v4-dev/scss/_forms.scss#L245
+//==========================================================
+
+@include form-validation-state('valid', $form-feedback-valid-color);
+@include form-validation-state('invalid', $form-feedback-invalid-color);

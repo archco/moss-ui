@@ -144,12 +144,6 @@
     "description": "A component used for read, update or delete action to collection-item."
   },
   {
-    "_id": 25,
-    "name": "Switch",
-    "category": "vue",
-    "description": "Styled components for checkbox input or for radio input."
-  },
-  {
     "_id": 26,
     "name": "Tab",
     "category": "vue",

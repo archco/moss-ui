@@ -13,6 +13,7 @@
 - [Usage](#usage)
   - [Basic](#basic)
   - [Multiple navigation](#multiple-navigation)
+  - [Specifying height](#specifying-height)
 - [Props](#props)
 - [SCSS variables](#scss-variables)
 
@@ -54,14 +55,34 @@
 </navbar>
 ```
 
+### Specifying height
+
+If you want to specify the height of the navbar, choose one of the following two ways.
+
+#### Option 1. Set scss-variable `$navbar-header-height`
+
+``` scss
+// _variables.scss
+$navbar-header-height: 3rem; // default value is `auto`.
+```
+
+#### Option 2. Set prop `header-style` to component
+
+``` html
+<navbar :header-style="{ height: '3rem' }">
+  ...
+</navbar>
+```
+
 ## Props
 
 ### navbar
 
 | Name | Type | Default | Description |
 | ---- |:----:| ------- | ----------- |
-| align | `String` | `''` (start) | Alignment of body content as `justify-content`. |
-| header-align | `String` | `''` (start) | Alignment of nav-header as `justify-content`. |
+| align | `String` | `''` (start) | It's `justify-content` value of the `navbar`'s body content. |
+| header-align | `String` | `''` (start) | It's `justify-content` value of the `navbar-header`. |
+| header-style | `object` | `{}` | style object for `navbar-header`. |
 
 **Note** Available alignment keywords: `start`, `end`, `center`, `between` and `around`.
 
@@ -92,4 +113,5 @@ $nav-font: $font-accent !default;
 $nav-font-size: 1.25em !default;
 $nav-line-height: 1.25 !default;
 $navbar-toggle-width: 35px !default;
+$navbar-header-height: auto !default;
 ```

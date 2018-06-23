@@ -98,20 +98,6 @@ This component is a helper for toggling collapse or accordion.
 <button type="button" class="btn" is="collapse-toggle" tag="button" target="my-collapse-id">Toggle</button>
 ```
 
-### collapse-toggle class
-
-> @deprecated at v0.5.0. use [`collapse-toggle`](#using-collapse-toggle) component instead.
-
-Available optional class: `with-plus` `with-caret` `with-arrow`
-
-``` html
-<div class="collapse-toggle with-plus" v-collapse:test01>TOGGLE</div>
-<collapse id="test01">
-  <h3>Title</h3>
-  <p>...</p>
-</collapse>
-```
-
 ## Props
 
 ### Props of Collapse

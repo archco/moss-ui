@@ -51,12 +51,9 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [navbar](js/navbar.md)
 - [nav-drawer](js/nav-drawer.md)
 - [parallax](js/parallax.md)
-- [scroll-to](js/scroll-to.md)
+- [scroll-button](js/scroll-button.md)
 - [simple-crud](js/simple-crud.md)
 - [search](js/search.md)
-- [switch](js/switch.md) **@deprecated in [v0.6.x](https://github.com/archco/moss-ui/issues/104)**
-  - [input-check](js/switch.md)
-  - [input-radio](js/switch.md)
 - [tabs](js/tabs.md)
 - [toast](js/toast.md)
 - [tree](js/tree.md)

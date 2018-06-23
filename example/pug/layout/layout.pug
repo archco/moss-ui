@@ -23,6 +23,7 @@ html
     style
       |aside { position: relative; }
       |aside .menu { overflow: auto; }
+      |.fragment:target { padding-top: 45px; }
   body
     div(id='app')
       header.d-flex.justify-content-center.align-items-center.bg-color-primary(style="height:100px;")
@@ -61,7 +62,7 @@ html
                   a(href='#') Link3
         div(class='footer-copyright')
           |copyright &copy; <span id='copyright-year'>2017</span> MOSS-UI all rights reserved.
-      scroll-to(:duration='800' :offset='400')
+      scroll-button(:duration='800' :offset='400')
       toast
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>

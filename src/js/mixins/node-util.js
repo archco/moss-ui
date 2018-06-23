@@ -21,7 +21,11 @@ export default {
      */
     clearChildren(children) {
       children.forEach(node => {
-        node.elm.parentNode.removeChild(node.elm);
+        if (node.elm) {
+          node.elm.parentNode.removeChild(node.elm);
+        } else {
+          node.text = '';
+        }
       });
     },
   },

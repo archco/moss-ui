@@ -120,5 +120,3 @@
 .box-line { border: 1px solid $secondary-color; }
 .group { margin-bottom: $space-3; }
 .debug-line { @include debug; }
-.caret { @include caret('down'); }
-.arrow { @include arrow; }

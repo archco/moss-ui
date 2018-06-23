@@ -53,20 +53,6 @@ Available color keywords: default, primary, secondary, info, success, warning, d
 <div class="bg-color-success">...</div>
 ```
 
-### Caret
-
-``` html
-<span class="caret"></span>
-<span class="caret up"></span>
-```
-
-### Arrow
-
-``` html
-<span class="arrow"></span>
-<span class="arrow right"></span>
-```
-
 ### Box shadow
 
 ``` html

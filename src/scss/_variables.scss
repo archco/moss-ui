@@ -42,9 +42,9 @@ $red: palette('chili-red') !default;
 $yellow: palette('natural-yellow') !default;
 
 // theme-colors
-$primary-color: palette('ut-orange') !default;
+$primary-color: palette('go-green') !default;
 $primary-color-accent: lighten($primary-color, 12%) !default;
-$secondary-color: palette('marengo') !default;
+$secondary-color: palette('hookers-green') !default;
 
 // background colors
 $background-color: $white !default;
@@ -195,7 +195,7 @@ $z-index-fixed:               12 !default;
 $z-index-sticky:              12 !default;
 $z-index-dropdown-content:    14 !default;
 $z-index-tooltip:             14 !default;
-$z-index-scroll-to-button:    16 !default;
+$z-index-scroll-button:       16 !default;
 $z-index-modal:               18 !default;
 $z-index-toast:               20 !default;
 
@@ -270,6 +270,12 @@ $input-disabled-bg-color: $disabled-color !default;
 // background-color of color-set input set automatically.
 // If value is false, background-color set transparent.
 $auto-input-bg-color-enable: true !default;
+
+// form validation
+$form-feedback-margin-top: $space-1 !default;
+$form-feedback-font-size: $font-size-small !default;
+$form-feedback-valid-color: $success-color !default;
+$form-feedback-invalid-color: $danger-color !default;
 
 // list
 $list-border-width: 1px !default;
@@ -377,6 +383,7 @@ $nav-font: $font-accent !default;
 $nav-font-size: 1.25em !default;
 $nav-line-height: 1.25 !default;
 $navbar-toggle-width: 35px !default;
+$navbar-header-height: auto !default;
 
 // nav-drawer
 $nav-drawer-base-width: 280px !default;
@@ -401,9 +408,9 @@ $nav-drawer-menu-item-active-bg-color: $shade-color !default;
 $nav-drawer-menu-item-disabled-color: $text-color-middle !default;
 $nav-drawer-menu-divider-color: $border-color !default;
 
-// scroll-to
-$scroll-to-bg-color: $primary-color-accent !default;
-$scroll-to-color: get-contrast($scroll-to-bg-color) !default;
+// scroll-button
+$scroll-button-bg-color: $primary-color-accent !default;
+$scroll-button-color: get-contrast($scroll-button-bg-color) !default;
 
 // modal
 $modal-mask-color: rgba(0, 0, 0, .5) !default;
@@ -466,18 +473,6 @@ $message-border-radius: $radius-normal !default;
 $simple-crud-min-height: 3em !default;
 $simple-crud-padding-x: $space-2 !default;
 $simple-crud-margin-bottom: $space-2 !default;
-
-// input-switch (input-check or input-radio) and input-toggle
-$input-switch-stroke-color: $text-color-light !default;
-$input-switch-fill-color: $primary-color !default;
-$input-switch-border-width: .0625em !default;
-$input-switch-border-color: $background-color !default;
-$input-switch-focus-color: $primary-color !default;
-$input-switch-base-size: 1em !default;
-$input-toggle-bg-color: $background-color !default;
-$input-toggle-border-color: $border-color !default;
-$input-toggle-active-color: $primary-color !default;
-$input-toggle-transition-duration: $transition-duration !default;
 
 // carousel
 $carousel-dot-color: rgba($text-color-light, .5) !default;

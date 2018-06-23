@@ -11,6 +11,44 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+## [0.7.0][] - 2018-06-23
+
+### Added
+
+- Added new `.form-row` for form grid style. #127
+- Added form validation style #132
+
+### Changed
+
+- Changed name of the `scroll-to` component to `scroll-button`. #124
+- Improved navbar: add variable $navbar-header-height. see [this](https://github.com/archco/moss-ui/blob/master/docs/js/navbar.md#specifying-height) #131
+- Changed modal: change default value of the `effect` prop from `'from-top'` to `''`. #128
+
+### Updated
+
+- Updated scss-helpers that referenced from the bootstrap. #133
+  - flex: add flex-helpers. `.flex-fill`, `.flex-grow-0`, `.flex-grow-1`, `.flex-shrink-0` and `.flex-shrink-1`.
+
+### Fixed
+
+- Fix bug in `nav-item`. #130
+
+### Removed
+
+Remove deprecated in v0.6.x #104
+
+- `js/lib/util.js` - Some JS util methods are deprecated. use [`cake-case`](https://github.com/archco/cake-case#readme) instead. #103 
+  - `Util.strToCamel`: use `Case.camel` or `Case.pascal` instead.
+  - `Util.strToKebab`: use `Case.kebab` instead.
+  - `Util.strToNormal`: use `Case.lower` instead.
+  - `Util.capitalize`: use `Case.capital` instead.
+- `js/lib/util.js` - `scrollIt()` util method, use `scrollTo()` instead. #123
+- `scss/mixins/_arrow.scss` - It's useless. use [Icon](https://github.com/archco/moss-ui/blob/master/docs/svg-icons.md#svg-icons) instead.
+- `scss/mixins/_caret.scss` - It's useless. use [Icon](https://github.com/archco/moss-ui/blob/master/docs/svg-icons.md#svg-icons) instead.
+- The switch components `input-check` and `input-radio` are deprecated. Recommend you use default tags or other external plugins.
+  - `js/components/input-check.vue`
+  - `js/components/input-radio.vue`
+
 ## [0.6.5][] - 2018-06-18
 
 ### Added
@@ -285,7 +323,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Remove unnecessary part "aside.scss". #60
 - Remove deprecated scss mixin, `flex-container()`. instead use `flex-container-align`. #52
 
-[Unreleased]: https://github.com/archco/moss-ui/compare/v0.6.5...HEAD
+[Unreleased]: https://github.com/archco/moss-ui/compare/v0.7.0...HEAD
+[0.7.0]: https://github.com/archco/moss-ui/compare/v0.6.5...v0.7.0
 [0.6.5]: https://github.com/archco/moss-ui/compare/v0.6.4...v0.6.5
 [0.6.4]: https://github.com/archco/moss-ui/compare/v0.6.3...v0.6.4
 [0.6.3]: https://github.com/archco/moss-ui/compare/v0.6.2...v0.6.3

@@ -1,15 +1,15 @@
 <template lang="html">
-  <div class="scroll-to-container">
+  <div class="scroll-button-container">
     <button
       type="button"
-      class="scroll-to-top"
+      class="scroll-button-top"
       v-if="!disableTop"
       v-show="showToTop"
       @click.prevent="toTop"
       v-html="topIcon"></button>
     <button
       type="button"
-      class="scroll-to-bottom"
+      class="scroll-button-bottom"
       v-if="!disableBottom"
       v-show="showToBottom"
       @click.prevent="toBottom"

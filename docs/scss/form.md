@@ -9,6 +9,8 @@
   - [form-inline](#form-inline)
   - [Input with Color-set](#input-with-color-set)
   - [Input with Icons](#input-with-icons)
+  - [Form Grid](#form-grid)
+  - [Validation](#validation)
 - [SCSS variables](#scss-variables)
 
 ## Usage
@@ -128,6 +130,95 @@ Available color keywords: default, primary, secondary, info, success, warning, d
   <legend>Secondary Colored</legend>
 
 </fieldset>
+```
+
+### Form Grid
+
+``` html
+<form>
+  <div class="form-row">
+    <div class="col">
+      <input type="text" placeholder="First name">
+    </div>
+    <div class="col">
+      <input type="text" Placeholder="Last name">
+    </div>
+  </div>
+</form>
+```
+
+### Validation
+
+> This feature is referenced from the bootstrap. [see here for more information](https://getbootstrap.com/docs/4.1/components/forms/#validation).
+
+Provide feedback to users when form field values are valid or invalid.
+
+#### HTML5 constraint validation
+
+Using [basic constraints in HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation#Intrinsic_and_basic_constraints)
+
+``` html
+<form class="was-validated">
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="formValidation01">First name</label>
+      <input type="text" id="formValidation01" placeholder="First name" value="John" required>
+      <div class="valid-feedback">Looks good!</div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="formValidation02">Last name</label>
+      <input type="text" id="formValidation02" placeholder="Last name" value="Doe" required>
+      <div class="valid-feedback">Looks good!</div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="formValidation03">Username</label>
+      <div class="input-group">
+        <div class="input-group-prepend"><span class="input-group-text">@</span></div>
+        <input type="text" id="formValidation03" placeholder="Username" required>
+        <div class="invalid-feedback">Please choose a username.</div>
+      </div>
+    </div>
+    <div class="col-md mb-3">
+      <input id="formValidation04" type="checkbox" required>
+      <label for="formValidation04">Agree to terms and conditions</label>
+      <div class="invalid-feedback">You must agree before submitting.</div>
+    </div>
+  </div>
+</form>
+```
+
+### Server side validation
+
+Using `.is-valid` and `.is-invalid`.
+
+``` html
+<form>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="formValidation05">First name</label>
+      <input class="is-valid" type="text" id="formValidation05" placeholder="First name" value="John" required>
+      <div class="valid-feedback">Looks good!</div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="formValidation06">Last name</label>
+      <input class="is-valid" type="text" id="formValidation06" placeholder="Last name" value="Doe" required>
+      <div class="valid-feedback">Looks good!</div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="formValidation07">Username</label>
+      <div class="input-group">
+        <div class="input-group-prepend"><span class="input-group-text">@</span></div>
+        <input class="is-invalid" type="text" id="formValidation07" placeholder="Username" required>
+        <div class="invalid-feedback">Please choose a username.</div>
+      </div>
+    </div>
+    <div class="col-md mb-3">
+      <input class="is-invalid" id="formValidation08" type="checkbox" required>
+      <label for="formValidation08">Agree to terms and conditions</label>
+      <div class="invalid-feedback">You must agree before submitting.</div>
+    </div>
+  </div>
+</form>
 ```
 
 ## SCSS Variables
