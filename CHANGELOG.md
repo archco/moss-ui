@@ -31,6 +31,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Fix bug in `nav-item`. #130
 
+### Removed
+
+Remove deprecated in v0.5.x #104
+
+- `js/lib/util.js` - Some JS util methods are deprecated. use [`cake-case`](https://github.com/archco/cake-case#readme) instead. #103 
+  - `Util.strToCamel`: use `Case.camel` or `Case.pascal` instead.
+  - `Util.strToKebab`: use `Case.kebab` instead.
+  - `Util.strToNormal`: use `Case.lower` instead.
+  - `Util.capitalize`: use `Case.capital` instead.
+- `js/lib/util.js` - `scrollIt()` util method, use `scrollTo()` instead. #123
+- `scss/mixins/_arrow.scss` - It's useless. use [Icon](https://github.com/archco/moss-ui/blob/master/docs/svg-icons.md#svg-icons) instead.
+- `scss/mixins/_caret.scss` - It's useless. use [Icon](https://github.com/archco/moss-ui/blob/master/docs/svg-icons.md#svg-icons) instead.
+- The switch components `input-check` and `input-radio` are deprecated. Recommend you use default tags or other external plugins.
+  - `js/components/input-check.vue`
+  - `js/components/input-radio.vue`
+
 ## [0.6.5][] - 2018-06-18
 
 ### Added

@@ -474,18 +474,6 @@ $simple-crud-min-height: 3em !default;
 $simple-crud-padding-x: $space-2 !default;
 $simple-crud-margin-bottom: $space-2 !default;
 
-// input-switch (input-check or input-radio) and input-toggle
-$input-switch-stroke-color: $text-color-light !default;
-$input-switch-fill-color: $primary-color !default;
-$input-switch-border-width: .0625em !default;
-$input-switch-border-color: $background-color !default;
-$input-switch-focus-color: $primary-color !default;
-$input-switch-base-size: 1em !default;
-$input-toggle-bg-color: $background-color !default;
-$input-toggle-border-color: $border-color !default;
-$input-toggle-active-color: $primary-color !default;
-$input-toggle-transition-duration: $transition-duration !default;
-
 // carousel
 $carousel-dot-color: rgba($text-color-light, .5) !default;
 $carousel-dot-active-color: $text-color-light !default;
