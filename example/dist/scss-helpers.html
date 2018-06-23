@@ -10,6 +10,7 @@
     <style>
       aside { position: relative; }
       aside .menu { overflow: auto; }
+      .fragment:target { padding-top: 45px; }
     </style>
   </head>
   <body>
@@ -41,7 +42,7 @@
           </ul>
         </aside>
         <section class="col-md-10">
-          <anchored-tag tag="h1" owned>Helper</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Helper</anchored-tag>
           <h3>Toggling content</h3>
           <div class="row">
             <div class="col-sm">
@@ -174,7 +175,7 @@
               <div class="pad bg-color-success rounded-left">rounded-left</div>
             </div>
           </div>
-          <anchored-tag tag="h1" owned>Sizing</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Sizing</anchored-tag>
           <p>Helper classes for specifying width or height of element.</p>
           <h2>Width</h2>
           <div class="w-25 p-3 bg-color-shade">Width 25%</div>
@@ -188,13 +189,13 @@
             <div class="h-75 px-3 bg-color-dark">Height 75%</div>
             <div class="h-100 px-3 bg-color-dark">Height 100%</div>
           </div>
-          <anchored-tag tag="h1" owned>Spacing</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Spacing</anchored-tag>
           <p>Helper classes for specifying margin or padding spacing to element.</p>
           <h2>Margin</h2>
           <div class="bg-color-shade p-3"><span class="bg-color-dark m-1">margin-1</span><span class="bg-color-dark m-2">margin-2</span><span class="bg-color-dark m-3">margin-3</span><span class="bg-color-dark m-4">margin-4</span><span class="bg-color-dark m-5">margin-5</span></div>
           <h2>Padding</h2>
           <div class="bg-color-shade p-3"><span class="bg-color-dark p-1">padding-1</span><span class="bg-color-dark p-2">padding-2</span><span class="bg-color-dark p-3">padding-3</span><span class="bg-color-dark p-4">padding-4</span><span class="bg-color-dark p-5">padding-5</span></div>
-          <anchored-tag tag="h1" owned>Text</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Text</anchored-tag>
           <h3>Fonts</h3>
           <div class="group">
             <div class="font-cursive">font-cursive</div>
@@ -227,7 +228,7 @@
           <h3>Miscellaneous</h3>
           <p><span>help: </span><span class="help">This is help comments.</span></p>
           <p><span>text-truncate: </span><span class="text-truncate" style="display:inline-block;width:10em;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>
-          <anchored-tag tag="h1" owned>Flex</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Flex</anchored-tag>
           <div class="group">
             <div class="pad bg-color-secondary d-flex">Flexbox container</div>
             <div class="pad bg-color-info d-inline-flex">Inline flexbox</div>
@@ -253,7 +254,7 @@
         </div>
         <div class="footer-copyright">copyright &copy; <span id='copyright-year'>2017</span> MOSS-UI all rights reserved.</div>
       </footer>
-      <scroll-to :duration="800" :offset="400"></scroll-to>
+      <scroll-button :duration="800" :offset="400"></scroll-button>
       <toast></toast>
     </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>

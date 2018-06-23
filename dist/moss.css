@@ -1745,10 +1745,294 @@ textarea.inline {
     right: auto;
     transform: translate(0, -50%); }
 
+.form-row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-right: -0.375rem;
+  margin-left: -0.375rem; }
+  .form-row > .col,
+  .form-row > [class*="col-"] {
+    padding-right: 0.375rem;
+    padding-left: 0.375rem; }
+
+.valid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.8em;
+  color: #00a550; }
+
+.valid-tooltip {
+  position: absolute;
+  top: 100%;
+  z-index: 5;
+  display: none;
+  min-width: 100%;
+  padding: .5rem;
+  margin-top: .1rem;
+  font-size: 0.8em;
+  line-height: 1;
+  color: #fff;
+  background-color: rgba(0, 165, 80, 0.8);
+  border-radius: 2px; }
+
+.was-validated input:not([type]):valid, input:not([type]).is-valid, .was-validated
+input[type=text]:valid,
+input[type=text].is-valid, .was-validated
+input[type=email]:valid,
+input[type=email].is-valid, .was-validated
+input[type=password]:valid,
+input[type=password].is-valid, .was-validated
+input[type=url]:valid,
+input[type=url].is-valid, .was-validated
+input[type=time]:valid,
+input[type=time].is-valid, .was-validated
+input[type=date]:valid,
+input[type=date].is-valid, .was-validated
+input[type=datetime]:valid,
+input[type=datetime].is-valid, .was-validated
+input[type=datetime-local]:valid,
+input[type=datetime-local].is-valid, .was-validated
+input[type=tel]:valid,
+input[type=tel].is-valid, .was-validated
+input[type=number]:valid,
+input[type=number].is-valid, .was-validated
+input[type=search]:valid,
+input[type=search].is-valid, .was-validated
+select:valid,
+select.is-valid, .was-validated
+textarea:valid,
+textarea.is-valid {
+  border-color: #00a550;
+  outline-color: #00a550; }
+  .was-validated input:not([type]):valid ~ .valid-feedback,
+  .was-validated input:not([type]):valid ~ .valid-tooltip, input:not([type]).is-valid ~ .valid-feedback,
+  input:not([type]).is-valid ~ .valid-tooltip, .was-validated
+  input[type=text]:valid ~ .valid-feedback,
+  .was-validated
+  input[type=text]:valid ~ .valid-tooltip,
+  input[type=text].is-valid ~ .valid-feedback,
+  input[type=text].is-valid ~ .valid-tooltip, .was-validated
+  input[type=email]:valid ~ .valid-feedback,
+  .was-validated
+  input[type=email]:valid ~ .valid-tooltip,
+  input[type=email].is-valid ~ .valid-feedback,
+  input[type=email].is-valid ~ .valid-tooltip, .was-validated
+  input[type=password]:valid ~ .valid-feedback,
+  .was-validated
+  input[type=password]:valid ~ .valid-tooltip,
+  input[type=password].is-valid ~ .valid-feedback,
+  input[type=password].is-valid ~ .valid-tooltip, .was-validated
+  input[type=url]:valid ~ .valid-feedback,
+  .was-validated
+  input[type=url]:valid ~ .valid-tooltip,
+  input[type=url].is-valid ~ .valid-feedback,
+  input[type=url].is-valid ~ .valid-tooltip, .was-validated
+  input[type=time]:valid ~ .valid-feedback,
+  .was-validated
+  input[type=time]:valid ~ .valid-tooltip,
+  input[type=time].is-valid ~ .valid-feedback,
+  input[type=time].is-valid ~ .valid-tooltip, .was-validated
+  input[type=date]:valid ~ .valid-feedback,
+  .was-validated
+  input[type=date]:valid ~ .valid-tooltip,
+  input[type=date].is-valid ~ .valid-feedback,
+  input[type=date].is-valid ~ .valid-tooltip, .was-validated
+  input[type=datetime]:valid ~ .valid-feedback,
+  .was-validated
+  input[type=datetime]:valid ~ .valid-tooltip,
+  input[type=datetime].is-valid ~ .valid-feedback,
+  input[type=datetime].is-valid ~ .valid-tooltip, .was-validated
+  input[type=datetime-local]:valid ~ .valid-feedback,
+  .was-validated
+  input[type=datetime-local]:valid ~ .valid-tooltip,
+  input[type=datetime-local].is-valid ~ .valid-feedback,
+  input[type=datetime-local].is-valid ~ .valid-tooltip, .was-validated
+  input[type=tel]:valid ~ .valid-feedback,
+  .was-validated
+  input[type=tel]:valid ~ .valid-tooltip,
+  input[type=tel].is-valid ~ .valid-feedback,
+  input[type=tel].is-valid ~ .valid-tooltip, .was-validated
+  input[type=number]:valid ~ .valid-feedback,
+  .was-validated
+  input[type=number]:valid ~ .valid-tooltip,
+  input[type=number].is-valid ~ .valid-feedback,
+  input[type=number].is-valid ~ .valid-tooltip, .was-validated
+  input[type=search]:valid ~ .valid-feedback,
+  .was-validated
+  input[type=search]:valid ~ .valid-tooltip,
+  input[type=search].is-valid ~ .valid-feedback,
+  input[type=search].is-valid ~ .valid-tooltip, .was-validated
+  select:valid ~ .valid-feedback,
+  .was-validated
+  select:valid ~ .valid-tooltip,
+  select.is-valid ~ .valid-feedback,
+  select.is-valid ~ .valid-tooltip, .was-validated
+  textarea:valid ~ .valid-feedback,
+  .was-validated
+  textarea:valid ~ .valid-tooltip,
+  textarea.is-valid ~ .valid-feedback,
+  textarea.is-valid ~ .valid-tooltip {
+    display: block; }
+
+.was-validated input[type=checkbox]:valid ~ label, input[type=checkbox].is-valid ~ label, .was-validated
+input[type=radio]:valid ~ label,
+input[type=radio].is-valid ~ label {
+  color: #00a550; }
+
+.was-validated input[type=checkbox]:valid ~ .valid-feedback,
+.was-validated input[type=checkbox]:valid ~ .valid-tooltip, input[type=checkbox].is-valid ~ .valid-feedback,
+input[type=checkbox].is-valid ~ .valid-tooltip, .was-validated
+input[type=radio]:valid ~ .valid-feedback,
+.was-validated
+input[type=radio]:valid ~ .valid-tooltip,
+input[type=radio].is-valid ~ .valid-feedback,
+input[type=radio].is-valid ~ .valid-tooltip {
+  display: block; }
+
+.invalid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.8em;
+  color: #e23d28; }
+
+.invalid-tooltip {
+  position: absolute;
+  top: 100%;
+  z-index: 5;
+  display: none;
+  min-width: 100%;
+  padding: .5rem;
+  margin-top: .1rem;
+  font-size: 0.8em;
+  line-height: 1;
+  color: #fff;
+  background-color: rgba(226, 61, 40, 0.8);
+  border-radius: 2px; }
+
+.was-validated input:not([type]):invalid, input:not([type]).is-invalid, .was-validated
+input[type=text]:invalid,
+input[type=text].is-invalid, .was-validated
+input[type=email]:invalid,
+input[type=email].is-invalid, .was-validated
+input[type=password]:invalid,
+input[type=password].is-invalid, .was-validated
+input[type=url]:invalid,
+input[type=url].is-invalid, .was-validated
+input[type=time]:invalid,
+input[type=time].is-invalid, .was-validated
+input[type=date]:invalid,
+input[type=date].is-invalid, .was-validated
+input[type=datetime]:invalid,
+input[type=datetime].is-invalid, .was-validated
+input[type=datetime-local]:invalid,
+input[type=datetime-local].is-invalid, .was-validated
+input[type=tel]:invalid,
+input[type=tel].is-invalid, .was-validated
+input[type=number]:invalid,
+input[type=number].is-invalid, .was-validated
+input[type=search]:invalid,
+input[type=search].is-invalid, .was-validated
+select:invalid,
+select.is-invalid, .was-validated
+textarea:invalid,
+textarea.is-invalid {
+  border-color: #e23d28;
+  outline-color: #e23d28; }
+  .was-validated input:not([type]):invalid ~ .invalid-feedback,
+  .was-validated input:not([type]):invalid ~ .invalid-tooltip, input:not([type]).is-invalid ~ .invalid-feedback,
+  input:not([type]).is-invalid ~ .invalid-tooltip, .was-validated
+  input[type=text]:invalid ~ .invalid-feedback,
+  .was-validated
+  input[type=text]:invalid ~ .invalid-tooltip,
+  input[type=text].is-invalid ~ .invalid-feedback,
+  input[type=text].is-invalid ~ .invalid-tooltip, .was-validated
+  input[type=email]:invalid ~ .invalid-feedback,
+  .was-validated
+  input[type=email]:invalid ~ .invalid-tooltip,
+  input[type=email].is-invalid ~ .invalid-feedback,
+  input[type=email].is-invalid ~ .invalid-tooltip, .was-validated
+  input[type=password]:invalid ~ .invalid-feedback,
+  .was-validated
+  input[type=password]:invalid ~ .invalid-tooltip,
+  input[type=password].is-invalid ~ .invalid-feedback,
+  input[type=password].is-invalid ~ .invalid-tooltip, .was-validated
+  input[type=url]:invalid ~ .invalid-feedback,
+  .was-validated
+  input[type=url]:invalid ~ .invalid-tooltip,
+  input[type=url].is-invalid ~ .invalid-feedback,
+  input[type=url].is-invalid ~ .invalid-tooltip, .was-validated
+  input[type=time]:invalid ~ .invalid-feedback,
+  .was-validated
+  input[type=time]:invalid ~ .invalid-tooltip,
+  input[type=time].is-invalid ~ .invalid-feedback,
+  input[type=time].is-invalid ~ .invalid-tooltip, .was-validated
+  input[type=date]:invalid ~ .invalid-feedback,
+  .was-validated
+  input[type=date]:invalid ~ .invalid-tooltip,
+  input[type=date].is-invalid ~ .invalid-feedback,
+  input[type=date].is-invalid ~ .invalid-tooltip, .was-validated
+  input[type=datetime]:invalid ~ .invalid-feedback,
+  .was-validated
+  input[type=datetime]:invalid ~ .invalid-tooltip,
+  input[type=datetime].is-invalid ~ .invalid-feedback,
+  input[type=datetime].is-invalid ~ .invalid-tooltip, .was-validated
+  input[type=datetime-local]:invalid ~ .invalid-feedback,
+  .was-validated
+  input[type=datetime-local]:invalid ~ .invalid-tooltip,
+  input[type=datetime-local].is-invalid ~ .invalid-feedback,
+  input[type=datetime-local].is-invalid ~ .invalid-tooltip, .was-validated
+  input[type=tel]:invalid ~ .invalid-feedback,
+  .was-validated
+  input[type=tel]:invalid ~ .invalid-tooltip,
+  input[type=tel].is-invalid ~ .invalid-feedback,
+  input[type=tel].is-invalid ~ .invalid-tooltip, .was-validated
+  input[type=number]:invalid ~ .invalid-feedback,
+  .was-validated
+  input[type=number]:invalid ~ .invalid-tooltip,
+  input[type=number].is-invalid ~ .invalid-feedback,
+  input[type=number].is-invalid ~ .invalid-tooltip, .was-validated
+  input[type=search]:invalid ~ .invalid-feedback,
+  .was-validated
+  input[type=search]:invalid ~ .invalid-tooltip,
+  input[type=search].is-invalid ~ .invalid-feedback,
+  input[type=search].is-invalid ~ .invalid-tooltip, .was-validated
+  select:invalid ~ .invalid-feedback,
+  .was-validated
+  select:invalid ~ .invalid-tooltip,
+  select.is-invalid ~ .invalid-feedback,
+  select.is-invalid ~ .invalid-tooltip, .was-validated
+  textarea:invalid ~ .invalid-feedback,
+  .was-validated
+  textarea:invalid ~ .invalid-tooltip,
+  textarea.is-invalid ~ .invalid-feedback,
+  textarea.is-invalid ~ .invalid-tooltip {
+    display: block; }
+
+.was-validated input[type=checkbox]:invalid ~ label, input[type=checkbox].is-invalid ~ label, .was-validated
+input[type=radio]:invalid ~ label,
+input[type=radio].is-invalid ~ label {
+  color: #e23d28; }
+
+.was-validated input[type=checkbox]:invalid ~ .invalid-feedback,
+.was-validated input[type=checkbox]:invalid ~ .invalid-tooltip, input[type=checkbox].is-invalid ~ .invalid-feedback,
+input[type=checkbox].is-invalid ~ .invalid-tooltip, .was-validated
+input[type=radio]:invalid ~ .invalid-feedback,
+.was-validated
+input[type=radio]:invalid ~ .invalid-tooltip,
+input[type=radio].is-invalid ~ .invalid-feedback,
+input[type=radio].is-invalid ~ .invalid-tooltip {
+  display: block; }
+
 .input-group {
   position: relative;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -ms-flex-align: stretch;
       align-items: stretch;
   width: 100%; }
@@ -1835,8 +2119,8 @@ textarea.inline {
 
 .btn-text, .close-button, input[type=submit],
 input[type=button],
-input[type=reset], .btn, .btn-flat, .btn-icon, .dropdown-button, .nav-button, .navbar-toggle, .nav-item .dropdown .dropdown-button, .scroll-to-container .scroll-to-top,
-.scroll-to-container .scroll-to-bottom {
+input[type=reset], .btn, .btn-flat, .btn-icon, .dropdown-button, .nav-button, .navbar-toggle, .nav-item .dropdown .dropdown-button, .scroll-button-container .scroll-button-top,
+.scroll-button-container .scroll-button-bottom {
   text-decoration: none;
   line-height: 1.15;
   white-space: nowrap;
@@ -1851,11 +2135,11 @@ input[type=reset], .btn, .btn-flat, .btn-icon, .dropdown-button, .nav-button, .n
   vertical-align: middle; }
   .btn-text:focus, .close-button:focus, input:focus[type=submit],
   input:focus[type=button],
-  input:focus[type=reset], .btn:focus, .btn-flat:focus, .btn-icon:focus, .dropdown-button:focus, .nav-button:focus, .navbar-toggle:focus, .nav-item .dropdown .dropdown-button:focus, .scroll-to-container .scroll-to-top:focus,
-  .scroll-to-container .scroll-to-bottom:focus, .btn-text:hover, .close-button:hover, input:hover[type=submit],
+  input:focus[type=reset], .btn:focus, .btn-flat:focus, .btn-icon:focus, .dropdown-button:focus, .nav-button:focus, .navbar-toggle:focus, .nav-item .dropdown .dropdown-button:focus, .scroll-button-container .scroll-button-top:focus,
+  .scroll-button-container .scroll-button-bottom:focus, .btn-text:hover, .close-button:hover, input:hover[type=submit],
   input:hover[type=button],
-  input:hover[type=reset], .btn:hover, .btn-flat:hover, .btn-icon:hover, .dropdown-button:hover, .nav-button:hover, .navbar-toggle:hover, .nav-item .dropdown .dropdown-button:hover, .scroll-to-container .scroll-to-top:hover,
-  .scroll-to-container .scroll-to-bottom:hover {
+  input:hover[type=reset], .btn:hover, .btn-flat:hover, .btn-icon:hover, .dropdown-button:hover, .nav-button:hover, .navbar-toggle:hover, .nav-item .dropdown .dropdown-button:hover, .scroll-button-container .scroll-button-top:hover,
+  .scroll-button-container .scroll-button-bottom:hover {
     text-decoration: none; }
 
 .btn-text, .close-button {
@@ -3707,7 +3991,8 @@ navbar,
     -ms-flex: 0 0 auto;
         flex: 0 0 auto;
     -ms-flex-pack: justify;
-        justify-content: space-between; }
+        justify-content: space-between;
+    height: auto; }
   .navbar .navbar-body {
     display: -ms-flexbox;
     display: flex;
@@ -3897,8 +4182,8 @@ nav-drawer,
   animation: ripple 1.5s ease-in;
   animation-fill-mode: forwards; }
 
-.scroll-to-container .scroll-to-top,
-.scroll-to-container .scroll-to-bottom {
+.scroll-button-container .scroll-button-top,
+.scroll-button-container .scroll-button-bottom {
   min-width: 1rem;
   min-height: 1rem;
   font-size: 1.5em;
@@ -3911,11 +4196,11 @@ nav-drawer,
   outline: none;
   box-sizing: content-box;
   transition: background-color 0.3s ease-out; }
-  .scroll-to-container .scroll-to-top:hover,
-  .scroll-to-container .scroll-to-bottom:hover {
+  .scroll-button-container .scroll-button-top:hover,
+  .scroll-button-container .scroll-button-bottom:hover {
     background-color: #ffa03d; }
 
-.scroll-to-container {
+.scroll-button-container {
   position: fixed;
   right: 4%;
   bottom: 4%;
@@ -4425,6 +4710,21 @@ simple-crud,
   .flex-wrap-reverse {
     -ms-flex-wrap: wrap-reverse !important;
         flex-wrap: wrap-reverse !important; }
+  .flex-fill {
+    -ms-flex: 1 1 auto !important;
+        flex: 1 1 auto !important; }
+  .flex-grow-0 {
+    -ms-flex-positive: 0 !important;
+        flex-grow: 0 !important; }
+  .flex-grow-1 {
+    -ms-flex-positive: 1 !important;
+        flex-grow: 1 !important; }
+  .flex-shrink-0 {
+    -ms-flex-negative: 0 !important;
+        flex-shrink: 0 !important; }
+  .flex-shrink-1 {
+    -ms-flex-negative: 1 !important;
+        flex-shrink: 1 !important; }
   .justify-content-start {
     -ms-flex-pack: start !important;
         justify-content: flex-start !important; }
@@ -4517,6 +4817,21 @@ simple-crud,
   .flex-sm-wrap-reverse {
     -ms-flex-wrap: wrap-reverse !important;
         flex-wrap: wrap-reverse !important; }
+  .flex-sm-fill {
+    -ms-flex: 1 1 auto !important;
+        flex: 1 1 auto !important; }
+  .flex-sm-grow-0 {
+    -ms-flex-positive: 0 !important;
+        flex-grow: 0 !important; }
+  .flex-sm-grow-1 {
+    -ms-flex-positive: 1 !important;
+        flex-grow: 1 !important; }
+  .flex-sm-shrink-0 {
+    -ms-flex-negative: 0 !important;
+        flex-shrink: 0 !important; }
+  .flex-sm-shrink-1 {
+    -ms-flex-negative: 1 !important;
+        flex-shrink: 1 !important; }
   .justify-content-sm-start {
     -ms-flex-pack: start !important;
         justify-content: flex-start !important; }
@@ -4609,6 +4924,21 @@ simple-crud,
   .flex-md-wrap-reverse {
     -ms-flex-wrap: wrap-reverse !important;
         flex-wrap: wrap-reverse !important; }
+  .flex-md-fill {
+    -ms-flex: 1 1 auto !important;
+        flex: 1 1 auto !important; }
+  .flex-md-grow-0 {
+    -ms-flex-positive: 0 !important;
+        flex-grow: 0 !important; }
+  .flex-md-grow-1 {
+    -ms-flex-positive: 1 !important;
+        flex-grow: 1 !important; }
+  .flex-md-shrink-0 {
+    -ms-flex-negative: 0 !important;
+        flex-shrink: 0 !important; }
+  .flex-md-shrink-1 {
+    -ms-flex-negative: 1 !important;
+        flex-shrink: 1 !important; }
   .justify-content-md-start {
     -ms-flex-pack: start !important;
         justify-content: flex-start !important; }
@@ -4701,6 +5031,21 @@ simple-crud,
   .flex-lg-wrap-reverse {
     -ms-flex-wrap: wrap-reverse !important;
         flex-wrap: wrap-reverse !important; }
+  .flex-lg-fill {
+    -ms-flex: 1 1 auto !important;
+        flex: 1 1 auto !important; }
+  .flex-lg-grow-0 {
+    -ms-flex-positive: 0 !important;
+        flex-grow: 0 !important; }
+  .flex-lg-grow-1 {
+    -ms-flex-positive: 1 !important;
+        flex-grow: 1 !important; }
+  .flex-lg-shrink-0 {
+    -ms-flex-negative: 0 !important;
+        flex-shrink: 0 !important; }
+  .flex-lg-shrink-1 {
+    -ms-flex-negative: 1 !important;
+        flex-shrink: 1 !important; }
   .justify-content-lg-start {
     -ms-flex-pack: start !important;
         justify-content: flex-start !important; }
@@ -4793,6 +5138,21 @@ simple-crud,
   .flex-xl-wrap-reverse {
     -ms-flex-wrap: wrap-reverse !important;
         flex-wrap: wrap-reverse !important; }
+  .flex-xl-fill {
+    -ms-flex: 1 1 auto !important;
+        flex: 1 1 auto !important; }
+  .flex-xl-grow-0 {
+    -ms-flex-positive: 0 !important;
+        flex-grow: 0 !important; }
+  .flex-xl-grow-1 {
+    -ms-flex-positive: 1 !important;
+        flex-grow: 1 !important; }
+  .flex-xl-shrink-0 {
+    -ms-flex-negative: 0 !important;
+        flex-shrink: 0 !important; }
+  .flex-xl-shrink-1 {
+    -ms-flex-negative: 1 !important;
+        flex-shrink: 1 !important; }
   .justify-content-xl-start {
     -ms-flex-pack: start !important;
         justify-content: flex-start !important; }

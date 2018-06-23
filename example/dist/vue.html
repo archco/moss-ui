@@ -10,6 +10,7 @@
     <style>
       aside { position: relative; }
       aside .menu { overflow: auto; }
+      .fragment:target { padding-top: 45px; }
     </style>
   </head>
   <body>
@@ -52,7 +53,7 @@
           </ul>
         </aside>
         <section class="col-md-10">
-          <anchored-tag tag="h1" owned>Carousel</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Carousel</anchored-tag>
           <blockquote class="pad info">This component uses <a href="https://github.com/lukaszflorczak/vue-agile">vue-agile</a>.</blockquote>
           <h2>Basic usage</h2>
           <carousel autoplay :autoplay-speed="5000">
@@ -66,7 +67,7 @@
               <h3>SLIDE3</h3>
             </div>
           </carousel>
-          <anchored-tag tag="h1" owned>Chip</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Chip</anchored-tag>
           <h3>Tag Chip</h3><chip title="tag-sample">TagSample</chip>
 <chip closeable>TagSample</chip>
           <h3>Contact Chip</h3>
@@ -81,7 +82,7 @@
           <chip img-src="https://www.cloudschool.org/static/user_images/avatar-04.gif" img-alt="avatar" color="#69c" closeable>Colored</chip>
           <h3>Custom close event</h3>
           <chip closeable close-action="" @close="test('Chip closed.')">See Console</chip>
-          <anchored-tag tag="h1" owned>CloseButton</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>CloseButton</anchored-tag>
           <h2>Default usage</h2><span>test text<close-button /></span><span class="badge">Badge<close-button action="remove"/></span>
           <h2>Specifying position</h2>
           <h3>middle-right</h3>
@@ -92,7 +93,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><close-button position="top-right"/>
           </div>
           <h2>Hook on 'close' event</h2><span>test text <close-button action="" @close="eventTest">✖</close-button></span>
-          <anchored-tag tag="h1" owned>Collapse</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Collapse</anchored-tag>
           <h2>Default</h2>
           <button class="btn default" v-collapse:test-collapse>v-collapse</button>
           <div class="pad bg-color-primary" is="collapse-toggle" target="test-collapse">CollapseToggle</div>
@@ -166,7 +167,7 @@
             <h3>test collapse</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </collapse>
-          <anchored-tag tag="h1" owned>Dropdown</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Dropdown</anchored-tag>
           <blockquote class="pad info">This component is built on <a href="https://github.com/FezVrasta/popper.js">Popper.js</a></blockquote>
           <h3>Toggle Dropdown</h3>
           <div class="dropdown" is="dropdown">
@@ -257,7 +258,7 @@
             <button class="dropdown-item">Btn</button>
             <button class="dropdown-item active">Active</button><a class="dropdown-item" href="#">Link</a>
           </dropdown>
-          <anchored-tag tag="h1" owned>Message</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Message</anchored-tag>
           <h3>Basic</h3>
           <message>hello</message>
           <h3>With status color</h3>
@@ -285,7 +286,7 @@
             <button class="btn" type="button" onclick="showMessage()">show message</button>
           </div>
           <message-box close-html="&lt;i class=&quot;fas fa-times-circle&quot;&gt;&lt;/i&gt;"></message-box>
-          <anchored-tag tag="h1" owned>Modal</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Modal</anchored-tag>
           <h3>Basic</h3>
           <button class="btn warning" onclick="Moss.modal.toggle(&quot;test-modal&quot;)">Trigger</button>
           <modal name="test-modal">
@@ -328,24 +329,24 @@
             </div>
           </modal>
           <h3>Transition Effects</h3>
-          <button class="btn default" onclick="Moss.modal.show(&quot;test-modal6&quot;)">from-top (default)</button>
-          <modal name="test-modal6" title="From-top" close-on>
-            <p class="text-center"><code>from-top</code> effect.</p>
+          <button class="btn default" onclick="Moss.modal.show(&quot;test-modal6&quot;)">no-effect (default)</button>
+          <modal name="test-modal6" title="No effect" close-on>
+            <p class="text-center">No transition effect.</p>
           </modal>
           <button class="btn info" onclick="Moss.modal.show(&quot;test-modal7&quot;)">fade</button>
           <modal name="test-modal7" title="Fade" effect="fade" close-on>
             <p class="text-center"><code>fade</code> effect.</p>
           </modal>
           <button class="btn link" onclick="Moss.modal.show(&quot;test-modal8&quot;)">no-effect</button>
-          <modal name="test-modal8" title="No effect" effect="" close-on>
-            <p class="text-center">No transition effect.</p>
+          <modal name="test-modal8" title="From-top" effect="from-top" close-on>
+            <p class="text-center"><code>from-top</code> effect.</p>
           </modal>
-          <anchored-tag tag="h1" owned>Navbar</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Navbar</anchored-tag>
           <h3>Basic</h3>
           <navbar class="bg-color-dark" align="start">
             <navbar-nav>
-              <nav-item href="#" text="link1"></nav-item>
-              <nav-item href="#" text="link2"></nav-item>
+              <nav-item href="#">Link1</nav-item>
+              <nav-item href="#"><span>Link2</span></nav-item>
               <nav-item>
                 <dropdown>
                   <button slot="button">Dropdown</button><a class="dropdown-item" href="#">link 1</a><a class="dropdown-item" href="#">link 2</a><a class="dropdown-item" href="#">link 3</a>
@@ -358,7 +359,7 @@
             </navbar-nav>
           </navbar>
           <h3>Multiple Navs</h3>
-          <navbar class="bg-color-warning rounded shadow-near" align="between" header-align="start">
+          <navbar class="bg-color-warning rounded shadow-near" align="between" header-align="start" :header-style="{ height: '4rem' }">
             <navbar-brand href="#" type="image" slot="brand"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" style="width:30px;height:30px;"></navbar-brand>
             <navbar-nav>
               <nav-item href="#" text="link1"></nav-item>
@@ -374,7 +375,7 @@
               <nav-item href="#" text="logout"></nav-item>
             </navbar-nav>
           </navbar>
-          <anchored-tag tag="h1" owned>NavDrawer</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>NavDrawer</anchored-tag>
           <p>It's the navigation drawer that using horizontal-collapse.</p>
           <button class="btn info" v-collapse:drawer01>Open Drawer</button>
           <nav-drawer id="drawer01" @state="eventTest">
@@ -392,7 +393,7 @@
               <h4 class="menu-header">Sub Menu</h4><a class="menu-item" href="#" disabled>disabled item</a><a class="menu-item" href="#">item5</a><a class="menu-item" href="#">item6</a>
             </div>
           </nav-drawer>
-          <anchored-tag tag="h1" owned>Parallax</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Parallax</anchored-tag>
           <parallax src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg"></parallax>
           <div class="d-flex justify-content-center align-items-center bg-color-shade" style="height:250px;">
             <div>
@@ -408,7 +409,7 @@
             </div>
           </div>
           <parallax src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Burning_of_the_uss_philadelphia.jpg/800px-Burning_of_the_uss_philadelphia.jpg" height="20em"></parallax>
-          <anchored-tag tag="h1" owned>Search</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Search</anchored-tag>
           <p>Simple search component that fuzzy search given collection data such like json.</p>
           <h2>default</h2>
           <div class="row">
@@ -434,7 +435,7 @@
               </search>
             </div>
           </div>
-          <anchored-tag tag="h1" owned>SimpleCRUD</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>SimpleCRUD</anchored-tag>
           <form class="form-inline" action="#" method="POST">
             <input type="text" name="name" placeholder="Name">
             <input type="number" name="age" placeholder="Age">
@@ -496,7 +497,7 @@
                   <button class="btn default" type="button" data-toggle="cancel">Cancel</button></span></form>
             </li>
           </ul>
-          <anchored-tag tag="h1" owned>Switch</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Switch</anchored-tag>
           <blockquote class="pad danger"><strong>@deprecated in v0.6.x.</strong> Recommend you use default tags or other external plugins.</blockquote>
           <h3>Input Check</h3>
           <input-check class="font-small" name="is-small">small</input-check>
@@ -515,7 +516,7 @@
             <input-radio class="toggle" name="toggle-radio" value="male">Male</input-radio>
             <input-radio class="toggle" name="toggle-radio" value="female">Female</input-radio>
           </div>
-          <anchored-tag tag="h1" owned>Tab</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Tab</anchored-tag>
           <h3>Default Tab</h3>
           <tabs>
             <tab name="tab1" selected>
@@ -608,9 +609,9 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qu</p>
             </tab>
           </tabs>
-          <anchored-tag tag="h1" owned>Toast</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Toast</anchored-tag>
           <button class="btn info" id="btn-toast" onclick="toastShow()">Toast</button>
-          <anchored-tag tag="h1" owned>Tree</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Tree</anchored-tag>
           <h3>Basic</h3>
           <ul is="tree" :items="treeData" opened></ul>
           <h3>Model name as html</h3>
@@ -638,7 +639,7 @@
         </div>
         <div class="footer-copyright">copyright &copy; <span id='copyright-year'>2017</span> MOSS-UI all rights reserved.</div>
       </footer>
-      <scroll-to :duration="800" :offset="400"></scroll-to>
+      <scroll-button :duration="800" :offset="400"></scroll-button>
       <toast></toast>
     </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>

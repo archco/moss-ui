@@ -10,6 +10,7 @@
     <style>
       aside { position: relative; }
       aside .menu { overflow: auto; }
+      .fragment:target { padding-top: 45px; }
     </style>
   </head>
   <body>
@@ -49,7 +50,7 @@
           </ul>
         </aside>
         <section class="col-md-10">
-          <anchored-tag tag="h1" owned>Scaffolding</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Scaffolding</anchored-tag>
           <h2>Link</h2>
           <div class="group"><a href="#">link</a><br><a class="no-deco" href="#">no-decoration link</a></div>
           <h2>Blockquote</h2>
@@ -164,7 +165,7 @@
             <h5 class="accent color-danger">Heading with .accent</h5>
             <h6 class="accent color-danger">Heading with .accent</h6>
           </div>
-          <anchored-tag tag="h1" owned>Code</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Code</anchored-tag>
           <p>Display inline or block fragment of computer code.</p>
           <h2>Inline code</h2>
           <p>
@@ -183,7 +184,7 @@
           <p class="pad"><kbd>ctrl + p</kbd> and <kbd>Enter</kbd></p>
           <h2>Sample output</h2>
           <p class="pad"><samp>This text is meant to be treated as sample output from a computer program.</samp></p>
-          <anchored-tag tag="h1" owned>Badge</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Badge</anchored-tag>
           <h2>Default Badge<span class="badge">Badge</span><a class="badge" href="#">BADGE</a></h2>
           <h3>in Text</h3><span>text with<span class="badge">badge</span><span class="badge primary">Primary</span><span class="badge danger">Danger</span></span>
           <h3>in Button</h3>
@@ -191,7 +192,7 @@
           <button class="btn warning">Normal</button>
           <h3>in Link</h3><a href="#">Link<span class="badge success">New</span></a><br><a class="badge danger" href="#">Link badge</a>
           <h2>Rounded Badge</h2><span>text and<span class="badge round info">13</span></span><br><a class="badge round warning" href="#">rounded badge</a>
-          <anchored-tag tag="h1" owned>Button</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Button</anchored-tag>
           <h3>Default Buttons with Color-set</h3>
           <button class="btn">btn</button>
           <button class="btn default">default</button>
@@ -270,7 +271,7 @@
             </dropdown>
             <button class="btn success">Bottom</button>
           </div>
-          <anchored-tag tag="h1" owned>Card</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Card</anchored-tag>
           <h3>Vertical Card (default)</h3>
           <div class="row">
             <div class="col-md-3">
@@ -404,7 +405,7 @@
               <div class="help">Description..</div>
             </div>
           </div>
-          <anchored-tag tag="h1" owned>Form</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Form</anchored-tag>
           <h2>Default Usage</h2>
           <form>
             <fieldset>
@@ -549,7 +550,88 @@
           <div class="input inline with-icon font-large">
             <input type="text" placeholder="Text me.."><span class="icon"><i class="fas fa-comment-alt"></i></span>
           </div>
-          <anchored-tag tag="h1" owned>Input Group</anchored-tag>
+          <h2>Form Grid</h2>
+          <p>Special replacement for <code>.row</code> for tighter form layouts.</p>
+          <h3><code>.row</code></h3>
+          <div class="row bg-color-shade">
+            <div class="col">
+              <input placeholder="First name">
+            </div>
+            <div class="col">
+              <input placeholder="Last name">
+            </div>
+          </div>
+          <h3><code>.form-row</code></h3>
+          <div class="form-row bg-color-shade">
+            <div class="col">
+              <input placeholder="First name">
+            </div>
+            <div class="col">
+              <input placeholder="Last name">
+            </div>
+          </div>
+          <h2>Form Validation</h2>
+          <blockquote class="info py-2">
+            <div>This feature is referenced from the bootstrap. <a href="https://getbootstrap.com/docs/4.1/components/forms/#validation" target="_blank">see here for more information.</a></div>
+          </blockquote>
+          <p>Provide feedback to users when form field values are valid or invalid.</p>
+          <h3>HTML5 constraint validation</h3>
+          <form class="was-validated">
+            <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="formValidation01">First name</label>
+                <input type="text" id="formValidation01" placeholder="First name" value="John" required>
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="formValidation02">Last name</label>
+                <input type="text" id="formValidation02" placeholder="Last name" value="Doe" required>
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="formValidation03">Username</label>
+                <div class="input-group">
+                  <div class="input-group-prepend"><span class="input-group-text">@</span></div>
+                  <input type="text" id="formValidation03" placeholder="Username" required>
+                  <div class="invalid-feedback">Please choose a username.</div>
+                </div>
+              </div>
+              <div class="col-md mb-3">
+                <input id="formValidation04" type="checkbox" required>
+                <label for="formValidation04">Agree to terms and conditions</label>
+                <div class="invalid-feedback">You must agree before submitting.</div>
+              </div>
+            </div>
+          </form>
+          <h3>Sever side</h3>
+          <form>
+            <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="formValidation05">First name</label>
+                <input class="is-valid" type="text" id="formValidation05" placeholder="First name" value="John" required>
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="formValidation06">Last name</label>
+                <input class="is-valid" type="text" id="formValidation06" placeholder="Last name" value="Doe" required>
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="formValidation07">Username</label>
+                <div class="input-group">
+                  <div class="input-group-prepend"><span class="input-group-text">@</span></div>
+                  <input class="is-invalid" type="text" id="formValidation07" placeholder="Username" required>
+                  <div class="invalid-feedback">Please choose a username.</div>
+                </div>
+              </div>
+              <div class="col-md mb-3">
+                <input class="is-invalid" id="formValidation08" type="checkbox" required>
+                <label for="formValidation08">Agree to terms and conditions</label>
+                <div class="invalid-feedback">You must agree before submitting.</div>
+              </div>
+            </div>
+          </form>
+          <anchored-tag class="fragment" tag="h1" owned>Input Group</anchored-tag>
           <p>Extend form controls by adding text, buttons.</p>
           <div class="input-group mb-2">
             <div class="input-group-prepend"><span class="input-group-text">@</span></div>
@@ -574,7 +656,7 @@
               <button class="btn link" type="submit">Search</button>
             </div>
           </div>
-          <anchored-tag tag="h1" owned>Grid</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Grid</anchored-tag>
           <h2>Container</h2>
           <div class="container bg-color-secondary">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -714,8 +796,8 @@
             <div class="col order-12 bg-color-secondary">Second but last</div>
             <div class="col order-1 bg-color-info">Third, but first</div>
           </div>
-          <anchored-tag tag="h1" owned>Helper</anchored-tag><a href="scss-helpers.html">SCSS Helpers</a>
-          <anchored-tag tag="h1" owned>Image</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Helper</anchored-tag><a href="scss-helpers.html">SCSS Helpers</a>
+          <anchored-tag class="fragment" tag="h1" owned>Image</anchored-tag>
           <h2>Image Container</h2>
           <div class="image-container" style="display:inline-block;width:120px;"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" alt="avatar">
             <div class="overlay">
@@ -776,7 +858,7 @@
           <figure style="display:inline-block;width:240px;"><img class="filter sepia" src="https://images.fineartamerica.com/images-medium-large/fruit-vase-and-clay-bottles-jim-romeo-.jpg" alt="Image">
             <figcaption>.filter.sepia</figcaption>
           </figure>
-          <anchored-tag tag="h1" owned>List</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>List</anchored-tag>
           <h2>.list</h2>
           <ul class="list">
             <li>list item 1</li>
@@ -820,14 +902,14 @@
               </ul>
             </li>
           </ul>
-          <anchored-tag tag="h1" owned>Loader</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Loader</anchored-tag>
           <div class="d-flex justify-content-center pad bg-color-success">
             <div class="text-center"><span class="loader-one light" style="font-size:3em;"></span><br><span>loading...</span></div>
           </div>
           <h2>Button is loading</h2>
           <button class="btn primary is-loading" id="toggle">loading..</button>
           <button class="btn warning is-loading">loading</button>
-          <anchored-tag tag="h1" owned>Pagination</anchored-tag>
+          <anchored-tag class="fragment" tag="h1" owned>Pagination</anchored-tag>
           <ul class="pagination">
             <li class="disabled"><span>Prev</span></li>
             <li><a href="#">1</a></li>
@@ -867,7 +949,7 @@
         </div>
         <div class="footer-copyright">copyright &copy; <span id='copyright-year'>2017</span> MOSS-UI all rights reserved.</div>
       </footer>
-      <scroll-to :duration="800" :offset="400"></scroll-to>
+      <scroll-button :duration="800" :offset="400"></scroll-button>
       <toast></toast>
     </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>

@@ -10,6 +10,7 @@
     <style>
       aside { position: relative; }
       aside .menu { overflow: auto; }
+      .fragment:target { padding-top: 45px; }
     </style>
   </head>
   <body>
@@ -45,61 +46,266 @@
         </div>
       </div>
       <section class="pad">
-        <anchored-tag tag="h1" owned>Modal</anchored-tag>
+        <anchored-tag class="fragment" tag="h1" owned>Navbar</anchored-tag>
         <h3>Basic</h3>
-        <button class="btn warning" onclick="Moss.modal.toggle(&quot;test-modal&quot;)">Trigger</button>
-        <modal name="test-modal">
-          <h3>Test</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </modal>
-        <h3>Close when another clicked</h3>
-        <button class="btn success" onclick="Moss.modal.show(&quot;test-modal2&quot;)">Trigger</button>
-        <modal name="test-modal2" title="Close when another clicked" close-on>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </modal>
-        <h3>with Actions</h3>
-        <button class="btn" onclick="Moss.modal.toggle(&quot;test-modal3&quot;)">Trigger</button>
-        <modal name="test-modal3" title="with Actions">
-          <div class="p-3">
-            <input name="title" placeholder="test me..">
+        <navbar class="bg-color-dark" align="start">
+          <navbar-nav>
+            <nav-item href="#">Link1</nav-item>
+            <nav-item href="#"><span>Link2</span></nav-item>
+            <nav-item>
+              <dropdown>
+                <button slot="button">Dropdown</button><a class="dropdown-item" href="#">link 1</a><a class="dropdown-item" href="#">link 2</a><a class="dropdown-item" href="#">link 3</a>
+              </dropdown>
+            </nav-item>
+          </navbar-nav>
+          <navbar-nav>
+            <nav-item href="#" text="about"></nav-item>
+            <nav-item href="#" text="logout"></nav-item>
+          </navbar-nav>
+        </navbar>
+        <h3>Multiple Navs</h3>
+        <navbar class="bg-color-warning rounded shadow-near" align="between" header-align="start" :header-style="{ height: '4rem' }">
+          <navbar-brand href="#" type="image" slot="brand"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" style="width:30px;height:30px;"></navbar-brand>
+          <navbar-nav>
+            <nav-item href="#" text="link1"></nav-item>
+            <nav-item href="#" text="link2"></nav-item>
+            <nav-item>
+              <dropdown>
+                <button slot="button">Dropdown</button><a class="dropdown-item" href="#">link 1</a><a class="dropdown-item" href="#">link 2</a><a class="dropdown-item" href="#">link 3</a>
+              </dropdown>
+            </nav-item>
+          </navbar-nav>
+          <navbar-nav>
+            <nav-item href="#" text="about"></nav-item>
+            <nav-item href="#" text="logout"></nav-item>
+          </navbar-nav>
+        </navbar>
+        <anchored-tag class="fragment" tag="h1" owned>Form</anchored-tag>
+        <h2>Default Usage</h2>
+        <form>
+          <fieldset>
+            <legend>Form</legend>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="name">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password">
+            </div>
+            <div class="form-group">
+              <label for="email">email</label>
+              <input type="email" id="email" name="email" disabled placeholder="read only">
+              <input type="email" id="email" name="email" readonly placeholder="read only">
+            </div>
+            <div class="form-group">
+              <label>checkbox
+                <input type="checkbox">
+              </label>
+            </div>
+            <div class="form-group">
+              <label>
+                <input type="radio" name="gender" value="0" checked>male
+              </label><br>
+              <label>
+                <input type="radio" name="gender" value="1">female
+              </label>
+            </div>
+            <div class="form-group">
+              <input type="file">
+              <input type="range">
+              <input type="color">
+            </div>
+            <div class="form-group">
+              <select name="select">
+                <option value="0">one</option>
+                <option value="1">two</option>
+                <option value="2">three</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea>hello, world!</textarea>
+            </div>
+            <div class="form-group">
+              <button class="btn" type="submit">Submit</button>
+            </div>
+          </fieldset>
+        </form>
+        <h2>Form Inline</h2>
+        <form class="form-inline">
+          <fieldset class="success">
+            <legend>Form inline</legend>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="name">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+            <label for="email">email</label>
+            <input type="email" id="email" name="email" disabled placeholder="read only">
+            <input type="email" id="email" name="email" readonly placeholder="read only">
+            <label>checkbox</label>
+            <input type="checkbox">
+            <label>
+              <input type="radio" name="gender" value="0" checked>male
+            </label>
+            <label>
+              <input type="radio" name="gender" value="1">female
+            </label>
+            <input type="file">
+            <input type="range">
+            <input type="color">
+            <select name="select">
+              <option value="0">one</option>
+              <option value="1">two</option>
+              <option value="2">three</option>
+            </select>
+            <textarea>hello, world!</textarea>
+            <button class="btn" type="submit">Submit</button>
+          </fieldset>
+        </form>
+        <h2>Vertical Alignment</h2>
+        <form class="form-inline">
+          <fieldset class="info">
+            <legend class="font-weight-normal">Select</legend>
+            <select name="select">
+              <option value="1">option1</option>
+              <option value="2">option2</option>
+              <option value="3">option3</option>
+            </select>
+            <input type="text" placeholder="text">
+            <input type="date">
+          </fieldset>
+        </form>
+        <h2>Input with Color-set</h2>
+        <div class="row">
+          <div class="col-md group">
+            <input type="text" placeholder="default">
           </div>
-          <div slot="actions">
-            <button class="btn default" data-toggle="close">Cancel</button>
-            <button class="btn success">OK</button>
+          <div class="col-md group">
+            <input class="success" type="text" placeholder="success">
           </div>
-        </modal>
-        <h3>Custom header</h3>
-        <button class="btn danger" onclick="Moss.modal.show(&quot;test-modal5&quot;)">Open modal</button>
-        <modal name="test-modal5" title="fake title" effect="fade">
-          <div class="modal-header bg-color-shade" slot="header">
-            <h3 class="color-danger">Custom Title</h3>
-            <button class="btn-text" data-toggle="close">
-              <icon name="close"></icon>
-            </button>
+          <div class="col-md group">
+            <input class="warning" type="text" placeholder="warning">
           </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </modal>
-        <h3>Icon close button</h3>
-        <button class="btn info" onclick="Moss.modal.toggle(&quot;test-modal4&quot;)">Trigger</button>
-        <modal name="test-modal4" title="Icon close button" close-button-html="&lt;i class=&quot;fas fa-times&quot;&gt;&lt;/i&gt;" close-on>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <div slot="actions">
-            <button class="btn success" onclick="Moss.modal.close(&quot;test-modal4&quot;)">Okay</button>
+          <div class="col-md group">
+            <input class="danger" type="text" placeholder="danger">
           </div>
-        </modal>
-        <h3>Transition Effects</h3>
-        <button class="btn default" onclick="Moss.modal.show(&quot;test-modal6&quot;)">from-top (default)</button>
-        <modal name="test-modal6" title="From-top" close-on>
-          <p class="text-center"><code>from-top</code> effect.</p>
-        </modal>
-        <button class="btn info" onclick="Moss.modal.show(&quot;test-modal7&quot;)">fade</button>
-        <modal name="test-modal7" title="Fade" effect="fade" close-on>
-          <p class="text-center"><code>fade</code> effect.</p>
-        </modal>
-        <button class="btn link" onclick="Moss.modal.show(&quot;test-modal8&quot;)">no-effect</button>
-        <modal name="test-modal8" title="No effect" effect="" close-on>
-          <p class="text-center">No transition effect.</p>
-        </modal>
+        </div>
+        <div class="input inline with-icon-right">
+          <input class="danger" type="text" placeholder="wrong.."><span class="icon-right color-danger"><i class="fas fa-exclamation-triangle"></i></span>
+        </div>
+        <div class="input inline with-icon-right">
+          <input class="danger" type="text" placeholder="Disabled" disabled><span class="icon-right color-default"><i class="fas fa-exclamation-triangle"></i></span>
+        </div>
+        <h2>Input with Icons</h2>
+        <h3>Default</h3>
+        <div class="input with-icon">
+          <input type="text" placeholder="Text me.."><span class="icon"><i class="fas fa-comment-alt"></i></span>
+        </div>
+        <h3>Icon positioning left or right or both</h3>
+        <div class="input with-icon-right group">
+          <input type="text" placeholder="Text me.."><span class="icon-right"><i class="fas fa-comment-alt"></i></span>
+        </div>
+        <div class="input with-icon-left group">
+          <input type="search" placeholder="Search.."><span class="icon-left"><i class="fas fa-search"></i></span>
+        </div>
+        <div class="input with-icon-left with-icon-right group">
+          <input type="text" placeholder="Email.."><span class="icon-left"><i class="fas fa-envelope"></i></span><span class="icon-right"><i class="fas fa-check"></i></span>
+        </div>
+        <h3>Inline input</h3>
+        <div class="input inline with-icon-left with-icon-right">
+          <input class="inline" type="text" placeholder="Email.."><span class="icon-left"><i class="fas fa-envelope"></i></span><span class="icon-right color-success"><i class="fas fa-check"></i></span>
+        </div>
+        <h3>Input sizes</h3>
+        <div class="input inline with-icon font-small">
+          <input type="text" placeholder="Text me.."><span class="icon"><i class="fas fa-comment-alt"></i></span>
+        </div>
+        <div class="input inline with-icon">
+          <input type="text" placeholder="Text me.."><span class="icon"><i class="fas fa-comment-alt"></i></span>
+        </div>
+        <div class="input inline with-icon font-large">
+          <input type="text" placeholder="Text me.."><span class="icon"><i class="fas fa-comment-alt"></i></span>
+        </div>
+        <h2>Form Grid</h2>
+        <p>Special replacement for <code>.row</code> for tighter form layouts.</p>
+        <h3><code>.row</code></h3>
+        <div class="row bg-color-shade">
+          <div class="col">
+            <input placeholder="First name">
+          </div>
+          <div class="col">
+            <input placeholder="Last name">
+          </div>
+        </div>
+        <h3><code>.form-row</code></h3>
+        <div class="form-row bg-color-shade">
+          <div class="col">
+            <input placeholder="First name">
+          </div>
+          <div class="col">
+            <input placeholder="Last name">
+          </div>
+        </div>
+        <h2>Form Validation</h2>
+        <blockquote class="info py-2">
+          <div>This feature is referenced from the bootstrap. <a href="https://getbootstrap.com/docs/4.1/components/forms/#validation" target="_blank">see here for more information.</a></div>
+        </blockquote>
+        <p>Provide feedback to users when form field values are valid or invalid.</p>
+        <h3>HTML5 constraint validation</h3>
+        <form class="was-validated">
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="formValidation01">First name</label>
+              <input type="text" id="formValidation01" placeholder="First name" value="John" required>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="formValidation02">Last name</label>
+              <input type="text" id="formValidation02" placeholder="Last name" value="Doe" required>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="formValidation03">Username</label>
+              <div class="input-group">
+                <div class="input-group-prepend"><span class="input-group-text">@</span></div>
+                <input type="text" id="formValidation03" placeholder="Username" required>
+                <div class="invalid-feedback">Please choose a username.</div>
+              </div>
+            </div>
+            <div class="col-md mb-3">
+              <input id="formValidation04" type="checkbox" required>
+              <label for="formValidation04">Agree to terms and conditions</label>
+              <div class="invalid-feedback">You must agree before submitting.</div>
+            </div>
+          </div>
+        </form>
+        <h3>Sever side</h3>
+        <form>
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="formValidation05">First name</label>
+              <input class="is-valid" type="text" id="formValidation05" placeholder="First name" value="John" required>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="formValidation06">Last name</label>
+              <input class="is-valid" type="text" id="formValidation06" placeholder="Last name" value="Doe" required>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="formValidation07">Username</label>
+              <div class="input-group">
+                <div class="input-group-prepend"><span class="input-group-text">@</span></div>
+                <input class="is-invalid" type="text" id="formValidation07" placeholder="Username" required>
+                <div class="invalid-feedback">Please choose a username.</div>
+              </div>
+            </div>
+            <div class="col-md mb-3">
+              <input class="is-invalid" id="formValidation08" type="checkbox" required>
+              <label for="formValidation08">Agree to terms and conditions</label>
+              <div class="invalid-feedback">You must agree before submitting.</div>
+            </div>
+          </div>
+        </form>
       </section>
       <footer class="footer">
         <div class="container">
@@ -120,7 +326,7 @@
         </div>
         <div class="footer-copyright">copyright &copy; <span id='copyright-year'>2017</span> MOSS-UI all rights reserved.</div>
       </footer>
-      <scroll-to :duration="800" :offset="400"></scroll-to>
+      <scroll-button :duration="800" :offset="400"></scroll-button>
       <toast></toast>
     </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
