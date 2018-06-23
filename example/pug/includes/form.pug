@@ -145,6 +145,7 @@ div.input.inline.with-icon.font-large
     <i class="fas fa-comment-alt"></i>
 
 h2 Form Grid
+
 p Special replacement for <code>.row</code> for tighter form layouts.
 
 h3 <code>.row</code>
@@ -160,3 +161,58 @@ h3 <code>.form-row</code>
     input(placeholder='First name')
   .col
     input(placeholder='Last name')
+
+h2 Form Validation
+
+blockquote.info.py-2
+  div This feature is referenced from the bootstrap. <a href="https://getbootstrap.com/docs/4.1/components/forms/#validation" target="_blank">see here for more information.</a>
+
+p Provide feedback to users when form field values are valid or invalid.
+
+h3 HTML5 constraint validation
+
+form.was-validated
+  .form-row
+    .col-md-4.mb-3
+      label(for="formValidation01") First name
+      input(type="text" id="formValidation01" placeholder="First name" value="John" required)
+      .valid-feedback Looks good!
+    .col-md-4.mb-3
+      label(for="formValidation02") Last name
+      input(type="text" id="formValidation02" placeholder="Last name" value="Doe" required)
+      .valid-feedback Looks good!
+    .col-md-4.mb-3
+      label(for="formValidation03") Username
+      .input-group
+        .input-group-prepend
+          span.input-group-text @
+        input(type="text" id="formValidation03" placeholder="Username" required)
+        .invalid-feedback Please choose a username.
+    .col-md.mb-3
+      input#formValidation04(type="checkbox" required)
+      label(for="formValidation04") Agree to terms and conditions
+      .invalid-feedback You must agree before submitting.
+
+h3 Sever side
+
+form
+  .form-row
+    .col-md-4.mb-3
+      label(for="formValidation05") First name
+      input(type="text" class="is-valid" id="formValidation05" placeholder="First name" value="John" required)
+      .valid-feedback Looks good!
+    .col-md-4.mb-3
+      label(for="formValidation06") Last name
+      input(type="text" class="is-valid" id="formValidation06" placeholder="Last name" value="Doe" required)
+      .valid-feedback Looks good!
+    .col-md-4.mb-3
+      label(for="formValidation07") Username
+      .input-group
+        .input-group-prepend
+          span.input-group-text @
+        input(type="text" class="is-invalid" id="formValidation07" placeholder="Username" required)
+        .invalid-feedback Please choose a username.
+    .col-md.mb-3
+      input#formValidation08(type="checkbox" class="is-invalid" required)
+      label(for="formValidation08") Agree to terms and conditions
+      .invalid-feedback You must agree before submitting.

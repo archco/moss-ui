@@ -271,6 +271,12 @@ $input-disabled-bg-color: $disabled-color !default;
 // If value is false, background-color set transparent.
 $auto-input-bg-color-enable: true !default;
 
+// form validation
+$form-feedback-margin-top: $space-1 !default;
+$form-feedback-font-size: $font-size-small !default;
+$form-feedback-valid-color: $success-color !default;
+$form-feedback-invalid-color: $danger-color !default;
+
 // list
 $list-border-width: 1px !default;
 $list-border-color: $border-color !default;
