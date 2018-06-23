@@ -35,7 +35,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Removed
 
-Remove deprecated in v0.5.x #104
+Remove deprecated in v0.6.x #104
 
 - `js/lib/util.js` - Some JS util methods are deprecated. use [`cake-case`](https://github.com/archco/cake-case#readme) instead. #103 
   - `Util.strToCamel`: use `Case.camel` or `Case.pascal` instead.
