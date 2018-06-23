@@ -1,4 +1,3 @@
-export { default as scrollIt } from './methods/scroll-it';
 export { default as scrollTo } from './methods/scrollTo';
 export * from './methods/icon';
 
