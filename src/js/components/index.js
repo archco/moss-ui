@@ -19,8 +19,6 @@ export { default as Tabs } from './tabs.vue';
 export { default as Toast } from './toast.vue';
 export { default as Tree } from './tree.vue';
 export { default as TreeItem } from './tree-item.vue';
-export { default as InputCheck } from './input-check.vue';
-export { default as InputRadio } from './input-radio.vue';
 export { Agile as Carousel } from 'vue-agile';
 export { default as Icon } from './icon.vue';
 export { default as CollapseToggle } from './collapse-toggle.vue';
