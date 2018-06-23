@@ -19,6 +19,14 @@ Helper classes for using [flexbox](https://developer.mozilla.org/en-US/docs/Web/
 - `.flex-nowrap`
 - `.flex-wrap-reverse`
 
+### flex helpers
+
+- `.flex-fill`
+- `.flex-grow-0`
+- `.flex-grow-1`
+- `.flex-shrink-0`
+- `.flex-shrink-1`
+
 ### justify-content
 
 - `.justify-content-start`

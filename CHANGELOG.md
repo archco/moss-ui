@@ -22,6 +22,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Improved navbar: add variable $navbar-header-height. see [this](https://github.com/archco/moss-ui/blob/master/docs/js/navbar.md#specifying-height) #131
 - Changed modal: change default value of the `effect` prop from `'from-top'` to `''`. #128
 
+### Updated
+
+- Updated scss-helpers that referenced from the bootstrap. #133
+  - flex: add flex-helpers. `.flex-fill`, `.flex-grow-0`, `.flex-grow-1`, `.flex-shrink-0` and `.flex-shrink-1`.
+
 ### Fixed
 
 - Fix bug in `nav-item`. #130
