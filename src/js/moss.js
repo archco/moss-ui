@@ -1,6 +1,6 @@
 /*!
  * moss-ui - The front-end UI framework with Vue.js and SCSS.
- * @version v0.7.0
+ * @version v0.7.1
  * @link https://github.com/archco/moss-ui
  * @license MIT
  */
@@ -33,6 +33,7 @@ function addMossObject(Vue) {
 }
 
 export {
+  Case,
   Color,
   Components,
   Directives,

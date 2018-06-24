@@ -14877,11 +14877,11 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Util = exports.Svg = exports.ElementUtil = exports.ElementMeasurer = exports.Directives = exports.Components = exports.Color = undefined;
+exports.Util = exports.Svg = exports.ElementUtil = exports.ElementMeasurer = exports.Directives = exports.Components = exports.Color = exports.Case = undefined;
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }(); /*!
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * moss-ui - The front-end UI framework with Vue.js and SCSS.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @version v0.7.0
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @version v0.7.1
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * @link https://github.com/archco/moss-ui
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * @license MIT
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           */
@@ -14945,6 +14945,7 @@ function addMossObject(Vue) {
   window.Moss = Vue.Moss = Vue.prototype.$moss = Moss;
 }
 
+exports.Case = Case;
 exports.Color = _mooColor2.default;
 exports.Components = Components;
 exports.Directives = Directives;
@@ -15355,7 +15356,7 @@ module.exports = "<svg data-name=\"search\" xmlns=\"http://www.w3.org/2000/svg\"
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = '0.7.0';
+exports.default = '0.7.1';
 
 /***/ }),
 
