@@ -16,7 +16,7 @@ const searchOptions = {
   ],
 };
 
-const { strToKebab } = window.Moss.lib.Util;
+const { kebab } = window.Moss.lib.Case;
 const { Color } = window.Moss.lib;
 
 window.vm = new window.Vue({
@@ -38,7 +38,7 @@ window.vm = new window.Vue({
 
     onSearchItemClick({ name, category }) {
       // redirect to
-      window.location.href = `${category}.html#${strToKebab(name)}`;
+      window.location.href = `${category}.html#${kebab(name)}`;
     },
 
     onSearchSubmit({ result }) {

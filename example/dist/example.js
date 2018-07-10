@@ -267,7 +267,7 @@ var searchOptions = {
   keys: [{ name: 'name', weight: .5 }, { name: 'category', weight: .3 }, { name: 'description', weight: .2 }]
 };
 
-var strToKebab = window.Moss.lib.Util.strToKebab;
+var kebab = window.Moss.lib.Case.kebab;
 var Color = window.Moss.lib.Color;
 
 
@@ -291,7 +291,7 @@ window.vm = new window.Vue({
           category = _ref.category;
 
       // redirect to
-      window.location.href = category + '.html#' + strToKebab(name);
+      window.location.href = category + '.html#' + kebab(name);
     },
     onSearchSubmit: function onSearchSubmit(_ref2) {
       var result = _ref2.result;
