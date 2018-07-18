@@ -152,7 +152,7 @@ export default {
       this.btn = this.$slots.button[0].elm;
       this.btn.classList.add(`dropdown-button`);
       if (this.appendIcon != 'off') {
-        const iconName = this.appendIcon.length == 0
+        const iconName = this.appendIcon.length == 0 || this.appendIcon == 'on'
           ? 'caret-down'
           : this.appendIcon;
         const icon = makeIcon(iconName);

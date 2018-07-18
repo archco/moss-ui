@@ -14,6 +14,7 @@
   - [Content placement](#content-placement)
   - [Content offset](#content-offset)
   - [Content decorators](#content-decorators)
+  - [Append icon to button](#append-icon-to-button)
 - [Props](#props)
 - [Events](#events)
 - [SCSS variables](#scss-variables)
@@ -22,7 +23,7 @@
 
 ### Toggle dropdown
 
-```html
+``` html
 <dropdown>
   <button class="btn" slot="button">TOGGLE</button>
   <a href="#" class="dropdown-item active">Item 01</a>
@@ -33,7 +34,7 @@
 
 ### Hover dropdown
 
-```html
+``` html
 <dropdown toggle="hover">
   <button class="btn" slot="button">HOVER</button>
   <a href="#" class="dropdown-item">Item 01</a>
@@ -49,7 +50,7 @@
 - Variation suffixes: `-start` `-end`
 - Default value: `bottom`
 
-```html
+``` html
 <dropdown toggle="hover" placement="right-start">
   <button class="btn" slot="button">HOVER</button>
   <a href="#" class="dropdown-item">Item 01</a>
@@ -65,7 +66,7 @@ If the placement is `top` or `bottom`, this value means `width, height`. In case
 
 **Caveat**: If you set offset, it could not working as expected in hover type dropdown.
 
-```html
+``` html
 <dropdown toggle="hover" offset="10%, 10">
   <button class="btn" slot="button">HOVER</button>
   <a href="#" class="dropdown-item">Item 01</a>
@@ -78,7 +79,7 @@ If the placement is `top` or `bottom`, this value means `width, height`. In case
 - classes: `.dropdown-item`, `.dropdown-header` and `.dropdown-divider`.
 - disabled-item attribute: `[disabled]`
 
-```html
+``` html
 <dropdown>
   <button class="btn" slot="button">DROPDOWN</button>
   <h3 class="dropdown-header">Header</h3>
@@ -90,23 +91,33 @@ If the placement is `top` or `bottom`, this value means `width, height`. In case
 </dropdown>
 ```
 
-### Button without caret
+### Append icon to button
+
+If set value not `'off'`(e.g. `'on'` or `''` or another [icon name](https://github.com/archco/moss-ui/blob/master/docs/svg-icons.md#icons)), append icon(default icon is `caret-down`) into the dropdown button.
 
 ``` html
-<dropdown :button-with-caret="false">...</dropdown>
+<!-- 'off'(default): no icon. -->
+<dropdown>...</dropdown>
+
+<!-- '' or 'on': append default icon(`caret-down`) into the dropdown button.  -->
+<dropdown append-icon>...</dropdown>
+<dropdown append-icon="on">...</dropdown>
+
+<!-- specify icon name -->
+<dropdown append-icon="arrow-down">...</dropdown>
 ```
 
 ## Props
 
 | Name | Type | Default | Description |
 | ---- |:----:| ------- | ----------- |
-| toggle | `String` | `'toggle'` | content toggle type. 'toggle' or 'hover' |
-| placement | `String` | `'bottom'` | Placement of dropdown content. |
-| offset | `String` | `'1px, 1px'` | Offset value for dropdown content. see [modifiers~offset][] |
-| flip | `String` | `'on'` | Turn on/off flip mode. see [modifiers~flip][]. |
-| prevent-overflow | `String` | `'on'` | Turn on/off preventOverflow mode. see [modifiers~preventOverflow] |
-| modifiers | `Object` | `{}` | set [modifiers][] option for Popper.js |
-| button-with-caret | `Boolean` | `true` | Whether append caret or not on dropdown-button. |
+| toggle | `string` | `'toggle'` | content toggle type. 'toggle' or 'hover' |
+| placement | `string` | `'bottom'` | Placement of dropdown content. |
+| offset | `string` | `'1px, 1px'` | Offset value for dropdown content. see [modifiers~offset][] |
+| flip | `string` | `'on'` | Turn on/off flip mode. see [modifiers~flip][]. |
+| prevent-overflow | `string` | `'on'` | Turn on/off preventOverflow mode. see [modifiers~preventOverflow] |
+| modifiers | `object` | `{}` | set [modifiers][] option for Popper.js |
+| append-icon | `string` | `'off'` | If set value not `'off'`(e.g. `'on'` or `''` or another [icon name](https://github.com/archco/moss-ui/blob/master/docs/svg-icons.md#icons)), append icon(default icon is `caret-down`) into the dropdown button. |
 
 ## Events
 
