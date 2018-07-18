@@ -12,7 +12,7 @@
   }
 
   a {
-    @extend %link-no-deco;
+    @extend %no-decoration;
     @include transition(
       color $transition-duration $transition-timing-function,
       background-color $transition-duration $transition-timing-function
