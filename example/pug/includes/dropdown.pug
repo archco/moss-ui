@@ -8,7 +8,7 @@ div(is='dropdown' class='dropdown')
   a.dropdown-item(href='#') down
 
 h3 Hover Dropdown
-dropdown(toggle='hover')
+dropdown(toggle='hover' append-icon)
   button(class='btn info' slot='button') HOVER
   a.dropdown-item(href='#') hello
   a.dropdown-item(href='#') drop
@@ -16,25 +16,25 @@ dropdown(toggle='hover')
 
 h3 Content Placements
 div.d-flex.justify-content-between(style='width:100%;')
-  dropdown(toggle='hover' placement='top')
+  dropdown(toggle='hover' placement='top' append-icon='arrow-up')
     button(class='btn success' slot='button') top
     a.dropdown-item(href='#') hello
     a.dropdown-item(href='#') drop
     a.dropdown-item(href='#') down
 
-  dropdown(toggle='hover' placement='right')
+  dropdown(toggle='hover' placement='right' append-icon='arrow-right')
     button(class='btn link' slot='button') right
     a.dropdown-item(href='#') hello
     a.dropdown-item(href='#') drop
     a.dropdown-item(href='#') down
 
-  dropdown(toggle='hover' placement='left-start')
+  dropdown(toggle='hover' placement='left-start' append-icon='arrow-left')
     button(class='btn info' slot='button') left-start
     a.dropdown-item(href='#') hello
     a.dropdown-item(href='#') drop
     a.dropdown-item(href='#') down
 
-  dropdown(toggle='hover' placement='bottom-end')
+  dropdown(toggle='hover' placement='bottom-end' append-icon='arrow-down')
     button(class='btn warning' slot='button') bottom-end
     a.dropdown-item(href='#') hello
     a.dropdown-item(href='#') drop
@@ -116,8 +116,8 @@ dropdown(placement='right-start')
   h3.dropdown-header Not allowed
   span.dropdown-item(href='#' disabled) down
 
-h3 Dropdown button without caret
-dropdown(placement='right' offset='5px, 5px' :button-with-caret='false')
+h3 Append icon into dropdown button
+dropdown(placement='right' offset='5px, 5px' append-icon)
   button(class='btn info' slot='button') DROPDOWN
   h3.dropdown-header Header
   a.dropdown-item(href='#') hello

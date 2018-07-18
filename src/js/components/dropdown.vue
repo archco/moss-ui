@@ -46,9 +46,9 @@ export default {
       type: Boolean,
       default: false,
     },
-    buttonWithCaret: {
-      type: Boolean,
-      default: true,
+    appendIcon: {
+      type: String,
+      default: 'off',
     },
   },
   data() {
@@ -74,6 +74,10 @@ export default {
         'with-arrow': this.withArrow,
       };
     },
+  },
+  mounted() {
+    this.initElements();
+    this.addListeners();
   },
   methods: {
     show() {
@@ -147,8 +151,13 @@ export default {
       // button.
       this.btn = this.$slots.button[0].elm;
       this.btn.classList.add(`dropdown-button`);
-      if (this.buttonWithCaret) {
-        this.btn.appendChild(makeIcon('caret-down'));
+      if (this.appendIcon != 'off') {
+        const iconName = this.appendIcon.length == 0
+          ? 'caret-down'
+          : this.appendIcon;
+        const icon = makeIcon(iconName);
+        icon.classList.add('appended-icon');
+        this.btn.appendChild(icon);
       }
       // content.
       this.content = this.$el.querySelector('.dropdown-content');
@@ -174,10 +183,6 @@ export default {
         item => item.addEventListener('keydown', this.onItemKeydown.bind(this))
       );
     },
-  },
-  mounted() {
-    this.initElements();
-    this.addListeners();
   },
 }
 </script>

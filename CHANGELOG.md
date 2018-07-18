@@ -15,6 +15,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Add scss mixin `reset-link`. #140
 
+### Changed
+
+- Change prop of the dropdown `button-with-caret` to `append-icon`. #139
+- Rename scss placeholder `%link-no-deco` to `%no-decoration`. #141
+
 ## [0.7.0][] - 2018-06-23
 
 ### Added

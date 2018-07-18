@@ -15,8 +15,8 @@ dropdown,
   display: inline-flex;
   align-items: center;
 
-  i.moss-icon {
-    font-size: .85em;
+  > .appended-icon {
+    font-size: $font-size-small;
     margin-left: .25em;
     margin-right: -.25em;
   }
