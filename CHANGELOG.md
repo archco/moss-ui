@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Added
+
+- Add scss mixin `reset-link`. #140
+
 ## [0.7.0][] - 2018-06-23
 
 ### Added

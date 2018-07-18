@@ -1,3 +1,11 @@
+@mixin form-inline-target {
+  input:not([type="color"]),
+  select,
+  textarea {
+    @content;
+  }
+}
+
 @mixin general-inputs() {
   input:not([type]),
   input[type=text],
