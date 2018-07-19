@@ -16,7 +16,12 @@ describe('#Modal', () => {
     },
     attachToDocument: true,
   });
-  //
+  // mock Moss object.
+  global.Moss = {
+    modal: {
+      opened: [],
+    },
+  };
   document.documentElement.appendChild(wrapper.element);
 
   it('mount.', () => {
