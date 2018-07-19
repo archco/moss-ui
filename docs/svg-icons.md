@@ -4,75 +4,67 @@ Simple icons with [SVG](https://svgontheweb.com/).
 
 ### Table of contents
 
-- [Usage](#usage)
-  - [Use via icon component](#use-via-icon-component)
-  - [Use via JS util methods](#use-via-js-util-methods)
+- [Use via icon component](#use-via-icon-component)
+- [Use via JS util methods](#use-via-js-util-methods)
 - [Icons](#icons)
 
-## Usage
-
-### Use via icon component
+## Use via icon component
 
 ``` html
 <icon name="arrow-up" />
 ```
 
-#### Props
+### Props
 
 | Name | Type | Default | Description |
 | ---- |:----:| ------- | ----------- |
 | name | `string` | `''` | a name of svg icon. e.g. 'arrow-down', 'close' |
 
-### Use via JS util methods
+## Use via JS util methods
 
 ``` js
 import { Util } from 'moss-ui';
-const { getSvgByName, makeIcon, makeIconHtml } = Util;
+const { addSvg, getSvgByName, makeIcon, makeIconHtml } = Util;
 
 const icon = makeIcon('caret-down');
 document.querySelector('#target').appendChild(icon);
 ```
 
-#### getSvgByName
+### [addSvg](https://github.com/archco/moss-ui/blob/master/docs/js/util.md#addsvg)
 
-Get svg string by name.
+Add custom svg icon into the SVG icon list.
 
-- Syntax
+``` ts
+addSvg(name: string, value: string): void;
+```
 
-  ``` js
-  const svgStr = getSvgByName(name);
-  ```
+### [getSvgByName](https://github.com/archco/moss-ui/blob/master/docs/js/util.md#getsvgbyname)
 
-- Param `string` name - a name of svg icon. e.g. 'arrow-down', 'close'
-- Returns `string` - `'<svg>...</svg>'`
+Get svg string by name. e.g. `'<svg>...</svg>'`
 
-#### makeIcon
+``` ts
+getSvgByName(name: string): string;
+```
 
-Make icon element by svg-icon name.
+### [makeIcon](https://github.com/archco/moss-ui/blob/master/docs/js/util.md#makeicon)
 
-- Syntax
+Make icon element by svg-icon name. e.g. `<i class="moss-icon"><svg>...</svg></i>`
 
-  ``` js
-  const icon = makeIcon(name);
-  ```
+``` ts
+makeIcon(name: string): HTMLElement;
+```
 
-- Param `string` name - a name of svg icon. e.g. 'arrow-down', 'close'
-- Returns `HTMLElement` - `<i class="moss-icon"><svg>...</svg></i>`
+### [makeIconHtml](https://github.com/archco/moss-ui/blob/master/docs/js/util.md#makeiconhtml)
 
-#### makeIconHtml
+Make icon html string by svg-icon name. e.g. `'<i class="moss-icon"><svg>...</svg></i>'`
 
-Make icon html string by svg-icon name.
-
-- Syntax
-
-  ``` js
-  const iconHtml = makeIconHtml(name);
-  ```
-
-- Param `string` name - a name of svg icon. e.g. 'arrow-down', 'close'
-- Returns `string` - `'<i class="moss-icon"><svg>...</svg></i>'`
+``` ts
+makeIconHtml(name: string): string;
+```
 
 ## Icons
+
+Available icon names.
 
 - `arrow-left`
 - `arrow-right`
@@ -85,3 +77,5 @@ Make icon html string by svg-icon name.
 - `close`
 - `check`
 - `search`
+- `ellipsis-vertical`
+- `ellipsis-horizontal`

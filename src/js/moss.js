@@ -28,7 +28,11 @@ const lib = {
 };
 
 function addMossObject(Vue) {
-  const Moss = { version, lib };
+  const Moss = {
+    version,
+    lib,
+    addSvg: Util.addSvg,
+  };
   window.Moss = Vue.Moss = Vue.prototype.$moss = Moss;
 }
 
@@ -44,7 +48,7 @@ export {
 };
 
 export default {
-  version: version,
+  version,
   install(Vue, options = {}) {
     if (this.installed) return;
     this.installed = true;

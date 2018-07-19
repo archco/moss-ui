@@ -14,6 +14,10 @@ The javascript library that includes utility methods.
   - [isEmpty](#isempty)
   - [isMobileSize](#ismobilesize)
   - [scrollTo](#scrollto)
+  - [addSvg](#addsvg)
+  - [getSvgByName](#getsvgbyname)
+  - [makeIcon](#makeicon)
+  - [makeIconHtml](#makeiconhtml)
 
 ## Basic usage
 
@@ -200,5 +204,58 @@ Scroll to destination with transition.
   ```
 
 - Returns `Promise<void>`
+
+### addSvg
+
+Add custom svg icon into the SVG icon list.
+
+- Syntax
+
+  ``` ts
+  addSvg(name: string, value: string): void;
+  ```
+
+- Param `string` name - the name of an svg-icon.
+- Param `string` value - string of the svg. e.g. `'<svg>..</svg>'`
+- Returns `void`
+
+### getSvgByName
+
+Get svg string by name.
+
+- Syntax
+
+  ``` ts
+  getSvgByName(name: string): string;
+  ```
+
+- Param `string` name - the name of an svg-icon.
+- Returns `string` string of the svg. e.g. `'<svg>..</svg>'`
+
+### makeIcon
+
+Make icon element by svg-icon name.
+
+- Syntax
+
+  ``` ts
+  makeIcon(name: string): HTMLElement;
+  ```
+
+- Param `string` name - the name of an svg-icon.
+- Returns `HTMLElement`
+
+### makeIconHtml
+
+Make icon html string by svg-icon name.
+
+- Syntax
+
+  ``` ts
+  makeIconHtml(name: string): string;
+  ```
+
+- Param `string` name - the name of an svg-icon.
+- Returns `string` html string. e.g. `'<i class="moss-icon"><svg>..</svg></i>'`
 
 [`HTMLHyperlinkElementUtils.search`]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/search

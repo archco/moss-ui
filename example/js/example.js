@@ -2,11 +2,17 @@ import { treeData, treeData2 } from './data/tree';
 import collection from './data/collection.json';
 import * as Partials from './partials';
 import IconList from './components/IconList.vue';
+import * as customIcons from './data/customIcons';
 
 const Vue = window.Vue;
 
 Vue.use(window.MossUI.default);
 Vue.component('icon-list', IconList);
+
+// add custom icons
+for (const [k, v] of Object.entries(customIcons)) {
+  window.Moss.addSvg(k, v);
+}
 
 const searchOptions = {
   keys: [

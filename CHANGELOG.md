@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - Add scss mixin `reset-link`. #140
+- Add util method `addSvg()`. It's for adding custom SVG icon into the SVG icon list. #137
 
 ### Changed
 

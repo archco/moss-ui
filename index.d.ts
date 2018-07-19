@@ -129,6 +129,42 @@ export namespace Util {
    * @return {boolean}
    */
   export function isMobileSize(size?: number): boolean;
+
+  //
+  // SVG Icons
+  //
+
+  /**
+   * Add custom svg-icon.
+   *
+   * @param {string} name
+   * @param {string} value
+   */
+  export function addSvg(name: string, value: string): void;
+
+  /**
+   * Get svg string by name.
+   *
+   * @param {string} name the name of svg-icon. e.g. arrow-down or arrowDown
+   * @returns {string}
+   */
+  export function getSvgByName(name: string): string;
+
+  /**
+   * Make icon element by svg-icon name.
+   *
+   * @param {string} name
+   * @returns {HTMLElement}
+   */
+  export function makeIcon(name: string): HTMLElement;
+
+  /**
+   * Make icon html string by svg-icon name.
+   *
+   * @param {string} name
+   * @returns {string}
+   */
+  export function makeIconHtml(name: string): string;
 }
 
 export interface MossOptions {
