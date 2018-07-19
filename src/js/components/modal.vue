@@ -62,10 +62,13 @@ export default {
   watch: {
     show(shown) {
       const c = 'modal-shown';
+      const openedModals = window.Moss.modal.opened;
       if (shown) {
+        openedModals.push(this.name);
         document.body.classList.add(c);
       } else {
-        document.body.classList.remove(c);
+        openedModals.splice(openedModals.findIndex(x => x == this.name), 1);
+        if (openedModals.length < 1) document.body.classList.remove(c);
       }
       this.$emit('state', shown);
     },
@@ -99,6 +102,7 @@ export default {
     // Attaches helper methods to Moss object.
     if (typeof window.Moss !== 'undefined' && typeof window.Moss.modal === 'undefined') {
       window.Moss.modal = {
+        opened: [],
         show: name => this.$root.$emit('modal-toggle', name, 'show'),
         close: name => this.$root.$emit('modal-toggle', name, 'close'),
         toggle: (name, action = 'toggle') => this.$root.$emit('modal-toggle', name, action),
@@ -108,7 +112,9 @@ export default {
     if (this.closeOn) {
       document.documentElement.addEventListener('click', event => {
         if (event.target.classList.contains('modal-mask')) {
-          this.toggleModal(this.name, 'close');
+          const lastModal = window.Moss.modal.opened.slice(-1).pop();
+          this.toggleModal(lastModal, 'close');
+          event.stopPropagation();
         }
       });
     }

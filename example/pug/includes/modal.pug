@@ -47,3 +47,14 @@ modal(name='test-modal7' title='Fade' effect='fade' close-on)
 button.btn.link(onclick='Moss.modal.show("test-modal8")') no-effect
 modal(name='test-modal8' title='From-top' effect='from-top' close-on)
   p.text-center <code>from-top</code> effect.
+
+h3 Nested Modal
+
+button.btn.info(@click='$moss.modal.show("test-modal9")') Parent
+modal(name='test-modal9' title='Parent' close-on)
+  h3 Hello World!
+  p
+    button.btn.success(@click='$moss.modal.show("test-modal10")') Child
+modal(name='test-modal10' title='Child' close-on)
+  h3 Have a nice day!
+  p=lorem

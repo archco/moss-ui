@@ -20,6 +20,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Change prop of the dropdown `button-with-caret` to `append-icon`. And caret icon in the button is not appended as default. Please [see document](https://github.com/archco/moss-ui/blob/master/docs/js/dropdown.md#append-icon-to-button). #139
 - Rename scss placeholder `%link-no-deco` to `%no-decoration`. #141
 
+### Fixed
+
+- Fixed bug in some situation in nested modal. #136
+
 ## [0.7.0][] - 2018-06-23
 
 ### Added
