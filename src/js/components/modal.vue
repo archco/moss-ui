@@ -62,7 +62,7 @@ export default {
   watch: {
     show(shown) {
       const c = 'modal-shown';
-      const openedModals = window.Moss.modal.opened;
+      const openedModals = this.$moss.modal.opened;
       if (shown) {
         openedModals.push(this.name);
         document.body.classList.add(c);
@@ -71,23 +71,6 @@ export default {
         if (openedModals.length < 1) document.body.classList.remove(c);
       }
       this.$emit('state', shown);
-    },
-  },
-  methods: {
-    toggleModal(name, action = 'toggle') {
-      if (name !== this.name) return;
-      switch (action.toLowerCase()) {
-        case 'show': this.show = true; break;
-        case 'close': this.show = false; break;
-        case 'toggle':
-        default: this.show = !this.show; break;
-      }
-    },
-    onKeydown(event) {
-      if (this.show && /Escape|Esc/.test(event.key)) {
-        event.preventDefault();
-        this.show = false;
-      }
     },
   },
   beforeMount() {
@@ -123,6 +106,23 @@ export default {
     // Add data-toggle listeners. 'cancel'|'close'
     const elms = getElements('[data-toggle="cancel"],[data-toggle="close"]', this.$el);
     addListener(elms, 'click', () => this.toggleModal(this.name, 'close'));
-  }
+  },
+  methods: {
+    toggleModal(name, action = 'toggle') {
+      if (name !== this.name) return;
+      switch (action.toLowerCase()) {
+        case 'show': this.show = true; break;
+        case 'close': this.show = false; break;
+        case 'toggle':
+        default: this.show = !this.show; break;
+      }
+    },
+    onKeydown(event) {
+      if (this.show && /Escape|Esc/.test(event.key)) {
+        event.preventDefault();
+        this.show = false;
+      }
+    },
+  },
 }
 </script>

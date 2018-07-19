@@ -14,14 +14,15 @@ describe('#Modal', () => {
         '<button id="closeBtn" data-toggle="close">close</button>'
       ],
     },
+    mocks: {
+      $moss: {
+        modal: {
+          opened: [],
+        },
+      },
+    },
     attachToDocument: true,
   });
-  // mock Moss object.
-  global.Moss = {
-    modal: {
-      opened: [],
-    },
-  };
   document.documentElement.appendChild(wrapper.element);
 
   it('mount.', () => {
