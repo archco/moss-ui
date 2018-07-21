@@ -6,8 +6,10 @@ block title
 
 block content
   div(class='row')
-    aside(class='col-md-2 hide-only-mobile')
-      ul(class='menu list fixed' v-scrollspy="{activeClass: 'bg-color-shade', activeTarget: 'self', offset: 100}")
+    aside(class='sidebar col-md-2 hide-only-mobile bg-color-light')
+      div.my-3
+        include ../partials/search-module
+      ul(class='list' v-scrollspy="{activeClass: 'bg-color-shade', activeTarget: 'self', offset: 100}")
         li(is='anchored-tag' tag='li') v-focus
         li(is='anchored-tag' tag='li') v-trigger
         li(is='anchored-tag' tag='li') v-modal
@@ -17,7 +19,7 @@ block content
         li(is='anchored-tag' tag='li') v-ripple
         li(is='anchored-tag' tag='li') v-outer
 
-    section(class='col-md-10')
+    section(class='offset-md-2 col-md-10')
       include ../includes/directives
       anchored-tag(tag='h1' class='fragment' owned) v-tooltip
       include ../includes/v-tooltip

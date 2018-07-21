@@ -5,6 +5,7 @@ Moss object provides the convenience of manipulating Moss UI in javascript.
 ### Table of contents
 
 - [Library](#library)
+- [Helper methods](#helper-methods)
 - [Helpers for Vue components](#helpers-for-vue-components)
   - [messageBox](#messagebox)
   - [modal](#modal)
@@ -34,6 +35,16 @@ Case.camel('hello-world'); // 'helloWorld'
 - [ElementUtil](https://github.com/archco/element-util/tree/master/docs): The javascript library for using DOM Elements conveniently.
 - [Svg](svg-icons.md): The object that contains strings of the svg-icon.
 - [Util](js/util.md): Utility methods.
+
+## Helper Methods
+
+### [addSvg](https://github.com/archco/moss-ui/blob/master/docs/js/util.md#addsvg)
+
+Add custom svg icon into the SVG icon list.
+
+``` ts
+addSvg(name: string, value: string): void;
+```
 
 ## Helpers for Vue components
 

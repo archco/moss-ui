@@ -6,10 +6,12 @@ block title
 
 block content
   div.row
-    aside.col-md-2.hide-only-mobile
-      ul.menu.list.fixed
+    aside.sidebar.col-md-2.hide-only-mobile.bg-color-light
+      div.my-3
+        include ../partials/search-module
+      ul.list
         li(is='anchored-tag' tag='li') Icons
 
-    section.col-md-10
+    section.offset-md-2.col-md-10
       anchored-tag(tag='h1' class='fragment' owned) Icons
       include ../includes/icon

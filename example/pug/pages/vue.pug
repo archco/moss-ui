@@ -6,8 +6,10 @@ block title
 
 block append content
   div(class='row')
-    aside(class='col-md-2 hide-only-mobile')
-      ul(class='menu list fixed')
+    aside(class='sidebar col-md-2 hide-only-mobile bg-color-light')
+      div.my-3
+        include ../partials/search-module
+      ul(class='list')
         li(is='anchored-tag' tag='li') Carousel
         li(is='anchored-tag' tag='li') Chip
         li(is='anchored-tag' tag='li') CloseButton
@@ -24,7 +26,7 @@ block append content
         li(is='anchored-tag' tag='li') Toast
         li(is='anchored-tag' tag='li') Tree
 
-    section(class='col-md-10')
+    section(class='offset-md-2 col-md-10')
       anchored-tag(tag='h1' class='fragment' owned) Carousel
       include ../includes/carousel
       anchored-tag(tag='h1' class='fragment' owned) Chip

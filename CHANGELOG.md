@@ -11,6 +11,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+## [0.7.2][] - 2018-07-21
+
+### Added
+
+- Add scss mixin `reset-link`. #140
+- Add util method `addSvg()`. It's for adding custom SVG icon into the SVG icon list. #137
+
+### Changed
+
+- Change prop of the dropdown `button-with-caret` to `append-icon`. And caret icon in the button is not appended as default. Please [see document](https://github.com/archco/moss-ui/blob/master/docs/js/dropdown.md#append-icon-to-button). #139
+- Rename scss placeholder `%link-no-deco` to `%no-decoration`. #141
+
+### Fixed
+
+- Fixed bug in some situation in nested modal. #136
+
 ## [0.7.0][] - 2018-06-23
 
 ### Added
@@ -323,7 +339,8 @@ Remove deprecated in v0.6.x #104
 - Remove unnecessary part "aside.scss". #60
 - Remove deprecated scss mixin, `flex-container()`. instead use `flex-container-align`. #52
 
-[Unreleased]: https://github.com/archco/moss-ui/compare/v0.7.0...HEAD
+[Unreleased]: https://github.com/archco/moss-ui/compare/v0.7.2...HEAD
+[0.7.2]: https://github.com/archco/moss-ui/compare/v0.7.0...v0.7.2
 [0.7.0]: https://github.com/archco/moss-ui/compare/v0.6.5...v0.7.0
 [0.6.5]: https://github.com/archco/moss-ui/compare/v0.6.4...v0.6.5
 [0.6.4]: https://github.com/archco/moss-ui/compare/v0.6.3...v0.6.4

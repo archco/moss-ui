@@ -2,11 +2,17 @@ import { treeData, treeData2 } from './data/tree';
 import collection from './data/collection.json';
 import * as Partials from './partials';
 import IconList from './components/IconList.vue';
+import * as customIcons from './data/customIcons';
 
 const Vue = window.Vue;
 
 Vue.use(window.MossUI.default);
 Vue.component('icon-list', IconList);
+
+// add custom icons
+for (const [k, v] of Object.entries(customIcons)) {
+  window.Moss.addSvg(k, v);
+}
 
 const searchOptions = {
   keys: [
@@ -16,7 +22,7 @@ const searchOptions = {
   ],
 };
 
-const { strToKebab } = window.Moss.lib.Util;
+const { kebab } = window.Moss.lib.Case;
 const { Color } = window.Moss.lib;
 
 window.vm = new window.Vue({
@@ -38,7 +44,7 @@ window.vm = new window.Vue({
 
     onSearchItemClick({ name, category }) {
       // redirect to
-      window.location.href = `${category}.html#${strToKebab(name)}`;
+      window.location.href = `${category}.html#${kebab(name)}`;
     },
 
     onSearchSubmit({ result }) {
@@ -71,6 +77,7 @@ window.vm = new window.Vue({
         scss: '#c69',
         js: '#f5da55',
         vue: '#4fc08d',
+        svg: '#454545',
       };
       const prefix = /(^\w+)/.exec(category)[1];
       const bgColor = new Color(c[prefix]);

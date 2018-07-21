@@ -3,7 +3,7 @@ navbar,
 [is="navbar"] { visibility: hidden; }
 
 %nav-link {
-  @extend %link-no-deco;
+  @extend %no-decoration;
   display: inline-block;
   padding: $nav-link-padding-y $nav-link-padding-x;
   font-family: inherit;

@@ -2,6 +2,16 @@ import { camel } from 'cake-case';
 import * as Svg from '../../../svg';
 
 /**
+ * Add custom svg-icon.
+ *
+ * @param {string} name
+ * @param {string} value
+ */
+export function addSvg(name, value) {
+  Svg[camel(name)] = value;
+}
+
+/**
  * Get svg string by name.
  *
  * @param {string} name the name of svg-icon. e.g. arrow-down or arrowDown

@@ -7,11 +7,6 @@
     <title>Vue Components</title>
     <link rel="stylesheet" href="../../dist/moss.css">
     <link rel="stylesheet" href="example.css">
-    <style>
-      aside { position: relative; }
-      aside .menu { overflow: auto; }
-      .fragment:target { padding-top: 45px; }
-    </style>
   </head>
   <body>
     <div id="app">
@@ -25,15 +20,22 @@
           <nav-item href="vue.html" text="Vue"></nav-item>
           <nav-item href="svg.html" text="SVG"></nav-item>
           <nav-item>
-            <dropdown toggle="toggle" placement="bottom-end">
+            <dropdown toggle="toggle" placement="bottom-end" append-icon>
               <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
             </dropdown>
           </nav-item>
         </navbar-nav>
       </navbar>
       <div class="row">
-        <aside class="col-md-2 hide-only-mobile">
-          <ul class="menu list fixed">
+        <aside class="sidebar col-md-2 hide-only-mobile bg-color-light">
+          <div class="my-3">
+            <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="onSearchItemClick" @submit="onSearchSubmit">
+              <li slot="result-item" slot-scope="props" style="text-align:left;" tabindex="0" @click="props.onClickItem(props.item)">
+                <h3 style="margin:0;" v-text="props.item.name"></h3><span class="badge" :style="getBadgeStyle(props.item.category)" v-text="props.item.category"></span><span class="help" v-text="props.item.description"></span>
+              </li>
+            </search>
+          </div>
+          <ul class="list">
             <li is="anchored-tag" tag="li">Carousel</li>
             <li is="anchored-tag" tag="li">Chip</li>
             <li is="anchored-tag" tag="li">CloseButton</li>
@@ -51,7 +53,7 @@
             <li is="anchored-tag" tag="li">Tree</li>
           </ul>
         </aside>
-        <section class="col-md-10">
+        <section class="offset-md-2 col-md-10">
           <anchored-tag class="fragment" tag="h1" owned>Carousel</anchored-tag>
           <blockquote class="pad info">This component uses <a href="https://github.com/lukaszflorczak/vue-agile">vue-agile</a>.</blockquote>
           <h2>Basic usage</h2>
@@ -173,21 +175,21 @@
             <button class="btn" slot="button">TOGGLE</button><a class="dropdown-item active" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
           </div>
           <h3>Hover Dropdown</h3>
-          <dropdown toggle="hover">
+          <dropdown toggle="hover" append-icon>
             <button class="btn info" slot="button">HOVER</button><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
           </dropdown>
           <h3>Content Placements</h3>
           <div class="d-flex justify-content-between" style="width:100%;">
-            <dropdown toggle="hover" placement="top">
+            <dropdown toggle="hover" placement="top" append-icon="arrow-up">
               <button class="btn success" slot="button">top</button><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
             </dropdown>
-            <dropdown toggle="hover" placement="right">
+            <dropdown toggle="hover" placement="right" append-icon="arrow-right">
               <button class="btn link" slot="button">right</button><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
             </dropdown>
-            <dropdown toggle="hover" placement="left-start">
+            <dropdown toggle="hover" placement="left-start" append-icon="arrow-left">
               <button class="btn info" slot="button">left-start</button><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
             </dropdown>
-            <dropdown toggle="hover" placement="bottom-end">
+            <dropdown toggle="hover" placement="bottom-end" append-icon="arrow-down">
               <button class="btn warning" slot="button">bottom-end</button><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a><a class="dropdown-item" href="#">down</a>
             </dropdown>
           </div>
@@ -244,8 +246,8 @@
             <div class="dropdown-divider"></div>
             <h3 class="dropdown-header">Not allowed</h3><span class="dropdown-item" href="#" disabled>down</span>
           </dropdown>
-          <h3>Dropdown button without caret</h3>
-          <dropdown placement="right" offset="5px, 5px" :button-with-caret="false">
+          <h3>Append icon into dropdown button</h3>
+          <dropdown placement="right" offset="5px, 5px" append-icon="on">
             <button class="btn info" slot="button">DROPDOWN</button>
             <h3 class="dropdown-header">Header</h3><a class="dropdown-item" href="#">hello</a><a class="dropdown-item" href="#">drop</a>
             <div class="dropdown-divider"></div>
@@ -339,6 +341,18 @@
           <button class="btn link" onclick="Moss.modal.show(&quot;test-modal8&quot;)">no-effect</button>
           <modal name="test-modal8" title="From-top" effect="from-top" close-on>
             <p class="text-center"><code>from-top</code> effect.</p>
+          </modal>
+          <h3>Nested Modal</h3>
+          <button class="btn info" @click="$moss.modal.show(&quot;test-modal9&quot;)">Parent</button>
+          <modal name="test-modal9" title="Parent" close-on>
+            <h3>Hello World!</h3>
+            <p>
+              <button class="btn success" @click="$moss.modal.show(&quot;test-modal10&quot;)">Child</button>
+            </p>
+          </modal>
+          <modal name="test-modal10" title="Child" close-on>
+            <h3>Have a nice day!</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </modal>
           <anchored-tag class="fragment" tag="h1" owned>Navbar</anchored-tag>
           <h3>Basic</h3>

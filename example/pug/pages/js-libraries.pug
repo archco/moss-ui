@@ -6,13 +6,15 @@ block title
 
 block append content
   div(class='row')
-    aside(class='col-md-2 hide-only-mobile')
-      ul(class='menu list fixed')
+    aside(class='sidebar col-md-2 hide-only-mobile bg-color-light')
+      div.my-3
+        include ../partials/search-module
+      ul(class='list')
         li(is='anchored-tag' tag='li') Color
         li(is='anchored-tag' tag='li') ElementUtil
         li(is='anchored-tag' tag='li') Util
 
-    section(class='col-md-10')
+    section(class='offset-md-2 col-md-10')
       anchored-tag(tag='h1' class='fragment' owned) Color
       include ../includes/color
       anchored-tag(tag='h1' class='fragment' owned) ElementUtil

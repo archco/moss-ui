@@ -7,11 +7,6 @@
     <title>SCSS Parts</title>
     <link rel="stylesheet" href="../../dist/moss.css">
     <link rel="stylesheet" href="example.css">
-    <style>
-      aside { position: relative; }
-      aside .menu { overflow: auto; }
-      .fragment:target { padding-top: 45px; }
-    </style>
   </head>
   <body>
     <div id="app">
@@ -25,15 +20,22 @@
           <nav-item href="vue.html" text="Vue"></nav-item>
           <nav-item href="svg.html" text="SVG"></nav-item>
           <nav-item>
-            <dropdown toggle="toggle" placement="bottom-end">
+            <dropdown toggle="toggle" placement="bottom-end" append-icon>
               <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
             </dropdown>
           </nav-item>
         </navbar-nav>
       </navbar>
       <div class="row">
-        <aside class="col-md-2 hide-only-mobile">
-          <ul class="menu list">
+        <aside class="sidebar col-md-2 hide-only-mobile bg-color-light">
+          <div class="my-3">
+            <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="onSearchItemClick" @submit="onSearchSubmit">
+              <li slot="result-item" slot-scope="props" style="text-align:left;" tabindex="0" @click="props.onClickItem(props.item)">
+                <h3 style="margin:0;" v-text="props.item.name"></h3><span class="badge" :style="getBadgeStyle(props.item.category)" v-text="props.item.category"></span><span class="help" v-text="props.item.description"></span>
+              </li>
+            </search>
+          </div>
+          <ul class="list">
             <li is="anchored-tag" tag="li">Scaffolding</li>
             <li is="anchored-tag" tag="li">Code</li>
             <li is="anchored-tag" tag="li">Badge</li>
@@ -49,7 +51,7 @@
             <li is="anchored-tag" tag="li">Pagination</li>
           </ul>
         </aside>
-        <section class="col-md-10">
+        <section class="offset-md-2 col-md-10">
           <anchored-tag class="fragment" tag="h1" owned>Scaffolding</anchored-tag>
           <h2>Link</h2>
           <div class="group"><a href="#">link</a><br><a class="no-deco" href="#">no-decoration link</a></div>

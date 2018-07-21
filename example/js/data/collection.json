@@ -262,5 +262,11 @@
     "name": "NavDrawer",
     "category": "vue",
     "description": "It's the navigation drawer that using horizontal-collapse."
+  },
+  {
+    "_id": 46,
+    "name": "Icons",
+    "category": "svg",
+    "description": "Simple icons with SVG."
   }
 ]

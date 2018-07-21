@@ -1,0 +1,13 @@
+// image filter-set.
+@mixin filter-set {
+  &.blur { filter: blur(4px); }
+  &.lighten { filter: brightness(1.25); }
+  &.darken { filter: brightness(.75); }
+  &.contrast { filter: contrast(150%); }
+  &.gray { filter: grayscale(100%); }
+  &.hue-rotate { filter: hue-rotate(90deg); }
+  &.invert { filter: invert(100%); }
+  &.opacity { filter: opacity(50%); }
+  &.saturate { filter: saturate(200%); }
+  &.sepia { filter: sepia(100%); }
+}

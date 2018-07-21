@@ -62,13 +62,50 @@ export default {
   watch: {
     show(shown) {
       const c = 'modal-shown';
+      const openedModals = this.$moss.modal.opened;
       if (shown) {
+        openedModals.push(this.name);
         document.body.classList.add(c);
       } else {
-        document.body.classList.remove(c);
+        openedModals.splice(openedModals.findIndex(x => x == this.name), 1);
+        if (openedModals.length < 1) document.body.classList.remove(c);
       }
       this.$emit('state', shown);
     },
+  },
+  beforeMount() {
+    // add key listener. close modal if 'esc' key downed.
+    window.addEventListener('keydown', this.onKeydown.bind(this));
+    // register events to $root and self.
+    this.$root.$on('modal-toggle', this.toggleModal.bind(this));
+    this.$on('close', () => {
+      this.toggleModal(this.name, 'close');
+    });
+
+    // Attaches helper methods to Moss object.
+    if (typeof window.Moss !== 'undefined' && typeof window.Moss.modal === 'undefined') {
+      window.Moss.modal = {
+        opened: [],
+        show: name => this.$root.$emit('modal-toggle', name, 'show'),
+        close: name => this.$root.$emit('modal-toggle', name, 'close'),
+        toggle: (name, action = 'toggle') => this.$root.$emit('modal-toggle', name, action),
+      };
+    }
+
+    if (this.closeOn) {
+      document.documentElement.addEventListener('click', event => {
+        if (event.target.classList.contains('modal-mask')) {
+          const lastModal = window.Moss.modal.opened.slice(-1).pop();
+          this.toggleModal(lastModal, 'close');
+          event.stopPropagation();
+        }
+      });
+    }
+  },
+  mounted() {
+    // Add data-toggle listeners. 'cancel'|'close'
+    const elms = getElements('[data-toggle="cancel"],[data-toggle="close"]', this.$el);
+    addListener(elms, 'click', () => this.toggleModal(this.name, 'close'));
   },
   methods: {
     toggleModal(name, action = 'toggle') {
@@ -87,36 +124,5 @@ export default {
       }
     },
   },
-  beforeMount() {
-    // add key listener. close modal if 'esc' key downed.
-    window.addEventListener('keydown', this.onKeydown.bind(this));
-    // register events to $root and self.
-    this.$root.$on('modal-toggle', this.toggleModal.bind(this));
-    this.$on('close', () => {
-      this.toggleModal(this.name, 'close');
-    });
-
-    // Attaches helper methods to Moss object.
-    if (typeof window.Moss !== 'undefined' && typeof window.Moss.modal === 'undefined') {
-      window.Moss.modal = {
-        show: name => this.$root.$emit('modal-toggle', name, 'show'),
-        close: name => this.$root.$emit('modal-toggle', name, 'close'),
-        toggle: (name, action = 'toggle') => this.$root.$emit('modal-toggle', name, action),
-      };
-    }
-
-    if (this.closeOn) {
-      document.documentElement.addEventListener('click', event => {
-        if (event.target.classList.contains('modal-mask')) {
-          this.toggleModal(this.name, 'close');
-        }
-      });
-    }
-  },
-  mounted() {
-    // Add data-toggle listeners. 'cancel'|'close'
-    const elms = getElements('[data-toggle="cancel"],[data-toggle="close"]', this.$el);
-    addListener(elms, 'click', () => this.toggleModal(this.name, 'close'));
-  }
 }
 </script>

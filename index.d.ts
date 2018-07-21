@@ -1,6 +1,6 @@
 /// <reference path="./src/js/lib/methods/scrollTo.d.ts" />
 
-// Type definitions for moss-ui v0.6.2
+// Type definitions for moss-ui v0.7.2
 // @link https://github.com/archco/moss-ui
 
 import {
@@ -40,8 +40,6 @@ export namespace Components {
   export const Toast: VueConstructor;
   export const Tree: VueConstructor;
   export const TreeItem: VueConstructor;
-  export const InputCheck: VueConstructor;
-  export const InputRadio: VueConstructor;
   export const Carousel: VueConstructor;
   export const Icon: VueConstructor;
   export const CollapseToggle: VueConstructor;
@@ -132,42 +130,41 @@ export namespace Util {
    */
   export function isMobileSize(size?: number): boolean;
 
-  /**
-   * String to CamelCase
-   * @deprecated in v0.6.x. use Case.camel or Case.pascal instead.
-   *
-   * @param {string} str
-   * @param {boolean} [isSmallCamel=false] If true, returns as smallCamelCase.
-   * @returns {string}
-   */
-  export function strToCamel(str: string, isSmallCamel?: boolean): string;
+  //
+  // SVG Icons
+  //
 
   /**
-   * String to kebab-case.
-   * @deprecated in v0.6.x. use Case.kebab instead.
+   * Add custom svg-icon.
    *
-   * @param {string} str
-   * @returns {string}
+   * @param {string} name
+   * @param {string} value
    */
-  export function strToKebab(str: string): string;
+  export function addSvg(name: string, value: string): void;
 
   /**
-   * String to normal case. e.g. 'hello world'
-   * @deprecated in v0.6.x. use Case.lower instead.
+   * Get svg string by name.
    *
-   * @param {string} str
+   * @param {string} name the name of svg-icon. e.g. arrow-down or arrowDown
    * @returns {string}
    */
-  export function strToNormal(str: string): string;
+  export function getSvgByName(name: string): string;
 
   /**
-   * Capitalize first letters.
-   * @deprecated in v0.6.x. use Case.capital instead.
+   * Make icon element by svg-icon name.
    *
-   * @param {string} str
+   * @param {string} name
+   * @returns {HTMLElement}
+   */
+  export function makeIcon(name: string): HTMLElement;
+
+  /**
+   * Make icon html string by svg-icon name.
+   *
+   * @param {string} name
    * @returns {string}
    */
-  export function capitalize(str: string): string;
+  export function makeIconHtml(name: string): string;
 }
 
 export interface MossOptions {

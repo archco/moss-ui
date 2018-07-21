@@ -20,10 +20,6 @@ html
       title "Default title"
     link(rel="stylesheet" href="../../dist/moss.css")
     link(rel="stylesheet" href="example.css")
-    style
-      |aside { position: relative; }
-      |aside .menu { overflow: auto; }
-      |.fragment:target { padding-top: 45px; }
   body
     div(id='app')
       header.d-flex.justify-content-center.align-items-center.bg-color-primary(style="height:100px;")
@@ -37,7 +33,7 @@ html
             nav-item(href='vue.html' text='Vue')
             nav-item(href='svg.html' text='SVG')
             nav-item
-              dropdown(toggle='toggle' placement='bottom-end')
+              dropdown(toggle='toggle' placement='bottom-end' append-icon)
                 button(slot='button') Utilities
                 a.dropdown-item(href='scss-helpers.html') SCSS Helpers
                 a.dropdown-item(href='vue-directives.html') Vue Directives

@@ -1,13 +1,21 @@
+aside.sidebar {
+  position: fixed;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 2; }
+
+.fragment:target {
+  padding-top: 45px; }
+
 
 .icon-item[data-v-3a87218a] {
   margin-right: 1rem;
   margin-bottom: 1rem;
   padding: .25rem;
   width: 130px;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   text-align: center;
   border-radius: 4px;
   transition: all .4s ease-in-out;
