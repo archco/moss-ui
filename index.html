@@ -7,11 +7,6 @@
     <title>Moss-UI</title>
     <link rel="stylesheet" href="./dist/moss.css">
     <link rel="stylesheet" href="example.css">
-    <style>
-      aside { position: relative; }
-      aside .menu { overflow: auto; }
-      .fragment:target { padding-top: 45px; }
-    </style>
   </head>
   <body>
     <div id="app">
@@ -25,7 +20,7 @@
           <nav-item href="vue.html" text="Vue"></nav-item>
           <nav-item href="svg.html" text="SVG"></nav-item>
           <nav-item>
-            <dropdown toggle="toggle" placement="bottom-end">
+            <dropdown toggle="toggle" placement="bottom-end" append-icon>
               <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
             </dropdown>
           </nav-item>
