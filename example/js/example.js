@@ -77,6 +77,7 @@ window.vm = new window.Vue({
         scss: '#c69',
         js: '#f5da55',
         vue: '#4fc08d',
+        svg: '#454545',
       };
       const prefix = /(^\w+)/.exec(category)[1];
       const bgColor = new Color(c[prefix]);

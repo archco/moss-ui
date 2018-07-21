@@ -6,8 +6,10 @@ block title
 
 block append content
   div(class='row')
-    aside(class='col-md-2 hide-only-mobile')
-      ul(class='menu list')
+    aside(class='sidebar col-md-2 hide-only-mobile bg-color-light')
+      div.my-3
+        include ../partials/search-module
+      ul(class='list')
         li(is='anchored-tag' tag='li') Scaffolding
         li(is='anchored-tag' tag='li') Code
         li(is='anchored-tag' tag='li') Badge
@@ -21,7 +23,7 @@ block append content
         li(is='anchored-tag' tag='li') List
         li(is='anchored-tag' tag='li') Loader
         li(is='anchored-tag' tag='li') Pagination
-    section(class='col-md-10')
+    section(class='offset-md-2 col-md-10')
       anchored-tag(tag='h1' class='fragment' owned) Scaffolding
       include ../includes/scaffolding.pug
       anchored-tag(tag='h1' class='fragment' owned) Code

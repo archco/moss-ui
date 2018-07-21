@@ -9,18 +9,30 @@ export function information() {
 
 // aside menu.
 export function asideMenu() {
-  const docSize = new window.Moss.lib.ElementMeasurer();
-  const asideMenu = document.querySelector('aside .menu');
+  const ElementMeasurer = window.Moss.lib.ElementMeasurer;
+  const asideMenu = document.querySelector('aside.sidebar');
   if (!asideMenu) return;
 
+  const docSize = new ElementMeasurer();
+  const headerSize = new ElementMeasurer('#app > header');
+  const navSize = new ElementMeasurer('#app > nav');
+  const footerSize = new ElementMeasurer('#app > footer.footer');
+
+  const headerHeight = headerSize.scrollHeight;
+  const navHeight = navSize.scrollHeight;
+  const footerHeight = footerSize.scrollHeight;
+
   const onScroll = () => {
-    if (docSize.scrollTop > asideMenu.offsetTop) {
-      asideMenu.style.position = 'fixed';
-      asideMenu.style.top = '45px';
+    if (docSize.scrollTop < headerHeight) {
+      asideMenu.style.top = `${headerHeight + navHeight}px`;
+      asideMenu.style.height = `calc(100vh - ${headerHeight + navHeight}px)`;
     } else {
-      asideMenu.style.position = '';
-      asideMenu.style.top = '';
-      asideMenu.style.maxWidth = '';
+      asideMenu.style.top = `${navHeight}px`;
+      asideMenu.style.height = `calc(100vh - ${navHeight}px)`;
+    }
+
+    if (docSize.scrollTop >= docSize.maxScrollTop - footerHeight) {
+      asideMenu.style.height = `calc(100vh - ${navHeight + footerHeight}px)`;
     }
   };
 

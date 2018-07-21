@@ -3,13 +3,14 @@ const { VueLoaderPlugin } = require('vue-loader');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: {
-    example: './example/js/example.js',
-  },
+  entry: [
+    './example/scss/example.scss',
+    './example/js/example.js',
+  ],
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   output: {
     path: path.resolve(__dirname, '../example/dist'),
-    filename: '[name].js',
+    filename: 'example.js',
   },
   module: {
     rules: [
@@ -76,7 +77,7 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: 'example.css',
     }),
   ],
 };

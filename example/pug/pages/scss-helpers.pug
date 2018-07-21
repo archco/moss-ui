@@ -6,15 +6,17 @@ block title
 
 block content
   div(class='row')
-    aside(class='col-md-2 hide-only-mobile')
-      ul(class='menu list fixed')
+    aside(class='sidebar col-md-2 hide-only-mobile bg-color-light')
+      div.my-3
+        include ../partials/search-module
+      ul(class='list')
         li(is='anchored-tag' tag='li') Helper
         li(is='anchored-tag' tag='li') Sizing
         li(is='anchored-tag' tag='li') Spacing
         li(is='anchored-tag' tag='li') Text
         li(is='anchored-tag' tag='li') Flex
 
-    section(class='col-md-10')
+    section(class='offset-md-2 col-md-10')
       anchored-tag(tag='h1' class='fragment' owned) Helper
       include ../includes/helper
       anchored-tag(tag='h1' class='fragment' owned) Sizing
