@@ -2,40 +2,44 @@ h2 Default Usage
 form
   fieldset
     legend Form
-    div(class='form-group')
+    div.mb-3
       label(for='name') Name
       input(type='text' id='name' name='name' placeholder='name')
-    div(class='form-group')
+    div.mb-3
       label(for='password') Password
       input(type='password' id='password' name='password')
-    div(class='form-group')
-      label(for='email') email
-      input(type='email' id='email' name='email' disabled placeholder='read only')
-      input(type='email' id='email' name='email' readonly placeholder='read only')
-    div(class='form-group')
-      label checkbox
+    div.mb-3
+      label(for='email') Email
+      input(type='email' id='email' name='email' placeholder='user@example.com')
+    div.mb-3
+      label Disabled and Readonly
+      input(type='text' value='disabled' disabled)
+      input(type='text' value="readonly" readonly)
+    div.mb-3
+      label
         input(type='checkbox')
-    div(class='form-group')
+        span checkbox
+    div.mb-3
       label
         input(type='radio' name='gender' value='0' checked)
-        | male
+        span male
       br
       label
         input(type='radio' name='gender' value='1')
-        | female
-    div(class='form-group')
+        span female
+    div.mb-3
       input(type='file')
       input(type='range')
       input(type='color')
-    div(class='form-group')
+    div.mb-3
       select(name='select')
         option(value='0') one
         option(value='1') two
         option(value='2') three
-    div(class='form-group')
+    div.mb-3
       textarea
         | hello, world!
-    div(class='form-group')
+    div.mb-3
       button(type='submit' class='btn') Submit
 
 h2 Form Inline
@@ -47,16 +51,19 @@ form(class='form-inline')
     label(for='password') Password
     input(type='password' id='password' name='password')
     label(for='email') email
-    input(type='email' id='email' name='email' disabled placeholder='read only')
-    input(type='email' id='email' name='email' readonly placeholder='read only')
-    label checkbox
-    input(type='checkbox')
+    input(type='email' placeholder='user@example.com')
+    label disabled and readonly
+    input(type='text' value='disabled' disabled)
+    input(type='text' value='readonly' readonly)
+    label
+      input(type='checkbox')
+      span checkbox
     label
       input(type='radio' name='gender' value='0' checked)
-      | male
+      span male
     label
       input(type='radio' name='gender' value='1')
-      | female
+      span female
     input(type='file')
     input(type='range')
     input(type='color')
@@ -213,6 +220,14 @@ form
         input(type="text" class="is-invalid" id="formValidation07" placeholder="Username" required)
         .invalid-feedback Please choose a username.
     .col-md.mb-3
+      label(for="fomValidation09") File Upload
+      input#fomValidation09(type="file" class="is-invalid")
+      .invalid-feedback The file must be an image.
+    .col-md.mb-3
       input#formValidation08(type="checkbox" class="is-invalid" required)
       label(for="formValidation08") Agree to terms and conditions
       .invalid-feedback You must agree before submitting.
+    .col-md.mb-3
+      input#formValidation10(type="color" class="is-valid")
+      label(for="formValidation10") Main color
+      .valid-feedback It is good!
