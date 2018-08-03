@@ -102,6 +102,7 @@
   },
   "browserslist": "defaults",
   "jest": {
+    "testURL": "http://localhost/",
     "moduleFileExtensions": [
       "js",
       "json",
