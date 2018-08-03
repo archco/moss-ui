@@ -7,11 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Previous Versions
 
-- [v0.1 - v0.3](https://github.com/archco/moss-ui/blob/master/docs/changelog/0.1-0.3.md)
-- [v0.4 - v0.6](https://github.com/archco/moss-ui/blob/master/docs/changelog/0.4-0.6.md)
 - [v0.7 - current](https://github.com/archco/moss-ui/blob/master/CHANGELOG.md)
+- [v0.4 - v0.6](https://github.com/archco/moss-ui/blob/master/docs/changelog/0.4-0.6.md)
+- [v0.1 - v0.3](https://github.com/archco/moss-ui/blob/master/docs/changelog/0.1-0.3.md)
 
 ## [Unreleased][]
+
+## [0.7.3][] - 2018-08-03
 
 ### Added
 
@@ -77,6 +79,7 @@ Remove deprecated in v0.6.x #104
   - `js/components/input-check.vue`
   - `js/components/input-radio.vue`
 
-[Unreleased]: https://github.com/archco/moss-ui/compare/v0.7.2...HEAD
+[Unreleased]: https://github.com/archco/moss-ui/compare/v0.7.3...HEAD
+[0.7.3]: https://github.com/archco/moss-ui/compare/v0.7.2...v0.7.3
 [0.7.2]: https://github.com/archco/moss-ui/compare/v0.7.0...v0.7.2
 [0.7.0]: https://github.com/archco/moss-ui/compare/v0.6.5...v0.7.0
