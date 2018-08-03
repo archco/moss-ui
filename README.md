@@ -20,16 +20,16 @@ npm install moss-ui
 
 ### SCSS
 
-```scss
+``` scss
 // In your app.scss file.
 @import 'app-variables'; // Customize variables for application.
-@import 'node_modules/moss-ui/src/scss/moss';
+@import '~moss-ui/src/scss/moss';
 ...
 ```
 
 ### Vue Plugin
 
-```js
+``` js
 // In your app.js
 import Vue from 'vue';
 import MossUI from 'moss-ui';
@@ -43,7 +43,7 @@ window.vm = new Vue({
 
 ### In HTML
 
-```html
+``` html
 <!-- in <head> tag -->
 <link rel="stylesheet" href="/css/app.css">
 ...

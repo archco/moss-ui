@@ -1,5 +1,5 @@
 @mixin form-inline-target {
-  input:not([type="color"]),
+  input:not([type=color]):not([type=checkbox]):not([type=radio]),
   select,
   textarea {
     @content;
@@ -62,8 +62,22 @@
     }
   }
 
+  input[type=file] {
+    .was-validated &:#{$state},
+    &.is-#{$state} {
+      border: 1px solid $color;
+      outline-color: $color;
+
+      ~ .#{$state}-feedback,
+      ~ .#{$state}-tooltip {
+        display: block;
+      }
+    }
+  }
+
   input[type=checkbox],
-  input[type=radio] {
+  input[type=radio],
+  input[type=color] {
     .was-validated &:#{$state},
     &.is-#{$state} {
       ~ label {

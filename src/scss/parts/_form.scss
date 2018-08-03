@@ -34,16 +34,20 @@ select,
 textarea {
   color: inherit;
   vertical-align: middle;
-  // default outline color
+  font-size: $font-size;
+  line-height: $input-line-height;
   outline-color: $input-outline-color;
+
+  &[disabled],
+  &[readonly] {
+    background-color: $input-disabled-bg-color !important;
+  }
 }
 
 // input generalize
 @include general-inputs() {
   width: 100%;
-  min-height: $input-height;
   padding: $input-padding-y $input-padding-x;
-  line-height: 1.4;
   background-color: $input-bg-color;
   border: $input-border-width solid $input-border-color;
   @include border-radius($input-radius);
@@ -61,11 +65,6 @@ textarea {
       border-color: $color;
       outline-color: $color;
     }
-  }
-
-  &[disabled],
-  &[readonly] {
-    background-color: $input-disabled-bg-color;
   }
 }
 
@@ -96,6 +95,7 @@ input[type=radio] {
   vertical-align: middle;
 }
 
+input[type=file],
 input[type=range] {
   width: 100%;
 }
@@ -115,7 +115,7 @@ input[type=color] {
 }
 
 .form-inline {
-  display: inline;
+  display: inline-block;
   padding: 0;
   margin: 0;
 

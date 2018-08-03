@@ -1,6 +1,6 @@
 /*!
  * moss-ui - The front-end UI framework with Vue.js and SCSS.
- * @version v0.7.2
+ * @version v0.7.3
  * @link https://github.com/archco/moss-ui
  * @license MIT
  */
@@ -1285,7 +1285,15 @@ select,
 textarea {
   color: inherit;
   vertical-align: middle;
+  font-size: 1em;
+  line-height: 1.5;
   outline-color: #00ab66; }
+  input[disabled], input[readonly],
+  select[disabled],
+  select[readonly],
+  textarea[disabled],
+  textarea[readonly] {
+    background-color: rgba(190, 190, 190, 0.33) !important; }
 
 input:not([type]),
 input[type=text],
@@ -1302,9 +1310,7 @@ input[type=search],
 select,
 textarea {
   width: 100%;
-  min-height: 2em;
   padding: 0.2em 0.5em;
-  line-height: 1.4;
   background-color: #fff;
   border: 1px solid #bebebe;
   border-radius: 2px; }
@@ -1527,34 +1533,6 @@ textarea {
     background-color: rgba(0, 135, 189, 0.1);
     border-color: #0087bd;
     outline-color: #0087bd; }
-  input:not([type])[disabled], input:not([type])[readonly],
-  input[type=text][disabled],
-  input[type=text][readonly],
-  input[type=email][disabled],
-  input[type=email][readonly],
-  input[type=password][disabled],
-  input[type=password][readonly],
-  input[type=url][disabled],
-  input[type=url][readonly],
-  input[type=time][disabled],
-  input[type=time][readonly],
-  input[type=date][disabled],
-  input[type=date][readonly],
-  input[type=datetime][disabled],
-  input[type=datetime][readonly],
-  input[type=datetime-local][disabled],
-  input[type=datetime-local][readonly],
-  input[type=tel][disabled],
-  input[type=tel][readonly],
-  input[type=number][disabled],
-  input[type=number][readonly],
-  input[type=search][disabled],
-  input[type=search][readonly],
-  select[disabled],
-  select[readonly],
-  textarea[disabled],
-  textarea[readonly] {
-    background-color: rgba(190, 190, 190, 0.33); }
 
 input[type=text].password, input[type=text].pw {
   -webkit-text-security: disc; }
@@ -1570,6 +1548,7 @@ input[type=radio] {
   height: 1.2em;
   vertical-align: middle; }
 
+input[type=file],
 input[type=range] {
   width: 100%; }
 
@@ -1578,15 +1557,15 @@ input[type=color] {
   height: 2em;
   padding: 0; }
 
-.form-inline input:not([type="color"]),
+.form-inline input:not([type=color]):not([type=checkbox]):not([type=radio]),
 .form-inline select,
-.form-inline textarea, input.inline:not([type="color"]),
+.form-inline textarea, input.inline:not([type=color]):not([type=checkbox]):not([type=radio]),
 select.inline,
 textarea.inline {
   width: auto; }
 
 .form-inline {
-  display: inline;
+  display: inline-block;
   padding: 0;
   margin: 0; }
   .form-inline textarea {
@@ -1760,9 +1739,19 @@ textarea.is-valid {
   textarea.is-valid ~ .valid-tooltip {
     display: block; }
 
+.was-validated input[type=file]:valid, input[type=file].is-valid {
+  border: 1px solid #00a550;
+  outline-color: #00a550; }
+  .was-validated input[type=file]:valid ~ .valid-feedback,
+  .was-validated input[type=file]:valid ~ .valid-tooltip, input[type=file].is-valid ~ .valid-feedback,
+  input[type=file].is-valid ~ .valid-tooltip {
+    display: block; }
+
 .was-validated input[type=checkbox]:valid ~ label, input[type=checkbox].is-valid ~ label, .was-validated
 input[type=radio]:valid ~ label,
-input[type=radio].is-valid ~ label {
+input[type=radio].is-valid ~ label, .was-validated
+input[type=color]:valid ~ label,
+input[type=color].is-valid ~ label {
   color: #00a550; }
 
 .was-validated input[type=checkbox]:valid ~ .valid-feedback,
@@ -1772,7 +1761,12 @@ input[type=radio]:valid ~ .valid-feedback,
 .was-validated
 input[type=radio]:valid ~ .valid-tooltip,
 input[type=radio].is-valid ~ .valid-feedback,
-input[type=radio].is-valid ~ .valid-tooltip {
+input[type=radio].is-valid ~ .valid-tooltip, .was-validated
+input[type=color]:valid ~ .valid-feedback,
+.was-validated
+input[type=color]:valid ~ .valid-tooltip,
+input[type=color].is-valid ~ .valid-feedback,
+input[type=color].is-valid ~ .valid-tooltip {
   display: block; }
 
 .invalid-feedback {
@@ -1895,9 +1889,19 @@ textarea.is-invalid {
   textarea.is-invalid ~ .invalid-tooltip {
     display: block; }
 
+.was-validated input[type=file]:invalid, input[type=file].is-invalid {
+  border: 1px solid #e23d28;
+  outline-color: #e23d28; }
+  .was-validated input[type=file]:invalid ~ .invalid-feedback,
+  .was-validated input[type=file]:invalid ~ .invalid-tooltip, input[type=file].is-invalid ~ .invalid-feedback,
+  input[type=file].is-invalid ~ .invalid-tooltip {
+    display: block; }
+
 .was-validated input[type=checkbox]:invalid ~ label, input[type=checkbox].is-invalid ~ label, .was-validated
 input[type=radio]:invalid ~ label,
-input[type=radio].is-invalid ~ label {
+input[type=radio].is-invalid ~ label, .was-validated
+input[type=color]:invalid ~ label,
+input[type=color].is-invalid ~ label {
   color: #e23d28; }
 
 .was-validated input[type=checkbox]:invalid ~ .invalid-feedback,
@@ -1907,7 +1911,12 @@ input[type=radio]:invalid ~ .invalid-feedback,
 .was-validated
 input[type=radio]:invalid ~ .invalid-tooltip,
 input[type=radio].is-invalid ~ .invalid-feedback,
-input[type=radio].is-invalid ~ .invalid-tooltip {
+input[type=radio].is-invalid ~ .invalid-tooltip, .was-validated
+input[type=color]:invalid ~ .invalid-feedback,
+.was-validated
+input[type=color]:invalid ~ .invalid-tooltip,
+input[type=color].is-invalid ~ .invalid-feedback,
+input[type=color].is-invalid ~ .invalid-tooltip {
   display: block; }
 
 .input-group {

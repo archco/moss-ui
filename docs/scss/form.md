@@ -231,6 +231,7 @@ $legend-padding-y: $space-1 !default;
 $legend-padding-x: $space-2 !default;
 $label-color: $text-color !default;
 
+$input-line-height: $body-line-height !default;
 $input-height: 2em !default;
 $input-padding-y: .2em !default;
 $input-padding-x: .5em !default;
