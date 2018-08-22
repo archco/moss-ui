@@ -5,7 +5,7 @@ import {
 } from 'element-util';
 import ElementMeasurer from 'element-measurer';
 
-export default class Scrollspy {
+export default class ScrollSpy {
   /**
    * constructor
    *

@@ -34,15 +34,17 @@ describe('Puppeteer initialize test.', () => {
   });
 });
 
-describe('Scrollspy test', () => {
+describe('v-scrollspy test', () => {
   it('first menu item has been activated.', async () => {
     const firstItemActivated = await page.$eval('#menu .menu-item:nth-child(1)', elm => elm.classList.contains('active'));
     expect(firstItemActivated).toBeTruthy();
   });
 
   it('second item activate', async () => {
-    const secondItem = await page.$('#menu .menu-item:nth-child(2)');
-    await secondItem.click();
+    const secondLink = await page.$('#menu .menu-item:nth-child(2) a');
+    await secondLink.click();
+    await page.waitFor(50); // wait for process.
+
     const secondItemActivated = await page.$eval('#menu .menu-item:nth-child(2)', elm => elm.classList.contains('active'));
     expect(secondItemActivated).toBeTruthy();
   });
