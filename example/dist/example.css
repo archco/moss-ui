@@ -8,16 +8,19 @@ aside.sidebar {
 .fragment:target {
   padding-top: 45px; }
 
-
 .icon-item[data-v-240e2486] {
   margin-right: 1rem;
   margin-bottom: 1rem;
   padding: .25rem;
   width: 130px;
+  display: -webkit-inline-box;
   display: inline-flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
   text-align: center;
   border-radius: 4px;
+  -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
 }
 .icon-item[data-v-240e2486]:hover {

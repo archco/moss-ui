@@ -1,4 +1,5 @@
 export { default as scrollTo } from './methods/scrollTo';
+export { default as ScrollFire } from './classes/ScrollFire';
 export * from './methods/icon';
 
 /**

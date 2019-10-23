@@ -20,13 +20,13 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: file => (
-          /node_modules/.test(file) &&
+          /node_modules\/(?!(vue-agile)\/).*/.test(file) &&
           !/\.vue\.js/.test(file)
         ),
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env'],
+            presets: ['@babel/preset-env'],
           },
         },
       },
@@ -62,6 +62,26 @@ module.exports = {
             options: { sourceMap: true },
           },
         ],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: { sourceMap: true },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              sourceMap: true,
+              plugins: [
+                require('autoprefixer')(),
+              ],
+            },
+          },
+        ]
       },
       {
         test: /\.svg$/,
