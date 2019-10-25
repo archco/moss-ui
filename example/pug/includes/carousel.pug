@@ -2,6 +2,10 @@ blockquote.pad.info This component uses <a href="https://github.com/lukaszflorcz
 
 h2 Basic usage
 carousel(autoplay :autoplay-speed='5000')
+  template(slot='prevButton')
+    icon(name='arrow-left' style='font-size:2em;')
+  template(slot='nextButton')
+    icon(name='arrow-right' style='font-size:2em;')
   div.slide.d-flex.justify-content-center.align-items-center.bg-color-warning(style='height:300px;')
     h3 SLIDE1
   div.slide.d-flex.justify-content-center.align-items-center.bg-color-primary(style='height:300px;')

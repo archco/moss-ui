@@ -3570,7 +3570,7 @@ carousel,
 .agile__dot--current > button::after {
   background-color: #fff; }
 
-.agile__arrow {
+.agile__nav-button {
   text-decoration: none;
   line-height: 1.15;
   white-space: nowrap;
@@ -3584,19 +3584,17 @@ carousel,
   top: 0;
   width: 7.5%;
   height: 100%;
-  background-color: transparent; }
-  .agile__arrow:focus, .agile__arrow:hover {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.5); }
+  .agile__nav-button:focus, .agile__nav-button:hover {
     text-decoration: none; }
-  .agile__arrow > svg {
-    width: 50%;
-    fill: rgba(255, 255, 255, 0.5); }
-  .agile__arrow:hover > svg {
-    fill: #fff; }
+  .agile__nav-button:hover {
+    color: #fff; }
 
-.agile__arrow--prev {
+.agile__nav-button--prev {
   left: 0; }
 
-.agile__arrow--next {
+.agile__nav-button--next {
   right: 0; }
 
 .chip {

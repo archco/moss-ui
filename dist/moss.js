@@ -17872,7 +17872,7 @@ function getScrollDest(dest, baseSize) {
 /*!****************************!*\
   !*** ./src/js/lib/util.js ***!
   \****************************/
-/*! exports provided: scrollTo, ScrollFire, locationSearchToObject, searchToObject, isContains, isEmpty, isMobileSize, addSvg, getSvgByName, makeIcon, makeIconHtml */
+/*! exports provided: scrollTo, ScrollFire, addSvg, getSvgByName, makeIcon, makeIconHtml, locationSearchToObject, searchToObject, isContains, isEmpty, isMobileSize */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
