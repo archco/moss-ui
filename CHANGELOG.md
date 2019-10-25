@@ -13,6 +13,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Updated
+
+- Updated dependencies. (794960f5105320a8b6774f28010801facb16554f)
+- *BREAK* Updated VueAgile(Carousel component) v0.x to v1.0. [See more info here](https://github.com/lukaszflorczak/vue-agile#important--update-from-version--10). #144
+
+### Changed
+
+- Changed scss variable names of the [Carousel](https://github.com/archco/moss-ui/blob/master/docs/js/carousel.md). #144
+  - `$carousel-arrow-color` -> `$carousel-nav-button-color`
+  - `$carousel-arrow-hover-color` -> `$carousel-nav-button-hover-color`
+  - add `$carousel-nav-button-font-size`
+
 ## [0.7.3][] - 2018-08-03
 
 ### Added

@@ -45,6 +45,7 @@ carousel,
   height: 100%;
   background-color: transparent;
   color: $carousel-nav-button-color;
+  font-size: $carousel-nav-button-font-size;
 
   &:hover { color: $carousel-nav-button-hover-color; }
 }

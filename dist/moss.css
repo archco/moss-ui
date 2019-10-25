@@ -3585,7 +3585,8 @@ carousel,
   width: 7.5%;
   height: 100%;
   background-color: transparent;
-  color: rgba(255, 255, 255, 0.5); }
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 2em; }
   .agile__nav-button:focus, .agile__nav-button:hover {
     text-decoration: none; }
   .agile__nav-button:hover {
