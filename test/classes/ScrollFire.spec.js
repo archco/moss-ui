@@ -1,5 +1,6 @@
 /// <reference path="../../src/js/lib/classes/ScrollFire.d.ts" />
 /// <reference types="element-measurer" />
+/// <reference types="jest" />
 
 import { resolve } from 'path';
 import createPuppeteer from '../utils/createPuppeteer';
@@ -51,17 +52,22 @@ describe('ScrollFire', () => {
   });
 
   it('fire event test', async () => {
-    const fn = jest.fn();
-    await page.evaluate(fn => {
+    const isActivated = await page.evaluate(async () => {
+      const elm = document.querySelector('.box.second');
+      const handler = () => elm.classList.add('active');
+
       ScrollFire = window.ScrollFire;
       const sf = new ScrollFire({
         target: '.box.second',
         actions: [
-          { handler: fn },
+          { handler },
         ],
       });
       sf.addListeners();
-      // do scroll moving for the test!
-    }, fn);
+
+      await window.autoScroll();
+      return elm.classList.contains('active');
+    });
+    expect(isActivated).toBeTruthy();
   });
 });
