@@ -10,14 +10,14 @@ let browser;
 /** @type {puppeteer.Page} */
 let page;
 
-beforeAll(async (done) => {
+beforeEach(async (done) => {
   const p = await createPuppeteer(resolve(__dirname, './ScrollFire.html'));
   browser = p.browser;
   page = p.page;
   done();
 }, 10e3);
 
-afterAll(() => {
+afterEach(() => {
   browser.close();
 });
 
@@ -70,4 +70,80 @@ describe('ScrollFire', () => {
     });
     expect(isActivated).toBeTruthy();
   });
+
+  it('addAction TEST', async () => {
+    const [forwardResult, reverseResult] = await page.evaluate(async () => {
+      ScrollFire = window.ScrollFire;
+      const scrollFire = new ScrollFire({ target: '.box.second' });
+
+      scrollFire.addAction({
+        direction: 'reverse',
+        handler: (elm) => elm.classList.add('active'),
+      }).addListeners();
+      // forward scrolling.
+      await window.autoScroll();
+      const elm = document.querySelector('.box.second');
+      const forwardResult = elm.classList.contains('active'); // expect false.
+      // reverse scrolling.
+      await window.autoScroll(0);
+      const reverseResult = elm.classList.contains('active'); // expect true.
+      return [forwardResult, reverseResult];
+    });
+
+    expect(forwardResult).toBeFalsy();
+    expect(reverseResult).toBeTruthy();
+  });
+
+  it('referencePoint TEST', async () => {
+    const results = await page.evaluate(async () => {
+      ScrollFire = window.ScrollFire;
+      const scrollFire = new ScrollFire({
+        target: '.box.second', // box height: 400 ~ 800
+        referencePoint: 'center', // reference point: 600
+      });
+      scrollFire.addAction({
+        direction: 'forward',
+        handler: (elm) => elm.classList.add('active'),
+      }).addListeners();
+      const checkActive = () => document.querySelector('.box.second').classList.contains('active');
+
+      const firstResult = checkActive(); // expect false.
+      // scroll until 500.
+      await window.autoScroll(500);
+      const secondResult = checkActive(); // expect false.
+      // scroll until 700.
+      await window.autoScroll(700);
+      const thirdResult = checkActive(); // expect true.
+      return [firstResult, secondResult, thirdResult];
+    });
+
+    expect(results[0]).toBeFalsy();
+    expect(results[1]).toBeFalsy();
+    expect(results[2]).toBeTruthy();
+  });
+
+  it('offset TEST', async () => {
+    const results = await page.evaluate(async () => {
+      ScrollFire = window.ScrollFire;
+      const scrollFire = new ScrollFire({
+        target: '.box.second', // box height: 400 ~ 800
+        offset: 200, // expected targetPosition: 200 ~ 1000
+      });
+      scrollFire.addAction({
+        direction: 'forward',
+        handler: (elm) => elm.classList.add('active'),
+      }).addListeners();
+      const checkActive = () => document.querySelector('.box.second').classList.contains('active');
+      const firstResult = checkActive(); // expect false.
+      // scroll until 300
+      await window.autoScroll(300);
+      const secondResult = checkActive(); // expect true.
+      return [firstResult, secondResult];
+    });
+
+    expect(results[0]).toBeFalsy();
+    expect(results[1]).toBeTruthy();
+  });
+
+  // TODO: destroy TEST
 });
