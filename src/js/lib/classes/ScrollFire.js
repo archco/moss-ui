@@ -16,7 +16,8 @@ export default class ScrollFire {
     // initialize properties
     /** @type {scrollFire.TargetPosition} */
     this.targetPosition = 0;
-    this.listeners = [];
+    /** @type {scrollFire.ListenerMap} */
+    this.listeners = new Map();
     this._scrollElementSize = new ElementMeasurer();
     this._scrollHeight = this._scrollElementSize.scrollHeight;
     this._targetElement = null;
@@ -131,7 +132,7 @@ export default class ScrollFire {
    * @returns {this}
    */
   addAction(action) {
-    this.listeners.push(this._generateListener(action).bind(this));
+    this.listeners.set(this._makeId(10), this._generateListener(action).bind(this));
     return this;
   }
 
@@ -141,7 +142,9 @@ export default class ScrollFire {
    * @returns {void}
    */
   addListeners() {
-    this.listeners.forEach(l => window.addEventListener('scroll', l));
+    for (let key of this.listeners.keys()) {
+      window.addEventListener('scroll', this.listeners.get(key));
+    }
   }
 
   /**
@@ -150,7 +153,10 @@ export default class ScrollFire {
    * @param {void}
    */
   destroy() {
-    this.listeners.forEach(l => window.removeEventListener('scroll', l));
+    for (let key of this.listeners.keys()) {
+      window.removeEventListener('scroll', this.listeners.get(key));
+    }
+    this.listeners.clear();
   }
 
   /**
@@ -196,5 +202,22 @@ export default class ScrollFire {
 
       lastY = currY;
     };
+  }
+
+  /**
+   * make random id.
+   * @link https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
+   *
+   * @param {number} length
+   * @returns {string}
+   */
+  _makeId(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+   return result;
   }
 }

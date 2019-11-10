@@ -15,7 +15,7 @@ beforeEach(async (done) => {
   browser = p.browser;
   page = p.page;
   done();
-}, 10e3);
+}, 20e3);
 
 afterEach(() => {
   browser.close();

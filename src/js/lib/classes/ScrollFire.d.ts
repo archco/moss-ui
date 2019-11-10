@@ -38,6 +38,11 @@ export interface Action {
 }
 
 /**
+ * Listener Map.
+ */
+export interface ListenerMap extends Map<string, EventListener> {}
+
+/**
  * The options of ScrollFire Class.
  */
 export interface Options {
@@ -53,7 +58,7 @@ export interface Options {
 
 export class ScrollFire {
   targetPosition: TargetPosition;
-  listeners: EventListener[];
+  listeners: ListenerMap;
   options: Options;
 
   constructor(options?: Options);
@@ -93,12 +98,12 @@ export class ScrollFire {
   addAction(action: Action): this;
 
   /**
-   * Add listeners of action.
+   * Add all listeners.
    */
   addListeners(): void;
 
   /**
-   * Remove listeners.
+   * Remove all listeners.
    */
   destroy(): void;
 }
