@@ -78,7 +78,7 @@ describe('ScrollFire', () => {
 
       scrollFire.addAction({
         direction: 'reverse',
-        handler: (elm) => elm.classList.add('active'),
+        handler: elm => elm.classList.add('active'),
       }).addListeners();
       // forward scrolling.
       await window.autoScroll();
@@ -103,7 +103,7 @@ describe('ScrollFire', () => {
       });
       scrollFire.addAction({
         direction: 'forward',
-        handler: (elm) => elm.classList.add('active'),
+        handler: elm => elm.classList.add('active'),
       }).addListeners();
       const checkActive = () => document.querySelector('.box.second').classList.contains('active');
 
@@ -131,7 +131,7 @@ describe('ScrollFire', () => {
       });
       scrollFire.addAction({
         direction: 'forward',
-        handler: (elm) => elm.classList.add('active'),
+        handler: elm => elm.classList.add('active'),
       }).addListeners();
       const checkActive = () => document.querySelector('.box.second').classList.contains('active');
       const firstResult = checkActive(); // expect false.
@@ -145,5 +145,29 @@ describe('ScrollFire', () => {
     expect(results[1]).toBeTruthy();
   });
 
-  // TODO: destroy TEST
+  it('destroy TEST', async () => {
+    const results = await page.evaluate(async () => {
+      ScrollFire = window.ScrollFire;
+      const scrollFire = new ScrollFire({ target: '.box.second' });
+      scrollFire.addAction({
+        handler: elm => elm.classList.add('active'),
+      }).addListeners();
+      const elm = document.querySelector('.box.second');
+      const checkActive = () => elm.classList.contains('active');
+      // scroll.
+      await window.autoScroll();
+      const firstResult = checkActive(); // expect true.
+      // destroy and reset.
+      scrollFire.destroy();
+      elm.classList.remove('active');
+      window.scrollTo(0, 0);
+      // scroll again.
+      await window.autoScroll();
+      const secondResult = checkActive(); // expect false.
+      return [firstResult, secondResult];
+    });
+
+    expect(results[0]).toBeTruthy();
+    expect(results[1]).toBeFalsy();
+  });
 });
