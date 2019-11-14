@@ -42,13 +42,20 @@ describe('ScrollFire', () => {
 
   it('should work.', async () => {
     const [minY, maxY] = await page.evaluate(() => {
-      ScrollFire = window.ScrollFire;
-
-      const sf = new ScrollFire({ target: '.box.third' });
-      return sf.getTargetPosition();
+      const scrollFire = new window.ScrollFire({ target: '.box.third' });
+      return scrollFire.getTargetPosition();
     });
     expect(minY).toEqual(800);
     expect(maxY).toEqual(1200);
+  });
+
+  it('could set target as string when constructing.', async () => {
+    const [minY, maxY] = await page.evaluate(() => {
+      const scrollFire = new window.ScrollFire('.box.second');
+      return scrollFire.getTargetPosition();
+    });
+    expect(minY).toEqual(400);
+    expect(maxY).toEqual(800);
   });
 
   it('fire event test', async () => {
@@ -57,13 +64,12 @@ describe('ScrollFire', () => {
       const handler = () => elm.classList.add('active');
 
       ScrollFire = window.ScrollFire;
-      const sf = new ScrollFire({
+      new ScrollFire({
         target: '.box.second',
         actions: [
           { handler },
         ],
       });
-      sf.addListeners();
 
       await window.autoScroll();
       return elm.classList.contains('active');
@@ -79,7 +85,7 @@ describe('ScrollFire', () => {
       scrollFire.addAction({
         direction: 'reverse',
         handler: elm => elm.classList.add('active'),
-      }).addListeners();
+      });
       // forward scrolling.
       await window.autoScroll();
       const elm = document.querySelector('.box.second');
@@ -94,6 +100,23 @@ describe('ScrollFire', () => {
     expect(reverseResult).toBeTruthy();
   });
 
+  it('addAction TEST 2: could gives argument as ActionHandler.', async () => {
+    const results = await page.evaluate(async () => {
+      ScrollFire = window.ScrollFire;
+      new ScrollFire('.box.second').addAction(elm => elm.classList.add('active'));
+
+      const checkActive = () => document.querySelector('.box.second').classList.contains('active');
+
+      const firstResult = checkActive();
+      await window.autoScroll();
+      const secondResult = checkActive();
+      return [firstResult, secondResult];
+    });
+
+    expect(results[0]).toBeFalsy();
+    expect(results[1]).toBeTruthy();
+  });
+
   it('referencePoint TEST', async () => {
     const results = await page.evaluate(async () => {
       ScrollFire = window.ScrollFire;
@@ -104,7 +127,7 @@ describe('ScrollFire', () => {
       scrollFire.addAction({
         direction: 'forward',
         handler: elm => elm.classList.add('active'),
-      }).addListeners();
+      });
       const checkActive = () => document.querySelector('.box.second').classList.contains('active');
 
       const firstResult = checkActive(); // expect false.
@@ -132,7 +155,7 @@ describe('ScrollFire', () => {
       scrollFire.addAction({
         direction: 'forward',
         handler: elm => elm.classList.add('active'),
-      }).addListeners();
+      });
       const checkActive = () => document.querySelector('.box.second').classList.contains('active');
       const firstResult = checkActive(); // expect false.
       // scroll until 300
@@ -151,7 +174,7 @@ describe('ScrollFire', () => {
       const scrollFire = new ScrollFire({ target: '.box.second' });
       scrollFire.addAction({
         handler: elm => elm.classList.add('active'),
-      }).addListeners();
+      });
       const elm = document.querySelector('.box.second');
       const checkActive = () => elm.classList.contains('active');
       // scroll.

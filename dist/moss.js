@@ -17226,6 +17226,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 /**
+ * ScrollFire is helpful class for makes scene that react by scroll event.
+ *
  * @type {scrollFire.ScrollFire}
  */
 
@@ -17245,11 +17247,17 @@ function () {
     // initialize properties
 
     /** @type {scrollFire.TargetPosition} */
-    this.targetPosition = 0;
-    this.listeners = [];
+    this.targetPosition = [0, 0];
+    /** @type {scrollFire.ListenerMap} */
+
+    this.listeners = new Map();
     this._scrollElementSize = new element_measurer__WEBPACK_IMPORTED_MODULE_5___default.a();
     this._scrollHeight = this._scrollElementSize.scrollHeight;
-    this._targetElement = null; // set options
+    this._targetElement = null; // type of option
+
+    options = typeof options === 'string' ? {
+      target: options
+    } : options; // set options
 
     /** @type {scrollFire.Options} */
 
@@ -17276,6 +17284,7 @@ function () {
      * Set options
      *
      * @param {scrollFire.Options} options
+     * @returns {this}
      */
 
   }, {
@@ -17376,43 +17385,59 @@ function () {
       return [minY - offset, maxY + offset];
     }
     /**
-     * Add action
+     * Adds action to scroll event listener.
      *
-     * @param {scrollFire.Action} action
+     * @param {scrollFire.Action|scrollFire.ActionHandler} action
      * @returns {this}
      */
 
   }, {
     key: "addAction",
     value: function addAction(action) {
-      this.listeners.push(this._generateListener(action).bind(this));
+      action = typeof action === 'function' ? {
+        handler: action
+      } : action;
+
+      var id = this._makeId(10);
+
+      this.listeners.set(id, this._generateListener(action).bind(this));
+      window.addEventListener('scroll', this.listeners.get(id));
       return this;
     }
     /**
-     * Add all listeners.
+     * Remove all listeners.
      *
      * @returns {void}
      */
 
   }, {
-    key: "addListeners",
-    value: function addListeners() {
-      this.listeners.forEach(function (l) {
-        return window.addEventListener('scroll', l);
-      });
-    }
-    /**
-     * Remove all listeners.
-     *
-     * @param {void}
-     */
-
-  }, {
     key: "destroy",
     value: function destroy() {
-      this.listeners.forEach(function (l) {
-        return window.removeEventListener('scroll', l);
-      });
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
+
+      try {
+        for (var _iterator = this.listeners.keys()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var key = _step.value;
+          window.removeEventListener('scroll', this.listeners.get(key));
+        }
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+            _iterator["return"]();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
+
+      this.listeners.clear();
     }
     /**
      * Generate listener from action.
@@ -17460,6 +17485,26 @@ function () {
 
         lastY = currY;
       };
+    }
+    /**
+     * make random id.
+     * @link https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
+     *
+     * @param {number} length
+     * @returns {string}
+     */
+
+  }, {
+    key: "_makeId",
+    value: function _makeId(length) {
+      var result = '';
+      var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+      for (var i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+
+      return result;
     }
   }]);
 
@@ -17872,7 +17917,7 @@ function getScrollDest(dest, baseSize) {
 /*!****************************!*\
   !*** ./src/js/lib/util.js ***!
   \****************************/
-/*! exports provided: scrollTo, ScrollFire, locationSearchToObject, searchToObject, isContains, isEmpty, isMobileSize, addSvg, getSvgByName, makeIcon, makeIconHtml */
+/*! exports provided: scrollTo, locationSearchToObject, searchToObject, isContains, isEmpty, isMobileSize, addSvg, getSvgByName, makeIcon, makeIconHtml */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17887,18 +17932,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _methods_scrollTo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./methods/scrollTo */ "./src/js/lib/methods/scrollTo.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "scrollTo", function() { return _methods_scrollTo__WEBPACK_IMPORTED_MODULE_1__["default"]; });
 
-/* harmony import */ var _classes_ScrollFire__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./classes/ScrollFire */ "./src/js/lib/classes/ScrollFire.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ScrollFire", function() { return _classes_ScrollFire__WEBPACK_IMPORTED_MODULE_2__["default"]; });
+/* harmony import */ var _methods_icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./methods/icon */ "./src/js/lib/methods/icon.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "addSvg", function() { return _methods_icon__WEBPACK_IMPORTED_MODULE_2__["addSvg"]; });
 
-/* harmony import */ var _methods_icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./methods/icon */ "./src/js/lib/methods/icon.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "addSvg", function() { return _methods_icon__WEBPACK_IMPORTED_MODULE_3__["addSvg"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getSvgByName", function() { return _methods_icon__WEBPACK_IMPORTED_MODULE_2__["getSvgByName"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getSvgByName", function() { return _methods_icon__WEBPACK_IMPORTED_MODULE_3__["getSvgByName"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "makeIcon", function() { return _methods_icon__WEBPACK_IMPORTED_MODULE_2__["makeIcon"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "makeIcon", function() { return _methods_icon__WEBPACK_IMPORTED_MODULE_3__["makeIcon"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "makeIconHtml", function() { return _methods_icon__WEBPACK_IMPORTED_MODULE_3__["makeIconHtml"]; });
-
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "makeIconHtml", function() { return _methods_icon__WEBPACK_IMPORTED_MODULE_2__["makeIconHtml"]; });
 
 
 
@@ -18040,7 +18081,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!************************!*\
   !*** ./src/js/moss.js ***!
   \************************/
-/*! exports provided: Case, Color, Components, Directives, ElementMeasurer, ElementUtil, Svg, Util, default */
+/*! exports provided: Case, Color, Components, Directives, ElementMeasurer, ElementUtil, Svg, Util, ScrollFire, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18067,7 +18108,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "Directives", function() { return _directives__WEBPACK_IMPORTED_MODULE_7__; });
 /* harmony import */ var _svg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../svg */ "./src/svg/index.js");
 /* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "Svg", function() { return _svg__WEBPACK_IMPORTED_MODULE_8__; });
-/* harmony import */ var _task_version__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../task/version */ "./task/version.js");
+/* harmony import */ var _lib_classes_ScrollFire__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./lib/classes/ScrollFire */ "./src/js/lib/classes/ScrollFire.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ScrollFire", function() { return _lib_classes_ScrollFire__WEBPACK_IMPORTED_MODULE_9__["default"]; });
+
+/* harmony import */ var _task_version__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../task/version */ "./task/version.js");
 
 
 /*!
@@ -18076,6 +18120,7 @@ __webpack_require__.r(__webpack_exports__);
  * @link https://github.com/archco/moss-ui
  * @license MIT
  */
+
 
 
 
@@ -18094,12 +18139,13 @@ var lib = {
   ElementMeasurer: element_measurer__WEBPACK_IMPORTED_MODULE_3___default.a,
   ElementUtil: element_util__WEBPACK_IMPORTED_MODULE_2__,
   Svg: _svg__WEBPACK_IMPORTED_MODULE_8__,
-  Util: _lib_util__WEBPACK_IMPORTED_MODULE_5__
+  Util: _lib_util__WEBPACK_IMPORTED_MODULE_5__,
+  ScrollFire: _lib_classes_ScrollFire__WEBPACK_IMPORTED_MODULE_9__["default"]
 };
 
 function addMossObject(Vue) {
   var Moss = {
-    version: _task_version__WEBPACK_IMPORTED_MODULE_9__["default"],
+    version: _task_version__WEBPACK_IMPORTED_MODULE_10__["default"],
     lib: lib,
     addSvg: _lib_util__WEBPACK_IMPORTED_MODULE_5__["addSvg"]
   };
@@ -18108,7 +18154,7 @@ function addMossObject(Vue) {
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  version: _task_version__WEBPACK_IMPORTED_MODULE_9__["default"],
+  version: _task_version__WEBPACK_IMPORTED_MODULE_10__["default"],
   install: function install(Vue) {
     var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
     if (this.installed) return;

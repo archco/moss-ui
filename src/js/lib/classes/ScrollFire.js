@@ -4,6 +4,8 @@ import { getElement } from 'element-util';
 import ElementMeasurer from 'element-measurer';
 
 /**
+ * ScrollFire is helpful class for makes scene that react by scroll event.
+ *
  * @type {scrollFire.ScrollFire}
  */
 export default class ScrollFire {
@@ -15,12 +17,17 @@ export default class ScrollFire {
   constructor(options = {}) {
     // initialize properties
     /** @type {scrollFire.TargetPosition} */
-    this.targetPosition = 0;
+    this.targetPosition = [0, 0];
     /** @type {scrollFire.ListenerMap} */
     this.listeners = new Map();
     this._scrollElementSize = new ElementMeasurer();
     this._scrollHeight = this._scrollElementSize.scrollHeight;
     this._targetElement = null;
+
+    // type of option
+    options = typeof options === 'string'
+      ? { target: options }
+      : options;
 
     // set options
     /** @type {scrollFire.Options} */
@@ -45,6 +52,7 @@ export default class ScrollFire {
    * Set options
    *
    * @param {scrollFire.Options} options
+   * @returns {this}
    */
   setOptions(options) {
     /** @type {scrollFire.Options} */
@@ -126,31 +134,23 @@ export default class ScrollFire {
   }
 
   /**
-   * Add action
+   * Adds action to scroll event listener.
    *
-   * @param {scrollFire.Action} action
+   * @param {scrollFire.Action|scrollFire.ActionHandler} action
    * @returns {this}
    */
   addAction(action) {
-    this.listeners.set(this._makeId(10), this._generateListener(action).bind(this));
+    action = typeof action === 'function' ? { handler: action } : action;
+    const id = this._makeId(10);
+    this.listeners.set(id, this._generateListener(action).bind(this));
+    window.addEventListener('scroll', this.listeners.get(id));
     return this;
-  }
-
-  /**
-   * Add all listeners.
-   *
-   * @returns {void}
-   */
-  addListeners() {
-    for (let key of this.listeners.keys()) {
-      window.addEventListener('scroll', this.listeners.get(key));
-    }
   }
 
   /**
    * Remove all listeners.
    *
-   * @param {void}
+   * @returns {void}
    */
   destroy() {
     for (let key of this.listeners.keys()) {

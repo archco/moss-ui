@@ -8,7 +8,7 @@ export type Target = number | [number, number] | string | HTMLElement;
 /**
  * Strict range of target position. [minY, maxY]
  */
-export type TargetPosition = [number, number]; // minY, maxY
+export type TargetPosition = [number, number];
 
 /**
  * The point what references target element. "start", "center" or "end". default value is "start".
@@ -21,7 +21,7 @@ export type ElementReferencePoint = 'default' | 'start' | 'center' | 'end';
 export type ActionDirection = 'forward' | 'reverse' | 'both';
 
 /**
- * Action handler.
+ * A function for action handling when became scroll in target position.
  */
 export type ActionHandler = (elm?: HTMLElement) => void;
 
@@ -33,7 +33,7 @@ export interface Action {
   handler: ActionHandler,
   /** Scroll direction. "forward", "reverse" or "both". default value is "both". */
   direction?: ActionDirection,
-  /** Throttle value for controls frequency of action. */
+  /** Throttle value for controls frequency of action. <milliseconds> */
   throttle?: number,
 }
 
@@ -56,12 +56,19 @@ export interface Options {
   actions?: Action[],
 }
 
+/**
+ * ScrollFire is helpful class for makes scene that react by scroll event.
+ */
 export class ScrollFire {
   targetPosition: TargetPosition;
   listeners: ListenerMap;
   options: Options;
 
-  constructor(options?: Options);
+  /**
+   * Constructor
+   * @param options if given argument type is string, then would setting target element only. and other options would setting default.
+   */
+  constructor(options?: Options|string);
 
   /**
    * Returns default options of ScrollFire.
@@ -92,15 +99,10 @@ export class ScrollFire {
   getTargetPosition(): TargetPosition;
 
   /**
-   * Adds action to action list.
+   * Adds action to scroll event listener.
    * @param action
    */
-  addAction(action: Action): this;
-
-  /**
-   * Add all listeners.
-   */
-  addListeners(): void;
+  addAction(action: Action|ActionHandler): this;
 
   /**
    * Remove all listeners.
