@@ -74,6 +74,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 
 ## JS Libraries
 
+- [ScrollFire](js/scroll-fire.md)
 - [CakeCase](https://github.com/archco/cake-case#readme)
 - [ElementMeasurer](https://github.com/archco/element-measurer#api)
 - [ElementUtil](https://github.com/archco/element-util/tree/master/docs)
