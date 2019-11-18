@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SVG</title>
+    <title>ScrollFire</title>
     <link rel="stylesheet" href="../../dist/moss.css">
     <link rel="stylesheet" href="example.css">
   </head>
@@ -26,36 +26,16 @@
           </nav-item>
         </navbar-nav>
       </navbar>
-      <div class="row">
-        <aside class="sidebar col-md-2 hide-only-mobile bg-color-light">
-          <div class="my-3">
-            <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="onSearchItemClick" @submit="onSearchSubmit">
-              <li slot="result-item" slot-scope="props" style="text-align:left;" tabindex="0" @click="props.onClickItem(props.item)">
-                <h3 style="margin:0;" v-text="props.item.name"></h3><span class="badge" :style="getBadgeStyle(props.item.category)" v-text="props.item.category"></span><span class="help" v-text="props.item.description"></span>
-              </li>
-            </search>
-          </div>
-          <ul class="list">
-            <li is="anchored-tag" tag="li">Icons</li>
-          </ul>
-        </aside>
-        <section class="offset-md-2 col-md-10">
-          <anchored-tag class="fragment" tag="h1" owned>Icons</anchored-tag>
-          <h2>Default usage</h2>
-          <div class="my-4" style="font-size:3em;"><i class="moss-icon" id="svg-arrow-example"></i><i class="moss-icon" id="svg-caret-example"></i><i class="moss-icon" id="svg-close-example"></i></div>
-          <h2>Icon component</h2>
-          <icon class="color-danger" name="arrow-down"></icon><span> hello world</span>
-          <icon class="color-success" name="caret-up"></icon><span class="d-inline-block">InlineBlock</span>
-          <icon class="bg-color-dark" name="close" style="font-size:3em;border-radius:50%;"></icon>
-          <icon class="bg-color-warning" name="check" style="font-size:2em;"></icon>
-          <icon class="bg-color-link" name="search" style="font-size:2em;"></icon>
-          <h2>User expanded custom icons</h2>
-          <icon class="color-primary" name="moss-icon" style="font-size:4em;"></icon>
-          <icon class="color-dark" name="extension" style="font-size:1.5em;"></icon>
-          <icon class="color-link" name="verified-user" style="font-size:2em;"></icon>
-          <h2>Icon list</h2>
-          <icon-list></icon-list>
-        </section>
+      <div class="scroll-fire-box-1 hero-banner pad-large">
+        <div>
+          <h1 class="color-light">ScrollFire</h1><a class="btn info" href="#" style="display:none;">See More</a>
+        </div>
+      </div>
+      <div class="scroll-fire-box-2 hero-banner pad-large">
+        <icon name="moss-icon"></icon>
+      </div>
+      <div class="scroll-fire-box-3 hero-banner">
+        <h1 class="color-light">ScrollFire</h1>
       </div>
       <footer class="footer">
         <div class="container">

@@ -12,7 +12,7 @@ export default class ScrollFire {
   /**
    * Create instance of ScrollFire
    *
-   * @param {scrollFire.Options} options
+   * @param {scrollFire.Options|string} options
    */
   constructor(options = {}) {
     // initialize properties

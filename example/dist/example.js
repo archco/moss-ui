@@ -443,7 +443,7 @@ window.vm = new window.Vue({
 /*!********************************!*\
   !*** ./example/js/partials.js ***!
   \********************************/
-/*! exports provided: information, asideMenu, toast, messageBox, colorLibrary, elementUtil, arrowIcon, caretIcon, closeIcon, centeringDropdownBox */
+/*! exports provided: information, asideMenu, toast, messageBox, colorLibrary, elementUtil, arrowIcon, caretIcon, closeIcon, centeringDropdownBox, scrollFireInit */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -458,6 +458,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "caretIcon", function() { return caretIcon; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closeIcon", function() { return closeIcon; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "centeringDropdownBox", function() { return centeringDropdownBox; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollFireInit", function() { return scrollFireInit; });
 // information
 function information() {
   var elms = document.querySelectorAll('.moss-version');
@@ -646,6 +647,32 @@ function centeringDropdownBox() {
   scrollTo([150, 150], {
     base: dropdownBox,
     duration: 0
+  });
+}
+function scrollFireInit() {
+  var ScrollFire = window.Moss.lib.ScrollFire;
+  if (!document.querySelector('[class*=scroll-fire-box]')) return;
+  new ScrollFire('.scroll-fire-box-1').addAction({
+    direction: 'reverse',
+    handler: function handler(elm) {
+      return elm.querySelector('a.btn').style.display = 'inline-block';
+    }
+  });
+  var box2 = new ScrollFire({
+    target: '.scroll-fire-box-2',
+    offset: 200
+  });
+  box2.addAction({
+    direction: 'forward',
+    handler: function handler(elm) {
+      return elm.classList.add('toggled');
+    }
+  });
+  box2.addAction({
+    direction: 'reverse',
+    handler: function handler(elm) {
+      return elm.classList.remove('toggled');
+    }
   });
 }
 

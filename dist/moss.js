@@ -17237,7 +17237,7 @@ function () {
   /**
    * Create instance of ScrollFire
    *
-   * @param {scrollFire.Options} options
+   * @param {scrollFire.Options|string} options
    */
   function ScrollFire() {
     var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};

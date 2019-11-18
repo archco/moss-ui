@@ -7,3 +7,32 @@ aside.sidebar {
 }
 
 .fragment:target { padding-top: 45px; }
+
+// scroll-fire example
+[class*=scroll-fire-box] {
+  min-height: 640px;
+}
+
+.scroll-fire-box-1,
+.scroll-fire-box-3 {
+  background-color: #4c5866;
+}
+
+.scroll-fire-box-2 {
+  background-color: #b22222;
+  transition: background-color 1s ease-out;
+
+  > i.moss-icon {
+    font-size: 12em;
+    color: #fff;
+    transition: all 1s ease-out;
+  }
+
+  &.toggled {
+    background-color: #f2f2f2;
+    > i.moss-icon {
+      font-size: 16em;
+      color: #b22222;
+    }
+  }
+}

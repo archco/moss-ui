@@ -185,3 +185,26 @@ export function centeringDropdownBox() {
     duration: 0,
   });
 }
+
+export function scrollFireInit() {
+  const ScrollFire = window.Moss.lib.ScrollFire;
+  if (!document.querySelector('[class*=scroll-fire-box]')) return;
+
+  new ScrollFire('.scroll-fire-box-1').addAction({
+    direction: 'reverse',
+    handler: elm => elm.querySelector('a.btn').style.display = 'inline-block',
+  });
+
+  const box2 = new ScrollFire({
+    target: '.scroll-fire-box-2',
+    offset: 200,
+  });
+  box2.addAction({
+    direction: 'forward',
+    handler: elm => elm.classList.add('toggled'),
+  });
+  box2.addAction({
+    direction: 'reverse',
+    handler: elm => elm.classList.remove('toggled'),
+  })
+}
