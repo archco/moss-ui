@@ -11,7 +11,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - [v0.4 - v0.6](https://github.com/archco/moss-ui/blob/master/docs/changelog/0.4-0.6.md)
 - [v0.1 - v0.3](https://github.com/archco/moss-ui/blob/master/docs/changelog/0.1-0.3.md)
 
-## [Unreleased][]
+## [Unreleased]
+
+### Added
+
+- Added new JS library [ScrollFire](https://github.com/archco/moss-ui/blob/master/docs/js/scroll-fire.md#scrollfire). #142
 
 ### Updated
 
@@ -25,7 +29,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   - `$carousel-arrow-hover-color` -> `$carousel-nav-button-hover-color`
   - add `$carousel-nav-button-font-size`
 
-## [0.7.3][] - 2018-08-03
+## [0.7.3] - 2018-08-03
 
 ### Added
 
@@ -37,7 +41,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Fixed bug that background-color was not applied in some disabled inputs.
 - Fixed bug that form validation is not working in `input[type=file]`. #143
 
-## [0.7.2][] - 2018-07-21
+## [0.7.2] - 2018-07-21
 
 ### Added
 
@@ -53,7 +57,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Fixed bug in some situation in nested modal. #136
 
-## [0.7.0][] - 2018-06-23
+## [0.7.0] - 2018-06-23
 
 ### Added
 
