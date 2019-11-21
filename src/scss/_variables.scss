@@ -69,7 +69,6 @@ $success-color: $green !default;
 $danger-color: $red !default;
 $warning-color: $yellow !default;
 $link-color: $light-blue !default;
-$shadow-color: rgba(#000, .3) !default;
 
 $disabled-color: rgba($medium-gray, .33) !default;
 
@@ -167,12 +166,12 @@ $border-radius-lg: round($border-radius * 2) !default;
 $rounded-pill: 50rem !default;
 
 // shadow
-$shadow-near: 1px 1px 4px $shadow-color !default;
-$shadow-normal: 2px 2px 8px $shadow-color !default;
-$shadow-far: 4px 4px 16px $shadow-color !default;
-$shadow-inset-near: inset $shadow-near !default;
-$shadow-inset-normal: inset $shadow-normal !default;
-$shadow-inset-far: inset $shadow-far !default;
+$box-shadow-sm: 0 .125rem .25rem rgba($black, .075) !default;
+$box-shadow: 0 .5rem 1rem rgba($black, .15) !default;
+$box-shadow-lg: 0 1rem 3rem rgba($black, .075) !default;
+$box-shadow-inset-sm: inset $box-shadow-sm !default;
+$box-shadow-inset: inset $box-shadow !default;
+$box-shadow-inset-lg: inset $box-shadow-lg !default;
 
 //============================================================
 // Z-index Lists
@@ -311,8 +310,8 @@ $card-size: 300px !default;
 $card-size-small: 200px !default;
 $card-size-large: 400px !default;
 $card-radius: $border-radius-sm !default;
-$card-shadow: $shadow-normal !default;
-$card-hover-shadow: $shadow-far !default;
+$card-shadow: $box-shadow !default;
+$card-hover-shadow: $box-shadow-lg !default;
 $card-bg-color: $body-bg !default;
 $card-title-color: $text-color-invert !default;
 $card-content-padding-y: .5em !default;
@@ -362,7 +361,7 @@ $dropdown-item-color: rgba($dropdown-item-hover-color, .8) !default;
 $dropdown-active-bg-color: rgba(#000, .15) !default;
 $dropdown-active-color: get-contrast($dropdown-bg-color) !default;
 $dropdown-min-width: 120px !default;
-$dropdown-shadow: $shadow-normal !default;
+$dropdown-shadow: $box-shadow !default;
 $dropdown-header-color: $text-color-muted !default;
 $dropdown-header-font-size: 1em !default;
 $dropdown-divider-margin-y: $space-1 !default;
@@ -389,7 +388,7 @@ $nav-drawer-widths: (
   lg: 33%,
   xl: 25%,
 ) !default;
-$nav-drawer-shadow: $shadow-normal !default;
+$nav-drawer-shadow: $box-shadow !default;
 $nav-drawer-header-padding-y: $space-2 !default;
 $nav-drawer-header-padding-x: $space-2 !default;
 $nav-drawer-header-font-size: 2rem !default;

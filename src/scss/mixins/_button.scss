@@ -37,13 +37,13 @@
   &:hover:not([disabled]) {
     color: $color;
     background-color: lighten($bg-color, 4%);
-    @include box-shadow($shadow-normal);
+    @include box-shadow($box-shadow);
   }
 
   &:active:not([disabled]) {
     color: $color;
     background-color: darken($bg-color, 4%);
-    @include box-shadow($shadow-near);
+    @include box-shadow($box-shadow-sm);
   }
 }
 

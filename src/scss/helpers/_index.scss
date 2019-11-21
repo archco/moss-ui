@@ -83,14 +83,6 @@
   }
 }
 
-// shadow
-.shadow { box-shadow: $shadow-normal; }
-.shadow-near { box-shadow: $shadow-near; }
-.shadow-far { box-shadow: $shadow-far; }
-.shadow-inset { box-shadow: $shadow-inset-normal; }
-.shadow-inset-near { box-shadow: $shadow-inset-near; }
-.shadow-inset-far { box-shadow: $shadow-inset-far; }
-
 // misc
 .box-line { border: 1px solid $secondary-color; }
 .group { margin-bottom: $space-3; }

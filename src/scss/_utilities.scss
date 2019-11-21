@@ -30,10 +30,19 @@ $utilities: map-merge(
       property: box-shadow,
       class: shadow,
       values: (
-        sm: $shadow-near,
-        null: $shadow-normal,
-        lg: $shadow-far,
+        sm: $box-shadow-sm,
+        null: $box-shadow,
+        lg: $box-shadow-lg,
         none: none,
+      )
+    ),
+    "shadow-inset": (
+      property: box-shadow,
+      class: shadow-inset,
+      values: (
+        sm: $box-shadow-inset-sm,
+        null: $box-shadow-inset,
+        lg: $box-shadow-inset-lg,
       )
     ),
     "position": (
