@@ -73,6 +73,7 @@ $warning-color: $yellow !default;
 $link-color: $light-blue !default;
 $shadow-color: rgba(#000, .3) !default;
 $border-color: $medium-gray !default;
+$border-width: 1px !default;
 $disabled-color: rgba($medium-gray, .33) !default;
 
 // color-set
@@ -118,6 +119,8 @@ $space-2: map-get($spacers, 2);
 $space-3: map-get($spacers, 3);
 $space-4: map-get($spacers, 4);
 $space-5: map-get($spacers, 5);
+
+$negative-spacers: negativify-map($spacers) !default;
 
 // Sizing
 // This variable affects the `.h-*` and `.w-*` classes.
@@ -170,6 +173,7 @@ $radius-normal: 4px !default;
 $radius-small: round($radius-normal / 2) !default;
 $radius-large: round($radius-normal * 2) !default;
 $radius-button: $radius-small !default;
+$rounded-pill: 50rem !default;
 
 // shadow
 $shadow-near: 1px 1px 4px $shadow-color !default;
