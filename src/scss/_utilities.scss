@@ -376,6 +376,14 @@ $utilities: map-merge(
         bold: $font-weight-bold
       )
     ),
+    "font-size": (
+      property: font-size,
+      values: (
+        sm: $font-size-sm,
+        base: $font-size,
+        lg: $font-size-lg
+      )
+    ),
     "text-transform": (
       property: text-transform,
       class: text,

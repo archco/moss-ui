@@ -16,9 +16,9 @@ $font-base: $font-sans-serif !default;
 $font-accent: $font-serif !default;
 
 // font-size
-$font-size: 1em !default;
-$font-size-small: .8em !default;
-$font-size-large: 1.2em !default;
+$font-size: 1rem !default;
+$font-size-sm: $font-size * .875 !default;
+$font-size-lg: $font-size * 1.25 !default;
 
 // font-weight
 $font-weight-light: lighter !default;
@@ -268,7 +268,7 @@ $auto-input-bg-color-enable: true !default;
 
 // form validation
 $form-feedback-margin-top: $space-1 !default;
-$form-feedback-font-size: $font-size-small !default;
+$form-feedback-font-size: $font-size-sm !default;
 $form-feedback-valid-color: $success-color !default;
 $form-feedback-invalid-color: $danger-color !default;
 
