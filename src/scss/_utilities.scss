@@ -446,9 +446,9 @@ $utilities: map-merge(
       property: border-radius,
       class: rounded,
       values: (
-        null: $radius-normal,
-        sm: $radius-small,
-        lg: $radius-large,
+        null: $border-radius,
+        sm: $border-radius-sm,
+        lg: $border-radius-lg,
         circle: 50%,
         pill: $rounded-pill,
         0: 0,
@@ -457,22 +457,22 @@ $utilities: map-merge(
     "rounded-top": (
       property: border-top-left-radius border-top-right-radius,
       class: rounded-top,
-      values: (null: $radius-normal)
+      values: (null: $border-radius)
     ),
     "rounded-right": (
       property: border-top-right-radius border-bottom-right-radius,
       class: rounded-right,
-      values: (null: $radius-normal)
+      values: (null: $border-radius)
     ),
     "rounded-bottom": (
       property: border-bottom-right-radius border-bottom-left-radius,
       class: rounded-bottom,
-      values: (null: $radius-normal)
+      values: (null: $border-radius)
     ),
     "rounded-left": (
       property: border-bottom-left-radius border-top-left-radius,
       class: rounded-left,
-      values: (null: $radius-normal)
+      values: (null: $border-radius)
     ),
     "visibility": (
       property: visibility,

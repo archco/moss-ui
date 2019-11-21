@@ -91,31 +91,6 @@
 .shadow-inset-near { box-shadow: $shadow-inset-near; }
 .shadow-inset-far { box-shadow: $shadow-inset-far; }
 
-// rounded
-@each $key, $val in (small: $radius-small, normal: $radius-normal, large: $radius-large) {
-  $_suffix: if($key == normal, '', '-' + $key);
-
-  .rounded#{$_suffix} {
-    border-radius: $val !important;
-  }
-  .rounded-top#{$_suffix} {
-    border-top-left-radius: $val !important;
-    border-top-right-radius: $val !important;
-  }
-  .rounded-right#{$_suffix} {
-    border-top-right-radius: $val !important;
-    border-bottom-right-radius: $val !important;
-  }
-  .rounded-bottom#{$_suffix} {
-    border-bottom-left-radius: $val !important;
-    border-bottom-right-radius: $val !important;
-  }
-  .rounded-left#{$_suffix} {
-    border-top-left-radius: $val !important;
-    border-bottom-left-radius: $val !important;
-  }
-}
-
 // misc
 .box-line { border: 1px solid $secondary-color; }
 .group { margin-bottom: $space-3; }

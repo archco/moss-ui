@@ -46,7 +46,7 @@
     line-height: 1;
     color: $text-color-light;
     background-color: rgba($color, .8);
-    border-radius: $radius-small;
+    border-radius: $border-radius-sm;
   }
 
   @include general-inputs() {
