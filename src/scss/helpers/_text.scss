@@ -29,7 +29,7 @@
 .comment,
 .help {
   font-size: .8em;
-  color: $text-color-weak;
+  color: $text-color-muted;
 }
 
 .text-truncate { @include text-truncate(); }

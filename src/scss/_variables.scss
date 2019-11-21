@@ -54,8 +54,7 @@ $body-bg-shade: rgba($body-bg-invert, .1) !default;
 // text colors
 $text-color: $black !default;
 $text-color-invert: $white !default;
-$text-color-weak: rgba-to-rgb(rgba($text-color, .67), $body-bg) !default;
-$text-color-strong: $primary-color-accent !default;
+$text-color-muted: rgba-to-rgb(rgba($text-color, .67), $body-bg) !default;
 $text-color-light: if(lightness($text-color) > 50, $text-color, $text-color-invert) !default;
 $text-color-dark: if(lightness($text-color) > 50, $text-color-invert, $text-color) !default;
 $text-color-middle: mix($text-color-light, $text-color-dark) !default;
@@ -215,7 +214,7 @@ $table-row-even-bg: rgba($body-bg-invert, .05) !default;
 $table-row-hover-bg: rgba($body-bg-invert, .1) !default;
 
 // blockquote
-$blockquote-color: $text-color-weak !default;
+$blockquote-color: $text-color-muted !default;
 $blockquote-border-color: $body-bg-shade !default;
 
 // footer
@@ -240,7 +239,7 @@ $code-border-radius: $radius-normal !default;
 $code-block-padding-y: 1em !default;
 $code-block-padding-x: 1em !default;
 $code-block-line-height: 1.45 !default;
-$kbd-color: strongen($text-color-weak, 15%) !default;
+$kbd-color: strongen($text-color-muted, 15%) !default;
 $kbd-bg-color: $body-bg !default;
 $kbd-border-color: $border-color !default;
 
@@ -326,7 +325,7 @@ $pagination-hover-color: $text-color !default;
 $pagination-hover-bg-color: $body-bg-shade !default;
 $pagination-active-bg-color: $primary-color !default;
 $pagination-active-color: get-contrast($pagination-active-bg-color) !default;
-$pagination-disabled-color: $text-color-weak !default;
+$pagination-disabled-color: $text-color-muted !default;
 $pagination-item-margin-y: 0 !default;
 $pagination-item-margin-x: $space-1 !default;
 $pagination-item-padding-y: .2em !default;
@@ -363,7 +362,7 @@ $dropdown-active-bg-color: rgba(#000, .15) !default;
 $dropdown-active-color: get-contrast($dropdown-bg-color) !default;
 $dropdown-min-width: 120px !default;
 $dropdown-shadow: $shadow-normal !default;
-$dropdown-header-color: $text-color-weak !default;
+$dropdown-header-color: $text-color-muted !default;
 $dropdown-header-font-size: 1em !default;
 $dropdown-divider-margin-y: $space-1 !default;
 $dropdown-divider-color: $border-color !default;
@@ -398,7 +397,7 @@ $nav-drawer-header-color: $text-color !default;
 $nav-drawer-body-font-size: 1em !default;
 $nav-drawer-body-bg-color: $body-bg !default;
 $nav-drawer-body-color: $text-color !default;
-$nav-drawer-menu-header-color: $text-color-weak !default;
+$nav-drawer-menu-header-color: $text-color-muted !default;
 $nav-drawer-menu-item-hover-bg-color: $shade-color !default;
 $nav-drawer-menu-item-active-bg-color: $shade-color !default;
 $nav-drawer-menu-item-disabled-color: $text-color-middle !default;
@@ -419,7 +418,7 @@ $modal-effect-duration: .4s !default;
 // tab
 $tab-font: $font-base !default;
 $tab-font-size: 1em !default;
-$tab-color: $text-color-weak !default;
+$tab-color: $text-color-muted !default;
 $tab-hover-color: darken($tab-color, 15%) !default;
 $tab-border-color: $border-color !default;
 $tab-border-width: 1px !default;
