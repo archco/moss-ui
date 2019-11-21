@@ -122,17 +122,6 @@ $space-5: map-get($spacers, 5);
 
 $negative-spacers: negativify-map($spacers) !default;
 
-// Sizing
-// This variable affects the `.h-*` and `.w-*` classes.
-$sizes: () !default;
-$sizes: map-merge((
-  25: 25%,
-  50: 50%,
-  75: 75%,
-  100: 100%,
-  auto: auto,
-), $sizes);
-
 // Grid
 //============================
 
