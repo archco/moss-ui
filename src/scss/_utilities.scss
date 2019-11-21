@@ -385,7 +385,7 @@ $utilities: map-merge(
         $color-set,
         (
           white: $white,
-          body: $background-color,
+          body: $text-color,
           muted: $text-color-weak,
           black-50: rgba($black, .5),
           white-50: rgba($white, .5),
@@ -409,7 +409,7 @@ $utilities: map-merge(
       values: map-merge(
         $color-set,
         (
-          body: $background-color,
+          body: $text-color,
           white: $white,
           transparent: transparent
         )

@@ -46,29 +46,28 @@ $primary-color: palette('go-green') !default;
 $primary-color-accent: lighten($primary-color, 12%) !default;
 $secondary-color: palette('hookers-green') !default;
 
-// background colors
-$background-color: $white !default;
-$background-color-invert: $black !default;
-$background-color-shade: rgba($background-color-invert, .1) !default;
+// body colors
+$body-bg: $white !default;
+$body-bg-invert: $black !default;
+$body-bg-shade: rgba($body-bg-invert, .1) !default;
 
 // text colors
 $text-color: $black !default;
 $text-color-invert: $white !default;
-$text-color-weak: rgba-to-rgb(rgba($text-color, .67), $background-color) !default;
+$text-color-weak: rgba-to-rgb(rgba($text-color, .67), $body-bg) !default;
 $text-color-strong: $primary-color-accent !default;
 $text-color-light: if(lightness($text-color) > 50, $text-color, $text-color-invert) !default;
 $text-color-dark: if(lightness($text-color) > 50, $text-color-invert, $text-color) !default;
 $text-color-middle: mix($text-color-light, $text-color-dark) !default;
 
 // color variables
-$default-color: mix($background-color, $background-color-invert) !default;
+$default-color: mix($body-bg, $body-bg-invert) !default;
 $light-color: $text-color-light !default;
 $dark-color: $text-color-dark !default;
-$shade-color: rgba-to-rgb($background-color-shade, $background-color) !default;
+$shade-color: rgba-to-rgb($body-bg-shade, $body-bg) !default;
 $info-color: $teal !default;
 $success-color: $green !default;
 $danger-color: $red !default;
-$error-color: $red !default;
 $warning-color: $yellow !default;
 $link-color: $light-blue !default;
 $shadow-color: rgba(#000, .3) !default;
@@ -77,21 +76,24 @@ $border-width: 1px !default;
 $disabled-color: rgba($medium-gray, .33) !default;
 
 // color-set
-$color-set: (
-  // Default color is half value of between background-color and background-color-invert.
-  default: $default-color,
-  primary: $primary-color,
-  secondary: $secondary-color,
-  info: $info-color,
-  success: $success-color,
-  warning: $warning-color,
-  danger: $danger-color,
-  error: $danger-color,
-  light: $light-color,
-  dark: $dark-color,
-  shade: $shade-color,
-  link: $link-color,
-) !default;
+$color-set: () !default;
+$color-set: map-merge(
+  (
+    // Default color is half value of between background-color and background-color-invert.
+    default: $default-color,
+    primary: $primary-color,
+    secondary: $secondary-color,
+    info: $info-color,
+    success: $success-color,
+    warning: $warning-color,
+    danger: $danger-color,
+    light: $light-color,
+    dark: $dark-color,
+    shade: $shade-color,
+    link: $link-color,
+  ),
+  $color-set
+);
 
 // Options
 //============================
@@ -209,12 +211,12 @@ $table-border-color: $border-color !default;
 $table-head-bg-color: $primary-color !default;
 $table-head-text-color: get-contrast($table-head-bg-color) !default;
 $table-text-color: inherit !default;
-$table-row-even-bg: rgba($background-color-invert, .05) !default;
-$table-row-hover-bg: rgba($background-color-invert, .1) !default;
+$table-row-even-bg: rgba($body-bg-invert, .05) !default;
+$table-row-hover-bg: rgba($body-bg-invert, .1) !default;
 
 // blockquote
 $blockquote-color: $text-color-weak !default;
-$blockquote-border-color: $background-color-shade !default;
+$blockquote-border-color: $body-bg-shade !default;
 
 // footer
 $footer-bg-color: $primary-color !default;
@@ -232,14 +234,14 @@ $footer-copyright-bg-color: rgba(#000, .1) !default;
 $code-padding-y: .15em !default;
 $code-padding-x: .25em !default;
 $code-font-size: .85em !default;
-$code-bg-color: rgba($background-color-invert, .05) !default;
-$code-color: get-contrast(rgba-to-rgb($code-bg-color, $background-color)) !default;
+$code-bg-color: rgba($body-bg-invert, .05) !default;
+$code-color: get-contrast(rgba-to-rgb($code-bg-color, $body-bg)) !default;
 $code-border-radius: $radius-normal !default;
 $code-block-padding-y: 1em !default;
 $code-block-padding-x: 1em !default;
 $code-block-line-height: 1.45 !default;
 $kbd-color: strongen($text-color-weak, 15%) !default;
-$kbd-bg-color: $background-color !default;
+$kbd-bg-color: $body-bg !default;
 $kbd-border-color: $border-color !default;
 
 // form
@@ -254,7 +256,7 @@ $input-line-height: $body-line-height !default;
 $input-height: 2em !default;
 $input-padding-y: .2em !default;
 $input-padding-x: .5em !default;
-$input-bg-color: $background-color !default;
+$input-bg-color: $body-bg !default;
 $input-border-width: 1px !default;
 $input-border-color: $border-color !default;
 $input-radius: $radius-small !default;
@@ -280,7 +282,7 @@ $list-group-padding-y: .4em !default;
 $list-group-padding-x: .8em !default;
 $list-group-padding: .4em .8em !default;
 $list-group-border-radius: $radius-normal !default;
-$list-group-hover-bg-color: rgba($background-color-invert, .1) !default;
+$list-group-hover-bg-color: rgba($body-bg-invert, .1) !default;
 $list-group-active-bg-color: $primary-color !default;
 $list-group-active-color: get-contrast($list-group-active-bg-color) !default;
 $breadcrumb-separator: '/' !default;
@@ -311,7 +313,7 @@ $card-size-large: 400px !default;
 $card-radius: $radius-small !default;
 $card-shadow: $shadow-normal !default;
 $card-hover-shadow: $shadow-far !default;
-$card-bg-color: $background-color !default;
+$card-bg-color: $body-bg !default;
 $card-title-color: $text-color-invert !default;
 $card-content-padding-y: .5em !default;
 $card-content-padding-x: .5em !default;
@@ -321,7 +323,7 @@ $pagination-margin: $space-3 0 !default;
 $pagination-color: $text-color !default;
 $pagination-bg-color: transparent !default;
 $pagination-hover-color: $text-color !default;
-$pagination-hover-bg-color: $background-color-shade !default;
+$pagination-hover-bg-color: $body-bg-shade !default;
 $pagination-active-bg-color: $primary-color !default;
 $pagination-active-color: get-contrast($pagination-active-bg-color) !default;
 $pagination-disabled-color: $text-color-weak !default;
@@ -334,7 +336,7 @@ $pagination-item-border-radius: $radius-small !default;
 // image
 $image-overlay-base-opacity: .67 !default;
 $image-overlay-transition: $transition-duration * 2 !default;
-$image-overlay-bg-color: $background-color-invert !default;
+$image-overlay-bg-color: $body-bg-invert !default;
 
 // helper
 $caret-width: .25em !default;
@@ -350,7 +352,7 @@ $hero-banner-pad-large: 9em !default;
 //============================================================
 
 // dropdown
-$dropdown-bg-color: $background-color !default;
+$dropdown-bg-color: $body-bg !default;
 $dropdown-bg-hover-color: rgba(#000, .15) !default;
 $dropdown-padding-y: .35em !default;
 $dropdown-padding-x: .7em !default;
@@ -367,7 +369,7 @@ $dropdown-divider-margin-y: $space-1 !default;
 $dropdown-divider-color: $border-color !default;
 
 // navbar
-$nav-bg-color: $background-color !default;
+$nav-bg-color: $body-bg !default;
 $nav-active-color: $primary-color !default;
 $nav-link-color: inherit !default;
 $nav-link-hover-color: $secondary-color !default;
@@ -391,10 +393,10 @@ $nav-drawer-shadow: $shadow-normal !default;
 $nav-drawer-header-padding-y: $space-2 !default;
 $nav-drawer-header-padding-x: $space-2 !default;
 $nav-drawer-header-font-size: 2rem !default;
-$nav-drawer-header-bg-color: $background-color !default;
+$nav-drawer-header-bg-color: $body-bg !default;
 $nav-drawer-header-color: $text-color !default;
 $nav-drawer-body-font-size: 1em !default;
-$nav-drawer-body-bg-color: $background-color !default;
+$nav-drawer-body-bg-color: $body-bg !default;
 $nav-drawer-body-color: $text-color !default;
 $nav-drawer-menu-header-color: $text-color-weak !default;
 $nav-drawer-menu-item-hover-bg-color: $shade-color !default;
@@ -408,8 +410,8 @@ $scroll-button-color: get-contrast($scroll-button-bg-color) !default;
 
 // modal
 $modal-mask-color: rgba(0, 0, 0, .5) !default;
-$modal-content-bg-color: $background-color !default;
-$modal-header-bg-color: $background-color !default;
+$modal-content-bg-color: $body-bg !default;
+$modal-header-bg-color: $body-bg !default;
 $modal-close-button-color: rgba($danger-color, .5) !default;
 $modal-close-button-hover-color: rgba($danger-color, 1) !default;
 $modal-effect-duration: .4s !default;
@@ -427,7 +429,7 @@ $tab-active-font-weight: bold !default;
 
 // v-tooltip
 $tooltip-color: $text-color-invert !default;
-$tooltip-bg-color: rgba($background-color-invert, .8) !default;
+$tooltip-bg-color: rgba($body-bg-invert, .8) !default;
 $tooltip-padding-y: .5em !default;
 $tooltip-padding-x: 1em !default;
 $tooltip-font-size: .9rem !default;
@@ -444,7 +446,7 @@ $accordion-border-radius: $radius-normal !default;
 // chip
 $chip-font-size: .85em !default;
 $chip-height: 2em !default; // unit:em, This value is base of local variables of chip.
-$chip-bg-color: $background-color-shade !default;
+$chip-bg-color: $body-bg-shade !default;
 
 // toast
 $toast-font-size: 1em !default;
@@ -452,7 +454,7 @@ $toast-min-width: 10em !default;
 $toast-padding-y: .8em;
 $toast-padding-x: .5em;
 $toast-text-color: $text-color-invert !default;
-$toast-bg-color: rgba($background-color-invert, .85) !default;
+$toast-bg-color: rgba($body-bg-invert, .85) !default;
 $toast-border-radius: $radius-normal !default;
 $toast-container-position-offset: 5% !default;
 
@@ -479,5 +481,5 @@ $carousel-nav-button-font-size: 2 * $font-size !default;
 $search-button-bg-color: $primary-color !default;
 $search-result-border-width: 1px !default;
 $search-result-border-color: $border-color !default;
-$search-result-bg-color: $background-color !default;
+$search-result-bg-color: $body-bg !default;
 $search-result-item-focus-color: $shade-color !default;
