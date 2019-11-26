@@ -167,9 +167,9 @@ $transition-all: all $transition-duration $transition-timing-function !default;
 $border-width: 1px !default;
 $border-color: $medium-gray !default;
 
-$border-radius: .25rem !default;
-$border-radius-sm: round($border-radius / 2) !default;
-$border-radius-lg: round($border-radius * 2) !default;
+$border-radius: .3em !default;
+$border-radius-sm: .2em !default;
+$border-radius-lg: .5em !default;
 $rounded-pill: 50rem !default;
 
 // shadow
@@ -308,9 +308,13 @@ $auto-button-color-enable: true !default;
 $button-default-bg-color: $primary-color !default;
 $button-flat-default-bg-color: $link-color !default;
 $button-outline-color: $outline-color !default;
-$button-padding-y: .5em !default;
-$button-padding-x: 1em !default;
+$button-padding-y: .375em !default;
+$button-padding-x: .75em !default;
 $button-margin: .2em !default;
+$button-line-height: $line-height-base !default;
+$button-box-shadow: none !default;
+$button-hover-box-shadow: $box-shadow !default;
+$button-active-box-shadow: $box-shadow-sm !default;
 
 // card
 $card-size: 300px !default;
