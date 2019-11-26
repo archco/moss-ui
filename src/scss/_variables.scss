@@ -27,6 +27,11 @@ $font-weight-normal: 400 !default;
 $font-weight-bold: 700 !default;
 $font-weight-bolder: bolder !default;
 
+// line-height
+$line-height-sm: 1.25 !default;
+$line-height-base: 1.5 !default;
+$line-height-lg: 2 !default;
+
 // Colors
 //==============================
 
@@ -150,7 +155,7 @@ $container-max-widths: (
 
 $default-focus-outline: 2px solid $primary-color !default;
 $outline-color: $primary-color !default;
-$body-line-height: 1.5 !default;
+$body-line-height: $line-height-base !default;
 $position-default-offset: 5% !default;
 
 // transition
@@ -240,7 +245,7 @@ $code-color: get-contrast(rgba-to-rgb($code-bg-color, $body-bg)) !default;
 $code-border-radius: $border-radius !default;
 $code-block-padding-y: 1em !default;
 $code-block-padding-x: 1em !default;
-$code-block-line-height: 1.45 !default;
+$code-block-line-height: $body-line-height !default;
 $kbd-color: strongen($text-color-muted, 15%) !default;
 $kbd-bg-color: $body-bg !default;
 $kbd-border-color: $border-color !default;
@@ -378,7 +383,7 @@ $nav-link-padding-y: .5em !default;
 $nav-link-padding-x: 1em !default;
 $nav-font: $font-family-accent !default;
 $nav-font-size: 1.25em !default;
-$nav-line-height: 1.25 !default;
+$nav-line-height: $line-height-sm !default;
 $navbar-toggle-width: 35px !default;
 $navbar-header-height: auto !default;
 
