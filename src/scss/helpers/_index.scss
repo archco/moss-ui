@@ -4,11 +4,6 @@
 @import 'spacing';
 @import 'utilities-api';
 
-// toggling content
-.display-hide { display: none !important; }
-.display-show { display: block !important; }
-.display-invisible { visibility: hidden !important; }
-
 // responsive hiding
 %responsive-tablet-hide {
   @include media-tablet-up() { display: none !important; }
