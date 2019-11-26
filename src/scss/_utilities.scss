@@ -428,7 +428,7 @@ $utilities: map-merge(
       values: map-merge(
         $color-set,
         (
-          body: $text-color,
+          body: $body-bg,
           white: $white,
           transparent: transparent
         )

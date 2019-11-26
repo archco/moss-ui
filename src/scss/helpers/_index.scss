@@ -1,7 +1,7 @@
 @import 'text';
 @import 'flex';
 @import 'spacing';
-@import 'utilities-api';
+@import 'generate-utilities';
 
 // responsive hiding
 %responsive-tablet-hide {
@@ -58,18 +58,6 @@
   position: sticky;
   top: 0;
   z-index: $z-index-sticky;
-}
-
-// color-set helper
-@each $name, $color in $color-set {
-  .color-#{$name} {
-    color: $color;
-  }
-
-  .bg-color-#{$name} {
-    color: get-contrast($color);
-    background-color: $color;
-  }
 }
 
 // misc
