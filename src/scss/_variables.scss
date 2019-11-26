@@ -5,15 +5,15 @@
 // Fonts
 //==============================
 
-// font-families
-$font-serif: Georgia, serif !default;
-$font-sans-serif: Geneva, sans-serif !default;
-$font-monospace: Consolas, Courier, monospace !default;
-$font-cursive: cursive !default;
+// font-family
+$font-family-serif: Georgia, serif !default;
+$font-family-sans-serif: Geneva, sans-serif !default;
+$font-family-monospace: Consolas, Courier, monospace !default;
+$font-family-cursive: cursive !default;
 
 // Theme font-family
-$font-base: $font-sans-serif !default;
-$font-accent: $font-serif !default;
+$font-family-base: $font-family-sans-serif !default;
+$font-family-accent: $font-family-serif !default;
 
 // font-size
 $font-size: 1rem !default;
@@ -21,9 +21,11 @@ $font-size-sm: $font-size * .875 !default;
 $font-size-lg: $font-size * 1.25 !default;
 
 // font-weight
-$font-weight-light: lighter !default;
-$font-weight-normal: normal !default;
-$font-weight-bold: bold !default;
+$font-weight-lighter: lighter !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 700 !default;
+$font-weight-bolder: bolder !default;
 
 // Colors
 //==============================
@@ -374,7 +376,7 @@ $nav-link-color: inherit !default;
 $nav-link-hover-color: $secondary-color !default;
 $nav-link-padding-y: .5em !default;
 $nav-link-padding-x: 1em !default;
-$nav-font: $font-accent !default;
+$nav-font: $font-family-accent !default;
 $nav-font-size: 1.25em !default;
 $nav-line-height: 1.25 !default;
 $navbar-toggle-width: 35px !default;
@@ -416,7 +418,7 @@ $modal-close-button-hover-color: rgba($danger-color, 1) !default;
 $modal-effect-duration: .4s !default;
 
 // tab
-$tab-font: $font-base !default;
+$tab-font: $font-family-base !default;
 $tab-font-size: 1em !default;
 $tab-color: $text-color-muted !default;
 $tab-hover-color: darken($tab-color, 15%) !default;

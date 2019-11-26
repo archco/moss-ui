@@ -371,9 +371,11 @@ $utilities: map-merge(
     "font-weight": (
       property: font-weight,
       values: (
+        lighter: $font-weight-lighter,
         light: $font-weight-light,
         normal: $font-weight-normal,
-        bold: $font-weight-bold
+        bold: $font-weight-bold,
+        bolder: $font-weight-bolder
       )
     ),
     "font-size": (
@@ -457,7 +459,12 @@ $utilities: map-merge(
     "font-family": (
       property: font-family,
       class: font,
-      values: (monospace: $font-monospace)
+      values: (
+        base: $font-family-base,
+        accent: $font-family-accent,
+        monospace: $font-family-monospace,
+        cursive: $font-family-cursive
+      )
     ),
     "rounded": (
       property: border-radius,
