@@ -1,19 +1,6 @@
-// Alignment
-.text-justify { text-align: justify !important; }
-.text-nowrap { white-space: nowrap !important; }
-.text-center { text-align: center !important; }
-.text-right { text-align: right !important; }
-.text-left { text-align: left !important; }
-
-// Transformation
-.text-lowercase { text-transform: lowercase !important; }
-.text-uppercase { text-transform: uppercase !important; }
-.text-capitalize { text-transform: capitalize !important; }
-
-// misc
 .comment,
 .help {
-  font-size: .8em;
+  font-size: $font-size-sm;
   color: $text-color-muted;
 }
 
