@@ -28,8 +28,8 @@
   }
 }
 
-// clear-both
-@mixin clear-both {
+// clearfix
+@mixin clearfix {
   &::after {
     display: block;
     clear: both;

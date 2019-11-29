@@ -1,6 +1,15 @@
 @import 'text';
 @import 'generate-utilities';
 
+// clearfix
+%clearfix {
+  @include clearfix();
+}
+
+.clearfix {
+  @extend %clearfix;
+}
+
 // responsive hiding
 %responsive-tablet-hide {
   @include media-tablet-up() { display: none !important; }
@@ -56,6 +65,18 @@
   position: sticky;
   top: 0;
   z-index: $z-index-sticky;
+}
+
+// background-color: contrast text color
+@each $color, $value in map-merge(
+  $color-set,
+  (
+    body: $body-bg,
+    white: $white,
+    "transparent": transparent // "transparent" for prevent error in mini-css-extract-plugin.
+  )
+) {
+  .bg-#{$color} { color: get-contrast($value); }
 }
 
 // misc
