@@ -430,7 +430,7 @@ $utilities: map-merge(
         (
           body: $body-bg,
           white: $white,
-          transparent: transparent
+          "transparent": transparent // "transparent" for prevent error in mini-css-extract-plugin.
         )
       )
     ),
