@@ -254,10 +254,14 @@ $kbd-border-color: $border-color !default;
 $fieldset-border-width: $border-width !default;
 $fieldset-border-color: $primary-color !default;
 $fieldset-border-radius: $border-radius !default;
+$legend-font-weight: $font-weight-bold !default;
+$legend-font-size: $font-size-lg !default;
 $legend-padding-y: $space-1 !default;
 $legend-padding-x: $space-2 !default;
 $label-color: $text-color !default;
+$label-font-weight: $font-weight-normal !default;
 
+$input-font-size: $font-size !default;
 $input-line-height: $body-line-height !default;
 $input-height: 2em !default;
 $input-padding-y: .2em !default;
