@@ -1,25 +1,30 @@
-# Display
-
-> source:  [scss/helpers/text](../../src/scss/helpers/_text.scss)
+# Text
 
 Helper classes for text. These classes are refer to the bootstrap. See [Link](https://getbootstrap.com/docs/4.0/utilities/text/).
 
-## Fonts
+### Font Family
 
-- `.font-cursive`
+- `.font-base`
 - `.font-accent`
-- `.font-sans-serif`
+- `.font-cursive`
+- `.font-monospace`
 
-Font sizes
+### Font Size
 
-- `.font-small`
-- `.font-large`
+- `.font-size-base`
+- `.font-size-sm`
+- `.font-size-lg`
 
-Font weight and italics
+### Font Weight
 
+- `.font-weight-lighter`
 - `.font-weight-light`
 - `.font-weight-normal`
 - `.font-weight-bold`
+- `.font-weight-bolder`
+
+### Font Style
+
 - `.font-italic`
 
 ### Alignment

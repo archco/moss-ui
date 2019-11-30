@@ -1,6 +1,6 @@
 h2 Default
 button(class='btn default' v-collapse:test-collapse) v-collapse
-div.pad.bg-color-primary(is='collapse-toggle' target='test-collapse') CollapseToggle
+div.pad.bg-primary(is='collapse-toggle' target='test-collapse') CollapseToggle
 collapse(id='test-collapse' expanded)
   h3 test collapse
   p= lorem
@@ -39,7 +39,7 @@ collapse(id='horizontal-collapse' direction='horizontal')
 h3 with Grid
 
 .row
-  collapse.col-2.bg-color-shade(id='aside-collapse1' direction='horizontal' expanded)
+  collapse.col-2.bg-shade(id='aside-collapse1' direction='horizontal' expanded)
     div.pad
       div hello
       div world
@@ -48,15 +48,15 @@ h3 with Grid
       button.btn-flat.dark(v-collapse:aside-collapse1) Toggle aside1
       button.btn-flat.info(v-collapse:aside-collapse2) Toggle aside2
     p= lorem
-  collapse.col-2.bg-color-info(id='aside-collapse2' direction='horizontal' expanded)
+  collapse.col-2.bg-info(id='aside-collapse2' direction='horizontal' expanded)
     div.pad
       div hello
       div world
 
 h2 Collapse Toggle
 
-collapse-toggle.pad.bg-color-shade(target='test-collapse2') toggle
-span.d-inline-block.bg-color-info(is='collapse-toggle' tag='span' target='test-collapse2') toggle by span
+collapse-toggle.pad.bg-shade(target='test-collapse2') toggle
+span.d-inline-block.bg-info(is='collapse-toggle' tag='span' target='test-collapse2') toggle by span
 button.btn(is='collapse-toggle' tag='button' target='test-collapse2') toggle by button
 
 collapse(id='test-collapse2')

@@ -1,7 +1,5 @@
 # Helpers
 
-> source:  [scss/helpers/index](../../src/scss/helpers/_index.scss)
-
 ## More helper classes
 
 - [Display](display.md)
@@ -10,20 +8,13 @@
 - [Spacing](spacing.md)
 - [Text](text.md)
 
-### Toggling content
-
-``` html
-<p class="display-show">paragraph</p>
-<p class="display-hide">paragraph</p>
-<p class="display-invisible">paragraph</p>
-```
-
 ### Float
 
 ``` html
-<div class="float-clear">
-  <div class="float-right box-line">this is right.</div>
-  <div class="float-left box-line">this is left.</div>
+<div class="clearfix">
+  <div class="float-right">RIGHT</div>
+  <div class="float-left">LEFT</div>
+  <div class="float-none">NONE</div>
 </div>
 ```
 
@@ -45,18 +36,24 @@
 Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
 
 ``` html
-<!-- text color -->
-<p class="color-primary">...</p>
-<p class="color-danger">...</p>
-<!-- background color -->
-<div class="bg-color-secondary">...</div>
-<div class="bg-color-success">...</div>
+<!-- text-color: color-set + "white", "body", "muted", "black-50", "white-50" and "reset" -->
+<p class="text-primary"></p>
+<p class="text-danger"></p>
+<span class="text-muted"></span>
+<!-- background-color: color-set + "body", "white" and "transparent" -->
+<div class="bg-secondary"></div>
+<div class="bg-success"></div>
+<div class="bg-transparent"></div>
 ```
 
 ### Box shadow
 
 ``` html
 <div class="shadow"></div>
-<div class="shadow-near"></div>
-<div class="shadow-far"></div>
+<div class="shadow-sm"></div>
+<div class="shadow-lg"></div>
+<div class="shadow-inset"></div>
+<div class="shadow-inset-sm"></div>
+<div class="shadow-inset-lg"></div>
+<div class="shadow-none"></div>
 ```

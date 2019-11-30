@@ -26,7 +26,7 @@ h3 Tab Tip based by Color-set
 tabs(effect='fade')
   each color in colorSet
     tab(name=color active-color=color selected=(color == 'success'))
-      h4(class='color-' + color)=color
+      h4(class='text-' + color)=color
       p= lorem
 
 h3 Specifying container size of tab content.

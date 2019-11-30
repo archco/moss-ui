@@ -1,38 +1,53 @@
-h3 Fonts
-div.group
-  div.font-cursive font-cursive
-  div.font-accent font-accent
-  div.font-sans-serif font-sans-serif
-div.group
-  div.font-small font-small
-  div.font-large font-large
-div.group
-  div.font-weight-light font-weight-light
-  div.font-weight-normal font-weight-normal
-  div.font-weight-bold font-weight-bold
-  div.font-italic font-italic
+h3 Font Family
+
+ul.mb-3
+  li.font-base font-base
+  li.font-accent font-accent
+  li.font-cursive font-cursive
+  li.font-monospace font-monospace
+
+h3 Font Size
+
+ul.mb-3
+  li.font-size-sm font-size-sm
+  li.font-size-lg font-size-lg
+
+h3 Font Weight
+
+ul.mb-3
+  li.font-weight-lighter font-weight-lighter
+  li.font-weight-light font-weight-light
+  li.font-weight-normal font-weight-normal
+  li.font-weight-bold font-weight-bold
+  li.font-weight-bolder font-weight-bolder
+
+h3 Font Style
+
+ul.mb-3
+  li.font-italic font-italic
 
 h3 Alignment
-div.group
-  div.bg-color-shade.text-left text-left
+
+div.mb-3
+  div.bg-shade.text-left text-left
   div.text-center text-center
-  div.bg-color-shade.text-right text-right
+  div.bg-shade.text-right text-right
 
 h3 Transformation
+
 - var text = 'hEllo, WoRlD!'
-p
-  span='Example: '
-  span=text
-div.group
-  div
-    span='text-lowercase: '
-    span.text-lowercase=text
-  div
-    span='text-uppercase: '
-    span.text-uppercase=text
-  div
-    span='text-capitalize: '
-    span.text-capitalize=text
+.mb-3
+  span='Example: ' + text
+ul.mb-3
+  li
+    span= 'text-lowercase: '
+    span.text-lowercase= text
+  li
+    span= 'text-uppercase: '
+    span.text-uppercase= text
+  li
+    span= 'text-capitalize: '
+    span.text-capitalize= text
 
 h3 Miscellaneous
 p
