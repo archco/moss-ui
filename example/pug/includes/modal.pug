@@ -21,8 +21,8 @@ modal(name='test-modal3' title='with Actions')
 h3 Custom header
 button.btn.danger(onclick='Moss.modal.show("test-modal5")') Open modal
 modal(name='test-modal5' title='fake title' effect='fade')
-  div.modal-header.bg-color-shade(slot='header')
-    h3.color-danger Custom Title
+  div.modal-header.bg-shade(slot='header')
+    h3.text-danger Custom Title
     button.btn-text(data-toggle='close')
       icon(name='close')
   p=lorem
@@ -44,7 +44,7 @@ button.btn.info(onclick='Moss.modal.show("test-modal7")') fade
 modal(name='test-modal7' title='Fade' effect='fade' close-on)
   p.text-center <code>fade</code> effect.
 
-button.btn.link(onclick='Moss.modal.show("test-modal8")') no-effect
+button.btn.link(onclick='Moss.modal.show("test-modal8")') from-top
 modal(name='test-modal8' title='From-top' effect='from-top' close-on)
   p.text-center <code>from-top</code> effect.
 

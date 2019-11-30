@@ -22,11 +22,11 @@ html
     link(rel="stylesheet" href="example.css")
   body
     div(id='app')
-      header.d-flex.justify-content-center.align-items-center.bg-color-primary(style="height:100px;")
+      header.d-flex.justify-content-center.align-items-center.bg-primary(style="height:100px;")
         h1
           a.no-deco.inherit(id='project-name' href='index.html') MOSS-UI <span class='moss-version'></span>
       block nav
-        navbar(class='sticky-top shadow-near' align='end')
+        navbar(class='sticky-top border-bottom border-primary shadow-sm' align='end')
           navbar-brand(href='index.html' type='text' slot='brand' v-activator.this.self) Moss
           navbar-nav(v-activator="'.nav-item > .nav-link'")
             nav-item(href='scss.html?q=components' text='SCSS')

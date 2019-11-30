@@ -10,10 +10,10 @@
   </head>
   <body>
     <div id="app">
-      <header class="d-flex justify-content-center align-items-center bg-color-primary" style="height:100px;">
+      <header class="d-flex justify-content-center align-items-center bg-primary" style="height:100px;">
         <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI <span class='moss-version'></span></a></h1>
       </header>
-      <navbar class="sticky-top shadow-near" align="end">
+      <navbar class="sticky-top border-bottom border-primary shadow-sm" align="end">
         <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
         <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
           <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
@@ -28,9 +28,9 @@
       </navbar>
       <div class="hero-banner pad-large">
         <div class="hero-background filter gray" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Charles_Meynier_-_Napoleon_in_Berlin.png/1280px-Charles_Meynier_-_Napoleon_in_Berlin.png');"></div>
-        <div class="hero-content font-accent text-center" style="font-size:1.4em;">
-          <h1 class="color-primary" style="text-shadow: 0px 1px 2px #000;">MOSS-UI</h1>
-          <p class="color-light" style="text-shadow: 0px 1px 2px #000;">The front-end UI framework with Vue.js and SCSS.</p>
+        <div class="hero-content font-family-accent text-center" style="font-size:1.4em;">
+          <h1 class="text-primary" style="text-shadow: 0px 1px 2px #000;">MOSS-UI</h1>
+          <p class="text-light" style="text-shadow: 0px 1px 2px #000;">The front-end UI framework with Vue.js and SCSS.</p>
           <div class="w-75 mx-auto" style="font-size:1rem;">
             <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="onSearchItemClick" @submit="onSearchSubmit">
               <li slot="result-item" slot-scope="props" style="text-align:left;" tabindex="0" @click="props.onClickItem(props.item)">
@@ -43,7 +43,7 @@
       <section class="pad">
         <anchored-tag class="fragment" tag="h1" owned>Navbar</anchored-tag>
         <h3>Basic</h3>
-        <navbar class="bg-color-dark" align="start">
+        <navbar class="bg-dark" align="start">
           <navbar-nav>
             <nav-item href="#">Link1</nav-item>
             <nav-item href="#"><span>Link2</span></nav-item>
@@ -59,8 +59,8 @@
           </navbar-nav>
         </navbar>
         <h3>Multiple Navs</h3>
-        <navbar class="bg-color-warning rounded shadow-near" align="between" header-align="start" :header-style="{ height: '4rem' }">
-          <navbar-brand href="#" type="image" slot="brand"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" style="width:30px;height:30px;"></navbar-brand>
+        <navbar class="bg-warning rounded shadow-near" align="between" header-align="start" :header-style="{ height: '4rem' }">
+          <navbar-brand class="ml-2" href="#" type="image" slot="brand"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" style="width:30px;height:30px;"></navbar-brand>
           <navbar-nav>
             <nav-item href="#" text="link1"></nav-item>
             <nav-item href="#" text="link2"></nav-item>
@@ -193,10 +193,10 @@
           </div>
         </div>
         <div class="input inline with-icon-right">
-          <input class="danger" type="text" placeholder="wrong.."><span class="icon-right color-danger"><i class="fas fa-exclamation-triangle"></i></span>
+          <input class="danger" type="text" placeholder="wrong.."><span class="icon-right text-danger"><i class="fas fa-exclamation-triangle"></i></span>
         </div>
         <div class="input inline with-icon-right">
-          <input class="danger" type="text" placeholder="Disabled" disabled><span class="icon-right color-default"><i class="fas fa-exclamation-triangle"></i></span>
+          <input class="danger" type="text" placeholder="Disabled" disabled><span class="icon-right text-default"><i class="fas fa-exclamation-triangle"></i></span>
         </div>
         <h2>Input with Icons</h2>
         <h3>Default</h3>
@@ -215,7 +215,7 @@
         </div>
         <h3>Inline input</h3>
         <div class="input inline with-icon-left with-icon-right">
-          <input class="inline" type="text" placeholder="Email.."><span class="icon-left"><i class="fas fa-envelope"></i></span><span class="icon-right color-success"><i class="fas fa-check"></i></span>
+          <input class="inline" type="text" placeholder="Email.."><span class="icon-left"><i class="fas fa-envelope"></i></span><span class="icon-right text-success"><i class="fas fa-check"></i></span>
         </div>
         <h3>Input sizes</h3>
         <div class="input inline with-icon font-small">
@@ -230,7 +230,7 @@
         <h2>Form Grid</h2>
         <p>Special replacement for <code>.row</code> for tighter form layouts.</p>
         <h3><code>.row</code></h3>
-        <div class="row bg-color-shade">
+        <div class="row bg-shade">
           <div class="col">
             <input placeholder="First name">
           </div>
@@ -239,7 +239,7 @@
           </div>
         </div>
         <h3><code>.form-row</code></h3>
-        <div class="form-row bg-color-shade">
+        <div class="form-row bg-shade">
           <div class="col">
             <input placeholder="First name">
           </div>

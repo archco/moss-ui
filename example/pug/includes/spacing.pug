@@ -2,18 +2,43 @@ p Helper classes for specifying margin or padding spacing to element.
 
 h2 Margin
 
-div.bg-color-shade.p-3
-  span.bg-color-dark.m-1 margin-1
-  span.bg-color-dark.m-2 margin-2
-  span.bg-color-dark.m-3 margin-3
-  span.bg-color-dark.m-4 margin-4
-  span.bg-color-dark.m-5 margin-5
+.row.mb-3
+  .col
+    .bg-shade
+      span.d-inline-block.bg-dark.p-1.m-1 margin-1
+  .col
+    .bg-shade
+      span.d-inline-block.bg-dark.p-1.m-2 margin-2
+  .col
+    .bg-shade
+      span.d-inline-block.bg-dark.p-1.m-3 margin-3
+  .col
+    .bg-shade
+      span.d-inline-block.bg-dark.p-1.m-4 margin-4
+  .col
+    .bg-shade
+      span.d-inline-block.bg-dark.p-1.m-5 margin-5
+
+h2 Negative Margin
+
+.d-flex.flex-row.my-3.justify-content-around.align-items-start.bg-shade(style='height:4em;')
+  div.d-inline-flex
+    span.d-inline-block.bg-dark.p-3.mt-n1 mt-n1
+  div.d-inline-flex
+    span.d-inline-block.bg-dark.p-3.mt-n3 mt-n3
+  div.d-inline-flex
+    span.d-inline-block.bg-dark.p-3.mt-n5 mt-n5
 
 h2 Padding
 
-div.bg-color-shade.p-3
-  span.bg-color-dark.p-1 padding-1
-  span.bg-color-dark.p-2 padding-2
-  span.bg-color-dark.p-3 padding-3
-  span.bg-color-dark.p-4 padding-4
-  span.bg-color-dark.p-5 padding-5
+.row.p-2.mb-3.bg-shade
+  .col
+    span.d-inline-block.bg-dark.p-1 padding-1
+  .col
+    span.d-inline-block.bg-dark.p-2 padding-2
+  .col
+    span.d-inline-block.bg-dark.p-3 padding-3
+  .col
+    span.d-inline-block.bg-dark.p-4 padding-4
+  .col
+    span.d-inline-block.bg-dark.p-5 padding-5

@@ -10,10 +10,10 @@
   </head>
   <body>
     <div id="app">
-      <header class="d-flex justify-content-center align-items-center bg-color-primary" style="height:100px;">
+      <header class="d-flex justify-content-center align-items-center bg-primary" style="height:100px;">
         <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI <span class='moss-version'></span></a></h1>
       </header>
-      <navbar class="sticky-top shadow-near" align="end">
+      <navbar class="sticky-top border-bottom border-primary shadow-sm" align="end">
         <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
         <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
           <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
@@ -27,7 +27,7 @@
         </navbar-nav>
       </navbar>
       <div class="row">
-        <aside class="sidebar col-md-2 hide-only-mobile bg-color-light">
+        <aside class="sidebar col-md-2 hide-only-mobile bg-light">
           <div class="my-3">
             <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="onSearchItemClick" @submit="onSearchSubmit">
               <li slot="result-item" slot-scope="props" style="text-align:left;" tabindex="0" @click="props.onClickItem(props.item)">
@@ -58,12 +58,12 @@
           <h2>Blockquote</h2>
           <h3>Default blockquote</h3>
           <blockquote>This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can put Markdown into a blockquote.</blockquote>
-          <h3>Blockquote with color-set</h3>
+          <h3>Blockquote with text-set</h3>
           <div class="pad">
             <blockquote class="link">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini</blockquote>
             <blockquote class="danger">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
           </div>
-          <div class="bg-color-dark pad">
+          <div class="bg-dark pad">
             <blockquote class="success">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini</blockquote>
             <blockquote class="shade">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
           </div>
@@ -152,20 +152,20 @@
           </div>
           <h2>Optional Classes</h2>
           <h3>.pad</h3>
-          <article class="pad color-primary">article with .pad</article>
-          <div class="pad bg-color-warning">div with .pad</div>
-          <p class="pad color-success">p with .pad</p>
-          <section class="pad bg-color-secondary">
+          <article class="pad text-primary">article with .pad</article>
+          <div class="pad bg-warning">div with .pad</div>
+          <p class="pad text-success">p with .pad</p>
+          <section class="pad bg-secondary">
             <p>If case of section with pad, it's responsive.</p>
           </section>
           <h3>.accent</h3>
           <div class="pad">
-            <h1 class="accent color-danger">Heading with .accent</h1>
-            <h2 class="accent color-danger">Heading with .accent</h2>
-            <h3 class="accent color-danger">Heading with .accent</h3>
-            <h4 class="accent color-danger">Heading with .accent</h4>
-            <h5 class="accent color-danger">Heading with .accent</h5>
-            <h6 class="accent color-danger">Heading with .accent</h6>
+            <h1 class="accent text-danger">Heading with .accent</h1>
+            <h2 class="accent text-danger">Heading with .accent</h2>
+            <h3 class="accent text-danger">Heading with .accent</h3>
+            <h4 class="accent text-danger">Heading with .accent</h4>
+            <h5 class="accent text-danger">Heading with .accent</h5>
+            <h6 class="accent text-danger">Heading with .accent</h6>
           </div>
           <anchored-tag class="fragment" tag="h1" owned>Code</anchored-tag>
           <p>Display inline or block fragment of computer code.</p>
@@ -222,7 +222,7 @@
           <button class="btn-flat shade">shade</button>
           <button class="btn-flat link">link</button>
           <h3>Text button</h3>
-          <div class="pad">Hello <button class="btn-text color-danger">Beautiful</button> World!</div>
+          <div class="pad">Hello <button class="btn-text text-danger">Beautiful</button> World!</div>
           <h3>Other tag as button</h3>
           <input type="submit"><a class="btn info" href="#button">link button</a><br><a class="btn-flat" href="#">link flat button</a>
           <h3>Icon Button</h3>
@@ -400,7 +400,7 @@
               <div class="text-truncate help">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
             </div>
           </div>
-          <div class="card-horizontal bg-color-dark hoverable shadow-near" style="display:inline-flex;width:240px;height:140px;">
+          <div class="card-horizontal bg-dark hoverable shadow-near" style="display:inline-flex;width:240px;height:140px;">
             <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg"></div>
             <div class="card-content">
               <div>Title</div>
@@ -525,10 +525,10 @@
             </div>
           </div>
           <div class="input inline with-icon-right">
-            <input class="danger" type="text" placeholder="wrong.."><span class="icon-right color-danger"><i class="fas fa-exclamation-triangle"></i></span>
+            <input class="danger" type="text" placeholder="wrong.."><span class="icon-right text-danger"><i class="fas fa-exclamation-triangle"></i></span>
           </div>
           <div class="input inline with-icon-right">
-            <input class="danger" type="text" placeholder="Disabled" disabled><span class="icon-right color-default"><i class="fas fa-exclamation-triangle"></i></span>
+            <input class="danger" type="text" placeholder="Disabled" disabled><span class="icon-right text-default"><i class="fas fa-exclamation-triangle"></i></span>
           </div>
           <h2>Input with Icons</h2>
           <h3>Default</h3>
@@ -547,7 +547,7 @@
           </div>
           <h3>Inline input</h3>
           <div class="input inline with-icon-left with-icon-right">
-            <input class="inline" type="text" placeholder="Email.."><span class="icon-left"><i class="fas fa-envelope"></i></span><span class="icon-right color-success"><i class="fas fa-check"></i></span>
+            <input class="inline" type="text" placeholder="Email.."><span class="icon-left"><i class="fas fa-envelope"></i></span><span class="icon-right text-success"><i class="fas fa-check"></i></span>
           </div>
           <h3>Input sizes</h3>
           <div class="input inline with-icon font-small">
@@ -562,7 +562,7 @@
           <h2>Form Grid</h2>
           <p>Special replacement for <code>.row</code> for tighter form layouts.</p>
           <h3><code>.row</code></h3>
-          <div class="row bg-color-shade">
+          <div class="row bg-shade">
             <div class="col">
               <input placeholder="First name">
             </div>
@@ -571,7 +571,7 @@
             </div>
           </div>
           <h3><code>.form-row</code></h3>
-          <div class="form-row bg-color-shade">
+          <div class="form-row bg-shade">
             <div class="col">
               <input placeholder="First name">
             </div>
@@ -677,30 +677,30 @@
           </div>
           <anchored-tag class="fragment" tag="h1" owned>Grid</anchored-tag>
           <h2>Container</h2>
-          <div class="container bg-color-secondary">
+          <div class="container bg-secondary">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
           <h2>Default Grid</h2>
           <div class="row">
-            <div class="col-1 box-line bg-color-primary">col-1</div>
-            <div class="col-1 box-line bg-color-primary">col-1</div>
-            <div class="col-1 box-line bg-color-primary">col-1</div>
-            <div class="col-1 box-line bg-color-primary">col-1</div>
-            <div class="col-1 box-line bg-color-primary">col-1</div>
-            <div class="col-1 box-line bg-color-primary">col-1</div>
-            <div class="col-1 box-line bg-color-primary">col-1</div>
-            <div class="col-1 box-line bg-color-primary">col-1</div>
-            <div class="col-1 box-line bg-color-primary">col-1</div>
-            <div class="col-1 box-line bg-color-primary">col-1</div>
-            <div class="col-1 box-line bg-color-primary">col-1</div>
-            <div class="col-1 box-line bg-color-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
           </div>
           <div class="container">
             <div class="row">
-              <div class="col-4 bg-color-primary">
+              <div class="col-4 bg-primary">
                 <p>4/12 columns</p>
               </div>
-              <div class="col-8 bg-color-secondary">
+              <div class="col-8 bg-secondary">
                 <p>8/12 columns</p>
               </div>
             </div>
@@ -708,10 +708,10 @@
           <h2>Mobile Grid</h2>
           <div class="container">
             <div class="row">
-              <div class="col-sm-6 bg-color-primary">
+              <div class="col-sm-6 bg-primary">
                 <p>col-sm-6</p>
               </div>
-              <div class="col-sm-6 bg-color-secondary">
+              <div class="col-sm-6 bg-secondary">
                 <p>col-sm-6</p>
               </div>
             </div>
@@ -719,13 +719,13 @@
           <h2>Tablet Grid</h2>
           <div class="container">
             <div class="row">
-              <div class="col-md-3 bg-color-secondary">
+              <div class="col-md-3 bg-secondary">
                 <p>col-md-6</p>
               </div>
-              <div class="col-md-5 bg-color-primary">
+              <div class="col-md-5 bg-primary">
                 <p>col-md-6</p>
               </div>
-              <div class="col-md-4 bg-color-secondary">
+              <div class="col-md-4 bg-secondary">
                 <p>col-md-6</p>
               </div>
             </div>
@@ -733,16 +733,16 @@
           <h2>Desktop Grid</h2>
           <div class="container">
             <div class="row">
-              <div class="col-lg-3 col-md-6 bg-color-secondary">
+              <div class="col-lg-3 col-md-6 bg-secondary">
                 <p>col-lg-6</p>
               </div>
-              <div class="col-lg-3 col-md-6 bg-color-primary">
+              <div class="col-lg-3 col-md-6 bg-primary">
                 <p>col-lg-6</p>
               </div>
-              <div class="col-lg-3 col-md-6 bg-color-secondary">
+              <div class="col-lg-3 col-md-6 bg-secondary">
                 <p>col-lg-6</p>
               </div>
-              <div class="col-lg-3 col-md-6 bg-color-primary">
+              <div class="col-lg-3 col-md-6 bg-primary">
                 <p>col-lg-6</p>
               </div>
             </div>
@@ -750,39 +750,39 @@
           <h3>Equal-width</h3>
           <div class="container">
             <div class="row group">
-              <div class="col bg-color-success">1 of 2</div>
-              <div class="col bg-color-info">1 of 2</div>
+              <div class="col bg-success">1 of 2</div>
+              <div class="col bg-info">1 of 2</div>
             </div>
             <div class="row group">
-              <div class="col bg-color-success">1 of 3</div>
-              <div class="col bg-color-info">1 of 3</div>
-              <div class="col bg-color-success">1 of 3</div>
+              <div class="col bg-success">1 of 3</div>
+              <div class="col bg-info">1 of 3</div>
+              <div class="col bg-success">1 of 3</div>
             </div>
           </div>
           <h3>Setting one column width</h3>
           <div class="container">
             <div class="row">
-              <div class="col bg-color-success">1 of 3</div>
-              <div class="col-6 bg-color-info">2 of 3 (half of full width)</div>
-              <div class="col bg-color-success">3 of 3</div>
+              <div class="col bg-success">1 of 3</div>
+              <div class="col-6 bg-info">2 of 3 (half of full width)</div>
+              <div class="col bg-success">3 of 3</div>
             </div>
           </div>
           <h3>Variable width by content</h3>
           <div class="container">
             <div class="row">
-              <div class="col bg-color-success">1 of 3</div>
-              <div class="col-auto bg-color-info">Variable width by content.</div>
-              <div class="col bg-color-success">3 of 3</div>
+              <div class="col bg-success">1 of 3</div>
+              <div class="col-auto bg-info">Variable width by content.</div>
+              <div class="col bg-success">3 of 3</div>
             </div>
           </div>
           <h3>Equal-width multi-row</h3>
           <div class="container">
             <div class="row">
-              <div class="col bg-color-success">col</div>
-              <div class="col bg-color-info">col</div>
+              <div class="col bg-success">col</div>
+              <div class="col bg-info">col</div>
               <div class="w-100"></div>
-              <div class="col bg-color-info">col</div>
-              <div class="col bg-color-success">col</div>
+              <div class="col bg-info">col</div>
+              <div class="col bg-success">col</div>
             </div>
           </div>
           <h3>No gutters</h3>
@@ -799,21 +799,21 @@
           <h3>Column wrapping</h3>
           <div class="container">
             <div class="row">
-              <div class="col-sm-8 bg-color-success">col-sm-8</div>
-              <div class="col-sm-6 bg-color-info">col-sm-6</div>
-              <div class="col-sm-4 bg-color-warning">col-sm-4</div>
+              <div class="col-sm-8 bg-success">col-sm-8</div>
+              <div class="col-sm-6 bg-info">col-sm-6</div>
+              <div class="col-sm-4 bg-warning">col-sm-4</div>
             </div>
           </div>
           <h3>Offsetting columns</h3>
           <div class="row">
-            <div class="col-md-4 bg-color-primary">col-md-4</div>
-            <div class="col-md-4 offset-md-4 bg-color-secondary">col-md-4 offset-md-4</div>
+            <div class="col-md-4 bg-primary">col-md-4</div>
+            <div class="col-md-4 offset-md-4 bg-secondary">col-md-4 offset-md-4</div>
           </div>
           <h3>Order classes</h3>
           <div class="row">
-            <div class="col bg-color-primary">First, but unordered</div>
-            <div class="col order-12 bg-color-secondary">Second but last</div>
-            <div class="col order-1 bg-color-info">Third, but first</div>
+            <div class="col bg-primary">First, but unordered</div>
+            <div class="col order-12 bg-secondary">Second but last</div>
+            <div class="col order-1 bg-info">Third, but first</div>
           </div>
           <anchored-tag class="fragment" tag="h1" owned>Helper</anchored-tag><a href="scss-helpers.html">SCSS Helpers</a>
           <anchored-tag class="fragment" tag="h1" owned>Image</anchored-tag>
@@ -922,7 +922,7 @@
             </li>
           </ul>
           <anchored-tag class="fragment" tag="h1" owned>Loader</anchored-tag>
-          <div class="d-flex justify-content-center pad bg-color-success">
+          <div class="d-flex justify-content-center pad bg-success">
             <div class="text-center"><span class="loader-one light" style="font-size:3em;"></span><br><span>loading...</span></div>
           </div>
           <h2>Button is loading</h2>

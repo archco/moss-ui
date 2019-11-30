@@ -16,15 +16,15 @@ fieldset {
 
 legend {
   padding: $legend-padding-y $legend-padding-x;
-  font-weight: bold;
-  font-size: 1.1em;
+  font-weight: $legend-font-weight;
+  font-size: $legend-font-size;
   color: $fieldset-border-color;
 }
 
 label {
   display: inline-block;
   margin-bottom: $space-1;
-  font-weight: bold;
+  font-weight: $label-font-weight;
   color: $label-color;
 }
 
@@ -34,7 +34,7 @@ select,
 textarea {
   color: inherit;
   vertical-align: middle;
-  font-size: $font-size;
+  font-size: $input-font-size;
   line-height: $input-line-height;
   outline-color: $input-outline-color;
 

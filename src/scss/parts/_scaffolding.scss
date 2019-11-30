@@ -8,11 +8,11 @@ html { box-sizing: border-box; }
 *::after { box-sizing: inherit; }
 
 body {
-  font-family: $font-base;
+  font-family: $font-family-base;
   font-size: $font-size;
   line-height: $body-line-height;
   color: $text-color;
-  background-color: $background-color;
+  background-color: $body-bg;
 }
 
 header {
@@ -198,7 +198,7 @@ blockquote {
 // h1.accent
 @include headings {
   &.accent {
-    font-family: $font-accent;
+    font-family: $font-family-accent;
   }
 }
 

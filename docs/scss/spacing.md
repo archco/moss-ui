@@ -1,26 +1,24 @@
 # Spacing
 
-> source: [scss/helpers/spacing.scss](https://github.com/archco/moss-ui/blob/master/src/scss/helpers/_spacing.scss)
-
 Helper classes for specifying margin or padding spacing to element. These classes refer to the bootstrap. see [details](https://getbootstrap.com/docs/4.0/utilities/spacing/)
 
 ### Table of contents
 
-- [Notation](#notation)
-  - [property](#property)
-  - [sides](#sides)
-  - [size](#size)
+- [Notation](#Notation)
+  - [Property](#Property)
+  - [Sides](#Sides)
+  - [Size](#Size)
 - [Usage](#usage)
 - [SCSS Variables](#scss-variables)
 
 ## Notation
 
-### property
+### Property
 
 - `m` - margin
 - `p` - padding
 
-### sides
+### Sides
 
 - `t` - top
 - `r` - right
@@ -30,7 +28,7 @@ Helper classes for specifying margin or padding spacing to element. These classe
 - `x` - X axis, right and left.
 - blank - all 4 sides.
 
-### size
+### Size
 
 - `0` - Setting `margin` or `padding` to `0`.
 - `1` - `$spacer` * .25
@@ -53,6 +51,9 @@ Helper classes for specifying margin or padding spacing to element. These classe
 
 <!-- Horizontal centering -->
 <div class="mx-auto" style="width: 200px;">Centered</div>
+
+<!-- Negative margin -->
+<div class="mt-n1">margin-top: -.25rem;</div>
 ```
 
 ## SCSS Variables
@@ -74,4 +75,6 @@ $space-2: map-get($spacers, 2);
 $space-3: map-get($spacers, 3);
 $space-4: map-get($spacers, 4);
 $space-5: map-get($spacers, 5);
+
+$negative-spacers: negativify-map($spacers) !default;
 ```

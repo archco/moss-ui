@@ -36,6 +36,6 @@ a.chip {
 
   &:hover,
   &:focus {
-    @include box-shadow($shadow-near);
+    @include box-shadow($box-shadow-sm);
   }
 }
