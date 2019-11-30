@@ -1,11 +1,12 @@
-.loader-one {
-  @include loader-one();
-
-  &.light {
-    @include loader-one-color($text-color-light);
-  }
-
-  &.dark {
-    @include loader-one-color($text-color-dark);
-  }
+.loader-one,
+.loader-spin {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: text-bottom;
+  border-radius: 50%;
+  border: .125em solid currentColor;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  animation: .5s linear 0s infinite spin;
 }
