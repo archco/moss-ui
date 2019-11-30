@@ -6885,6 +6885,11 @@ simple-crud,
     display: -webkit-inline-box !important;
     display: inline-flex !important; } }
 
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: ''; }
+
 @media only screen and (min-width: 768px) {
   .hide-tablet-up {
     display: none !important; } }
@@ -6924,6 +6929,48 @@ simple-crud,
   position: sticky;
   top: 0;
   z-index: 12; }
+
+.bg-default {
+  color: #fff; }
+
+.bg-primary {
+  color: #fff; }
+
+.bg-secondary {
+  color: #fff; }
+
+.bg-info {
+  color: #fff; }
+
+.bg-success {
+  color: #fff; }
+
+.bg-warning {
+  color: #343434; }
+
+.bg-danger {
+  color: #fff; }
+
+.bg-light {
+  color: #343434; }
+
+.bg-dark {
+  color: #fff; }
+
+.bg-shade {
+  color: #343434; }
+
+.bg-link {
+  color: #fff; }
+
+.bg-body {
+  color: #343434; }
+
+.bg-white {
+  color: #343434; }
+
+.bg-transparent {
+  color: #fff; }
 
 .box-line {
   border: 1px solid #49796b; }

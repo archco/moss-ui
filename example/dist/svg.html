@@ -10,10 +10,10 @@
   </head>
   <body>
     <div id="app">
-      <header class="d-flex justify-content-center align-items-center bg-color-primary" style="height:100px;">
+      <header class="d-flex justify-content-center align-items-center bg-primary" style="height:100px;">
         <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI <span class='moss-version'></span></a></h1>
       </header>
-      <navbar class="sticky-top shadow-near" align="end">
+      <navbar class="sticky-top border-bottom border-primary shadow-sm" align="end">
         <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
         <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
           <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
@@ -27,7 +27,7 @@
         </navbar-nav>
       </navbar>
       <div class="row">
-        <aside class="sidebar col-md-2 hide-only-mobile bg-color-light">
+        <aside class="sidebar col-md-2 hide-only-mobile bg-light">
           <div class="my-3">
             <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="onSearchItemClick" @submit="onSearchSubmit">
               <li slot="result-item" slot-scope="props" style="text-align:left;" tabindex="0" @click="props.onClickItem(props.item)">
@@ -44,15 +44,15 @@
           <h2>Default usage</h2>
           <div class="my-4" style="font-size:3em;"><i class="moss-icon" id="svg-arrow-example"></i><i class="moss-icon" id="svg-caret-example"></i><i class="moss-icon" id="svg-close-example"></i></div>
           <h2>Icon component</h2>
-          <icon class="color-danger" name="arrow-down"></icon><span> hello world</span>
-          <icon class="color-success" name="caret-up"></icon><span class="d-inline-block">InlineBlock</span>
-          <icon class="bg-color-dark" name="close" style="font-size:3em;border-radius:50%;"></icon>
-          <icon class="bg-color-warning" name="check" style="font-size:2em;"></icon>
-          <icon class="bg-color-link" name="search" style="font-size:2em;"></icon>
+          <icon class="text-danger" name="arrow-down"></icon><span> hello world</span>
+          <icon class="text-success" name="caret-up"></icon><span class="d-inline-block">InlineBlock</span>
+          <icon class="bg-dark" name="close" style="font-size:3em;border-radius:50%;"></icon>
+          <icon class="bg-warning" name="check" style="font-size:2em;"></icon>
+          <icon class="bg-link" name="search" style="font-size:2em;"></icon>
           <h2>User expanded custom icons</h2>
-          <icon class="color-primary" name="moss-icon" style="font-size:4em;"></icon>
-          <icon class="color-dark" name="extension" style="font-size:1.5em;"></icon>
-          <icon class="color-link" name="verified-user" style="font-size:2em;"></icon>
+          <icon class="text-primary" name="moss-icon" style="font-size:4em;"></icon>
+          <icon class="text-dark" name="extension" style="font-size:1.5em;"></icon>
+          <icon class="text-link" name="verified-user" style="font-size:2em;"></icon>
           <h2>Icon list</h2>
           <icon-list></icon-list>
         </section>
