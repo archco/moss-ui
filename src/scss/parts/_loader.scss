@@ -1,12 +1,24 @@
-.loader-one,
-.loader-spin {
+%loader-common {
   display: inline-block;
   width: 1em;
   height: 1em;
   vertical-align: text-bottom;
+}
+
+.loader-one,
+.loader-spin {
+  @extend %loader-common;
   border-radius: 50%;
   border: .125em solid currentColor;
   border-right-color: transparent;
   border-top-color: transparent;
   animation: .5s linear 0s infinite spin;
+}
+
+.loader-grow {
+  @extend %loader-common;
+  background-color: currentColor;
+  border-radius: 50%;
+  opacity: 0;
+  animation: .5s linear infinite grow;
 }

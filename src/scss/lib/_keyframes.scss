@@ -37,3 +37,12 @@
     transform: scale(50);
   }
 }
+
+@keyframes grow {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+}
