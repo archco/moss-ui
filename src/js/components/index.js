@@ -24,3 +24,4 @@ export { default as Icon } from './icon.vue';
 export { default as CollapseToggle } from './collapse-toggle.vue';
 export { default as Search } from './search.vue';
 export { default as NavDrawer } from './nav-drawer.vue';
+export { default as Loader } from './loader.vue';

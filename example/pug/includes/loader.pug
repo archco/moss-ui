@@ -1,8 +1,43 @@
-.d-flex.justify-content-center.pad.bg-success
-  .text-center
-    span(class='loader-one light' style='font-size:3em;')
+.d-flex.justify-content-around.p-3.bg-success
+  .text-center.text-light
+    span.loader-spin(style='font-size:3em;')
     br
     span loading...
-h2 Button is loading
-button(id='toggle' class='btn primary is-loading') loading..
-button(class='btn warning is-loading') loading
+
+h2 Spin Loader
+
+.d-flex.justify-content-around.align-items-center.bg-shade(style='font-size:2em;')
+  .p-3
+    .loader-spin
+  .p-3
+    .loader-spin.text-success
+  .p-3
+    .loader-spin.text-danger
+
+h2 Grow Loader
+
+.d-flex.justify-content-around.align-items-center.bg-shade(style='font-size:2em;')
+  .p-3
+    .loader-grow
+
+h2 Dots Loader
+
+blockquote.info This is a vue component.
+
+.d-flex.justify-content-around.align-items-center.bg-dark
+  .p-3.text-warning(style='font-size:1em;')
+    loader(type='dots')
+  .p-3.text-light(style='font-size:5em;')
+    loader(type='dots')
+  .p-3.text-danger(style='font-size:3em;')
+    loader(type='dots')
+
+h2 Button with Loader
+
+button.btn.primary
+  span.loader-spin
+button.btn.warning(style='width:8em;')
+  span.loader-spin
+button.btn.secondary
+  span.loader-spin.mr-1
+  span Loading...
