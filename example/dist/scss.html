@@ -922,12 +922,57 @@
             </li>
           </ul>
           <anchored-tag class="fragment" tag="h1" owned>Loader</anchored-tag>
-          <div class="d-flex justify-content-center pad bg-success">
-            <div class="text-center"><span class="loader-one light" style="font-size:3em;"></span><br><span>loading...</span></div>
+          <div class="d-flex justify-content-around p-3 bg-success">
+            <div class="text-center text-light"><span class="loader-spin" style="font-size:3em;"></span><br><span>loading...</span></div>
           </div>
-          <h2>Button is loading</h2>
-          <button class="btn primary is-loading" id="toggle">loading..</button>
-          <button class="btn warning is-loading">loading</button>
+          <h2>Spin Loader</h2>
+          <div class="d-flex justify-content-around align-items-center bg-shade" style="font-size:2em;">
+            <div class="p-3">
+              <div class="loader-spin"></div>
+            </div>
+            <div class="p-3">
+              <div class="loader-spin text-success"></div>
+            </div>
+            <div class="p-3">
+              <div class="loader-spin text-danger"></div>
+            </div>
+          </div>
+          <h2>Grow Loader</h2>
+          <div class="d-flex justify-content-around align-items-center bg-shade" style="font-size:2em;">
+            <div class="p-3">
+              <div class="loader-grow"></div>
+            </div>
+          </div>
+          <h2>Dots Loader</h2>
+          <blockquote class="info">This is a vue component.</blockquote>
+          <div class="d-flex justify-content-around align-items-center bg-dark">
+            <div class="p-3 text-warning" style="font-size:1em;">
+              <loader type="dots"></loader>
+            </div>
+            <div class="p-3 text-light" style="font-size:5em;">
+              <loader type="dots"></loader>
+            </div>
+            <div class="p-3 text-danger" style="font-size:3em;">
+              <loader type="dots"></loader>
+            </div>
+          </div>
+          <h2>Roller Loader</h2>
+          <blockquote class="info">This is a vue component.</blockquote>
+          <div class="d-flex justify-content-around align-items-center bg-dark">
+            <div class="p-3 text-primary" style="font-size:1em;">
+              <loader type="roller"></loader>
+            </div>
+            <div class="p-3 text-light" style="font-size:5em;">
+              <loader type="roller"></loader>
+            </div>
+            <div class="p-3 text-warning" style="font-size:3em;">
+              <loader type="roller"></loader>
+            </div>
+          </div>
+          <h2>Button with Loader</h2>
+          <button class="btn primary"><span class="loader-spin"></span></button>
+          <button class="btn warning" style="width:8em;"><span class="loader-spin"></span></button>
+          <button class="btn secondary"><span class="loader-spin mr-1"></span><span>Loading...</span></button>
           <anchored-tag class="fragment" tag="h1" owned>Pagination</anchored-tag>
           <ul class="pagination">
             <li class="disabled"><span>Prev</span></li>
