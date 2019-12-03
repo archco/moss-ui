@@ -13,6 +13,10 @@ export default {
         dots: {
           className: 'loader-dots',
           divCount: 4,
+        },
+        roller: {
+          className: 'loader-roller',
+          divCount: 8,
         }
       }
     };
@@ -28,6 +32,15 @@ export default {
 </script>
 
 <style lang="scss">
+%loader {
+  display: inline-block;
+  position: relative;
+  width: 1em;
+  height: 1em;
+}
+
+// dots
+
 @keyframes loader-dots1 {
   0% {
     transform: scale(0);
@@ -54,10 +67,7 @@ export default {
 }
 
 .loader-dots {
-  display: inline-block;
-  position: relative;
-  width: 1em;
-  height: 1em;
+  @extend %loader;
 
   div {
     position: absolute;
@@ -66,7 +76,7 @@ export default {
     height: .1625em;
     border-radius: 50%;
     background: currentColor;
-    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    animation-timing-function: ease-in-out;
   }
 
   div:nth-child(1) {
@@ -84,6 +94,59 @@ export default {
   div:nth-child(4) {
     left: .7em;
     animation: loader-dots3 0.6s infinite;
+  }
+}
+
+// roller
+
+$roller-dots: (
+  1: .7875em .7875em,
+  2: .85em .7em,
+  3: .8875em .6em,
+  4: .9em .5em,
+  5: .8875em .4em,
+  6: .85em .3em,
+  7: .7875em .2125em,
+  8: .7em .15em,
+);
+
+@keyframes loader-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-roller {
+  @extend %loader;
+
+  div {
+    animation: loader-roller 1.2s ease-in-out infinite;
+    transform-origin: .5em .5em;
+
+    &:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      width: .0875em;
+      height: .0875em;
+      border-radius: 50%;
+      background: currentColor;
+      margin: -.05em 0 0 -.05em;
+    }
+
+    @each $num, $position in $roller-dots {
+      &:nth-child(#{$num}) {
+        animation-delay: - $num * 0.036s;
+
+        &:after {
+          top: nth($position, 1);
+          left: nth($position, 2);
+        }
+      }
+    }
   }
 }
 </style>
