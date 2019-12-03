@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - Added new JS library [ScrollFire](https://github.com/archco/moss-ui/blob/master/docs/js/scroll-fire.md#scrollfire). #142
+- Added SCSS Loader `.loader-grow`, `.loader-dots` and `.loader-roller`. #146
 
 ### Updated
 
@@ -30,6 +31,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   - `$carousel-arrow-color` -> `$carousel-nav-button-color`
   - `$carousel-arrow-hover-color` -> `$carousel-nav-button-hover-color`
   - add `$carousel-nav-button-font-size`
+- Renamed SCSS loader's class name `.loader-one` to `.loader-spin`. #146
+
+### Removed
+
+- Removed SCSS optional class `.is-loading` for button. #146
 
 ## [0.7.3] - 2018-08-03
 
