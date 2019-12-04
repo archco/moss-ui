@@ -9,7 +9,7 @@ let browser;
 let page;
 
 beforeAll(async (done) => {
-  const p = await createPuppeteer(resolve(__dirname, './scrollspy.html'));
+  const p = await createPuppeteer(resolve(__dirname, './scrollSpy.html'));
   browser = p.browser;
   page = p.page;
   done();
