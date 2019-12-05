@@ -36,6 +36,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 
 - Removed SCSS optional class `.is-loading` for button. #146
+- Removed `callback` option from JS utility method `scrollTo`. this method returns promise object so callback option is unnecessary. #152
+
+### Fixed
+
+- Fixed bug in JS utility method `scrollTo`. #152
 
 ## [0.7.3] - 2018-08-03
 
