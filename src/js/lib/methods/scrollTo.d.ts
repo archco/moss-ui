@@ -12,9 +12,6 @@ export interface ScrollToOptions {
   /** Specify an easing type. available common keywords is `linear`, `ease`, `easIn`, `easeOut` or `easeInOut`. default value is `linear`. */
   easing?: string;
 
-  /** Specify a callback function that will called after scroll moved done. */
-  callback?: () => void;
-
   /** Specify the base element. default is `document.documentElement`. If you want to move scrolling within an element with has style such as `overflow: auto;`, then you should set this value to target element. */
   base?: string|HTMLElement;
 }

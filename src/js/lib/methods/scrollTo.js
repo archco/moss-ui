@@ -16,7 +16,6 @@ export default function scrollTo(
   {
     duration = 300,
     easing = 'linear',
-    callback = null,
     base = document.documentElement
   } = {}
 ) {
@@ -31,7 +30,6 @@ export default function scrollTo(
     if (duration === 0 || 'requestAnimationFrame' in window === false ) {
       baseSize.scrollTop = scrollTopDest;
       baseSize.scrollLeft = scrollLeftDest;
-      if(typeof callback === 'function') callback();
       resolve();
       return;
     }
@@ -47,8 +45,6 @@ export default function scrollTo(
 
       if (baseSize.scrollTop === scrollTopDest
         && baseSize.scrollLeft === scrollLeftDest) {
-        if(typeof callback === 'function') callback();
-        console.log(scrollTopDest);
         resolve();
         return;
       }

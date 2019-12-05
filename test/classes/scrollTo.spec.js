@@ -77,7 +77,7 @@ describe('scrollTo', () => {
     expect(res[2]).toBe(0);
   });
 
-  it('scroll destination limited to maxScrollHeight if destination is bigger than scrollHeight,', async () => {
+  it('scroll destination restricted to until maxScrollHeight even if destination is bigger than scrollHeight.', async () => {
     const res = await page.evaluate(async () => {
       /** @type {ElementMeasurer} */
       const docSize = new window.Moss.ElementMeasurer();
