@@ -40,6 +40,7 @@ textarea {
 
   &[disabled],
   &[readonly] {
+    color: $input-disabled-color;
     background-color: $input-disabled-bg-color !important;
   }
 }
@@ -90,9 +91,15 @@ input[type=reset] {
 
 input[type=checkbox],
 input[type=radio] {
-  width: $input-height * .6;
-  height: $input-height * .6;
+  width: $input-height * .5;
+  height: $input-height * .5;
+  margin-right: .5em;
   vertical-align: middle;
+
+  // `readonly` is not working on checkbox and radio.
+  &[disabled] ~ label {
+    color: $input-disabled-color;
+  }
 }
 
 input[type=file],

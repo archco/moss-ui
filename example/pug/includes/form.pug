@@ -1,4 +1,5 @@
 h2 Default Usage
+
 form
   fieldset
     legend Form
@@ -16,17 +17,22 @@ form
       input(type='text' value='disabled' disabled)
       input(type='text' value="readonly" readonly)
     div.mb-3
-      label
-        input(type='checkbox')
-        span checkbox
+      div
+        input(id='form-checkbox-1' type='checkbox')
+        label(for='form-checkbox-1') checkbox
+      div
+        input(id='form-checkbox-2' type='checkbox' disabled)
+        label(for='form-checkbox-2') disabled
     div.mb-3
-      label
-        input(type='radio' name='gender' value='0' checked)
-        span male
-      br
-      label
-        input(type='radio' name='gender' value='1')
-        span female
+      div
+        input(id='form-radio-1' type='radio' name='form-radio' value='0' checked)
+        label(for='form-radio-1') radio-1
+      div
+        input(id='form-radio-2' type='radio' name='form-radio' value='1')
+        label(for='form-radio-2') radio-2
+      div
+        input(id='form-radio-3' type='radio' name='form-radio' value='2' disabled)
+        label(for='form-radio-3') disabled
     div.mb-3
       input(type='file')
       input(type='range')
@@ -43,27 +49,38 @@ form
       button(type='submit' class='btn') Submit
 
 h2 Form Inline
+
 form(class='form-inline')
   fieldset.success
     legend Form inline
-    label(for='name') Name
-    input(type='text' id='name' name='name' placeholder='name')
-    label(for='password') Password
-    input(type='password' id='password' name='password')
-    label(for='email') email
-    input(type='email' placeholder='user@example.com')
-    label disabled and readonly
-    input(type='text' value='disabled' disabled)
-    input(type='text' value='readonly' readonly)
-    label
-      input(type='checkbox')
-      span checkbox
-    label
-      input(type='radio' name='gender' value='0' checked)
-      span male
-    label
-      input(type='radio' name='gender' value='1')
-      span female
+    div.d-inline-block
+      label(for='form-inline-name') Name
+      input(type='text' id='form-inline-name' name='name' placeholder='name')
+    div.d-inline-block
+      label(for='form-inline-password') Password
+      input(type='password' id='form-inline-password' name='password')
+    span
+      label(for='form-inline-email') email
+      input(type='email' id='form-inline-email' placeholder='user@example.com')
+    span
+      label disabled and readonly
+      input(type='text' value='disabled' disabled)
+      input(type='text' value='readonly' readonly)
+    span
+      input(type='checkbox' id='form-inline-checkbox-1')
+      label(for='form-inline-checkbox-1') checkbox
+    span
+      input(type='checkbox' id='form-inline-checkbox-2' disabled)
+      label(for='form-inline-checkbox-2') disabled
+    span
+      input(type='radio' id='form-inline-radio-1' name='form-inline-radio' value='0' checked)
+      label(for='form-inline-radio-1') radio-1
+    span
+      input(type='radio' id='form-inline-radio-2' name='form-inline-radio' value='1')
+      label(for='form-inline-radio-2') radio-2
+    span
+      input(type='radio' id='form-inline-radio-2' name='form-inline-radio' value='2' disabled)
+      label(for='form-inline-radio-2') disabled
     input(type='file')
     input(type='range')
     input(type='color')
