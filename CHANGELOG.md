@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Added new JS library [ScrollFire](https://github.com/archco/moss-ui/blob/master/docs/js/scroll-fire.md#scrollfire). #142
 - Added SCSS Loader `.loader-spin`, `.loader-grow`, `.loader-dots` and `.loader-roller`. #146
+- Added SVG Icon `alert-circle`. #154
 
 ### Updated
 
