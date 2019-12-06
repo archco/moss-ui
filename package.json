@@ -15,6 +15,7 @@
     "test": "jest",
     "prebuild": "node task/pre-build.js",
     "build": "webpack --hide-modules --config ./task/webpack.prod.config.js && npm run pug",
+    "predev": "node task/pre-dev.js",
     "dev": "webpack --hide-modules --config ./task/webpack.dev.config.js",
     "watch": "concurrently \"npm run dev -- --watch\" \"npm run pug -- --watch\"",
     "pug": "pug --pretty example/pug/pages/ --out ./example/dist/"
@@ -60,7 +61,9 @@
     "eslint": "^6.7.1",
     "eslint-plugin-html": "^6.0.0",
     "eslint-plugin-vue": "^6.0.1",
+    "file-path-helper": "^1.0.1",
     "flush-promises": "^1.0.2",
+    "fs-extra": "^8.1.0",
     "jest": "^24.9.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.13.0",
