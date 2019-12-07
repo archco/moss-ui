@@ -25,7 +25,26 @@
   }
 }
 
-@mixin form-validation-state($state, $color) {
+// This mixin uses an `if()` technique to be compatible with Dart Sass
+// See https://github.com/sass/sass/issues/1873#issuecomment-152293725 for more details
+@mixin form-validation-state-selector($state) {
+  @if ($state == "valid" or $state == "invalid") {
+    .was-validated #{if(&, "&", "")}:#{$state},
+    #{if(&, "&", "")}.is-#{$state} {
+      @content;
+    }
+  } @else {
+    #{if(&, "&", "")}.is-#{$state} {
+      @content;
+    }
+  }
+}
+
+@mixin form-validation-state($state, $color, $icon) {
+  $_input-height: $input-height;
+  $_input-height-half: $_input-height / 2;
+  $_input-height-quarter: $_input-height / 4;
+
   .#{$state}-feedback {
     display: none;
     width: 100%;
@@ -39,38 +58,66 @@
     top: 100%;
     z-index: 5;
     display: none;
-    min-width: 100%; // Contain to parent when possible
-    padding: .5rem;
+    max-width: 100%; // Contain to parent when possible
+    padding: $form-feedback-tooltip-padding-y $form-feedback-tooltip-padding-x;
     margin-top: .1rem;
-    font-size: $form-feedback-font-size;
-    line-height: 1;
-    color: $text-color-light;
-    background-color: rgba($color, .8);
-    border-radius: $border-radius-sm;
+    font-size: $form-feedback-tooltip-font-size;
+    line-height: $form-feedback-tooltip-line-height;
+    color: get-contrast($color);
+    background-color: rgba($color, $form-feedback-tooltip-opacity);
+    @include border-radius($form-feedback-tooltip-border-radius);
+  }
+
+  @include form-validation-state-selector($state) {
+    ~ .#{$state}-feedback,
+    ~ .#{$state}-tooltip {
+      display: block;
+    }
   }
 
   @include general-inputs() {
-    .was-validated &:#{$state},
-    &.is-#{$state} {
+    @include form-validation-state-selector($state) {
       border-color: $color;
-      outline-color: $color;
 
-      ~ .#{$state}-feedback,
-      ~ .#{$state}-tooltip {
-        display: block;
+      @if $enable-validation-icons {
+        padding-right: $_input-height;
+        background-image: escape-svg($icon);
+        background-repeat: no-repeat;
+        background-position: right $_input-height-quarter center;
+        background-size: $_input-height-half $_input-height-half;
+      }
+
+      &:focus {
+        border-color: $color;
+        outline-color: $color;
       }
     }
   }
 
-  input[type=file] {
-    .was-validated &:#{$state},
-    &.is-#{$state} {
-      border: 1px solid $color;
-      outline-color: $color;
+  textarea {
+    @include form-validation-state-selector($state) {
+      @if $enable-validation-icons {
+        padding-right: $_input-height;
+        background-position: top $_input-height-quarter right $_input-height-quarter;
+      }
+    }
+  }
 
-      ~ .#{$state}-feedback,
-      ~ .#{$state}-tooltip {
-        display: block;
+  select {
+    @include form-validation-state-selector($state) {
+      border-color: $color;
+
+      @if $enable-validation-icons {
+        padding-right: $_input-height + .5em;
+        background-image: escape-svg($icon);
+        background-repeat: no-repeat;
+        background-position: right $_input-height-quarter + .5em center;
+        background-size: $_input-height-half $_input-height-half;
+      }
+
+      &:focus {
+        border-color: $color;
+        outline-color: $color;
       }
     }
   }
@@ -78,15 +125,35 @@
   input[type=checkbox],
   input[type=radio],
   input[type=color] {
-    .was-validated &:#{$state},
-    &.is-#{$state} {
+    @include form-validation-state-selector($state) {
+      border-color: $color;
+
+      &:checked {
+        color: lighten($color, 10%);
+      }
+
+      &:focus {
+        outline-color: $color;
+      }
+
       ~ label {
         color: $color;
       }
+    }
+  }
+  .form-inline input[type=checkbox],
+  .form-inline input[type=radio] {
+    ~ .#{$state}-feedback {
+      margin-left: .5em;
+    }
+  }
 
-      ~ .#{$state}-feedback,
-      ~ .#{$state}-tooltip {
-        display: block;
+  input[type=file] {
+    @include form-validation-state-selector($state) {
+      border-color: $color;
+
+      &:focus {
+        outline-color: $color;
       }
     }
   }

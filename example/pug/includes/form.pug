@@ -197,24 +197,43 @@ h3 HTML5 constraint validation
 
 form.was-validated
   .form-row
-    .col-md-4.mb-3
+    .col-md.mb-3
       label(for="formValidation01") First name
       input(type="text" id="formValidation01" placeholder="First name" value="John" required)
       .valid-feedback Looks good!
-    .col-md-4.mb-3
+    .col-md.mb-3
       label(for="formValidation02") Last name
       input(type="text" id="formValidation02" placeholder="Last name" value="Doe" required)
       .valid-feedback Looks good!
-    .col-md-4.mb-3
+    .col-md.mb-3
       label(for="formValidation03") Username
       .input-group
         .input-group-prepend
           span.input-group-text @
         input(type="text" id="formValidation03" placeholder="Username" required)
         .invalid-feedback Please choose a username.
+  .form-row
     .col-md.mb-3
-      input#formValidation04(type="checkbox" required)
-      label(for="formValidation04") Agree to terms and conditions
+      label(for='formValidation04') Select
+      select(id='formValidation04' name='select' required)
+        option(value='') -- Please choose an option..
+        option(value='1') One
+        option(value='2') Two
+        option(value='3') Three
+      .invalid-feedback You must choose an option.
+    .col-md.mb-3
+      label(for='formValidation05') File
+      input#formValidation05(type="file", name="file" required)
+      .invalid-feedback Select File
+  .form-row
+    .col-md.mb-3
+      label Textarea
+      textarea(name='textarea' required)
+      .invalid-feedback Please fill textarea.
+  .form-row
+    .col-md-4.mb-3
+      input#formValidation06(type="checkbox" required)
+      label(for="formValidation06") Agree to terms and conditions
       .invalid-feedback You must agree before submitting.
 
 h3 Sever side

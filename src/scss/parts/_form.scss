@@ -205,15 +205,14 @@ input[type=color] {
   }
 }
 
-//==========================================================
 // Form validation
 //
-// Provide feedback to users when form field values are valid or invalid.
-// Works primarily for client-side validation via scoped
-// `:invalid` and `:valid` pseudo-classes but also includes
-// `.is-invalid` and `.is-valid` classes for server side validation.
-// https://github.com/twbs/bootstrap/blob/v4-dev/scss/_forms.scss#L245
-//==========================================================
+// Provide feedback to users when form field values are valid or invalid. Works
+// primarily for client-side validation via scoped `:invalid` and `:valid`
+// pseudo-classes but also includes `.is-invalid` and `.is-valid` classes for
+// server-side validation.
+// @link https://github.com/twbs/bootstrap/blob/master/scss/forms/_validation.scss
 
-@include form-validation-state('valid', $form-feedback-valid-color);
-@include form-validation-state('invalid', $form-feedback-invalid-color);
+@each $state, $data in $form-validation-states {
+  @include form-validation-state($state, map-get($data, color), map-get($data, icon));
+}
