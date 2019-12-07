@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added new JS library [ScrollFire](https://github.com/archco/moss-ui/blob/master/docs/js/scroll-fire.md#scrollfire). #142
 - Added SCSS Loader `.loader-spin`, `.loader-grow`, `.loader-dots` and `.loader-roller`. #146
 - Added SVG Icon `alert-circle`. #154
+- Added validation feedback icon in form style. This icon could toggle by `$enable-validation-icons` in variables.scss #149
 
 ### Updated
 
@@ -42,6 +43,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 
 - Fixed bug in JS utility method `scrollTo`. #152
+- Fixed style of checkboxes and radio buttons. #149
 
 ## [0.7.3] - 2018-08-03
 
