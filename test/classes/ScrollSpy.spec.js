@@ -8,14 +8,14 @@ let browser;
 /** @type {puppeteer.Page} */
 let page;
 
-beforeAll(async (done) => {
+beforeEach(async (done) => {
   const p = await createPuppeteer(resolve(__dirname, './scrollSpy.html'));
   browser = p.browser;
   page = p.page;
   done();
-}, 10e3);
+}, 20e3);
 
-afterAll(() => {
+afterEach(() => {
   browser.close();
 });
 
