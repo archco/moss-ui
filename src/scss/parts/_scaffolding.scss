@@ -171,27 +171,42 @@ table {
 // Scaffolding Optional Classes
 //==========================================================
 
-// .pad
-article,
-aside,
+%pad {
+  &.pad {
+    padding: $space-2 $space-3;
+  }
+  &.pad-sm {
+    padding: $space-1 $space-2;
+  }
+  &.pad-lg {
+    padding: $space-4 $space-5;
+  }
+}
+
+// .pad with container elements
 div,
 p,
 blockquote {
-  &.pad {
-    padding: 1em .5em;
-  }
+  @extend %pad;
 }
 
-// section
-@include media-tablet-up() {
-  section.pad {
-    padding: $space-5 5%;
-  }
-}
+// .pad with section elements
+// @see https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines
+aside,
+article,
+section {
+  @extend %pad;
 
-@include media-only-mobile {
-  section.pad {
-    padding: $space-5 $space-2;
+  @include media-breakpoint-up('md') {
+    &.pad {
+      padding: $space-2 4%;
+    }
+    &.pad-sm {
+      padding: $space-1 2%;
+    }
+    &.pad-lg {
+      padding: $space-4 6%;
+    }
   }
 }
 

@@ -68,17 +68,29 @@ div.group
           td= 'body #' + (i+1)
 
 h2 Optional Classes
-h3 .pad
-article(class='pad text-primary') article with .pad
-div(class='pad bg-warning') div with .pad
-p(class='pad text-success') p with .pad
-section(class='pad bg-secondary')
-  p If case of section with pad, it's responsive.
+
+h3 .pad with Container Elements
+
+blockquote.info.pad-sm
+  span Container Elements: div, p and blockquote
+div.pad.bg-warning div with .pad
+p.pad-lg.bg-shade p with .pad-lg
+
+h3 .pad with Section Elements
+
+blockquote.info.pad-sm
+  span Semantic Section Elements: article, section and aside
+article.pad-sm.bg-secondary article with .pad-sm
+section.pad.bg-shade
+  span If case of section with pad, it's responsive.
+section.pad-lg.bg-secondary
+  span section with .pad-lg
+
 h3 .accent
-div(class='pad')
-  h1(class='accent text-danger') Heading with .accent
-  h2(class='accent text-danger') Heading with .accent
-  h3(class='accent text-danger') Heading with .accent
-  h4(class='accent text-danger') Heading with .accent
-  h5(class='accent text-danger') Heading with .accent
-  h6(class='accent text-danger') Heading with .accent
+div.mb-3
+  h1.accent.text-danger Heading with .accent
+  h2.accent.text-danger Heading with .accent
+  h3.accent.text-danger Heading with .accent
+  h4.accent.text-danger Heading with .accent
+  h5.accent.text-danger Heading with .accent
+  h6.accent.text-danger Heading with .accent

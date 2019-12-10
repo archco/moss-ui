@@ -38,6 +38,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   - `.pad-medium` to `.pad`.
   - `.pad-small` to `.pad-sm`.
   - `.pad-large` to `.pad-lg`.
+- Changed SCSS optional class `.pad`. #151
+  - Added `.pad-sm` and `.pad-lg`.
+  - Reorganized elements
+    - Container elements: `<div>`, `<p>` and `<blockquote>`
+    - Section elements: `<article>`, `<section>` and `<aside>`
 
 ### Removed
 
