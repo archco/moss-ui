@@ -224,24 +224,63 @@ Using `.is-valid` and `.is-invalid`.
 ## SCSS Variables
 
 ``` scss
-$fieldset-border-width: 1px !default;
+// Option - toggling validation feedback icons.
+$enable-validation-icons: true !default;
+
+$fieldset-border-width: $border-width !default;
 $fieldset-border-color: $primary-color !default;
-$fieldset-border-radius: $radius-normal !default;
+$fieldset-border-radius: $border-radius !default;
+$legend-font-weight: $font-weight-bold !default;
+$legend-font-size: $font-size-lg !default;
 $legend-padding-y: $space-1 !default;
 $legend-padding-x: $space-2 !default;
 $label-color: $text-color !default;
+$label-font-weight: $font-weight-normal !default;
 
+$input-font-size: $font-size !default;
 $input-line-height: $body-line-height !default;
 $input-height: 2em !default;
 $input-padding-y: .2em !default;
 $input-padding-x: .5em !default;
-$input-bg-color: $background-color !default;
-$input-border: 1px solid $border-color !default;
-$input-radius: $radius-small !default;
+$input-bg-color: $body-bg !default;
+$input-border-width: $border-width !default;
+$input-border-color: $border-color !default;
+$input-radius: $border-radius-sm !default;
 $input-outline-color: $outline-color !default;
+$input-disabled-color: $text-color-muted !default;
 $input-disabled-bg-color: $disabled-color !default;
 // If $auto-input-bg-color-enable is true,
 // background-color of color-set input set automatically.
 // If value is false, background-color set transparent.
 $auto-input-bg-color-enable: true !default;
+
+// form validation
+$form-feedback-margin-top: $space-1 !default;
+$form-feedback-font-size: $font-size-sm !default;
+$form-feedback-valid-color: $success-color !default;
+$form-feedback-invalid-color: $danger-color !default;
+$form-feedback-icon-valid: url("data:image/svg+xml") !default;
+$form-feedback-icon-invalid: url("data:image/svg+xml") !default;
+
+$form-validation-states: () !default;
+$form-validation-states: map-merge(
+  (
+    'valid': (
+      'color': $form-feedback-valid-color,
+      'icon': $form-feedback-icon-valid
+    ),
+    'invalid': (
+      'color': $form-feedback-invalid-color,
+      'icon': $form-feedback-icon-invalid
+    )
+  ),
+  $form-validation-states
+);
+
+$form-feedback-tooltip-padding-y: .5em !default;
+$form-feedback-tooltip-padding-x: 1em !default;
+$form-feedback-tooltip-font-size: $font-size-sm !default;
+$form-feedback-tooltip-line-height: $line-height-sm !default;
+$form-feedback-tooltip-opacity: .9 !default;
+$form-feedback-tooltip-border-radius: $border-radius-sm !default;
 ```
