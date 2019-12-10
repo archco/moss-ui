@@ -29,11 +29,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - *IMPORTANT* Changed some SCSS variable names. Check [HERE](https://github.com/archco/moss-ui/issues/148#issue-526350064)
 - *IMPORTANT* Changed some SCSS helper classes. Check [HERE](https://github.com/archco/moss-ui/issues/145#issuecomment-556873670)
-- Changed scss variable names of the [Carousel](https://github.com/archco/moss-ui/blob/master/docs/js/carousel.md). #144
+- Changed SCSS variable names of the [Carousel](https://github.com/archco/moss-ui/blob/master/docs/js/carousel.md). #144
   - `$carousel-arrow-color` -> `$carousel-nav-button-color`
   - `$carousel-arrow-hover-color` -> `$carousel-nav-button-hover-color`
   - add `$carousel-nav-button-font-size`
 - Renamed SCSS loader's class name `.loader-one` to `.loader-spin`. #146
+- Changed SCSS hero-banner's optional class names. #151
+  - `.pad-medium` to `.pad`.
+  - `.pad-small` to `.pad-sm`.
+  - `.pad-large` to `.pad-lg`.
 
 ### Removed
 

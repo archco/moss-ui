@@ -20,9 +20,9 @@ A hero banner is display large image with text, often placed at top of a web pag
 **`hero-banner` with pad option**
 
 ``` html
-<div class="hero-banner pad-small">...</div>
-<div class="hero-banner pad-medium">...</div>
-<div class="hero-banner pad-large">...</div>
+<div class="hero-banner pad-sm">...</div>
+<div class="hero-banner pad">...</div>
+<div class="hero-banner pad-lg">...</div>
 ```
 
 **`hero-background` with filter option**
@@ -36,7 +36,7 @@ It is same as [image filter](image.md#image-filter).
 
 ``` scss
 $hero-banner-min-height: 10em !default;
-$hero-banner-pad-small: 3em !default;
-$hero-banner-pad-medium: 6em !default;
-$hero-banner-pad-large: 9em !default;
+$hero-banner-pad-sm: 3em !default;
+$hero-banner-pad: 6em !default;
+$hero-banner-pad-lg: 9em !default;
 ```
