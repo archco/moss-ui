@@ -212,10 +212,10 @@ __webpack_require__.r(__webpack_exports__);
 /*!************************************!*\
   !*** ./example/js/data/icons.json ***!
   \************************************/
-/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, default */
+/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("[{\"name\":\"arrow-left\",\"keywords\":[\"arrow\",\"chevron\",\"left\"]},{\"name\":\"arrow-right\",\"keywords\":[\"arrow\",\"chevron\",\"right\"]},{\"name\":\"arrow-up\",\"keywords\":[\"arrow\",\"chevron\",\"up\"]},{\"name\":\"arrow-down\",\"keywords\":[\"arrow\",\"chevron\",\"down\"]},{\"name\":\"caret-left\",\"keywords\":[\"caret\",\"triangle\",\"left\"]},{\"name\":\"caret-right\",\"keywords\":[\"caret\",\"triangle\",\"right\"]},{\"name\":\"caret-up\",\"keywords\":[\"caret\",\"triangle\",\"up\"]},{\"name\":\"caret-down\",\"keywords\":[\"caret\",\"triangle\",\"down\"]},{\"name\":\"close\",\"keywords\":[\"close\",\"cross\"]},{\"name\":\"check\",\"keywords\":[\"check\"]},{\"name\":\"search\",\"keywords\":[\"search\",\"magnifying glass\"]},{\"name\":\"menu\",\"keywords\":[\"menu\",\"hamburger\",\"bars\"]},{\"name\":\"ellipsis-vertical\",\"keywords\":[\"ellipsis\",\"dots\",\"vertical\"]},{\"name\":\"ellipsis-horizontal\",\"keywords\":[\"ellipsis\",\"dots\",\"horizontal\"]}]");
+module.exports = JSON.parse("[{\"name\":\"arrow-left\",\"keywords\":[\"arrow\",\"chevron\",\"left\"]},{\"name\":\"arrow-right\",\"keywords\":[\"arrow\",\"chevron\",\"right\"]},{\"name\":\"arrow-up\",\"keywords\":[\"arrow\",\"chevron\",\"up\"]},{\"name\":\"arrow-down\",\"keywords\":[\"arrow\",\"chevron\",\"down\"]},{\"name\":\"caret-left\",\"keywords\":[\"caret\",\"triangle\",\"left\"]},{\"name\":\"caret-right\",\"keywords\":[\"caret\",\"triangle\",\"right\"]},{\"name\":\"caret-up\",\"keywords\":[\"caret\",\"triangle\",\"up\"]},{\"name\":\"caret-down\",\"keywords\":[\"caret\",\"triangle\",\"down\"]},{\"name\":\"close\",\"keywords\":[\"close\",\"cross\"]},{\"name\":\"check\",\"keywords\":[\"check\"]},{\"name\":\"search\",\"keywords\":[\"search\",\"magnifying glass\"]},{\"name\":\"menu\",\"keywords\":[\"menu\",\"hamburger\",\"bars\"]},{\"name\":\"ellipsis-vertical\",\"keywords\":[\"ellipsis\",\"dots\",\"vertical\"]},{\"name\":\"ellipsis-horizontal\",\"keywords\":[\"ellipsis\",\"dots\",\"horizontal\"]},{\"name\":\"alert-circle\",\"keywords\":[\"alert\",\"circle\"]}]");
 
 /***/ }),
 

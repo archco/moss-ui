@@ -17982,51 +17982,50 @@ function scrollTo(dest) {
       duration = _ref$duration === void 0 ? 300 : _ref$duration,
       _ref$easing = _ref.easing,
       easing = _ref$easing === void 0 ? 'linear' : _ref$easing,
-      _ref$callback = _ref.callback,
-      callback = _ref$callback === void 0 ? null : _ref$callback,
       _ref$base = _ref.base,
       base = _ref$base === void 0 ? document.documentElement : _ref$base;
 
-  return new Promise(function (resolve, reject) {
-    try {
-      var baseSize = new element_measurer__WEBPACK_IMPORTED_MODULE_1___default.a(base);
-      var timeFn = Object(transition_timing__WEBPACK_IMPORTED_MODULE_2__["easing"])(easing);
-      var startTop = baseSize.scrollTop;
-      var startLeft = baseSize.scrollLeft;
-      var startTime = performance.now();
+  return new Promise(function (resolve) {
+    var baseSize = new element_measurer__WEBPACK_IMPORTED_MODULE_1___default.a(base);
+    var timeFn = Object(transition_timing__WEBPACK_IMPORTED_MODULE_2__["easing"])(easing);
+    var startTop = baseSize.scrollTop;
+    var startLeft = baseSize.scrollLeft;
+    var startTime = performance.now();
 
-      var _getScrollDest = getScrollDest(dest, baseSize),
-          _getScrollDest2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_getScrollDest, 2),
-          scrollTopDest = _getScrollDest2[0],
-          scrollLeftDest = _getScrollDest2[1];
+    var _getScrollDest = getScrollDest(dest, baseSize),
+        _getScrollDest2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_getScrollDest, 2),
+        scrollTopDest = _getScrollDest2[0],
+        scrollLeftDest = _getScrollDest2[1];
 
-      if (duration === 0 || 'requestAnimationFrame' in window === false) {
-        baseSize.scrollTop = scrollTopDest;
-        baseSize.scrollLeft = scrollLeftDest;
-        if (typeof callback === 'function') callback();
+    if (duration === 0 || 'requestAnimationFrame' in window === false) {
+      baseSize.scrollTop = scrollTopDest;
+      baseSize.scrollLeft = scrollLeftDest;
+      resolve();
+      return;
+    }
+
+    var scroll = function scroll(now) {
+      var timeRatio = Math.min(1, (now - startTime) / duration);
+      var outputRatio = timeFn(timeRatio); // re-calculates destination, for prevent error when scrollHeight has been changed when during scrolling.
+
+      var _getScrollDest3 = getScrollDest(dest, baseSize);
+
+      var _getScrollDest4 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_getScrollDest3, 2);
+
+      scrollTopDest = _getScrollDest4[0];
+      scrollLeftDest = _getScrollDest4[1];
+      baseSize.scrollTop = Math.ceil(outputRatio * (scrollTopDest - startTop) + startTop);
+      baseSize.scrollLeft = Math.ceil(outputRatio * (scrollLeftDest - startLeft) + startLeft);
+
+      if (baseSize.scrollTop === scrollTopDest && baseSize.scrollLeft === scrollLeftDest) {
         resolve();
         return;
       }
 
-      var scroll = function scroll(now) {
-        var timeRatio = Math.min(1, (now - startTime) / duration);
-        var outputRatio = timeFn(timeRatio);
-        baseSize.scrollTop = Math.ceil(outputRatio * (scrollTopDest - startTop) + startTop);
-        baseSize.scrollLeft = Math.ceil(outputRatio * (scrollLeftDest - startLeft) + startLeft);
+      requestAnimationFrame(scroll);
+    };
 
-        if (baseSize.scrollTop === scrollTopDest && baseSize.scrollLeft === scrollLeftDest) {
-          if (typeof callback === 'function') callback();
-          resolve();
-          return;
-        }
-
-        requestAnimationFrame(scroll);
-      };
-
-      scroll(performance.now());
-    } catch (error) {
-      reject(error);
-    }
+    scroll(performance.now());
   });
 }
 /**
@@ -18054,8 +18053,8 @@ function getScrollDest(dest, baseSize) {
     offsetLeft = elmSize.target.offsetLeft;
   }
 
-  var scrollTopDest = baseSize.scrollHeight - offsetTop < baseSize.clientHeight ? baseSize.scrollHeight - baseSize.clientHeight : offsetTop;
-  var scrollLeftDest = baseSize.scrollWidth - offsetLeft < baseSize.clientWidth ? baseSize.scrollWidth - baseSize.clientWidth : offsetLeft;
+  var scrollTopDest = offsetTop >= baseSize.maxScrollTop ? baseSize.maxScrollTop : baseSize.scrollHeight - offsetTop < baseSize.clientHeight ? baseSize.scrollHeight - baseSize.clientHeight : offsetTop;
+  var scrollLeftDest = offsetLeft >= baseSize.maxScrollLeft ? baseSize.maxScrollLeft : baseSize.scrollWidth - offsetLeft < baseSize.clientWidth ? baseSize.scrollWidth - baseSize.clientWidth : offsetLeft;
   return [scrollTopDest, scrollLeftDest].map(function (x) {
     return Math.max(Math.round(x), 0);
   });
@@ -18347,6 +18346,17 @@ function addMossObject(Vue) {
 
 /***/ }),
 
+/***/ "./src/svg/alert-circle.svg":
+/*!**********************************!*\
+  !*** ./src/svg/alert-circle.svg ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<svg data-name=\"alert-circle\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><defs><style>.__3YZGEwL__a{fill:none;stroke:currentColor;stroke-miterlimit:10;}.__3YZGEwL__b{fill:currentColor;}</style></defs><circle class=\"__3YZGEwL__a \" cx=\"8\" cy=\"8\" r=\"6\"></circle><path class=\"__3YZGEwL__b \" d=\"M7.46,8.17,7.31,5.83q0-.68,0-1a.89.89,0,0,1,.21-.63A.73.73,0,0,1,8,4a.56.56,0,0,1,.56.29,2,2,0,0,1,.14.84,6.49,6.49,0,0,1,0,.65L8.49,8.17a1.88,1.88,0,0,1-.15.66A.38.38,0,0,1,8,9.06a.37.37,0,0,1-.37-.22A2.2,2.2,0,0,1,7.46,8.17ZM8,11.38a.77.77,0,0,1-.52-.19.68.68,0,0,1-.22-.54A.72.72,0,0,1,8,9.92a.73.73,0,0,1,.53.21.69.69,0,0,1,.22.52.68.68,0,0,1-.22.54A.75.75,0,0,1,8,11.38Z\"></path></svg>"
+
+/***/ }),
+
 /***/ "./src/svg/arrow-down.svg":
 /*!********************************!*\
   !*** ./src/svg/arrow-down.svg ***!
@@ -18483,26 +18493,26 @@ module.exports = "<svg data-name=\"ellipsis-vertical\" xmlns=\"http://www.w3.org
 /*!**************************!*\
   !*** ./src/svg/index.js ***!
   \**************************/
-/*! exports provided: arrowLeft, arrowRight, arrowUp, arrowDown, caretUp, caretDown, caretLeft, caretRight, close, check, search, menu, ellipsisVertical, ellipsisHorizontal */
+/*! exports provided: alertCircle, arrowDown, arrowLeft, arrowRight, arrowUp, caretDown, caretLeft, caretRight, caretUp, check, close, ellipsisHorizontal, ellipsisVertical, menu, search */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _arrow_left_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrow-left.svg */ "./src/svg/arrow-left.svg");
-/* harmony import */ var _arrow_left_svg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_arrow_left_svg__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "arrowLeft", function() { return _arrow_left_svg__WEBPACK_IMPORTED_MODULE_0___default.a; });
-/* harmony import */ var _arrow_right_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./arrow-right.svg */ "./src/svg/arrow-right.svg");
-/* harmony import */ var _arrow_right_svg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_arrow_right_svg__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "arrowRight", function() { return _arrow_right_svg__WEBPACK_IMPORTED_MODULE_1___default.a; });
-/* harmony import */ var _arrow_up_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./arrow-up.svg */ "./src/svg/arrow-up.svg");
-/* harmony import */ var _arrow_up_svg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_arrow_up_svg__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "arrowUp", function() { return _arrow_up_svg__WEBPACK_IMPORTED_MODULE_2___default.a; });
-/* harmony import */ var _arrow_down_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./arrow-down.svg */ "./src/svg/arrow-down.svg");
-/* harmony import */ var _arrow_down_svg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_arrow_down_svg__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "arrowDown", function() { return _arrow_down_svg__WEBPACK_IMPORTED_MODULE_3___default.a; });
-/* harmony import */ var _caret_up_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./caret-up.svg */ "./src/svg/caret-up.svg");
-/* harmony import */ var _caret_up_svg__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_caret_up_svg__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "caretUp", function() { return _caret_up_svg__WEBPACK_IMPORTED_MODULE_4___default.a; });
+/* harmony import */ var _alert_circle_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./alert-circle.svg */ "./src/svg/alert-circle.svg");
+/* harmony import */ var _alert_circle_svg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_alert_circle_svg__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "alertCircle", function() { return _alert_circle_svg__WEBPACK_IMPORTED_MODULE_0___default.a; });
+/* harmony import */ var _arrow_down_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./arrow-down.svg */ "./src/svg/arrow-down.svg");
+/* harmony import */ var _arrow_down_svg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_arrow_down_svg__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "arrowDown", function() { return _arrow_down_svg__WEBPACK_IMPORTED_MODULE_1___default.a; });
+/* harmony import */ var _arrow_left_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./arrow-left.svg */ "./src/svg/arrow-left.svg");
+/* harmony import */ var _arrow_left_svg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_arrow_left_svg__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "arrowLeft", function() { return _arrow_left_svg__WEBPACK_IMPORTED_MODULE_2___default.a; });
+/* harmony import */ var _arrow_right_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./arrow-right.svg */ "./src/svg/arrow-right.svg");
+/* harmony import */ var _arrow_right_svg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_arrow_right_svg__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "arrowRight", function() { return _arrow_right_svg__WEBPACK_IMPORTED_MODULE_3___default.a; });
+/* harmony import */ var _arrow_up_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./arrow-up.svg */ "./src/svg/arrow-up.svg");
+/* harmony import */ var _arrow_up_svg__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_arrow_up_svg__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "arrowUp", function() { return _arrow_up_svg__WEBPACK_IMPORTED_MODULE_4___default.a; });
 /* harmony import */ var _caret_down_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./caret-down.svg */ "./src/svg/caret-down.svg");
 /* harmony import */ var _caret_down_svg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_caret_down_svg__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "caretDown", function() { return _caret_down_svg__WEBPACK_IMPORTED_MODULE_5___default.a; });
@@ -18512,24 +18522,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _caret_right_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./caret-right.svg */ "./src/svg/caret-right.svg");
 /* harmony import */ var _caret_right_svg__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_caret_right_svg__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "caretRight", function() { return _caret_right_svg__WEBPACK_IMPORTED_MODULE_7___default.a; });
-/* harmony import */ var _close_svg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./close.svg */ "./src/svg/close.svg");
-/* harmony import */ var _close_svg__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_close_svg__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "close", function() { return _close_svg__WEBPACK_IMPORTED_MODULE_8___default.a; });
+/* harmony import */ var _caret_up_svg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./caret-up.svg */ "./src/svg/caret-up.svg");
+/* harmony import */ var _caret_up_svg__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_caret_up_svg__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "caretUp", function() { return _caret_up_svg__WEBPACK_IMPORTED_MODULE_8___default.a; });
 /* harmony import */ var _check_svg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./check.svg */ "./src/svg/check.svg");
 /* harmony import */ var _check_svg__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_check_svg__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "check", function() { return _check_svg__WEBPACK_IMPORTED_MODULE_9___default.a; });
-/* harmony import */ var _search_svg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./search.svg */ "./src/svg/search.svg");
-/* harmony import */ var _search_svg__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_search_svg__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "search", function() { return _search_svg__WEBPACK_IMPORTED_MODULE_10___default.a; });
-/* harmony import */ var _menu_svg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./menu.svg */ "./src/svg/menu.svg");
-/* harmony import */ var _menu_svg__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_menu_svg__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "menu", function() { return _menu_svg__WEBPACK_IMPORTED_MODULE_11___default.a; });
+/* harmony import */ var _close_svg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./close.svg */ "./src/svg/close.svg");
+/* harmony import */ var _close_svg__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_close_svg__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "close", function() { return _close_svg__WEBPACK_IMPORTED_MODULE_10___default.a; });
+/* harmony import */ var _ellipsis_horizontal_svg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./ellipsis-horizontal.svg */ "./src/svg/ellipsis-horizontal.svg");
+/* harmony import */ var _ellipsis_horizontal_svg__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_ellipsis_horizontal_svg__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "ellipsisHorizontal", function() { return _ellipsis_horizontal_svg__WEBPACK_IMPORTED_MODULE_11___default.a; });
 /* harmony import */ var _ellipsis_vertical_svg__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./ellipsis-vertical.svg */ "./src/svg/ellipsis-vertical.svg");
 /* harmony import */ var _ellipsis_vertical_svg__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_ellipsis_vertical_svg__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "ellipsisVertical", function() { return _ellipsis_vertical_svg__WEBPACK_IMPORTED_MODULE_12___default.a; });
-/* harmony import */ var _ellipsis_horizontal_svg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./ellipsis-horizontal.svg */ "./src/svg/ellipsis-horizontal.svg");
-/* harmony import */ var _ellipsis_horizontal_svg__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_ellipsis_horizontal_svg__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "ellipsisHorizontal", function() { return _ellipsis_horizontal_svg__WEBPACK_IMPORTED_MODULE_13___default.a; });
+/* harmony import */ var _menu_svg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./menu.svg */ "./src/svg/menu.svg");
+/* harmony import */ var _menu_svg__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_menu_svg__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "menu", function() { return _menu_svg__WEBPACK_IMPORTED_MODULE_13___default.a; });
+/* harmony import */ var _search_svg__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./search.svg */ "./src/svg/search.svg");
+/* harmony import */ var _search_svg__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_search_svg__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "search", function() { return _search_svg__WEBPACK_IMPORTED_MODULE_14___default.a; });
+
 
 
 
