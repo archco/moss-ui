@@ -22,9 +22,9 @@
 
 #### with status color
 
-> This based on [color-set](color-set.md)
+> This component's color style is based on [color-set](color-set.md)
 
-Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
+Available color-set keywords: `default`, `primary`, `secondary`, `info`, `success`, `warning`, `danger`, `light`, `dark`, `shade` and `link`.
 
 ``` html
 <message status="success">Task done successfully.</message>
