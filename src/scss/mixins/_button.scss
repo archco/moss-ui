@@ -23,7 +23,7 @@
   color: $color;
   background-color: $bg-color;
   outline-color: $bg-color;
-  box-shadow: $button-box-shadow;
+  @include box-shadow($button-box-shadow);
   @include transition(
     background-color $transition-duration $transition-timing-function,
     box-shadow $transition-duration $transition-timing-function
