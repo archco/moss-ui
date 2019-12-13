@@ -35,6 +35,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 
 - [Display](scss/display.md)
 - [Flex](scss/flex.md)
+- [Gradient](scss/gradient.md)
 - [Sizing](scss/sizing.md)
 - [Spacing](scss/spacing.md)
 - [Text](scss/text.md)

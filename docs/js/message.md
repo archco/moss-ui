@@ -22,7 +22,7 @@
 
 #### with status color
 
-> This component's color style is based on [color-set](color-set.md)
+> This component's color style is based on [color-set](../scss/color-set.md)
 
 Available color-set keywords: `default`, `primary`, `secondary`, `info`, `success`, `warning`, `danger`, `light`, `dark`, `shade` and `link`.
 
