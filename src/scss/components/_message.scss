@@ -1,6 +1,6 @@
 @mixin _message($bg-color) {
   color: get-contrast($bg-color);
-  background-color: $bg-color;
+  @include gradient-bg($bg-color);
 }
 
 .message {

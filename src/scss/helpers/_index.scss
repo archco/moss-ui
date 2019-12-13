@@ -79,6 +79,13 @@
   .bg-#{$color} { color: get-contrast($value); }
 }
 
+// bg-gradient
+@if $enable-gradients {
+  @each $color, $value in $color-set {
+    @include bg-gradient-variant(".bg-gradient-#{$color}", $value);
+  }
+}
+
 // misc
 .box-line { border: 1px solid $secondary-color; }
 .group { margin-bottom: $space-3; }

@@ -102,6 +102,7 @@ $color-set: map-merge(
 // Options
 //============================
 
+$enable-gradients: false !default;
 $enable-rounded: true !default;
 $enable-shadows: true !default;
 $enable-transitions: true !default;

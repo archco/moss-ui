@@ -21,7 +21,7 @@
   }
 
   color: $color;
-  background-color: $bg-color;
+  @include gradient-bg($bg-color);
   outline-color: $bg-color;
   @include box-shadow($button-box-shadow);
   @include transition(
@@ -37,13 +37,13 @@
   &:focus:not([disabled]),
   &:hover:not([disabled]) {
     color: $color;
-    background-color: lighten($bg-color, 4%);
+    @include gradient-bg(lighten($bg-color, 4%));
     @include box-shadow($button-hover-box-shadow);
   }
 
   &:active:not([disabled]) {
     color: $color;
-    background-color: darken($bg-color, 4%);
+    @include gradient-bg(darken($bg-color, 4%), $bg-color, 180deg);
     @include box-shadow($button-active-box-shadow);
   }
 }
