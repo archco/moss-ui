@@ -28,6 +28,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [List](scss/list.md)
 - [Loader](scss/loader.md)
 - [Pagination](scss/pagination.md)
+- [Process](scss/process.md)
 - [Scaffolding](scss/scaffolding.md)
 - [Theme](scss/theme.md): Guide for writing custom-theme variables file.
 

@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added SVG Icon `alert-circle`. #154
 - Added validation feedback icon in form style. This icon could toggle by `$enable-validation-icons` in variables.scss #149
 - Added a new SCSS Feature: Gradient. #155
+- Added a new SCSS part: Progress. #147
 
 ### Updated
 
