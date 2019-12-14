@@ -6,10 +6,10 @@
 .message {
   @include _message($message-default-bg-color); // default color
   // common attributes.
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   z-index: $z-index-message;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: $message-padding-y $message-padding-x;
   margin: $message-margin;
   @include border-radius($message-border-radius);
@@ -17,6 +17,7 @@
   .close-button {
     font-size: 1.35rem;
 
+    // scss-lint:disable SelectorDepth
     svg path {
       stroke-width: 2px;
     }

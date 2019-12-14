@@ -70,7 +70,8 @@ navbar,
 }
 
 .nav-button {
-  @extend %nav-button, %nav-link;
+  @extend %nav-button;
+  @extend %nav-link;
 }
 
 .navbar-brand {

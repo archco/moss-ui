@@ -1,8 +1,8 @@
 %loader-common {
+  position: relative;
   display: inline-block;
   width: 1em;
   height: 1em;
-  position: relative;
   vertical-align: text-bottom;
 }
 
@@ -11,10 +11,10 @@
 .loader-one,
 .loader-spin {
   @extend %loader-common;
-  border-radius: 50%;
   border: .125em solid currentColor;
-  border-right-color: transparent;
   border-top-color: transparent;
+  border-right-color: transparent;
+  border-radius: 50%;
   animation: .67s linear 0s infinite spin;
 }
 
@@ -34,6 +34,7 @@
   0% {
     transform: translate(0, 0);
   }
+
   100% {
     transform: translate(.3em, 0);
   }
@@ -47,26 +48,29 @@
     top: .4125em;
     width: .1625em;
     height: .1625em;
-    border-radius: 50%;
     background: currentColor;
+    border-radius: 50%;
     animation-timing-function: ease-in-out;
   }
 
   div:nth-child(1) {
     left: .1em;
-    animation: grow 0.6s infinite;
+    animation: grow .6s infinite;
   }
+
   div:nth-child(2) {
     left: .1em;
-    animation: loader-dot-shift 0.6s infinite;
+    animation: loader-dot-shift .6s infinite;
   }
+
   div:nth-child(3) {
     left: .4em;
-    animation: loader-dot-shift 0.6s infinite;
+    animation: loader-dot-shift .6s infinite;
   }
+
   div:nth-child(4) {
     left: .7em;
-    animation: shrink 0.6s infinite;
+    animation: shrink .6s infinite;
   }
 }
 
@@ -90,22 +94,23 @@ $roller-dots: (
     animation: spin 1.2s ease-in-out infinite;
     transform-origin: .5em .5em;
 
-    &:after {
-      content: " ";
-      display: block;
+    &::after {
       position: absolute;
+      display: block;
       width: .0875em;
       height: .0875em;
-      border-radius: 50%;
-      background: currentColor;
       margin: -.05em 0 0 -.05em;
+      background: currentColor;
+      border-radius: 50%;
+      content: ' ';
     }
 
     @each $num, $position in $roller-dots {
       &:nth-child(#{$num}) {
-        animation-delay: - $num * 0.036s;
+        animation-delay: - $num * .036s;
 
-        &:after {
+        // scss-lint:disable NestingDepth
+        &::after {
           top: nth($position, 1);
           left: nth($position, 2);
         }

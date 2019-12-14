@@ -4,13 +4,13 @@
 
   display: inline-flex;
   align-items: center;
-  vertical-align: middle;
   height: $chip-height;
   padding: 0 $_chip-size / 2;
   margin-right: $_chip-size / 4;
   margin-bottom: $_chip-size / 4;
   font-size: $chip-font-size;
   line-height: strip-unit($_chip-size);
+  vertical-align: middle;
   background-color: $chip-bg-color;
   @include border-radius($_chip-size);
 
@@ -23,9 +23,9 @@
   }
 
   .close-button {
-    font-size: 1.2em;
-    margin-left: $space-1;
     margin-right: -$space-1;
+    margin-left: $space-1;
+    font-size: 1.2em;
   }
 }
 

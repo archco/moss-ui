@@ -49,6 +49,7 @@ modal,
     color: $modal-close-button-color;
     &:hover { color: $modal-close-button-hover-color; }
 
+    // scss-lint:disable SelectorDepth
     svg path {
       stroke-width: 2px;
     }
@@ -82,5 +83,5 @@ modal,
 }
 
 .modal-fade-leave-active {
-  animation:  $modal-effect-duration fade-in reverse;
+  animation: $modal-effect-duration fade-in reverse;
 }

@@ -3,12 +3,12 @@ nav-drawer,
 [is="nav-drawer"] { display: none; }
 
 .nav-drawer {
-  display: flex;
-  flex-direction: column;
   position: fixed;
-  z-index: $z-index-fixed;
   top: 0;
   left: 0;
+  z-index: $z-index-fixed;
+  display: flex;
+  flex-direction: column;
   width: $nav-drawer-base-width;
   height: 100%;
   @include box-shadow($nav-drawer-shadow);
@@ -26,18 +26,18 @@ nav-drawer,
   justify-content: flex-end;
   padding: $nav-drawer-header-padding-y $nav-drawer-header-padding-x;
   font-size: $nav-drawer-header-font-size;
-  background-color: $nav-drawer-header-bg-color;
   color: $nav-drawer-header-color;
+  background-color: $nav-drawer-header-bg-color;
 }
 
 .nav-drawer-body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  font-size: $nav-drawer-body-font-size;
-  background-color: $nav-drawer-body-bg-color;
-  color: $nav-drawer-body-color;
   overflow-y: auto;
+  font-size: $nav-drawer-body-font-size;
+  color: $nav-drawer-body-color;
+  background-color: $nav-drawer-body-bg-color;
 
   .info {
     display: block;

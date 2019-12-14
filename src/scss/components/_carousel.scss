@@ -28,7 +28,7 @@ carousel,
       width: 20px;
       height: 4px;
       background-color: $carousel-dot-color;
-      content: "";
+      content: '';
     }
   }
 }
@@ -43,9 +43,9 @@ carousel,
   top: 0;
   width: 7.5%;
   height: 100%;
-  background-color: transparent;
-  color: $carousel-nav-button-color;
   font-size: $carousel-nav-button-font-size;
+  color: $carousel-nav-button-color;
+  background-color: transparent;
 
   &:hover { color: $carousel-nav-button-hover-color; }
 }

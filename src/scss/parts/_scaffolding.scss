@@ -175,9 +175,11 @@ table {
   &.pad {
     padding: $space-2 $space-3;
   }
+
   &.pad-sm {
     padding: $space-1 $space-2;
   }
+
   &.pad-lg {
     padding: $space-4 $space-5;
   }
@@ -201,9 +203,11 @@ section {
     &.pad {
       padding: $space-2 4%;
     }
+
     &.pad-sm {
       padding: $space-1 2%;
     }
+
     &.pad-lg {
       padding: $space-4 6%;
     }
@@ -220,12 +224,12 @@ section {
 // icon
 i.moss-icon {
   display: inline-flex;
-  justify-content: center;
   align-items: center;
   align-self: center;
-  vertical-align: middle;
+  justify-content: center;
   width: 1em;
   height: 1em;
+  vertical-align: middle;
 
   > svg {
     display: inline-block;

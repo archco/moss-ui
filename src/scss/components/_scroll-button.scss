@@ -2,10 +2,10 @@
   @extend %btn-common;
   min-width: 1rem;
   min-height: 1rem;
-  font-size: 1.5em;
   padding: .5em;
-  line-height: 0;
   margin-left: -$space-1;
+  font-size: 1.5em;
+  line-height: 0;
   color: $scroll-button-color;
   background-color: rgba($scroll-button-bg-color, .5);
   @include border-radius(50%);

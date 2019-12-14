@@ -16,8 +16,8 @@ fieldset {
 
 legend {
   padding: $legend-padding-y $legend-padding-x;
-  font-weight: $legend-font-weight;
   font-size: $legend-font-size;
+  font-weight: $legend-font-weight;
   color: $fieldset-border-color;
 }
 
@@ -32,10 +32,10 @@ label {
 input,
 select,
 textarea {
-  color: inherit;
-  vertical-align: middle;
   font-size: $input-font-size;
   line-height: $input-line-height;
+  color: inherit;
+  vertical-align: middle;
   outline-color: $input-outline-color;
 
   &[disabled],
@@ -191,17 +191,17 @@ input[type=color] {
 //==========================================================
 
 .form-row {
-  $_tight_gutter: $grid-gutter-width / 4;
+  $_tight-gutter: $grid-gutter-width / 4;
 
   display: flex;
   flex-wrap: wrap;
-  margin-right: - $_tight_gutter;
-  margin-left: - $_tight_gutter;
+  margin-right: - $_tight-gutter;
+  margin-left: - $_tight-gutter;
 
   > .col,
   > [class*="col-"] {
-    padding-right: $_tight_gutter;
-    padding-left: $_tight_gutter;
+    padding-right: $_tight-gutter;
+    padding-left: $_tight-gutter;
   }
 }
 
