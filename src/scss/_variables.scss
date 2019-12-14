@@ -521,3 +521,14 @@ $search-result-border-width: $border-width !default;
 $search-result-border-color: $border-color !default;
 $search-result-bg-color: $body-bg !default;
 $search-result-item-focus-color: $shade-color !default;
+
+// Progress bars
+$progress-height: 1rem !default;
+$progress-font-size: $font-size * .75 !default;
+$progress-bg: $body-bg-shade !default;
+$progress-border-radius: $border-radius !default;
+$progress-box-shadow: $box-shadow-inset !default;
+$progress-bar-bg: $primary-color !default;
+$progress-bar-color: get-contrast($progress-bar-bg) !default;
+$progress-bar-animation-timing: 1s linear infinite !default;
+$progress-bar-transition: width .6s ease !default;
