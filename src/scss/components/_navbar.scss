@@ -70,7 +70,8 @@ navbar,
 }
 
 .nav-button {
-  @extend %nav-button, %nav-link;
+  @extend %nav-button;
+  @extend %nav-link;
 }
 
 .navbar-brand {
@@ -96,7 +97,7 @@ navbar,
     height: round($navbar-toggle-width / 7);
     margin: round($navbar-toggle-width * 6 / 35);
     background-color: $nav-link-color;
-    @include border-radius($radius-normal - 2);
+    @include border-radius($border-radius-sm);
     @include transition();
   }
 

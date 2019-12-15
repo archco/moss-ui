@@ -2,18 +2,18 @@
 
 > source: [scss/parts/color-set](../../src/scss/parts/_color-set.scss)
 
-Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
+Available color-set keywords: `default`, `primary`, `secondary`, `info`, `success`, `warning`, `danger`, `light`, `dark`, `shade` and `link`.
 
-```scss
+``` scss
 $color-set: (
-  default: $default-color, // It's half value of background-color and background-color-invert.
+  // Default color is half value of between background-color and background-color-invert.
+  default: $default-color,
   primary: $primary-color,
   secondary: $secondary-color,
   info: $info-color,
   success: $success-color,
   warning: $warning-color,
   danger: $danger-color,
-  error: $danger-color,
   light: $light-color,
   dark: $dark-color,
   shade: $shade-color,

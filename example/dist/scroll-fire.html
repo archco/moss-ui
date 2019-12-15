@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScrollFire</title>
+    <link rel="stylesheet" href="../../dist/moss.css">
+    <link rel="stylesheet" href="example.css">
+  </head>
+  <body>
+    <div id="app">
+      <header class="d-flex justify-content-center align-items-center bg-primary" style="height:100px;">
+        <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI <span class='moss-version'></span></a></h1>
+      </header>
+      <navbar class="sticky-top border-bottom border-primary shadow-sm" align="end">
+        <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
+        <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
+          <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
+          <nav-item href="vue.html" text="Vue"></nav-item>
+          <nav-item href="svg.html" text="SVG"></nav-item>
+          <nav-item>
+            <dropdown toggle="toggle" placement="bottom-end" append-icon>
+              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a><a class="dropdown-item" href="scroll-fire.html">ScrollFire</a>
+            </dropdown>
+          </nav-item>
+        </navbar-nav>
+      </navbar>
+      <div class="scroll-fire-box-1 hero-banner pad-large">
+        <div>
+          <h1 class="text-light">ScrollFire</h1><a class="btn info" href="https://github.com/archco/moss-ui/blob/master/docs/js/scroll-fire.md" style="display:none;">See More</a>
+        </div>
+      </div>
+      <div class="scroll-fire-box-2 hero-banner pad-large">
+        <icon name="moss-icon"></icon>
+      </div>
+      <div class="scroll-fire-box-3 hero-banner">
+        <h1 class="text-light">ScrollFire</h1>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <h3>Footer content</h3>
+              <p>footer content here..</p>
+            </div>
+            <div class="col-6">
+              <h3>Links</h3>
+              <ul class="list-horizontal">
+                <li><a href="#">Link1</a></li>
+                <li><a href="#">Link2</a></li>
+                <li><a href="#">Link3</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">copyright &copy; <span id='copyright-year'>2017</span> MOSS-UI all rights reserved.</div>
+      </footer>
+      <scroll-button :duration="800" :offset="400"></scroll-button>
+      <toast></toast>
+    </div><script src="https://polyfill.io/v3/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script src="../../dist/moss.js"></script>
+    <script src="./example.js"></script>
+  </body>
+</html>

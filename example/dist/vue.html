@@ -10,10 +10,10 @@
   </head>
   <body>
     <div id="app">
-      <header class="d-flex justify-content-center align-items-center bg-color-primary" style="height:100px;">
+      <header class="d-flex justify-content-center align-items-center bg-primary" style="height:100px;">
         <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI <span class='moss-version'></span></a></h1>
       </header>
-      <navbar class="sticky-top shadow-near" align="end">
+      <navbar class="sticky-top border-bottom border-primary shadow-sm" align="end">
         <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
         <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
           <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
@@ -21,13 +21,13 @@
           <nav-item href="svg.html" text="SVG"></nav-item>
           <nav-item>
             <dropdown toggle="toggle" placement="bottom-end" append-icon>
-              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
+              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a><a class="dropdown-item" href="scroll-fire.html">ScrollFire</a>
             </dropdown>
           </nav-item>
         </navbar-nav>
       </navbar>
       <div class="row">
-        <aside class="sidebar col-md-2 hide-only-mobile bg-color-light">
+        <aside class="sidebar col-md-2 hide-only-mobile bg-light">
           <div class="my-3">
             <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="onSearchItemClick" @submit="onSearchSubmit">
               <li slot="result-item" slot-scope="props" style="text-align:left;" tabindex="0" @click="props.onClickItem(props.item)">
@@ -58,13 +58,19 @@
           <blockquote class="pad info">This component uses <a href="https://github.com/lukaszflorczak/vue-agile">vue-agile</a>.</blockquote>
           <h2>Basic usage</h2>
           <carousel autoplay :autoplay-speed="5000">
-            <div class="slide d-flex justify-content-center align-items-center bg-color-warning" style="height:300px;">
+            <template slot="prevButton">
+              <icon name="arrow-left"></icon>
+            </template>
+            <template slot="nextButton">
+              <icon name="arrow-right"></icon>
+            </template>
+            <div class="slide d-flex justify-content-center align-items-center bg-warning" style="height:300px;">
               <h3>SLIDE1</h3>
             </div>
-            <div class="slide d-flex justify-content-center align-items-center bg-color-primary" style="height:300px;">
+            <div class="slide d-flex justify-content-center align-items-center bg-primary" style="height:300px;">
               <h3>SLIDE2</h3>
             </div>
-            <div class="slide d-flex justify-content-center align-items-center bg-color-dark" style="height:300px;">
+            <div class="slide d-flex justify-content-center align-items-center bg-dark" style="height:300px;">
               <h3>SLIDE3</h3>
             </div>
           </carousel>
@@ -87,17 +93,17 @@
           <h2>Default usage</h2><span>test text<close-button /></span><span class="badge">Badge<close-button action="remove"/></span>
           <h2>Specifying position</h2>
           <h3>middle-right</h3>
-          <div class="pad bg-color-info">
+          <div class="pad bg-info">
             Hello world<close-button position="middle-right"/></div>
           <h3>top-right</h3>
-          <div class="pad bg-color-secondary">
+          <div class="pad bg-secondary">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><close-button position="top-right"/>
           </div>
           <h2>Hook on 'close' event</h2><span>test text <close-button action="" @close="eventTest">✖</close-button></span>
           <anchored-tag class="fragment" tag="h1" owned>Collapse</anchored-tag>
           <h2>Default</h2>
           <button class="btn default" v-collapse:test-collapse>v-collapse</button>
-          <div class="pad bg-color-primary" is="collapse-toggle" target="test-collapse">CollapseToggle</div>
+          <div class="pad bg-primary" is="collapse-toggle" target="test-collapse">CollapseToggle</div>
           <collapse id="test-collapse" expanded>
             <h3>test collapse</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -141,7 +147,7 @@
           </collapse>
           <h3>with Grid</h3>
           <div class="row">
-            <collapse class="col-2 bg-color-shade" id="aside-collapse1" direction="horizontal" expanded>
+            <collapse class="col-2 bg-shade" id="aside-collapse1" direction="horizontal" expanded>
               <div class="pad">
                 <div>hello</div>
                 <div>world</div>
@@ -154,7 +160,7 @@
               </div>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
-            <collapse class="col-2 bg-color-info" id="aside-collapse2" direction="horizontal" expanded>
+            <collapse class="col-2 bg-info" id="aside-collapse2" direction="horizontal" expanded>
               <div class="pad">
                 <div>hello</div>
                 <div>world</div>
@@ -162,7 +168,7 @@
             </collapse>
           </div>
           <h2>Collapse Toggle</h2>
-          <collapse-toggle class="pad bg-color-shade" target="test-collapse2">toggle</collapse-toggle><span class="d-inline-block bg-color-info" is="collapse-toggle" tag="span" target="test-collapse2">toggle by span</span>
+          <collapse-toggle class="pad bg-shade" target="test-collapse2">toggle</collapse-toggle><span class="d-inline-block bg-info" is="collapse-toggle" tag="span" target="test-collapse2">toggle by span</span>
           <button class="btn" is="collapse-toggle" tag="button" target="test-collapse2">toggle by button</button>
           <collapse id="test-collapse2">
             <h3>test collapse</h3>
@@ -194,7 +200,7 @@
             </dropdown>
           </div>
           <h3>Content Offset</h3>
-          <div class="bg-color-info">
+          <div class="bg-info">
             <blockquote class="warning pad"><i class="fas fa-exclamation-circle"></i> If you set offset, it could not working as expected in hover type dropdown.</blockquote>
           </div>
           <div class="d-flex justify-content-around">
@@ -212,7 +218,7 @@
           </dropdown>
           <h3>Flip and PreventOverflow mode</h3>
           <div class="d-flex justify-content-center align-items-center" style="width:100%;">
-            <div class="pad bg-color-dark" id="dropdown-box-1" style="width:300px;height:300px;overflow:auto;">
+            <div class="pad bg-dark" id="dropdown-box-1" style="width:300px;height:300px;overflow:auto;">
               <div class="d-flex flex-column justify-content-center align-items-center" style="width:600px;height:600px;">
                 <div>
                   <dropdown toggle="toggle" flip="on" prevent-overflow="on">
@@ -313,8 +319,8 @@
           <h3>Custom header</h3>
           <button class="btn danger" onclick="Moss.modal.show(&quot;test-modal5&quot;)">Open modal</button>
           <modal name="test-modal5" title="fake title" effect="fade">
-            <div class="modal-header bg-color-shade" slot="header">
-              <h3 class="color-danger">Custom Title</h3>
+            <div class="modal-header bg-shade" slot="header">
+              <h3 class="text-danger">Custom Title</h3>
               <button class="btn-text" data-toggle="close">
                 <icon name="close"></icon>
               </button>
@@ -338,7 +344,7 @@
           <modal name="test-modal7" title="Fade" effect="fade" close-on>
             <p class="text-center"><code>fade</code> effect.</p>
           </modal>
-          <button class="btn link" onclick="Moss.modal.show(&quot;test-modal8&quot;)">no-effect</button>
+          <button class="btn link" onclick="Moss.modal.show(&quot;test-modal8&quot;)">from-top</button>
           <modal name="test-modal8" title="From-top" effect="from-top" close-on>
             <p class="text-center"><code>from-top</code> effect.</p>
           </modal>
@@ -356,7 +362,7 @@
           </modal>
           <anchored-tag class="fragment" tag="h1" owned>Navbar</anchored-tag>
           <h3>Basic</h3>
-          <navbar class="bg-color-dark" align="start">
+          <navbar class="bg-dark" align="start">
             <navbar-nav>
               <nav-item href="#">Link1</nav-item>
               <nav-item href="#"><span>Link2</span></nav-item>
@@ -372,8 +378,8 @@
             </navbar-nav>
           </navbar>
           <h3>Multiple Navs</h3>
-          <navbar class="bg-color-warning rounded shadow-near" align="between" header-align="start" :header-style="{ height: '4rem' }">
-            <navbar-brand href="#" type="image" slot="brand"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" style="width:30px;height:30px;"></navbar-brand>
+          <navbar class="bg-warning rounded shadow-near" align="between" header-align="start" :header-style="{ height: '4rem' }">
+            <navbar-brand class="ml-2" href="#" type="image" slot="brand"><img src="https://www.cloudschool.org/static/user_images/avatar-04.gif" style="width:30px;height:30px;"></navbar-brand>
             <navbar-nav>
               <nav-item href="#" text="link1"></nav-item>
               <nav-item href="#" text="link2"></nav-item>
@@ -398,7 +404,7 @@
               </button>
             </div>
             <div class="nav-drawer-body">
-              <div class="info bg-color-secondary d-flex justify-content-center align-items-center" style="height:150px;">
+              <div class="info bg-secondary d-flex justify-content-center align-items-center" style="height:150px;">
                 <h2>HELLO</h2>
               </div>
               <h3 class="menu-header">Main Menu</h3><a class="menu-item" href="#">item1</a><a class="menu-item active" href="#">item2</a><a class="menu-item" href="#">item3</a>
@@ -408,7 +414,7 @@
           </nav-drawer>
           <anchored-tag class="fragment" tag="h1" owned>Parallax</anchored-tag>
           <parallax src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chase_of_the_Constitution%2C_July_1812.jpg/1024px-Chase_of_the_Constitution%2C_July_1812.jpg"></parallax>
-          <div class="d-flex justify-content-center align-items-center bg-color-shade" style="height:250px;">
+          <div class="d-flex justify-content-center align-items-center bg-shade" style="height:250px;">
             <div>
               <h2>Content</h2>
               <p>content here...</p>
@@ -469,7 +475,7 @@
                   </label></span><span class="actions btn-group">
                   <button class="btn default" type="button" data-toggle="cancel">Cancel</button>
                   <button class="btn success" type="submit">Edit</button></span></form>
-              <form slot="delete" action="#" method="POST"><span class="content"><span class="color-danger"><b>Are you sure?</b> Remove this model?</span></span><span class="actions btn-group">
+              <form slot="delete" action="#" method="POST"><span class="content"><span class="text-danger"><b>Are you sure?</b> Remove this model?</span></span><span class="actions btn-group">
                   <button class="btn danger" type="submit">Delete</button>
                   <button class="btn default" type="button" data-toggle="cancel">Cancel</button></span></form>
             </li>
@@ -487,7 +493,7 @@
                   </label></span><span class="actions btn-group">
                   <button class="btn default" type="button" data-toggle="cancel">Cancel</button>
                   <button class="btn success" type="submit">Edit</button></span></form>
-              <form slot="delete" action="#" method="POST"><span class="content"><span class="color-danger"><b>Are you sure?</b> Remove this model?</span></span><span class="actions btn-group">
+              <form slot="delete" action="#" method="POST"><span class="content"><span class="text-danger"><b>Are you sure?</b> Remove this model?</span></span><span class="actions btn-group">
                   <button class="btn danger" type="submit">Delete</button>
                   <button class="btn default" type="button" data-toggle="cancel">Cancel</button></span></form>
             </li>
@@ -505,7 +511,7 @@
                   </label></span><span class="actions btn-group">
                   <button class="btn default" type="button" data-toggle="cancel">Cancel</button>
                   <button class="btn success" type="submit">Edit</button></span></form>
-              <form slot="delete" action="#" method="POST"><span class="content"><span class="color-danger"><b>Are you sure?</b> Remove this model?</span></span><span class="actions btn-group">
+              <form slot="delete" action="#" method="POST"><span class="content"><span class="text-danger"><b>Are you sure?</b> Remove this model?</span></span><span class="actions btn-group">
                   <button class="btn danger" type="submit">Delete</button>
                   <button class="btn default" type="button" data-toggle="cancel">Cancel</button></span></form>
             </li>
@@ -544,47 +550,47 @@
           <h3>Tab Tip based by Color-set</h3>
           <tabs effect="fade">
             <tab name="default" active-color="default">
-              <h4 class="color-default">default</h4>
+              <h4 class="text-default">default</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </tab>
             <tab name="primary" active-color="primary">
-              <h4 class="color-primary">primary</h4>
+              <h4 class="text-primary">primary</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </tab>
             <tab name="secondary" active-color="secondary">
-              <h4 class="color-secondary">secondary</h4>
+              <h4 class="text-secondary">secondary</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </tab>
             <tab name="info" active-color="info">
-              <h4 class="color-info">info</h4>
+              <h4 class="text-info">info</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </tab>
             <tab name="success" active-color="success" selected>
-              <h4 class="color-success">success</h4>
+              <h4 class="text-success">success</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </tab>
             <tab name="warning" active-color="warning">
-              <h4 class="color-warning">warning</h4>
+              <h4 class="text-warning">warning</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </tab>
             <tab name="danger" active-color="danger">
-              <h4 class="color-danger">danger</h4>
+              <h4 class="text-danger">danger</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </tab>
             <tab name="light" active-color="light">
-              <h4 class="color-light">light</h4>
+              <h4 class="text-light">light</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </tab>
             <tab name="dark" active-color="dark">
-              <h4 class="color-dark">dark</h4>
+              <h4 class="text-dark">dark</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </tab>
             <tab name="shade" active-color="shade">
-              <h4 class="color-shade">shade</h4>
+              <h4 class="text-shade">shade</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </tab>
             <tab name="link" active-color="link">
-              <h4 class="color-link">link</h4>
+              <h4 class="text-link">link</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </tab>
           </tabs>
@@ -635,10 +641,10 @@
       </footer>
       <scroll-button :duration="800" :offset="400"></scroll-button>
       <toast></toast>
-    </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
+    </div><script src="https://polyfill.io/v3/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
     <script src="../../dist/moss.js"></script>
     <script src="./example.js"></script>
   </body>

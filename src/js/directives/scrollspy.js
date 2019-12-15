@@ -1,4 +1,4 @@
-import Scrollspy from '../lib/classes/scrollspy';
+import ScrollSpy from '../lib/classes/ScrollSpy';
 
 /*
   v-scrollspy="{ value }"
@@ -22,7 +22,7 @@ export default {
     };
 
     const options = Object.assign({}, binding.value, { onActivate });
-    const scrollspy = new Scrollspy(el, options);
+    const scrollspy = new ScrollSpy(el, options);
 
     vnode.context.$on('scrollspy-refresh', () => scrollspy.refresh());
   },

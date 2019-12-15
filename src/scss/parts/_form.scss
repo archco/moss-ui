@@ -16,15 +16,15 @@ fieldset {
 
 legend {
   padding: $legend-padding-y $legend-padding-x;
-  font-weight: bold;
-  font-size: 1.1em;
+  font-size: $legend-font-size;
+  font-weight: $legend-font-weight;
   color: $fieldset-border-color;
 }
 
 label {
   display: inline-block;
   margin-bottom: $space-1;
-  font-weight: bold;
+  font-weight: $label-font-weight;
   color: $label-color;
 }
 
@@ -32,14 +32,15 @@ label {
 input,
 select,
 textarea {
+  font-size: $input-font-size;
+  line-height: $input-line-height;
   color: inherit;
   vertical-align: middle;
-  font-size: $font-size;
-  line-height: $input-line-height;
   outline-color: $input-outline-color;
 
   &[disabled],
   &[readonly] {
+    color: $input-disabled-color;
     background-color: $input-disabled-bg-color !important;
   }
 }
@@ -90,9 +91,15 @@ input[type=reset] {
 
 input[type=checkbox],
 input[type=radio] {
-  width: $input-height * .6;
-  height: $input-height * .6;
+  width: $input-height * .5;
+  height: $input-height * .5;
+  margin-right: .5em;
   vertical-align: middle;
+
+  // `readonly` is not working on checkbox and radio.
+  &[disabled] ~ label {
+    color: $input-disabled-color;
+  }
 }
 
 input[type=file],
@@ -184,29 +191,28 @@ input[type=color] {
 //==========================================================
 
 .form-row {
-  $_tight_gutter: $grid-gutter-width / 4;
+  $_tight-gutter: $grid-gutter-width / 4;
 
   display: flex;
   flex-wrap: wrap;
-  margin-right: - $_tight_gutter;
-  margin-left: - $_tight_gutter;
+  margin-right: - $_tight-gutter;
+  margin-left: - $_tight-gutter;
 
   > .col,
   > [class*="col-"] {
-    padding-right: $_tight_gutter;
-    padding-left: $_tight_gutter;
+    padding-right: $_tight-gutter;
+    padding-left: $_tight-gutter;
   }
 }
 
-//==========================================================
 // Form validation
 //
-// Provide feedback to users when form field values are valid or invalid.
-// Works primarily for client-side validation via scoped
-// `:invalid` and `:valid` pseudo-classes but also includes
-// `.is-invalid` and `.is-valid` classes for server side validation.
-// https://github.com/twbs/bootstrap/blob/v4-dev/scss/_forms.scss#L245
-//==========================================================
+// Provide feedback to users when form field values are valid or invalid. Works
+// primarily for client-side validation via scoped `:invalid` and `:valid`
+// pseudo-classes but also includes `.is-invalid` and `.is-valid` classes for
+// server-side validation.
+// @link https://github.com/twbs/bootstrap/blob/master/scss/forms/_validation.scss
 
-@include form-validation-state('valid', $form-feedback-valid-color);
-@include form-validation-state('invalid', $form-feedback-invalid-color);
+@each $state, $data in $form-validation-states {
+  @include form-validation-state($state, map-get($data, color), map-get($data, icon));
+}

@@ -1,6 +1,6 @@
 @mixin btn-base {
   @include no-decoration;
-  line-height: 1.15;
+  line-height: $button-line-height;
   white-space: nowrap;
   border: 0;
   cursor: pointer;
@@ -21,8 +21,9 @@
   }
 
   color: $color;
-  background-color: $bg-color;
+  @include gradient-bg($bg-color);
   outline-color: $bg-color;
+  @include box-shadow($button-box-shadow);
   @include transition(
     background-color $transition-duration $transition-timing-function,
     box-shadow $transition-duration $transition-timing-function
@@ -36,14 +37,14 @@
   &:focus:not([disabled]),
   &:hover:not([disabled]) {
     color: $color;
-    background-color: lighten($bg-color, 4%);
-    @include box-shadow($shadow-normal);
+    @include gradient-bg(lighten($bg-color, 4%));
+    @include box-shadow($button-hover-box-shadow);
   }
 
   &:active:not([disabled]) {
     color: $color;
-    background-color: darken($bg-color, 4%);
-    @include box-shadow($shadow-near);
+    @include gradient-bg(darken($bg-color, 4%), $bg-color, 180deg);
+    @include box-shadow($button-active-box-shadow);
   }
 }
 

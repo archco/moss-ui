@@ -8,11 +8,11 @@ h2 Blockquote
 h3 Default blockquote
 blockquote
   | This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can put Markdown into a blockquote.
-h3 Blockquote with color-set
+h3 Blockquote with text-set
 div.pad
   blockquote.link=lorem.substring(0, 140)
   blockquote.danger=lorem
-div.bg-color-dark.pad
+div.bg-dark.pad
   blockquote.success=lorem.substring(0, 140)
   blockquote.shade=lorem
 
@@ -68,17 +68,29 @@ div.group
           td= 'body #' + (i+1)
 
 h2 Optional Classes
-h3 .pad
-article(class='pad color-primary') article with .pad
-div(class='pad bg-color-warning') div with .pad
-p(class='pad color-success') p with .pad
-section(class='pad bg-color-secondary')
-  p If case of section with pad, it's responsive.
+
+h3 .pad with Container Elements
+
+blockquote.info.pad-sm
+  span Container Elements: div, p and blockquote
+div.pad.bg-warning div with .pad
+p.pad-lg.bg-shade p with .pad-lg
+
+h3 .pad with Section Elements
+
+blockquote.info.pad-sm
+  span Semantic Section Elements: article, section and aside
+article.pad-sm.bg-secondary article with .pad-sm
+section.pad.bg-shade
+  span If case of section with pad, it's responsive.
+section.pad-lg.bg-secondary
+  span section with .pad-lg
+
 h3 .accent
-div(class='pad')
-  h1(class='accent color-danger') Heading with .accent
-  h2(class='accent color-danger') Heading with .accent
-  h3(class='accent color-danger') Heading with .accent
-  h4(class='accent color-danger') Heading with .accent
-  h5(class='accent color-danger') Heading with .accent
-  h6(class='accent color-danger') Heading with .accent
+div.mb-3
+  h1.accent.text-danger Heading with .accent
+  h2.accent.text-danger Heading with .accent
+  h3.accent.text-danger Heading with .accent
+  h4.accent.text-danger Heading with .accent
+  h5.accent.text-danger Heading with .accent
+  h6.accent.text-danger Heading with .accent

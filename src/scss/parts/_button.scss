@@ -9,9 +9,9 @@
   @extend %btn-common;
   padding: 0;
   margin: 0;
+  line-height: 0;
   color: currentColor;
   vertical-align: inherit;
-  line-height: 0;
   background-color: transparent;
 }
 
@@ -26,21 +26,6 @@
   &.w-100 {
     margin-right: 0;
     margin-left: 0;
-  }
-
-  &.is-loading:not([disabled]) {
-    position: relative;
-    color: transparent !important;
-
-    &::after {
-      @include loader-one();
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin-top: -.5em;
-      margin-left: -.5em;
-      content: '';
-    }
   }
 }
 
@@ -59,10 +44,6 @@
   @each $name, $color in $color-set {
     &.#{$name} {
       @include btn-color($color);
-
-      &.is-loading:not([disabled])::after {
-        @include loader-one-color(get-contrast($color));
-      }
     }
   }
 }

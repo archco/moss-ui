@@ -28,6 +28,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 - [List](scss/list.md)
 - [Loader](scss/loader.md)
 - [Pagination](scss/pagination.md)
+- [Progress](scss/progress.md)
 - [Scaffolding](scss/scaffolding.md)
 - [Theme](scss/theme.md): Guide for writing custom-theme variables file.
 
@@ -35,6 +36,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 
 - [Display](scss/display.md)
 - [Flex](scss/flex.md)
+- [Gradient](scss/gradient.md)
 - [Sizing](scss/sizing.md)
 - [Spacing](scss/spacing.md)
 - [Text](scss/text.md)
@@ -74,6 +76,7 @@ Please see also [README.md](../README.md) and [CHANGELOG.md](../CHANGELOG.md).
 
 ## JS Libraries
 
+- [ScrollFire](js/scroll-fire.md)
 - [CakeCase](https://github.com/archco/cake-case#readme)
 - [ElementMeasurer](https://github.com/archco/element-measurer#api)
 - [ElementUtil](https://github.com/archco/element-util/tree/master/docs)

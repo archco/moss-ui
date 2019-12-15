@@ -1,5 +1,5 @@
 h3 Basic
-navbar(class='bg-color-dark' align='start')
+navbar(class='bg-dark' align='start')
   navbar-nav
     nav-item(href='#') Link1
     nav-item(href='#') <span>Link2</span>
@@ -14,8 +14,8 @@ navbar(class='bg-color-dark' align='start')
     nav-item(href='#' text='logout')
 
 h3 Multiple Navs
-navbar(class='bg-color-warning rounded shadow-near' align='between' header-align='start' :header-style="{ height: '4rem' }")
-  navbar-brand(href='#' type='image' slot="brand")
+navbar(class='bg-warning rounded shadow-near' align='between' header-align='start' :header-style="{ height: '4rem' }")
+  navbar-brand(href='#' type='image' slot="brand" class='ml-2')
     img(src=imageAvt style='width:30px;height:30px;')
   navbar-nav
     nav-item(href='#' text='link1')

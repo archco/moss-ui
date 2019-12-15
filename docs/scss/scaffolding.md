@@ -39,13 +39,13 @@ Set inherit color to every state of link. (`:link`, `:visited`, `:hover`, `:focu
 
 - In html
 
-  ```html
+  ``` html
   <a href="#" class="inherit">LINK</a>
   ```
 
 - In scss
 
-  ```scss
+  ``` scss
   .target {
     @include set-link-state-color(inherit);
   }
@@ -55,7 +55,7 @@ Set inherit color to every state of link. (`:link`, `:visited`, `:hover`, `:focu
 
 Basic and Center position
 
-```html
+``` html
 <table class="table center">
   <thead>...</thead>
   <tbody>...</tbody>
@@ -64,19 +64,19 @@ Basic and Center position
 
 Bordered
 
-```html
+``` html
 <table class="table bordered">...</table>
 ```
 
 Striped
 
-```html
+``` html
 <table class="table striped">...</table>
 ```
 
 Hover
 
-```html
+``` html
 <table class="table hover">...</table>
 ```
 
@@ -84,7 +84,7 @@ Responsive
 
 - wrapper around
 
-  ```html
+  ``` html
   <div class="table-responsive-wrapper">
     <table>...</table>
   </div>
@@ -92,37 +92,52 @@ Responsive
 
 - Use "wrap" directive
 
-  ```html
+  ``` html
   <table class="table" v-wrap:responsive>...</table>
   ```
 
 ### Blockquote
 
-> based on [Color-set](color-set.md)
+> This part's color style is based on [color-set](color-set.md)
 
-Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
+Available color-set keywords: `default`, `primary`, `secondary`, `info`, `success`, `warning`, `danger`, `light`, `dark`, `shade` and `link`.
 
-```html
+``` html
 <blockquote class="success">...</blockquote>
 ```
 
 ## Optional Classes
 
-### pad
+### pad with Container Elements
 
-Available Tags: `<article>`, `<aside>`, `<div>`, `<p>` and `<blockquote>`
+> `<div>`, `<p>` and `<blockquote>`
 
-**Example**: article with `.pad`
+Example
 
-```html
+``` html
+<div class="pad">...</div>
+<div class="pad-sm">...</div>
+<div class="pad-lg">...</div>
+```
+
+### pad with Section Elements
+
+> [Semantic Section Elements](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines): `<article>`, `<section>` and `<aside>`  
+When these section elements given with `.pad`, padding-x would be set responsive value.
+
+Example
+
+``` html
 <article class="pad">...</article>
+<article class="pad-sm">...</article>
+<article class="pad-lg">...</article>
 ```
 
 ### accent
 
 Useful class for apply `$font-accent` to heading tags.
 
-```html
+``` html
 <h1 class="accent">...</h1>
 ```
 
@@ -137,17 +152,17 @@ $link-hover-decoration: underline !default;
 
 // table
 $table-cell-padding: .75em !default;
-$table-border-width: 1px !default;
+$table-border-width: $border-width !default;
 $table-border-color: $border-color !default;
 $table-head-bg-color: $primary-color !default;
 $table-head-text-color: get-contrast($table-head-bg-color) !default;
 $table-text-color: inherit !default;
-$table-row-even-bg: rgba($background-color-invert, .05) !default;
-$table-row-hover-bg: rgba($background-color-invert, .1) !default;
+$table-row-even-bg: rgba($body-bg-invert, .05) !default;
+$table-row-hover-bg: rgba($body-bg-invert, .1) !default;
 
 // blockquote
-$blockquote-color: $text-color-weak !default;
-$blockquote-border-color: $background-color-shade !default;
+$blockquote-color: $text-color-muted !default;
+$blockquote-border-color: $body-bg-shade !default;
 
 // footer
 $footer-bg-color: $primary-color !default;

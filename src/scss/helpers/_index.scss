@@ -1,13 +1,14 @@
-@import 'display';
 @import 'text';
-@import 'flex';
-@import 'sizing';
-@import 'spacing';
+@import 'generate-utilities';
 
-// toggling content
-.display-hide { display: none !important; }
-.display-show { display: block !important; }
-.display-invisible { visibility: hidden !important; }
+// clearfix
+%clearfix {
+  @include clearfix();
+}
+
+.clearfix {
+  @extend %clearfix;
+}
 
 // responsive hiding
 %responsive-tablet-hide {
@@ -51,11 +52,6 @@
   }
 }
 
-// float
-.float-clear { @include clear-both; }
-.float-left { float: left !important; }
-.float-right { float: right !important; }
-
 // position
 .fixed-top {
   position: fixed;
@@ -71,48 +67,22 @@
   z-index: $z-index-sticky;
 }
 
-// color-set helper
-@each $name, $color in $color-set {
-  .color-#{$name} {
-    color: $color;
-  }
-
-  .bg-color-#{$name} {
-    color: get-contrast($color);
-    background-color: $color;
-  }
+// background-color: contrast text color
+@each $color, $value in map-merge(
+  $color-set,
+  (
+    body: $body-bg,
+    white: $white,
+    'transparent': transparent // "transparent" for prevent error in mini-css-extract-plugin.
+  )
+) {
+  .bg-#{$color} { color: get-contrast($value); }
 }
 
-// shadow
-.shadow { box-shadow: $shadow-normal; }
-.shadow-near { box-shadow: $shadow-near; }
-.shadow-far { box-shadow: $shadow-far; }
-.shadow-inset { box-shadow: $shadow-inset-normal; }
-.shadow-inset-near { box-shadow: $shadow-inset-near; }
-.shadow-inset-far { box-shadow: $shadow-inset-far; }
-
-// rounded
-@each $key, $val in (small: $radius-small, normal: $radius-normal, large: $radius-large) {
-  $_suffix: if($key == normal, '', '-' + $key);
-
-  .rounded#{$_suffix} {
-    border-radius: $val !important;
-  }
-  .rounded-top#{$_suffix} {
-    border-top-left-radius: $val !important;
-    border-top-right-radius: $val !important;
-  }
-  .rounded-right#{$_suffix} {
-    border-top-right-radius: $val !important;
-    border-bottom-right-radius: $val !important;
-  }
-  .rounded-bottom#{$_suffix} {
-    border-bottom-left-radius: $val !important;
-    border-bottom-right-radius: $val !important;
-  }
-  .rounded-left#{$_suffix} {
-    border-top-left-radius: $val !important;
-    border-bottom-left-radius: $val !important;
+// bg-gradient
+@if $enable-gradients {
+  @each $color, $value in $color-set {
+    @include bg-gradient-variant(".bg-gradient-#{$color}", $value);
   }
 }
 

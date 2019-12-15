@@ -58,9 +58,9 @@ This button style is assimilated with text.
 
 ### Button with Color-set
 
-> based on [Color-set](color-set.md)
+> This part's color style is based on [color-set](color-set.md)
 
-Available color keywords: default, primary, secondary, info, success, warning, danger, error, light, dark, shade, link
+Available color-set keywords: `default`, `primary`, `secondary`, `info`, `success`, `warning`, `danger`, `light`, `dark`, `shade` and `link`.
 
 ``` html
 <button class="btn success">Okay</button>

@@ -1,4 +1,5 @@
 h2 Default Usage
+
 form
   fieldset
     legend Form
@@ -16,17 +17,22 @@ form
       input(type='text' value='disabled' disabled)
       input(type='text' value="readonly" readonly)
     div.mb-3
-      label
-        input(type='checkbox')
-        span checkbox
+      div
+        input(id='form-checkbox-1' type='checkbox')
+        label(for='form-checkbox-1') checkbox
+      div
+        input(id='form-checkbox-2' type='checkbox' disabled)
+        label(for='form-checkbox-2') disabled
     div.mb-3
-      label
-        input(type='radio' name='gender' value='0' checked)
-        span male
-      br
-      label
-        input(type='radio' name='gender' value='1')
-        span female
+      div
+        input(id='form-radio-1' type='radio' name='form-radio' value='0' checked)
+        label(for='form-radio-1') radio-1
+      div
+        input(id='form-radio-2' type='radio' name='form-radio' value='1')
+        label(for='form-radio-2') radio-2
+      div
+        input(id='form-radio-3' type='radio' name='form-radio' value='2' disabled)
+        label(for='form-radio-3') disabled
     div.mb-3
       input(type='file')
       input(type='range')
@@ -43,27 +49,38 @@ form
       button(type='submit' class='btn') Submit
 
 h2 Form Inline
+
 form(class='form-inline')
   fieldset.success
     legend Form inline
-    label(for='name') Name
-    input(type='text' id='name' name='name' placeholder='name')
-    label(for='password') Password
-    input(type='password' id='password' name='password')
-    label(for='email') email
-    input(type='email' placeholder='user@example.com')
-    label disabled and readonly
-    input(type='text' value='disabled' disabled)
-    input(type='text' value='readonly' readonly)
-    label
-      input(type='checkbox')
-      span checkbox
-    label
-      input(type='radio' name='gender' value='0' checked)
-      span male
-    label
-      input(type='radio' name='gender' value='1')
-      span female
+    div.d-inline-block
+      label(for='form-inline-name') Name
+      input(type='text' id='form-inline-name' name='name' placeholder='name')
+    div.d-inline-block
+      label(for='form-inline-password') Password
+      input(type='password' id='form-inline-password' name='password')
+    span
+      label(for='form-inline-email') email
+      input(type='email' id='form-inline-email' placeholder='user@example.com')
+    span
+      label disabled and readonly
+      input(type='text' value='disabled' disabled)
+      input(type='text' value='readonly' readonly)
+    span
+      input(type='checkbox' id='form-inline-checkbox-1')
+      label(for='form-inline-checkbox-1') checkbox
+    span
+      input(type='checkbox' id='form-inline-checkbox-2' disabled)
+      label(for='form-inline-checkbox-2') disabled
+    span
+      input(type='radio' id='form-inline-radio-1' name='form-inline-radio' value='0' checked)
+      label(for='form-inline-radio-1') radio-1
+    span
+      input(type='radio' id='form-inline-radio-2' name='form-inline-radio' value='1')
+      label(for='form-inline-radio-2') radio-2
+    span
+      input(type='radio' id='form-inline-radio-2' name='form-inline-radio' value='2' disabled)
+      label(for='form-inline-radio-2') disabled
     input(type='file')
     input(type='range')
     input(type='color')
@@ -99,11 +116,11 @@ div.row
 
 div.input.inline.with-icon-right
   input.danger(type='text' placeholder='wrong..')
-  span.icon-right.color-danger
+  span.icon-right.text-danger
     <i class="fas fa-exclamation-triangle"></i>
 div.input.inline.with-icon-right
   input.danger(type='text' placeholder='Disabled' disabled)
-  span.icon-right.color-default
+  span.icon-right.text-default
     <i class="fas fa-exclamation-triangle"></i>
 
 h2 Input with Icons
@@ -134,7 +151,7 @@ div.input.inline.with-icon-left.with-icon-right
   input(type='text' class='inline' placeholder='Email..')
   span.icon-left
     <i class="fas fa-envelope"></i>
-  span.icon-right.color-success
+  span.icon-right.text-success
     <i class="fas fa-check"></i>
 
 h3 Input sizes
@@ -156,14 +173,14 @@ h2 Form Grid
 p Special replacement for <code>.row</code> for tighter form layouts.
 
 h3 <code>.row</code>
-.row.bg-color-shade
+.row.bg-shade
   .col
     input(placeholder='First name')
   .col
     input(placeholder='Last name')
 
 h3 <code>.form-row</code>
-.form-row.bg-color-shade
+.form-row.bg-shade
   .col
     input(placeholder='First name')
   .col
@@ -180,24 +197,43 @@ h3 HTML5 constraint validation
 
 form.was-validated
   .form-row
-    .col-md-4.mb-3
+    .col-md.mb-3
       label(for="formValidation01") First name
       input(type="text" id="formValidation01" placeholder="First name" value="John" required)
       .valid-feedback Looks good!
-    .col-md-4.mb-3
+    .col-md.mb-3
       label(for="formValidation02") Last name
       input(type="text" id="formValidation02" placeholder="Last name" value="Doe" required)
       .valid-feedback Looks good!
-    .col-md-4.mb-3
+    .col-md.mb-3
       label(for="formValidation03") Username
       .input-group
         .input-group-prepend
           span.input-group-text @
         input(type="text" id="formValidation03" placeholder="Username" required)
         .invalid-feedback Please choose a username.
+  .form-row
     .col-md.mb-3
-      input#formValidation04(type="checkbox" required)
-      label(for="formValidation04") Agree to terms and conditions
+      label(for='formValidation04') Select
+      select(id='formValidation04' name='select' required)
+        option(value='') -- Please choose an option..
+        option(value='1') One
+        option(value='2') Two
+        option(value='3') Three
+      .invalid-feedback You must choose an option.
+    .col-md.mb-3
+      label(for='formValidation05') File
+      input#formValidation05(type="file", name="file" required)
+      .invalid-feedback Select File
+  .form-row
+    .col-md.mb-3
+      label Textarea
+      textarea(name='textarea' required)
+      .invalid-feedback Please fill textarea.
+  .form-row
+    .col-md-4.mb-3
+      input#formValidation06(type="checkbox" required)
+      label(for="formValidation06") Agree to terms and conditions
       .invalid-feedback You must agree before submitting.
 
 h3 Sever side

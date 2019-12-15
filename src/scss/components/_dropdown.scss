@@ -16,9 +16,9 @@ dropdown,
   align-items: center;
 
   > .appended-icon {
-    font-size: $font-size-small;
-    margin-left: .25em;
     margin-right: -.25em;
+    margin-left: .25em;
+    font-size: $font-size-sm;
   }
 }
 

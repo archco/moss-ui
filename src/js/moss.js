@@ -1,6 +1,6 @@
 /*!
  * moss-ui - The front-end UI framework with Vue.js and SCSS.
- * @version v0.7.3
+ * @version v0.8.0
  * @link https://github.com/archco/moss-ui
  * @license MIT
  */
@@ -12,6 +12,7 @@ import * as Util from './lib/util';
 import * as Components from './components';
 import * as Directives from './directives';
 import * as Svg from '../svg';
+import ScrollFire from './lib/classes/ScrollFire';
 import version from '../../task/version';
 
 const DefaultOptions = {
@@ -25,6 +26,7 @@ const lib = {
   ElementUtil,
   Svg,
   Util,
+  ScrollFire,
 };
 
 function addMossObject(Vue) {
@@ -45,6 +47,7 @@ export {
   ElementUtil,
   Svg,
   Util,
+  ScrollFire,
 };
 
 export default {

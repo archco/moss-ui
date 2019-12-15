@@ -11,9 +11,54 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - [v0.4 - v0.6](https://github.com/archco/moss-ui/blob/master/docs/changelog/0.4-0.6.md)
 - [v0.1 - v0.3](https://github.com/archco/moss-ui/blob/master/docs/changelog/0.1-0.3.md)
 
-## [Unreleased][]
+## [Unreleased]
 
-## [0.7.3][] - 2018-08-03
+## [0.8.0] - 2019-12-15
+
+### Added
+
+- Added new JS library [ScrollFire](https://github.com/archco/moss-ui/blob/master/docs/js/scroll-fire.md#scrollfire). #142
+- Added SCSS Loader `.loader-spin`, `.loader-grow`, `.loader-dots` and `.loader-roller`. #146
+- Added SVG Icon `alert-circle`. #154
+- Added validation feedback icon in form style. This icon could toggle by `$enable-validation-icons` in variables.scss #149
+- Added a new SCSS Feature: Gradient. #155
+- Added a new SCSS part: Progress. #147
+
+### Updated
+
+- *IMPORTANT* Updated VueAgile(Carousel component) v0.x to v1.0. [See more info here](https://github.com/lukaszflorczak/vue-agile#important--update-from-version--10). #144
+- Updated dependencies. (794960f5105320a8b6774f28010801facb16554f)
+
+### Changed
+
+- *IMPORTANT* Changed some SCSS variable names. Check [HERE](https://github.com/archco/moss-ui/issues/148#issue-526350064)
+- *IMPORTANT* Changed some SCSS helper classes. Check [HERE](https://github.com/archco/moss-ui/issues/145#issuecomment-556873670)
+- Changed SCSS variable names of the [Carousel](https://github.com/archco/moss-ui/blob/master/docs/js/carousel.md). #144
+  - `$carousel-arrow-color` -> `$carousel-nav-button-color`
+  - `$carousel-arrow-hover-color` -> `$carousel-nav-button-hover-color`
+  - add `$carousel-nav-button-font-size`
+- Renamed SCSS loader's class name `.loader-one` to `.loader-spin`. #146
+- Changed SCSS hero-banner's optional class names. #151
+  - `.pad-medium` to `.pad`.
+  - `.pad-small` to `.pad-sm`.
+  - `.pad-large` to `.pad-lg`.
+- Changed SCSS optional class `.pad`. #151
+  - Added `.pad-sm` and `.pad-lg`.
+  - Reorganized elements
+    - Container elements: `<div>`, `<p>` and `<blockquote>`
+    - Section elements: `<article>`, `<section>` and `<aside>`
+
+### Removed
+
+- Removed SCSS optional class `.is-loading` for button. #146
+- Removed `callback` option from JS utility method `scrollTo`. this method returns promise object so callback option is unnecessary. #152
+
+### Fixed
+
+- Fixed bug in JS utility method `scrollTo`. #152
+- Fixed style of checkboxes and radio buttons. #149
+
+## [0.7.3] - 2018-08-03
 
 ### Added
 
@@ -25,7 +70,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Fixed bug that background-color was not applied in some disabled inputs.
 - Fixed bug that form validation is not working in `input[type=file]`. #143
 
-## [0.7.2][] - 2018-07-21
+## [0.7.2] - 2018-07-21
 
 ### Added
 
@@ -41,7 +86,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Fixed bug in some situation in nested modal. #136
 
-## [0.7.0][] - 2018-06-23
+## [0.7.0] - 2018-06-23
 
 ### Added
 
@@ -79,7 +124,8 @@ Remove deprecated in v0.6.x #104
   - `js/components/input-check.vue`
   - `js/components/input-radio.vue`
 
-[Unreleased]: https://github.com/archco/moss-ui/compare/v0.7.3...HEAD
+[Unreleased]: https://github.com/archco/moss-ui/compare/v0.8.0...HEAD
+[0.8.0]: https://github.com/archco/moss-ui/compare/v0.7.3...v0.8.0
 [0.7.3]: https://github.com/archco/moss-ui/compare/v0.7.2...v0.7.3
 [0.7.2]: https://github.com/archco/moss-ui/compare/v0.7.0...v0.7.2
 [0.7.0]: https://github.com/archco/moss-ui/compare/v0.6.5...v0.7.0

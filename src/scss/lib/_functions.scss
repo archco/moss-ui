@@ -15,3 +15,51 @@
 @function breakpoint-infix($breakpoint) {
   @return if($breakpoint == 'base', '', ('-' + $breakpoint));
 }
+
+// Internal Bootstrap function to turn maps into its negative variant.
+// It prefixes the keys with `n` and makes the value negative.
+// @link https://github.com/twbs/bootstrap/blob/08ba61e276a6393e8e2b97d56d2feb70a24fe22c/scss/_functions.scss#L35
+@function negativify-map($map) {
+  $result: ();
+  @each $key, $value in $map {
+    @if $key != 0 {
+      $result: map-merge($result, ('n' + $key: (-$value)));
+    }
+  }
+  @return $result;
+}
+
+// Replace `$search` with `$replace` in `$string`
+// Used on our SVG icon backgrounds for custom forms.
+//
+// @author Hugo Giraudel
+// @param {String} $string - Initial string
+// @param {String} $search - Substring to replace
+// @param {String} $replace ('') - New value
+// @return {String} - Updated string
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+// See https://codepen.io/kevinweber/pen/dXWoRw
+@function escape-svg($string) {
+  $escaped-characters: (
+    ('<', '%3c'),
+    ('>', '%3e'),
+    ('#', '%23'),
+  ) !default;
+
+  @if str-index($string, 'data:image/svg+xml') {
+    @each $char, $encoded in $escaped-characters {
+      $string: str-replace($string, $char, $encoded);
+    }
+  }
+
+  @return $string;
+}

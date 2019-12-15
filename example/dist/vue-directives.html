@@ -10,10 +10,10 @@
   </head>
   <body>
     <div id="app">
-      <header class="d-flex justify-content-center align-items-center bg-color-primary" style="height:100px;">
+      <header class="d-flex justify-content-center align-items-center bg-primary" style="height:100px;">
         <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI <span class='moss-version'></span></a></h1>
       </header>
-      <navbar class="sticky-top shadow-near" align="end">
+      <navbar class="sticky-top border-bottom border-primary shadow-sm" align="end">
         <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
         <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
           <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
@@ -21,13 +21,13 @@
           <nav-item href="svg.html" text="SVG"></nav-item>
           <nav-item>
             <dropdown toggle="toggle" placement="bottom-end" append-icon>
-              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
+              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a><a class="dropdown-item" href="scroll-fire.html">ScrollFire</a>
             </dropdown>
           </nav-item>
         </navbar-nav>
       </navbar>
       <div class="row">
-        <aside class="sidebar col-md-2 hide-only-mobile bg-color-light">
+        <aside class="sidebar col-md-2 hide-only-mobile bg-light">
           <div class="my-3">
             <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="onSearchItemClick" @submit="onSearchSubmit">
               <li slot="result-item" slot-scope="props" style="text-align:left;" tabindex="0" @click="props.onClickItem(props.item)">
@@ -35,7 +35,7 @@
               </li>
             </search>
           </div>
-          <ul class="list" v-scrollspy="{activeClass: 'bg-color-shade', activeTarget: 'self', offset: 100}">
+          <ul class="list" v-scrollspy="{activeClass: 'bg-shade', activeTarget: 'self', offset: 100}">
             <li is="anchored-tag" tag="li">v-focus</li>
             <li is="anchored-tag" tag="li">v-trigger</li>
             <li is="anchored-tag" tag="li">v-modal</li>
@@ -67,7 +67,7 @@
           <input id="input-target" value="input text">
           <button class="btn" v-clipboard.cut="{ target: '#input-target' }">Cut</button>
           <h4>Copy from element</h4>
-          <div class="pad bg-color-secondary" id="element-target">
+          <div class="pad bg-secondary" id="element-target">
             <h3>Title</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
@@ -99,7 +99,7 @@
           <button class="btn light" v-ripple>Auto Contrast</button>
           <button class="btn-flat" v-ripple>Flat Button</button>
           <dropdown>
-            <div class="pad d-inline-block bg-color-light" id="target" slot="button" v-ripple>HELLO</div>
+            <div class="pad d-inline-block bg-light" id="target" slot="button" v-ripple>HELLO</div>
             <button class="dropdown-item" v-ripple>It's</button>
             <button class="dropdown-item" v-ripple>Ripple</button>
             <button class="dropdown-item" v-ripple>Test</button>
@@ -109,16 +109,16 @@
           <button class="btn success" v-ripple.dark>DARK</button>
           <h3>Set ripple color</h3>
           <div class="row">
-            <div class="col-md pad bg-color-dark" v-ripple="{color: '#fff'}">#fff ripple color</div>
-            <div class="col-md pad bg-color-warning" v-ripple="{color: '#f00'}">#f00 ripple color</div>
-            <div class="col md pad bg-color-shade" v-ripple="{color: '#0ff'}">#0ff ripple color</div>
+            <div class="col-md pad bg-dark" v-ripple="{color: '#fff'}">#fff ripple color</div>
+            <div class="col-md pad bg-warning" v-ripple="{color: '#f00'}">#f00 ripple color</div>
+            <div class="col md pad bg-shade" v-ripple="{color: '#0ff'}">#0ff ripple color</div>
           </div>
           <anchored-tag class="fragment" tag="h1" owned>v-outer</anchored-tag>
           <p>Add listener for the event that occurs outer of the element.</p>
-          <div class="d-flex justify-content-around align-items-center bg-color-shade mb-3" id="outer-box" style="height:150px;">
-            <div class="bg-color-dark" style="width:25%;height:100px;">Other</div>
-            <div class="bg-color-success" style="width:25%;height:100px;" v-outer.click="{root: '#outer-box', listener: onOuterClick}">Target</div>
-            <div class="bg-color-dark" style="width:25%;height:100px;">Other</div>
+          <div class="d-flex justify-content-around align-items-center bg-shade mb-3" id="outer-box" style="height:150px;">
+            <div class="bg-dark" style="width:25%;height:100px;">Other</div>
+            <div class="bg-success" style="width:25%;height:100px;" v-outer.click="{root: '#outer-box', listener: onOuterClick}">Target</div>
+            <div class="bg-dark" style="width:25%;height:100px;">Other</div>
           </div>
         </section>
       </div>
@@ -143,10 +143,10 @@
       </footer>
       <scroll-button :duration="800" :offset="400"></scroll-button>
       <toast></toast>
-    </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
+    </div><script src="https://polyfill.io/v3/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
     <script src="../../dist/moss.js"></script>
     <script src="./example.js"></script>
   </body>

@@ -16,48 +16,43 @@ export default function scrollTo(
   {
     duration = 300,
     easing = 'linear',
-    callback = null,
     base = document.documentElement
   } = {}
 ) {
-  return new Promise((resolve, reject) => {
-    try {
-      const baseSize = new ElementMeasurer(base);
-      const timeFn = timing(easing);
-      const startTop = baseSize.scrollTop;
-      const startLeft = baseSize.scrollLeft;
-      const startTime = performance.now();
-      const [scrollTopDest, scrollLeftDest] = getScrollDest(dest, baseSize);
+  return new Promise((resolve) => {
+    const baseSize = new ElementMeasurer(base);
+    const timeFn = timing(easing);
+    const startTop = baseSize.scrollTop;
+    const startLeft = baseSize.scrollLeft;
+    const startTime = performance.now();
+    let [scrollTopDest, scrollLeftDest] = getScrollDest(dest, baseSize);
 
-      if (duration === 0 || 'requestAnimationFrame' in window === false ) {
-        baseSize.scrollTop = scrollTopDest;
-        baseSize.scrollLeft = scrollLeftDest;
-        if(typeof callback === 'function') callback();
+    if (duration === 0 || 'requestAnimationFrame' in window === false ) {
+      baseSize.scrollTop = scrollTopDest;
+      baseSize.scrollLeft = scrollLeftDest;
+      resolve();
+      return;
+    }
+
+    const scroll = (now) => {
+      const timeRatio = Math.min(1, (now - startTime) / duration);
+      const outputRatio = timeFn(timeRatio);
+      // re-calculates destination, for prevent error when scrollHeight has been changed when during scrolling.
+      [scrollTopDest, scrollLeftDest] = getScrollDest(dest, baseSize);
+
+      baseSize.scrollTop = Math.ceil(outputRatio * (scrollTopDest - startTop) + startTop);
+      baseSize.scrollLeft = Math.ceil(outputRatio * (scrollLeftDest - startLeft) + startLeft);
+
+      if (baseSize.scrollTop === scrollTopDest
+        && baseSize.scrollLeft === scrollLeftDest) {
         resolve();
         return;
       }
 
-      const scroll = (now) => {
-        const timeRatio = Math.min(1, (now - startTime) / duration);
-        const outputRatio = timeFn(timeRatio);
-
-        baseSize.scrollTop = Math.ceil(outputRatio * (scrollTopDest - startTop) + startTop);
-        baseSize.scrollLeft = Math.ceil(outputRatio * (scrollLeftDest - startLeft) + startLeft);
-
-        if (baseSize.scrollTop === scrollTopDest
-          && baseSize.scrollLeft === scrollLeftDest) {
-          if(typeof callback === 'function') callback();
-          resolve();
-          return;
-        }
-
-        requestAnimationFrame(scroll);
-      }
-
-      scroll(performance.now());
-    } catch (error) {
-      reject(error);
+      requestAnimationFrame(scroll);
     }
+
+    scroll(performance.now());
   });
 }
 
@@ -81,10 +76,14 @@ function getScrollDest(dest, baseSize) {
     offsetTop = elmSize.target.offsetTop;
     offsetLeft = elmSize.target.offsetLeft;
   }
-  const scrollTopDest = (baseSize.scrollHeight - offsetTop < baseSize.clientHeight)
+  const scrollTopDest = (offsetTop >= baseSize.maxScrollTop)
+    ? baseSize.maxScrollTop
+    : (baseSize.scrollHeight - offsetTop < baseSize.clientHeight)
     ? baseSize.scrollHeight - baseSize.clientHeight
     : offsetTop;
-  const scrollLeftDest = (baseSize.scrollWidth - offsetLeft < baseSize.clientWidth)
+  const scrollLeftDest = (offsetLeft >= baseSize.maxScrollLeft)
+    ? baseSize.maxScrollLeft
+    : (baseSize.scrollWidth - offsetLeft < baseSize.clientWidth)
     ? baseSize.scrollWidth - baseSize.clientWidth
     : offsetLeft;
   return [scrollTopDest, scrollLeftDest].map(x => Math.max(Math.round(x), 0));

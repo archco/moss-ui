@@ -190,11 +190,6 @@ Scroll to destination with transition.
     easing?: string;
 
     /**
-     * Specify a callback function that will called after scroll moved done.
-     */
-    callback?: () => void;
-
-    /**
      * Specify the base element. default is `document.documentElement`.
      * If you want to move scrolling within an element with has style such as `overflow: auto;`,
      * then you should set this value to target element.

@@ -17,9 +17,9 @@
   width: 100%;
   min-height: $hero-banner-min-height;
 
-  &.pad-small { @include _banner-padding-y($hero-banner-pad-small); }
-  &.pad-medium { @include _banner-padding-y($hero-banner-pad-medium); }
-  &.pad-large { @include _banner-padding-y($hero-banner-pad-large); }
+  &.pad-sm { @include _banner-padding-y($hero-banner-pad-sm); }
+  &.pad { @include _banner-padding-y($hero-banner-pad); }
+  &.pad-lg { @include _banner-padding-y($hero-banner-pad-lg); }
 }
 
 .hero-background {
