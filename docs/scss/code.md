@@ -64,7 +64,7 @@ $code-border-radius: $radius-normal !default;
 $code-block-padding-y: 1em !default;
 $code-block-padding-x: 1em !default;
 $code-block-line-height: 1.45 !default;
-$kbd-color: strongen($text-color-weak, 15%) !default;
+$kbd-color: strengthen($text-color-weak, 15%) !default;
 $kbd-bg-color: $background-color !default;
 $kbd-border-color: $border-color !default;
 ```

@@ -248,7 +248,7 @@ $code-border-radius: $border-radius !default;
 $code-block-padding-y: 1em !default;
 $code-block-padding-x: 1em !default;
 $code-block-line-height: $body-line-height !default;
-$kbd-color: strongen($text-color-muted, 15%) !default;
+$kbd-color: strengthen($text-color-muted, 15%) !default;
 $kbd-bg-color: $body-bg !default;
 $kbd-border-color: $border-color !default;
 
