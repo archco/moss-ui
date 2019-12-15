@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.8.0] - 2019-12-15
+
 ### Added
 
 - Added new JS library [ScrollFire](https://github.com/archco/moss-ui/blob/master/docs/js/scroll-fire.md#scrollfire). #142
@@ -122,7 +124,8 @@ Remove deprecated in v0.6.x #104
   - `js/components/input-check.vue`
   - `js/components/input-radio.vue`
 
-[Unreleased]: https://github.com/archco/moss-ui/compare/v0.7.3...HEAD
+[Unreleased]: https://github.com/archco/moss-ui/compare/v0.8.0...HEAD
+[0.8.0]: https://github.com/archco/moss-ui/compare/v0.7.3...v0.8.0
 [0.7.3]: https://github.com/archco/moss-ui/compare/v0.7.2...v0.7.3
 [0.7.2]: https://github.com/archco/moss-ui/compare/v0.7.0...v0.7.2
 [0.7.0]: https://github.com/archco/moss-ui/compare/v0.6.5...v0.7.0

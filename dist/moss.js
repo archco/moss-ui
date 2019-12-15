@@ -337,21 +337,7 @@ module.exports = _toConsumableArray;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function _typeof3(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof3 = function _typeof3(obj) { return typeof obj; }; } else { _typeof3 = function _typeof3(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof3(obj); }
-
-function _typeof2(obj) {
-  if (typeof Symbol === "function" && _typeof3(Symbol.iterator) === "symbol") {
-    _typeof2 = function _typeof2(obj) {
-      return _typeof3(obj);
-    };
-  } else {
-    _typeof2 = function _typeof2(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof3(obj);
-    };
-  }
-
-  return _typeof2(obj);
-}
+function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
 
 function _typeof(obj) {
   if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
@@ -18265,7 +18251,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /*!
  * moss-ui - The front-end UI framework with Vue.js and SCSS.
- * @version v0.7.3
+ * @version v0.8.0
  * @link https://github.com/archco/moss-ui
  * @license MIT
  */
@@ -18592,7 +18578,7 @@ module.exports = "<svg data-name=\"search\" xmlns=\"http://www.w3.org/2000/svg\"
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ('0.7.3');
+/* harmony default export */ __webpack_exports__["default"] = ('0.8.0');
 
 /***/ }),
 

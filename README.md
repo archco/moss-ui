@@ -12,7 +12,7 @@ The front-end UI framework with Vue.js and SCSS.
 
 ## Installation
 
-```sh
+``` sh
 npm install moss-ui
 ```
 
@@ -44,13 +44,12 @@ window.vm = new Vue({
 ### In HTML
 
 ``` html
-<!-- in <head> tag -->
+<!-- in the <head> tag -->
 <link rel="stylesheet" href="/css/app.css">
 ...
 
-<!-- in the end of <body> tag -->
-<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.23.0/polyfill.js"></script>
+<!-- in the end of the <body> tag -->
+<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js"></script>
 <script src="/js/app.js"></script>
 ```
 

@@ -1,9 +1,9 @@
 aside.sidebar {
   position: fixed;
+  z-index: 2;
   height: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
-  z-index: 2; }
+  overflow-y: auto; }
 
 .fragment:target {
   padding-top: 45px; }
