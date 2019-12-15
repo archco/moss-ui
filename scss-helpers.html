@@ -10,10 +10,10 @@
   </head>
   <body>
     <div id="app">
-      <header class="d-flex justify-content-center align-items-center bg-color-primary" style="height:100px;">
+      <header class="d-flex justify-content-center align-items-center bg-primary" style="height:100px;">
         <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI <span class='moss-version'></span></a></h1>
       </header>
-      <navbar class="sticky-top shadow-near" align="end">
+      <navbar class="sticky-top border-bottom border-primary shadow-sm" align="end">
         <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
         <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
           <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
@@ -21,13 +21,13 @@
           <nav-item href="svg.html" text="SVG"></nav-item>
           <nav-item>
             <dropdown toggle="toggle" placement="bottom-end" append-icon>
-              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
+              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a><a class="dropdown-item" href="scroll-fire.html">ScrollFire</a>
             </dropdown>
           </nav-item>
         </navbar-nav>
       </navbar>
       <div class="row">
-        <aside class="sidebar col-md-2 hide-only-mobile bg-color-light">
+        <aside class="sidebar col-md-2 hide-only-mobile bg-light">
           <div class="my-3">
             <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="onSearchItemClick" @submit="onSearchSubmit">
               <li slot="result-item" slot-scope="props" style="text-align:left;" tabindex="0" @click="props.onClickItem(props.item)">
@@ -48,176 +48,227 @@
           <h3>Toggling content</h3>
           <div class="row">
             <div class="col-sm">
-              <div>display-show</div>
-              <div class="bg-color-info display-show">CONTENT</div>
+              <div class="font-family-monospace">.visible</div>
+              <div class="bg-info visible">CONTENT</div>
             </div>
             <div class="col-sm">
-              <div>display-hide</div>
-              <div class="bg-color-info display-hide">CONTENT</div>
+              <div class="font-family-monospace">.d-none</div>
+              <div class="bg-info d-none">CONTENT</div>
             </div>
             <div class="col-sm">
-              <div>display-invisible</div>
-              <div class="bg-color-info display-invisible">CONTENT</div>
+              <div class="font-family-monospace">.invisible</div>
+              <div class="bg-info invisible">CONTENT</div>
             </div>
           </div>
           <h3>Float</h3>
-          <div class="float-clear">
-            <div class="float-right pad bg-color-warning">float-right</div>
-            <div class="float-left pad bg-color-danger">float-left</div>
+          <div class="clearfix">
+            <div class="float-right pad bg-warning">float-right</div>
+            <div class="float-left pad bg-danger">float-left</div>
           </div>
           <h3>Colors</h3>
           <div class="row">
             <div class="col-sm-6 col-md-3">
-              <div class="pad color-default">color-default</div>
-              <div class="pad bg-color-default">bg-color-default</div>
+              <div class="pad text-default">text-default</div>
+              <div class="pad bg-default">bg-default</div>
             </div>
             <div class="col-sm-6 col-md-3">
-              <div class="pad color-primary">color-primary</div>
-              <div class="pad bg-color-primary">bg-color-primary</div>
+              <div class="pad text-primary">text-primary</div>
+              <div class="pad bg-primary">bg-primary</div>
             </div>
             <div class="col-sm-6 col-md-3">
-              <div class="pad color-secondary">color-secondary</div>
-              <div class="pad bg-color-secondary">bg-color-secondary</div>
+              <div class="pad text-secondary">text-secondary</div>
+              <div class="pad bg-secondary">bg-secondary</div>
             </div>
             <div class="col-sm-6 col-md-3">
-              <div class="pad color-info">color-info</div>
-              <div class="pad bg-color-info">bg-color-info</div>
+              <div class="pad text-info">text-info</div>
+              <div class="pad bg-info">bg-info</div>
             </div>
             <div class="col-sm-6 col-md-3">
-              <div class="pad color-success">color-success</div>
-              <div class="pad bg-color-success">bg-color-success</div>
+              <div class="pad text-success">text-success</div>
+              <div class="pad bg-success">bg-success</div>
             </div>
             <div class="col-sm-6 col-md-3">
-              <div class="pad color-warning">color-warning</div>
-              <div class="pad bg-color-warning">bg-color-warning</div>
+              <div class="pad text-warning">text-warning</div>
+              <div class="pad bg-warning">bg-warning</div>
             </div>
             <div class="col-sm-6 col-md-3">
-              <div class="pad color-danger">color-danger</div>
-              <div class="pad bg-color-danger">bg-color-danger</div>
+              <div class="pad text-danger">text-danger</div>
+              <div class="pad bg-danger">bg-danger</div>
             </div>
             <div class="col-sm-6 col-md-3">
-              <div class="pad color-light">color-light</div>
-              <div class="pad bg-color-light">bg-color-light</div>
+              <div class="pad text-light">text-light</div>
+              <div class="pad bg-light">bg-light</div>
             </div>
             <div class="col-sm-6 col-md-3">
-              <div class="pad color-dark">color-dark</div>
-              <div class="pad bg-color-dark">bg-color-dark</div>
+              <div class="pad text-dark">text-dark</div>
+              <div class="pad bg-dark">bg-dark</div>
             </div>
             <div class="col-sm-6 col-md-3">
-              <div class="pad color-shade">color-shade</div>
-              <div class="pad bg-color-shade">bg-color-shade</div>
+              <div class="pad text-shade">text-shade</div>
+              <div class="pad bg-shade">bg-shade</div>
             </div>
             <div class="col-sm-6 col-md-3">
-              <div class="pad color-link">color-link</div>
-              <div class="pad bg-color-link">bg-color-link</div>
+              <div class="pad text-link">text-link</div>
+              <div class="pad bg-link">bg-link</div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="pad text-black-50">text-black-50</div>
+              <div class="pad bg-body">bg-body</div>
             </div>
           </div>
           <h3>Shadow</h3>
           <div class="row group">
             <div class="col-sm">
-              <div class="pad bg-color-shade shadow-near">shadow-near</div>
+              <div class="pad bg-shade shadow-sm">shadow-sm</div>
             </div>
             <div class="col-sm">
-              <div class="pad bg-color-shade shadow">shadow</div>
+              <div class="pad bg-shade shadow">shadow</div>
             </div>
             <div class="col-sm">
-              <div class="pad bg-color-shade shadow-far">shadow-far</div>
+              <div class="pad bg-shade shadow-lg">shadow-lg</div>
             </div>
           </div>
           <div class="row group">
             <div class="col-sm">
-              <div class="pad bg-color-shade shadow-inset-near">shadow-inset-near</div>
+              <div class="pad bg-shade shadow-inset-sm">shadow-inset-sm</div>
             </div>
             <div class="col-sm">
-              <div class="pad bg-color-shade shadow-inset">shadow-inset</div>
+              <div class="pad bg-shade shadow-inset">shadow-inset</div>
             </div>
             <div class="col-sm">
-              <div class="pad bg-color-shade shadow-inset-far">shadow-inset-far</div>
+              <div class="pad bg-shade shadow-inset-lg">shadow-inset-lg</div>
             </div>
           </div>
           <h3>Rounded</h3>
           <div class="row group">
             <div class="col">
-              <div class="pad bg-color-danger rounded-small">rounded-small</div>
+              <div class="pad bg-danger rounded-sm">rounded-sm</div>
             </div>
             <div class="col">
-              <div class="pad bg-color-danger rounded">rounded</div>
+              <div class="pad bg-danger rounded">rounded</div>
             </div>
             <div class="col">
-              <div class="pad bg-color-danger rounded-large">rounded-large</div>
+              <div class="pad bg-danger rounded-lg">rounded-lg</div>
             </div>
           </div>
           <div class="row group">
             <div class="col">
-              <div class="pad bg-color-success rounded-top">rounded-top</div>
+              <div class="pad bg-secondary rounded-circle">rounded-circle</div>
             </div>
             <div class="col">
-              <div class="pad bg-color-success rounded-right">rounded-right</div>
+              <div class="pad bg-secondary rounded-pill">rounded-pill</div>
             </div>
             <div class="col">
-              <div class="pad bg-color-success rounded-bottom">rounded-bottom</div>
+              <div class="pad bg-secondary rounded-0">rounded-0</div>
+            </div>
+          </div>
+          <div class="row group">
+            <div class="col">
+              <div class="pad bg-success rounded-top">rounded-top</div>
             </div>
             <div class="col">
-              <div class="pad bg-color-success rounded-left">rounded-left</div>
+              <div class="pad bg-success rounded-right">rounded-right</div>
+            </div>
+            <div class="col">
+              <div class="pad bg-success rounded-bottom">rounded-bottom</div>
+            </div>
+            <div class="col">
+              <div class="pad bg-success rounded-left">rounded-left</div>
             </div>
           </div>
           <anchored-tag class="fragment" tag="h1" owned>Sizing</anchored-tag>
           <p>Helper classes for specifying width or height of element.</p>
           <h2>Width</h2>
-          <div class="w-25 p-3 bg-color-shade">Width 25%</div>
-          <div class="w-50 p-3 bg-color-shade">Width 50%</div>
-          <div class="w-75 p-3 bg-color-shade">Width 75%</div>
-          <div class="w-100 p-3 bg-color-shade">Width 100%</div>
+          <div class="w-25 p-3 bg-shade">Width 25%</div>
+          <div class="w-50 p-3 bg-shade">Width 50%</div>
+          <div class="w-75 p-3 bg-shade">Width 75%</div>
+          <div class="w-100 p-3 bg-shade">Width 100%</div>
           <h2>Height</h2>
-          <div class="d-flex justify-content-around bg-color-warning" style="height:150px;">
-            <div class="h-25 px-3 bg-color-dark">Height 25%</div>
-            <div class="h-50 px-3 bg-color-dark">Height 50%</div>
-            <div class="h-75 px-3 bg-color-dark">Height 75%</div>
-            <div class="h-100 px-3 bg-color-dark">Height 100%</div>
+          <div class="d-flex justify-content-around bg-warning" style="height:150px;">
+            <div class="h-25 px-3 bg-dark">Height 25%</div>
+            <div class="h-50 px-3 bg-dark">Height 50%</div>
+            <div class="h-75 px-3 bg-dark">Height 75%</div>
+            <div class="h-100 px-3 bg-dark">Height 100%</div>
           </div>
           <anchored-tag class="fragment" tag="h1" owned>Spacing</anchored-tag>
           <p>Helper classes for specifying margin or padding spacing to element.</p>
           <h2>Margin</h2>
-          <div class="bg-color-shade p-3"><span class="bg-color-dark m-1">margin-1</span><span class="bg-color-dark m-2">margin-2</span><span class="bg-color-dark m-3">margin-3</span><span class="bg-color-dark m-4">margin-4</span><span class="bg-color-dark m-5">margin-5</span></div>
+          <div class="row mb-3">
+            <div class="col">
+              <div class="bg-shade"><span class="d-inline-block bg-dark p-1 m-1">margin-1</span></div>
+            </div>
+            <div class="col">
+              <div class="bg-shade"><span class="d-inline-block bg-dark p-1 m-2">margin-2</span></div>
+            </div>
+            <div class="col">
+              <div class="bg-shade"><span class="d-inline-block bg-dark p-1 m-3">margin-3</span></div>
+            </div>
+            <div class="col">
+              <div class="bg-shade"><span class="d-inline-block bg-dark p-1 m-4">margin-4</span></div>
+            </div>
+            <div class="col">
+              <div class="bg-shade"><span class="d-inline-block bg-dark p-1 m-5">margin-5</span></div>
+            </div>
+          </div>
+          <h2>Negative Margin</h2>
+          <div class="d-flex flex-row my-3 justify-content-around align-items-start bg-shade" style="height:4em;">
+            <div class="d-inline-flex"><span class="d-inline-block bg-dark p-3 mt-n1">mt-n1</span></div>
+            <div class="d-inline-flex"><span class="d-inline-block bg-dark p-3 mt-n3">mt-n3</span></div>
+            <div class="d-inline-flex"><span class="d-inline-block bg-dark p-3 mt-n5">mt-n5</span></div>
+          </div>
           <h2>Padding</h2>
-          <div class="bg-color-shade p-3"><span class="bg-color-dark p-1">padding-1</span><span class="bg-color-dark p-2">padding-2</span><span class="bg-color-dark p-3">padding-3</span><span class="bg-color-dark p-4">padding-4</span><span class="bg-color-dark p-5">padding-5</span></div>
+          <div class="row p-2 mb-3 bg-shade">
+            <div class="col"><span class="d-inline-block bg-dark p-1">padding-1</span></div>
+            <div class="col"><span class="d-inline-block bg-dark p-2">padding-2</span></div>
+            <div class="col"><span class="d-inline-block bg-dark p-3">padding-3</span></div>
+            <div class="col"><span class="d-inline-block bg-dark p-4">padding-4</span></div>
+            <div class="col"><span class="d-inline-block bg-dark p-5">padding-5</span></div>
+          </div>
           <anchored-tag class="fragment" tag="h1" owned>Text</anchored-tag>
-          <h3>Fonts</h3>
-          <div class="group">
-            <div class="font-cursive">font-cursive</div>
-            <div class="font-accent">font-accent</div>
-            <div class="font-sans-serif">font-sans-serif</div>
-          </div>
-          <div class="group">
-            <div class="font-small">font-small</div>
-            <div class="font-large">font-large</div>
-          </div>
-          <div class="group">
-            <div class="font-weight-light">font-weight-light</div>
-            <div class="font-weight-normal">font-weight-normal</div>
-            <div class="font-weight-bold">font-weight-bold</div>
-            <div class="font-italic">font-italic</div>
-          </div>
+          <h3>Font Family</h3>
+          <ul class="mb-3">
+            <li class="font-base">font-base</li>
+            <li class="font-accent">font-accent</li>
+            <li class="font-cursive">font-cursive</li>
+            <li class="font-monospace">font-monospace</li>
+          </ul>
+          <h3>Font Size</h3>
+          <ul class="mb-3">
+            <li class="font-size-sm">font-size-sm</li>
+            <li class="font-size-lg">font-size-lg</li>
+          </ul>
+          <h3>Font Weight</h3>
+          <ul class="mb-3">
+            <li class="font-weight-lighter">font-weight-lighter</li>
+            <li class="font-weight-light">font-weight-light</li>
+            <li class="font-weight-normal">font-weight-normal</li>
+            <li class="font-weight-bold">font-weight-bold</li>
+            <li class="font-weight-bolder">font-weight-bolder</li>
+          </ul>
+          <h3>Font Style</h3>
+          <ul class="mb-3">
+            <li class="font-italic">font-italic</li>
+          </ul>
           <h3>Alignment</h3>
-          <div class="group">
-            <div class="bg-color-shade text-left">text-left</div>
+          <div class="mb-3">
+            <div class="bg-shade text-left">text-left</div>
             <div class="text-center">text-center</div>
-            <div class="bg-color-shade text-right">text-right</div>
+            <div class="bg-shade text-right">text-right</div>
           </div>
           <h3>Transformation</h3>
-          <p><span>Example: </span><span>hEllo, WoRlD!</span></p>
-          <div class="group">
-            <div><span>text-lowercase: </span><span class="text-lowercase">hEllo, WoRlD!</span></div>
-            <div><span>text-uppercase: </span><span class="text-uppercase">hEllo, WoRlD!</span></div>
-            <div><span>text-capitalize: </span><span class="text-capitalize">hEllo, WoRlD!</span></div>
-          </div>
+          <div class="mb-3"><span>Example: hEllo, WoRlD!</span></div>
+          <ul class="mb-3">
+            <li><span>text-lowercase: </span><span class="text-lowercase">hEllo, WoRlD!</span></li>
+            <li><span>text-uppercase: </span><span class="text-uppercase">hEllo, WoRlD!</span></li>
+            <li><span>text-capitalize: </span><span class="text-capitalize">hEllo, WoRlD!</span></li>
+          </ul>
           <h3>Miscellaneous</h3>
           <p><span>help: </span><span class="help">This is help comments.</span></p>
           <p><span>text-truncate: </span><span class="text-truncate" style="display:inline-block;width:10em;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>
           <anchored-tag class="fragment" tag="h1" owned>Flex</anchored-tag>
           <div class="group">
-            <div class="pad bg-color-secondary d-flex">Flexbox container</div>
-            <div class="pad bg-color-info d-inline-flex">Inline flexbox</div>
+            <div class="pad bg-secondary d-flex">Flexbox container</div>
+            <div class="pad bg-info d-inline-flex">Inline flexbox</div>
           </div>
         </section>
       </div>
@@ -242,10 +293,10 @@
       </footer>
       <scroll-button :duration="800" :offset="400"></scroll-button>
       <toast></toast>
-    </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
+    </div><script src="https://polyfill.io/v3/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
     <script src="./dist/moss.js"></script>
     <script src="./example.js"></script>
   </body>

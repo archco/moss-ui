@@ -10,10 +10,10 @@
   </head>
   <body>
     <div id="app">
-      <header class="d-flex justify-content-center align-items-center bg-color-primary" style="height:100px;">
+      <header class="d-flex justify-content-center align-items-center bg-primary" style="height:100px;">
         <h1><a class="no-deco inherit" id="project-name" href="index.html">MOSS-UI <span class='moss-version'></span></a></h1>
       </header>
-      <navbar class="sticky-top shadow-near" align="end">
+      <navbar class="sticky-top border-bottom border-primary shadow-sm" align="end">
         <navbar-brand href="index.html" type="text" slot="brand" v-activator.this.self>Moss</navbar-brand>
         <navbar-nav v-activator="'.nav-item &gt; .nav-link'">
           <nav-item href="scss.html?q=components" text="SCSS"></nav-item>
@@ -21,13 +21,13 @@
           <nav-item href="svg.html" text="SVG"></nav-item>
           <nav-item>
             <dropdown toggle="toggle" placement="bottom-end" append-icon>
-              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a>
+              <button slot="button">Utilities</button><a class="dropdown-item" href="scss-helpers.html">SCSS Helpers</a><a class="dropdown-item" href="vue-directives.html">Vue Directives</a><a class="dropdown-item" href="js-libraries.html">JS Libraries</a><a class="dropdown-item" href="scroll-fire.html">ScrollFire</a>
             </dropdown>
           </nav-item>
         </navbar-nav>
       </navbar>
       <div class="row">
-        <aside class="sidebar col-md-2 hide-only-mobile bg-color-light">
+        <aside class="sidebar col-md-2 hide-only-mobile bg-light">
           <div class="my-3">
             <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="onSearchItemClick" @submit="onSearchSubmit">
               <li slot="result-item" slot-scope="props" style="text-align:left;" tabindex="0" @click="props.onClickItem(props.item)">
@@ -49,6 +49,7 @@
             <li is="anchored-tag" tag="li">List</li>
             <li is="anchored-tag" tag="li">Loader</li>
             <li is="anchored-tag" tag="li">Pagination</li>
+            <li is="anchored-tag" tag="li">Progress</li>
           </ul>
         </aside>
         <section class="offset-md-2 col-md-10">
@@ -58,12 +59,12 @@
           <h2>Blockquote</h2>
           <h3>Default blockquote</h3>
           <blockquote>This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can put Markdown into a blockquote.</blockquote>
-          <h3>Blockquote with color-set</h3>
+          <h3>Blockquote with text-set</h3>
           <div class="pad">
             <blockquote class="link">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini</blockquote>
             <blockquote class="danger">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
           </div>
-          <div class="bg-color-dark pad">
+          <div class="bg-dark pad">
             <blockquote class="success">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini</blockquote>
             <blockquote class="shade">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
           </div>
@@ -151,21 +152,23 @@
             </table>
           </div>
           <h2>Optional Classes</h2>
-          <h3>.pad</h3>
-          <article class="pad color-primary">article with .pad</article>
-          <div class="pad bg-color-warning">div with .pad</div>
-          <p class="pad color-success">p with .pad</p>
-          <section class="pad bg-color-secondary">
-            <p>If case of section with pad, it's responsive.</p>
-          </section>
+          <h3>.pad with Container Elements</h3>
+          <blockquote class="info pad-sm"><span>Container Elements: div, p and blockquote</span></blockquote>
+          <div class="pad bg-warning">div with .pad</div>
+          <p class="pad-lg bg-shade">p with .pad-lg</p>
+          <h3>.pad with Section Elements</h3>
+          <blockquote class="info pad-sm"><span>Semantic Section Elements: article, section and aside</span></blockquote>
+          <article class="pad-sm bg-secondary">article with .pad-sm</article>
+          <section class="pad bg-shade"><span>If case of section with pad, it's responsive.</span></section>
+          <section class="pad-lg bg-secondary"><span>section with .pad-lg</span></section>
           <h3>.accent</h3>
-          <div class="pad">
-            <h1 class="accent color-danger">Heading with .accent</h1>
-            <h2 class="accent color-danger">Heading with .accent</h2>
-            <h3 class="accent color-danger">Heading with .accent</h3>
-            <h4 class="accent color-danger">Heading with .accent</h4>
-            <h5 class="accent color-danger">Heading with .accent</h5>
-            <h6 class="accent color-danger">Heading with .accent</h6>
+          <div class="mb-3">
+            <h1 class="accent text-danger">Heading with .accent</h1>
+            <h2 class="accent text-danger">Heading with .accent</h2>
+            <h3 class="accent text-danger">Heading with .accent</h3>
+            <h4 class="accent text-danger">Heading with .accent</h4>
+            <h5 class="accent text-danger">Heading with .accent</h5>
+            <h6 class="accent text-danger">Heading with .accent</h6>
           </div>
           <anchored-tag class="fragment" tag="h1" owned>Code</anchored-tag>
           <p>Display inline or block fragment of computer code.</p>
@@ -222,7 +225,7 @@
           <button class="btn-flat shade">shade</button>
           <button class="btn-flat link">link</button>
           <h3>Text button</h3>
-          <div class="pad">Hello <button class="btn-text color-danger">Beautiful</button> World!</div>
+          <div class="pad">Hello <button class="btn-text text-danger">Beautiful</button> World!</div>
           <h3>Other tag as button</h3>
           <input type="submit"><a class="btn info" href="#button">link button</a><br><a class="btn-flat" href="#">link flat button</a>
           <h3>Icon Button</h3>
@@ -400,7 +403,7 @@
               <div class="text-truncate help">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
             </div>
           </div>
-          <div class="card-horizontal bg-color-dark hoverable shadow-near" style="display:inline-flex;width:240px;height:140px;">
+          <div class="card-horizontal bg-dark hoverable shadow-near" style="display:inline-flex;width:240px;height:140px;">
             <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Constitution1803.jpg/800px-Constitution1803.jpg"></div>
             <div class="card-content">
               <div>Title</div>
@@ -430,17 +433,28 @@
                 <input type="text" value="readonly" readonly>
               </div>
               <div class="mb-3">
-                <label>
-                  <input type="checkbox"><span>checkbox</span>
-                </label>
+                <div>
+                  <input id="form-checkbox-1" type="checkbox">
+                  <label for="form-checkbox-1">checkbox</label>
+                </div>
+                <div>
+                  <input id="form-checkbox-2" type="checkbox" disabled>
+                  <label for="form-checkbox-2">disabled</label>
+                </div>
               </div>
               <div class="mb-3">
-                <label>
-                  <input type="radio" name="gender" value="0" checked><span>male</span>
-                </label><br>
-                <label>
-                  <input type="radio" name="gender" value="1"><span>female</span>
-                </label>
+                <div>
+                  <input id="form-radio-1" type="radio" name="form-radio" value="0" checked>
+                  <label for="form-radio-1">radio-1</label>
+                </div>
+                <div>
+                  <input id="form-radio-2" type="radio" name="form-radio" value="1">
+                  <label for="form-radio-2">radio-2</label>
+                </div>
+                <div>
+                  <input id="form-radio-3" type="radio" name="form-radio" value="2" disabled>
+                  <label for="form-radio-3">disabled</label>
+                </div>
               </div>
               <div class="mb-3">
                 <input type="file">
@@ -466,24 +480,29 @@
           <form class="form-inline">
             <fieldset class="success">
               <legend>Form inline</legend>
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="name">
-              <label for="password">Password</label>
-              <input type="password" id="password" name="password">
-              <label for="email">email</label>
-              <input type="email" placeholder="user@example.com">
-              <label>disabled and readonly</label>
-              <input type="text" value="disabled" disabled>
-              <input type="text" value="readonly" readonly>
-              <label>
-                <input type="checkbox"><span>checkbox</span>
-              </label>
-              <label>
-                <input type="radio" name="gender" value="0" checked><span>male</span>
-              </label>
-              <label>
-                <input type="radio" name="gender" value="1"><span>female</span>
-              </label>
+              <div class="d-inline-block">
+                <label for="form-inline-name">Name</label>
+                <input type="text" id="form-inline-name" name="name" placeholder="name">
+              </div>
+              <div class="d-inline-block">
+                <label for="form-inline-password">Password</label>
+                <input type="password" id="form-inline-password" name="password">
+              </div><span>
+                <label for="form-inline-email">email</label>
+                <input type="email" id="form-inline-email" placeholder="user@example.com"></span><span>
+                <label>disabled and readonly</label>
+                <input type="text" value="disabled" disabled>
+                <input type="text" value="readonly" readonly></span><span>
+                <input type="checkbox" id="form-inline-checkbox-1">
+                <label for="form-inline-checkbox-1">checkbox</label></span><span>
+                <input type="checkbox" id="form-inline-checkbox-2" disabled>
+                <label for="form-inline-checkbox-2">disabled</label></span><span>
+                <input type="radio" id="form-inline-radio-1" name="form-inline-radio" value="0" checked>
+                <label for="form-inline-radio-1">radio-1</label></span><span>
+                <input type="radio" id="form-inline-radio-2" name="form-inline-radio" value="1">
+                <label for="form-inline-radio-2">radio-2</label></span><span>
+                <input type="radio" id="form-inline-radio-2" name="form-inline-radio" value="2" disabled>
+                <label for="form-inline-radio-2">disabled</label></span>
               <input type="file">
               <input type="range">
               <input type="color">
@@ -525,10 +544,10 @@
             </div>
           </div>
           <div class="input inline with-icon-right">
-            <input class="danger" type="text" placeholder="wrong.."><span class="icon-right color-danger"><i class="fas fa-exclamation-triangle"></i></span>
+            <input class="danger" type="text" placeholder="wrong.."><span class="icon-right text-danger"><i class="fas fa-exclamation-triangle"></i></span>
           </div>
           <div class="input inline with-icon-right">
-            <input class="danger" type="text" placeholder="Disabled" disabled><span class="icon-right color-default"><i class="fas fa-exclamation-triangle"></i></span>
+            <input class="danger" type="text" placeholder="Disabled" disabled><span class="icon-right text-default"><i class="fas fa-exclamation-triangle"></i></span>
           </div>
           <h2>Input with Icons</h2>
           <h3>Default</h3>
@@ -547,7 +566,7 @@
           </div>
           <h3>Inline input</h3>
           <div class="input inline with-icon-left with-icon-right">
-            <input class="inline" type="text" placeholder="Email.."><span class="icon-left"><i class="fas fa-envelope"></i></span><span class="icon-right color-success"><i class="fas fa-check"></i></span>
+            <input class="inline" type="text" placeholder="Email.."><span class="icon-left"><i class="fas fa-envelope"></i></span><span class="icon-right text-success"><i class="fas fa-check"></i></span>
           </div>
           <h3>Input sizes</h3>
           <div class="input inline with-icon font-small">
@@ -562,7 +581,7 @@
           <h2>Form Grid</h2>
           <p>Special replacement for <code>.row</code> for tighter form layouts.</p>
           <h3><code>.row</code></h3>
-          <div class="row bg-color-shade">
+          <div class="row bg-shade">
             <div class="col">
               <input placeholder="First name">
             </div>
@@ -571,7 +590,7 @@
             </div>
           </div>
           <h3><code>.form-row</code></h3>
-          <div class="form-row bg-color-shade">
+          <div class="form-row bg-shade">
             <div class="col">
               <input placeholder="First name">
             </div>
@@ -587,17 +606,17 @@
           <h3>HTML5 constraint validation</h3>
           <form class="was-validated">
             <div class="form-row">
-              <div class="col-md-4 mb-3">
+              <div class="col-md mb-3">
                 <label for="formValidation01">First name</label>
                 <input type="text" id="formValidation01" placeholder="First name" value="John" required>
                 <div class="valid-feedback">Looks good!</div>
               </div>
-              <div class="col-md-4 mb-3">
+              <div class="col-md mb-3">
                 <label for="formValidation02">Last name</label>
                 <input type="text" id="formValidation02" placeholder="Last name" value="Doe" required>
                 <div class="valid-feedback">Looks good!</div>
               </div>
-              <div class="col-md-4 mb-3">
+              <div class="col-md mb-3">
                 <label for="formValidation03">Username</label>
                 <div class="input-group">
                   <div class="input-group-prepend"><span class="input-group-text">@</span></div>
@@ -605,9 +624,35 @@
                   <div class="invalid-feedback">Please choose a username.</div>
                 </div>
               </div>
+            </div>
+            <div class="form-row">
               <div class="col-md mb-3">
-                <input id="formValidation04" type="checkbox" required>
-                <label for="formValidation04">Agree to terms and conditions</label>
+                <label for="formValidation04">Select</label>
+                <select id="formValidation04" name="select" required>
+                  <option value="">-- Please choose an option..</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+                <div class="invalid-feedback">You must choose an option.</div>
+              </div>
+              <div class="col-md mb-3">
+                <label for="formValidation05">File</label>
+                <input id="formValidation05" type="file" name="file" required>
+                <div class="invalid-feedback">Select File</div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md mb-3">
+                <label>Textarea</label>
+                <textarea name="textarea" required></textarea>
+                <div class="invalid-feedback">Please fill textarea.</div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <input id="formValidation06" type="checkbox" required>
+                <label for="formValidation06">Agree to terms and conditions</label>
                 <div class="invalid-feedback">You must agree before submitting.</div>
               </div>
             </div>
@@ -677,30 +722,30 @@
           </div>
           <anchored-tag class="fragment" tag="h1" owned>Grid</anchored-tag>
           <h2>Container</h2>
-          <div class="container bg-color-secondary">
+          <div class="container bg-secondary">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
           <h2>Default Grid</h2>
           <div class="row">
-            <div class="col-1 box-line bg-color-primary">col-1</div>
-            <div class="col-1 box-line bg-color-primary">col-1</div>
-            <div class="col-1 box-line bg-color-primary">col-1</div>
-            <div class="col-1 box-line bg-color-primary">col-1</div>
-            <div class="col-1 box-line bg-color-primary">col-1</div>
-            <div class="col-1 box-line bg-color-primary">col-1</div>
-            <div class="col-1 box-line bg-color-primary">col-1</div>
-            <div class="col-1 box-line bg-color-primary">col-1</div>
-            <div class="col-1 box-line bg-color-primary">col-1</div>
-            <div class="col-1 box-line bg-color-primary">col-1</div>
-            <div class="col-1 box-line bg-color-primary">col-1</div>
-            <div class="col-1 box-line bg-color-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
+            <div class="col-1 box-line bg-primary">col-1</div>
           </div>
           <div class="container">
             <div class="row">
-              <div class="col-4 bg-color-primary">
+              <div class="col-4 bg-primary">
                 <p>4/12 columns</p>
               </div>
-              <div class="col-8 bg-color-secondary">
+              <div class="col-8 bg-secondary">
                 <p>8/12 columns</p>
               </div>
             </div>
@@ -708,10 +753,10 @@
           <h2>Mobile Grid</h2>
           <div class="container">
             <div class="row">
-              <div class="col-sm-6 bg-color-primary">
+              <div class="col-sm-6 bg-primary">
                 <p>col-sm-6</p>
               </div>
-              <div class="col-sm-6 bg-color-secondary">
+              <div class="col-sm-6 bg-secondary">
                 <p>col-sm-6</p>
               </div>
             </div>
@@ -719,13 +764,13 @@
           <h2>Tablet Grid</h2>
           <div class="container">
             <div class="row">
-              <div class="col-md-3 bg-color-secondary">
+              <div class="col-md-3 bg-secondary">
                 <p>col-md-6</p>
               </div>
-              <div class="col-md-5 bg-color-primary">
+              <div class="col-md-5 bg-primary">
                 <p>col-md-6</p>
               </div>
-              <div class="col-md-4 bg-color-secondary">
+              <div class="col-md-4 bg-secondary">
                 <p>col-md-6</p>
               </div>
             </div>
@@ -733,16 +778,16 @@
           <h2>Desktop Grid</h2>
           <div class="container">
             <div class="row">
-              <div class="col-lg-3 col-md-6 bg-color-secondary">
+              <div class="col-lg-3 col-md-6 bg-secondary">
                 <p>col-lg-6</p>
               </div>
-              <div class="col-lg-3 col-md-6 bg-color-primary">
+              <div class="col-lg-3 col-md-6 bg-primary">
                 <p>col-lg-6</p>
               </div>
-              <div class="col-lg-3 col-md-6 bg-color-secondary">
+              <div class="col-lg-3 col-md-6 bg-secondary">
                 <p>col-lg-6</p>
               </div>
-              <div class="col-lg-3 col-md-6 bg-color-primary">
+              <div class="col-lg-3 col-md-6 bg-primary">
                 <p>col-lg-6</p>
               </div>
             </div>
@@ -750,39 +795,39 @@
           <h3>Equal-width</h3>
           <div class="container">
             <div class="row group">
-              <div class="col bg-color-success">1 of 2</div>
-              <div class="col bg-color-info">1 of 2</div>
+              <div class="col bg-success">1 of 2</div>
+              <div class="col bg-info">1 of 2</div>
             </div>
             <div class="row group">
-              <div class="col bg-color-success">1 of 3</div>
-              <div class="col bg-color-info">1 of 3</div>
-              <div class="col bg-color-success">1 of 3</div>
+              <div class="col bg-success">1 of 3</div>
+              <div class="col bg-info">1 of 3</div>
+              <div class="col bg-success">1 of 3</div>
             </div>
           </div>
           <h3>Setting one column width</h3>
           <div class="container">
             <div class="row">
-              <div class="col bg-color-success">1 of 3</div>
-              <div class="col-6 bg-color-info">2 of 3 (half of full width)</div>
-              <div class="col bg-color-success">3 of 3</div>
+              <div class="col bg-success">1 of 3</div>
+              <div class="col-6 bg-info">2 of 3 (half of full width)</div>
+              <div class="col bg-success">3 of 3</div>
             </div>
           </div>
           <h3>Variable width by content</h3>
           <div class="container">
             <div class="row">
-              <div class="col bg-color-success">1 of 3</div>
-              <div class="col-auto bg-color-info">Variable width by content.</div>
-              <div class="col bg-color-success">3 of 3</div>
+              <div class="col bg-success">1 of 3</div>
+              <div class="col-auto bg-info">Variable width by content.</div>
+              <div class="col bg-success">3 of 3</div>
             </div>
           </div>
           <h3>Equal-width multi-row</h3>
           <div class="container">
             <div class="row">
-              <div class="col bg-color-success">col</div>
-              <div class="col bg-color-info">col</div>
+              <div class="col bg-success">col</div>
+              <div class="col bg-info">col</div>
               <div class="w-100"></div>
-              <div class="col bg-color-info">col</div>
-              <div class="col bg-color-success">col</div>
+              <div class="col bg-info">col</div>
+              <div class="col bg-success">col</div>
             </div>
           </div>
           <h3>No gutters</h3>
@@ -799,21 +844,21 @@
           <h3>Column wrapping</h3>
           <div class="container">
             <div class="row">
-              <div class="col-sm-8 bg-color-success">col-sm-8</div>
-              <div class="col-sm-6 bg-color-info">col-sm-6</div>
-              <div class="col-sm-4 bg-color-warning">col-sm-4</div>
+              <div class="col-sm-8 bg-success">col-sm-8</div>
+              <div class="col-sm-6 bg-info">col-sm-6</div>
+              <div class="col-sm-4 bg-warning">col-sm-4</div>
             </div>
           </div>
           <h3>Offsetting columns</h3>
           <div class="row">
-            <div class="col-md-4 bg-color-primary">col-md-4</div>
-            <div class="col-md-4 offset-md-4 bg-color-secondary">col-md-4 offset-md-4</div>
+            <div class="col-md-4 bg-primary">col-md-4</div>
+            <div class="col-md-4 offset-md-4 bg-secondary">col-md-4 offset-md-4</div>
           </div>
           <h3>Order classes</h3>
           <div class="row">
-            <div class="col bg-color-primary">First, but unordered</div>
-            <div class="col order-12 bg-color-secondary">Second but last</div>
-            <div class="col order-1 bg-color-info">Third, but first</div>
+            <div class="col bg-primary">First, but unordered</div>
+            <div class="col order-12 bg-secondary">Second but last</div>
+            <div class="col order-1 bg-info">Third, but first</div>
           </div>
           <anchored-tag class="fragment" tag="h1" owned>Helper</anchored-tag><a href="scss-helpers.html">SCSS Helpers</a>
           <anchored-tag class="fragment" tag="h1" owned>Image</anchored-tag>
@@ -922,12 +967,57 @@
             </li>
           </ul>
           <anchored-tag class="fragment" tag="h1" owned>Loader</anchored-tag>
-          <div class="d-flex justify-content-center pad bg-color-success">
-            <div class="text-center"><span class="loader-one light" style="font-size:3em;"></span><br><span>loading...</span></div>
+          <div class="d-flex justify-content-around p-3 bg-success">
+            <div class="text-center text-light"><span class="loader-spin" style="font-size:3em;"></span><br><span>loading...</span></div>
           </div>
-          <h2>Button is loading</h2>
-          <button class="btn primary is-loading" id="toggle">loading..</button>
-          <button class="btn warning is-loading">loading</button>
+          <h2>Spin Loader</h2>
+          <div class="d-flex justify-content-around align-items-center bg-shade" style="font-size:2em;">
+            <div class="p-3">
+              <div class="loader-spin"></div>
+            </div>
+            <div class="p-3">
+              <div class="loader-spin text-success"></div>
+            </div>
+            <div class="p-3">
+              <div class="loader-spin text-danger"></div>
+            </div>
+          </div>
+          <h2>Grow Loader</h2>
+          <div class="d-flex justify-content-around align-items-center bg-shade" style="font-size:2em;">
+            <div class="p-3">
+              <div class="loader-grow"></div>
+            </div>
+          </div>
+          <h2>Dots Loader</h2>
+          <blockquote class="info">This is a vue component.</blockquote>
+          <div class="d-flex justify-content-around align-items-center bg-dark">
+            <div class="p-3 text-warning" style="font-size:1em;">
+              <loader type="dots"></loader>
+            </div>
+            <div class="p-3 text-light" style="font-size:5em;">
+              <loader type="dots"></loader>
+            </div>
+            <div class="p-3 text-danger" style="font-size:3em;">
+              <loader type="dots"></loader>
+            </div>
+          </div>
+          <h2>Roller Loader</h2>
+          <blockquote class="info">This is a vue component.</blockquote>
+          <div class="d-flex justify-content-around align-items-center bg-dark">
+            <div class="p-3 text-primary" style="font-size:1em;">
+              <loader type="roller"></loader>
+            </div>
+            <div class="p-3 text-light" style="font-size:5em;">
+              <loader type="roller"></loader>
+            </div>
+            <div class="p-3 text-warning" style="font-size:3em;">
+              <loader type="roller"></loader>
+            </div>
+          </div>
+          <h2>Button with Loader</h2>
+          <button class="btn primary"><span class="loader-spin"></span></button>
+          <button class="btn warning" style="width:8em;"><span class="loader-spin"></span></button>
+          <button class="btn secondary"><span class="loader-spin mr-1"></span><span>Loading...</span></button>
           <anchored-tag class="fragment" tag="h1" owned>Pagination</anchored-tag>
           <ul class="pagination">
             <li class="disabled"><span>Prev</span></li>
@@ -947,6 +1037,70 @@
             <li class="disabled"><span>&hellip;</span></li>
             <li><a href="#"><i class="fas fa-chevron-right"></i></a></li>
           </ul>
+          <anchored-tag class="fragment" tag="h1" owned>Progress</anchored-tag>
+          <div class="mb-3">
+            <div class="progress mb-2">
+              <div class="progress-bar"></div>
+            </div>
+            <div class="progress mb-2">
+              <div class="progress-bar" style="width:33%"></div>
+            </div>
+            <div class="progress mb-2">
+              <div class="progress-bar" style="width:67%"></div>
+            </div>
+            <div class="progress mb-2">
+              <div class="progress-bar" style="width:100%"></div>
+            </div>
+          </div>
+          <h2>Labels</h2>
+          <div class="mb-3">
+            <div class="progress">
+              <div class="progress-bar" style="width:33%">33%</div>
+            </div>
+          </div>
+          <h2>Height</h2>
+          <div class="mb-3">
+            <div class="progress mb-2" style="height:1px">
+              <div class="progress-bar" style="width:50%"></div>
+            </div>
+            <div class="progress mb-2" style="height:20px">
+              <div class="progress-bar" style="width:50%"></div>
+            </div>
+          </div>
+          <h2>Backgrounds</h2>
+          <div class="mb-3">
+            <div class="progress mb-2">
+              <div class="progress-bar bg-danger" style="width:33%"></div>
+            </div>
+            <div class="progress mb-2">
+              <div class="progress-bar bg-warning" style="width:67%"></div>
+            </div>
+            <div class="progress mb-2">
+              <div class="progress-bar bg-success" style="width:100%"></div>
+            </div>
+          </div>
+          <h2>Multiple bars</h2>
+          <div class="progress mb-3">
+            <div class="progress-bar bg-warning" style="width:12%">12%</div>
+            <div class="progress-bar bg-info" style="width:20%">20%</div>
+            <div class="progress-bar bg-success" style="width:9%">9%</div>
+          </div>
+          <h2>Striped</h2>
+          <div class="mb-3">
+            <div class="progress mb-2">
+              <div class="progress-bar progress-bar-striped" style="width:33%"></div>
+            </div>
+            <div class="progress mb-2">
+              <div class="progress-bar progress-bar-striped bg-info" style="width:67%"></div>
+            </div>
+            <div class="progress mb-2">
+              <div class="progress-bar progress-bar-striped bg-success" style="width:100%"></div>
+            </div>
+          </div>
+          <h2>Animated stripes</h2>
+          <div class="progress mb-3">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:50%">50%</div>
+          </div>
         </section>
       </div>
       <footer class="footer">
@@ -970,10 +1124,10 @@
       </footer>
       <scroll-button :duration="800" :offset="400"></scroll-button>
       <toast></toast>
-    </div><script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
+    </div><script src="https://polyfill.io/v3/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
     <script src="./dist/moss.js"></script>
     <script src="./example.js"></script>
   </body>
