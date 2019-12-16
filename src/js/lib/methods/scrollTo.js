@@ -66,7 +66,8 @@ export default function scrollTo(
 function getScrollDest(dest, baseSize) {
   let offsetTop = 0;
   let offsetLeft = 0;
-
+  const between = (x, min, max) => Math.max(min, Math.min(max, Math.ceil(x)));
+  // set offset.
   if (typeof dest === 'number') {
     offsetTop = dest;
   } else if (Array.isArray(dest)) {
@@ -76,15 +77,9 @@ function getScrollDest(dest, baseSize) {
     offsetTop = elmSize.target.offsetTop;
     offsetLeft = elmSize.target.offsetLeft;
   }
-  const scrollTopDest = (offsetTop >= baseSize.maxScrollTop)
-    ? baseSize.maxScrollTop
-    : (baseSize.scrollHeight - offsetTop < baseSize.clientHeight)
-    ? baseSize.scrollHeight - baseSize.clientHeight
-    : offsetTop;
-  const scrollLeftDest = (offsetLeft >= baseSize.maxScrollLeft)
-    ? baseSize.maxScrollLeft
-    : (baseSize.scrollWidth - offsetLeft < baseSize.clientWidth)
-    ? baseSize.scrollWidth - baseSize.clientWidth
-    : offsetLeft;
-  return [scrollTopDest, scrollLeftDest].map(x => Math.max(Math.round(x), 0));
+
+  return [
+    between(offsetTop, 0, baseSize.maxScrollTop),
+    between(offsetLeft, 0, baseSize.maxScrollLeft)
+  ];
 }
