@@ -27,7 +27,7 @@
         </navbar-nav>
       </navbar>
       <div class="row">
-        <aside class="sidebar col-md-2 hide-only-mobile bg-light">
+        <aside class="sidebar col-md-2 hide-only-mobile bg-light" v-cloak>
           <div class="my-3">
             <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="onSearchItemClick" @submit="onSearchSubmit">
               <li slot="result-item" slot-scope="props" style="text-align:left;" tabindex="0" @click="props.onClickItem(props.item)">
@@ -973,19 +973,25 @@
           <h2>Spin Loader</h2>
           <div class="d-flex justify-content-around align-items-center bg-shade" style="font-size:2em;">
             <div class="p-3">
-              <div class="loader-spin"></div>
+              <div class="loader-spin" style="font-size:2rem;"></div>
             </div>
             <div class="p-3">
-              <div class="loader-spin text-success"></div>
+              <div class="loader-spin text-success" style="font-size:3rem;"></div>
             </div>
             <div class="p-3">
-              <div class="loader-spin text-danger"></div>
+              <div class="loader-spin text-danger" style="font-size:5rem;"></div>
             </div>
           </div>
           <h2>Grow Loader</h2>
-          <div class="d-flex justify-content-around align-items-center bg-shade" style="font-size:2em;">
+          <div class="d-flex justify-content-around align-items-center bg-shade">
             <div class="p-3">
-              <div class="loader-grow"></div>
+              <div class="loader-grow text-primary" style="font-size:2rem;"></div>
+            </div>
+            <div class="p-3">
+              <div class="loader-grow text-danger" style="font-size:3rem;"></div>
+            </div>
+            <div class="p-3">
+              <div class="loader-grow text-success" style="font-size:5rem"></div>
             </div>
           </div>
           <h2>Dots Loader</h2>

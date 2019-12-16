@@ -20,12 +20,22 @@
 
 // Grow
 
+@keyframes loader-grow {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
 .loader-grow {
   @extend %loader-common;
   background-color: currentColor;
   border-radius: 50%;
   opacity: 0;
-  animation: .75s linear infinite grow;
+  animation: .75s linear infinite loader-grow;
 }
 
 // Dots
