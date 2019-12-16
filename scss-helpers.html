@@ -27,7 +27,7 @@
         </navbar-nav>
       </navbar>
       <div class="row">
-        <aside class="sidebar col-md-2 hide-only-mobile bg-light">
+        <aside class="sidebar col-md-2 hide-only-mobile bg-light" v-cloak>
           <div class="my-3">
             <search :collection="collection" :search-options="searchOptions" :result-limit="5" auto-width @item-clicked="onSearchItemClick" @submit="onSearchSubmit">
               <li slot="result-item" slot-scope="props" style="text-align:left;" tabindex="0" @click="props.onClickItem(props.item)">
