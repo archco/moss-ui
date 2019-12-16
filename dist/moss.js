@@ -18023,7 +18023,7 @@ function scrollTo(dest) {
       baseSize.scrollLeft = scrollLeftDest;
       resolve();
       return;
-    } // in mobile browser, sometime occurs bug that sticked bottom.
+    } // in mobile browser, sometime occurs bug that sticked bottom. #152
     // using `window.scrollTo` instead.
 
 
@@ -18303,7 +18303,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /*!
  * moss-ui - The front-end UI framework with Vue.js and SCSS.
- * @version v0.8.0
+ * @version v0.8.1
  * @link https://github.com/archco/moss-ui
  * @license MIT
  */
@@ -18630,7 +18630,7 @@ module.exports = "<svg data-name=\"search\" xmlns=\"http://www.w3.org/2000/svg\"
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ('0.8.0');
+/* harmony default export */ __webpack_exports__["default"] = ('0.8.1');
 
 /***/ }),
 

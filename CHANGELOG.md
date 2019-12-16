@@ -13,8 +13,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.8.1] - 2019-12-16
+
 - Added a new js utility method `isMobileBrowser`.
 - Fixed bug in the utility method `scrollTo`. #152
+- Fixed scss "loader-grow". (5d2bd2bcce8798d09eba4b21627ab91f4e534f25)
 
 ## [0.8.0] - 2019-12-15
 
@@ -127,7 +130,8 @@ Remove deprecated in v0.6.x #104
   - `js/components/input-check.vue`
   - `js/components/input-radio.vue`
 
-[Unreleased]: https://github.com/archco/moss-ui/compare/v0.8.0...HEAD
+[Unreleased]: https://github.com/archco/moss-ui/compare/v0.8.1...HEAD
+[0.8.1]: https://github.com/archco/moss-ui/compare/v0.8.0...v0.8.1
 [0.8.0]: https://github.com/archco/moss-ui/compare/v0.7.3...v0.8.0
 [0.7.3]: https://github.com/archco/moss-ui/compare/v0.7.2...v0.7.3
 [0.7.2]: https://github.com/archco/moss-ui/compare/v0.7.0...v0.7.2
