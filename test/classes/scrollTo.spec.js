@@ -89,4 +89,20 @@ describe('scrollTo', () => {
     expect(res[0]).toBe(0);
     expect(res[1]).toBe(1000);
   });
+
+  it('TEST for dest was changed during scrolling.', async () => {
+    const res = await page.evaluate(async () => {
+      /** @type {ElementMeasurer} */
+      const docSize = new window.Moss.ElementMeasurer();
+      setTimeout(() => {
+        // reduce scrollHeight
+        const box = document.querySelector('.box.fourth');
+        box.parentElement.removeChild(box); // 1600 -> 1200
+      }, 300);
+      await window.Moss.scrollTo(docSize.maxScrollTop, { duration: 600 });
+      return docSize.scrollTop;
+    });
+
+    expect(res).toBe(600);
+  });
 });
