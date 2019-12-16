@@ -12,6 +12,7 @@ The javascript library that includes utility methods.
   - [searchToObject](#searchtoobject)
   - [isContains](#iscontains)
   - [isEmpty](#isempty)
+  - [isMobileBrowser](#isMobileBrowser)
   - [isMobileSize](#ismobilesize)
   - [scrollTo](#scrollto)
   - [addSvg](#addsvg)
@@ -24,10 +25,10 @@ The javascript library that includes utility methods.
 ``` js
 // Import member from package.
 import { Util } from 'moss-ui';
-let obj = Util.locationSearchToObject();
+const obj = Util.locationSearchToObject();
 
 // or use from global 'Moss' object.
-let isMobile = window.Moss.lib.Util.isMobileSize();
+const isMobile = window.Moss.lib.Util.isMobileSize();
 ```
 
 ## Functions
@@ -39,10 +40,10 @@ Converts current `location.search` to object.
 - Syntax
 
   ``` js
-  let obj = Util.locationSearchToObject();
+  const obj = Util.locationSearchToObject();
   ```
 
-- Return `Object|null`
+- Returns `Object|null`
 
 ### searchToObject
 
@@ -51,11 +52,11 @@ Converts [`HTMLHyperlinkElementUtils.search`] to object.
 - Syntax
 
   ``` js
-  let obj = Util.searchToObject(search);
+  const obj = Util.searchToObject(search);
   ```
 
 - Param `string` search - value of [`HTMLHyperlinkElementUtils.search`]
-- Return `object|null`
+- Returns `object|null`
 
 ### isContains
 
@@ -64,12 +65,12 @@ Returns true if "big object" contains "small object".
 - Syntax
 
   ``` js
-  let bool = Util.isContains(big, small);
+  const bool = Util.isContains(big, small);
   ```
 
 - Param `any` big
 - Param `any` small
-- Return: `Boolean`
+- Returns `Boolean`
 
 ### isEmpty
 
@@ -78,83 +79,34 @@ Determine whether value is empty.
 - Syntax
 
   ``` js
-  let bool = Util.isEmpty(val);
+  const bool = Util.isEmpty(val);
   ```
 
 - Param `any` val
-- Return: `Boolean`
+- Returns `Boolean`
+
+### isMobileBrowser
+
+Determine whether is mobile browser or not.
+
+- Syntax
+
+  ``` js
+  const bool = Util.isMobileBrowser();
+  ```
+
+- Returns `boolean`
 
 ### isMobileSize
 
 - Syntax
 
   ``` js
-  let bool = Util.isMobileSize(size = 800);
+  const bool = Util.isMobileSize(size = 800);
   ```
 
 - Param `Number` [ size = 800 ] - width (px)
-- Return `Boolean`
-
-### strToCamel
-
-> **Deprecated in 0.6.x** - use `Case.camel` or `Case.pascal` instead.
-
-Converts string to CamelCase.
-
-- Syntax
-
-  ``` js
-  let str = Util.strToCamel(str, isSmallCamel = false);
-  ```
-
-- Param `string` str
-- Param `boolean` [ isSmallCamel = false ] - If true, returns as smallCamelCase.
-- Returns `string`
-
-### strToKebab
-
-> **Deprecated in 0.6.x** - use `Case.kebab` instead.
-
-Converts string to kebab-case.
-
-- Syntax
-
-  ``` js
-  let str = Util.strToKebab(str);
-  ```
-
-- Param `string` str
-- Returns `string`
-
-### strToNormal
-
-> **Deprecated in 0.6.x** - use `Case.lower` instead.
-
-Converts string to normal case. e.g. 'HelloWorld' -> 'hello world'
-
-- Syntax
-
-  ``` js
-  let str = Util.strToNormal(str);
-  ```
-
-- Param `string` str
-- Returns `string`
-
-### capitalize
-
-> **Deprecated in 0.6.x** - use `Case.capital` instead.
-
-Capitalize first letters.
-
-- Syntax
-
-  ``` js
-  let str = Util.capitalize(str);
-  ```
-
-- Param `string` str
-- Returns `string`
+- Returns `Boolean`
 
 ### scrollTo
 

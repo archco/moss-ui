@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- Added a new js utility method `isMobileBrowser`.
+- Fixed bug in the utility method `scrollTo`. #152
+
 ## [0.8.0] - 2019-12-15
 
 ### Added

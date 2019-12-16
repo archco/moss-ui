@@ -1,6 +1,6 @@
 /// <reference path="./src/js/lib/methods/scrollTo.d.ts" />
 
-// Type definitions for moss-ui v0.7.2
+// Type definitions for moss-ui v0.8.1
 // @link https://github.com/archco/moss-ui
 
 import {
@@ -121,6 +121,13 @@ export namespace Util {
    * @return {boolean}
    */
   export function isEmpty(val: any): boolean;
+
+  /**
+   * Determine whether is mobile browser or not.
+   *
+   * @returns {boolean}
+   */
+  export function isMobileBrowser(): boolean;
 
   /**
    * isMobileSize

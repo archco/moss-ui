@@ -34,7 +34,7 @@ export default function scrollTo(
       resolve();
       return;
     }
-    // in mobile browser, sometime occurs bug that sticked bottom.
+    // in mobile browser, sometime occurs bug that sticked bottom. #152
     // using `window.scrollTo` instead.
     if (isMobileBrowser()) {
       window.scrollTo({
