@@ -1,4 +1,5 @@
 export { default as scrollTo } from './methods/scrollTo';
+export { default as isMobileBrowser } from './methods/isMobileBrowser';
 export * from './methods/icon';
 
 /**
