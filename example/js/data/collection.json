@@ -268,5 +268,17 @@
     "name": "Icons",
     "category": "svg",
     "description": "Simple icons with SVG."
+  },
+  {
+    "_id": 47,
+    "name": "ScrollFire",
+    "category": "scroll-fire",
+    "description": "ScrollFire is helpful class for makes scene that react by scroll event."
+  },
+  {
+    "_id": 48,
+    "name": "Progress",
+    "category": "scss",
+    "description": "Custom progress bars are featuring support stacked bars, animated background, and text labels."
   }
 ]
