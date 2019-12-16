@@ -2,6 +2,7 @@
 
 import ElementMeasurer from 'element-measurer';
 import { easing as timing } from 'transition-timing';
+import isMobileBrowser from './isMobileBrowser';
 
 /**
  * Scroll to destination with transition.
@@ -30,6 +31,17 @@ export default function scrollTo(
     if (duration === 0 || 'requestAnimationFrame' in window === false ) {
       baseSize.scrollTop = scrollTopDest;
       baseSize.scrollLeft = scrollLeftDest;
+      resolve();
+      return;
+    }
+    // in mobile browser, sometime occurs bug that sticked bottom.
+    // using `window.scrollTo` instead.
+    if (isMobileBrowser()) {
+      window.scrollTo({
+        top: scrollTopDest,
+        left: scrollLeftDest,
+        behavior: 'smooth'
+      });
       resolve();
       return;
     }

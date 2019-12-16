@@ -17933,6 +17933,39 @@ function makeIconHtml(name) {
 
 /***/ }),
 
+/***/ "./src/js/lib/methods/isMobileBrowser.js":
+/*!***********************************************!*\
+  !*** ./src/js/lib/methods/isMobileBrowser.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return isMobileBrowser; });
+/**
+ * @see https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
+*/
+// eslint-disable-next-line
+var REGEX = /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i;
+/**
+ * Determine whether is mobile browser or not.
+ *
+ * @returns {boolean}
+ */
+
+function isMobileBrowser() {
+  var check = false;
+
+  (function (a) {
+    if (REGEX.test(a)) check = true;
+  })(navigator.userAgent || navigator.vendor || window.opera);
+
+  return check;
+}
+
+/***/ }),
+
 /***/ "./src/js/lib/methods/scrollTo.js":
 /*!****************************************!*\
   !*** ./src/js/lib/methods/scrollTo.js ***!
@@ -17949,8 +17982,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var element_measurer__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(element_measurer__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var transition_timing__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! transition-timing */ "./node_modules/transition-timing/dist/transition-timing.min.js");
 /* harmony import */ var transition_timing__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(transition_timing__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _isMobileBrowser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./isMobileBrowser */ "./src/js/lib/methods/isMobileBrowser.js");
 
 /// <reference path="./scrollTo.d.ts" />
+
 
 
 /**
@@ -17986,6 +18021,18 @@ function scrollTo(dest) {
     if (duration === 0 || 'requestAnimationFrame' in window === false) {
       baseSize.scrollTop = scrollTopDest;
       baseSize.scrollLeft = scrollLeftDest;
+      resolve();
+      return;
+    } // in mobile browser, sometime occurs bug that sticked bottom.
+    // using `window.scrollTo` instead.
+
+
+    if (Object(_isMobileBrowser__WEBPACK_IMPORTED_MODULE_3__["default"])()) {
+      window.scrollTo({
+        top: scrollTopDest,
+        left: scrollLeftDest,
+        behavior: 'smooth'
+      });
       resolve();
       return;
     }
@@ -18053,7 +18100,7 @@ function getScrollDest(dest, baseSize) {
 /*!****************************!*\
   !*** ./src/js/lib/util.js ***!
   \****************************/
-/*! exports provided: scrollTo, locationSearchToObject, searchToObject, isContains, isEmpty, isMobileSize, addSvg, getSvgByName, makeIcon, makeIconHtml */
+/*! exports provided: scrollTo, isMobileBrowser, locationSearchToObject, searchToObject, isContains, isEmpty, isMobileSize, addSvg, getSvgByName, makeIcon, makeIconHtml */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18068,14 +18115,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _methods_scrollTo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./methods/scrollTo */ "./src/js/lib/methods/scrollTo.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "scrollTo", function() { return _methods_scrollTo__WEBPACK_IMPORTED_MODULE_1__["default"]; });
 
-/* harmony import */ var _methods_icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./methods/icon */ "./src/js/lib/methods/icon.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "addSvg", function() { return _methods_icon__WEBPACK_IMPORTED_MODULE_2__["addSvg"]; });
+/* harmony import */ var _methods_isMobileBrowser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./methods/isMobileBrowser */ "./src/js/lib/methods/isMobileBrowser.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isMobileBrowser", function() { return _methods_isMobileBrowser__WEBPACK_IMPORTED_MODULE_2__["default"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getSvgByName", function() { return _methods_icon__WEBPACK_IMPORTED_MODULE_2__["getSvgByName"]; });
+/* harmony import */ var _methods_icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./methods/icon */ "./src/js/lib/methods/icon.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "addSvg", function() { return _methods_icon__WEBPACK_IMPORTED_MODULE_3__["addSvg"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "makeIcon", function() { return _methods_icon__WEBPACK_IMPORTED_MODULE_2__["makeIcon"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getSvgByName", function() { return _methods_icon__WEBPACK_IMPORTED_MODULE_3__["getSvgByName"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "makeIconHtml", function() { return _methods_icon__WEBPACK_IMPORTED_MODULE_2__["makeIconHtml"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "makeIcon", function() { return _methods_icon__WEBPACK_IMPORTED_MODULE_3__["makeIcon"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "makeIconHtml", function() { return _methods_icon__WEBPACK_IMPORTED_MODULE_3__["makeIconHtml"]; });
+
 
 
 
