@@ -71,8 +71,8 @@
 @each $color, $value in map-merge(
   $color-set,
   (
-    body: $body-bg,
-    white: $white,
+    'body': $body-bg,
+    'white': $white,
     'transparent': transparent // "transparent" for prevent error in mini-css-extract-plugin.
   )
 ) {

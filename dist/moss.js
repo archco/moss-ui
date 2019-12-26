@@ -5523,7 +5523,7 @@ exports.snake = snake;
 
             var compareNumber = function compareNumber(aVal, bVal) {
               var aNum = parseFloat(aVal);
-              var bNum = parseFloat(b);
+              var bNum = parseFloat(bVal);
               return asc ? aNum - bNum : bNum - aNum;
             };
 
@@ -18303,7 +18303,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /*!
  * moss-ui - The front-end UI framework with Vue.js and SCSS.
- * @version v0.8.1
+ * @version v0.8.2
  * @link https://github.com/archco/moss-ui
  * @license MIT
  */
@@ -18630,7 +18630,7 @@ module.exports = "<svg data-name=\"search\" xmlns=\"http://www.w3.org/2000/svg\"
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ('0.8.1');
+/* harmony default export */ __webpack_exports__["default"] = ('0.8.2');
 
 /***/ }),
 
