@@ -1,6 +1,6 @@
 /*!
  * moss-ui - The front-end UI framework with Vue.js and SCSS.
- * @version v0.8.2
+ * @version v0.8.3
  * @link https://github.com/archco/moss-ui
  * @license MIT
  */
@@ -2103,8 +2103,8 @@ input[type=color].is-invalid {
   .input-group > .input {
     position: relative;
     -webkit-box-flex: 1;
-            flex: 1 1 auto;
-    width: 1%;
+            flex: 1 1 0%;
+    min-width: 0;
     margin-bottom: 0; }
     .input-group > input + input,
     .input-group > input + select,
@@ -2177,6 +2177,24 @@ input[type=color].is-invalid {
   white-space: nowrap;
   border: 1px solid #bebebe;
   border-radius: 0.2em; }
+
+.input-group-prepend > .btn,
+.input-group-prepend > .input-group-text,
+.input-group-append:not(:last-child) > .btn,
+.input-group-append:not(:last-child) > .input-group-text,
+.input-group-append:last-child > .btn:not(:last-child),
+.input-group-append:last-child > .input-group-text:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0; }
+
+.input-group-append > .btn,
+.input-group-append > .input-group-text,
+.input-group-prepend:not(:first-child) > .btn,
+.input-group-prepend:not(:first-child) > .input-group-text,
+.input-group-prepend:first-child > .btn:not(:first-child),
+.input-group-prepend:first-child > .input-group-text:not(:first-child) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0; }
 
 .btn-text, .close-button, input[type=submit],
 input[type=button],
