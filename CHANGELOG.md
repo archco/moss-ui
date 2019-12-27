@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.8.3] - 2019-12-27
+
+- Fixed style in `scss/parts/input-group`. (f7a5c3473af976abcfe452de5ff2213c33e5441b)
+
 ## [0.8.1] - 2019-12-16
 
 - Added a new js utility method `isMobileBrowser`.
@@ -130,7 +134,8 @@ Remove deprecated in v0.6.x #104
   - `js/components/input-check.vue`
   - `js/components/input-radio.vue`
 
-[Unreleased]: https://github.com/archco/moss-ui/compare/v0.8.1...HEAD
+[Unreleased]: https://github.com/archco/moss-ui/compare/v0.8.3...HEAD
+[0.8.3]: https://github.com/archco/moss-ui/compare/v0.8.1...v0.8.3
 [0.8.1]: https://github.com/archco/moss-ui/compare/v0.8.0...v0.8.1
 [0.8.0]: https://github.com/archco/moss-ui/compare/v0.7.3...v0.8.0
 [0.7.3]: https://github.com/archco/moss-ui/compare/v0.7.2...v0.7.3

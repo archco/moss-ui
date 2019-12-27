@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils';
+import Vue from 'vue';
 import Dropdown from '../../src/js/components/dropdown.vue';
 
 const slots = {
@@ -24,7 +25,7 @@ describe('#Dropdown', () => {
     expect(elm.querySelector('.dropdown-content').children.length).toBe(3);
   });
 
-  it('button click for content toggling.', () => {
+  it('button click for content toggling.', async () => {
     const wrapper = mount(Dropdown, {
       slots: slots,
     });
@@ -33,20 +34,29 @@ describe('#Dropdown', () => {
 
     const content = wrapper.element.querySelector('.dropdown-content');
     expect(content.classList.contains('show')).toBe(false);
+
     wrapper.find('button.reference').trigger('click');
+    await Vue.nextTick();
+
     expect(content.classList.contains('show')).toBe(true);
   });
 
-  it('will be emitted `state` event when state changes.', () => {
+  it('will be emitted `state` event when state changes.', async () => {
     const wrapper = mount(Dropdown, {
       slots: slots,
     });
     // mock.
     wrapper.vm.$data.pop = fakePopper;
+
     wrapper.vm.btn.click();
+    await Vue.nextTick();
+
     expect(wrapper.emitted('state').length).toBe(1);
     expect(wrapper.emitted('state')[0]).toEqual([true]);
+
     wrapper.vm.btn.click();
+    await Vue.nextTick();
+
     expect(wrapper.emitted('state').length).toBe(2);
     expect(wrapper.emitted('state')[1]).toEqual([false]);
   });
