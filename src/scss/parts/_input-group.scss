@@ -10,8 +10,8 @@
   > textarea,
   > .input {
     position: relative;
-    flex: 1 1 auto;
-    width: 1%;
+    flex: 1 1 0%;
+    min-width: 0;
     margin-bottom: 0;
 
     + input,
@@ -61,4 +61,22 @@
   white-space: nowrap;
   border: $input-border-width solid $input-border-color;
   @include border-radius($input-radius);
+}
+
+.input-group-prepend > .btn,
+.input-group-prepend > .input-group-text,
+.input-group-append:not(:last-child) > .btn,
+.input-group-append:not(:last-child) > .input-group-text,
+.input-group-append:last-child > .btn:not(:last-child),
+.input-group-append:last-child > .input-group-text:not(:last-child) {
+  @include border-right-radius(0);
+}
+
+.input-group-append > .btn,
+.input-group-append > .input-group-text,
+.input-group-prepend:not(:first-child) > .btn,
+.input-group-prepend:not(:first-child) > .input-group-text,
+.input-group-prepend:first-child > .btn:not(:first-child),
+.input-group-prepend:first-child > .input-group-text:not(:first-child) {
+  @include border-left-radius(0);
 }
