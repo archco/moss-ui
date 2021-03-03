@@ -69,7 +69,7 @@
     "node-sass": "^4.13.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "pug-cli": "^1.0.0-alpha6",
     "puppeteer": "^2.0.0",
     "sass-loader": "^8.0.0",
